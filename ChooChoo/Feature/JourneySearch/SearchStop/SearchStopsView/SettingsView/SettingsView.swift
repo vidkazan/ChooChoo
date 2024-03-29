@@ -15,7 +15,7 @@ struct SettingsView: View {
 	let closeSheet : ()->Void
 	let oldSettings : JourneySettings
 	
-	init(settings : JourneySettings,closeSheet : @escaping ()->Void) {
+	init(settings : JourneySettings, closeSheet : @escaping ()->Void) {
 		self.oldSettings = settings
 		self.currentSettings = JourneySettingsClass(settings: settings)
 		self.closeSheet = closeSheet
@@ -53,51 +53,14 @@ struct SettingsView: View {
 						),
 						content: {
 							ForEach(JourneySettings.Accessiblity.allCases,id: \.hashValue, content: { elem in
-								Text(elem.rawValue)
+								Text(elem.string)
 									.tag(elem)
 							})
 						},
 						label: {
 							Label(
 								title: { Text("Accesibility", comment: "Settings") },
-								icon: { Image(systemName: "figure.roll.runningpace") }
-							)
-						}
-					)
-					Toggle(
-						isOn: Binding<Bool>(
-							get:{
-								currentSettings.startWithWalking
-							},
-							set:{
-								currentSettings.startWithWalking = $0
-							}
-						),
-						label: {
-							Label(
-								title: { Text("Start with walking", comment: "Settings") },
-								icon: { ChooSFSymbols.figureWalk.view }
-							)
-						})
-					Picker(
-						selection: Binding<JourneySettings.WalkingSpeed>(
-							get:{
-								currentSettings.walkingSpeed
-							},
-							set:{
-								currentSettings.walkingSpeed = $0
-							}
-						),
-						content: {
-							ForEach(JourneySettings.WalkingSpeed.allCases,id: \.hashValue, content: { elem in
-								Text(elem.rawValue)
-									.tag(elem)
-							})
-						},
-						label: {
-							Label(
-								title: { Text("Walking speed", comment: "Settings") },
-								icon: { Image(systemName: "figure.walk.motion") }
+								icon: { Image(systemName: "figure.roll") }
 							)
 						}
 					)
@@ -194,7 +157,10 @@ extension SettingsView {
 #if DEBUG
 struct SettingsPreview: PreviewProvider {
 	static var previews: some View {
-		SettingsView(settings: .init(),closeSheet: {})
+		SettingsView(
+			settings: .init(),
+			closeSheet: {}
+		)
 			.environmentObject(ChewViewModel(referenceDate: .now))
 	}
 }

@@ -189,7 +189,7 @@ extension AppSettings.ChooTip {
 					Label(
 						title: {
 							Text(
-								"Current settings can reduce your search result",
+								"Current settings could reduce your search results",
 								comment: "settingsView: warning"
 							)
 								.foregroundStyle(.secondary)

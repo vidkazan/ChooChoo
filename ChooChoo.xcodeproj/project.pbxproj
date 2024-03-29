@@ -1535,12 +1535,12 @@
 			};
 			buildConfigurationList = 7D6734AA2A96334B00CBE9C1 /* Build configuration list for PBXProject "ChooChoo" */;
 			compatibilityVersion = "Xcode 14.0";
-			developmentRegion = "en-GB";
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				de,
-				"en-GB",
 				Base,
+				en,
 			);
 			mainGroup = 7D6734A62A96334B00CBE9C1;
 			packageReferences = (
@@ -2016,7 +2016,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ChooChoo/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "Choo Choo";
+				INFOPLIST_KEY_CFBundleDisplayName = ChooChoo;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.travel";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "App needs your location";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;

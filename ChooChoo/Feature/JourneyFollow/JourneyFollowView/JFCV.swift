@@ -63,12 +63,10 @@ struct JourneyFollowCellView : View {
 					),
 					color: Color.clear
 				)
-//				.badgeBackgroundStyle(.secondary)
 				if !data.isReachable || !data.legs.allSatisfy({$0.isReachable == true}) {
 					BadgeView(.connectionNotReachable)
 						.badgeBackgroundStyle(.red)
 				}
-				BadgeView(.generic(msg: "\(data.settings.transportMode)"))
 			}
 		}
 		.contextMenu { menu }

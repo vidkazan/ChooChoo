@@ -29,7 +29,7 @@ struct AppSettingsView: View {
 					)
 				})
 			}, header: {
-				Text("Leg appearance", comment: "settingsView: section name")
+				Text("Journey appearance", comment: "settingsView: section name")
 			})
 			Section {
 				Button(action: {
@@ -59,4 +59,8 @@ struct AppSettingsView: View {
 			Text("App Settings", comment: "navigationBarTitle")
 		)
 	}
+}
+
+#Preview {
+	AppSettingsView(appSetttingsVM: .init())
 }

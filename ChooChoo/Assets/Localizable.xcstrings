@@ -1,5 +1,5 @@
 {
-  "sourceLanguage" : "en-GB",
+  "sourceLanguage" : "en",
   "strings" : {
     " to " : {
       "comment" : "badge: departureArrivalStops",
@@ -14,6 +14,7 @@
     },
     "%lld min " : {
       "comment" : "SettingsView: transferSegment: transfer duration",
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -96,6 +97,9 @@
         }
       }
     },
+    "all" : {
+      "comment" : "JourneySettings: TransportMode"
+    },
     "All" : {
       "comment" : "SettingsView: transportTypes: picker option",
       "localizations" : {
@@ -157,6 +161,7 @@
     },
     "Chosen transport types" : {
       "comment" : "SettingsView: segments: section header",
+      "extractionState" : "stale",
       "localizations" : {
         "ru" : {
           "stringUnit" : {
@@ -208,8 +213,14 @@
         }
       }
     },
-    "Current settings can reduce your search result" : {
+    "Count" : {
+      "comment" : "SettingsView: transferSegment: picker name"
+    },
+    "Current settings could reduce your search results" : {
       "comment" : "settingsView: warning"
+    },
+    "custom" : {
+      "comment" : "JourneySettings: TransportMode"
     },
     "Custom" : {
       "comment" : "SettingsView: transportTypes: picker option",
@@ -222,23 +233,14 @@
         }
       }
     },
+    "Custom transport types" : {
+      "comment" : "SettingsView: segments: section header"
+    },
     "Debug" : {
 
     },
     "Debug leg" : {
       "comment" : "Debug"
-    },
-    "Delete" : {
-      "comment" : "JourneyFollowView: listCell: swipe action item",
-      "extractionState" : "stale",
-      "localizations" : {
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Удалить"
-          }
-        }
-      }
     },
     "Direct" : {
       "comment" : "SettingsView: connections: picker option",
@@ -250,6 +252,9 @@
           }
         }
       }
+    },
+    "Duration" : {
+      "comment" : "SettingsView: transferSegment: picker name"
     },
     "earlier route arrival time is later than later route departure" : {
       "comment" : "DataError: validationError"
@@ -307,6 +312,9 @@
         }
       }
     },
+    "fast" : {
+      "comment" : "JourneySettings: WalkingSpeed"
+    },
     "follow" : {
       "comment" : "JourneyFollowViewModel.Action",
       "localizations" : {
@@ -340,6 +348,9 @@
         }
       }
     },
+    "full" : {
+      "comment" : "JourneySettings: Accessiblity"
+    },
     "If you want to update your search, simply press here" : {
       "comment" : "tip: now button: text",
       "localizations" : {
@@ -372,6 +383,9 @@
           }
         }
       }
+    },
+    "Journey appearance" : {
+      "comment" : "settingsView: section name"
     },
     "Journey debug" : {
       "comment" : "JourneyFollowCellView: menu item\nJourneyCell: menu item"
@@ -414,6 +428,7 @@
     },
     "Leg appearance" : {
       "comment" : "settingsView: section name",
+      "extractionState" : "stale",
       "localizations" : {
         "ru" : {
           "stringUnit" : {
@@ -423,8 +438,24 @@
         }
       }
     },
+    "max 1" : {
+      "comment" : "JourneySettings: TransferCountCases"
+    },
+    "max 2" : {
+      "comment" : "JourneySettings: TransferCountCases"
+    },
+    "max 3" : {
+      "comment" : "JourneySettings: TransferCountCases"
+    },
+    "max 4" : {
+      "comment" : "JourneySettings: TransferCountCases"
+    },
+    "max 5" : {
+      "comment" : "JourneySettings: TransferCountCases"
+    },
     "Maximum count" : {
       "comment" : "SettingsView: transferSegment: picker name",
+      "extractionState" : "stale",
       "localizations" : {
         "ru" : {
           "stringUnit" : {
@@ -434,8 +465,12 @@
         }
       }
     },
+    "min (self.rawValue) minutes" : {
+      "comment" : "JourneySettings: TransferDurationCases"
+    },
     "Minimum time" : {
       "comment" : "SettingsView: transferSegment: picker name",
+      "extractionState" : "stale",
       "localizations" : {
         "ru" : {
           "stringUnit" : {
@@ -444,6 +479,9 @@
           }
         }
       }
+    },
+    "moderate" : {
+      "comment" : "JourneySettings: WalkingSpeed"
     },
     "nil error: (type)" : {
       "comment" : "DataError"
@@ -473,18 +511,6 @@
     "Offline" : {
       "comment" : "badge"
     },
-    "Offline Mode" : {
-      "comment" : "badge",
-      "extractionState" : "stale",
-      "localizations" : {
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Режим оффлайн"
-          }
-        }
-      }
-    },
     "Ongoing" : {
       "comment" : "JourneyFollowView: section name",
       "localizations" : {
@@ -495,6 +521,9 @@
           }
         }
       }
+    },
+    "partial" : {
+      "comment" : "JourneySettings: Accessiblity"
     },
     "Past" : {
       "comment" : "JourneyFollowView: section name",
@@ -523,6 +552,9 @@
     },
     "Recents" : {
       "comment" : "RecentSearchesView: view name"
+    },
+    "regional" : {
+      "comment" : "JourneySettings: TransportMode"
     },
     "Regional" : {
       "comment" : "SettingsView: transportTypes: picker option",
@@ -597,7 +629,7 @@
       }
     },
     "Search" : {
-      "comment" : "search tip title\nTabItem",
+      "comment" : "TabItem\nsearch tip title",
       "localizations" : {
         "ru" : {
           "stringUnit" : {
@@ -660,8 +692,8 @@
         }
       }
     },
-    "Start with walking" : {
-      "comment" : "Settings"
+    "slow" : {
+      "comment" : "JourneySettings: WalkingSpeed"
     },
     "Stop not found" : {
       "comment" : "ApiError"
@@ -749,6 +781,9 @@
     "Unknown hafas error" : {
       "comment" : "ApiError"
     },
+    "unlimited" : {
+      "comment" : "JourneySettings: TransferCountCases"
+    },
     "updated %@ ago" : {
       "comment" : "badge",
       "localizations" : {
@@ -776,9 +811,6 @@
     },
     "walk %lld min" : {
       "comment" : "badge: walking"
-    },
-    "Walking speed" : {
-      "comment" : "Settings"
     },
     "What does this colorful line mean?" : {
       "comment" : "jlv: header info: sunevents"

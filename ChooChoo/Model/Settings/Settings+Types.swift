@@ -44,18 +44,42 @@ extension JourneySettings {
 		case ninety = 90
 		case hundredtwenty = 120
 		
+		var string : String {
+			NSLocalizedString(
+				"min \(self.rawValue) minutes",
+				comment: "JourneySettings: TransferDurationCases"
+			)
+		}
+		
 		var defaultValue : Self {
 			.zero
 		}
 	}
 	
-	enum TransferCountCases : String, Hashable, CaseIterable,Codable {
-		case unlimited = "Unlimited"
-		case one = "1"
-		case two = "2"
-		case three = "3"
-		case four = "4"
-		case five = "5"
+	enum TransferCountCases: Int, Hashable, CaseIterable, Codable {
+		case unlimited
+		case one
+		case two
+		case three
+		case four
+		case five
+
+		var string : String {
+			switch self {
+			case .unlimited:
+				NSLocalizedString("unlimited", comment: "JourneySettings: TransferCountCases")
+			case .one:
+				NSLocalizedString("max 1", comment: "JourneySettings: TransferCountCases")
+			case .two:
+				NSLocalizedString("max 2", comment: "JourneySettings: TransferCountCases")
+			case .three:
+				NSLocalizedString("max 3", comment: "JourneySettings: TransferCountCases")
+			case .four:
+				NSLocalizedString("max 4", comment: "JourneySettings: TransferCountCases")
+			case .five:
+				NSLocalizedString("max 5", comment: "JourneySettings: TransferCountCases")
+			}
+		}
 		
 		var queryValue : Int? {
 			switch self {
@@ -78,10 +102,21 @@ extension JourneySettings {
 			.unlimited
 		}
 	}
-	enum TransportMode : String, Hashable, Codable {
+	enum TransportMode : Hashable, Codable {
 		case regional
 		case all
 		case custom
+		
+		var string : String {
+			switch self {
+			case .all:
+				NSLocalizedString("all", comment: "JourneySettings: TransportMode")
+			case .regional:
+				NSLocalizedString("regional", comment: "JourneySettings: TransportMode")
+			case .custom:
+				NSLocalizedString("custom", comment: "JourneySettings: TransportMode")
+			}
+		}
 		
 		var defaultValue : Self {
 			.all
@@ -96,18 +131,38 @@ extension JourneySettings {
 			.time(minutes: .zero)
 		}
 	}
-	enum Accessiblity: String, Hashable,Codable, CaseIterable {
+	enum Accessiblity: Hashable,Codable, CaseIterable {
 		case partial
-		case complete
+		case full
+		
+		var string : String {
+			switch self {
+			case .full:
+				NSLocalizedString("full", comment: "JourneySettings: Accessiblity")
+			case .partial:
+				NSLocalizedString("partial", comment: "JourneySettings: Accessiblity")
+			}
+		}
 		
 		var defaultValue : Self {
 			.partial
 		}
 	}
-	enum WalkingSpeed : String, Hashable, Codable, CaseIterable{
+	enum WalkingSpeed : Hashable, Codable, CaseIterable{
 		case fast
 		case moderate
 		case slow
+		
+		var string : String {
+			switch self {
+			case .fast:
+				NSLocalizedString("fast", comment: "JourneySettings: WalkingSpeed")
+			case .moderate:
+				NSLocalizedString("moderate", comment: "JourneySettings: WalkingSpeed")
+			case .slow:
+				NSLocalizedString("slow", comment: "JourneySettings: WalkingSpeed")
+			}
+		}
 		
 		var defaultValue : Self {
 			.fast

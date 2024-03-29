@@ -140,23 +140,23 @@ extension SheetViewModel{
 			case .tip:
 				return "Tip"
 			case .mapPicker:
-				return "MapPicker"
+				return "Map picker"
 			case .none:
 				return "none"
 			case .date:
 				return "Date"
 			case .settings:
-				return "Settings"
+				return "Journey Settings"
 			case .route:
 				return "Route"
 			case .mapDetails:
-				return "MapDetails"
+				return "Map Details"
 			case .onboarding:
 				return "Onboarding"
 			case .remark:
 				return "Remarks"
 			case .journeyDebug:
-				return "JourneyDebug"
+				return "Journey Debug"
 			}
 		}
 		

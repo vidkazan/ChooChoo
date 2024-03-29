@@ -10,13 +10,13 @@ import CoreData
 import CoreLocation
 
 final class CoreDataStore : ObservableObject {
-	var asyncContext: NSManagedObjectContext!
+	var asyncContext: NSManagedObjectContext
 	var user : CDUser? = nil
 
-	init() {
-			self.asyncContext = PersistenceController.shared.container.newBackgroundContext()
-			self.asyncContext.mergePolicy = NSMergeByPropertyStoreTrumpMergePolicy
-		}
+	init(container : NSPersistentContainer = PersistenceController.shared.container) {
+		self.asyncContext = container.newBackgroundContext()
+		self.asyncContext.mergePolicy = NSMergeByPropertyStoreTrumpMergePolicy
+	}
 }
 
 extension CoreDataStore {

@@ -72,7 +72,7 @@ enum Query {
 		case .walkingSpeed(let speed):
 			return URLQueryItem(
 				name: "walkingSpeed",
-				value: speed.rawValue)
+				value: speed.string)
 		case .startWithWalking(let val):
 			return URLQueryItem(
 				name: "startWithWalking",
@@ -84,7 +84,7 @@ enum Query {
 		case .accessibility(let acc):
 			return URLQueryItem(
 				name: "accessibility",
-				value: acc.rawValue)
+				value: acc.string)
 		case .location(let location):
 			return URLQueryItem(
 				name: "query",

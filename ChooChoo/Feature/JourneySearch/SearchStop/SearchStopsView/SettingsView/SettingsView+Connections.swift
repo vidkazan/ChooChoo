@@ -26,7 +26,6 @@ extension SettingsView {
 							}
 						}
 					),
-//				selection: $showWithTransfers,
 				content: {
 					Label(
 						title: {
@@ -80,16 +79,17 @@ extension SettingsView {
 					),
 				content: {
 					ForEach(JourneySettings.TransferDurationCases.allCases,id: \.rawValue) { val in
-						Text(
-							"\(val.rawValue) min ",
-							comment: "SettingsView: transferSegment: transfer duration"
-						)
+						Text(verbatim: val.string)
+//						Text(
+//							"\(val.rawValue) min ",
+//							comment: "SettingsView: transferSegment: transfer duration"
+//						)
 						.tag(val)
 					}
 				}, label: {
 					Label(
 						title: {
-							Text("Minimum time", comment : "SettingsView: transferSegment: picker name")
+							Text("Duration", comment : "SettingsView: transferSegment: picker name")
 						},
 						icon: {
 							Image(systemName: "clock.arrow.circlepath")
@@ -109,13 +109,13 @@ extension SettingsView {
 					),
 				content: {
 					ForEach(JourneySettings.TransferCountCases.allCases,id: \.rawValue) { val in
-						Text(verbatim: val.rawValue)
+						Text(verbatim: val.string)
 							.tag(val)
 					}
 				}, label: {
 					Label(
 						title: {
-							Text("Maximum count", comment : "SettingsView: transferSegment: picker name")
+							Text("Count", comment : "SettingsView: transferSegment: picker name")
 						},
 						icon: {
 							Image(.arrowLeftArrowRight)
