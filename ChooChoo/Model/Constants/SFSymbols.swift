@@ -9,6 +9,7 @@ import Foundation
 import SwiftUI
 
 enum ChooSFSymbols : String {
+	case sliderHorizontal = "slider.horizontal.3"
 	case gearshape = "gearshape"
 	case bookmark = "bookmark"
 	case bookmarkFill = "bookmark.fill"

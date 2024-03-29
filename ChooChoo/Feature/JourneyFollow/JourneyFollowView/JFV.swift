@@ -55,13 +55,23 @@ struct JourneyFollowView : View {
 			Text("Journey follow", comment: "navigationBarTitle")
 		)
 		.toolbar {
-			ToolbarItem(placement: .topBarTrailing, content: {
+			ToolbarItem(placement: .topBarLeading, content: {
 				if alertVM.state.alerts.contains(.offline) {
 					BadgeView(.offlineMode)
 						.frame(maxHeight: 40)
 						.badgeBackgroundStyle(.blue)
 						.animation(.easeInOut, value: alertVM.state.alerts)
 				}
+			})
+			ToolbarItem(placement: .topBarTrailing, content: {
+				Button(action: {
+					Model.shared.sheetViewModel.send(event: .didRequestShow(.appSettings))
+				}, label: {
+					ChooSFSymbols.gearshape.view
+						.tint(.primary)
+						.chewTextSize(.big)
+						.frame(maxWidth: 40,maxHeight: 40)
+				})
 			})
 		}
 	}

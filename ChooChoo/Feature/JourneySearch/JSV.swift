@@ -35,7 +35,7 @@ struct JourneySearchView : View {
 		.navigationBarTitleDisplayMode(.inline)
 		.toolbar {
 			ToolbarItem(
-				placement: .topBarTrailing,
+				placement: .topBarLeading,
 				content: {
 					if topAlertVM.state.alerts.contains(.offline) {
 						BadgeView(.offlineMode)
@@ -43,6 +43,16 @@ struct JourneySearchView : View {
 					}
 				}
 			)
+			ToolbarItem(placement: .topBarTrailing, content: {
+				Button(action: {
+					Model.shared.sheetViewModel.send(event: .didRequestShow(.appSettings))
+				}, label: {
+					ChooSFSymbols.gearshape.view
+						.tint(.primary)
+						.chewTextSize(.big)
+						.frame(maxWidth: 40,maxHeight: 40)
+				})
+			})
 		}
 	}
 }

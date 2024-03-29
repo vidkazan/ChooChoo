@@ -10,7 +10,7 @@ import SwiftUI
 enum Tabs : Int,CaseIterable {
 	case search
 	case follow
-	case appSettings
+//	case appSettings
 }
 
 struct FeatureView: View {
@@ -38,16 +38,16 @@ struct FeatureView: View {
 			}
 		)
 	}()
-	let tabAppSettingsLabel : some View = {
-		Label(
-			title: {
-				Text("Settings", comment : "TabItem")
-			},
-			icon: {
-				ChooSFSymbols.gearshape.view
-			}
-		)
-	}()
+//	let tabAppSettingsLabel : some View = {
+//		Label(
+//			title: {
+//				Text("Settings", comment : "TabItem")
+//			},
+//			icon: {
+//				ChooSFSymbols.gearshape.view
+//			}
+//		)
+//	}()
 	var handler: Binding<Tabs> { Binding(
 		get: { self.selectedTab },
 		set: {
@@ -55,7 +55,7 @@ struct FeatureView: View {
 				switch selectedTab {
 				case .search:
 					chewViewModel.send(event: .didTapCloseJourneyList)
-				case .follow,.appSettings:
+				case .follow:
 					break
 				}
 			}
@@ -75,11 +75,11 @@ struct FeatureView: View {
 				}
 					.tabItem { tabFollowLabel }
 					.tag(Tabs.follow)
-				NavigationStack {
-					AppSettingsView()
-				}
-					.tabItem { tabAppSettingsLabel }
-					.tag(Tabs.appSettings)
+//				NavigationStack {
+//					AppSettingsView()
+//				}
+//					.tabItem { tabAppSettingsLabel }
+//					.tag(Tabs.appSettings)
 			} else {
 				NavigationView {
 					JourneySearchView()
@@ -91,11 +91,11 @@ struct FeatureView: View {
 				}
 					.tabItem { tabFollowLabel }
 					.tag(Tabs.follow)
-				NavigationView {
-					AppSettingsView()
-				}
-					.tabItem { tabAppSettingsLabel }
-					.tag(Tabs.appSettings)
+//				NavigationView {
+//					AppSettingsView()
+//				}
+//					.tabItem { tabAppSettingsLabel }
+//					.tag(Tabs.appSettings)
 			}
 		}
 		.onReceive(chewViewModel.$state, perform: { state in

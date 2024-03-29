@@ -84,9 +84,11 @@ struct SheetViewInner : View {
 	let closeSheet : ()->Void
 	var body: some View {
 		switch type {
+		case .appSettings:
+			AppSettingsView()
 		case .tip(let tipType):
 			tipType.tipView
-		case .settings:
+		case .journeySettings:
 			SettingsView(
 				settings: chewViewModel.state.data.journeySettings,
 				closeSheet: closeSheet

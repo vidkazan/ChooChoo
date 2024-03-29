@@ -102,7 +102,8 @@ extension SheetViewModel{
 		case none
 		case tip(AppSettings.ChooTip)
 		case date
-		case settings
+		case appSettings
+		case journeySettings
 		case route(leg : LegViewData)
 		case mapDetails(_ request : MapDetailsRequest)
 		case mapPicker(type : LocationDirectionType)
@@ -120,7 +121,9 @@ extension SheetViewModel{
 				return []
 			case .date:
 				return [.large, .medium]
-			case .settings:
+			case .journeySettings:
+				return [.medium,.large]
+			case .appSettings:
 				return [.medium,.large]
 			case .route:
 				return [.medium,.large]
@@ -145,7 +148,9 @@ extension SheetViewModel{
 				return "none"
 			case .date:
 				return "Date"
-			case .settings:
+			case .appSettings:
+				return "App Settings"
+			case .journeySettings:
 				return "Journey Settings"
 			case .route:
 				return "Route"
@@ -170,8 +175,10 @@ extension SheetViewModel{
 				return MapPickerViewDataSource.self
 			case .date:
 				return DatePickerViewDataSource.self
-			case .settings:
-				return SettingsViewDataSource.self
+			case .appSettings:
+				return AppSettingsViewDataSource.self
+			case .journeySettings:
+				return JourneySettingsViewDataSource.self
 			case .route:
 				return RouteViewDataSource.self
 			case .mapDetails:
@@ -231,6 +238,8 @@ extension SheetViewModel {
 				return Empty().eraseToAnyPublisher()
 			}
 			switch type {
+			case .appSettings:
+				return Just(Event.didLoadDataForShowing(.appSettings, AppSettingsViewDataSource())).eraseToAnyPublisher()
 			case .tip:
 				return Just(Event.didLoadDataForShowing(type,InfoDataSource())).eraseToAnyPublisher()
 			case .mapPicker:
@@ -239,8 +248,8 @@ extension SheetViewModel {
 				return Just(Event.didLoadDataForShowing(type,EmptyDataSource())).eraseToAnyPublisher()
 			case .date:
 				return Just(Event.didLoadDataForShowing(type,DatePickerViewDataSource())).eraseToAnyPublisher()
-			case .settings:
-				return Just(Event.didLoadDataForShowing(type,SettingsViewDataSource())).eraseToAnyPublisher()
+			case .journeySettings:
+				return Just(Event.didLoadDataForShowing(type,JourneySettingsViewDataSource())).eraseToAnyPublisher()
 			case .route(leg: let leg):
 				return route(state: state, tripId: leg.tripId)
 			case .mapDetails(let request):

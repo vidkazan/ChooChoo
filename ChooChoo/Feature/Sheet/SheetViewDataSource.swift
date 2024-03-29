@@ -29,6 +29,7 @@ struct MapDetailsViewDataSource : SheetViewDataSource {
 	let coordRegion : MKCoordinateRegion
 	let mapLegDataList : OrderedSet<MapLegData>
 }
+
 struct JourneyDebugViewDataSource : SheetViewDataSource {
 	let legDTOs : [LegDTO]
 }
@@ -40,7 +41,8 @@ struct RemarksViewDataSource : SheetViewDataSource {
 }
 struct DatePickerViewDataSource	: SheetViewDataSource {}
 struct EmptyDataSource				: SheetViewDataSource {}
-struct SettingsViewDataSource		: SheetViewDataSource {}
+struct JourneySettingsViewDataSource		: SheetViewDataSource {}
+struct AppSettingsViewDataSource		: SheetViewDataSource {}
 struct OnboardingViewDataSource	: SheetViewDataSource {}
 struct InfoDataSource				: SheetViewDataSource {}
 struct MapPickerViewDataSource	: SheetViewDataSource {}

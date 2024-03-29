@@ -111,9 +111,6 @@
         }
       }
     },
-    "App Settings" : {
-      "comment" : "navigationBarTitle"
-    },
     "App system settings" : {
       "comment" : "AppSettingsView"
     },
@@ -629,7 +626,7 @@
       }
     },
     "Search" : {
-      "comment" : "TabItem\nsearch tip title",
+      "comment" : "search tip title\nTabItem",
       "localizations" : {
         "ru" : {
           "stringUnit" : {
@@ -666,9 +663,6 @@
     },
     "Server response data nil" : {
       "comment" : "ApiError"
-    },
-    "Settings" : {
-      "comment" : "TabItem"
     },
     "Show full segment" : {
       "comment" : "LegDetailsView: menu item",

@@ -16,21 +16,7 @@ struct AppSettingsView: View {
 	}
 	var body : some View {
 		Form {
-			Section(content: {
-				Button(action: {
-					appSetttingsVM.send(
-						event: .didRequestToChangeLegViewMode(
-							mode: appSetttingsVM.state.settings.legViewMode.next()
-						)
-					)
-				}, label: {
-					LegViewSettingsView(
-						mode: appSetttingsVM.state.settings.legViewMode
-					)
-				})
-			}, header: {
-				Text("Journey appearance", comment: "settingsView: section name")
-			})
+			journeyAppearence()
 			Section {
 				Button(action: {
 					UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!,options: [:], completionHandler: nil)
@@ -54,13 +40,33 @@ struct AppSettingsView: View {
 			})
 			#endif
 		}
-		.navigationBarTitleDisplayMode(.inline)
-		.navigationTitle(
-			Text("App Settings", comment: "navigationBarTitle")
-		)
+//		.navigationBarTitleDisplayMode(.inline)
+//		.navigationTitle(
+//			Text("App Settings", comment: "navigationBarTitle")
+//		)
 	}
 }
 
+extension AppSettingsView {
+	@ViewBuilder func journeyAppearence() -> some View {
+		Section(content: {
+			Button(action: {
+				appSetttingsVM.send(
+					event: .didRequestToChangeLegViewMode(
+						mode: appSetttingsVM.state.settings.legViewMode.next()
+					)
+				)
+			}, label: {
+				LegViewSettingsView(
+					mode: appSetttingsVM.state.settings.legViewMode
+				)
+			})
+		}, header: {
+			Text("Journey appearance", comment: "settingsView: section name")
+		})
+   }
+}
+
 #Preview {
-	AppSettingsView(appSetttingsVM: .init())
+	AppSettingsView(appSetttingsVM: .init()).journeyAppearence()
 }
