@@ -63,16 +63,6 @@ struct JourneyFollowView : View {
 						.animation(.easeInOut, value: alertVM.state.alerts)
 				}
 			})
-			ToolbarItem(placement: .topBarTrailing, content: {
-				Button(action: {
-					Model.shared.sheetViewModel.send(event: .didRequestShow(.appSettings))
-				}, label: {
-					ChooSFSymbols.gearshape.view
-						.tint(.primary)
-						.chewTextSize(.big)
-						.frame(maxWidth: 40,maxHeight: 40)
-				})
-			})
 		}
 	}
 }

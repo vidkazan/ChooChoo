@@ -48,10 +48,10 @@ struct JourneySearchView : View {
 					Model.shared.sheetViewModel.send(event: .didRequestShow(.appSettings))
 				}, label: {
 					ChooSFSymbols.gearshape.view
-						.tint(.primary)
-						.chewTextSize(.big)
-						.frame(maxWidth: 40,maxHeight: 40)
+						.tint(.secondary)
+//						.chewTextSize(.big)
 				})
+				.frame(maxWidth: 40,maxHeight: 40)
 			})
 		}
 	}
