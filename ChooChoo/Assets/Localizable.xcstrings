@@ -615,7 +615,7 @@
 
     },
     "Save" : {
-      "comment" : "datePickerView: save button\nsettingsView: save button",
+      "comment" : "settingsView: save button\ndatePickerView: save button",
       "localizations" : {
         "ru" : {
           "stringUnit" : {
@@ -626,7 +626,7 @@
       }
     },
     "Search" : {
-      "comment" : "search tip title\nTabItem",
+      "comment" : "TabItem\nsearch tip title",
       "localizations" : {
         "ru" : {
           "stringUnit" : {
@@ -692,6 +692,9 @@
     "Stop not found" : {
       "comment" : "ApiError"
     },
+    "sunlight / moonlight color" : {
+      "comment" : "AppSettings: LegViewMode: description"
+    },
     "This app doent have search button. Search starts when you set both departure and arrival stops." : {
       "comment" : "search tip text"
     },
@@ -727,6 +730,9 @@
           }
         }
       }
+    },
+    "transport type color" : {
+      "comment" : "AppSettings: LegViewMode: description"
     },
     "Transport types" : {
       "comment" : "SettingsView: transportTypes: section header",

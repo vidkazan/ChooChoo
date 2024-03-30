@@ -49,6 +49,22 @@ extension AppSettings {
 		case colorfulLegs
 		case all
 		
+		var description : [String] {
+			switch self {
+			case .sunEvents:
+				return [NSLocalizedString("sunlight / moonlight color", comment: "AppSettings: LegViewMode: description")]
+			case .colorfulLegs:
+				return [NSLocalizedString("transport type color", comment: "AppSettings: LegViewMode: description")]
+			case .all:
+				return
+					Array(
+						Self.colorfulLegs.description
+						+
+						Self.sunEvents.description
+					)
+			}
+		}
+		
 		var showSunEvents : Bool {
 			self != .colorfulLegs
 		}

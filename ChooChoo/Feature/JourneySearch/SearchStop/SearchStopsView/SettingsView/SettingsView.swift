@@ -105,11 +105,18 @@ struct LegViewSettingsView : View {
 	let mock = Mock.journeys.journeyNeussWolfsburg.decodedData?.journey.journeyViewData(depStop: nil, arrStop: nil, realtimeDataUpdatedAt: 0,settings: .init())
 	var body: some View {
 		if let mock = mock {
-			LegsView(
-				journey: mock,
-				mode: mode,
-				showLabels: false
-			)
+			VStack(alignment: .leading) {
+				LegsView(
+					journey: mock,
+					mode: mode,
+					showLabels: false
+				)
+				ForEach(mode.description,id:\.hashValue, content: {
+					Text(verbatim: "• " + $0)
+						.chewTextSize(.medium)
+						.tint(.secondary)
+				})
+			}
 		}
 	}
 }
