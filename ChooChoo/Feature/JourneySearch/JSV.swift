@@ -49,7 +49,6 @@ struct JourneySearchView : View {
 				}, label: {
 					ChooSFSymbols.gearshape.view
 						.tint(.secondary)
-//						.chewTextSize(.big)
 				})
 				.frame(maxWidth: 40,maxHeight: 40)
 			})
