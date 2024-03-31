@@ -114,7 +114,7 @@ extension SheetViewModel{
 		var detents : [ChewPresentationDetent] {
 			switch self {
 			case .tip:
-				return [.height(200),.medium]
+				return [.height(200)]
 			case .mapPicker:
 				return [.large]
 			case .none:

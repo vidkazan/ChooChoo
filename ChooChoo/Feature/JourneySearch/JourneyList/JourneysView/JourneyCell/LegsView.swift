@@ -18,6 +18,7 @@ struct LegsView: View {
 	let journey : JourneyViewData?
 	var gradientStops : [Gradient.Stop]
 	var showLabels : Bool
+	var showLegs : Bool
 	let legTapAction : ((UUID)->())?
 	
 	
@@ -25,6 +26,7 @@ struct LegsView: View {
 		journey: JourneyViewData?,
 		mode : AppSettings.LegViewMode,
 		showLabels : Bool = true,
+		showLegs : Bool = true,
 		legTapAction : ((UUID)->())? = nil
 	) {
 		self.journey = journey
@@ -32,6 +34,7 @@ struct LegsView: View {
 		self.mode = mode
 		self.gradientStops = journey?.sunEventsGradientStops ?? []
 		self.legTapAction = legTapAction
+		self.showLegs = showLegs
 	}
 	
 	var body: some View {
@@ -48,7 +51,7 @@ struct LegsView: View {
 						id: "sun",
 						in: legsViewNamespace
 					)
-					if let journey = journey {
+					if let journey = journey, showLegs == true {
 						ForEach(journey.legs) { leg in
 							if let legTapAction = legTapAction {
 								legViewBG(leg:leg,geo:geo)

@@ -1,0 +1,1523 @@
+{
+	"journey": {
+		"type": "journey",
+		"legs": [
+			{
+				"origin": {
+					"type": "stop",
+					"id": "8006369",
+					"name": "Westerland(Sylt)",
+					"location": {
+						"type": "location",
+						"id": "8006369",
+						"latitude": 54.907632,
+						"longitude": 8.309979
+					},
+					"products": {
+						"nationalExpress": false,
+						"national": true,
+						"regionalExpress": true,
+						"regional": true,
+						"suburban": false,
+						"bus": true,
+						"ferry": false,
+						"subway": false,
+						"tram": false,
+						"taxi": false
+					}
+				},
+				"destination": {
+					"type": "stop",
+					"id": "8002553",
+					"name": "Hamburg-Altona",
+					"location": {
+						"type": "location",
+						"id": "8002553",
+						"latitude": 53.552571,
+						"longitude": 9.93486
+					},
+					"products": {
+						"nationalExpress": true,
+						"national": true,
+						"regionalExpress": true,
+						"regional": true,
+						"suburban": true,
+						"bus": true,
+						"ferry": false,
+						"subway": false,
+						"tram": false,
+						"taxi": false
+					}
+				},
+				"departure": "2024-03-31T16:20:00+02:00",
+				"plannedDeparture": "2024-03-31T16:20:00+02:00",
+				"departureDelay": null,
+				"arrival": "2024-03-31T19:22:00+02:00",
+				"plannedArrival": "2024-03-31T19:22:00+02:00",
+				"arrivalDelay": null,
+				"reachable": true,
+				"tripId": "1|297459|0|80|31032024",
+				"line": {
+					"type": "line",
+					"id": "re-6",
+					"fahrtNr": "11031",
+					"name": "RE 6",
+					"public": true,
+					"adminCode": "8002B5",
+					"productName": "RE",
+					"mode": "train",
+					"product": "regional",
+					"operator": {
+						"type": "operator",
+						"id": "db-regio-ag-nord",
+						"name": "DB Regio AG Nord"
+					},
+					"additionalName": "RE 6"
+				},
+				"direction": "Hamburg-Altona",
+				"arrivalPlatform": "7",
+				"plannedArrivalPlatform": "7",
+				"arrivalPrognosisType": "prognosed",
+				"departurePlatform": "2",
+				"plannedDeparturePlatform": "2",
+				"departurePrognosisType": "prognosed",
+				"stopovers": [
+					{
+						"stop": {
+							"type": "stop",
+							"id": "8006369",
+							"name": "Westerland(Sylt)",
+							"location": {
+								"type": "location",
+								"id": "8006369",
+								"latitude": 54.907632,
+								"longitude": 8.309979
+							},
+							"products": {
+								"nationalExpress": false,
+								"national": true,
+								"regionalExpress": true,
+								"regional": true,
+								"suburban": false,
+								"bus": true,
+								"ferry": false,
+								"subway": false,
+								"tram": false,
+								"taxi": false
+							}
+						},
+						"arrival": null,
+						"plannedArrival": null,
+						"arrivalDelay": null,
+						"arrivalPlatform": null,
+						"arrivalPrognosisType": null,
+						"plannedArrivalPlatform": null,
+						"departure": "2024-03-31T16:20:00+02:00",
+						"plannedDeparture": "2024-03-31T16:20:00+02:00",
+						"departureDelay": null,
+						"departurePlatform": "2",
+						"departurePrognosisType": "prognosed",
+						"plannedDeparturePlatform": "2"
+					},
+					{
+						"stop": {
+							"type": "stop",
+							"id": "8003222",
+							"name": "Keitum",
+							"location": {
+								"type": "location",
+								"id": "8003222",
+								"latitude": 54.88879,
+								"longitude": 8.368984
+							},
+							"products": {
+								"nationalExpress": false,
+								"national": true,
+								"regionalExpress": false,
+								"regional": true,
+								"suburban": false,
+								"bus": true,
+								"ferry": false,
+								"subway": false,
+								"tram": false,
+								"taxi": false
+							}
+						},
+						"arrival": "2024-03-31T16:24:00+02:00",
+						"plannedArrival": "2024-03-31T16:24:00+02:00",
+						"arrivalDelay": null,
+						"arrivalPlatform": "2",
+						"arrivalPrognosisType": null,
+						"plannedArrivalPlatform": "2",
+						"departure": "2024-03-31T16:25:00+02:00",
+						"plannedDeparture": "2024-03-31T16:25:00+02:00",
+						"departureDelay": null,
+						"departurePlatform": "2",
+						"departurePrognosisType": null,
+						"plannedDeparturePlatform": "2"
+					},
+					{
+						"stop": {
+							"type": "stop",
+							"id": "8004093",
+							"name": "Morsum",
+							"location": {
+								"type": "location",
+								"id": "8004093",
+								"latitude": 54.872214,
+								"longitude": 8.432529
+							},
+							"products": {
+								"nationalExpress": false,
+								"national": false,
+								"regionalExpress": false,
+								"regional": true,
+								"suburban": false,
+								"bus": true,
+								"ferry": false,
+								"subway": false,
+								"tram": false,
+								"taxi": false
+							}
+						},
+						"arrival": "2024-03-31T16:30:00+02:00",
+						"plannedArrival": "2024-03-31T16:30:00+02:00",
+						"arrivalDelay": null,
+						"arrivalPlatform": "1",
+						"arrivalPrognosisType": null,
+						"plannedArrivalPlatform": "1",
+						"departure": "2024-03-31T16:30:00+02:00",
+						"plannedDeparture": "2024-03-31T16:30:00+02:00",
+						"departureDelay": null,
+						"departurePlatform": "1",
+						"departurePrognosisType": null,
+						"plannedDeparturePlatform": "1"
+					},
+					{
+						"stop": {
+							"type": "stop",
+							"id": "8003303",
+							"name": "Klanxbüll",
+							"location": {
+								"type": "location",
+								"id": "8003303",
+								"latitude": 54.861823,
+								"longitude": 8.676883
+							},
+							"products": {
+								"nationalExpress": false,
+								"national": true,
+								"regionalExpress": false,
+								"regional": true,
+								"suburban": false,
+								"bus": true,
+								"ferry": false,
+								"subway": false,
+								"tram": false,
+								"taxi": true
+							}
+						},
+						"arrival": "2024-03-31T16:43:00+02:00",
+						"plannedArrival": "2024-03-31T16:43:00+02:00",
+						"arrivalDelay": null,
+						"arrivalPlatform": "2",
+						"arrivalPrognosisType": null,
+						"plannedArrivalPlatform": "2",
+						"departure": "2024-03-31T16:44:00+02:00",
+						"plannedDeparture": "2024-03-31T16:44:00+02:00",
+						"departureDelay": null,
+						"departurePlatform": "2",
+						"departurePrognosisType": null,
+						"plannedDeparturePlatform": "2"
+					},
+					{
+						"stop": {
+							"type": "stop",
+							"id": "8004343",
+							"name": "Niebüll",
+							"location": {
+								"type": "location",
+								"id": "8004343",
+								"latitude": 54.78955,
+								"longitude": 8.834841
+							},
+							"products": {
+								"nationalExpress": false,
+								"national": true,
+								"regionalExpress": true,
+								"regional": true,
+								"suburban": false,
+								"bus": true,
+								"ferry": false,
+								"subway": false,
+								"tram": false,
+								"taxi": true
+							}
+						},
+						"arrival": "2024-03-31T16:59:00+02:00",
+						"plannedArrival": "2024-03-31T16:59:00+02:00",
+						"arrivalDelay": null,
+						"arrivalPlatform": "2",
+						"arrivalPrognosisType": null,
+						"plannedArrivalPlatform": "2",
+						"departure": "2024-03-31T17:01:00+02:00",
+						"plannedDeparture": "2024-03-31T17:01:00+02:00",
+						"departureDelay": null,
+						"departurePlatform": "2",
+						"departurePrognosisType": null,
+						"plannedDeparturePlatform": "2"
+					},
+					{
+						"stop": {
+							"type": "stop",
+							"id": "8003544",
+							"name": "Langenhorn(Schlesw)",
+							"location": {
+								"type": "location",
+								"id": "8003544",
+								"latitude": 54.686578,
+								"longitude": 8.946164
+							},
+							"products": {
+								"nationalExpress": false,
+								"national": false,
+								"regionalExpress": true,
+								"regional": true,
+								"suburban": false,
+								"bus": true,
+								"ferry": false,
+								"subway": false,
+								"tram": false,
+								"taxi": false
+							}
+						},
+						"arrival": "2024-03-31T17:09:00+02:00",
+						"plannedArrival": "2024-03-31T17:09:00+02:00",
+						"arrivalDelay": null,
+						"arrivalPlatform": "1",
+						"arrivalPrognosisType": null,
+						"plannedArrivalPlatform": "1",
+						"departure": "2024-03-31T17:10:00+02:00",
+						"plannedDeparture": "2024-03-31T17:10:00+02:00",
+						"departureDelay": null,
+						"departurePlatform": "1",
+						"departurePrognosisType": null,
+						"plannedDeparturePlatform": "1"
+					},
+					{
+						"stop": {
+							"type": "stop",
+							"id": "8001139",
+							"name": "Bredstedt",
+							"location": {
+								"type": "location",
+								"id": "8001139",
+								"latitude": 54.621415,
+								"longitude": 8.970003
+							},
+							"products": {
+								"nationalExpress": false,
+								"national": false,
+								"regionalExpress": true,
+								"regional": true,
+								"suburban": false,
+								"bus": true,
+								"ferry": false,
+								"subway": false,
+								"tram": false,
+								"taxi": true
+							}
+						},
+						"arrival": "2024-03-31T17:16:00+02:00",
+						"plannedArrival": "2024-03-31T17:16:00+02:00",
+						"arrivalDelay": null,
+						"arrivalPlatform": "1",
+						"arrivalPrognosisType": null,
+						"plannedArrivalPlatform": "1",
+						"departure": "2024-03-31T17:16:00+02:00",
+						"plannedDeparture": "2024-03-31T17:16:00+02:00",
+						"departureDelay": null,
+						"departurePlatform": "1",
+						"departurePrognosisType": null,
+						"plannedDeparturePlatform": "1"
+					},
+					{
+						"stop": {
+							"type": "stop",
+							"id": "8000181",
+							"name": "Husum",
+							"location": {
+								"type": "location",
+								"id": "8000181",
+								"latitude": 54.472212,
+								"longitude": 9.054933
+							},
+							"products": {
+								"nationalExpress": false,
+								"national": true,
+								"regionalExpress": true,
+								"regional": true,
+								"suburban": false,
+								"bus": true,
+								"ferry": false,
+								"subway": false,
+								"tram": false,
+								"taxi": true
+							}
+						},
+						"arrival": "2024-03-31T17:29:00+02:00",
+						"plannedArrival": "2024-03-31T17:29:00+02:00",
+						"arrivalDelay": null,
+						"arrivalPlatform": "5",
+						"arrivalPrognosisType": null,
+						"plannedArrivalPlatform": "5",
+						"departure": "2024-03-31T17:31:00+02:00",
+						"plannedDeparture": "2024-03-31T17:31:00+02:00",
+						"departureDelay": null,
+						"departurePlatform": "5",
+						"departurePrognosisType": null,
+						"plannedDeparturePlatform": "5"
+					},
+					{
+						"stop": {
+							"type": "stop",
+							"id": "8002115",
+							"name": "Friedrichstadt",
+							"location": {
+								"type": "location",
+								"id": "8002115",
+								"latitude": 54.378167,
+								"longitude": 9.079069
+							},
+							"products": {
+								"nationalExpress": false,
+								"national": false,
+								"regionalExpress": false,
+								"regional": true,
+								"suburban": false,
+								"bus": true,
+								"ferry": false,
+								"subway": false,
+								"tram": false,
+								"taxi": true
+							}
+						},
+						"arrival": "2024-03-31T17:38:00+02:00",
+						"plannedArrival": "2024-03-31T17:38:00+02:00",
+						"arrivalDelay": null,
+						"arrivalPlatform": "2",
+						"arrivalPrognosisType": null,
+						"plannedArrivalPlatform": "2",
+						"departure": "2024-03-31T17:39:00+02:00",
+						"plannedDeparture": "2024-03-31T17:39:00+02:00",
+						"departureDelay": null,
+						"departurePlatform": "2",
+						"departurePrognosisType": null,
+						"plannedDeparturePlatform": "2"
+					},
+					{
+						"stop": {
+							"type": "stop",
+							"id": "8003798",
+							"name": "Lunden",
+							"location": {
+								"type": "location",
+								"id": "8003798",
+								"latitude": 54.331136,
+								"longitude": 9.030788
+							},
+							"products": {
+								"nationalExpress": false,
+								"national": false,
+								"regionalExpress": false,
+								"regional": true,
+								"suburban": false,
+								"bus": true,
+								"ferry": false,
+								"subway": false,
+								"tram": false,
+								"taxi": true
+							}
+						},
+						"arrival": "2024-03-31T17:45:00+02:00",
+						"plannedArrival": "2024-03-31T17:45:00+02:00",
+						"arrivalDelay": null,
+						"arrivalPlatform": "1",
+						"arrivalPrognosisType": null,
+						"plannedArrivalPlatform": "1",
+						"departure": "2024-03-31T17:46:00+02:00",
+						"plannedDeparture": "2024-03-31T17:46:00+02:00",
+						"departureDelay": null,
+						"departurePlatform": "1",
+						"departurePrognosisType": null,
+						"plannedDeparturePlatform": "1"
+					},
+					{
+						"stop": {
+							"type": "stop",
+							"id": "8000155",
+							"name": "Heide(Holst)",
+							"location": {
+								"type": "location",
+								"id": "8000155",
+								"latitude": 54.19423,
+								"longitude": 9.10085
+							},
+							"products": {
+								"nationalExpress": false,
+								"national": true,
+								"regionalExpress": false,
+								"regional": true,
+								"suburban": false,
+								"bus": true,
+								"ferry": false,
+								"subway": false,
+								"tram": false,
+								"taxi": true
+							}
+						},
+						"arrival": "2024-03-31T17:57:00+02:00",
+						"plannedArrival": "2024-03-31T17:57:00+02:00",
+						"arrivalDelay": null,
+						"arrivalPlatform": "1",
+						"arrivalPrognosisType": null,
+						"plannedArrivalPlatform": "1",
+						"departure": "2024-03-31T18:02:00+02:00",
+						"plannedDeparture": "2024-03-31T18:02:00+02:00",
+						"departureDelay": null,
+						"departurePlatform": "1",
+						"departurePrognosisType": null,
+						"plannedDeparturePlatform": "1"
+					},
+					{
+						"stop": {
+							"type": "stop",
+							"id": "8003102",
+							"name": "Itzehoe",
+							"location": {
+								"type": "location",
+								"id": "8003102",
+								"latitude": 53.92396,
+								"longitude": 9.510237
+							},
+							"products": {
+								"nationalExpress": false,
+								"national": true,
+								"regionalExpress": false,
+								"regional": true,
+								"suburban": false,
+								"bus": true,
+								"ferry": false,
+								"subway": false,
+								"tram": false,
+								"taxi": false
+							}
+						},
+						"arrival": "2024-03-31T18:36:00+02:00",
+						"plannedArrival": "2024-03-31T18:36:00+02:00",
+						"arrivalDelay": null,
+						"arrivalPlatform": "4",
+						"arrivalPrognosisType": null,
+						"plannedArrivalPlatform": "4",
+						"departure": "2024-03-31T18:37:00+02:00",
+						"plannedDeparture": "2024-03-31T18:37:00+02:00",
+						"departureDelay": null,
+						"departurePlatform": "4",
+						"departurePrognosisType": null,
+						"plannedDeparturePlatform": "4"
+					},
+					{
+						"stop": {
+							"type": "stop",
+							"id": "8000092",
+							"name": "Elmshorn",
+							"location": {
+								"type": "location",
+								"id": "8000092",
+								"latitude": 53.755116,
+								"longitude": 9.659053
+							},
+							"products": {
+								"nationalExpress": false,
+								"national": false,
+								"regionalExpress": false,
+								"regional": true,
+								"suburban": false,
+								"bus": true,
+								"ferry": false,
+								"subway": false,
+								"tram": false,
+								"taxi": false
+							}
+						},
+						"arrival": "2024-03-31T18:59:00+02:00",
+						"plannedArrival": "2024-03-31T18:59:00+02:00",
+						"arrivalDelay": null,
+						"arrivalPlatform": "3",
+						"arrivalPrognosisType": null,
+						"plannedArrivalPlatform": "3",
+						"departure": "2024-03-31T19:00:00+02:00",
+						"plannedDeparture": "2024-03-31T19:00:00+02:00",
+						"departureDelay": null,
+						"departurePlatform": "3",
+						"departurePrognosisType": null,
+						"plannedDeparturePlatform": "3"
+					},
+					{
+						"stop": {
+							"type": "stop",
+							"id": "8002553",
+							"name": "Hamburg-Altona",
+							"location": {
+								"type": "location",
+								"id": "8002553",
+								"latitude": 53.552571,
+								"longitude": 9.93486
+							},
+							"products": {
+								"nationalExpress": true,
+								"national": true,
+								"regionalExpress": true,
+								"regional": true,
+								"suburban": true,
+								"bus": true,
+								"ferry": false,
+								"subway": false,
+								"tram": false,
+								"taxi": false
+							}
+						},
+						"arrival": "2024-03-31T19:22:00+02:00",
+						"plannedArrival": "2024-03-31T19:22:00+02:00",
+						"arrivalDelay": null,
+						"arrivalPlatform": "7",
+						"arrivalPrognosisType": "prognosed",
+						"plannedArrivalPlatform": "7",
+						"departure": null,
+						"plannedDeparture": null,
+						"departureDelay": null,
+						"departurePlatform": null,
+						"departurePrognosisType": null,
+						"plannedDeparturePlatform": null
+					}
+				],
+				"remarks": [
+					{
+						"text": "Number of bicycles conveyed limited",
+						"type": "hint",
+						"code": "bicycle-conveyance",
+						"summary": "bicycles conveyed"
+					},
+					{
+						"text": "vehicle-mounted access aid",
+						"type": "hint",
+						"code": "boarding-ramp",
+						"summary": "vehicle-mounted boarding ramp available"
+					},
+					{
+						"type": "hint",
+						"code": "SI",
+						"text": "Barrierefreier Zustieg an geeigneten Stationen möglich"
+					},
+					{
+						"type": "hint",
+						"code": "SM",
+						"text": "Info www.bahn.de/sh-barrierefrei"
+					},
+					{
+						"type": "status",
+						"summary": "RE 11031: Westerland(Sylt): Information.",
+						"code": null,
+						"text": "Wegen Umbauarbeiten sind am Bahnhof Westerland(Sylt) bis Juni 2024 die Gepäckschließfächer nur sehr eingeschränkt verfügbar. Wir bitten um Entschuldigung."
+					}
+				]
+			},
+			{
+				"origin": {
+					"type": "stop",
+					"id": "8002553",
+					"name": "Hamburg-Altona",
+					"location": {
+						"type": "location",
+						"id": "8002553",
+						"latitude": 53.552571,
+						"longitude": 9.93486
+					},
+					"products": {
+						"nationalExpress": true,
+						"national": true,
+						"regionalExpress": true,
+						"regional": true,
+						"suburban": true,
+						"bus": true,
+						"ferry": false,
+						"subway": false,
+						"tram": false,
+						"taxi": false
+					}
+				},
+				"destination": {
+					"type": "stop",
+					"id": "8100014",
+					"name": "Wels Hbf",
+					"location": {
+						"type": "location",
+						"id": "8100014",
+						"latitude": 48.166082,
+						"longitude": 14.02657
+					},
+					"products": {
+						"nationalExpress": true,
+						"national": true,
+						"regionalExpress": true,
+						"regional": true,
+						"suburban": true,
+						"bus": false,
+						"ferry": false,
+						"subway": false,
+						"tram": false,
+						"taxi": false
+					}
+				},
+				"departure": "2024-03-31T19:56:00+02:00",
+				"plannedDeparture": "2024-03-31T19:56:00+02:00",
+				"departureDelay": null,
+				"arrival": "2024-04-01T08:14:00+02:00",
+				"plannedArrival": "2024-04-01T08:14:00+02:00",
+				"arrivalDelay": null,
+				"reachable": true,
+				"tripId": "1|369832|0|80|31032024",
+				"line": {
+					"type": "line",
+					"id": "nj-491",
+					"fahrtNr": "491",
+					"name": "NJ 491",
+					"public": true,
+					"adminCode": "81____",
+					"productName": "NJ",
+					"mode": "train",
+					"product": "national",
+					"operator": {
+						"type": "operator",
+						"id": "osterreichische-bundesbahnen",
+						"name": "Österreichische Bundesbahnen"
+					}
+				},
+				"direction": "Wien Hbf",
+				"arrivalPlatform": "4",
+				"plannedArrivalPlatform": "4",
+				"arrivalPrognosisType": null,
+				"departurePlatform": "9",
+				"plannedDeparturePlatform": "9",
+				"departurePrognosisType": "prognosed",
+				"stopovers": [
+					{
+						"stop": {
+							"type": "stop",
+							"id": "8002553",
+							"name": "Hamburg-Altona",
+							"location": {
+								"type": "location",
+								"id": "8002553",
+								"latitude": 53.552571,
+								"longitude": 9.93486
+							},
+							"products": {
+								"nationalExpress": true,
+								"national": true,
+								"regionalExpress": true,
+								"regional": true,
+								"suburban": true,
+								"bus": true,
+								"ferry": false,
+								"subway": false,
+								"tram": false,
+								"taxi": false
+							}
+						},
+						"arrival": null,
+						"plannedArrival": null,
+						"arrivalDelay": null,
+						"arrivalPlatform": null,
+						"arrivalPrognosisType": null,
+						"plannedArrivalPlatform": null,
+						"departure": "2024-03-31T19:56:00+02:00",
+						"plannedDeparture": "2024-03-31T19:56:00+02:00",
+						"departureDelay": null,
+						"departurePlatform": "9",
+						"departurePrognosisType": "prognosed",
+						"plannedDeparturePlatform": "9"
+					},
+					{
+						"stop": {
+							"type": "stop",
+							"id": "8002549",
+							"name": "Hamburg Hbf",
+							"location": {
+								"type": "location",
+								"id": "8002549",
+								"latitude": 53.553533,
+								"longitude": 10.00636
+							},
+							"products": {
+								"nationalExpress": true,
+								"national": true,
+								"regionalExpress": true,
+								"regional": true,
+								"suburban": true,
+								"bus": true,
+								"ferry": false,
+								"subway": true,
+								"tram": false,
+								"taxi": false
+							}
+						},
+						"arrival": null,
+						"plannedArrival": null,
+						"arrivalDelay": null,
+						"arrivalPlatform": null,
+						"arrivalPrognosisType": null,
+						"plannedArrivalPlatform": null,
+						"departure": "2024-03-31T20:10:00+02:00",
+						"plannedDeparture": "2024-03-31T20:10:00+02:00",
+						"departureDelay": null,
+						"departurePlatform": "14",
+						"departurePrognosisType": null,
+						"plannedDeparturePlatform": "14"
+					},
+					{
+						"stop": {
+							"type": "stop",
+							"id": "8000147",
+							"name": "Hamburg-Harburg",
+							"location": {
+								"type": "location",
+								"id": "8000147",
+								"latitude": 53.456198,
+								"longitude": 9.991591
+							},
+							"products": {
+								"nationalExpress": true,
+								"national": true,
+								"regionalExpress": true,
+								"regional": true,
+								"suburban": true,
+								"bus": true,
+								"ferry": false,
+								"subway": false,
+								"tram": false,
+								"taxi": false
+							}
+						},
+						"arrival": null,
+						"plannedArrival": null,
+						"arrivalDelay": null,
+						"arrivalPlatform": null,
+						"arrivalPrognosisType": null,
+						"plannedArrivalPlatform": null,
+						"departure": "2024-03-31T20:23:00+02:00",
+						"plannedDeparture": "2024-03-31T20:23:00+02:00",
+						"departureDelay": null,
+						"departurePlatform": "3",
+						"departurePrognosisType": null,
+						"plannedDeparturePlatform": "3"
+					},
+					{
+						"stop": {
+							"type": "stop",
+							"id": "8000152",
+							"name": "Hannover Hbf",
+							"location": {
+								"type": "location",
+								"id": "8000152",
+								"latitude": 52.377079,
+								"longitude": 9.741763
+							},
+							"products": {
+								"nationalExpress": true,
+								"national": true,
+								"regionalExpress": true,
+								"regional": true,
+								"suburban": true,
+								"bus": true,
+								"ferry": false,
+								"subway": false,
+								"tram": true,
+								"taxi": false
+							}
+						},
+						"arrival": "2024-03-31T21:54:00+02:00",
+						"plannedArrival": "2024-03-31T21:54:00+02:00",
+						"arrivalDelay": null,
+						"arrivalPlatform": "3",
+						"arrivalPrognosisType": null,
+						"plannedArrivalPlatform": "3",
+						"departure": "2024-03-31T21:57:00+02:00",
+						"plannedDeparture": "2024-03-31T21:57:00+02:00",
+						"departureDelay": null,
+						"departurePlatform": "3",
+						"departurePrognosisType": null,
+						"plannedDeparturePlatform": "3"
+					},
+					{
+						"stop": {
+							"type": "stop",
+							"id": "8000128",
+							"name": "Göttingen",
+							"location": {
+								"type": "location",
+								"id": "8000128",
+								"latitude": 51.536758,
+								"longitude": 9.926257
+							},
+							"products": {
+								"nationalExpress": true,
+								"national": true,
+								"regionalExpress": true,
+								"regional": true,
+								"suburban": false,
+								"bus": true,
+								"ferry": false,
+								"subway": false,
+								"tram": false,
+								"taxi": true
+							}
+						},
+						"arrival": "2024-03-31T22:38:00+02:00",
+						"plannedArrival": "2024-03-31T22:38:00+02:00",
+						"arrivalDelay": null,
+						"arrivalPlatform": "8",
+						"arrivalPrognosisType": null,
+						"plannedArrivalPlatform": "8",
+						"departure": "2024-03-31T22:48:00+02:00",
+						"plannedDeparture": "2024-03-31T22:48:00+02:00",
+						"departureDelay": null,
+						"departurePlatform": "8",
+						"departurePrognosisType": null,
+						"plannedDeparturePlatform": "8"
+					},
+					{
+						"stop": {
+							"type": "stop",
+							"id": "8000260",
+							"name": "Würzburg Hbf",
+							"location": {
+								"type": "location",
+								"id": "8000260",
+								"latitude": 49.802163,
+								"longitude": 9.93593
+							},
+							"products": {
+								"nationalExpress": true,
+								"national": true,
+								"regionalExpress": false,
+								"regional": true,
+								"suburban": false,
+								"bus": true,
+								"ferry": false,
+								"subway": false,
+								"tram": true,
+								"taxi": false
+							}
+						},
+						"arrival": "2024-04-01T02:48:00+02:00",
+						"plannedArrival": "2024-04-01T02:48:00+02:00",
+						"arrivalDelay": null,
+						"arrivalPlatform": "5",
+						"arrivalPrognosisType": null,
+						"plannedArrivalPlatform": "5",
+						"departure": "2024-04-01T02:50:00+02:00",
+						"plannedDeparture": "2024-04-01T02:50:00+02:00",
+						"departureDelay": null,
+						"departurePlatform": "5",
+						"departurePrognosisType": null,
+						"plannedDeparturePlatform": "5"
+					},
+					{
+						"stop": {
+							"type": "stop",
+							"id": "8000284",
+							"name": "Nürnberg Hbf",
+							"location": {
+								"type": "location",
+								"id": "8000284",
+								"latitude": 49.445435,
+								"longitude": 11.08227
+							},
+							"products": {
+								"nationalExpress": true,
+								"national": true,
+								"regionalExpress": true,
+								"regional": true,
+								"suburban": true,
+								"bus": true,
+								"ferry": false,
+								"subway": true,
+								"tram": true,
+								"taxi": false
+							}
+						},
+						"arrival": "2024-04-01T04:06:00+02:00",
+						"plannedArrival": "2024-04-01T04:06:00+02:00",
+						"arrivalDelay": null,
+						"arrivalPlatform": "8",
+						"arrivalPrognosisType": null,
+						"plannedArrivalPlatform": "8",
+						"departure": "2024-04-01T04:56:00+02:00",
+						"plannedDeparture": "2024-04-01T04:56:00+02:00",
+						"departureDelay": null,
+						"departurePlatform": "8",
+						"departurePrognosisType": null,
+						"plannedDeparturePlatform": "8"
+					},
+					{
+						"stop": {
+							"type": "stop",
+							"id": "8000309",
+							"name": "Regensburg Hbf",
+							"location": {
+								"type": "location",
+								"id": "8000309",
+								"latitude": 49.011751,
+								"longitude": 12.099669
+							},
+							"products": {
+								"nationalExpress": true,
+								"national": true,
+								"regionalExpress": false,
+								"regional": true,
+								"suburban": false,
+								"bus": true,
+								"ferry": false,
+								"subway": false,
+								"tram": false,
+								"taxi": true
+							}
+						},
+						"arrival": "2024-04-01T06:00:00+02:00",
+						"plannedArrival": "2024-04-01T06:00:00+02:00",
+						"arrivalDelay": null,
+						"arrivalPlatform": "9",
+						"arrivalPrognosisType": null,
+						"plannedArrivalPlatform": "9",
+						"departure": "2024-04-01T06:02:00+02:00",
+						"plannedDeparture": "2024-04-01T06:02:00+02:00",
+						"departureDelay": null,
+						"departurePlatform": "9",
+						"departurePrognosisType": null,
+						"plannedDeparturePlatform": "9"
+					},
+					{
+						"stop": {
+							"type": "stop",
+							"id": "8000298",
+							"name": "Passau Hbf",
+							"location": {
+								"type": "location",
+								"id": "8000298",
+								"latitude": 48.573778,
+								"longitude": 13.450775
+							},
+							"products": {
+								"nationalExpress": true,
+								"national": true,
+								"regionalExpress": false,
+								"regional": true,
+								"suburban": false,
+								"bus": true,
+								"ferry": false,
+								"subway": false,
+								"tram": false,
+								"taxi": true
+							}
+						},
+						"arrival": "2024-04-01T07:05:00+02:00",
+						"plannedArrival": "2024-04-01T07:05:00+02:00",
+						"arrivalDelay": null,
+						"arrivalPlatform": "5",
+						"arrivalPrognosisType": null,
+						"plannedArrivalPlatform": "5",
+						"departure": "2024-04-01T07:07:00+02:00",
+						"plannedDeparture": "2024-04-01T07:07:00+02:00",
+						"departureDelay": null,
+						"departurePlatform": "5",
+						"departurePrognosisType": null,
+						"plannedDeparturePlatform": "5",
+						"remarks": [
+							{
+								"type": "hint",
+								"code": "CT",
+								"text": "Comfortticket (IRT Integrated Reservation Ticket) (Passau Hbf - Wels Hbf)"
+							},
+							{
+								"type": "hint",
+								"code": "MC",
+								"text": "DANI Mini Cabins (Passau Hbf - Wels Hbf)"
+							},
+							{
+								"text": "Wifi available (Passau Hbf - Wels Hbf)",
+								"type": "hint",
+								"code": "wifi",
+								"summary": "WiFi available"
+							}
+						]
+					},
+					{
+						"stop": {
+							"type": "stop",
+							"id": "8100014",
+							"name": "Wels Hbf",
+							"location": {
+								"type": "location",
+								"id": "8100014",
+								"latitude": 48.166082,
+								"longitude": 14.02657
+							},
+							"products": {
+								"nationalExpress": true,
+								"national": true,
+								"regionalExpress": true,
+								"regional": true,
+								"suburban": true,
+								"bus": false,
+								"ferry": false,
+								"subway": false,
+								"tram": false,
+								"taxi": false
+							}
+						},
+						"arrival": "2024-04-01T08:14:00+02:00",
+						"plannedArrival": "2024-04-01T08:14:00+02:00",
+						"arrivalDelay": null,
+						"arrivalPlatform": "4",
+						"arrivalPrognosisType": null,
+						"plannedArrivalPlatform": "4",
+						"departure": null,
+						"plannedDeparture": null,
+						"departureDelay": null,
+						"departurePlatform": null,
+						"departurePrognosisType": null,
+						"plannedDeparturePlatform": null,
+						"remarks": [
+							{
+								"type": "hint",
+								"code": "CT",
+								"text": "Comfortticket (IRT Integrated Reservation Ticket) (Passau Hbf - Wels Hbf)"
+							},
+							{
+								"type": "hint",
+								"code": "MC",
+								"text": "DANI Mini Cabins (Passau Hbf - Wels Hbf)"
+							},
+							{
+								"text": "Wifi available (Passau Hbf - Wels Hbf)",
+								"type": "hint",
+								"code": "wifi",
+								"summary": "WiFi available"
+							}
+						]
+					}
+				],
+				"remarks": [
+					{
+						"text": "Subject to compulsory reservation",
+						"type": "hint",
+						"code": "compulsory-reservation",
+						"summary": "compulsory seat reservation"
+					},
+					{
+						"text": "Bicycles conveyed - subject to reservation",
+						"type": "hint",
+						"code": "bicycle-conveyance-reservation",
+						"summary": "bicycles conveyed, subject to reservation"
+					},
+					{
+						"text": "Number of bicycles conveyed limited",
+						"type": "hint",
+						"code": "bicycle-conveyance",
+						"summary": "bicycles conveyed"
+					},
+					{
+						"type": "hint",
+						"code": "J2",
+						"text": "2nd class only seated accommodation"
+					},
+					{
+						"type": "hint",
+						"code": "OJ",
+						"text": "ÖBB Nightjet (www.nightjet.com)"
+					},
+					{
+						"type": "hint",
+						"code": "GP",
+						"text": "Global price"
+					},
+					{
+						"type": "hint",
+						"code": "SW",
+						"text": "Sleeping-car"
+					},
+					{
+						"type": "hint",
+						"code": "LW",
+						"text": "Couchettes"
+					},
+					{
+						"type": "hint",
+						"code": "MN",
+						"text": "snacks and beverages available from sleeper/couchette attendant"
+					},
+					{
+						"text": "Wheelchair space - For advance notification, call +43 5 1717",
+						"type": "hint",
+						"code": "wheelchairs-space-reservation",
+						"summary": "space for wheelchairs, subject to reservation"
+					},
+					{
+						"text": "WC accessible for wheelchair",
+						"type": "hint",
+						"code": "wheelchair-accessible-toilet",
+						"summary": "wheelchair-accessible toilet available"
+					}
+				]
+			},
+			{
+				"origin": {
+					"type": "stop",
+					"id": "8100014",
+					"name": "Wels Hbf",
+					"location": {
+						"type": "location",
+						"id": "8100014",
+						"latitude": 48.166082,
+						"longitude": 14.02657
+					},
+					"products": {
+						"nationalExpress": true,
+						"national": true,
+						"regionalExpress": true,
+						"regional": true,
+						"suburban": true,
+						"bus": false,
+						"ferry": false,
+						"subway": false,
+						"tram": false,
+						"taxi": false
+					}
+				},
+				"destination": {
+					"type": "stop",
+					"id": "8100003",
+					"name": "Wien Westbahnhof",
+					"location": {
+						"type": "location",
+						"id": "8100003",
+						"latitude": 48.196915,
+						"longitude": 16.337247
+					},
+					"products": {
+						"nationalExpress": false,
+						"national": false,
+						"regionalExpress": true,
+						"regional": true,
+						"suburban": true,
+						"bus": false,
+						"ferry": false,
+						"subway": true,
+						"tram": true,
+						"taxi": false
+					}
+				},
+				"departure": "2024-04-01T08:20:00+02:00",
+				"plannedDeparture": "2024-04-01T08:20:00+02:00",
+				"departureDelay": null,
+				"arrival": "2024-04-01T09:52:00+02:00",
+				"plannedArrival": "2024-04-01T09:52:00+02:00",
+				"arrivalDelay": null,
+				"reachable": true,
+				"tripId": "1|516546|1|80|1042024",
+				"line": {
+					"type": "line",
+					"id": "wb-953",
+					"fahrtNr": "953",
+					"name": "WB 953",
+					"public": true,
+					"adminCode": "3236__",
+					"productName": "WB",
+					"mode": "train",
+					"product": "regionalExpress",
+					"operator": {
+						"type": "operator",
+						"id": "westbahn",
+						"name": "WESTbahn"
+					}
+				},
+				"direction": "Wien Westbahnhof",
+				"arrivalPlatform": null,
+				"plannedArrivalPlatform": null,
+				"arrivalPrognosisType": "prognosed",
+				"departurePlatform": null,
+				"plannedDeparturePlatform": null,
+				"departurePrognosisType": "prognosed",
+				"stopovers": [
+					{
+						"stop": {
+							"type": "stop",
+							"id": "8100014",
+							"name": "Wels Hbf",
+							"location": {
+								"type": "location",
+								"id": "8100014",
+								"latitude": 48.166082,
+								"longitude": 14.02657
+							},
+							"products": {
+								"nationalExpress": true,
+								"national": true,
+								"regionalExpress": true,
+								"regional": true,
+								"suburban": true,
+								"bus": false,
+								"ferry": false,
+								"subway": false,
+								"tram": false,
+								"taxi": false
+							}
+						},
+						"arrival": null,
+						"plannedArrival": null,
+						"arrivalDelay": null,
+						"arrivalPlatform": null,
+						"arrivalPrognosisType": null,
+						"plannedArrivalPlatform": null,
+						"departure": "2024-04-01T08:20:00+02:00",
+						"plannedDeparture": "2024-04-01T08:20:00+02:00",
+						"departureDelay": null,
+						"departurePlatform": null,
+						"departurePrognosisType": null,
+						"plannedDeparturePlatform": null
+					},
+					{
+						"stop": {
+							"type": "stop",
+							"id": "8100013",
+							"name": "Linz Hbf",
+							"location": {
+								"type": "location",
+								"id": "8100013",
+								"latitude": 48.290178,
+								"longitude": 14.292129
+							},
+							"products": {
+								"nationalExpress": true,
+								"national": true,
+								"regionalExpress": true,
+								"regional": true,
+								"suburban": true,
+								"bus": false,
+								"ferry": false,
+								"subway": false,
+								"tram": true,
+								"taxi": false
+							}
+						},
+						"arrival": "2024-04-01T08:34:00+02:00",
+						"plannedArrival": "2024-04-01T08:34:00+02:00",
+						"arrivalDelay": null,
+						"arrivalPlatform": null,
+						"arrivalPrognosisType": null,
+						"plannedArrivalPlatform": null,
+						"departure": "2024-04-01T08:36:00+02:00",
+						"plannedDeparture": "2024-04-01T08:36:00+02:00",
+						"departureDelay": null,
+						"departurePlatform": null,
+						"departurePrognosisType": null,
+						"plannedDeparturePlatform": null
+					},
+					{
+						"stop": {
+							"type": "stop",
+							"id": "8100012",
+							"name": "Amstetten NÖ",
+							"location": {
+								"type": "location",
+								"id": "8100012",
+								"latitude": 48.121603,
+								"longitude": 14.878109
+							},
+							"products": {
+								"nationalExpress": true,
+								"national": true,
+								"regionalExpress": true,
+								"regional": true,
+								"suburban": false,
+								"bus": false,
+								"ferry": false,
+								"subway": false,
+								"tram": false,
+								"taxi": false
+							}
+						},
+						"arrival": "2024-04-01T09:00:00+02:00",
+						"plannedArrival": "2024-04-01T09:00:00+02:00",
+						"arrivalDelay": null,
+						"arrivalPlatform": null,
+						"arrivalPrognosisType": null,
+						"plannedArrivalPlatform": null,
+						"departure": "2024-04-01T09:01:00+02:00",
+						"plannedDeparture": "2024-04-01T09:01:00+02:00",
+						"departureDelay": null,
+						"departurePlatform": null,
+						"departurePrognosisType": null,
+						"plannedDeparturePlatform": null
+					},
+					{
+						"stop": {
+							"type": "stop",
+							"id": "8100008",
+							"name": "St.Pölten Hbf",
+							"location": {
+								"type": "location",
+								"id": "8100008",
+								"latitude": 48.208304,
+								"longitude": 15.624672
+							},
+							"products": {
+								"nationalExpress": true,
+								"national": true,
+								"regionalExpress": true,
+								"regional": true,
+								"suburban": true,
+								"bus": false,
+								"ferry": false,
+								"subway": false,
+								"tram": false,
+								"taxi": false
+							}
+						},
+						"arrival": "2024-04-01T09:24:00+02:00",
+						"plannedArrival": "2024-04-01T09:24:00+02:00",
+						"arrivalDelay": null,
+						"arrivalPlatform": null,
+						"arrivalPrognosisType": null,
+						"plannedArrivalPlatform": null,
+						"departure": "2024-04-01T09:25:00+02:00",
+						"plannedDeparture": "2024-04-01T09:25:00+02:00",
+						"departureDelay": null,
+						"departurePlatform": null,
+						"departurePrognosisType": null,
+						"plannedDeparturePlatform": null
+					},
+					{
+						"stop": {
+							"type": "stop",
+							"id": "8100447",
+							"name": "Wien Hütteldorf",
+							"location": {
+								"type": "location",
+								"id": "8100447",
+								"latitude": 48.197256,
+								"longitude": 16.261252
+							},
+							"products": {
+								"nationalExpress": false,
+								"national": false,
+								"regionalExpress": true,
+								"regional": true,
+								"suburban": true,
+								"bus": false,
+								"ferry": false,
+								"subway": true,
+								"tram": false,
+								"taxi": false
+							}
+						},
+						"arrival": "2024-04-01T09:44:00+02:00",
+						"plannedArrival": "2024-04-01T09:44:00+02:00",
+						"arrivalDelay": null,
+						"arrivalPlatform": null,
+						"arrivalPrognosisType": null,
+						"plannedArrivalPlatform": null,
+						"departure": null,
+						"plannedDeparture": null,
+						"departureDelay": null,
+						"departurePlatform": null,
+						"departurePrognosisType": null,
+						"plannedDeparturePlatform": null
+					},
+					{
+						"stop": {
+							"type": "stop",
+							"id": "8100003",
+							"name": "Wien Westbahnhof",
+							"location": {
+								"type": "location",
+								"id": "8100003",
+								"latitude": 48.196915,
+								"longitude": 16.337247
+							},
+							"products": {
+								"nationalExpress": false,
+								"national": false,
+								"regionalExpress": true,
+								"regional": true,
+								"suburban": true,
+								"bus": false,
+								"ferry": false,
+								"subway": true,
+								"tram": true,
+								"taxi": false
+							}
+						},
+						"arrival": "2024-04-01T09:52:00+02:00",
+						"plannedArrival": "2024-04-01T09:52:00+02:00",
+						"arrivalDelay": null,
+						"arrivalPlatform": null,
+						"arrivalPrognosisType": "prognosed",
+						"plannedArrivalPlatform": null,
+						"departure": null,
+						"plannedDeparture": null,
+						"departureDelay": null,
+						"departurePlatform": null,
+						"departurePrognosisType": null,
+						"plannedDeparturePlatform": null
+					}
+				],
+				"remarks": [
+					{
+						"text": "Number of bicycles conveyed limited",
+						"type": "hint",
+						"code": "bicycle-conveyance",
+						"summary": "bicycles conveyed"
+					},
+					{
+						"type": "hint",
+						"code": "BO",
+						"text": "mobile on-board service (snacks and beverages)"
+					},
+					{
+						"text": "space for wheelchairs",
+						"type": "hint",
+						"code": "wheelchairs-space",
+						"summary": "space for wheelchairs"
+					},
+					{
+						"type": "hint",
+						"code": "WH",
+						"text": "Tickets are available at www.westbahn.at or directly on board"
+					},
+					{
+						"text": "Wifi available",
+						"type": "hint",
+						"code": "wifi",
+						"summary": "WiFi available"
+					}
+				]
+			}
+		],
+		"refreshToken": "T$A=1@O=Westerland(Sylt)@L=8006369@a=128@$A=1@O=Hamburg-Altona@L=8002553@a=128@$202403311620$202403311922$RE 11031$$1$$$$$$§T$A=1@O=Hamburg-Altona@L=8002553@a=128@$A=1@O=Wels Hbf@L=8100014@a=128@$202403311956$202404010814$NJ   491$$1$$$$$$§T$A=1@O=Wels Hbf@L=8100014@a=128@$A=1@O=Wien Westbahnhof@L=8100003@a=128@$202404010820$202404010952$WB   953$$1$$$$$$",
+		"remarks": [],
+		"price": null
+	},
+	"realtimeDataUpdatedAt": 1711883832
+}

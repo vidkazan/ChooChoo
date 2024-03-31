@@ -37,6 +37,9 @@ struct JourneyMockFiles{
 	static let journeyNeussWolfsburg = type.init(
 		"journey-Neuss-Wolfsburg"
 	)
+	static let journeySyltWien = type.init(
+		"journeySylt-Wien"
+	)
 	static let journeyNeussWolfsburgFirstCancelled = type.init(
 		"journey-Neuss-Wolfsburg-First-Cancelled"
 	)

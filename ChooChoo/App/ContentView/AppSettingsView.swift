@@ -34,6 +34,7 @@ struct AppSettingsView: View {
 							tips: Set(AppSettings.ChooTipType.allCases)
 						)
 					))
+					Model.shared.sheetViewModel.send(event: .didRequestHide)
 				}, label: {
 					Text("Reset tips")
 				})

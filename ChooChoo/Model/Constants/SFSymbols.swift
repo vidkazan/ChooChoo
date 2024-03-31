@@ -9,6 +9,9 @@ import Foundation
 import SwiftUI
 
 enum ChooSFSymbols : String {
+	case sunMaxFill = "sun.max.fill"
+	case sunMax = "sun.max"
+	case moonStars = "moon.stars"
 	case sliderHorizontal = "slider.horizontal.3"
 	case gearshape = "gearshape"
 	case gearshape2 = "gearshape.2"

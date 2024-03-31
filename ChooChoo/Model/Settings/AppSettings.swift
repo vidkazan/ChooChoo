@@ -56,12 +56,11 @@ extension AppSettings {
 			case .colorfulLegs:
 				return [NSLocalizedString("transport type color", comment: "AppSettings: LegViewMode: description")]
 			case .all:
-				return
-					Array(
-						Self.colorfulLegs.description
-						+
-						Self.sunEvents.description
-					)
+				return Array(
+					Self.colorfulLegs.description
+					+
+					Self.sunEvents.description
+				)
 			}
 		}
 		
@@ -114,7 +113,7 @@ extension AppSettings {
 				case .followJourney:
 					HowToFollowJourneyView()
 				case .sunEvents:
-					LegViewSettingsView(mode: .sunEvents)
+					SunEventsTipView(mode: .sunEvents)
 				}
 			}
 			.padding(5)
@@ -251,6 +250,7 @@ extension AppSettings.ChooTip {
 							},
 							icon: {
 								ChooSFSymbols.infoCircle.view
+									.padding(.leading,10)
 							}
 						)
 						.tint(.primary)
@@ -272,7 +272,7 @@ extension AppSettings.ChooTip {
 								.sunEventsGradientStops
 								.map {
 									.init(
-										color: $0.color.opacity(0.4),
+										color: $0.color.opacity(0.7),
 										location: $0.location
 									)
 								} ?? .init(),
@@ -283,6 +283,50 @@ extension AppSettings.ChooTip {
 					.clipShape(.rect(cornerRadius: 8))
 				})
 			}
+		}
+	}
+}
+
+struct SunEventsTipView : View {
+	let mode : AppSettings.LegViewMode
+	let mock = Mock
+		.journeys
+		.journeySyltWien
+		.decodedData?
+		.journey
+		.journeyViewData(
+			depStop: nil,
+			arrStop: nil,
+			realtimeDataUpdatedAt: 0,
+			settings: .init()
+	)
+	var body: some View {
+		if let mock = mock {
+			VStack(alignment: .leading) {
+				Text("**Yellow** color shows **daylight**,",comment: "SunEventsTipView")
+				Text("**Blue** color - **moonlight**",comment: "SunEventsTipView")
+				LegsView(
+					journey: mock,
+					mode: mode,
+					showLabels: false,
+					showLegs: false
+				)
+				.overlay {
+					HStack {
+						ChooSFSymbols.sunMaxFill.view.chewTextSize(.medium)
+							.padding(.leading,20)
+						Spacer()
+						ChooSFSymbols.moonStars.view.chewTextSize(.medium)
+						Spacer()
+						ChooSFSymbols.sunMaxFill.view.chewTextSize(.medium)
+							.padding(.trailing,10)
+					}
+					.foregroundStyle(.primary)
+				}
+			}
+			.padding(10)
+			.badgeBackgroundStyle(.secondary)
+			.padding(10)
 		}
 	}
 }
@@ -305,6 +349,7 @@ extension AppSettings {
 }
 
 #Preview(body: {
-	AppSettings.ChooTip.swipeActions.tipLabel
+	SunEventsTipView(mode: .sunEvents)
+		.environmentObject(ChewViewModel())
 		.padding()
 })
