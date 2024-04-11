@@ -63,7 +63,7 @@ extension JourneyListView {
 	func notFound() -> some View {
 		return Group {
 			ErrorView(
-				viewType: .info,
+				viewType: .alert,
 				msg: Text("Connections not found",comment: "JourneyListView: empty state"),
 				size: .big,
 				action: nil

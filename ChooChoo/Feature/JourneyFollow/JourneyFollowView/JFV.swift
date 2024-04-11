@@ -30,7 +30,7 @@ struct JourneyFollowView : View {
 				switch viewModel.state.journeys.count {
 				case 0:
 					ErrorView(
-						viewType: .info,
+						viewType: .alert,`
 						msg: Text(
 							"You have no followed journeys",
 							comment: "JourneyFollowView: empty view: msg"
@@ -103,9 +103,9 @@ extension JourneyFollowView {
 			.onDisappear {
 				appSettingsVM.send(event: .didShowTip(tip: .swipeActions))
 			}
-			.onTapGesture {
-				appSettingsVM.send(event: .didShowTip(tip: .swipeActions))
-			}
+//			.onTapGesture {
+//				appSettingsVM.send(event: .didShowTip(tip: .swipeActions))
+//			}
 //			.swipeActions(edge: .trailing, content: {
 //				Button("", role: .destructive, action: {
 //					appSettingsVM.send(event: .didShowTip(tip: .swipeActions))

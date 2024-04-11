@@ -1129,8 +1129,8 @@
             filePath = "ChooChoo/Model/Settings/AppSettings.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "292"
-            endingLineNumber = "292"
+            startingLineNumber = "302"
+            endingLineNumber = "302"
             landmarkName = "SunEventsTipView"
             landmarkType = "14">
          </BreakpointContent>
@@ -1145,8 +1145,8 @@
             filePath = "ChooChoo/Model/Settings/AppSettings.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "304"
-            endingLineNumber = "304"
+            startingLineNumber = "314"
+            endingLineNumber = "314"
             landmarkName = "body"
             landmarkType = "24">
          </BreakpointContent>

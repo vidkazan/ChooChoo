@@ -23,7 +23,7 @@ struct ChooTipSearch : Tip {
 	}
 	var message: Text? {
 		Text(
-			"This app doent have search button. Search starts when you set both departure and arrival stops.",
+			"App does not have search button. **Search starts** after you set both **departure** and **arrival** stops.",
 			comment: "search tip text"
 		)
 	}

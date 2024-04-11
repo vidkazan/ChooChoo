@@ -11,7 +11,7 @@ import SwiftUI
 struct ErrorView : View {
 	enum ViewType : String,Hashable, CaseIterable {
 		case error
-		case info
+		case alert
 	}
 	let viewType : ViewType
 	let msg : Text

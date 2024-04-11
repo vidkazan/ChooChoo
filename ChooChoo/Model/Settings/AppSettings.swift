@@ -171,31 +171,41 @@ extension AppSettings.ChooTip {
 			@State var anim : AnimCase = .center0
 			let timer = Timer.publish(every: 0.5, on: .main, in: .common).autoconnect()
 			var body: some View {
-				HStack(spacing: 0) {
-					Group {
-						Color.chewFillGreenSecondary
-						Color.chewFillYellowPrimary
-					}
-					.frame(width: anim.leftCellsWidth)
-					Color.black.opacity(0.6)
-						.overlay{
-							Text("journeys are swipable")
-								.chewTextSize(.medium)
-								.foregroundStyle(.secondary)
+					HStack(spacing: 0) {
+						Group {
+							Color.chewFillGreenSecondary
+							Color.chewFillYellowPrimary
 						}
-					Color.chewFillRedPrimary
-						.frame(width: anim.rightCellsWidth)
-				}
-				.background {
-					Color.chewFillTertiary
-				}
-				.frame(height: 40)
-				.clipShape(.rect(cornerRadius: 10))
-				.onReceive(timer, perform: { _ in
-					withAnimation(.spring, {
-						anim = anim.next()
+						.frame(width: anim.leftCellsWidth)
+						Color.black.opacity(0.6)
+							.overlay{
+								Text("Swipe for action",comment: "SwipeActionsTip")
+									.chewTextSize(.medium)
+									.foregroundStyle(.secondary)
+							}
+						Color.chewFillRedPrimary
+							.frame(width: anim.rightCellsWidth)
+					}
+					.background {
+						Color.chewFillTertiary
+					}
+					.frame(height: 40)
+					.clipShape(.rect(cornerRadius: 10))
+					.onReceive(timer, perform: { _ in
+						withAnimation(.spring, {
+							anim = anim.next()
+						})
 					})
-				})
+//					.overlay(alignment: .topTrailing, content: {
+//						Button(action: {
+//							Model.shared.appSettingsVM.send(event: .didShowTip(tip: .journeySettingsFilterDisclaimer))
+//						}, label: {
+//							Image(.xmarkCircle)
+//								.chewTextSize(.big)
+//								.tint(.secondary)
+//								.frame(width: 20, height: 20)
+//						})
+//					})
 			}
 		}
 		struct JourneySettingsFilterDisclaimer : View {
@@ -220,7 +230,7 @@ extension AppSettings.ChooTip {
 					}, label: {
 						Image(.xmarkCircle)
 							.chewTextSize(.big)
-							.tint(.gray)
+							.tint(.secondary)
 					})
 				}
 			}

@@ -9,6 +9,7 @@ import Foundation
 import SwiftUI
 
 enum ChooSFSymbols : String {
+	case magnifyingglass = "magnifyingglass"
 	case sunMaxFill = "sun.max.fill"
 	case sunMax = "sun.max"
 	case moonStars = "moon.stars"

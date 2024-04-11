@@ -117,6 +117,9 @@
         }
       }
     },
+    "App does not have search button. **Search starts** after you set both **departure** and **arrival** stops." : {
+      "comment" : "search tip text"
+    },
     "App system settings" : {
       "comment" : "AppSettingsView"
     },
@@ -426,9 +429,6 @@
         }
       }
     },
-    "journeys are swipable" : {
-
-    },
     "Leg appearance" : {
       "comment" : "settingsView: section name",
       "extractionState" : "stale",
@@ -632,7 +632,7 @@
       }
     },
     "Search" : {
-      "comment" : "search tip title\nTabItem",
+      "comment" : "TabItem\nsearch tip title",
       "localizations" : {
         "ru" : {
           "stringUnit" : {
@@ -701,8 +701,8 @@
     "sunlight / moonlight color" : {
       "comment" : "AppSettings: LegViewMode: description"
     },
-    "This app doent have search button. Search starts when you set both departure and arrival stops." : {
-      "comment" : "search tip text"
+    "Swipe for action" : {
+      "comment" : "SwipeActionsTip"
     },
     "to " : {
       "comment" : "BadgeView: legDirection",
