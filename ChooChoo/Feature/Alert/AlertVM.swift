@@ -57,14 +57,22 @@ extension AlertViewModel {
 			actionDescription : String,
 			id : UUID
 		)
-//		case info(title : String, msg : String)
+		case action(
+			action : ()->Void,
+			description : String,
+			actionDescription : String,
+			id : UUID
+		)
+		case info(title : String, msg : String)
 
 		var description : String {
 			switch self {
 			case .none:
 				return "none"
-//			case let .info(title, _):
-//				return "info \(title)"
+			case let .info(title, _):
+				return "info \(title)"
+			case let .action(_,name,_,id):
+				return "action \(name) \(id)"
 			case let .destructive(_,name,_,id):
 				return "destructive \(name) \(id)"
 			}

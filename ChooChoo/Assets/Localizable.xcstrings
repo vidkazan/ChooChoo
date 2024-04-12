@@ -632,7 +632,7 @@
       }
     },
     "Search" : {
-      "comment" : "TabItem\nsearch tip title",
+      "comment" : "search tip title\nTabItem",
       "localizations" : {
         "ru" : {
           "stringUnit" : {
@@ -750,6 +750,9 @@
           }
         }
       }
+    },
+    "Try repeat" : {
+      "comment" : "JDV: reload error: action description"
     },
     "unfollow" : {
       "comment" : "JourneyFollowViewModel.Action",

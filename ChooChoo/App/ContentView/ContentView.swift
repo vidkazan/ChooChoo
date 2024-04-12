@@ -18,6 +18,7 @@ import TipKit
 // TODO: feature: ldsv: make stop tappable and show stop details and all leg stopover info
 // TODO: jfv: mapCell: map without interaction, icons
 // searchView: cell with nearest stop departures
+// performance: main thread is blocked while updating journeys 
 struct ContentView: View {
 	@EnvironmentObject var chewViewModel : ChewViewModel
 	@ObservedObject var alertVM = Model.shared.alertViewModel
@@ -60,7 +61,13 @@ struct ContentView: View {
 			actions: confirmationDialogActions,
 			message: confirmationDialogMessage
 		)
-		.alert(isPresented: $alertIsPresented, content: alert)
+		.alert(
+			isPresented: Binding(
+			get: { checkAlert() },
+			   set: { _ in Model.shared.alertViewModel.send(event: .didRequestDismiss) }
+		   ),
+			content: alert
+		)
 		.sheet(
 			isPresented: $sheetIsPresented,
 			onDismiss: {
@@ -107,7 +114,7 @@ struct ContentView: View {
 extension ContentView {
 	func checkConfirmatioDialog(isSheet : Bool) -> Bool {
 		switch alertState.alert {
-		case .none:
+		case .none,.info,.action:
 			return false
 		case .destructive:
 			return sheetIsPresented ? isSheet : !isSheet
@@ -116,9 +123,20 @@ extension ContentView {
 }
 
 extension ContentView {
+	func checkAlert() -> Bool {
+		switch alertState.alert {
+		case .info,.action:
+			return true
+		case .destructive,.none:
+			return false
+		}
+	}
+}
+
+extension ContentView {
 	@ViewBuilder func confirmationDialogActions() -> some View {
 		switch alertVM.state.alert {
-		case .none:
+		case .none,.info,.action:
 			EmptyView()
 		case .destructive(let destructiveAction, _, let actionDescription, _):
 			Button(actionDescription, role: .destructive, action: destructiveAction)
@@ -127,7 +145,7 @@ extension ContentView {
 	
 	@ViewBuilder func confirmationDialogMessage() -> some View {
 		switch alertState.alert {
-		case .none:
+		case .none,.info,.action:
 			EmptyView()
 		case .destructive(_, let description, _, _):
 			Text(verbatim: description)
@@ -145,6 +163,17 @@ extension ContentView {
 					action: destructiveAction
 				)
 			)
+		case let .action(action, description, actionDescripton,_):
+			return Alert(
+				title: Text(verbatim: description) ,
+				primaryButton: .cancel(),
+				secondaryButton: .default(
+					Text(verbatim: actionDescripton),
+					action: action
+				)
+			)
+		case let .info(title, msg):
+			return Alert(title: Text(verbatim: title),message: Text(verbatim: msg))
 		case .none:
 			return Alert(title: Text(verbatim: ""))
 		}

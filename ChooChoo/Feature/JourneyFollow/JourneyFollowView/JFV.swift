@@ -29,16 +29,20 @@ struct JourneyFollowView : View {
 			default:
 				switch viewModel.state.journeys.count {
 				case 0:
-					ErrorView(
-						viewType: .alert,`
-						msg: Text(
-							"You have no followed journeys",
-							comment: "JourneyFollowView: empty view: msg"
-						),
-						size: .big,
-						action: nil
-					)
-					.frame(idealWidth: .infinity,idealHeight: .infinity)
+					Group {
+						ErrorView(
+							viewType: .alert,
+							msg: Text(
+								"You have no followed journeys",
+								comment: "JourneyFollowView: empty view: msg"
+							),
+							size: .big,
+							action: nil
+						)
+						.frame(idealWidth: .infinity,idealHeight: .infinity)
+						AppSettings.ChooTip.followJourney.tipView
+							.padding(.horizontal)
+					}
 				default:
 					followViewInner
 				}
@@ -94,25 +98,15 @@ extension JourneyFollowView {
 
 extension JourneyFollowView {
 	var followViewInner : some View {
-		VStack {
-			Section {
-				if appSettingsVM.state.settings.showTip(tip: .swipeActions){
-					AppSettings.ChooTip.swipeActions.tipLabel
-				}
-			}
-			.onDisappear {
-				appSettingsVM.send(event: .didShowTip(tip: .swipeActions))
-			}
-//			.onTapGesture {
-//				appSettingsVM.send(event: .didShowTip(tip: .swipeActions))
-//			}
-//			.swipeActions(edge: .trailing, content: {
-//				Button("", role: .destructive, action: {
-//					appSettingsVM.send(event: .didShowTip(tip: .swipeActions))
-//				})
-//			})
-			.padding()
 			List {
+				Section {
+					if appSettingsVM.state.settings.showTip(tip: .swipeActions){
+						AppSettings.ChooTip.swipeActions.tipLabel
+							.onDisappear {
+								appSettingsVM.send(event: .didShowTip(tip: .swipeActions))
+							}
+					}
+				}
 				Section(content: {
 					ForEach(
 						viewModel.state.journeys
@@ -153,7 +147,6 @@ extension JourneyFollowView {
 					Text("Past", comment: "JourneyFollowView: section name")
 				})
 			}
-		}
 		.onAppear{
 			UITableView.appearance().separatorStyle = .singleLine
 			UITableView.appearance().backgroundColor = UIColor(Color.chewFillPrimary)
@@ -259,23 +252,29 @@ extension JourneyFollowView {
 			}
 	}
 }
-//
-//struct FollowPreviews: PreviewProvider {
-//	static var previews: some View {
-//		if let mock = Mock.journeyList.journeyNeussWolfsburg.decodedData {
-//			let data = constructJourneyListViewData(
-//				journeysData: mock,
-//				depStop:  .init(),
-//				arrStop:  .init(),
-//				settings: .init()
-//			)
-//			JourneyFollowView(viewModel: .init(
-//				journeys: data.map {
-//					JourneyFollowData(id: 0, journeyViewData: $0,stops: .init(departure: .init(), arrival: .init()))
-//				},
-//				initialStatus: .idle
-//			))
-//			.environmentObject(ChewViewModel(referenceDate: .specificDate(data.last?.time.timestamp.departure.actualOrPlannedIfActualIsNil() ?? 0)))
-//		}
-//	}
-//}
+
+struct FollowPreviews: PreviewProvider {
+	static var previews: some View {
+		if let mock = Mock.journeyList.journeyNeussWolfsburg.decodedData {
+			let data = constructJourneyListViewData(
+				journeysData: mock,
+				depStop:  .init(coordinates: .init(), type: .stop, stopDTO: nil),
+				arrStop:  .init(coordinates: .init(), type: .stop, stopDTO: nil),
+				settings: .init()
+			)
+			JourneyFollowView(viewModel: .init(
+				journeys: data.map {
+					JourneyFollowData(
+						id: 0,
+						journeyViewData: $0,
+						stops: .init(
+							departure: .init(coordinates: .init(), type: .stop, stopDTO: nil),
+							arrival: .init(coordinates: .init(), type: .stop, stopDTO: nil))
+					)
+				},
+				initialStatus: .idle
+			))
+			.environmentObject(ChewViewModel(referenceDate: .specificDate(data.last?.time.timestamp.departure.actualOrPlannedIfActualIsNil() ?? 0)))
+		}
+	}
+}

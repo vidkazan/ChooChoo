@@ -825,24 +825,8 @@
             filePath = "ChooChoo/Feature/JourneyFollow/JourneyFollowView/JFV.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "42"
-            endingLineNumber = "42"
-            landmarkName = "body"
-            landmarkType = "24">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "D5EA9BCA-40C4-4FFF-8CDE-5A04AB367C8F"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ChooChoo/Feature/JourneyFollow/JourneyFollowView/JFV.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "41"
-            endingLineNumber = "41"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
             landmarkName = "body"
             landmarkType = "24">
          </BreakpointContent>
@@ -857,8 +841,8 @@
             filePath = "ChooChoo/Feature/JourneyFollow/JourneyFollowView/JFV.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "43"
-            endingLineNumber = "43"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
             landmarkName = "body"
             landmarkType = "24">
          </BreakpointContent>
@@ -873,8 +857,8 @@
             filePath = "ChooChoo/Feature/JourneyFollow/JourneyFollowView/JFV.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "117"
-            endingLineNumber = "117"
+            startingLineNumber = "111"
+            endingLineNumber = "111"
             landmarkName = "followViewInner"
             landmarkType = "24">
          </BreakpointContent>
@@ -889,8 +873,8 @@
             filePath = "ChooChoo/Feature/JourneyFollow/JourneyFollowView/JFV.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "118"
-            endingLineNumber = "118"
+            startingLineNumber = "112"
+            endingLineNumber = "112"
             landmarkName = "followViewInner"
             landmarkType = "24">
          </BreakpointContent>
@@ -905,8 +889,8 @@
             filePath = "ChooChoo/Feature/JourneyFollow/JourneyFollowView/JFV.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "121"
-            endingLineNumber = "121"
+            startingLineNumber = "115"
+            endingLineNumber = "115"
             landmarkName = "followViewInner"
             landmarkType = "24">
          </BreakpointContent>
@@ -921,8 +905,8 @@
             filePath = "ChooChoo/Feature/JourneyFollow/JourneyFollowView/JFV.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "191"
-            endingLineNumber = "191"
+            startingLineNumber = "184"
+            endingLineNumber = "184"
             landmarkName = "listCell(journey:map:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1129,8 +1113,8 @@
             filePath = "ChooChoo/Model/Settings/AppSettings.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "302"
-            endingLineNumber = "302"
+            startingLineNumber = "293"
+            endingLineNumber = "293"
             landmarkName = "SunEventsTipView"
             landmarkType = "14">
          </BreakpointContent>
@@ -1145,8 +1129,8 @@
             filePath = "ChooChoo/Model/Settings/AppSettings.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "314"
-            endingLineNumber = "314"
+            startingLineNumber = "305"
+            endingLineNumber = "305"
             landmarkName = "body"
             landmarkType = "24">
          </BreakpointContent>

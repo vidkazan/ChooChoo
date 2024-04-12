@@ -48,14 +48,7 @@ struct JourneyDetailsView: View {
 						})
 						.onAppear {
 							Task {
-								let activeLeg : UUID?  = {
-									viewModel.state.data.viewData.legs.filter({
-										chewVM.referenceDate.ts > $0.time.timestamp.departure.actual ?? 0 && chewVM.referenceDate.ts < $0.time.timestamp.arrival.actual ?? 0
-									}).first?.id
-								}()
-								withAnimation(.easeInOut, {
-									proxy.scrollTo(activeLeg, anchor: .center)
-								})
+								performOnAppear(proxy: proxy)
 							}
 						}
 					}
@@ -79,6 +72,19 @@ struct JourneyDetailsView: View {
 				))
 			}
 		}
+	}
+}
+
+extension JourneyDetailsView {
+	func performOnAppear(proxy : ScrollViewProxy) {
+		let activeLeg : UUID?  = {
+			viewModel.state.data.viewData.legs.filter({
+				chewVM.referenceDate.ts > $0.time.timestamp.departure.actual ?? 0 && chewVM.referenceDate.ts < $0.time.timestamp.arrival.actual ?? 0
+			}).first?.id
+		}()
+		withAnimation(.easeInOut, {
+			proxy.scrollTo(activeLeg, anchor: .center)
+		})
 	}
 }
 //

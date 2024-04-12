@@ -51,10 +51,32 @@ extension JourneyDetailsView {
 			}
 			Button(
 				action: {
-					viewModel.send(event: .didTapReloadButton(
-						id: viewModel.state.data.id,
-						ref: viewModel.state.data.viewData.refreshToken
-					))
+					switch viewModel.state.status {
+					case .loading, .loadingIfNeeded:
+						viewModel.send(event: .didCancelToLoadData)
+					case .loadedJourneyData, .changingSubscribingState:
+						viewModel.send(event: .didTapReloadButton(
+							id: viewModel.state.data.id,
+							ref: viewModel.state.data.viewData.refreshToken
+						))
+					case .error(let error):
+						Model.shared.alertViewModel.send(
+							event: .didRequestShow(.action(
+								action: {
+									viewModel.send(event: .didTapReloadButton(
+										id: viewModel.state.data.id,
+										ref: viewModel.state.data.viewData.refreshToken
+									))
+								},
+								description: error.localizedDescription,
+								actionDescription: NSLocalizedString(
+									"Try repeat",
+									comment: "JDV: reload error: action description"
+								),
+								id: .init()
+							))
+						)
+					}
 				},
 				label: {
 					Group {

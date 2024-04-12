@@ -28,31 +28,31 @@ struct JourneyFollowCellView : View {
 					)
 				})
 			}
-			HStack(spacing: 2) {
-				if let date = data.time.date.departure.actualOrPlannedIfActualIsNil() {
-					BadgeView(.date(date: date),.medium)
-					.badgeBackgroundStyle(.secondary)
-				}
 				HStack(spacing: 2) {
-					TimeLabelView(
-						size: .medium,
-						arragement: .right,
-						time: data.time.date.departure,
-						delayStatus: data.time.departureStatus
-					)
-					Text(verbatim: "-")
-					TimeLabelView(
-						size: .medium,
-						arragement: .right,
-						time: data.time.date.arrival,
-						delayStatus: data.time.arrivalStatus
-					)
-				}
-				.padding(2)
-				.badgeBackgroundStyle(.secondary)
-				BadgeView(.legDuration(data.time))
+					if let date = data.time.date.departure.actualOrPlannedIfActualIsNil() {
+						BadgeView(.date(date: date),.medium)
+						.badgeBackgroundStyle(.secondary)
+					}
+					HStack(spacing: 2) {
+						TimeLabelView(
+							size: .medium,
+							arragement: .right,
+							time: data.time.date.departure,
+							delayStatus: data.time.departureStatus
+						)
+						Text(verbatim: "-")
+						TimeLabelView(
+							size: .medium,
+							arragement: .right,
+							time: data.time.date.arrival,
+							delayStatus: data.time.arrivalStatus
+						)
+					}
+					.padding(2)
 					.badgeBackgroundStyle(.secondary)
-			}
+					BadgeView(.legDuration(data.time))
+						.badgeBackgroundStyle(.secondary)
+				}
 			LegsView(journey : data,mode : appSettingsVM.state.settings.legViewMode)
 			HStack(spacing: 2) {
 				Spacer()
