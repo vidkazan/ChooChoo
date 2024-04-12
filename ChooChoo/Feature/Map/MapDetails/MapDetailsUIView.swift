@@ -26,14 +26,14 @@ struct MapDetailsUIView: UIViewRepresentable {
 		
 		
 		legs.forEach({ leg in
-			#warning("vehicle locaiton: for test")
-			#if DEBUG
-			let anno = VehicleLocationAnnotation(
-				location: leg.currenLocation?.cllocationcoordinates2d ?? .init(),
-				type: leg.lineType
-			)
-			mapView.addAnnotation(anno)
-			#endif
+//			#warning("vehicle locaiton: for test")
+//			#if DEBUG
+//			let anno = VehicleLocationAnnotation(
+//				location: leg.currenLocation?.cllocationcoordinates2d ?? .init(),
+//				type: leg.lineType
+//			)
+//			mapView.addAnnotation(anno)
+//			#endif
 			
 			leg.stops.forEach { stop in
 				MapPickerViewModel.addStopAnnotation(
@@ -79,7 +79,7 @@ extension MapDetailsUIView {
 		}
 		
 		func mapView(_ mapView: MKMapView,viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-			#warning("check actual locaiton with API given locaiton")
+//			#warning("check actual locaiton with API given locaiton")
 			if let anno = annotation as? VehicleLocationAnnotation {
 				return MKMarkerAnnotationView(annotation: anno, reuseIdentifier: "anno")
 			}
