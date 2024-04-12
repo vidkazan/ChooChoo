@@ -35,8 +35,9 @@ struct ContentView: View {
 		Group {
 			switch state.status {
 			case .start:
-				Text(verbatim: "ChooChoo")
-					.chewTextSize(.huge)
+//				Text(verbatim: "ChooChoo")
+//					.chewTextSize(.huge)
+				EmptyView()
 			default:
 				ZStack(alignment: .top) {
 					FeatureView()

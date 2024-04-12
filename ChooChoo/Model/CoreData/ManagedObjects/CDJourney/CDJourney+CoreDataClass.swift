@@ -46,7 +46,7 @@ extension CDJourney {
 			guard let time = TimeContainer(isoEncoded: self.time) else {
 				return
 			}
-			#warning("add remarks")
+//			#warning("add remarks")
 			data = JourneyFollowData(
 				id : self.id,
 				journeyViewData: JourneyViewData(

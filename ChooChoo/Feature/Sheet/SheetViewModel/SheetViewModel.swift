@@ -120,7 +120,7 @@ extension SheetViewModel{
 			case .none:
 				return []
 			case .date:
-				return [.large, .medium]
+				return [.large]
 			case .journeySettings:
 				return [.medium,.large]
 			case .appSettings:

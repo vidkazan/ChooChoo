@@ -69,7 +69,7 @@ extension Model {
 		chewVM : ChewViewModel?
 	) -> JourneyDetailsViewModel {
 		if let vm = _journeyDetailsViewModels[journeyRef] {
-			#warning("viewData comparing criteria")
+//			#warning("viewData comparing criteria")
 //			if vm.state.data.viewData.time == viewdata.time {
 				return vm
 //			} 

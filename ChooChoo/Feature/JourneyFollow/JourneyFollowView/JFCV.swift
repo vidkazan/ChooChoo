@@ -57,7 +57,7 @@ struct JourneyFollowCellView : View {
 			LegsView(journey : data,mode : appSettingsVM.state.settings.legViewMode)
 			HStack(spacing: 2) {
 				Spacer()
-				if case .error(let error) = vm.state.status {
+				if case .error = vm.state.status {
 					BadgeView(.updateError)
 						.badgeBackgroundStyle(.red)
 						.matchedGeometryEffect(id: "updatedAt", in: journeyFollowCellViewNamespace)

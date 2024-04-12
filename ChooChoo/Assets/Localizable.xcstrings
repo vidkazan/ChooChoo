@@ -242,9 +242,6 @@
     "Custom transport types" : {
       "comment" : "SettingsView: segments: section header"
     },
-    "Debug" : {
-
-    },
     "Debug leg" : {
       "comment" : "Debug"
     },
@@ -504,7 +501,7 @@
       }
     },
     "now" : {
-      "comment" : "timeChoosingView: button on segmented picker\nDatePickerTimePresetButtons",
+      "comment" : "DatePickerTimePresetButtons\ntimeChoosingView: button on segmented picker",
       "localizations" : {
         "ru" : {
           "stringUnit" : {
@@ -552,9 +549,6 @@
           }
         }
       }
-    },
-    "popopopo" : {
-
     },
     "Recents" : {
       "comment" : "RecentSearchesView: view name"
@@ -619,9 +613,6 @@
           }
         }
       }
-    },
-    "Reset tips" : {
-
     },
     "Save" : {
       "comment" : "datePickerView: save button\nsettingsView: save button",
