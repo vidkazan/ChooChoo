@@ -9,6 +9,7 @@ import Foundation
 import SwiftUI
 
 struct JourneyFollowCellView : View {
+	@Namespace var journeyFollowCellViewNamespace
 	@EnvironmentObject var chewVM : ChewViewModel
 	@ObservedObject var vm : JourneyDetailsViewModel
 	@ObservedObject var appSettingsVM : AppSettingsViewModel = Model.shared.appSettingsVM
@@ -56,13 +57,20 @@ struct JourneyFollowCellView : View {
 			LegsView(journey : data,mode : appSettingsVM.state.settings.legViewMode)
 			HStack(spacing: 2) {
 				Spacer()
-				BadgeView(
-					.updatedAtTime(
-						referenceTime: data.updatedAt,
-						isLoading: isLoading(status: vm.state.status)
-					),
-					color: Color.clear
-				)
+				if case .error(let error) = vm.state.status {
+					BadgeView(.updateError)
+						.badgeBackgroundStyle(.red)
+						.matchedGeometryEffect(id: "updatedAt", in: journeyFollowCellViewNamespace)
+				} else {
+					BadgeView(
+						.updatedAtTime(
+							referenceTime: data.updatedAt,
+							isLoading: isLoading(status: vm.state.status)
+						),
+						color: Color.clear
+					)
+					.matchedGeometryEffect(id: "updatedAt", in: journeyFollowCellViewNamespace)
+				}
 				if !data.isReachable || !data.legs.allSatisfy({$0.isReachable == true}) {
 					BadgeView(.connectionNotReachable)
 						.badgeBackgroundStyle(.red)
@@ -70,6 +78,7 @@ struct JourneyFollowCellView : View {
 			}
 		}
 		.contextMenu { menu }
+		.animation(.easeInOut, value: vm.state.status)
 	}
 }
 

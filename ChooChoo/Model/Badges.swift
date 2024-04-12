@@ -94,10 +94,13 @@ enum Badges : Identifiable,Hashable {
 			return 19
 		case .updatedAtTime:
 			return 20
+		case .updateError:
+			return 21
 		}
 	}
 	
 	case generic(msg : String)
+	case updateError
 	case routeError
 	case followError(_ action : JourneyFollowViewModel.Action)
 	case locationError
@@ -145,6 +148,13 @@ enum Badges : Identifiable,Hashable {
 		switch self {
 		case .generic(let msg):
 			return BadgeData(Text(verbatim: msg))
+		case .updateError:
+			return BadgeData(
+				Text(
+					"unable to update",
+					comment: "badge"
+				)
+			)
 		case .routeError:
 			return BadgeData(
 				Text(

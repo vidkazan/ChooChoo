@@ -124,7 +124,8 @@ struct BadgeView : View {
 				 .routeError,
 				 .followError,
 				 .locationError,
-				 .offlineMode:
+				 .offlineMode,
+				 .updateError:
 				OneLineText(badge.badgeData.text)
 					.chewTextSize(size)
 					.padding(4)

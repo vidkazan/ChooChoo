@@ -441,6 +441,9 @@
         }
       }
     },
+    "Map" : {
+      "comment" : "JourneyFollowView: listCell: swipe action item"
+    },
     "max 1" : {
       "comment" : "JourneySettings: TransferCountCases"
     },
@@ -501,7 +504,7 @@
       }
     },
     "now" : {
-      "comment" : "DatePickerTimePresetButtons\ntimeChoosingView: button on segmented picker",
+      "comment" : "timeChoosingView: button on segmented picker\nDatePickerTimePresetButtons",
       "localizations" : {
         "ru" : {
           "stringUnit" : {
@@ -621,7 +624,7 @@
 
     },
     "Save" : {
-      "comment" : "settingsView: save button\ndatePickerView: save button",
+      "comment" : "datePickerView: save button\nsettingsView: save button",
       "localizations" : {
         "ru" : {
           "stringUnit" : {
@@ -753,6 +756,9 @@
     },
     "Try repeat" : {
       "comment" : "JDV: reload error: action description"
+    },
+    "unable to update" : {
+      "comment" : "badge"
     },
     "unfollow" : {
       "comment" : "JourneyFollowViewModel.Action",
