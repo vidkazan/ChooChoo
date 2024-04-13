@@ -38,7 +38,7 @@ class SearchStopsViewModel : ObservableObject {
 			],
 			name: "SSVM"
 		)
-		.weakAssign(to: \.state, on: self)
+		.assign(to: \.state, on: self)
 		.store(in: &bag)
 	}
 	deinit {

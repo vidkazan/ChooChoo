@@ -188,7 +188,7 @@ extension LegViewData {
 		},
 		icon: ChooSFSymbols.trainSideFrontCar.rawValue,
 		text: NSLocalizedString(
-			"Show full segment",
+			"Show whole route",
 			comment: "LegDetailsView: menu item"
 		)
 	)
