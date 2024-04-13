@@ -928,6 +928,7 @@
 		7D6734B12A96334B00CBE9C1 /* ChooChoo */ = {
 			isa = PBXGroup;
 			children = (
+				7DD246D62BCAC10600410827 /* Config */,
 				7DEA645A2B95F789005BEE8A /* Debug */,
 				7D33A9522B5343320005D723 /* Test */,
 				7D02CE112A97E4650048ADE6 /* Helpers */,
@@ -935,7 +936,6 @@
 				7D462D552AACD1E000BC0D65 /* Feature */,
 				7D02CE0C2A97E38B0048ADE6 /* Model */,
 				7D6734B82A96334C00CBE9C1 /* Assets */,
-				7D8A10922BC9AD4400123036 /* PrivacyInfo.xcprivacy */,
 			);
 			path = ChooChoo;
 			sourceTree = "<group>";
@@ -1279,6 +1279,14 @@
 				7DD4A8D92AAC90C9001AA30C /* SSVM+reduce+Error.swift */,
 			);
 			path = reduce;
+			sourceTree = "<group>";
+		};
+		7DD246D62BCAC10600410827 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				7D8A10922BC9AD4400123036 /* PrivacyInfo.xcprivacy */,
+			);
+			path = Config;
 			sourceTree = "<group>";
 		};
 		7DD5BADD2B728C6500CFE768 /* JourneySearch */ = {
@@ -1987,7 +1995,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = M82325R967;
 				ENABLE_PREVIEWS = YES;
@@ -2008,7 +2016,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.1.0;
+				MARKETING_VERSION = 0.1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.fcody.choochoo.debug;
 				PRODUCT_NAME = ChooChoo;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -2028,7 +2036,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = M82325R967;
 				ENABLE_PREVIEWS = YES;
@@ -2049,7 +2057,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.1.0;
+				MARKETING_VERSION = 0.1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.fcody.choochoo;
 				PRODUCT_NAME = ChooChoo;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";

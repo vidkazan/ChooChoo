@@ -9,10 +9,11 @@ import SwiftUI
 import TipKit
 
 // learn content shape
+// map picker: tip for long tap / fix animation
+
 
 // MARK: revise
 // all text revision
-// revise icons
 
 
 // TODO: feature: ldsv: make stop tappable and show stop details and all leg stopover info

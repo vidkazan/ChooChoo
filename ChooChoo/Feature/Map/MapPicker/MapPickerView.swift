@@ -116,7 +116,7 @@ extension MapPickerView {
 						ProgressView()
 					}
 				}
-				.animation(.easeInOut, value: vm.state.status)
+//				.animation(.easeInOut, value: vm.state.status)
 				.padding(5)
 				.badgeBackgroundStyle(.accent)
 			}
