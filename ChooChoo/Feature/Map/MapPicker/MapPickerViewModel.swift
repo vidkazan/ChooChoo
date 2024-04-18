@@ -35,8 +35,7 @@ class MapPickerViewModel : ObservableObject, Identifiable {
 				Self.userInput(input: input.eraseToAnyPublisher()),
 				Self.whenLoadingNearbyStops(),
 				Self.whenLoadingStopDetails()
-			],
-			name: ""
+			]
 		)
 		.weakAssign(to: \.state, on: self)
 		.store(in: &bag)

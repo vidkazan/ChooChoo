@@ -13,8 +13,7 @@ extension Publishers {
 		initial: State,
 		reduce: @escaping (State, Event) -> State,
 		scheduler: Scheduler,
-		feedbacks: [Feedback<State, Event>],
-		name : String
+		feedbacks: [Feedback<State, Event>]
 	) -> AnyPublisher<State, Never> {
 		
 		let state = CurrentValueSubject<State, Never>(initial)

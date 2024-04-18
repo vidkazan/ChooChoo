@@ -11,10 +11,12 @@ import Combine
 import CoreLocation
 import CoreData
 
-final class ChewViewModel : ObservableObject, Identifiable {
+final class ChewViewModel : ChewViewModelProtocol,ObservableObject, Identifiable {
 	let referenceDate : ChewDate
 	@Published private(set) var state : State {
-		didSet { print("📱 >  state:",state.status.description) }
+		didSet {
+			Self.log(state.status)
+		}
 	}
 	private var bag = Set<AnyCancellable>()
 	private let input = PassthroughSubject<Event,Never>()
@@ -36,8 +38,7 @@ final class ChewViewModel : ObservableObject, Identifiable {
 				Self.whenLoadingUserLocation(),
 				Self.whenLoadingInitialData(),
 				Self.whenEditingStops()
-			],
-			name: "ChewVM"
+			]
 		)
 		.weakAssign(to: \.state, on: self)
 		.store(in: &bag)
@@ -49,8 +50,4 @@ final class ChewViewModel : ObservableObject, Identifiable {
 	func send(event: Event) {
 		input.send(event)
 	}
-}
-
-extension ChewViewModel {
-	
 }

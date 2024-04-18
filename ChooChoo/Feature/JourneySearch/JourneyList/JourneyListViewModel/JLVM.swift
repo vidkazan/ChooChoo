@@ -67,8 +67,7 @@ final class JourneyListViewModel : ObservableObject {
 				Self.userInput(input: input.eraseToAnyPublisher()),
 				Self.whenLoadingJourneyRef(),
 				Self.whenLoadingJourneyList()
-			],
-			name: "JLVM"
+			]
 		)
 		.weakAssign(to: \.state, on: self)
 		.store(in: &bag)

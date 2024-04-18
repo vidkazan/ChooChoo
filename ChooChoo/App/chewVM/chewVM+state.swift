@@ -47,7 +47,7 @@ extension ChewViewModel {
 	}
 	
 	
-	enum Status : Equatable {
+	enum Status : Equatable, ChewStatus {
 		static func == (lhs: ChewViewModel.Status, rhs: ChewViewModel.Status) -> Bool {
 			return lhs.description == rhs.description
 		}
@@ -80,7 +80,7 @@ extension ChewViewModel {
 			}
 		}
 	}
-	enum Event {
+	enum Event : ChewEvent {
 		case didStartViewAppear
 		case didLoadInitialData(JourneySettings)
 		case onStopEdit(LocationDirectionType)

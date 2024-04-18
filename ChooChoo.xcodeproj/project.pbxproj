@@ -82,6 +82,7 @@
 		7D3957202B54911F00024736 /* JDV+Toolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D39571F2B54911F00024736 /* JDV+Toolbar.swift */; };
 		7D3E5F012AB321580064213A /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3E5F002AB321580064213A /* LocationManager.swift */; };
 		7D4034B22BD15E2700EB5F17 /* Logging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4034B12BD15E2700EB5F17 /* Logging.swift */; };
+		7D4034B42BD1684000EB5F17 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4034B32BD1684000EB5F17 /* Protocols.swift */; };
 		7D4208CB2AE122FF003D9BFB /* RouteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4208CA2AE122FF003D9BFB /* RouteView.swift */; };
 		7D462D492AAC947F00BC0D65 /* JLVM+reduce+LoadingJourneys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D462D482AAC947F00BC0D65 /* JLVM+reduce+LoadingJourneys.swift */; };
 		7D462D4B2AAC948700BC0D65 /* JLVM+reduce+JourneysLoaded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D462D4A2AAC948700BC0D65 /* JLVM+reduce+JourneysLoaded.swift */; };
@@ -314,6 +315,7 @@
 		7D39571F2B54911F00024736 /* JDV+Toolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JDV+Toolbar.swift"; sourceTree = "<group>"; };
 		7D3E5F002AB321580064213A /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		7D4034B12BD15E2700EB5F17 /* Logging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Logging.swift; path = ../../../../../Swift/ChooChoo/proj/ChooChoo/Helpers/Logging.swift; sourceTree = "<group>"; };
+		7D4034B32BD1684000EB5F17 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Protocols.swift; path = ../../../../../Swift/ChooChoo/proj/ChooChoo/Helpers/Protocols.swift; sourceTree = "<group>"; };
 		7D4208CA2AE122FF003D9BFB /* RouteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteView.swift; sourceTree = "<group>"; };
 		7D462D482AAC947F00BC0D65 /* JLVM+reduce+LoadingJourneys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JLVM+reduce+LoadingJourneys.swift"; sourceTree = "<group>"; };
 		7D462D4A2AAC948700BC0D65 /* JLVM+reduce+JourneysLoaded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JLVM+reduce+JourneysLoaded.swift"; sourceTree = "<group>"; };
@@ -572,6 +574,7 @@
 				7DEE69CC2B9BCDF200A063B4 /* Tips.swift */,
 				7DEE69D02B9BCE8B00A063B4 /* PresentationDetent.swift */,
 				7D4034B12BD15E2700EB5F17 /* Logging.swift */,
+				7D4034B32BD1684000EB5F17 /* Protocols.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -1769,6 +1772,7 @@
 				7D181D642AD6D595003AB021 /* RecentSearchView.swift in Sources */,
 				7DD5BAE52B72AE9500CFE768 /* JDVM+sideEffects+fetch.swift in Sources */,
 				7DE8A35D2B6AF4FC00C3A378 /* ChewDate.swift in Sources */,
+				7D4034B42BD1684000EB5F17 /* Protocols.swift in Sources */,
 				7D23E44C2A98FD700037C3E1 /* LegView.swift in Sources */,
 				7D7B3D9F2AB8DBFD0070E44D /* LDV.swift in Sources */,
 				7D55BD9E2B5EA39900A0CE08 /* ChewDatePicker.swift in Sources */,

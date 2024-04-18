@@ -35,8 +35,7 @@ class SearchStopsViewModel : ObservableObject {
 				Self.userInput(input: input.eraseToAnyPublisher()),
 				Self.whenLoadingStops(),
 				Self.whenUpdatingRecentStops()
-			],
-			name: "SSVM"
+			]
 		)
 		.assign(to: \.state, on: self)
 		.store(in: &bag)

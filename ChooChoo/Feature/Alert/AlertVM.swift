@@ -26,8 +26,7 @@ final class AlertViewModel : ObservableObject, Identifiable {
 			scheduler: RunLoop.main,
 			feedbacks: [
 				Self.userInput(input: input.eraseToAnyPublisher())
-			],
-			name: "AVM"
+			]
 		)
 		.weakAssign(to: \.state, on: self)
 		.store(in: &bag)

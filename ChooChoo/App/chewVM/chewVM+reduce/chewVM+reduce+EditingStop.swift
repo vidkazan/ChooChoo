@@ -18,7 +18,7 @@ extension ChewViewModel {
 				.didStartViewAppear,
 				.onNotEnoughSearchData,
 				.didTapCloseJourneyList:
-			print("⚠️ \(Self.self): reduce error: \(state.status) \(event.description)")
+			logReducer(event, state.status)
 			return state
 		case .didCancelEditStop:
 			return State(state: state, status: .idle)

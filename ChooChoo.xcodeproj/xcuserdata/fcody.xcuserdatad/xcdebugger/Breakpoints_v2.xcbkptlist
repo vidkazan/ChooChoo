@@ -617,8 +617,8 @@
             filePath = "ChooChoo/Feature/JourneySearch/ArrivingTrainTime/ArrivingTrainTimeVM.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "194"
-            endingLineNumber = "194"
+            startingLineNumber = "193"
+            endingLineNumber = "193"
             landmarkName = "whenLoading()"
             landmarkType = "7">
          </BreakpointContent>
@@ -633,8 +633,8 @@
             filePath = "ChooChoo/Feature/JourneySearch/ArrivingTrainTime/ArrivingTrainTimeVM.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "182"
-            endingLineNumber = "182"
+            startingLineNumber = "181"
+            endingLineNumber = "181"
             landmarkName = "whenLoading()"
             landmarkType = "7">
          </BreakpointContent>
@@ -649,8 +649,8 @@
             filePath = "ChooChoo/Feature/JourneySearch/ArrivingTrainTime/ArrivingTrainTimeVM.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "181"
-            endingLineNumber = "181"
+            startingLineNumber = "180"
+            endingLineNumber = "180"
             landmarkName = "whenLoading()"
             landmarkType = "7">
          </BreakpointContent>

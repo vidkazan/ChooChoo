@@ -26,8 +26,7 @@ class AppSettingsViewModel : ObservableObject, Identifiable {
 			feedbacks: [
 				Self.userInput(input: input.eraseToAnyPublisher()),
 				Self.whenUpdatedSettings()
-			],
-			name: ""
+			]
 		)
 		.weakAssign(to: \.state, on: self)
 		.store(in: &bag)

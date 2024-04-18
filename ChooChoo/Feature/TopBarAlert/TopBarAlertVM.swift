@@ -35,8 +35,7 @@ final class TopBarAlertViewModel : ObservableObject, Identifiable {
 				Self.userInput(input: input.eraseToAnyPublisher()),
 				Self.whenLoadinginitialData(),
 				Self.whenEditing()
-			],
-			name: "AVM"
+			]
 		)
 		.weakAssign(to: \.state, on: self)
 		.store(in: &bag)

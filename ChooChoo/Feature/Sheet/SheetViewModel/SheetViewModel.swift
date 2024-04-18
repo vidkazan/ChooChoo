@@ -33,8 +33,7 @@ class SheetViewModel : ObservableObject, Identifiable {
 			feedbacks: [
 				Self.userInput(input: input.eraseToAnyPublisher()),
 				Self.whenLoading()
-			],
-			name: ""
+			]
 		)
 		.weakAssign(to: \.state, on: self)
 		.store(in: &bag)

@@ -9,7 +9,7 @@ import Foundation
 
 extension ChewViewModel {
 	static func reduce(_ state: State, _ event: Event) -> State {
-		print("📱🔥 > ",event.description,"state:",state.status.description)
+		log(event, state.status)
 		switch state.status {
 		case .idle:
 			return reduceIdle(state, event)
@@ -37,7 +37,7 @@ extension ChewViewModel {
 			case .onNotEnoughSearchData:
 				return State(state: state, status: .idle)
 			default:
-				print("⚠️ \(Self.self): reduce error: \(state.status) \(event.description)")
+				logReducer(event, state.status)
 				return state
 			}
 		case .loadingInitialData:
@@ -45,7 +45,7 @@ extension ChewViewModel {
 			case .didLoadInitialData(let settings):
 				return State(data: StateData(data: state.data,journeySettings: settings), status: .idle)
 			default:
-				print("⚠️ \(Self.self): reduce error: \(state.status) \(event.description)")
+				logReducer(event, state.status)
 				return state
 			}
 		case .start:
@@ -59,7 +59,7 @@ extension ChewViewModel {
 					status: .loadingInitialData
 				)
 			default:
-				print("⚠️ \(Self.self): reduce error: \(state.status) \(event.description)")
+				logReducer(event, state.status)
 				return state
 			}
 		}

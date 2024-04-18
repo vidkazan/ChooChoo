@@ -44,8 +44,7 @@ final class JourneyDetailsViewModel : ObservableObject {
 				Self.whenLoadingJourneyByRefreshToken(),
 				Self.whenChangingSubscribitionType(),
 				Self.whenLoadingIfNeeded(),
-			],
-			name: data.legs.reduce("", {$0+$1.lineViewData.name+"-"})
+			]
 		)
 		.weakAssign(to: \.state, on: self)
 		.store(in: &bag)

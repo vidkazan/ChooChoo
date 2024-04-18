@@ -7,11 +7,15 @@
 
 import Foundation
 import Combine
+import OSLog
 
-class ViewModel : ObservableObject, Identifiable {
+class ViewModel : ChewViewModelProtocol ,ObservableObject, Identifiable {
 	@Published private(set) var state : State {
-		didSet { print(">> state:",state.status.description) }
+		didSet {
+			Self.log(state.status)
+		}
 	}
+
 	private var bag = Set<AnyCancellable>()
 	private let input = PassthroughSubject<Event,Never>()
 	
@@ -26,8 +30,7 @@ class ViewModel : ObservableObject, Identifiable {
 			scheduler: RunLoop.main,
 			feedbacks: [
 				Self.userInput(input: input.eraseToAnyPublisher()),
-			],
-			name: ""
+			]
 		)
 		.weakAssign(to: \.state, on: self)
 		.store(in: &bag)
@@ -43,7 +46,7 @@ class ViewModel : ObservableObject, Identifiable {
 }
 
 extension ViewModel  {
-	struct State  {
+	struct State {
 		let status : Status
 
 		init(status: Status) {
@@ -51,7 +54,7 @@ extension ViewModel  {
 		}
 	}
 	
-	enum Status {
+	enum Status : ChewStatus {
 		static func == (lhs: ViewModel.Status, rhs: ViewModel.Status) -> Bool {
 			return lhs.description == rhs.description
 		}
@@ -65,7 +68,7 @@ extension ViewModel  {
 		}
 	}
 	
-	enum Event {
+	enum Event : ChewEvent {
 		case didLoadInitialData
 		
 		var description : String {
@@ -80,7 +83,6 @@ extension ViewModel  {
 
 extension ViewModel {
 	static func reduce(_ state: State, _ event: Event) -> State {
-		print(">> ",event.description,"state:",state.status.description)
 		switch state.status {
 		case .start:
 			switch event {
@@ -98,4 +100,3 @@ extension ViewModel {
 		}
 	}
 }
-
