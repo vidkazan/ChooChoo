@@ -7,8 +7,9 @@
 
 import Foundation
 import CoreLocation
+import OSLog
 
-class LocationDataManager : NSObject, ObservableObject, CLLocationManagerDelegate {
+class LocationDataManager : NSObject, ObservableObject {
 	var locationManager = CLLocationManager()
 	@Published var authorizationStatus: CLAuthorizationStatus?
 	
@@ -20,13 +21,14 @@ class LocationDataManager : NSObject, ObservableObject, CLLocationManagerDelegat
 	func reverseGeocoding(coords : Coordinate) async -> String? {
 		if self.locationManager.location != nil,
 		   let res = try? await CLGeocoder().reverseGeocodeLocation(CLLocation(latitude: coords.latitude, longitude: coords.longitude)).first,
-			let name = res.name, let city = res.locality {
-				return  String(name + ", " + city)
+		   let name = res.name, let city = res.locality {
+			return  String(name + ", " + city)
 		}
 		return nil
 	}
-	
-	
+}
+
+extension LocationDataManager : CLLocationManagerDelegate {
 	func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
 		switch manager.authorizationStatus {
 		case .authorizedWhenInUse:  // Location services are available.
@@ -44,7 +46,6 @@ class LocationDataManager : NSObject, ObservableObject, CLLocationManagerDelegat
 			// Insert code here of what should happen when Location services are NOT authorized
 			authorizationStatus = .denied
 			break
-			
 		case .notDetermined:        // Authorization not determined yet.
 			authorizationStatus = .notDetermined
 			manager.requestWhenInUseAuthorization()
@@ -59,6 +60,6 @@ class LocationDataManager : NSObject, ObservableObject, CLLocationManagerDelegat
 	}
 	
 	func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-		print("error: \(error.localizedDescription)")
+		Logger.locationManager.error("\(error.localizedDescription)")
 	}
 }

@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import OSLog
 
 enum Mock {
 	static let trip = TripMockFiles.self
@@ -15,7 +16,7 @@ enum Mock {
 }
 
 struct TripMockFiles {
-	static let type = MockFile<TripDTO>.self
+	static let type = MockService<TripDTO>.self
 	
 	static let cancelledMiddleStopsRE6NeussMinden = type.init(
 		"cancelledMiddleStops-Trip-RE6-Neuss-Minden"
@@ -32,7 +33,7 @@ struct TripMockFiles {
 }
 
 struct JourneyMockFiles{
-	static let type = MockFile<JourneyWrapper>.self
+	static let type = MockService<JourneyWrapper>.self
 	
 	static let journeyNeussWolfsburg = type.init(
 		"journey-Neuss-Wolfsburg"
@@ -52,7 +53,7 @@ struct JourneyMockFiles{
 }
 
 struct JourneyListMockFiles {
-	static let type = MockFile<JourneyListDTO>.self
+	static let type = MockService<JourneyListDTO>.self
 	
 	static let journeyNeussWolfsburg = type.init(
 		"neussWolfsburg"
@@ -63,7 +64,7 @@ struct JourneyListMockFiles {
 }
  
 
-class MockFile<T : Decodable> {
+class MockService<T : Decodable> {
 	let rawData : Data?
 	let decodedData : T?
 	
@@ -74,7 +75,7 @@ class MockFile<T : Decodable> {
 	
 	static func decodedData<DTO : Decodable>(rawData : Data?) -> DTO? {
 		guard let data = rawData else {
-			print(">> mockFile: decodeData: data is nil")
+			Logger.mockService.warning("decodeData: data is nil")
 			return nil
 		}
 		do {
@@ -82,7 +83,7 @@ class MockFile<T : Decodable> {
 			return res
 		}
 		catch {
-			print(">> mock JSON decoder error: ",error)
+			Logger.mockService.error("mock JSON decoder: \(error)")
 			return nil
 		}
 	}

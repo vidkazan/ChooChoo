@@ -81,6 +81,7 @@
 		7D345E4C2AE97FC8003CA948 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D345E4B2AE97FC8003CA948 /* SettingsView.swift */; };
 		7D3957202B54911F00024736 /* JDV+Toolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D39571F2B54911F00024736 /* JDV+Toolbar.swift */; };
 		7D3E5F012AB321580064213A /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3E5F002AB321580064213A /* LocationManager.swift */; };
+		7D4034B22BD15E2700EB5F17 /* Logging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4034B12BD15E2700EB5F17 /* Logging.swift */; };
 		7D4208CB2AE122FF003D9BFB /* RouteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4208CA2AE122FF003D9BFB /* RouteView.swift */; };
 		7D462D492AAC947F00BC0D65 /* JLVM+reduce+LoadingJourneys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D462D482AAC947F00BC0D65 /* JLVM+reduce+LoadingJourneys.swift */; };
 		7D462D4B2AAC948700BC0D65 /* JLVM+reduce+JourneysLoaded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D462D4A2AAC948700BC0D65 /* JLVM+reduce+JourneysLoaded.swift */; };
@@ -312,6 +313,7 @@
 		7D345E4B2AE97FC8003CA948 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		7D39571F2B54911F00024736 /* JDV+Toolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JDV+Toolbar.swift"; sourceTree = "<group>"; };
 		7D3E5F002AB321580064213A /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		7D4034B12BD15E2700EB5F17 /* Logging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Logging.swift; path = ../../../../../Swift/ChooChoo/proj/ChooChoo/Helpers/Logging.swift; sourceTree = "<group>"; };
 		7D4208CA2AE122FF003D9BFB /* RouteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteView.swift; sourceTree = "<group>"; };
 		7D462D482AAC947F00BC0D65 /* JLVM+reduce+LoadingJourneys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JLVM+reduce+LoadingJourneys.swift"; sourceTree = "<group>"; };
 		7D462D4A2AAC948700BC0D65 /* JLVM+reduce+JourneysLoaded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JLVM+reduce+JourneysLoaded.swift"; sourceTree = "<group>"; };
@@ -569,6 +571,7 @@
 				7DBD26C12B99FB1800612A3B /* EnumTraversal.swift */,
 				7DEE69CC2B9BCDF200A063B4 /* Tips.swift */,
 				7DEE69D02B9BCE8B00A063B4 /* PresentationDetent.swift */,
+				7D4034B12BD15E2700EB5F17 /* Logging.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -1797,6 +1800,7 @@
 				7D8A3E3C2B83A8AC005B61CC /* JLVM+sideEffects+fetchJourneyList.swift in Sources */,
 				7D4B1B932AA8FD9D0096F372 /* SSVM+reduce.swift in Sources */,
 				7DD4A8D82AAC90C3001AA30C /* SSVM+reduce+Loaded.swift in Sources */,
+				7D4034B22BD15E2700EB5F17 /* Logging.swift in Sources */,
 				7D6C5C2A2AAF77CF00DEFC57 /* JDVM.swift in Sources */,
 				7D5D78522B29C00600E17CC7 /* CDLeg+CoreDataClass.swift in Sources */,
 				7D462D5E2AACEC5600BC0D65 /* constructJourneys+TimeLabel.swift in Sources */,

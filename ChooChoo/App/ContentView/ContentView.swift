@@ -8,6 +8,9 @@
 import SwiftUI
 import TipKit
 
+// oslog
+// way to contain all bugs
+// feature numbers?
 // learn content shape
 // map picker: tip for long tap / fix animation
 
