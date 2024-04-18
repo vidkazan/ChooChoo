@@ -184,25 +184,6 @@ extension JourneyFollowView {
 				JourneyFollowCellView(journeyDetailsViewModel: vm)
 //			}
 		}
-		.swipeActions(edge: .leading) {
-			Button {
-				JourneyViewData.showOnMapOption.action(journey.journeyViewData)
-			} label: {
-				Label(
-					title: {
-						Text("Map", comment: "JourneyFollowView: listCell: swipe action item")
-					},
-					icon: {
-						Image(systemName: JourneyViewData.showOnMapOption.icon)
-							.chewTextSize(.medium)
-							.padding(5)
-							.badgeBackgroundStyle(.primary)
-							.foregroundColor(.primary)
-					}
-				)
-			}
-			.tint(.chewFillBluePrimary)
-		}
 			.swipeActions(edge: .leading) {
 				Button {
 					vm.send(event: .didTapReloadButton(
@@ -220,6 +201,25 @@ extension JourneyFollowView {
 					)
 				}
 				.tint(.chewFillGreenPrimary)
+			}
+			.swipeActions(edge: .leading) {
+				Button {
+					JourneyViewData.showOnMapOption.action(journey.journeyViewData)
+				} label: {
+					Label(
+						title: {
+							Text("Map", comment: "JourneyFollowView: listCell: swipe action item")
+						},
+						icon: {
+							Image(systemName: JourneyViewData.showOnMapOption.icon)
+								.chewTextSize(.medium)
+								.padding(5)
+								.badgeBackgroundStyle(.primary)
+								.foregroundColor(.primary)
+						}
+					)
+				}
+				.tint(.chewFillBluePrimary)
 			}
 			.swipeActions(edge: .leading) {
 				Button {
