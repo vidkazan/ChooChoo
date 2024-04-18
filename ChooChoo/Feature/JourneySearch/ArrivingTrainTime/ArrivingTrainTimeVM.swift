@@ -54,10 +54,7 @@ extension ArrivingTrainTimeViewModel  {
 		}
 	}
 	
-	enum Status {
-		static func == (lhs: ArrivingTrainTimeViewModel.Status, rhs: ArrivingTrainTimeViewModel.Status) -> Bool {
-			return lhs.description == rhs.description
-		}
+	enum Status : ChewStatus {
 		case idle
 		case loading(leg : LegViewData)
 		case error(any ChewError)
@@ -74,7 +71,7 @@ extension ArrivingTrainTimeViewModel  {
 		}
 	}
 	
-	enum Event {
+	enum Event : ChewEvent {
 		case didRequestTime(leg : LegViewData)
 		case didCancelRequestTime
 		case didLoad(time : Prognosed<Date>)

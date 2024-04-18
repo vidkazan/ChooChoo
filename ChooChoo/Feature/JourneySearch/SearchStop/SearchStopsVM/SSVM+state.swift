@@ -15,10 +15,7 @@ extension SearchStopsViewModel {
 		var type : LocationDirectionType?
 	}
 	
-	enum Status : Equatable,Hashable {
-		static func == (lhs: SearchStopsViewModel.Status, rhs: SearchStopsViewModel.Status) -> Bool {
-			return lhs.description == rhs.description
-		}
+	enum Status : ChewStatus {
 		case idle
 		case loading(String)
 		case loaded
@@ -41,7 +38,7 @@ extension SearchStopsViewModel {
 		}
 	}
 	
-	enum Event {
+	enum Event : ChewEvent {
 		case onSearchFieldDidChanged(String,LocationDirectionType)
 		case onDataLoaded([Stop],LocationDirectionType)
 		case onDataLoadError(ApiError)

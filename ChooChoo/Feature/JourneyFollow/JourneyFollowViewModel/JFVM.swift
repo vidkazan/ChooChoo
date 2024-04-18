@@ -84,10 +84,7 @@ extension JourneyFollowViewModel {
 		}
 	}
 	
-	enum Status : Equatable {
-		static func == (lhs: JourneyFollowViewModel.Status, rhs: JourneyFollowViewModel.Status) -> Bool {
-			return lhs.description == rhs.description
-		}
+	enum Status : ChewStatus {
 		case error(error : String)
 		case idle
 		case editing(_ action: Action, followId : Int64, followData : JourneyFollowData?,sendToJourneyDetailsViewModel : (JourneyDetailsViewModel.Event)->Void)
@@ -110,7 +107,7 @@ extension JourneyFollowViewModel {
 		}
 	}
 	
-	enum Event {
+	enum Event : ChewEvent {
 		case didFailToEdit(action : Action, error : any ChewError)
 		case didTapUpdate
 		case didUpdateData([JourneyFollowData])

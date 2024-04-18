@@ -11,7 +11,7 @@ import CoreLocation
 import MapKit
 import SwiftUI
 
-class MapPickerViewModel : ObservableObject, Identifiable {
+class MapPickerViewModel : ChewViewModelProtocol,ObservableObject, Identifiable {
 	@Published private(set) var state : State {
 		didSet { print(">> state:",state.status.description) }
 	}
@@ -51,7 +51,7 @@ class MapPickerViewModel : ObservableObject, Identifiable {
 }
 
 extension MapPickerViewModel {
-	struct State  {
+	struct State {
 		let data : StateData
 		let status : Status
 	}
@@ -73,15 +73,14 @@ extension MapPickerViewModel {
 		}
 	}
 	
-	enum Status : Equatable {
-		static func == (lhs: MapPickerViewModel.Status, rhs: MapPickerViewModel.Status) -> Bool {
-			lhs.description == rhs.description
-		}
-		
+	enum Status :  ChewStatus {
 		case idle
 		case error(any ChewError)
 		case submitting(Stop)
-		case loadingStopDetails(Stop,_ send : (MapPickerViewModel.Event)->Void)
+		case loadingStopDetails(
+			Stop,
+			_ send : (MapPickerViewModel.Event)->Void
+		)
 		case loadingNearbyStops(_ region : MKCoordinateRegion)
 		var description : String {
 			switch self {
@@ -99,7 +98,7 @@ extension MapPickerViewModel {
 		}
 	}
 	
-	enum Event {
+	enum Event : ChewEvent {
 		case didDeselectStop
 		case didSubmitStop(Stop)
 		case didTapStopOnMap(Stop,send : (MapPickerViewModel.Event)->Void)

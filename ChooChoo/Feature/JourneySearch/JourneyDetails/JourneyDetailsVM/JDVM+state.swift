@@ -79,10 +79,7 @@ extension JourneyDetailsViewModel {
 }
 
 extension JourneyDetailsViewModel {
-	enum Status : Equatable {
-		static func == (lhs: JourneyDetailsViewModel.Status, rhs: JourneyDetailsViewModel.Status) -> Bool {
-			return lhs.description == rhs.description
-		}
+	enum Status : ChewStatus {
 		case loading(id : Int64,token : String)
 		case loadingIfNeeded(id : Int64,token : String,timeStatus: TimeContainer.Status)
 		case loadedJourneyData
@@ -110,7 +107,7 @@ extension JourneyDetailsViewModel {
 
 extension JourneyDetailsViewModel {
 	
-	enum Event {
+	enum Event : ChewEvent {
 		case didCancelToLoadData
 		case didLoadJourneyData(data : JourneyViewData)
 		case didFailedToLoadJourneyData(error : any ChewError)

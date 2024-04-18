@@ -55,9 +55,6 @@ extension ViewModel  {
 	}
 	
 	enum Status : ChewStatus {
-		static func == (lhs: ViewModel.Status, rhs: ViewModel.Status) -> Bool {
-			return lhs.description == rhs.description
-		}
 		case start
 		
 		var description : String {

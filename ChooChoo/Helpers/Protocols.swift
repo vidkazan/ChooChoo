@@ -8,13 +8,23 @@
 import Foundation
 import OSLog
 
-protocol ChewEvent {
+protocol ChewEvent : Equatable{
 	var description : String { get }
 }
 
-
-protocol ChewStatus {
+extension ChewEvent {
+	static func == (lhs: Self, rhs: Self) -> Bool {
+		lhs.description == rhs.description
+	}
+}
+protocol ChewStatus : Equatable {
 	var description : String { get }
+}
+
+extension ChewStatus {
+	static func == (lhs: Self, rhs: Self) -> Bool {
+		lhs.description == rhs.description
+	}
 }
 
 protocol ChewViewModelProtocol {

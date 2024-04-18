@@ -54,11 +54,7 @@ extension JourneyListViewModel {
 		case laterRef
 	}
 	
-	enum Status : Equatable {
-		static func == (lhs: JourneyListViewModel.Status, rhs: JourneyListViewModel.Status) -> Bool {
-			return lhs.description == rhs.description
-		}
-		
+	enum Status : ChewStatus {
 		case loadingRef(JourneyUpdateType)
 		case loadingJourneyList
 		case journeysLoaded
@@ -84,7 +80,7 @@ extension JourneyListViewModel {
 		}
 	}
 	
-	enum Event {
+	enum Event : ChewEvent {
 		case onNewJourneyListData(JourneyListViewData,JourneyUpdateType)
 		case onFailedToLoadJourneyListData(any ChewError)
 		case onReloadJourneyList

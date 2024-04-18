@@ -47,11 +47,7 @@ extension ChewViewModel {
 	}
 	
 	
-	enum Status : Equatable, ChewStatus {
-		static func == (lhs: ChewViewModel.Status, rhs: ChewViewModel.Status) -> Bool {
-			return lhs.description == rhs.description
-		}
-		
+	enum Status : ChewStatus {
 		case start
 		case loadingInitialData
 		case idle

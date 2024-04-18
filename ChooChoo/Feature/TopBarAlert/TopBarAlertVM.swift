@@ -173,10 +173,7 @@ extension TopBarAlertViewModel {
 		let status : Status
 	}
 	
-	enum Status : Hashable {
-		static func == (lhs: TopBarAlertViewModel.Status, rhs: TopBarAlertViewModel.Status) -> Bool {
-			return lhs.description == rhs.description
-		}
+	enum Status : ChewStatus {
 		case start
 		case adding(_ type: AlertType)
 		case showing
@@ -196,7 +193,7 @@ extension TopBarAlertViewModel {
 		}
 	}
 	
-	enum Event {
+	enum Event : ChewEvent {
 		case didLoadInitialData
 		case didDismiss(_ types: Set<AlertType>)
 		case didAdd(_ types: Set<AlertType>)

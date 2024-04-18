@@ -52,11 +52,7 @@ extension AppSettingsViewModel  {
 		}
 	}
 	
-	enum Status : Equatable {
-		static func == (lhs: AppSettingsViewModel.Status, rhs: AppSettingsViewModel.Status) -> Bool {
-			return lhs.description == rhs.description
-		}
-		
+	enum Status : ChewStatus {
 		case updating
 		case idle
 		
@@ -70,7 +66,7 @@ extension AppSettingsViewModel  {
 			}
 		}
 	}
-	enum Event {
+	enum Event : ChewEvent {
 		case didRequestToLoadInitialData(settings : AppSettings)
 		case didShowTip(tip : AppSettings.ChooTipType)
 		case didRequestToChangeLegViewMode(mode : AppSettings.LegViewMode)

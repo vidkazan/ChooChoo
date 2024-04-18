@@ -75,10 +75,7 @@ extension RecentSearchesViewModel {
 		case deleting
 	}
 	
-	enum Status : Equatable {
-		static func == (lhs: RecentSearchesViewModel.Status, rhs: RecentSearchesViewModel.Status) -> Bool {
-			return lhs.description == rhs.description
-		}
+	enum Status : ChewStatus {
 		case error(error : String)
 		case idle
 		case editing(_ action: Action, search : RecentSearch?)
@@ -98,7 +95,7 @@ extension RecentSearchesViewModel {
 		}
 	}
 	
-	enum Event {
+	enum Event : ChewEvent {
 		case didFailToEdit(action : Action, msg: String)
 		case didTapUpdate
 		case didUpdateData([RecentSearch])

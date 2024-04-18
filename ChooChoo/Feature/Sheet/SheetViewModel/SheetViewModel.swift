@@ -54,10 +54,7 @@ extension SheetViewModel{
 	}
 	
 	
-	enum Status {
-		static func == (lhs: SheetViewModel.Status, rhs: SheetViewModel.Status) -> Bool {
-			return lhs.description == rhs.description
-		}
+	enum Status : ChewStatus {
 		case loading(_ type : SheetType)
 		case error(_ error : any ChewError)
 		case showing(_ type : SheetType, result: any SheetViewDataSource)
@@ -74,7 +71,7 @@ extension SheetViewModel{
 		}
 	}
 	
-	enum Event {
+	enum Event : ChewEvent{
 		case didRequestHide
 		case didRequestShow(_ type : SheetType)
 		case didLoadDataForShowing(_ type : SheetType,_ result : SheetViewDataSource)
