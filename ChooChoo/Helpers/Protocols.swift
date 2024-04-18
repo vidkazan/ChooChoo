@@ -8,7 +8,7 @@
 import Foundation
 import OSLog
 
-protocol ChewEvent : Equatable{
+protocol ChewEvent : Equatable {
 	var description : String { get }
 }
 
@@ -27,7 +27,7 @@ extension ChewStatus {
 	}
 }
 
-protocol ChewViewModelProtocol {
+protocol ChewViewModelProtocol : ObservableObject, Identifiable {
 	
 }
 
@@ -38,7 +38,7 @@ extension ChewViewModelProtocol {
 	static func log(_ event : any ChewEvent,_ status : any ChewStatus) {
 		Logger.event("\(Self.self)", event: event,status: status)
 	}
-	static func logReducer(_ event : any ChewEvent,_ status : any ChewStatus) {
+	static func logReducerWarning(_ event : any ChewEvent,_ status : any ChewStatus) {
 		Logger.reducer("\(Self.self)", event: event,status: status)
 	}
 }

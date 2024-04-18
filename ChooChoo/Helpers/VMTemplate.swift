@@ -9,7 +9,7 @@ import Foundation
 import Combine
 import OSLog
 
-class ViewModel : ChewViewModelProtocol ,ObservableObject, Identifiable {
+class ViewModel : ChewViewModelProtocol {
 	@Published private(set) var state : State {
 		didSet {
 			Self.log(state.status)

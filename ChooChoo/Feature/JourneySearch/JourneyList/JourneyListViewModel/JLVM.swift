@@ -9,7 +9,7 @@ import Foundation
 import Combine
 import SwiftUI
 
-final class JourneyListViewModel : ObservableObject {
+class JourneyListViewModel : ChewViewModelProtocol {
 	let id = UUID()
 	@Published private(set) var state : State {
 		didSet {print("[🚂] >> journeys state: ",state.status.description)}

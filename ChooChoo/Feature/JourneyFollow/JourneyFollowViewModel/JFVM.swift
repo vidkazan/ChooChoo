@@ -21,7 +21,7 @@ struct JourneyFollowData : Equatable {
 	}
 }
 
-final class JourneyFollowViewModel : ObservableObject, Identifiable {
+final class JourneyFollowViewModel : ChewViewModelProtocol {
 	@Published private(set) var state : State {
 		didSet {
 			print("📌 >> state: ",state.status.description)

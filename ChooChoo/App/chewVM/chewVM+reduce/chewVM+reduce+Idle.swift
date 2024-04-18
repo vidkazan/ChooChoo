@@ -18,7 +18,7 @@ extension ChewViewModel {
 				.didFailToLoadLocationData,
 				.didTapCloseJourneyList,
 				.onNotEnoughSearchData:
-			logReducer(event, state.status)
+			logReducerWarning(event, state.status)
 			return state
 		case .onJourneyDataUpdated(let stops):
 			return State(state: state, status: .journeys(stops))

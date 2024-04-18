@@ -9,7 +9,7 @@ import Foundation
 import Combine
 import SwiftUI
 
-class SearchStopsViewModel : ObservableObject {
+class SearchStopsViewModel : ChewViewModelProtocol {
 	private var bag = Set<AnyCancellable>()
 	private let input = PassthroughSubject<Event,Never>()
 	

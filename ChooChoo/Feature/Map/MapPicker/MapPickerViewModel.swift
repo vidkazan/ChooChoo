@@ -11,7 +11,7 @@ import CoreLocation
 import MapKit
 import SwiftUI
 
-class MapPickerViewModel : ChewViewModelProtocol,ObservableObject, Identifiable {
+class MapPickerViewModel : ChewViewModelProtocol {
 	@Published private(set) var state : State {
 		didSet { print(">> state:",state.status.description) }
 	}

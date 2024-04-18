@@ -44,7 +44,7 @@ extension ChewViewModel {
 			 .onNotEnoughSearchData,
 			 .didCancelEditStop,
 			 .didStartViewAppear:
-			logReducer(event, state.status)
+			logReducerWarning(event, state.status)
 			return state
 		}
 	}

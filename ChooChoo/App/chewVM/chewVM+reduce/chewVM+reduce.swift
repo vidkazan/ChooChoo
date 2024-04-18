@@ -37,7 +37,7 @@ extension ChewViewModel {
 			case .onNotEnoughSearchData:
 				return State(state: state, status: .idle)
 			default:
-				logReducer(event, state.status)
+				logReducerWarning(event, state.status)
 				return state
 			}
 		case .loadingInitialData:
@@ -45,7 +45,7 @@ extension ChewViewModel {
 			case .didLoadInitialData(let settings):
 				return State(data: StateData(data: state.data,journeySettings: settings), status: .idle)
 			default:
-				logReducer(event, state.status)
+				logReducerWarning(event, state.status)
 				return state
 			}
 		case .start:
@@ -59,7 +59,7 @@ extension ChewViewModel {
 					status: .loadingInitialData
 				)
 			default:
-				logReducer(event, state.status)
+				logReducerWarning(event, state.status)
 				return state
 			}
 		}

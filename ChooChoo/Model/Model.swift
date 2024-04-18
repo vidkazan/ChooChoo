@@ -14,7 +14,7 @@ final class Model {
 	
 	let modelLogger = Logger(subsystem: "ChooChoo", category: "Model")
 	private var _journeyDetailsViewModels : [String: JourneyDetailsViewModel] = [:]
-	let locationDataManager : LocationDataManager
+	let locationDataManager : ChewLocationDataManager
 	let sheetViewModel : SheetViewModel
 	let topBarAlertViewModel : TopBarAlertViewModel
 	let coreDataStore : CoreDataStore

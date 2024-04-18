@@ -12,7 +12,7 @@ import MapKit
 import CoreLocation
 import OrderedCollections
 
-class SheetViewModel : ObservableObject, Identifiable {
+class SheetViewModel : ChewViewModelProtocol {
 	@Published private(set) var state : State
 //	{
 //		didSet { print(">> state:",state.status.description) }

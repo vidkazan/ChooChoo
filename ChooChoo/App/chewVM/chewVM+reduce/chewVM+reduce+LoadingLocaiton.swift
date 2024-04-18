@@ -17,7 +17,7 @@ extension ChewViewModel {
 				.didCancelEditStop,
 				.didStartViewAppear,
 				.onNotEnoughSearchData:
-			logReducer(event, state.status)
+			logReducerWarning(event, state.status)
 			return state
 		case .onStopEdit(let type):
 			return State(state: state, status: .editingStop(type))

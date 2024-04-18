@@ -8,7 +8,7 @@
 import Foundation
 import Combine
 
-class ArrivingTrainTimeViewModel : ObservableObject, Identifiable {
+class ArrivingTrainTimeViewModel : ChewViewModelProtocol {
 	@Published private(set) var state : State {
 		didSet { print(">> state:",state.status.description) }
 	}

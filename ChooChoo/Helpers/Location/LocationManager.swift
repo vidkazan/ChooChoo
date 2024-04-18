@@ -9,7 +9,7 @@ import Foundation
 import CoreLocation
 import OSLog
 
-class LocationDataManager : NSObject, ObservableObject {
+class ChewLocationDataManager : NSObject, ObservableObject {
 	var locationManager = CLLocationManager()
 	@Published var authorizationStatus: CLAuthorizationStatus?
 	
@@ -28,7 +28,7 @@ class LocationDataManager : NSObject, ObservableObject {
 	}
 }
 
-extension LocationDataManager : CLLocationManagerDelegate {
+extension ChewLocationDataManager : CLLocationManagerDelegate {
 	func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
 		switch manager.authorizationStatus {
 		case .authorizedWhenInUse:  // Location services are available.

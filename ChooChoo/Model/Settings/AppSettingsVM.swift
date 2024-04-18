@@ -9,7 +9,7 @@ import Foundation
 import Combine
 
 
-class AppSettingsViewModel : ObservableObject, Identifiable {
+class AppSettingsViewModel : ChewViewModelProtocol {
 	@Published private(set) var state : State {
 		didSet { print("🚂⚙️ >> state:",state.status,state.settings) }
 	}

@@ -10,7 +10,7 @@ import Combine
 import Network
 import SwiftUI
 
-final class AlertViewModel : ObservableObject, Identifiable {
+class AlertViewModel : ChewViewModelProtocol {
 
 	@Published private(set) var state : State {
 		didSet { print("‼️‼️ >  state:",state.alert.description) }

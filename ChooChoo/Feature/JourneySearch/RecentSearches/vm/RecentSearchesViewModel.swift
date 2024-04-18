@@ -8,7 +8,7 @@
 import Foundation
 import Combine
 
-final class RecentSearchesViewModel : ObservableObject, Identifiable {
+final class RecentSearchesViewModel : ChewViewModelProtocol {
 	struct RecentSearch : Equatable {
 		let stops : DepartureArrivalPairStop
 		let searchTS : Double

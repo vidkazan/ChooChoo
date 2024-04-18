@@ -18,7 +18,16 @@ class JourneySettingsClass : ObservableObject {
 	@Published var startWithWalking : Bool
 	@Published var withBicycle : Bool
 	
-	init(customTransferModes: Set<LineType>, transportMode: JourneySettings.TransportMode, transferTime: JourneySettings.TransferTime, transferCount: JourneySettings.TransferCountCases, accessiblity: JourneySettings.Accessiblity, walkingSpeed: JourneySettings.WalkingSpeed, startWithWalking: Bool, withBicycle: Bool) {
+	init(
+		customTransferModes: Set<LineType>,
+		transportMode: JourneySettings.TransportMode,
+		transferTime: JourneySettings.TransferTime,
+		transferCount: JourneySettings.TransferCountCases,
+		accessiblity: JourneySettings.Accessiblity,
+		walkingSpeed: JourneySettings.WalkingSpeed,
+		startWithWalking: Bool,
+		withBicycle: Bool
+	) {
 		self.customTransferModes = customTransferModes
 		self.transportMode = transportMode
 		self.transferTime = transferTime

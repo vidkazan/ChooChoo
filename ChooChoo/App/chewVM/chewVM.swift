@@ -11,7 +11,7 @@ import Combine
 import CoreLocation
 import CoreData
 
-final class ChewViewModel : ChewViewModelProtocol,ObservableObject, Identifiable {
+final class ChewViewModel : ChewViewModelProtocol {
 	let referenceDate : ChewDate
 	@Published private(set) var state : State {
 		didSet {
