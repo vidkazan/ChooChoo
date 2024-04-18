@@ -7,6 +7,7 @@
 
 import Foundation
 import Combine
+import OSLog
 
 protocol ChewClient {
 	func execute<T:Decodable>(_ t : T.Type,request: URLRequest, type : ApiService.Requests) -> AnyPublisher<T,ApiError>
@@ -34,17 +35,18 @@ class ApiClient : ChewClient {
 					break
 				}
 				let value = try JSONDecoder().decode(T.self, from: data)
-				print("🟢 > api: done:",type.description, request.url ?? "")
+				let url = request.url?.path ?? ""
+				Logger.networking.debug("done: \(type.description)  \(url)")
 				return value
 			}
 			.receive(on: DispatchQueue.main)
 			.mapError{ error -> ApiError in
+				let url = request.url?.path ?? ""
+				Logger.networking.error("\(type.description) \(url) \(error)")
 				switch error {
 				case let error as ApiError:
-					print("🔴> api: error:",type,request.url ?? "url",error)
 					return error
 				default:
-					print("🔴> api: error:",type,request.url ?? "url",error)
 					return .generic(description: error.localizedDescription)
 				}
 			}

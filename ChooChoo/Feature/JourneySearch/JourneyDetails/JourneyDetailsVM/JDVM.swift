@@ -13,7 +13,7 @@ import CoreData
 final class JourneyDetailsViewModel : ChewViewModelProtocol {
 	
 	@Published private(set) var state : State {
-		didSet { print("🚂 > state:",state.status.description) }
+		didSet { Self.log(state.status) }
 	}
 	private var bag = Set<AnyCancellable>()
 	private let input = PassthroughSubject<Event,Never>()
@@ -25,7 +25,6 @@ final class JourneyDetailsViewModel : ChewViewModelProtocol {
 		chewVM : ChewViewModel?,
 		initialStatus : Status = .loadedJourneyData
 	) {
-//		print("💾 JDVM \(self.id.uuidString.suffix(4)) init")
 		state = State(
 			followId: followId,
 			chewVM : chewVM,
@@ -50,7 +49,6 @@ final class JourneyDetailsViewModel : ChewViewModelProtocol {
 		.store(in: &bag)
 	}
 	deinit {
-//		print("💾🗑️ JDVM \(self.id.uuidString.suffix(4)) deinit")
 		bag.removeAll()
 	}
 	func send(event: Event) {

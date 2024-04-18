@@ -13,7 +13,7 @@ import SwiftUI
 class AlertViewModel : ChewViewModelProtocol {
 
 	@Published private(set) var state : State {
-		didSet { print("‼️‼️ >  state:",state.alert.description) }
+		didSet { Self.log(state.alert) }
 	}
 	private var bag = Set<AnyCancellable>()
 	private let input = PassthroughSubject<Event,Never>()
@@ -44,11 +44,7 @@ class AlertViewModel : ChewViewModelProtocol {
 
 
 extension AlertViewModel {
-	enum AlertType : Equatable {
-		static func == (lhs: AlertViewModel.AlertType, rhs: AlertViewModel.AlertType) -> Bool {
-			lhs.description == rhs.description
-		}
-		
+	enum AlertType : ChewStatus {
 		case none
 		case destructive(
 			destructiveAction : ()->Void,
@@ -82,7 +78,7 @@ extension AlertViewModel {
 		let alert : AlertType
 	}
 	
-	enum Event {
+	enum Event : ChewEvent {
 		case didRequestDismiss
 		case didRequestShow(_ type: AlertType)
 		var description : String {
@@ -99,7 +95,7 @@ extension AlertViewModel {
 
 extension AlertViewModel {
 	static func reduce(_ state: State, _ event: Event) -> State {
-		print("‼️🔥 > ",event.description,"state:",state.alert.description)
+		Self.log(event, state.alert)
 		switch event {
 		case .didRequestShow(let type):
 			return State(alert: type)

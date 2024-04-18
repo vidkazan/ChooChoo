@@ -8,6 +8,8 @@
 import Foundation
 import CoreData
 import CoreLocation
+import OSLog
+
 
 final class CoreDataStore : ObservableObject {
 	var asyncContext: NSManagedObjectContext
@@ -23,10 +25,10 @@ extension CoreDataStore {
 	func saveAsyncContext(){
 		do {
 			try asyncContext.save()
-			print("📗 > saved asyncContext")
+			Logger.coreData.debug("\(#function)")
 		} catch {
 			let nserror = error as NSError
-			print("📕 > save asyncContext: ", nserror.description, nserror.userInfo)
+			Logger.coreData.error("\(#function): \(nserror.description) \(nserror.userInfo)")
 		}
 	}
 }

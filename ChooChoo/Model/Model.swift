@@ -56,7 +56,6 @@ final class Model {
 }
 
 extension Model {
-	
 	func allJourneyDetailViewModels() -> [JourneyDetailsViewModel]{
 		return _journeyDetailsViewModels.map({$0.1})
 	}
@@ -69,16 +68,9 @@ extension Model {
 		chewVM : ChewViewModel?
 	) -> JourneyDetailsViewModel {
 		if let vm = _journeyDetailsViewModels[journeyRef] {
-//			#warning("viewData comparing criteria")
-//			if vm.state.data.viewData.time == viewdata.time {
-				return vm
-//			} 
-//			else {
-//				_journeyDetailsViewModels.removeValue(forKey: journeyRef)
-//			}
-//			print("🏭 \(#function): viewData doesnt match: creating new")
+			return vm
 		}
-		print("🏭 \(#function): vm not found: creating new")
+		Logger.journeyDetailsViewModel.info("\(#function): vm not found: creating new")
 		let vm = JourneyDetailsViewModel(
 			followId: followId,
 			data: viewdata,

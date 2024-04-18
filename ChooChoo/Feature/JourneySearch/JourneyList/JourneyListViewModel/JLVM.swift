@@ -12,14 +12,15 @@ import SwiftUI
 class JourneyListViewModel : ChewViewModelProtocol {
 	let id = UUID()
 	@Published private(set) var state : State {
-		didSet {print("[🚂] >> journeys state: ",state.status.description)}
+		didSet {
+			Self.log(state.status)
+		}
 	}
 	private var bag = Set<AnyCancellable>()
 	private let input = PassthroughSubject<Event,Never>()
 	
 //	// testing init
 //	init(stops : DepartureArrivalPairStop,viewData : JourneyListViewData) {
-////		print("💾 JLVM \(self.id.uuidString.suffix(4)) init")
 //		state = State(
 //			journeys: viewData.journeys,
 //			date: .init(date: .now, mode: .departure),
@@ -49,7 +50,6 @@ class JourneyListViewModel : ChewViewModelProtocol {
 		settings : JourneySettings,
 		stops : DepartureArrivalPairStop
 	) {
-//		print("💾 JLVM \(self.id.uuidString.suffix(4)) init")
 		state = State(
 			journeys: [],
 			date: date,
@@ -73,7 +73,6 @@ class JourneyListViewModel : ChewViewModelProtocol {
 		.store(in: &bag)
 	}
 	deinit {
-//		print("💾🗑️ JLVM \(self.id.uuidString.suffix(4)) deinit")
 		bag.removeAll()
 	}
 	

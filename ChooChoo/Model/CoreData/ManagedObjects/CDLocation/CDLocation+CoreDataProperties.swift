@@ -9,6 +9,7 @@
 import Foundation
 import CoreData
 import CoreLocation
+import OSLog
 
 extension CDLocation {
 	@NSManaged public var address: String?
@@ -53,7 +54,7 @@ extension CDLocation {
 	
 	static func delete(object: CDLocation?,in context : NSManagedObjectContext) {
 		guard let object = object else {
-			print("📕 > delete \(Self.self): object is nil")
+			Logger.coreData.error("CDLocation: \(#function): \(Self.self) object is nil")
 			return
 		}
 		context.delete(object)

@@ -26,7 +26,7 @@ extension SearchStopsViewModel {
 				type: type
 			)
 		case .onDataLoaded,.onDataLoadError,.didRecentStopsUpdated:
-			print("⚠️ \(Self.self): reduce error: \(state.status) \(event.description)")
+			logReducerWarning(event, state.status)
 			return state
 		case .onStopDidTap(let content,_):
 			return State(

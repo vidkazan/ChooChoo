@@ -8,6 +8,8 @@
 
 import Foundation
 import CoreData
+import OSLog
+
 
 extension CDUser {
 	@NSManaged public var recentLocations: Set<CDLocation>?
@@ -26,7 +28,7 @@ extension CDUser {
 				return user
 			} catch {
 				let nserror = error as NSError
-				print("📕 > save User: failed to save new User", nserror.description, nserror.userInfo)
+				Logger.coreData.error("cdUser: \(#function): \(nserror.description) \(nserror.userInfo)")
 				return nil
 			}
 		}

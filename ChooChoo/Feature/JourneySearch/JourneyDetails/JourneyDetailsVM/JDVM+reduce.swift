@@ -8,7 +8,7 @@
 import Foundation
 extension JourneyDetailsViewModel {
 	static func reduce(_ state: State, _ event: Event) -> State {
-		print("🚂🔥 >",event.description,"state:",state.status.description)
+		Self.log(event, state.status)
 		switch state.status {
 		case .changingSubscribingState:
 			switch event {
@@ -23,7 +23,7 @@ extension JourneyDetailsViewModel {
 					status: .loadedJourneyData
 				)
 			default:
-				print("⚠️ \(Self.self): reduce error: \(state.status) \(event.description)")
+				logReducerWarning(event, state.status)
 				return state
 			}
 			
@@ -55,7 +55,7 @@ extension JourneyDetailsViewModel {
 					status: .error(error: error)
 				)
 			default:
-				print("⚠️ \(Self.self): reduce error: \(state.status) \(event.description)")
+				logReducerWarning(event, state.status)
 				return state
 			}
 			
@@ -77,7 +77,7 @@ extension JourneyDetailsViewModel {
 					status: .loadingIfNeeded(id: id,token: ref,timeStatus: status)
 				)
 			default:
-				print("⚠️ \(Self.self): reduce error: \(state.status.description) \(event.description)")
+				logReducerWarning(event, state.status)
 				return state
 			}
 			
@@ -91,7 +91,7 @@ extension JourneyDetailsViewModel {
 			case
 					.didLoadJourneyData,
 					.didFailedToLoadJourneyData:
-				print("⚠️ \(Self.self): reduce error: \(state.status) \(event.description)")
+				logReducerWarning(event, state.status)
 				return state
 			case let .didRequestReloadIfNeeded(id, ref, status):
 				return State(
@@ -104,7 +104,7 @@ extension JourneyDetailsViewModel {
 					status: .loading(id:id,token: ref)
 				)
 			default:
-				print("⚠️ \(Self.self): reduce error: \(state.status.description) \(event.description)")
+				logReducerWarning(event, state.status)
 				return state
 			}
 		}

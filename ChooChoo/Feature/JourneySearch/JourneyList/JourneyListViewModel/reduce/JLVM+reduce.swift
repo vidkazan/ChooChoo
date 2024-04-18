@@ -9,7 +9,7 @@ import Foundation
 
 extension JourneyListViewModel {
 	static func reduce(_ state: State, _ event: Event) -> State {
-		print("[🚂]🔥 > ",event.description)
+		Self.log(event, state.status)
 		switch state.status {
 		case .loadingJourneyList:
 			return reduceLoadingJourneyList(state, event)
@@ -37,7 +37,7 @@ extension JourneyListViewModel {
 					status: .loadingRef(.earlierRef)
 				)
 			case .didFailToLoadLaterRef, .didFailToLoadEarlierRef,.onNewJourneyListData,.onFailedToLoadJourneyListData:
-				print("⚠️ \(Self.self): reduce error: \(state.status) \(event.description)")
+				logReducerWarning(event, state.status)
 				return state
 			}
 		}

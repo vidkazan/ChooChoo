@@ -27,7 +27,7 @@ extension JourneyListViewModel {
 				status: .loadingRef(.earlierRef)
 			)
 		case .onNewJourneyListData(_, _):
-			print("⚠️ \(Self.self): reduce error: \(state.status) \(event.description)")
+			logReducerWarning(event, state.status)
 			return state
 		case .onFailedToLoadJourneyListData(_):
 			return state

@@ -9,7 +9,7 @@ import Foundation
 
 extension SearchStopsViewModel {
 	static func reduce(_ state:  State, _ event: Event) -> State {
-		print("🔎🔥 >",event.description,"state:",state.status.description)
+		Self.log(event, state.status)
 		switch state.status {
 		case .updatingRecentStops:
 			switch event {
@@ -19,7 +19,7 @@ extension SearchStopsViewModel {
 				 .onStopDidTap,
 				 .didRequestDeleteRecentStop,
 				 .onSearchFieldDidChanged:
-				print("⚠️ \(Self.self): reduce error: \(state.status) \(event.description)")
+				logReducerWarning(event, state.status)
 				return state
 			case .didRecentStopsUpdated(let recentStops):
 				return State(

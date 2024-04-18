@@ -8,6 +8,8 @@
 import Combine
 import Foundation
 import SwiftUI
+import OSLog
+
 
 extension ChewViewModel {
 	static func whenLoadingInitialData() -> Feedback<State, Event> {
@@ -16,7 +18,7 @@ extension ChewViewModel {
 				return Empty().eraseToAnyPublisher()
 			}
 			guard Model.shared.coreDataStore.fetchUser() != nil else {
-				print("\(#function): user is nil: loading default data")
+				Logger.loadingsInitialData.info("\(#function): user is nil: loading default data")
 				return Just(Event.didLoadInitialData(JourneySettings()))
 					.eraseToAnyPublisher()
 			}
@@ -27,7 +29,7 @@ extension ChewViewModel {
 						event: .didRequestToLoadInitialData(settings: appSettings)
 					)
 				} else {
-					print("\(#function): appSettings is nil")
+					Logger.loadingsInitialData.info("\(#function): appSettings is nil")
 				}
 				if let stops = Model.shared.coreDataStore.fetchLocations() {
 					Model.shared.searchStopsViewModel.send(event: .didRecentStopsUpdated(recentStops: stops))

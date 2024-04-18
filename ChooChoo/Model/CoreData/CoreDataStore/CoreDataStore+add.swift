@@ -8,6 +8,7 @@
 import Foundation
 import CoreData
 import CoreLocation
+import OSLog
 
 // MARK: add
 extension CoreDataStore {
@@ -32,7 +33,7 @@ extension CoreDataStore {
 	) -> Bool {
 		var res = false
 		guard let user = self.user else {
-			print("📕 > \(#function) : error : ref / user/ journeys")
+			Logger.coreData.error("\(#function): ref / user/ journeys")
 			return false
 		}
 		asyncContext.performAndWait {
@@ -52,7 +53,7 @@ extension CoreDataStore {
 	func addRecentSearch(search : RecentSearchesViewModel.RecentSearch) -> Bool {
 		var res = false
 		guard let user = self.user else {
-			print("📕 > \(#function) : error : user")
+			Logger.coreData.error("\(#function): user is nil")
 			return false
 		}
 		 asyncContext.performAndWait {

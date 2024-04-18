@@ -14,14 +14,28 @@ enum LoggerCategories : String,Hashable,CaseIterable {
 	case stateStatus
 	case stateEvent
 	case reducer
+	case coreData
+	case networking
+	case fetchJourneyList
+	case fetchJourneyRef
+	case loadingsInitialData
+	case location
+	case journeyDetailsViewModel
 }
 
 extension Logger {
 	static let locationManager = Logger(category: .locationManager)
 	static let mockService = Logger(category: .mockService)
+	static let coreData = Logger(category: .coreData)
+	static let networking = Logger(category: .networking)
 	static private let stateStatus = Logger(category: .stateStatus)
 	static private let stateEvent = Logger(category: .stateEvent)
 	static private let reducer = Logger(category: .reducer)
+	static let fetchJourneyList = Logger(category: .fetchJourneyList)
+	static let fetchJourneyRef = Logger(category: .fetchJourneyRef)
+	static let location = Logger(category: .location)
+	static let loadingsInitialData = Logger(category: .loadingsInitialData)
+	static let journeyDetailsViewModel = Logger(category: .journeyDetailsViewModel)
 }
 
 extension Logger {

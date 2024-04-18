@@ -10,7 +10,7 @@ import Combine
 
 extension JourneyFollowViewModel {
 	static func reduce(_ state: State, _ event: Event) -> State {
-		print("📌🔥 > :",event.description,"state:",state.status.description)
+		Self.log(event, state.status)
 		switch state.status {
 		case .updatingJourney:
 			switch event {
@@ -24,14 +24,14 @@ extension JourneyFollowViewModel {
 			 .didRequestUpdateJourney,
 			 .didTapEdit,
 			 .didEdit:
-				print("⚠️ \(Self.self): reduce error: \(state.status.description) \(event.description)")
+				logReducerWarning(event, state.status)
 				return state
 			}
 			
 		case .idle,.error:
 			switch event {
 			case .didEdit,.didFailToEdit:
-				print("⚠️ \(Self.self): reduce error: \(state.status.description) \(event.description)")
+				logReducerWarning(event, state.status)
 				return state
 			case .didFailToUpdateJourney:
 				return state

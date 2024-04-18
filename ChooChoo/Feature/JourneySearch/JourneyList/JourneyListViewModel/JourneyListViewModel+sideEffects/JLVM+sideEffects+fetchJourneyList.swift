@@ -7,6 +7,7 @@
 
 import Foundation
 import Combine
+import OSLog
 
 extension JourneyListViewModel {
 	static func fetchJourneyList(
@@ -42,7 +43,7 @@ extension JourneyListViewModel {
 			]
 		case .pointOfInterest:
 			guard let id = dep.stopDTO?.id else {
-				print("fetchJourneyList","departure poi id is NIL")
+				Logger.fetchJourneyList.error("departure poi id is NIL")
 				return query
 			}
 			
@@ -54,7 +55,7 @@ extension JourneyListViewModel {
 			]
 		case .stop,.station:
 			guard let depStop = dep.stopDTO?.id else {
-				print("fetchJourneyList","departure stop id is NIL")
+				Logger.fetchJourneyList.error("departure stop id is NIL")
 				return query
 			}
 			query += Query.queryItems(methods: [
@@ -71,7 +72,7 @@ extension JourneyListViewModel {
 			]
 		case .pointOfInterest:
 			guard let id = arr.stopDTO?.id else {
-				print("fetchJourneyList","arr pointOfInterest id is NIL")
+				Logger.fetchJourneyList.error("arr pointOfInterest id is NIL")
 				return query
 			}
 			query += [
@@ -82,7 +83,7 @@ extension JourneyListViewModel {
 			]
 		case .stop,.station:
 			guard let depStop = arr.stopDTO?.id else {
-				print("fetchJourneyList","arr stop id is NIL")
+				Logger.fetchJourneyList.error("arr stop id is NIL")
 				return query
 			}
 			query += Query.queryItems(methods: [

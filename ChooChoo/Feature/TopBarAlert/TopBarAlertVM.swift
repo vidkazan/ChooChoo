@@ -13,7 +13,9 @@ import SwiftUI
 final class TopBarAlertViewModel : ChewViewModelProtocol {
 
 	@Published private(set) var state : State {
-		didSet { print("‼️ >  state:",state.status.description) }
+		didSet {
+			Self.log(state.status)
+		}
 	}
 	private var bag = Set<AnyCancellable>()
 	private let input = PassthroughSubject<Event,Never>()
@@ -219,7 +221,7 @@ extension TopBarAlertViewModel {
 
 extension TopBarAlertViewModel {
 	static func reduce(_ state: State, _ event: Event) -> State {
-		print("‼️🔥 > ",event.description,"state:",state.status.description)
+		Self.log(event, state.status)
 		switch state.status {
 		case .start:
 			switch event {
@@ -229,13 +231,13 @@ extension TopBarAlertViewModel {
 					status: .showing
 				)
 			default:
-				print("⚠️ \(Self.self): reduce error: \(state.status) \(event.description)")
+				logReducerWarning(event, state.status)
 				return state
 			}
 		case .showing:
 			switch event {
 			case .didLoadInitialData,.didAdd,.didDismiss:
-				print("⚠️ \(Self.self): reduce error: \(state.status) \(event.description)")
+				logReducerWarning(event, state.status)
 				return state
 			case .didRequestShow(let type):
 				return State(
@@ -256,7 +258,7 @@ extension TopBarAlertViewModel {
 					status: .showing
 				)
 			default:
-				print("⚠️ \(Self.self): reduce error: \(state.status) \(event.description)")
+				logReducerWarning(event, state.status)
 				return state
 			}
 		case .deleting:
@@ -267,7 +269,7 @@ extension TopBarAlertViewModel {
 					status: .showing
 				)
 			default:
-				print("⚠️ \(Self.self): reduce error: \(state.status) \(event.description)")
+				logReducerWarning(event, state.status)
 				return state
 			}
 		}

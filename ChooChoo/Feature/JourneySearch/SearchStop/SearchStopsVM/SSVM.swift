@@ -15,7 +15,7 @@ class SearchStopsViewModel : ChewViewModelProtocol {
 	
 	@Published private(set) var state : State {
 		didSet {
-			print("🔎 >> ",state.type ?? "nil","state:",state.status.description)
+			Self.log(state.status)
 		}
 	}
 	

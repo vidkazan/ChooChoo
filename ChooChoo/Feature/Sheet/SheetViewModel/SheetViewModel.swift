@@ -10,13 +10,13 @@ import Combine
 import SwiftUI
 import MapKit
 import CoreLocation
+import OSLog
 import OrderedCollections
 
 class SheetViewModel : ChewViewModelProtocol {
-	@Published private(set) var state : State
-//	{
-//		didSet { print(">> state:",state.status.description) }
-//	}
+	@Published private(set) var state : State {
+		didSet { Self.log(state.status) }
+	}
 	
 	private var bag = Set<AnyCancellable>()
 	private let input = PassthroughSubject<Event,Never>()
@@ -193,7 +193,7 @@ extension SheetViewModel{
 
 extension SheetViewModel {
 	static func reduce(_ state: State, _ event: Event) -> State {
-//		print(">> ",event.description,"state:",state.status.description)
+		Self.log(event, state.status)
 		switch state.status {
 		case .loading:
 			switch event {
@@ -478,7 +478,7 @@ extension SheetViewModel {
 						)
 					}
 					.catch { error in
-						print("❌ whenLoadingLocationDetails: makeDirecitonsRequest: error:",error)
+						Logger.location.error("whenLoadingLocationDetails: makeDirecitonsRequest: \(error)")
 						return Just(Event.didLoadDataForShowing(
 							.mapDetails(.footDirection(leg)),
 							MapDetailsViewDataSource(

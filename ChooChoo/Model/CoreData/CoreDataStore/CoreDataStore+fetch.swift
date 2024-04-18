@@ -8,7 +8,7 @@
 import Foundation
 import CoreData
 import CoreLocation
-
+import OSLog
 
 // MARK: Fetch
 extension CoreDataStore {
@@ -98,20 +98,22 @@ extension CoreDataStore {
 		var object : [T]? = nil
 		 asyncContext.performAndWait {
 			guard let fetchRequest = T.fetchRequest() as? NSFetchRequest<T> else {
-				print("📕 > basicFetchRequest \(T.self): generate fetch request error")
+				Logger.coreData.error("fetch: \(T.self): generate fetch request error")
 				return
 			}
 			do {
 				let res = try self.asyncContext.fetch(fetchRequest)
 				if !res.isEmpty {
-					print("📗 > basicFetchRequest \(T.self)")
+					Logger.coreData.debug("fetch: \(T.self) done")
 					object = res
 					return
 				}
 				object = []
-				print("📙 > basicFetchRequest \(T.self): result is empty")
+				Logger.coreData.warning(
+					"fetch: \(T.self): result is empty"
+				)
 			} catch {
-				print("📕 > basicFetchRequest \(T.self): error")
+				Logger.coreData.error("fetch: \(T.self) failed")
 			}
 		}
 		return object

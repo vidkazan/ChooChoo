@@ -24,7 +24,7 @@ struct JourneyFollowData : Equatable {
 final class JourneyFollowViewModel : ChewViewModelProtocol {
 	@Published private(set) var state : State {
 		didSet {
-			print("📌 >> state: ",state.status.description)
+			Self.log(state.status)
 		}
 	}
 	private var bag = Set<AnyCancellable>()

@@ -8,6 +8,7 @@
 import Foundation
 import CoreData
 import CoreLocation
+import OSLog
 
 // MARK: remove
 extension CoreDataStore {
@@ -22,11 +23,11 @@ extension CoreDataStore {
 					self.saveAsyncContext()
 					result = true
 				} else {
-					print("📕 > delete JourneysIfFound : error : not found")
+					Logger.coreData.error("\(#function): not found")
 				}
 			}
 		} else {
-			print("📕 > delete JourneysIfFound : error : fetch fault")
+			Logger.coreData.error("\(#function): fetch failed")
 		}
 		return result
 	}
@@ -38,7 +39,6 @@ extension CoreDataStore {
 				if let objects = objects.first(where: { obj in
 					return obj.name == name
 				}) {
-//					print("> ⚡️ delete journeys thread ",Thread.current)
 					self.asyncContext.delete(objects)
 					self.saveAsyncContext()
 					result = true

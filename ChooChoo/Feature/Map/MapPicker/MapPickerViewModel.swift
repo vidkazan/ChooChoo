@@ -13,7 +13,7 @@ import SwiftUI
 
 class MapPickerViewModel : ChewViewModelProtocol {
 	@Published private(set) var state : State {
-		didSet { print(">> state:",state.status.description) }
+		didSet { Self.log(state.status) }
 	}
 	private var bag = Set<AnyCancellable>()
 	private let input = PassthroughSubject<Event,Never>()
@@ -136,7 +136,7 @@ extension MapPickerViewModel {
 
 extension MapPickerViewModel {
 	static func reduce(_ state: State, _ event: Event) -> State {
-		print(">> ",event.description,"state:",state.status.description)
+		Self.log(event, state.status)
 		switch state.status {
 		case .idle,.error:
 			switch event {
@@ -339,7 +339,6 @@ extension MapPickerViewModel {
 			guard case let .loadingStopDetails(stop,send) = state.status else {
 				return Empty().eraseToAnyPublisher()
 			}
-			print(stop.type)
 			switch stop.type {
 			case .location:
 				Task {

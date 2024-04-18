@@ -18,7 +18,7 @@ extension JourneyListViewModel {
 				status: .loadingJourneyList
 			)
 		default:
-			print("⚠️ \(Self.self): reduce error: \(state.status) \(event.description)")
+			logReducerWarning(event, state.status)
 			return state
 		}
 	}
