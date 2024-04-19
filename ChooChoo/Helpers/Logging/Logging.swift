@@ -7,12 +7,13 @@
 
 import Foundation
 import OSLog
+import SwiftUI
 
 enum LoggerCategories : String,Hashable,CaseIterable {
 	case mockService
 	case locationManager
-	case stateStatus
-	case stateEvent
+	case status
+	case event
 	case reducer
 	case coreData
 	case networking
@@ -28,8 +29,8 @@ extension Logger {
 	static let mockService = Logger(category: .mockService)
 	static let coreData = Logger(category: .coreData)
 	static let networking = Logger(category: .networking)
-	static private let stateStatus = Logger(category: .stateStatus)
-	static private let stateEvent = Logger(category: .stateEvent)
+	static private let status = Logger(category: .status)
+	static private let event = Logger(category: .event)
 	static private let reducer = Logger(category: .reducer)
 	static let fetchJourneyList = Logger(category: .fetchJourneyList)
 	static let fetchJourneyRef = Logger(category: .fetchJourneyRef)
@@ -52,14 +53,14 @@ extension Logger {
 		_ viewModelName : String,
 		status : any ChewStatus
 	) {
-		Logger.stateStatus.info("\(viewModelName): \(status.description)")
+		Logger.status.info("\(viewModelName): \(status.description)")
 	}
 	static func event(
 		_ viewModelName : String,
 		event : any ChewEvent,
 		status : any ChewStatus
 	) {
-		Logger.stateEvent.info("🔥\(viewModelName): \(event.description) (for state:\(status.description))")
+		Logger.event.info("🔥\(viewModelName): \(event.description) (for state:\(status.description))")
 	}
 	static func reducer(
 		_ viewModelName : String,
@@ -67,5 +68,16 @@ extension Logger {
 		status : any ChewStatus
 	) {
 		Logger.reducer.warning("\(viewModelName): \(event.description) \(status.description)")
+	}
+}
+
+extension OSLogEntryLog {
+	var color: Color {
+		switch level {
+		case .debug: return .yellow
+		case .error, .fault: return .red
+		default:
+			return .gray
+		}
 	}
 }

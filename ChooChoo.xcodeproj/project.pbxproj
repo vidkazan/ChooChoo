@@ -103,6 +103,8 @@
 		7D4B1B992AA950780096F372 /* constructJourneyList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4B1B982AA950780096F372 /* constructJourneyList.swift */; };
 		7D53705C2ACED7300009BA20 /* PlannedActual.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D53705B2ACED7300009BA20 /* PlannedActual.swift */; };
 		7D55BD9E2B5EA39900A0CE08 /* ChewDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D55BD9D2B5EA39900A0CE08 /* ChewDatePicker.swift */; };
+		7D5B68D72BD29CE700747D97 /* LogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5B68D62BD29CE700747D97 /* LogView.swift */; };
+		7D5B68D92BD2A60700747D97 /* LogVIewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5B68D82BD2A60700747D97 /* LogVIewModel.swift */; };
 		7D5D78522B29C00600E17CC7 /* CDLeg+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5D78502B29C00600E17CC7 /* CDLeg+CoreDataClass.swift */; };
 		7D5D78532B29C00600E17CC7 /* CDLeg+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5D78512B29C00600E17CC7 /* CDLeg+CoreDataProperties.swift */; };
 		7D63DB0F2B739048008297DD /* SheetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D63DB0E2B739048008297DD /* SheetViewModel.swift */; };
@@ -314,7 +316,7 @@
 		7D345E4B2AE97FC8003CA948 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		7D39571F2B54911F00024736 /* JDV+Toolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JDV+Toolbar.swift"; sourceTree = "<group>"; };
 		7D3E5F002AB321580064213A /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
-		7D4034B12BD15E2700EB5F17 /* Logging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Logging.swift; path = ../../../../../Swift/ChooChoo/proj/ChooChoo/Helpers/Logging.swift; sourceTree = "<group>"; };
+		7D4034B12BD15E2700EB5F17 /* Logging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logging.swift; sourceTree = "<group>"; };
 		7D4034B32BD1684000EB5F17 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Protocols.swift; path = ../../../../../Swift/ChooChoo/proj/ChooChoo/Helpers/Protocols.swift; sourceTree = "<group>"; };
 		7D4208CA2AE122FF003D9BFB /* RouteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteView.swift; sourceTree = "<group>"; };
 		7D462D482AAC947F00BC0D65 /* JLVM+reduce+LoadingJourneys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JLVM+reduce+LoadingJourneys.swift"; sourceTree = "<group>"; };
@@ -337,6 +339,8 @@
 		7D4B1B982AA950780096F372 /* constructJourneyList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = constructJourneyList.swift; sourceTree = "<group>"; };
 		7D53705B2ACED7300009BA20 /* PlannedActual.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlannedActual.swift; sourceTree = "<group>"; };
 		7D55BD9D2B5EA39900A0CE08 /* ChewDatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChewDatePicker.swift; sourceTree = "<group>"; };
+		7D5B68D62BD29CE700747D97 /* LogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogView.swift; sourceTree = "<group>"; };
+		7D5B68D82BD2A60700747D97 /* LogVIewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogVIewModel.swift; sourceTree = "<group>"; };
 		7D5D78502B29C00600E17CC7 /* CDLeg+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDLeg+CoreDataClass.swift"; sourceTree = "<group>"; };
 		7D5D78512B29C00600E17CC7 /* CDLeg+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDLeg+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		7D63DB0E2B739048008297DD /* SheetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetViewModel.swift; sourceTree = "<group>"; };
@@ -572,8 +576,8 @@
 				7D6CCAF22B6004A200BCF62E /* VMTemplate.swift */,
 				7DBD26C12B99FB1800612A3B /* EnumTraversal.swift */,
 				7DEE69CC2B9BCDF200A063B4 /* Tips.swift */,
+				7D5B68D52BD29CC300747D97 /* Logging */,
 				7DEE69D02B9BCE8B00A063B4 /* PresentationDetent.swift */,
-				7D4034B12BD15E2700EB5F17 /* Logging.swift */,
 				7D4034B32BD1684000EB5F17 /* Protocols.swift */,
 			);
 			path = Helpers;
@@ -837,6 +841,16 @@
 				7D6734DE2A96394E00CBE9C1 /* TimeChoosingView.swift */,
 			);
 			path = SearchStopsView;
+			sourceTree = "<group>";
+		};
+		7D5B68D52BD29CC300747D97 /* Logging */ = {
+			isa = PBXGroup;
+			children = (
+				7D4034B12BD15E2700EB5F17 /* Logging.swift */,
+				7D5B68D62BD29CE700747D97 /* LogView.swift */,
+				7D5B68D82BD2A60700747D97 /* LogVIewModel.swift */,
+			);
+			path = Logging;
 			sourceTree = "<group>";
 		};
 		7D63DB0B2B738F05008297DD /* Sheet */ = {
@@ -1684,6 +1698,7 @@
 				7DAF62C42A9F78D0006F1A17 /* SunEvent.swift in Sources */,
 				7D6C5C142AAF482D00DEFC57 /* chewVM.swift in Sources */,
 				7DBABFFC2B87A99B00C990FD /* MapDetailsUIView.swift in Sources */,
+				7D5B68D92BD2A60700747D97 /* LogVIewModel.swift in Sources */,
 				7D6734DF2A96394E00CBE9C1 /* TimeChoosingView.swift in Sources */,
 				7DE8A3512B6AB13800C3A378 /* TimeLabelView+subviews.swift in Sources */,
 				7DABB02D2B2E18F1002BBA97 /* JFCV.swift in Sources */,
@@ -1792,6 +1807,7 @@
 				7D69552A2B58283E00271F56 /* TopBarAlertVM.swift in Sources */,
 				7D23E44A2A98F9800037C3E1 /* LegsView.swift in Sources */,
 				7D9BB1112B0CBF54008A3616 /* CDUser+CoreDataProperties.swift in Sources */,
+				7D5B68D72BD29CE700747D97 /* LogView.swift in Sources */,
 				7D5D78532B29C00600E17CC7 /* CDLeg+CoreDataProperties.swift in Sources */,
 				7D000CF72AB86BA500566120 /* JLVM+sideEffects+loadingJourneysRef.swift in Sources */,
 				7DE727C62AD93869002FF033 /* JFV.swift in Sources */,

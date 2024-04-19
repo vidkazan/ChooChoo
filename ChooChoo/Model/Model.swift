@@ -12,10 +12,11 @@ import OSLog
 final class Model {
 	static let shared = Model()
 	
-	let modelLogger = Logger(subsystem: "ChooChoo", category: "Model")
 	private var _journeyDetailsViewModels : [String: JourneyDetailsViewModel] = [:]
+	let logStore: OSLogStore? = try? OSLogStore(scope: .currentProcessIdentifier)
 	let locationDataManager : ChewLocationDataManager
 	let sheetViewModel : SheetViewModel
+	let logViewModel : LogViewModel
 	let topBarAlertViewModel : TopBarAlertViewModel
 	let coreDataStore : CoreDataStore
 	let searchStopsViewModel : SearchStopsViewModel
@@ -40,6 +41,7 @@ final class Model {
 		self.coreDataStore = .init()
 		self.locationDataManager = .init()
 		self.appSettingsVM = .init()
+		self.logViewModel = .init()
 	}
 	
 	init() {
@@ -52,6 +54,7 @@ final class Model {
 		self.coreDataStore = .init()
 		self.locationDataManager = .init()
 		self.appSettingsVM = .init()
+		self.logViewModel = .init()
 	}
 }
 

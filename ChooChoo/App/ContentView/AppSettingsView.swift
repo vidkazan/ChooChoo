@@ -38,6 +38,11 @@ struct AppSettingsView: View {
 				}, label: {
 					Text("Reset tips")
 				})
+				NavigationLink(destination: {
+					LogViewer()
+				}, label: {
+					Text("Logs")
+				})
 			})
 			#endif
 		}
