@@ -36,7 +36,7 @@ class ApiClient : ChewClient {
 				}
 				let value = try JSONDecoder().decode(T.self, from: data)
 				let url = request.url?.path ?? ""
-				Logger.networking.debug("done: \(type.description)  \(url)")
+				Logger.networking.trace("done: \(type.description)  \(url)")
 				return value
 			}
 			.receive(on: DispatchQueue.main)

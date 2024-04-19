@@ -74,8 +74,10 @@ extension Logger {
 extension OSLogEntryLog {
 	var color: Color {
 		switch level {
-		case .debug: return .yellow
-		case .error, .fault: return .red
+		case .debug: 
+			return .yellow
+		case .error, .fault: 
+			return .red
 		default:
 			return .gray
 		}

@@ -104,7 +104,7 @@ extension CoreDataStore {
 			do {
 				let res = try self.asyncContext.fetch(fetchRequest)
 				if !res.isEmpty {
-					Logger.coreData.debug("fetch: \(T.self) done")
+					Logger.coreData.trace("fetch: \(T.self) done")
 					object = res
 					return
 				}
