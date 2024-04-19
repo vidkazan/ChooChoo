@@ -53,14 +53,14 @@ extension Logger {
 		_ viewModelName : String,
 		status : any ChewStatus
 	) {
-		Logger.status.info("\(viewModelName): \(status.description)")
+		Logger.status.trace("\(viewModelName): \(status.description)")
 	}
 	static func event(
 		_ viewModelName : String,
 		event : any ChewEvent,
 		status : any ChewStatus
 	) {
-		Logger.event.info("🔥\(viewModelName): \(event.description) (for state:\(status.description))")
+		Logger.event.trace("🔥\(viewModelName): \(event.description) (for state:\(status.description))")
 	}
 	static func reducer(
 		_ viewModelName : String,
@@ -74,7 +74,11 @@ extension Logger {
 extension OSLogEntryLog {
 	var color: Color {
 		switch level {
-		case .debug: 
+		case .info:
+			return .blue
+		case .debug:
+			return .gray
+		case .notice:
 			return .yellow
 		case .error, .fault: 
 			return .red
