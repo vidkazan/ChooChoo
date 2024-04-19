@@ -13,7 +13,7 @@ struct LogViewer: View {
 	@ObservedObject var viewModel = Model.shared.logViewModel
 
 	var body: some View {
-		Group {
+		VStack {
 			switch viewModel.state.status {
 			case .loading:
 				ProgressView()
@@ -24,12 +24,15 @@ struct LogViewer: View {
 				if viewModel.state.entries.isEmpty {
 					ErrorView(
 						viewType: .alert,
-						msg: Text("No logs found", comment: "LogViewer: empty state"),
+						msg: Text(
+							"No logs found",
+							comment: "LogViewer: empty state"
+						),
 						size: .big,
 						action: nil
 					)
 				} else {
-					List(viewModel.state.entries) { entry in
+					List(viewModel.state.entries, id: \.hashValue) { entry in
 						LogEntryRow(entry: entry)
 					}
 					.listStyle(.plain)
@@ -42,6 +45,9 @@ struct LogViewer: View {
 					action: nil
 				)
 			}
+		}
+		.onAppear {
+			Model.shared.logViewModel.send(event: .didTapLoading)
 		}
 		.navigationTitle("Logs")
 		.toolbar {
@@ -57,7 +63,7 @@ struct LogViewer: View {
 }
 
 struct LogEntryRow: View {
-	let entry: LogViewModel.Entry
+	let entry: OSLogEntryLog
 
 	var body: some View {
 		HStack {
@@ -72,7 +78,7 @@ struct LogEntryRow: View {
 				}
 				.foregroundColor(Color(uiColor: .secondaryLabel))
 
-				Text(entry.message)
+				Text(entry.composedMessage)
 					.multilineTextAlignment(.leading)
 					.frame(maxWidth: .infinity, alignment: .leading)
 			}

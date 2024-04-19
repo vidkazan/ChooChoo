@@ -52,9 +52,9 @@ class LogViewModel : ChewViewModelProtocol {
 extension LogViewModel  {
 	struct State {
 		let status : Status
-		let entries: [Entry]
+		let entries: [OSLogEntryLog]
 		
-		init(status: Status, entries : [Entry]) {
+		init(status: Status, entries : [OSLogEntryLog]) {
 			self.status = status
 			self.entries = entries
 		}
@@ -80,7 +80,7 @@ extension LogViewModel  {
 	enum Event : ChewEvent {
 		case didTapLoading
 		case didCancelLoading
-		case didLoad(logs : [Entry])
+		case didLoad(logs : [OSLogEntryLog])
 		case didFailToLoad(error : any ChewError)
 		
 		var description : String {
@@ -170,14 +170,14 @@ extension LogViewModel {
 							elem as? OSLogEntryLog
 						}
 						.filter { $0.subsystem.starts(with: Bundle.main.bundleIdentifier!) }
-						.map {
-							Entry(
-								date: $0.date,
-								category: $0.category,
-								message: $0.composedMessage,
-								color: $0.color
-							)
-						}
+//						.map {
+//							Entry(
+//								date: $0.date,
+//								category: $0.category,
+//								message: $0.composedMessage,
+//								color: $0.color
+//							)
+//						}
 					return Model.shared.logViewModel.send(event: .didLoad(logs: entries))
 				} else {
 					return Model.shared.logViewModel.send(event: .didFailToLoad(error: DataError.generic(msg: "OSLogStore: Failed to get log entries")))
@@ -185,15 +185,5 @@ extension LogViewModel {
 			}
 			return Empty().eraseToAnyPublisher()
 		}
-	}
-}
-
-extension LogViewModel {
-	struct Entry: Identifiable {
-		let id = UUID()
-		let date: Date
-		let category: String
-		let message: String
-		let color: Color
 	}
 }
