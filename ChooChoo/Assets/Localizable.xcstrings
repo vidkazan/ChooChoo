@@ -495,9 +495,6 @@
     "nil error: (type)" : {
       "comment" : "DataError"
     },
-    "No logs found" : {
-      "comment" : "LogViewer: empty state"
-    },
     "not reachable" : {
       "comment" : "badge",
       "localizations" : {
@@ -630,7 +627,7 @@
 
     },
     "Save" : {
-      "comment" : "datePickerView: save button\nsettingsView: save button",
+      "comment" : "settingsView: save button\ndatePickerView: save button",
       "localizations" : {
         "ru" : {
           "stringUnit" : {
@@ -641,7 +638,7 @@
       }
     },
     "Search" : {
-      "comment" : "search tip title\nTabItem",
+      "comment" : "TabItem\nsearch tip title",
       "localizations" : {
         "ru" : {
           "stringUnit" : {

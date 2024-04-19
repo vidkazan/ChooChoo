@@ -15,28 +15,11 @@ struct LogViewer: View {
 	var body: some View {
 		VStack {
 			switch viewModel.state.status {
-			case .loading:
-				ProgressView()
-					.onTapGesture {
-						Model.shared.logViewModel.send(event: .didCancelLoading)
-					}
-			case .loaded:
-				if viewModel.state.entries.isEmpty {
-					ErrorView(
-						viewType: .alert,
-						msg: Text(
-							"No logs found",
-							comment: "LogViewer: empty state"
-						),
-						size: .big,
-						action: nil
-					)
-				} else {
-					List(viewModel.state.entries, id: \.hashValue) { entry in
-						LogEntryRow(entry: entry)
-					}
-					.listStyle(.plain)
+			case .loaded,.loading:
+				List(viewModel.state.entries, id: \.hashValue) { entry in
+					LogEntryRow(entry: entry)
 				}
+				.listStyle(.plain)
 			case .error(let err):
 				ErrorView(
 					viewType: .error,
@@ -53,9 +36,26 @@ struct LogViewer: View {
 		.toolbar {
 			ToolbarItem(placement: .navigationBarTrailing, content: {
 				Button(action: {
-					Model.shared.logViewModel.send(event: .didTapLoading)
+					switch viewModel.state.status {
+					case .loading:
+						Model.shared.logViewModel.send(event: .didCancelLoading)
+					case .loaded:
+						Model.shared.logViewModel.send(event: .didTapLoading)
+					case .error:
+						Model.shared.logViewModel.send(event: .didTapLoading)
+					}
 				}, label: {
-					ChooSFSymbols.arrowClockwise.view
+					switch viewModel.state.status {
+					case .loading:
+						ProgressView()
+							.onTapGesture {
+								Model.shared.logViewModel.send(event: .didCancelLoading)
+							}
+					case .loaded:
+						ChooSFSymbols.arrowClockwise.view
+					case .error:
+						ChooSFSymbols.exclamationmarkCircle.view
+					}
 				})
 			})
 		}

@@ -169,15 +169,11 @@ extension LogViewModel {
 						.compactMap { elem in
 							elem as? OSLogEntryLog
 						}
-						.filter { $0.subsystem.starts(with: Bundle.main.bundleIdentifier!) }
-//						.map {
-//							Entry(
-//								date: $0.date,
-//								category: $0.category,
-//								message: $0.composedMessage,
-//								color: $0.color
-//							)
-//						}
+						.filter { $0.subsystem.starts(with: Bundle.main.bundleIdentifier!)
+						}
+					if entries.isEmpty {
+						return Model.shared.logViewModel.send(event: .didFailToLoad(error: DataError.generic(msg: "No logs found")))
+					}
 					return Model.shared.logViewModel.send(event: .didLoad(logs: entries))
 				} else {
 					return Model.shared.logViewModel.send(event: .didFailToLoad(error: DataError.generic(msg: "OSLogStore: Failed to get log entries")))
