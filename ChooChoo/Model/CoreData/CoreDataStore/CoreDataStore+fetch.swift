@@ -109,7 +109,7 @@ extension CoreDataStore {
 					return
 				}
 				object = []
-				Logger.coreData.warning(
+				Logger.coreData.info(
 					"fetch: \(T.self): result is empty"
 				)
 			} catch {

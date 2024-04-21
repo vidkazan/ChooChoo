@@ -31,6 +31,7 @@ enum ChooSFSymbols : String {
 	case figureWalk = "figure.walk"
 	case figureWalkCircle = "figure.walk.circle"
 	case arrowTriangle2Circlepath = "arrow.triangle.2.circlepath"
+	case arrowLeft = "arrow.left"
  
 	
 	case trainSideFrontCar = "train.side.front.car"

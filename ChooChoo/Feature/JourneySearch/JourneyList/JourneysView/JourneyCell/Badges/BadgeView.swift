@@ -92,15 +92,12 @@ struct BadgeView : View {
 	var body : some View {
 		Group {
 			switch badge {
-			case let .legDirection(dir,strikethrough):
-				OneLineText(
-					Text("to ", comment: "BadgeView: legDirection")
-					+
-					Text(verbatim: dir),
-					strikethrough
-				)
-				.chewTextSize(size)
-				.padding(4)
+			case let .legDirection(dir,strikethrough, multiline):
+				Text("to \(dir)", comment: "BadgeView: legDirection")
+					.strikethrough(strikethrough)
+					.lineLimit(multiline ? 2 :1)
+					.chewTextSize(size)
+					.padding(4)
 			case .distanceInMeters(let dist):
 				OneLineText(
 					Text(Measurement(

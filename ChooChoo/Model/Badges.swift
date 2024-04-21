@@ -115,7 +115,7 @@ enum Badges : Identifiable,Hashable {
 	case remarkImportant(remarks : [RemarkViewData])
 	case lineNumber(lineType:LineType,num : String)
 	case stopsCount(_ count : Int,_ mode : StopsCountBadgeMode)
-	case legDirection(dir : String, strikethrough : Bool)
+	case legDirection(dir : String, strikethrough : Bool,multiline : Bool)
 	case legDuration(_ timeContainer : TimeContainer)
 	case walking(_ timeContainer : TimeContainer)
 	case transfer(_ timeContainer : TimeContainer)
@@ -211,7 +211,7 @@ enum Badges : Identifiable,Hashable {
 				style: .chewGrayScale10,
 				text: Text(verbatim: "\(num.replacingOccurrences(of: " ", with: ""))")
 			)
-		case let .legDirection(dir,_):
+		case let .legDirection(dir,_,_):
 			return BadgeData(
 				Text(verbatim: dir)
 			)

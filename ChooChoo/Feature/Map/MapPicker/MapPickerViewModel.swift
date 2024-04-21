@@ -78,8 +78,7 @@ extension MapPickerViewModel {
 		case error(any ChewError)
 		case submitting(Stop)
 		case loadingStopDetails(
-			Stop,
-			_ send : (MapPickerViewModel.Event)->Void
+			Stop,_ send : (MapPickerViewModel.Event)->Void
 		)
 		case loadingNearbyStops(_ region : MKCoordinateRegion)
 		var description : String {
