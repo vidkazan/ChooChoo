@@ -13,14 +13,12 @@ struct RouteSheet: View {
 	let leg : LegViewData
 	var body: some View {
 		ScrollView {
-			VStack(alignment: .center,spacing: 0) {
-				LegDetailsView(
-					send: { _ in},
-					referenceDate: chewVM.referenceDate,
-					isExpanded: .expanded,
-					leg: leg
-				)
-			}
+			LegDetailsView(
+				send: { _ in },
+				referenceDate: chewVM.referenceDate,
+				isExpanded: .expanded,
+				leg: leg
+			)
 		}
 		.chewTextSize(.big)
 		.frame(maxWidth: .infinity)

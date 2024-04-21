@@ -13,9 +13,11 @@ import MapKit
 struct LegDetailsView: View {
 	@EnvironmentObject var chewVM : ChewViewModel
 	
-	let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
 	static let progressLineBaseWidth : CGFloat = 20
 	static let progressLineCompletedBaseWidthOffset : CGFloat = 2
+	
+	let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+	let scrollToIndex : Int?
 	
 	@State var isExpandedState : Segments.ShowType = .collapsed
 	@State var totalProgressHeight : Double = 0
@@ -30,65 +32,62 @@ struct LegDetailsView: View {
 		send : @escaping (JourneyDetailsViewModel.Event) -> Void,
 		referenceDate : ChewDate,
 		isExpanded : Segments.ShowType,
-		leg : LegViewData
+		leg : LegViewData,
+		scrollToIndex : Int? = nil
 	) {
 		self.leg = leg
 		self.followedJourney = followedJourney
 		self.isExpanded = isExpanded
+		self.scrollToIndex = scrollToIndex
 	}
 	
 	var body : some View {
-		VStack {
-			VStack(spacing: 0) {
-				switch leg.legType {
-				case .transfer,.footMiddle,.footStart:
-					if let stop = leg.legStopsViewData.first {
-						LegStopView(
-							type: stop.stopOverType,
-							stopOver: stop,
-							leg: leg,
-							showBadges : !followedJourney,
-							shevronIsExpanded: isExpandedState
-						)
-					}
-				case .footEnd:
-					if let stop = leg.legStopsViewData.last {
-						LegStopView(
-							stopOver: stop,
-							leg: leg,
-							showBadges : !followedJourney,
-							shevronIsExpanded: isExpandedState
-						)
-						.padding(.bottom,10)
-					}
-				case .line:
-					let stops : [StopViewData] = {
-						switch isExpandedState {
-						case .expanded:
-							return leg.legStopsViewData
-						case .collapsed:
-							if let first = leg.legStopsViewData.first,
-								let last = leg.legStopsViewData.last {
-									return [first,last]
-							}
-							return []
+		VStack(spacing: 0) {
+			switch leg.legType {
+			case .transfer,.footMiddle,.footStart:
+				if let stop = leg.legStopsViewData.first {
+					LegStopView(
+						type: stop.stopOverType,
+						stopOver: stop,
+						leg: leg,
+						showBadges : !followedJourney,
+						shevronIsExpanded: isExpandedState
+					)
+				}
+			case .footEnd:
+				if let stop = leg.legStopsViewData.last {
+					LegStopView(
+						stopOver: stop,
+						leg: leg,
+						showBadges : !followedJourney,
+						shevronIsExpanded: isExpandedState
+					)
+					.padding(.bottom,10)
+				}
+			case .line:
+				let stops : [StopViewData] = {
+					switch isExpandedState {
+					case .expanded:
+						return leg.legStopsViewData
+					case .collapsed:
+						if let first = leg.legStopsViewData.first,
+							let last = leg.legStopsViewData.last {
+								return [first,last]
 						}
-					}()
-					ForEach(stops,id:\.name) { stop in
-//						if stop == leg.legStopsViewData.first {
-//							arrivalTrainTimeView
-//						}
-						LegStopView(
-							stopOver: stop,
-							leg: leg,
-							showBadges : !followedJourney,
-							shevronIsExpanded: isExpandedState
-						)
+						return []
 					}
+				}()
+				ForEach(stops,id:\.name) { stop in
+					LegStopView(
+						stopOver: stop,
+						leg: leg,
+						showBadges : !followedJourney,
+						shevronIsExpanded: isExpandedState
+					)
 				}
 			}
-			.background { background }
 		}
+		.background { background }
 		// MARK: 🤢
 		.padding(.top,leg.legType == LegViewData.LegType.line || leg.legType.caseDescription == "footStart" ?  10 : 0)
 

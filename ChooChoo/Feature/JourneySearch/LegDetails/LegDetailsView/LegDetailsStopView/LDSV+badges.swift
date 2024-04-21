@@ -44,7 +44,8 @@ extension LegStopView {
 			))
 			BadgeView(.legDirection(
 				dir: legViewData.direction,
-				strikethrough: false
+				strikethrough: false,
+				multiline: false
 			))
 				.badgeBackgroundStyle(.secondary)
 			BadgeView(
