@@ -76,17 +76,12 @@ extension NearestStopViewModel {
 	enum Status :  ChewStatus {
 		case idle
 		case error(any ChewError)
-		case submitting(StopWithDistance)
-		case loadingStopDetails(
-			StopWithDistance,_ send : (MapPickerViewModel.Event)->Void
-		)
+		case loadingStopDetails(StopWithDistance)
 		case loadingNearbyStops(_ region : MKCoordinateRegion)
 		var description : String {
 			switch self {
 			case .error(let err):
 				return "error \(err.localizedDescription)"
-			case .submitting:
-				return "submitting"
 			case .idle:
 				return "idle"
 			case .loadingStopDetails:
@@ -99,14 +94,11 @@ extension NearestStopViewModel {
 	
 	enum Event : ChewEvent {
 		case didDeselectStop
-		case didSubmitStop(StopWithDistance)
-		case didTapStopOnMap(StopWithDistance,send : (MapPickerViewModel.Event)->Void)
+		case didTapStopOnMap(StopWithDistance)
+		case didRequestReloadStopDepartures(StopWithDistance)
 		case didDragMap(_ region : MKCoordinateRegion)
-		
 		case didLoadStopDetails(StopWithDistance,_ stopTrips : [LegViewData])
-		
 		case didLoadNearbyStops([StopWithDistance])
-		
 		case didCancelLoading
 		case didFailToLoad(any ChewError)
 		var description : String {
@@ -117,9 +109,9 @@ extension NearestStopViewModel {
 				return "didFailToLoad \(err.localizedDescription)"
 			case .didCancelLoading:
 				return "didCancelLoading"
-			case .didSubmitStop(let stop):
-				return "didSelectStop \(stop.stop.name)"
-			case .didTapStopOnMap(let stop,_):
+			case .didTapStopOnMap(let stop):
+				return "didTapStopOnMaps \(stop.stop.name)"
+			case .didRequestReloadStopDepartures(let stop):
 				return "didTapStopOnMaps \(stop.stop.name)"
 			case .didDragMap:
 				return "didDragMap"
@@ -139,6 +131,16 @@ extension NearestStopViewModel {
 		switch state.status {
 		case .idle,.error:
 			switch event {
+			case .didRequestReloadStopDepartures(let stop):
+				return State(
+					data: StateData(
+						stops: state.data.stops,
+						selectedStop: state.data.selectedStop
+					),
+					status: .loadingStopDetails(
+						state.data.selectedStop ?? stop
+					)
+				)
 			case .didFailToLoad(let err):
 				return State(data: state.data, status: .error(err))
 			case .didCancelLoading:
@@ -151,21 +153,13 @@ extension NearestStopViewModel {
 					),
 					status: .idle
 				)
-			case .didSubmitStop(let stop):
-				return State(
-					data: StateData(
-						stops: [],
-						selectedStop: nil
-					),
-					status: .submitting(stop)
-				)
-			case let .didTapStopOnMap(stop,send):
+			case let .didTapStopOnMap(stop):
 				return State(
 					data: StateData(
 						stops: state.data.stops,
 						selectedStop: stop
 					),
-					status: .loadingStopDetails(stop,send)
+					status: .loadingStopDetails(stop)
 				)
 			case .didDragMap(let coords):
 				return State(
@@ -193,6 +187,8 @@ extension NearestStopViewModel {
 			}
 		case .loadingStopDetails:
 			switch event {
+			case .didRequestReloadStopDepartures:
+				return state
 			case .didDeselectStop:
 				return State(
 					data: .init(
@@ -205,21 +201,13 @@ extension NearestStopViewModel {
 				return State(data: state.data, status: .error(err))
 			case .didCancelLoading:
 				return State(data: state.data, status: .idle)
-			case .didSubmitStop(let stop):
-				return State(
-					data: StateData(
-						stops: [],
-						selectedStop: nil
-					),
-					status: .submitting(stop)
-				)
-			case let .didTapStopOnMap(stop,send):
+			case let .didTapStopOnMap(stop):
 				return State(
 					data: StateData(
 						stops: state.data.stops,
 						selectedStop: stop
 					),
-					status: .loadingStopDetails(stop,send)
+					status: .loadingStopDetails(stop)
 				)
 			case .didDragMap(let coords):
 				return State(
@@ -247,6 +235,8 @@ extension NearestStopViewModel {
 			}
 		case .loadingNearbyStops:
 			switch event {
+			case .didRequestReloadStopDepartures:
+				return state
 			case .didDeselectStop:
 				return State(
 					data: .init(
@@ -259,21 +249,13 @@ extension NearestStopViewModel {
 				return State(data: state.data, status: .error(err))
 			case .didCancelLoading:
 				return State(data: state.data, status: .idle)
-			case .didSubmitStop(let stop):
-				return State(
-					data: StateData(
-						stops: [],
-						selectedStop: nil
-					),
-					status: .submitting(stop)
-				)
-			case let .didTapStopOnMap(stop,send):
+			case let .didTapStopOnMap(stop):
 				return State(
 					data: StateData(
 						stops: state.data.stops,
 						selectedStop: stop
 					),
-					status: .loadingStopDetails(stop,send)
+					status: .loadingStopDetails(stop)
 				)
 			case .didDragMap(let coords):
 				return State(
@@ -299,8 +281,6 @@ extension NearestStopViewModel {
 					status: .idle
 				)
 			}
-		case .submitting:
-			return state
 		}
 	}
 }
@@ -344,8 +324,8 @@ extension NearestStopViewModel {
 	
 	static func whenLoadingStopDetails() -> Feedback<State, Event> {
 		Feedback { (state: State) -> AnyPublisher<Event, Never> in
-			guard case let .loadingStopDetails(stop,_) = state.status else {
-				return Empty().eraseToAnyPublisher()
+			guard case let .loadingStopDetails(stop) = state.status else {
+					return Empty().eraseToAnyPublisher()
 			}
 			switch stop.stop.type {
 			case .station,.stop:

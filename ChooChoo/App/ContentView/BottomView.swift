@@ -23,7 +23,9 @@ struct BottomView: View {
 				)
 			case .idle:
 				RecentSearchesView()
-				NearestStopView()
+//				if #available(iOS 16.0, *) {
+					NearestStopView()
+//				}
 				Spacer()
 			default:
 				Spacer()
