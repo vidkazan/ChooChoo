@@ -10,16 +10,18 @@ import SwiftUI
 
 struct StopListCell : View {
 	let stop : StopWithDistance
-	
-	init(stop: StopWithDistance) {
+	var isMultiline : Bool
+	init(stop: StopWithDistance, isMultiline : Bool = false) {
 		self.stop = stop
+		self.isMultiline = isMultiline
 	}
 	
-	init(stop: Stop) {
+	init(stop: Stop,isMultiline : Bool = false) {
 		self.stop = StopWithDistance(
 			stop: stop,
 			distance: nil
 		)
+		self.isMultiline = isMultiline
 	}
 	var body: some View {
 		Group {
@@ -27,7 +29,7 @@ struct StopListCell : View {
 				let icon = lineType.icon {
 				Label {
 					Text(verbatim: stop.stop.name)
-						.lineLimit(1)
+						.lineLimit(isMultiline ? 2 : 1)
 				} icon: {
 					Image(icon)
 						.padding(5)
@@ -39,7 +41,7 @@ struct StopListCell : View {
 				Label(
 					title: {
 						Text(verbatim: stop.stop.name)
-							.lineLimit(1)
+							.lineLimit(isMultiline ? 2 : 1)
 					},
 					icon: {
 						Image(systemName: stop.stop.type.SFSIcon)

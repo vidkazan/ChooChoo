@@ -67,7 +67,9 @@ extension SearchStopsView {
 								HStack(alignment: .center, spacing: 1) {
 									Button(
 										action: {
-											Task { tapStop(stop: stop, type: type) }
+											Task {
+												tapStop(stop: stop,type: type)
+											}
 										},
 										label: {
 											StopListCell(stop: stop)
