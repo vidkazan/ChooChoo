@@ -10,8 +10,15 @@ import CoreLocation
 import OSLog
 
 class ChewLocationDataManager : NSObject, ObservableObject {
-	var locationManager = CLLocationManager()
+	let locationManager = {
+		let manager = CLLocationManager()
+		manager.desiredAccuracy = kCLLocationAccuracyBest
+		manager.startUpdatingHeading()
+		manager.requestWhenInUseAuthorization()
+		return manager
+	}()
 	@Published var authorizationStatus: CLAuthorizationStatus?
+	@Published var headingDegrees: CLHeading?
 	
 	override init() {
 		super.init()
@@ -55,11 +62,20 @@ extension ChewLocationDataManager : CLLocationManagerDelegate {
 		}
 	}
 	
-	func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-		//		 Insert code to handle location updates
+	func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {}
+	
+	func locationManager(
+		_ manager: CLLocationManager,
+		didUpdateHeading newHeading: CLHeading
+	) {
+		self.headingDegrees = newHeading
 	}
 	
-	func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+	
+	func locationManager(
+		_ manager: CLLocationManager,
+		didFailWithError error: Error
+	) {
 		Logger.locationManager.error("\(error.localizedDescription)")
 	}
 }
