@@ -23,6 +23,7 @@ struct BottomView: View {
 				)
 			case .idle:
 				RecentSearchesView()
+				NearestStopView()
 				Spacer()
 			default:
 				Spacer()

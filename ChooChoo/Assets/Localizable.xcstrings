@@ -638,7 +638,7 @@
       }
     },
     "Search" : {
-      "comment" : "TabItem\nsearch tip title",
+      "comment" : "search tip title\nTabItem",
       "localizations" : {
         "ru" : {
           "stringUnit" : {
@@ -708,6 +708,9 @@
     "Stop not found" : {
       "comment" : "ApiError"
     },
+    "Stops Nearby" : {
+      "comment" : "NearestStopView: view name"
+    },
     "sunlight / moonlight color" : {
       "comment" : "AppSettings: LegViewMode: description"
     },
@@ -716,6 +719,7 @@
     },
     "to " : {
       "comment" : "BadgeView: legDirection",
+      "extractionState" : "stale",
       "localizations" : {
         "ru" : {
           "stringUnit" : {
@@ -724,6 +728,9 @@
           }
         }
       }
+    },
+    "to %@" : {
+      "comment" : "BadgeView: legDirection"
     },
     "Transfer" : {
       "comment" : "SettingsView: transferSegment: section header",

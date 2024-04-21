@@ -8,7 +8,8 @@
 import SwiftUI
 import TipKit
 
-// oslog
+
+// component: reload / loader / error with actions
 // way to contain all bugs
 // feature numbers?
 // learn content shape
@@ -17,7 +18,6 @@ import TipKit
 
 // MARK: revise
 // all text revision
-
 
 // TODO: feature: ldsv: make stop tappable and show stop details and all leg stopover info
 // TODO: jfv: mapCell: map without interaction, icons
