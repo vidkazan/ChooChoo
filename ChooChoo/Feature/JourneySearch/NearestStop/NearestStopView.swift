@@ -193,6 +193,7 @@ struct NearestStopView : View {
 					.badgeBackgroundStyle(.secondary)
 					.tint(Color.primary)
 			}
+			HeadingView(target: stop.stop.coordinates.cllocation)
 		}
 	}
 	
@@ -215,4 +216,23 @@ struct NearestStopView : View {
 		)
 	}
 
+}
+
+struct HeadingView : View {
+	@ObservedObject var locationManager = Model.shared.locationDataManager
+	let target : CLLocation
+	var body: some View {
+		if let loc = locationManager.locationManager.location,
+		   let deg = locationManager.headingDegrees?.trueHeading
+		{
+			ChooSFSymbols.arrowUpCircle.view
+				.tint(.secondary)
+				.rotationEffect(
+					Angle(
+						radians: loc.bearingRadianTo(location: target) - deg * .pi/180
+					)
+				)
+				.animation(.easeInOut, value: locationManager.headingDegrees?.trueHeading)
+		}
+	}
 }

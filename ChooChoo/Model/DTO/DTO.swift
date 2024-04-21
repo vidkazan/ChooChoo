@@ -28,6 +28,9 @@ struct Coordinate: Hashable, Codable {
 	var cllocationcoordinates2d : CLLocationCoordinate2D {
 		.init(latitude: latitude, longitude: longitude)
 	}
+	var cllocation : CLLocation {
+		.init(latitude: latitude, longitude: longitude)
+	}
 }
 
 enum StopOverType : String,Hashable, CaseIterable, Codable{
