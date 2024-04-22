@@ -1151,5 +1151,101 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6B33EBE3-E5A6-4C20-9AAB-3A7ADB17F227"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ChooChoo/Feature/JourneySearch/NearestStop/NearestStopView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "173"
+            endingLineNumber = "173"
+            landmarkName = "body"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "6B33EBE3-E5A6-4C20-9AAB-3A7ADB17F227 - 54fb60321bd7bc89"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for closure #1 @Sendable () async -&gt; () in closure #7 (Foundation.Date) -&gt; () in ChooChoo.NearestStopView.body.getter : some"
+                  moduleName = "ChooChoo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/fcody/Desktop/Swift/ChooChoo/proj/ChooChoo/Feature/JourneySearch/NearestStop/NearestStopView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "173"
+                  endingLineNumber = "173"
+                  offsetFromSymbolStart = "1616">
+               </Location>
+               <Location
+                  uuid = "6B33EBE3-E5A6-4C20-9AAB-3A7ADB17F227 - 48da3c765617ba8e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #3 (ChooChoo.StopWithDistance) -&gt; Swift.Bool in closure #1 @Sendable () async -&gt; () in closure #7 (Foundation.Date) -&gt; () in ChooChoo.NearestStopView.body.getter : some"
+                  moduleName = "ChooChoo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/fcody/Desktop/Swift/ChooChoo/proj/ChooChoo/Feature/JourneySearch/NearestStop/NearestStopView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "174"
+                  endingLineNumber = "174"
+                  offsetFromSymbolStart = "424">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "06C0BA85-A4B2-41A5-933C-C5668311AF7E"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ChooChoo/Feature/JourneySearch/NearestStop/NearestStopView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "172"
+            endingLineNumber = "172"
+            landmarkName = "body"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "06C0BA85-A4B2-41A5-933C-C5668311AF7E - 54fb60321bd7bca8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for closure #1 @Sendable () async -&gt; () in closure #7 (Foundation.Date) -&gt; () in ChooChoo.NearestStopView.body.getter : some"
+                  moduleName = "ChooChoo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/fcody/Desktop/Swift/ChooChoo/proj/ChooChoo/Feature/JourneySearch/NearestStop/NearestStopView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "172"
+                  endingLineNumber = "172"
+                  offsetFromSymbolStart = "1532">
+               </Location>
+               <Location
+                  uuid = "06C0BA85-A4B2-41A5-933C-C5668311AF7E - 5a1a4374de32f6e6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (ChooChoo.StopWithDistance, ChooChoo.StopWithDistance) -&gt; Swift.Bool in closure #1 @Sendable () async -&gt; () in closure #7 (Foundation.Date) -&gt; () in ChooChoo.NearestStopView.body.getter : some"
+                  moduleName = "ChooChoo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/fcody/Desktop/Swift/ChooChoo/proj/ChooChoo/Feature/JourneySearch/NearestStop/NearestStopView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "172"
+                  endingLineNumber = "172"
+                  offsetFromSymbolStart = "48">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

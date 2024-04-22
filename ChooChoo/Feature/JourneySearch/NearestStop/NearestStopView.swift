@@ -162,12 +162,15 @@ struct NearestStopView : View {
 							stop: stop
 						)
 					}
-					nearestStops = nearestStops.map {
-						Self.updateDistanceToStop(
-							from: cl2,
-							stop: $0
-						)
-					}
+					nearestStops = nearestStops
+						.map {
+							Self.updateDistanceToStop(
+								from: cl2,
+								stop: $0
+							)
+						}
+						.sorted(by: {$0.distance ?? 0 < $1.distance ?? 0})
+
 				}
 			}
 		})
@@ -223,6 +226,8 @@ struct HeadingView : View {
 					)
 				)
 				.animation(.easeInOut, value: locationManager.heading?.trueHeading)
+				.animation(.easeInOut, value: locationManager.location)
+				.animation(.easeInOut, value: target)
 		}
 	}
 }
