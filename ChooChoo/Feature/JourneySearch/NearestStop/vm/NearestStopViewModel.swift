@@ -57,16 +57,16 @@ extension NearestStopViewModel {
 	}
 	
 	struct StateData {
-		let stops : [StopWithDistance]
-		let selectedStop : StopWithDistance?
+		let stops : [Stop]
+		let selectedStop : Stop?
 		let selectedStopTrips : [LegViewData]?
 		
-		init(stops: [StopWithDistance], selectedStop: StopWithDistance?) {
+		init(stops: [Stop], selectedStop: Stop?) {
 			self.stops = stops
 			self.selectedStop = selectedStop
 			self.selectedStopTrips = nil
 		}
-		init(stops: [StopWithDistance], selectedStop: StopWithDistance?,trips : [LegViewData]?) {
+		init(stops: [Stop], selectedStop: Stop?,trips : [LegViewData]?) {
 			self.stops = stops
 			self.selectedStop = selectedStop
 			self.selectedStopTrips = trips
@@ -76,7 +76,7 @@ extension NearestStopViewModel {
 	enum Status :  ChewStatus {
 		case idle
 		case error(any ChewError)
-		case loadingStopDetails(StopWithDistance)
+		case loadingStopDetails(Stop)
 		case loadingNearbyStops(_ coordinates : CLLocationCoordinate2D)
 		var description : String {
 			switch self {
@@ -94,11 +94,11 @@ extension NearestStopViewModel {
 	
 	enum Event : ChewEvent {
 		case didDeselectStop
-		case didTapStopOnMap(StopWithDistance)
-		case didRequestReloadStopDepartures(StopWithDistance)
+		case didTapStopOnMap(Stop)
+		case didRequestReloadStopDepartures(Stop)
 		case didDragMap(_ coordinates : CLLocationCoordinate2D)
-		case didLoadStopDetails(StopWithDistance,_ stopTrips : [LegViewData])
-		case didLoadNearbyStops([StopWithDistance])
+		case didLoadStopDetails(Stop,_ stopTrips : [LegViewData])
+		case didLoadNearbyStops([Stop])
 		case didCancelLoading
 		case didFailToLoad(any ChewError)
 		var description : String {
@@ -110,9 +110,9 @@ extension NearestStopViewModel {
 			case .didCancelLoading:
 				return "didCancelLoading"
 			case .didTapStopOnMap(let stop):
-				return "didTapStopOnMaps \(stop.stop.name)"
+				return "didTapStopOnMaps \(stop.name)"
 			case .didRequestReloadStopDepartures(let stop):
-				return "didTapStopOnMaps \(stop.stop.name)"
+				return "didTapStopOnMaps \(stop.name)"
 			case .didDragMap:
 				return "didDragMap"
 			case .didLoadStopDetails(_,_):
@@ -170,7 +170,7 @@ extension NearestStopViewModel {
 				return State(
 					data: StateData(
 						stops: state.data.stops,
-						selectedStop: stop.stop.coordinates == state.data.selectedStop?.stop.coordinates ? stop : state.data.selectedStop,
+						selectedStop: stop.coordinates == state.data.selectedStop?.coordinates ? stop : state.data.selectedStop,
 						trips: trips
 					),
 					status: .idle
@@ -218,7 +218,7 @@ extension NearestStopViewModel {
 				return State(
 					data: StateData(
 						stops: state.data.stops,
-						selectedStop: stop.stop.coordinates == state.data.selectedStop?.stop.coordinates ? stop : state.data.selectedStop,
+						selectedStop: stop.coordinates == state.data.selectedStop?.coordinates ? stop : state.data.selectedStop,
 						trips: trips
 					),
 					status: .idle
@@ -266,7 +266,7 @@ extension NearestStopViewModel {
 				return State(
 					data: StateData(
 						stops: state.data.stops,
-						selectedStop: stop.stop.coordinates == state.data.selectedStop?.stop.coordinates ? stop : state.data.selectedStop,
+						selectedStop: stop.coordinates == state.data.selectedStop?.coordinates ? stop : state.data.selectedStop,
 						trips: trips
 					),
 					status: .idle
@@ -300,15 +300,8 @@ extension NearestStopViewModel {
 			return Self.fetchLocatonsNearby(coords: coordinates)
 				.mapError{ $0 }
 				.asyncFlatMap { res in
-					let stops : [StopWithDistance] = res.compactMap{
-						if let stop = $0.stop(),let dist = $0.distance {
-							return StopWithDistance(
-								stop: stop,
-								distance: Double(dist)
-							)
-						} else {
-							return nil
-						}
+					let stops : [Stop] = res.compactMap{
+						$0.stop()
 					}
 					return Event.didLoadNearbyStops(stops)
 				}
@@ -324,9 +317,9 @@ extension NearestStopViewModel {
 			guard case let .loadingStopDetails(stop) = state.status else {
 					return Empty().eraseToAnyPublisher()
 			}
-			switch stop.stop.type {
+			switch stop.type {
 			case .station,.stop:
-				return Self.fetchStopDepartures(stop:stop.stop)
+				return Self.fetchStopDepartures(stop:stop)
 					.map { tripDTOs in
 						if let departures = tripDTOs.departures {
 							return Event.didLoadStopDetails(stop, departures.compactMap({$0.legViewData(type: .departure)}))

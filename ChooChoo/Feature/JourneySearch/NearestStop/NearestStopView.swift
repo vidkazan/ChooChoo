@@ -13,6 +13,7 @@ import CoreLocation
 struct NearestStopView : View {
 	@Namespace var nearestStopView
 	@EnvironmentObject var chewVM : ChewViewModel
+	@ObservedObject var locationManager = Model.shared.locationDataManager
 	@StateObject var nearestStopViewModel : NearestStopViewModel = NearestStopViewModel(
 		.loadingNearbyStops(
 			Model.shared.locationDataManager.location?.coordinate ?? .init()
@@ -24,7 +25,6 @@ struct NearestStopView : View {
 	
 	let timerForNearbyStopsRequest = Timer.publish(every: 15, on: .main, in: .common).autoconnect()
 	let timerForRequestStopDetails = Timer.publish(every: 60, on: .main, in: .common).autoconnect()
-	let timerInner = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
 	
 	var body: some View {
 		VStack(alignment: .leading,spacing: 2) {
@@ -43,11 +43,14 @@ struct NearestStopView : View {
 					default:
 						if let selectedStop = selectedStop {
 							nearestStopViewModel.send(
-								event: .didRequestReloadStopDepartures(selectedStop)
+								event: .didRequestReloadStopDepartures(selectedStop.stop)
 							)
 						} else {
-							nearestStopViewModel.send(event: .didDragMap( Model.shared.locationDataManager.location?.coordinate ?? .init()
-							))
+							nearestStopViewModel.send(
+								event: .didDragMap(
+									Model.shared.locationDataManager.location?.coordinate ?? .init()
+								)
+							)
 						}
 					}
 				},
@@ -65,6 +68,16 @@ struct NearestStopView : View {
 					}
 				})
 			}
+//			#if DEBUG
+//			Text("""
+//					accuracy: \(Model.shared.locationDataManager.location?.horizontalAccuracy.description ?? "-")
+//					ts: \(Model.shared.locationDataManager.location?.timestamp.timeIntervalSinceNow ?? -1) 
+//					speed: \((Model.shared.locationDataManager.location?.speed ?? 0) * 3.6)
+//				""")
+//				.chewTextSize(.big)
+//				.foregroundStyle(.secondary)
+//				.padding(5)
+//			#endif
 			ScrollView(showsIndicators: false) {
 				VStack(spacing:0) {
 					if let stop = selectedStop {
@@ -99,7 +112,7 @@ struct NearestStopView : View {
 									id: \.hashValue
 								) { stop in
 									Button(action: {
-										nearestStopViewModel.send(event: .didTapStopOnMap(stop))
+										nearestStopViewModel.send(event: .didTapStopOnMap(stop.stop))
 									},
 									label: {
 										stopWithDistance(stop: stop)
@@ -131,9 +144,28 @@ struct NearestStopView : View {
 		.animation(.easeInOut, value: self.selectedStop)
 		.animation(.easeInOut, value: self.departures)
 		.onReceive(nearestStopViewModel.$state, perform: { state in
-			nearestStops = state.data.stops
-			selectedStop = state.data.selectedStop
 			departures = state.data.selectedStopTrips
+				Task {
+					if let stop = state.data.selectedStop ,
+					   let coord = locationManager.location?.coordinate {
+						selectedStop = Self.updateDistanceToStop(
+							from: coord,
+							stop: stop
+						)
+					} else {
+						selectedStop = nil
+					}
+					if let coord = locationManager.location?.coordinate {
+						nearestStops = state.data.stops
+							.map {
+								Self.updateDistanceToStop(
+									from: coord,
+									stop: $0
+								)
+							}
+							.sorted(by: {$0.distance ?? 0 < $1.distance ?? 0})
+					}
+				}
 		})
 		.onReceive(timerForNearbyStopsRequest, perform: { _ in
 			if let coord = Model.shared.locationDataManager.location?.coordinate {
@@ -145,17 +177,13 @@ struct NearestStopView : View {
 		.onReceive(timerForRequestStopDetails, perform: { _ in
 			if let stop = selectedStop {
 				self.nearestStopViewModel.send(
-					event: .didRequestReloadStopDepartures(stop)
+					event: .didRequestReloadStopDepartures(stop.stop)
 				)
 			}
 		})
-		.onReceive(timerInner, perform: { _ in
+		.onReceive(locationManager.$location, perform: { location in
 			Task {
-				if let cl2 = Model
-					.shared
-					.locationDataManager
-					.location?
-					.coordinate {
+				if let cl2 = locationManager.location?.coordinate {
 					if let stop = selectedStop {
 						selectedStop = Self.updateDistanceToStop(
 							from: cl2,
@@ -170,7 +198,6 @@ struct NearestStopView : View {
 							)
 						}
 						.sorted(by: {$0.distance ?? 0 < $1.distance ?? 0})
-
 				}
 			}
 		})
@@ -208,26 +235,83 @@ struct NearestStopView : View {
 			)
 		)
 	}
-
+	static func updateDistanceToStop(
+		from : CLLocationCoordinate2D,
+		stop: Stop
+	) -> StopWithDistance {
+		let location = CLLocation(
+			latitude: from.latitude,
+			longitude: from.longitude
+		)
+		return StopWithDistance(
+			stop: stop,
+			distance: location.distance(
+				CLLocationCoordinate2D(
+					latitude: stop.coordinates.latitude,
+					longitude: stop.coordinates.longitude
+				)
+			)
+		)
+	}
 }
 
 struct HeadingView : View {
 	@ObservedObject var locationManager = Model.shared.locationDataManager
+	@State var heading : Double?
 	let target : CLLocation
 	var body: some View {
-		if let loc = locationManager.location,
-		   let deg = locationManager.heading?.trueHeading
-		{
-			ChooSFSymbols.arrowUpCircle.view
-				.tint(.secondary)
-				.rotationEffect(
-					Angle(
-						radians: loc.bearingRadianTo(location: target) - deg * .pi/180
+		Group {
+			if let heading = heading {
+				ChooSFSymbols.arrowUpCircle.view
+					.tint(.secondary)
+					.rotationEffect(
+						Angle(radians: heading)
 					)
-				)
-				.animation(.easeInOut, value: locationManager.heading?.trueHeading)
-				.animation(.easeInOut, value: locationManager.location)
-				.animation(.easeInOut, value: target)
+					.animation(.easeInOut, value: locationManager.heading?.trueHeading)
+					.animation(.easeInOut, value: locationManager.location)
+					.animation(.easeInOut, value: target)
+			}
 		}
+		.onReceive(locationManager.$heading, perform: { _ in
+			Task {
+				if let loc = locationManager.location,
+					let deg = locationManager.heading?.trueHeading {
+					self.heading = loc.bearingRadianTo(location: target) - deg * .pi/180
+				}
+			}
+		})
+	}
+}
+//
+//
+//@ViewBuilder func stopWithDistance(stop : StopWithDistance) -> some View {
+//	HStack(alignment: .center, spacing: 1) {
+//		StopListCell(stop: stop)
+//			.foregroundColor(.primary)
+//		Spacer()
+//		DistanceView(target: stop.stop.coordinates.cllocationcoordinates2d)
+//		HeadingView(target: stop.stop.coordinates.cllocation)
+//	}
+//}
+//
+
+
+struct DistanceView : View {
+	@ObservedObject var locationManager = Model.shared.locationDataManager
+	@State var dist : Double?
+	let target : CLLocationCoordinate2D
+	var body: some View {
+		Group {
+			if let dist = dist {
+				BadgeView(.distanceInMeters(dist: dist))
+					.badgeBackgroundStyle(.secondary)
+					.tint(Color.primary)
+			}
+		}
+		.onReceive(locationManager.$location, perform: { location in
+			Task {
+				dist = location?.distance(target)
+			}
+		})
 	}
 }
