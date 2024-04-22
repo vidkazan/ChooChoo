@@ -77,7 +77,7 @@ extension NearestStopViewModel {
 		case idle
 		case error(any ChewError)
 		case loadingStopDetails(StopWithDistance)
-		case loadingNearbyStops(_ region : MKCoordinateRegion)
+		case loadingNearbyStops(_ coordinates : CLLocationCoordinate2D)
 		var description : String {
 			switch self {
 			case .error(let err):
@@ -96,7 +96,7 @@ extension NearestStopViewModel {
 		case didDeselectStop
 		case didTapStopOnMap(StopWithDistance)
 		case didRequestReloadStopDepartures(StopWithDistance)
-		case didDragMap(_ region : MKCoordinateRegion)
+		case didDragMap(_ coordinates : CLLocationCoordinate2D)
 		case didLoadStopDetails(StopWithDistance,_ stopTrips : [LegViewData])
 		case didLoadNearbyStops([StopWithDistance])
 		case didCancelLoading
@@ -294,13 +294,10 @@ extension NearestStopViewModel {
 	
 	static func whenLoadingNearbyStops() -> Feedback<State, Event> {
 		Feedback { (state: State) -> AnyPublisher<Event, Never> in
-			guard case .loadingNearbyStops(let region) = state.status else {
+			guard case .loadingNearbyStops(let coordinates) = state.status else {
 				return Empty().eraseToAnyPublisher()
 			}
-			if region.span.longitudeDelta > 0.02 {
-				return Just(Event.didCancelLoading).eraseToAnyPublisher()
-			}
-			return Self.fetchLocatonsNearby(coords: region.center)
+			return Self.fetchLocatonsNearby(coords: coordinates)
 				.mapError{ $0 }
 				.asyncFlatMap { res in
 					let stops : [StopWithDistance] = res.compactMap{

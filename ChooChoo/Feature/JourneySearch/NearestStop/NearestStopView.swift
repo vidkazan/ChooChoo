@@ -15,11 +15,7 @@ struct NearestStopView : View {
 	@EnvironmentObject var chewVM : ChewViewModel
 	@StateObject var nearestStopViewModel : NearestStopViewModel = NearestStopViewModel(
 		.loadingNearbyStops(
-			.init(
-				center: Model.shared.locationDataManager.location?.coordinate ?? .init(),
-				latitudinalMeters: 0.01,
-				longitudinalMeters: 0.01
-			)
+			Model.shared.locationDataManager.location?.coordinate ?? .init()
 		)
 	)
 	@State var nearestStops : [StopWithDistance] = []
@@ -50,12 +46,7 @@ struct NearestStopView : View {
 								event: .didRequestReloadStopDepartures(selectedStop)
 							)
 						} else {
-							nearestStopViewModel.send(event: .didDragMap(
-								.init(
-									center: Model.shared.locationDataManager.location?.coordinate ?? .init(),
-									latitudinalMeters: 0.01,
-									longitudinalMeters: 0.01
-								)
+							nearestStopViewModel.send(event: .didDragMap( Model.shared.locationDataManager.location?.coordinate ?? .init()
 							))
 						}
 					}
@@ -147,13 +138,7 @@ struct NearestStopView : View {
 		.onReceive(timerForNearbyStopsRequest, perform: { _ in
 			if let coord = Model.shared.locationDataManager.location?.coordinate {
 				nearestStopViewModel.send(
-					event: .didDragMap(
-						.init(
-							center: coord,
-							latitudinalMeters: 0.02,
-							longitudinalMeters: 0.02
-						)
-					)
+					event: .didDragMap(coord)
 				)
 			}
 		})

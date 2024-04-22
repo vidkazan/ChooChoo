@@ -78,7 +78,9 @@ extension ChewLocationDataManager : CLLocationManagerDelegate {
 		}
 	}
 	
-	func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {}
+	func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+		self.location = locations.first
+	}
 	
 	func locationManager(
 		_ manager: CLLocationManager,
