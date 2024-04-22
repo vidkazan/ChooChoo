@@ -10,19 +10,24 @@ import CoreLocation
 import OSLog
 
 class ChewLocationDataManager : NSObject, ObservableObject {
-	let locationManager = {
+	private let locationManager = {
 		let manager = CLLocationManager()
 		manager.desiredAccuracy = kCLLocationAccuracyBest
-		manager.startUpdatingHeading()
-		manager.requestWhenInUseAuthorization()
+		manager.activityType = .otherNavigation
 		return manager
 	}()
-	@Published var authorizationStatus: CLAuthorizationStatus?
-	@Published var headingDegrees: CLHeading?
+	@Published var authorizationStatus: CLAuthorizationStatus? {
+		didSet {
+			Logger.locationManager.trace("status: \(self.authorizationStatus?.rawValue ?? -1)")
+		}
+	}
+	@Published var heading: CLHeading?
+	@Published var location: CLLocation?
 	
 	override init() {
 		super.init()
 		locationManager.delegate = self
+		location = locationManager.location
 	}
 	
 	func reverseGeocoding(coords : Coordinate) async -> String? {
@@ -32,6 +37,17 @@ class ChewLocationDataManager : NSObject, ObservableObject {
 			return  String(name + ", " + city)
 		}
 		return nil
+	}
+}
+
+extension ChewLocationDataManager {
+	func startUpdatingLocationAndHeading() {
+		locationManager.startUpdatingHeading()
+		locationManager.startUpdatingLocation()
+	}
+	func stopUpdatingLocationAndHeading() {
+		locationManager.stopUpdatingLocation()
+		locationManager.stopUpdatingHeading()
 	}
 }
 
@@ -68,7 +84,7 @@ extension ChewLocationDataManager : CLLocationManagerDelegate {
 		_ manager: CLLocationManager,
 		didUpdateHeading newHeading: CLHeading
 	) {
-		self.headingDegrees = newHeading
+		self.heading = newHeading
 	}
 	
 	

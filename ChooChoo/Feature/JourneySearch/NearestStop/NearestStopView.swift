@@ -16,7 +16,7 @@ struct NearestStopView : View {
 	@StateObject var nearestStopViewModel : NearestStopViewModel = NearestStopViewModel(
 		.loadingNearbyStops(
 			.init(
-				center: Model.shared.locationDataManager.locationManager.location?.coordinate ?? .init(),
+				center: Model.shared.locationDataManager.location?.coordinate ?? .init(),
 				latitudinalMeters: 0.01,
 				longitudinalMeters: 0.01
 			)
@@ -52,7 +52,7 @@ struct NearestStopView : View {
 						} else {
 							nearestStopViewModel.send(event: .didDragMap(
 								.init(
-									center: Model.shared.locationDataManager.locationManager.location?.coordinate ?? .init(),
+									center: Model.shared.locationDataManager.location?.coordinate ?? .init(),
 									latitudinalMeters: 0.01,
 									longitudinalMeters: 0.01
 								)
@@ -130,6 +130,12 @@ struct NearestStopView : View {
 			.clipShape(.rect(cornerRadius: 8))
 			.frame(maxWidth: .infinity,maxHeight: 150)
 		}
+		.onAppear {
+			Model.shared.locationDataManager.startUpdatingLocationAndHeading()
+		}
+		.onDisappear {
+			Model.shared.locationDataManager.stopUpdatingLocationAndHeading()
+		}
 		.animation(.easeInOut, value: self.nearestStops)
 		.animation(.easeInOut, value: self.selectedStop)
 		.animation(.easeInOut, value: self.departures)
@@ -139,7 +145,7 @@ struct NearestStopView : View {
 			departures = state.data.selectedStopTrips
 		})
 		.onReceive(timerForNearbyStopsRequest, perform: { _ in
-			if let coord = Model.shared.locationDataManager.locationManager.location?.coordinate {
+			if let coord = Model.shared.locationDataManager.location?.coordinate {
 				nearestStopViewModel.send(
 					event: .didDragMap(
 						.init(
@@ -163,7 +169,6 @@ struct NearestStopView : View {
 				if let cl2 = Model
 					.shared
 					.locationDataManager
-					.locationManager
 					.location?
 					.coordinate {
 					if let stop = selectedStop {
@@ -222,8 +227,8 @@ struct HeadingView : View {
 	@ObservedObject var locationManager = Model.shared.locationDataManager
 	let target : CLLocation
 	var body: some View {
-		if let loc = locationManager.locationManager.location,
-		   let deg = locationManager.headingDegrees?.trueHeading
+		if let loc = locationManager.location,
+		   let deg = locationManager.heading?.trueHeading
 		{
 			ChooSFSymbols.arrowUpCircle.view
 				.tint(.secondary)
@@ -232,7 +237,7 @@ struct HeadingView : View {
 						radians: loc.bearingRadianTo(location: target) - deg * .pi/180
 					)
 				)
-				.animation(.easeInOut, value: locationManager.headingDegrees?.trueHeading)
+				.animation(.easeInOut, value: locationManager.heading?.trueHeading)
 		}
 	}
 }

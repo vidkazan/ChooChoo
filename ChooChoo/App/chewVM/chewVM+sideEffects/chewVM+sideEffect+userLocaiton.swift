@@ -21,7 +21,7 @@ extension ChewViewModel {
 				Model.shared.topBarAlertViewModel.send(event: .didRequestShow(.userLocationError))
 				return Just(Event.didFailToLoadLocationData).eraseToAnyPublisher()
 			case .authorizedAlways,.authorizedWhenInUse:
-				guard let coords = Model.shared.locationDataManager.locationManager.location?.coordinate else {
+				guard let coords = Model.shared.locationDataManager.location?.coordinate else {
 					Model.shared.topBarAlertViewModel.send(event: .didRequestShow(.userLocationError))
 					return Just(Event.didFailToLoadLocationData).eraseToAnyPublisher()
 				}

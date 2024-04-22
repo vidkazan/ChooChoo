@@ -55,7 +55,7 @@ extension SearchStopsViewModel {
 		var res = [(Stop, Double)]()
 		var resOptional = [StopWithDistance]()
 		let tmp = stops
-		if let location = Model.shared.locationDataManager.locationManager.location {
+		if let location = Model.shared.locationDataManager.location {
 			res = tmp.map({stop in
 				return (stop, location.distance(stop.coordinates.cllocationcoordinates2d))
 			})
