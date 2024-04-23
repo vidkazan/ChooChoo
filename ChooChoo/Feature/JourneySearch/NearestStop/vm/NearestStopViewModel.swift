@@ -355,7 +355,8 @@ extension NearestStopViewModel {
 		return ApiService().fetch(
 			StopTripsDTO.self,
 			query: [
-				Query.results(max: 15 ).queryItem()
+				Query.duration(minutes: 60).queryItem(),
+				Query.results(max: 20).queryItem()
 			],
 			type: ApiService.Requests.stopDepartures(stopId: stop.id)
 		)

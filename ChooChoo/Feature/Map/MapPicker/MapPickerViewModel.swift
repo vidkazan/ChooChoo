@@ -381,7 +381,8 @@ extension MapPickerViewModel {
 		return ApiService().fetch(
 			StopTripsDTO.self,
 			query: [
-				Query.results(max: 10).queryItem()
+				Query.duration(minutes: 60).queryItem(),
+				Query.results(max: 40).queryItem()
 			],
 			type: ApiService.Requests.stopDepartures(stopId: stop.id)
 		)
