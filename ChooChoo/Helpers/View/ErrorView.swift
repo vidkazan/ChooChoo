@@ -18,22 +18,23 @@ struct ErrorView : View {
 	let size : ChewPrimaryStyle
 	let action : (() -> Void)?
 	var body: some View {
-		HStack(spacing: 2) {
-			if let action = action {
-				Button(action: action, label: {
-					Image(.exclamationmarkCircle)
-				})
-			}
-			Label(
-				title: {
-					msg
-						.padding(5)
-				},
-				icon: {
+		Label(
+			title: {
+				msg
+					.foregroundStyle(.secondary)
+			},
+			icon: {
+				if let action = action {
+					Button(action: action, label: {
+						Image(.exclamationmarkCircle)
+					})
+				} else {
 					Image(viewType == .error ? ChooSFSymbols.exclamationmarkCircle : ChooSFSymbols.infoCircle)
+						.foregroundStyle(.secondary)
 				}
-			)
-		}
+			}
+		)
+		.padding(5)
 		.chewTextSize(size)
 	}
 }
