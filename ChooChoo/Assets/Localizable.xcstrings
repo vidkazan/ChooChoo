@@ -18,6 +18,16 @@
     "**Yellow** color shows **daylight**," : {
       "comment" : "SunEventsTipView"
     },
+    "%lf %lf" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$lf %2$lf"
+          }
+        }
+      }
+    },
     "%lld min " : {
       "comment" : "SettingsView: transferSegment: transfer duration",
       "extractionState" : "stale",
@@ -638,7 +648,7 @@
       }
     },
     "Search" : {
-      "comment" : "search tip title\nTabItem",
+      "comment" : "TabItem\nsearch tip title",
       "localizations" : {
         "ru" : {
           "stringUnit" : {

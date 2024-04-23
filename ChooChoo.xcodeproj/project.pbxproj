@@ -197,6 +197,7 @@
 		7DC0D2A12B2221D200B1FB5A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D46ABE72B220B1600A4145E /* Assets.xcassets */; };
 		7DC0D2A32B2221E900B1FB5A /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7DC0D2A22B2221D800B1FB5A /* Colors.xcassets */; };
 		7DC7F9D52B61C07500DAF6CB /* Placeholder.json in Resources */ = {isa = PBXBuildFile; fileRef = 7D7547BA2B61935A002BE434 /* Placeholder.json */; };
+		7DCA4AD32BD807D8005BA68E /* FloatingPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCA4AD22BD807D8005BA68E /* FloatingPoint.swift */; };
 		7DCB2BFF2AAC8831007C672A /* SSVM+reduce+Idle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCB2BFE2AAC8831007C672A /* SSVM+reduce+Idle.swift */; };
 		7DCD20102AC470AD00788B38 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCD200F2AC470AD00788B38 /* Colors.swift */; };
 		7DD4A8D62AAC90B9001AA30C /* SSVM+reduce+Loading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD4A8D52AAC90B9001AA30C /* SSVM+reduce+Loading.swift */; };
@@ -437,6 +438,7 @@
 		7DBFA3BE2BD3095E00205757 /* NSVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSVM.swift; sourceTree = "<group>"; };
 		7DBFE7992BA23B4C008E1221 /* StopListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopListCell.swift; sourceTree = "<group>"; };
 		7DC0D2A22B2221D800B1FB5A /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		7DCA4AD22BD807D8005BA68E /* FloatingPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingPoint.swift; sourceTree = "<group>"; };
 		7DCB2BFE2AAC8831007C672A /* SSVM+reduce+Idle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SSVM+reduce+Idle.swift"; sourceTree = "<group>"; };
 		7DCD200F2AC470AD00788B38 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		7DD4A8D52AAC90B9001AA30C /* SSVM+reduce+Loading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SSVM+reduce+Loading.swift"; sourceTree = "<group>"; };
@@ -583,6 +585,7 @@
 				7D5B68D52BD29CC300747D97 /* Logging */,
 				7DEE69D02B9BCE8B00A063B4 /* PresentationDetent.swift */,
 				7D4034B32BD1684000EB5F17 /* Protocols.swift */,
+				7DCA4AD22BD807D8005BA68E /* FloatingPoint.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -1698,6 +1701,7 @@
 				7D33A94B2B5192960005D723 /* JFVM + sideEffects.swift in Sources */,
 				7DD5BAE32B72ADDA00CFE768 /* JDV.swift in Sources */,
 				7D53705C2ACED7300009BA20 /* PlannedActual.swift in Sources */,
+				7DCA4AD32BD807D8005BA68E /* FloatingPoint.swift in Sources */,
 				7DAC0C932B2780C0001FC6EA /* JFVM.swift in Sources */,
 				7DE6FDA32B5BE58100AC8DE3 /* NetworkMonitor.swift in Sources */,
 				7D6C5C252AAF4B1300DEFC57 /* chewVM+reduce+Idle.swift in Sources */,

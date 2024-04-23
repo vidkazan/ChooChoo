@@ -345,11 +345,12 @@ extension NearestStopViewModel {
 	}
 	
 	static func fetchLocatonsNearby(coords : CLLocation) -> AnyPublisher<[StopDTO],ApiError> {
+		let predictedCoords = Self.calculateNextCoordinates(loc: coords, time: 7.5)
 		return ApiService().fetch(
 			[StopDTO].self,
 			query: [
-				Query.longitude(longitude: String(coords.coordinate.longitude)).queryItem(),
-				Query.latitude(latitude: String(coords.coordinate.latitude)).queryItem()
+				Query.longitude(longitude: String(predictedCoords.longitude)).queryItem(),
+				Query.latitude(latitude: String(predictedCoords.latitude)).queryItem()
 			],
 			type: ApiService.Requests.locationsNearby(coords: coords.coordinate)
 		)
@@ -367,4 +368,21 @@ extension NearestStopViewModel {
 		)
 		.eraseToAnyPublisher()
 	}
+	
+	static private func calculateNextCoordinates(loc : CLLocation, time : Double?) -> CLLocationCoordinate2D {
+		let d = loc.speed * (time ?? 0)
+		let brng = loc.course
+		let R = 6371000.0
+		let φ1 = loc.coordinate.latitude.degreesToRadians
+		let λ1 = loc.coordinate.longitude.degreesToRadians
+		let φ2 = asin(sin(φ1) * cos(d / R) + cos(φ1) * sin(d / R) * cos(brng))
+		let λ2 = λ1 + atan2(sin(brng) * sin(d / R) * cos(φ1),
+							cos(d / R) - sin(φ1) * sin(φ2))
+		
+		return CLLocationCoordinate2D(
+			latitude: φ2.radiansToDegrees,
+			longitude: λ2.radiansToDegrees
+		)
+	}
+
 }
