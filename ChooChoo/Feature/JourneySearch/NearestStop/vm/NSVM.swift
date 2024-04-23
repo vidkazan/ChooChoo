@@ -77,7 +77,7 @@ extension NearestStopViewModel {
 		case idle
 		case error(any ChewError)
 		case loadingStopDetails(Stop)
-		case loadingNearbyStops(_ coordinates : CLLocationCoordinate2D)
+		case loadingNearbyStops(_ coordinates : CLLocation)
 		var description : String {
 			switch self {
 			case .error(let err):
@@ -96,7 +96,7 @@ extension NearestStopViewModel {
 		case didDeselectStop
 		case didTapStopOnMap(Stop)
 		case didRequestReloadStopDepartures(Stop)
-		case didDragMap(_ coordinates : CLLocationCoordinate2D)
+		case didDragMap(_ coordinates : CLLocation)
 		case didLoadStopDetails(Stop,_ stopTrips : [LegViewData])
 		case didLoadNearbyStops([Stop])
 		case didCancelLoading
@@ -306,7 +306,9 @@ extension NearestStopViewModel {
 					return Event.didLoadNearbyStops(stops)
 				}
 				.catch { error in
-					return Just(Event.didFailToLoad(error as? ApiError ?? .generic(description: error.localizedDescription))).eraseToAnyPublisher()
+					return Just(
+						Event.didFailToLoad(error as? ApiError ?? .generic(description: error.localizedDescription))
+					).eraseToAnyPublisher()
 				}
 				.eraseToAnyPublisher()
 		}
@@ -320,7 +322,8 @@ extension NearestStopViewModel {
 			switch stop.type {
 			case .station,.stop:
 				return Self.fetchStopDepartures(stop:stop)
-					.map { tripDTOs in
+					.mapError{ $0 }
+					.asyncFlatMap { tripDTOs in
 						if let departures = tripDTOs.departures {
 							return Event.didLoadStopDetails(stop, departures.compactMap({$0.legViewData(type: .departure)}))
 						}
@@ -330,7 +333,9 @@ extension NearestStopViewModel {
 						return Event.didCancelLoading
 					}
 					.catch { err in
-						return Just(Event.didFailToLoad(err)).eraseToAnyPublisher()
+						return Just(
+							Event.didFailToLoad(err as? ApiError ?? .generic(description: err.localizedDescription))
+						).eraseToAnyPublisher()
 					}
 					.eraseToAnyPublisher()
 			default:
@@ -339,14 +344,14 @@ extension NearestStopViewModel {
 		}
 	}
 	
-	static func fetchLocatonsNearby(coords : CLLocationCoordinate2D) -> AnyPublisher<[StopDTO],ApiError> {
+	static func fetchLocatonsNearby(coords : CLLocation) -> AnyPublisher<[StopDTO],ApiError> {
 		return ApiService().fetch(
 			[StopDTO].self,
 			query: [
-				Query.longitude(longitude: String(coords.longitude)).queryItem(),
-				Query.latitude(latitude: String(coords.latitude)).queryItem()
+				Query.longitude(longitude: String(coords.coordinate.longitude)).queryItem(),
+				Query.latitude(latitude: String(coords.coordinate.latitude)).queryItem()
 			],
-			type: ApiService.Requests.locationsNearby(coords: coords)
+			type: ApiService.Requests.locationsNearby(coords: coords.coordinate)
 		)
 		.eraseToAnyPublisher()
 	}

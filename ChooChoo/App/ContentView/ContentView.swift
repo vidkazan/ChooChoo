@@ -14,6 +14,7 @@ import TipKit
 // feature numbers?
 // learn content shape
 // map picker: tip for long tap / fix animation
+// dashboard with speed etc.
 
 
 // MARK: revise

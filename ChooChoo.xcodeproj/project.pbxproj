@@ -191,8 +191,8 @@
 		7DBD26C52B9A202F00612A3B /* SheetViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DBD26C42B9A202F00612A3B /* SheetViewDataSource.swift */; };
 		7DBF1E572ABB8084009B85EF /* TimeLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DBF1E562ABB8084009B85EF /* TimeLabelView.swift */; };
 		7DBF1E592ABC522E009B85EF /* Badges.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DBF1E582ABC522E009B85EF /* Badges.swift */; };
-		7DBFA3B82BD2FE7900205757 /* NearestStopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DBFA3B72BD2FE7900205757 /* NearestStopView.swift */; };
-		7DBFA3BF2BD3095E00205757 /* NearestStopViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DBFA3BE2BD3095E00205757 /* NearestStopViewModel.swift */; };
+		7DBFA3B82BD2FE7900205757 /* NSV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DBFA3B72BD2FE7900205757 /* NSV.swift */; };
+		7DBFA3BF2BD3095E00205757 /* NSVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DBFA3BE2BD3095E00205757 /* NSVM.swift */; };
 		7DBFE79A2BA23B4C008E1221 /* StopListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DBFE7992BA23B4C008E1221 /* StopListCell.swift */; };
 		7DC0D2A12B2221D200B1FB5A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D46ABE72B220B1600A4145E /* Assets.xcassets */; };
 		7DC0D2A32B2221E900B1FB5A /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7DC0D2A22B2221D800B1FB5A /* Colors.xcassets */; };
@@ -433,8 +433,8 @@
 		7DBD26C42B9A202F00612A3B /* SheetViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetViewDataSource.swift; sourceTree = "<group>"; };
 		7DBF1E562ABB8084009B85EF /* TimeLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeLabelView.swift; sourceTree = "<group>"; };
 		7DBF1E582ABC522E009B85EF /* Badges.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Badges.swift; sourceTree = "<group>"; };
-		7DBFA3B72BD2FE7900205757 /* NearestStopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearestStopView.swift; sourceTree = "<group>"; };
-		7DBFA3BE2BD3095E00205757 /* NearestStopViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearestStopViewModel.swift; sourceTree = "<group>"; };
+		7DBFA3B72BD2FE7900205757 /* NSV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSV.swift; sourceTree = "<group>"; };
+		7DBFA3BE2BD3095E00205757 /* NSVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSVM.swift; sourceTree = "<group>"; };
 		7DBFE7992BA23B4C008E1221 /* StopListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopListCell.swift; sourceTree = "<group>"; };
 		7DC0D2A22B2221D800B1FB5A /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		7DCB2BFE2AAC8831007C672A /* SSVM+reduce+Idle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SSVM+reduce+Idle.swift"; sourceTree = "<group>"; };
@@ -1298,7 +1298,7 @@
 			isa = PBXGroup;
 			children = (
 				7DBFA3BC2BD303FA00205757 /* vm */,
-				7DBFA3B72BD2FE7900205757 /* NearestStopView.swift */,
+				7DBFA3B72BD2FE7900205757 /* NSV.swift */,
 			);
 			path = NearestStop;
 			sourceTree = "<group>";
@@ -1313,7 +1313,7 @@
 		7DBFA3BC2BD303FA00205757 /* vm */ = {
 			isa = PBXGroup;
 			children = (
-				7DBFA3BE2BD3095E00205757 /* NearestStopViewModel.swift */,
+				7DBFA3BE2BD3095E00205757 /* NSVM.swift */,
 			);
 			path = vm;
 			sourceTree = "<group>";
@@ -1796,7 +1796,7 @@
 				7D4B1B8A2AA8CB460096F372 /* JLVM+reduce.swift in Sources */,
 				7D6CCAEF2B5FFB7300BCF62E /* SettingsView+TransportModesSection.swift in Sources */,
 				7DE8A34F2B6AB0AF00C3A378 /* TimeLabelView+Init.swift in Sources */,
-				7DBFA3B82BD2FE7900205757 /* NearestStopView.swift in Sources */,
+				7DBFA3B82BD2FE7900205757 /* NSV.swift in Sources */,
 				7D2BF7A82B67D30800E1CED7 /* Color+random.swift in Sources */,
 				7DFA4A832AB10531005ECAEB /* constructJourneys+Badges.swift in Sources */,
 				7D9E10872AA6752B00820B92 /* SSV.swift in Sources */,
@@ -1852,7 +1852,7 @@
 				7D4B1B932AA8FD9D0096F372 /* SSVM+reduce.swift in Sources */,
 				7DD4A8D82AAC90C3001AA30C /* SSVM+reduce+Loaded.swift in Sources */,
 				7D4034B22BD15E2700EB5F17 /* Logging.swift in Sources */,
-				7DBFA3BF2BD3095E00205757 /* NearestStopViewModel.swift in Sources */,
+				7DBFA3BF2BD3095E00205757 /* NSVM.swift in Sources */,
 				7D6C5C2A2AAF77CF00DEFC57 /* JDVM.swift in Sources */,
 				7D5D78522B29C00600E17CC7 /* CDLeg+CoreDataClass.swift in Sources */,
 				7D462D5E2AACEC5600BC0D65 /* constructJourneys+TimeLabel.swift in Sources */,
