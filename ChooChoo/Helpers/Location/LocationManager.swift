@@ -16,6 +16,7 @@ class ChewLocationDataManager : NSObject, ObservableObject {
 		manager.activityType = .otherNavigation
 		return manager
 	}()
+	
 	@Published var authorizationStatus: CLAuthorizationStatus? {
 		didSet {
 			Logger.locationManager.trace("status: \(self.authorizationStatus?.rawValue ?? -1)")
@@ -23,11 +24,13 @@ class ChewLocationDataManager : NSObject, ObservableObject {
 	}
 	@Published var heading: CLHeading?
 	@Published var location: CLLocation?
+	@Published var accuracyAuthorization: CLAccuracyAuthorization?
 	
 	override init() {
 		super.init()
 		locationManager.delegate = self
 		location = locationManager.location
+		accuracyAuthorization = locationManager.accuracyAuthorization
 	}
 	
 	func reverseGeocoding(coords : Coordinate) async -> String? {
@@ -53,6 +56,7 @@ extension ChewLocationDataManager {
 
 extension ChewLocationDataManager : CLLocationManagerDelegate {
 	func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
+		self.accuracyAuthorization = manager.accuracyAuthorization
 		switch manager.authorizationStatus {
 		case .authorizedWhenInUse:  // Location services are available.
 			// Insert code here of what should happen when Location services are authorized
