@@ -384,5 +384,4 @@ extension NearestStopViewModel {
 			longitude: λ2.radiansToDegrees
 		)
 	}
-
 }

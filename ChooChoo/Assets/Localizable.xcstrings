@@ -18,16 +18,6 @@
     "**Yellow** color shows **daylight**," : {
       "comment" : "SunEventsTipView"
     },
-    "%lf %lf" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "%1$lf %2$lf"
-          }
-        }
-      }
-    },
     "%lld min " : {
       "comment" : "SettingsView: transferSegment: transfer duration",
       "extractionState" : "stale",
@@ -258,6 +248,9 @@
     "Debug leg" : {
       "comment" : "Debug"
     },
+    "Determining location" : {
+      "comment" : "NSV: location notDetermined"
+    },
     "Direct" : {
       "comment" : "SettingsView: connections: picker option",
       "localizations" : {
@@ -451,6 +444,17 @@
         }
       }
     },
+    "Location accuracy is not precise enough to find nearby stops ( %lldm but  %lldm is needed" : {
+      "comment" : "NSV: location accuracy not precise",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Location accuracy is not precise enough to find nearby stops ( %1$lldm but  %2$lldm is needed"
+          }
+        }
+      }
+    },
     "Logs" : {
 
     },
@@ -569,6 +573,9 @@
     "popopopo" : {
 
     },
+    "Precise location accuracy is needed to find nearby stops" : {
+      "comment" : "NSV: location precise accuracy not allowed"
+    },
     "Recents" : {
       "comment" : "RecentSearchesView: view name"
     },
@@ -637,7 +644,7 @@
 
     },
     "Save" : {
-      "comment" : "datePickerView: save button\nsettingsView: save button",
+      "comment" : "settingsView: save button\ndatePickerView: save button",
       "localizations" : {
         "ru" : {
           "stringUnit" : {
@@ -648,7 +655,7 @@
       }
     },
     "Search" : {
-      "comment" : "TabItem\nsearch tip title",
+      "comment" : "search tip title\nTabItem",
       "localizations" : {
         "ru" : {
           "stringUnit" : {
@@ -850,6 +857,9 @@
     },
     "walk %lld min" : {
       "comment" : "badge: walking"
+    },
+    "We need location to find nearby stops" : {
+      "comment" : "NSV: location denied"
     },
     "What does this colorful line mean?" : {
       "comment" : "jlv: header info: sunevents"
