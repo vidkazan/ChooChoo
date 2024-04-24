@@ -203,6 +203,8 @@
 		7DCA4AD92BD83CAA005BA68E /* NSV+subviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCA4AD82BD83CAA005BA68E /* NSV+subviews.swift */; };
 		7DCA4ADB2BD83D35005BA68E /* NSV+header.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCA4ADA2BD83D35005BA68E /* NSV+header.swift */; };
 		7DCA4ADD2BD93714005BA68E /* ChooTip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCA4ADC2BD93714005BA68E /* ChooTip.swift */; };
+		7DCA4AE02BD9391C005BA68E /* ChooTipViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCA4ADF2BD9391B005BA68E /* ChooTipViews.swift */; };
+		7DCA4AE22BD93A53005BA68E /* ChooTipLabels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCA4AE12BD93A53005BA68E /* ChooTipLabels.swift */; };
 		7DCB2BFF2AAC8831007C672A /* SSVM+reduce+Idle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCB2BFE2AAC8831007C672A /* SSVM+reduce+Idle.swift */; };
 		7DCD20102AC470AD00788B38 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCD200F2AC470AD00788B38 /* Colors.swift */; };
 		7DD4A8D62AAC90B9001AA30C /* SSVM+reduce+Loading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD4A8D52AAC90B9001AA30C /* SSVM+reduce+Loading.swift */; };
@@ -449,6 +451,8 @@
 		7DCA4AD82BD83CAA005BA68E /* NSV+subviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSV+subviews.swift"; sourceTree = "<group>"; };
 		7DCA4ADA2BD83D35005BA68E /* NSV+header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSV+header.swift"; sourceTree = "<group>"; };
 		7DCA4ADC2BD93714005BA68E /* ChooTip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooTip.swift; sourceTree = "<group>"; };
+		7DCA4ADF2BD9391B005BA68E /* ChooTipViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooTipViews.swift; sourceTree = "<group>"; };
+		7DCA4AE12BD93A53005BA68E /* ChooTipLabels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooTipLabels.swift; sourceTree = "<group>"; };
 		7DCB2BFE2AAC8831007C672A /* SSVM+reduce+Idle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SSVM+reduce+Idle.swift"; sourceTree = "<group>"; };
 		7DCD200F2AC470AD00788B38 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		7DD4A8D52AAC90B9001AA30C /* SSVM+reduce+Loading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SSVM+reduce+Loading.swift"; sourceTree = "<group>"; };
@@ -550,6 +554,7 @@
 		7D02CE0C2A97E38B0048ADE6 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				7DCA4ADE2BD93903005BA68E /* ChooTip */,
 				7DEE69CA2B9BCD2100A063B4 /* Constants */,
 				7DBD26BC2B99F0D900612A3B /* Settings */,
 				7DF5871B2B5EBFFA00A4F99A /* Errors */,
@@ -1293,7 +1298,6 @@
 				7D7497912BADBD6A0041FBFB /* AppSettings.swift */,
 				7D15AA452BB19E6800B6966D /* AppSettingsVM.swift */,
 				7D345E492AE95E7C003CA948 /* JourneySettings.swift */,
-				7DCA4ADC2BD93714005BA68E /* ChooTip.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -1334,6 +1338,16 @@
 				7DBFA3BE2BD3095E00205757 /* NSVM.swift */,
 			);
 			path = vm;
+			sourceTree = "<group>";
+		};
+		7DCA4ADE2BD93903005BA68E /* ChooTip */ = {
+			isa = PBXGroup;
+			children = (
+				7DCA4ADF2BD9391B005BA68E /* ChooTipViews.swift */,
+				7DCA4AE12BD93A53005BA68E /* ChooTipLabels.swift */,
+				7DCA4ADC2BD93714005BA68E /* ChooTip.swift */,
+			);
+			path = ChooTip;
 			sourceTree = "<group>";
 		};
 		7DCB2BFD2AAC8728007C672A /* reduce */ = {
@@ -1704,6 +1718,7 @@
 				7DE640FB2AB08EF80087FC64 /* CLLOcationCoordinate2D+.swift in Sources */,
 				7DD5BAF82B72B3C500CFE768 /* StopVIewData.swift in Sources */,
 				7D2CAF662B0BEAC000577FD4 /* Persistence.swift in Sources */,
+				7DCA4AE22BD93A53005BA68E /* ChooTipLabels.swift in Sources */,
 				7D6CCAF32B6004A200BCF62E /* VMTemplate.swift in Sources */,
 				7D6734B52A96334B00CBE9C1 /* ContentView.swift in Sources */,
 				7D462D622AACEE2500BC0D65 /* constructJourneys+Leg.swift in Sources */,
@@ -1786,6 +1801,7 @@
 				7DCA4AD72BD83C33005BA68E /* HeadingView.swift in Sources */,
 				7DAC40962B7A5C02006B3E55 /* MapPickerView.swift in Sources */,
 				7D14D98F2B7AD85400FB67AC /* AnnotationView.swift in Sources */,
+				7DCA4AE02BD9391C005BA68E /* ChooTipViews.swift in Sources */,
 				7D3957202B54911F00024736 /* JDV+Toolbar.swift in Sources */,
 				7D1638542B698A04006E9660 /* SFSymbols.swift in Sources */,
 				7DD5BAFD2B72BBDB00CFE768 /* PlatformView.swift in Sources */,
