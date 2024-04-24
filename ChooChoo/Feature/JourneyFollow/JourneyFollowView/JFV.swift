@@ -14,6 +14,7 @@ struct JourneyFollowView : View {
 	@ObservedObject var viewModel : JourneyFollowViewModel = Model.shared.journeyFollowVM
 	@ObservedObject var alertVM : TopBarAlertViewModel = Model.shared.topBarAlertVM
 	@ObservedObject var appSettingsVM = Model.shared.appSettingsVM
+	
 	let timer = Timer.publish(every: 5, on: .main, in: .common).autoconnect()
 	
 	var body: some View {
@@ -40,8 +41,16 @@ struct JourneyFollowView : View {
 							action: nil
 						)
 						.frame(idealWidth: .infinity,idealHeight: .infinity)
-						ChooTip.followJourney.tipView
-							.padding(.horizontal)
+						.onTapGesture {
+							appSettingsVM.send(event: .didRequestToShowTip(tip: .followJourney))
+						}
+						if appSettingsVM.state.settings.showTip(tip: .followJourney){
+							ChooTip.followJourney.tipLabel
+								.padding(.horizontal)
+								.onDisappear {
+									appSettingsVM.send(event: .didShowTip(tip: .followJourney))
+								}
+						}
 					}
 				default:
 					followViewInner

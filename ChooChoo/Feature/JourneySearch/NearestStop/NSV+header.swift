@@ -28,6 +28,7 @@ extension NearestStopView {
 				"Stops Nearby",
 				comment: "NearestStopView: view name"
 			)
+			.padding(10)
 			.chewTextSize(.big)
 			Button(action: {
 				switch nearestStopViewModel.state.status {
