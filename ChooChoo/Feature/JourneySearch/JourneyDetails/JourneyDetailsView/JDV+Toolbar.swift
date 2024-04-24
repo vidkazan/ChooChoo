@@ -43,6 +43,13 @@ extension JourneyDetailsView {
 extension JourneyDetailsView {
 	func toolbar() -> some View {
 		HStack {
+			Button {
+				JourneyViewData
+					.showOnMapOption
+					.action(viewModel.state.data.viewData)
+			} label: {
+				ChooSFSymbols.map.view
+			}
 			if #available(iOS 17.0, *) {
 				follow()
 					.popoverTip(ChooTips.followJourney, arrowEdge: .bottom)
