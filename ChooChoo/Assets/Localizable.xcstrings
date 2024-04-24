@@ -444,19 +444,11 @@
         }
       }
     },
-    "Location accuracy is not precise enough to find nearby stops ( %lldm but  %lldm is needed" : {
-      "comment" : "NSV: location accuracy not precise",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Location accuracy is not precise enough to find nearby stops ( %1$lldm but  %2$lldm is needed"
-          }
-        }
-      }
-    },
     "Logs" : {
 
+    },
+    "Low location accuracy **%lld**" : {
+      "comment" : "NSV: location accuracy not precise"
     },
     "Map" : {
       "comment" : "JourneyFollowView: listCell: swipe action item"

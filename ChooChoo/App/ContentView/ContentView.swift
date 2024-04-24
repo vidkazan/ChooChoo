@@ -8,7 +8,6 @@
 import SwiftUI
 import TipKit
 
-
 // component: reload / loader / error with actions
 // way to contain all bugs
 // feature numbers?
