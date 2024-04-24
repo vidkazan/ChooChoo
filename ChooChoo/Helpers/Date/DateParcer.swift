@@ -40,7 +40,7 @@ class DateParcer {
 		guard let date1 = date1,
 			  let date2 = date2 else { return nil }
 		let interval = date2.timeIntervalSinceReferenceDate - date1.timeIntervalSinceReferenceDate
-		return Int((interval / 60).rounded(.up))
+		return Int((interval / 60))
 	}
 	
 	static func getTwoDateInterval(date1 : Date?,date2 : Date?) -> Double? {

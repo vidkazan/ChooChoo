@@ -45,7 +45,8 @@ struct UpdatedAtBadgeView : View {
 	static func update(_ refTime : Double) -> Text? {
 		let minutes = DateParcer.getTwoDateIntervalInMinutes(
 			date1: Date(timeIntervalSince1970: .init(floatLiteral: refTime)),
-			date2: .now)
+			date2: .now
+		)
 		
 		switch minutes {
 		case .none:
