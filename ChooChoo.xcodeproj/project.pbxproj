@@ -198,6 +198,10 @@
 		7DC0D2A32B2221E900B1FB5A /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7DC0D2A22B2221D800B1FB5A /* Colors.xcassets */; };
 		7DC7F9D52B61C07500DAF6CB /* Placeholder.json in Resources */ = {isa = PBXBuildFile; fileRef = 7D7547BA2B61935A002BE434 /* Placeholder.json */; };
 		7DCA4AD32BD807D8005BA68E /* FloatingPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCA4AD22BD807D8005BA68E /* FloatingPoint.swift */; };
+		7DCA4AD52BD83C03005BA68E /* ExpandingBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCA4AD42BD83C03005BA68E /* ExpandingBadge.swift */; };
+		7DCA4AD72BD83C33005BA68E /* HeadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCA4AD62BD83C33005BA68E /* HeadingView.swift */; };
+		7DCA4AD92BD83CAA005BA68E /* NSV+subviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCA4AD82BD83CAA005BA68E /* NSV+subviews.swift */; };
+		7DCA4ADB2BD83D35005BA68E /* NSV+header.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCA4ADA2BD83D35005BA68E /* NSV+header.swift */; };
 		7DCB2BFF2AAC8831007C672A /* SSVM+reduce+Idle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCB2BFE2AAC8831007C672A /* SSVM+reduce+Idle.swift */; };
 		7DCD20102AC470AD00788B38 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCD200F2AC470AD00788B38 /* Colors.swift */; };
 		7DD4A8D62AAC90B9001AA30C /* SSVM+reduce+Loading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD4A8D52AAC90B9001AA30C /* SSVM+reduce+Loading.swift */; };
@@ -439,6 +443,10 @@
 		7DBFE7992BA23B4C008E1221 /* StopListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopListCell.swift; sourceTree = "<group>"; };
 		7DC0D2A22B2221D800B1FB5A /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		7DCA4AD22BD807D8005BA68E /* FloatingPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingPoint.swift; sourceTree = "<group>"; };
+		7DCA4AD42BD83C03005BA68E /* ExpandingBadge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandingBadge.swift; sourceTree = "<group>"; };
+		7DCA4AD62BD83C33005BA68E /* HeadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadingView.swift; sourceTree = "<group>"; };
+		7DCA4AD82BD83CAA005BA68E /* NSV+subviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSV+subviews.swift"; sourceTree = "<group>"; };
+		7DCA4ADA2BD83D35005BA68E /* NSV+header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSV+header.swift"; sourceTree = "<group>"; };
 		7DCB2BFE2AAC8831007C672A /* SSVM+reduce+Idle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SSVM+reduce+Idle.swift"; sourceTree = "<group>"; };
 		7DCD200F2AC470AD00788B38 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		7DD4A8D52AAC90B9001AA30C /* SSVM+reduce+Loading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SSVM+reduce+Loading.swift"; sourceTree = "<group>"; };
@@ -766,6 +774,8 @@
 		7D33A9A22B54335E0005D723 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				7DCA4AD42BD83C03005BA68E /* ExpandingBadge.swift */,
+				7DCA4AD62BD83C33005BA68E /* HeadingView.swift */,
 				7D2BF7A72B67D30800E1CED7 /* Color+random.swift */,
 				7D704F432B8558C200F8334F /* UIView+Constraints.swift */,
 				7DF0D98E2B6956DD00861C4F /* FlowLayout.swift */,
@@ -1302,6 +1312,8 @@
 			children = (
 				7DBFA3BC2BD303FA00205757 /* vm */,
 				7DBFA3B72BD2FE7900205757 /* NSV.swift */,
+				7DCA4ADA2BD83D35005BA68E /* NSV+header.swift */,
+				7DCA4AD82BD83CAA005BA68E /* NSV+subviews.swift */,
 			);
 			path = NearestStop;
 			sourceTree = "<group>";
@@ -1767,6 +1779,7 @@
 				7D10BD432BB1B40300702D83 /* CoreDataStore+update.swift in Sources */,
 				7DFC46AE2B7F86A900118608 /* UpdatedAtBadgeView.swift in Sources */,
 				7D6C5C1F2AAF4ADC00DEFC57 /* chewVM+reduce+EditingStop.swift in Sources */,
+				7DCA4AD72BD83C33005BA68E /* HeadingView.swift in Sources */,
 				7DAC40962B7A5C02006B3E55 /* MapPickerView.swift in Sources */,
 				7D14D98F2B7AD85400FB67AC /* AnnotationView.swift in Sources */,
 				7D3957202B54911F00024736 /* JDV+Toolbar.swift in Sources */,
@@ -1795,6 +1808,7 @@
 				7D000CFB2AB87ACD00566120 /* NavigationLazyView.swift in Sources */,
 				7DBD26C02B99F13700612A3B /* Settings+Types.swift in Sources */,
 				7D000CF32AB86AD700566120 /* JLVM+sideEffects+loadingJourneys.swift in Sources */,
+				7DCA4ADB2BD83D35005BA68E /* NSV+header.swift in Sources */,
 				7D6C5C2F2AAF792200DEFC57 /* JDVM+state.swift in Sources */,
 				7D345E4A2AE95E7C003CA948 /* JourneySettings.swift in Sources */,
 				7D4B1B8A2AA8CB460096F372 /* JLVM+reduce.swift in Sources */,
@@ -1820,6 +1834,7 @@
 				7DE3599F2AB9E9430028CA59 /* chewVM+reduce+LoadingLocaiton.swift in Sources */,
 				7DEE69D12B9BCE8B00A063B4 /* PresentationDetent.swift in Sources */,
 				7D181D642AD6D595003AB021 /* RecentSearchView.swift in Sources */,
+				7DCA4AD52BD83C03005BA68E /* ExpandingBadge.swift in Sources */,
 				7DD5BAE52B72AE9500CFE768 /* JDVM+sideEffects+fetch.swift in Sources */,
 				7DE8A35D2B6AF4FC00C3A378 /* ChewDate.swift in Sources */,
 				7D4034B42BD1684000EB5F17 /* Protocols.swift in Sources */,
@@ -1827,6 +1842,7 @@
 				7D7B3D9F2AB8DBFD0070E44D /* LDV.swift in Sources */,
 				7D55BD9E2B5EA39900A0CE08 /* ChewDatePicker.swift in Sources */,
 				7D02CE302A97E96E0048ADE6 /* BadgeView.swift in Sources */,
+				7DCA4AD92BD83CAA005BA68E /* NSV+subviews.swift in Sources */,
 				7D4B1B972AA8FDDB0096F372 /* SSVM+sideEffect.swift in Sources */,
 				7D6C5C162AAF485F00DEFC57 /* chewVM+sideEffect.swift in Sources */,
 				7DD5BAEB2B72AF9400CFE768 /* JDVM+sideEffects+loading.swift in Sources */,
