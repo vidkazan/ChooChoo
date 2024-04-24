@@ -825,8 +825,8 @@
             filePath = "ChooChoo/Feature/JourneyFollow/JourneyFollowView/JFV.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "46"
-            endingLineNumber = "46"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
             landmarkName = "body"
             landmarkType = "24">
          </BreakpointContent>
@@ -841,8 +841,8 @@
             filePath = "ChooChoo/Feature/JourneyFollow/JourneyFollowView/JFV.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "47"
-            endingLineNumber = "47"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
             landmarkName = "body"
             landmarkType = "24">
          </BreakpointContent>
@@ -857,8 +857,8 @@
             filePath = "ChooChoo/Feature/JourneyFollow/JourneyFollowView/JFV.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "111"
-            endingLineNumber = "111"
+            startingLineNumber = "120"
+            endingLineNumber = "120"
             landmarkName = "followViewInner"
             landmarkType = "24">
          </BreakpointContent>
@@ -873,8 +873,8 @@
             filePath = "ChooChoo/Feature/JourneyFollow/JourneyFollowView/JFV.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "112"
-            endingLineNumber = "112"
+            startingLineNumber = "121"
+            endingLineNumber = "121"
             landmarkName = "followViewInner"
             landmarkType = "24">
          </BreakpointContent>
@@ -889,8 +889,8 @@
             filePath = "ChooChoo/Feature/JourneyFollow/JourneyFollowView/JFV.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "115"
-            endingLineNumber = "115"
+            startingLineNumber = "124"
+            endingLineNumber = "124"
             landmarkName = "followViewInner"
             landmarkType = "24">
          </BreakpointContent>
@@ -905,8 +905,8 @@
             filePath = "ChooChoo/Feature/JourneyFollow/JourneyFollowView/JFV.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "184"
-            endingLineNumber = "184"
+            startingLineNumber = "193"
+            endingLineNumber = "193"
             landmarkName = "listCell(journey:map:)"
             landmarkType = "7">
          </BreakpointContent>

@@ -71,10 +71,13 @@ extension AppSettingsViewModel  {
 	enum Event : ChewEvent {
 		case didRequestToLoadInitialData(settings : AppSettings)
 		case didShowTip(tip : ChooTip.TipType)
+		case didRequestToShowTip(tip : ChooTip.TipType)
 		case didRequestToChangeLegViewMode(mode : AppSettings.LegViewMode)
 		case didUpdateData
 		var description : String {
 			switch self {
+			case .didRequestToShowTip:
+				return "didRequestToShowTip"
 			case .didUpdateData:
 				return "didUpdateData"
 			case .didRequestToLoadInitialData:
@@ -94,43 +97,52 @@ extension AppSettingsViewModel {
 		Self.log(event, state.status)
 		switch state.status {
 			case .idle:
-			switch event {
-			case .didRequestToLoadInitialData(let settings):
-				return State(settings: settings, status: .idle)
-			case .didShowTip(let tip):
-				var tips = state.settings.tipsToShow
-				tips.remove(tip)
-				return State(settings: AppSettings(
-					oldSettings: state.settings,
-					tips: tips
-				),status: .updating)
-			case .didRequestToChangeLegViewMode(let mode):
-				return State(settings: AppSettings(
-					oldSettings: state.settings,
-					legViewMode: mode
-				),status: .updating)
-			case .didUpdateData:
-				return state
-			}
+				switch event {
+				case .didRequestToShowTip(let tip):
+					var tips = state.settings.tipsToShow
+					tips.insert(tip)
+					return State(settings: AppSettings(
+						oldSettings: state.settings,
+						tips: tips
+					),status: .updating)
+				case .didRequestToLoadInitialData(let settings):
+					return State(settings: settings, status: .idle)
+				case .didShowTip(let tip):
+					var tips = state.settings.tipsToShow
+					tips.remove(tip)
+					return State(settings: AppSettings(
+						oldSettings: state.settings,
+						tips: tips
+					),status: .updating)
+				case .didRequestToChangeLegViewMode(let mode):
+					return State(settings: AppSettings(
+						oldSettings: state.settings,
+						legViewMode: mode
+					),status: .updating)
+				case .didUpdateData:
+					return state
+				}
 			case .updating:
 			switch event {
-			case .didRequestToLoadInitialData(let settings):
-				return State(settings: settings, status: .idle)
-			case .didShowTip(let tip):
-				var tips = state.settings.tipsToShow
-				tips.remove(tip)
-				return State(settings: AppSettings(
-					oldSettings: state.settings,
-					tips: tips
-				),status: .updating)
-			case .didRequestToChangeLegViewMode(let mode):
-				return State(settings: AppSettings(
-					oldSettings: state.settings,
-					legViewMode: mode
-				),status: .updating)
-			case .didUpdateData:
-				return State(settings: state.settings, status: .idle)
-			}
+				case .didRequestToShowTip:
+					return state
+				case .didRequestToLoadInitialData(let settings):
+					return State(settings: settings, status: .idle)
+				case .didShowTip(let tip):
+					var tips = state.settings.tipsToShow
+					tips.remove(tip)
+					return State(settings: AppSettings(
+						oldSettings: state.settings,
+						tips: tips
+					),status: .updating)
+				case .didRequestToChangeLegViewMode(let mode):
+					return State(settings: AppSettings(
+						oldSettings: state.settings,
+						legViewMode: mode
+					),status: .updating)
+				case .didUpdateData:
+					return State(settings: state.settings, status: .idle)
+				}
 		}
 	}
 }
