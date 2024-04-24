@@ -10,14 +10,13 @@ import SwiftUI
 
 struct LegStopView : View {
 	@EnvironmentObject var chewVM : ChewViewModel
-	@ObservedObject var arrivingTrainVM : ArrivingTrainTimeViewModel
 	var shevronIsExpanded : Segments.ShowType
 	static let timeLabelColor = Color.chewTimeLabelGray
 	let legViewData : LegViewData
 	let stopOver : StopViewData
 	let stopOverType : StopOverType
 	let showBadges : Bool
-	@State var showingTimeDetails : Bool = false
+	@State var showingTimeDetails = false
 	
 	
 	var body : some View {
@@ -43,68 +42,27 @@ extension LegStopView {
 		stopOver : StopViewData,
 		leg : LegViewData,
 		showBadges : Bool,
-		shevronIsExpanded : Segments.ShowType,
-		arrivingTrainVM : ArrivingTrainTimeViewModel = ArrivingTrainTimeViewModel()
+		shevronIsExpanded : Segments.ShowType
 	) {
 		self.showBadges = showBadges
 		self.stopOver = stopOver
 		self.stopOverType = type
 		self.legViewData = leg
 		self.shevronIsExpanded = shevronIsExpanded
-		self.arrivingTrainVM = arrivingTrainVM
 	}
 	init(
 		stopOver : StopViewData,
 		leg : LegViewData,
 		showBadges : Bool,
-		shevronIsExpanded : Segments.ShowType,
-		arrivingTrainVM : ArrivingTrainTimeViewModel = ArrivingTrainTimeViewModel()
+		shevronIsExpanded : Segments.ShowType
 	) {
 		self.showBadges = showBadges
 		self.stopOver = stopOver
 		self.stopOverType = stopOver.stopOverType
 		self.legViewData = leg
 		self.shevronIsExpanded = shevronIsExpanded
-		self.arrivingTrainVM = arrivingTrainVM
 	}
 }
-
-extension LegStopView {
-	@ViewBuilder var stopTimeDetails : some View {
-		Button(action: {
-			switch arrivingTrainVM.state.status {
-			case .idle,.error:
-				arrivingTrainVM.send(event: .didRequestTime(leg: legViewData))
-			case .loading:
-				arrivingTrainVM.send(event: .didCancelRequestTime)
-			}
-		}, label: {
-			switch arrivingTrainVM.state.status {
-			case .idle:
-				if let time = arrivingTrainVM.state.time {
-					TimeLabelView(
-						size: .medium,
-						arragement: .bottom,
-						delayStatus: .onTime,
-						time: time
-					)
-					.badgeBackgroundStyle(.primary)
-					.padding(.top,2)
-				}
-			case .loading:
-				ProgressView()
-					.chewTextSize(.medium)
-					.padding(2)
-			case .error:
-				EmptyView()
-			}
-		})
-		.onAppear {
-			arrivingTrainVM.send(event: .didRequestTime(leg: legViewData))
-		}
-	}
-}
-
 
 #if DEBUG
 struct LegStopPreview : PreviewProvider {

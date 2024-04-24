@@ -57,32 +57,28 @@ extension LegStopView {
 				.shadow(radius: 2)
 				.offset(x: stopOver.time.departureStatus.value != nil ? stopOver.time.departureStatus.value! > 0 ? 8 : 0 : 0)
 			case .origin, .footTop,.destination:
-				VStack(spacing: 0) {
-					Button(action: {
-						if case .origin = stopOverType {
-							withAnimation(.easeInOut, {
-								showingTimeDetails.toggle()
-							})
-						}
-					}, label: {
-						VStack(spacing: 0) {
-							if showingTimeDetails == true {
-								stopTimeDetails
-									.transition(.slide)
-							}
-							TimeLabelView(
-								stopOver : stopOver,
-								stopOverType: stopOverType
-							)
-						}
-					})
-					.disabled(stopOverType == .origin ? false : true)
-					.frame(minWidth: 50)
-					.background { timeLabelBackground }
-					.cornerRadius(stopOverType.timeLabelCornerRadius)
-					.shadow(radius: 2)
-					.animation(.easeInOut, value: showingTimeDetails)
-				}
+				Button(action: {
+					if case .origin = stopOverType {
+						withAnimation(.easeInOut, {
+							showingTimeDetails.toggle()
+						})
+					}
+				}, label: {
+					TimeLabelView(
+						stopOver : stopOver,
+						stopOverType: stopOverType
+					)
+					.arrivalTrainTimeLabel(
+						legViewData: legViewData,
+						isShowing: showingTimeDetails
+					)	
+				})
+				.disabled(stopOverType != .origin)
+				.frame(minWidth: 50)
+				.background { timeLabelBackground }
+				.cornerRadius(stopOverType.timeLabelCornerRadius)
+				.shadow(radius: 2)
+				.animation(.easeInOut, value: showingTimeDetails)
 			case .footMiddle,.transfer,.footBottom:
 				EmptyView()
 			}

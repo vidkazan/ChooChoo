@@ -37,7 +37,6 @@ struct TopBarAlertsView: View {
 						)
 					}
 					.padding(.horizontal,10)
-//					.animation(.smooth, value: alertVM.state.alerts)
 			}
 		}
 		.onReceive(timer, perform: { _ in
@@ -60,7 +59,7 @@ struct Bla : View {
 				.cornerRadius(10)
 				.padding(.horizontal,10)
 		}
-		.animation(.smooth, value: vm.state)
+//		.animation(.smooth, value: vm.state)
 	}
 }
 

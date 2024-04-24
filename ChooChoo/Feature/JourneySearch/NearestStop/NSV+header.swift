@@ -30,6 +30,7 @@ extension NearestStopView {
 			)
 			.padding(10)
 			.chewTextSize(.big)
+			.foregroundColor(.secondary)
 			Button(action: {
 				switch nearestStopViewModel.state.status {
 				case .loadingStopDetails,.loadingNearbyStops:
