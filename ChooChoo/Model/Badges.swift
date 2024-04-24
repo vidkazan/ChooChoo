@@ -234,12 +234,13 @@ enum Badges : Identifiable,Hashable {
 		case .legDuration:
 			return BadgeData()
 		case .transfer(let time):
-			return BadgeData(
-				Text(
-					"transfer \(time.durationInMinutes) min",
-					comment: "badge"
+			let dur = DateParcer.timeDuration(time.durationInMinutes) ?? ""
+				return BadgeData(
+					Text(
+						"transfer \(dur)",
+						comment: "badge"
+					)
 				)
-			)
 		case .departureArrivalStops:
 			return BadgeData()
 		case .changesCount:
