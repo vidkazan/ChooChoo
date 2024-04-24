@@ -554,7 +554,6 @@
 		7D02CE0C2A97E38B0048ADE6 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				7DCA4ADE2BD93903005BA68E /* ChooTip */,
 				7DEE69CA2B9BCD2100A063B4 /* Constants */,
 				7DBD26BC2B99F0D900612A3B /* Settings */,
 				7DF5871B2B5EBFFA00A4F99A /* Errors */,
@@ -584,6 +583,7 @@
 		7D02CE112A97E4650048ADE6 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				7DCA4ADE2BD93903005BA68E /* ChooTip */,
 				7DEE69CB2B9BCD7300A063B4 /* Date */,
 				7DEE69C92B9BCCED00A063B4 /* Location */,
 				7DEE69C82B9BCC7D00A063B4 /* Combine */,
