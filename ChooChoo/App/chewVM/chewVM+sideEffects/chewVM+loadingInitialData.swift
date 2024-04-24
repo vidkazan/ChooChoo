@@ -32,13 +32,13 @@ extension ChewViewModel {
 					Logger.loadingsInitialData.info("\(#function): appSettings is nil")
 				}
 				if let stops = Model.shared.coreDataStore.fetchLocations() {
-					Model.shared.searchStopsViewModel.send(event: .didRecentStopsUpdated(recentStops: stops))
+					Model.shared.searchStopsVM.send(event: .didRecentStopsUpdated(recentStops: stops))
 				}
 				if let recentSearches = Model.shared.coreDataStore.fetchRecentSearches() {
-					Model.shared.recentSearchesViewModel.send(event: .didUpdateData(recentSearches))
+					Model.shared.recentSearchesVM.send(event: .didUpdateData(recentSearches))
 				}
 				if let chewJourneys = Model.shared.coreDataStore.fetchJourneys() {
-					Model.shared.journeyFollowViewModel.send(
+					Model.shared.journeyFollowVM.send(
 						event: .didUpdateData(
 							chewJourneys.compactMap{$0.journeyFollowData()}
 						)

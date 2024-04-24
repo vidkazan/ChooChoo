@@ -11,9 +11,10 @@ import Combine
 import OSLog
 
 class LogViewModel : ChewViewModelProtocol {
-	static let position = Model
-		.shared
-		.logStore?
+	static let logStore: OSLogStore? = try? OSLogStore(
+		scope: .currentProcessIdentifier
+	)
+	static let position = logStore?
 		.position(date: Date().addingTimeInterval(-86400))
 	@Published private(set) var state : State {
 		didSet { Self.log(state.status) }
@@ -164,7 +165,7 @@ extension LogViewModel {
 				return Empty().eraseToAnyPublisher()
 			}
 			Task {
-				if let ent = try? Model.shared.logStore?.getEntries(at: position)  {
+				if let ent = try? Self.logStore?.getEntries(at: position)  {
 					let entries = ent
 						.compactMap { elem in
 							elem as? OSLogEntryLog
@@ -172,11 +173,11 @@ extension LogViewModel {
 						.filter { $0.subsystem.starts(with: Bundle.main.bundleIdentifier!)
 						}
 					if entries.isEmpty {
-						return Model.shared.logViewModel.send(event: .didFailToLoad(error: DataError.generic(msg: "No logs found")))
+						return Model.shared.logVM.send(event: .didFailToLoad(error: DataError.generic(msg: "No logs found")))
 					}
-					return Model.shared.logViewModel.send(event: .didLoad(logs: entries))
+					return Model.shared.logVM.send(event: .didLoad(logs: entries))
 				} else {
-					return Model.shared.logViewModel.send(event: .didFailToLoad(error: DataError.generic(msg: "OSLogStore: Failed to get log entries")))
+					return Model.shared.logVM.send(event: .didFailToLoad(error: DataError.generic(msg: "OSLogStore: Failed to get log entries")))
 				}
 			}
 			return Empty().eraseToAnyPublisher()

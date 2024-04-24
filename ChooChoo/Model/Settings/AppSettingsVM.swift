@@ -70,7 +70,7 @@ extension AppSettingsViewModel  {
 	}
 	enum Event : ChewEvent {
 		case didRequestToLoadInitialData(settings : AppSettings)
-		case didShowTip(tip : AppSettings.ChooTipType)
+		case didShowTip(tip : ChooTip.TipType)
 		case didRequestToChangeLegViewMode(mode : AppSettings.LegViewMode)
 		case didUpdateData
 		var description : String {

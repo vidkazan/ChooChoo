@@ -10,7 +10,7 @@ import SwiftUI
 
 struct TopBarAlertView: View {
 	@EnvironmentObject var chewJourneyViewModel : ChewViewModel
-	@ObservedObject var alertVM : TopBarAlertViewModel = Model.shared.topBarAlertViewModel
+	@ObservedObject var alertVM : TopBarAlertViewModel = Model.shared.topBarAlertVM
 	
 	let alert : TopBarAlertViewModel.AlertType
 	

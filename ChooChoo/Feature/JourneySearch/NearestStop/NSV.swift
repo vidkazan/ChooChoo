@@ -132,7 +132,7 @@ struct NearestStopView : View {
 									VStack(alignment: .leading, spacing: 0) {
 										ForEach(trips,id: \.hashValue) { trip in
 											Button(action: {
-												Model.shared.sheetViewModel.send(
+												Model.shared.sheetVM.send(
 													event: .didRequestShow(.route(leg: trip))
 												)
 											}, label: {
@@ -153,20 +153,22 @@ struct NearestStopView : View {
 										nearestStops,
 										id: \.hashValue
 									) { stop in
-										Button(action: {
-											nearestStopViewModel.send(event: .didTapStopOnMap(stop.stop))
-										},
-											   label: {
-											stopWithDistance(stop: stop)
-										})
+										Button(
+											action: {
+												nearestStopViewModel.send(event: .didTapStopOnMap(stop.stop))
+											},
+											label: {
+												stopWithDistance(stop: stop)
+											}
+										)
 									}
 								}
 								.transition(.move(edge: .leading))
 							}
+							.animation(.easeInOut, value: self.nearestStops)
 						}
 					}
 				}
-				.animation(.easeInOut, value: self.nearestStops)
 				.onAppear {
 					if let coord = locationManager.location {
 						nearestStopViewModel.send(

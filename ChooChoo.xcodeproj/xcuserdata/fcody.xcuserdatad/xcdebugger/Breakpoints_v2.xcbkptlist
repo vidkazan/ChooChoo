@@ -1106,38 +1106,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "AA0348DB-23A8-4546-9741-D1FC7BF44D19"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ChooChoo/Model/Settings/AppSettings.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "293"
-            endingLineNumber = "293"
-            landmarkName = "SunEventsTipView"
-            landmarkType = "14">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "7F6319A1-F9B5-48D1-BB93-A56CC920A5DF"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ChooChoo/Model/Settings/AppSettings.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "305"
-            endingLineNumber = "305"
-            landmarkName = "body"
-            landmarkType = "24">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "2EF95D14-E907-498B-A8E5-2AF833C15599"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -1165,69 +1133,6 @@
             endingLineNumber = "108"
             landmarkName = "body"
             landmarkType = "24">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "300E94FD-8B6B-46C8-878F-74682F4F0DA9"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ChooChoo/Feature/JourneySearch/NearestStop/NSV.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "338"
-            endingLineNumber = "338"
-            landmarkName = "body"
-            landmarkType = "24">
-            <Locations>
-               <Location
-                  uuid = "300E94FD-8B6B-46C8-878F-74682F4F0DA9 - 3fc957438121105a"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "ChooChoo.NearestStopView.HeadingView.body.getter : some"
-                  moduleName = "ChooChoo"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/fcody/Desktop/Swift/ChooChoo/proj/ChooChoo/Feature/JourneySearch/NearestStop/NSV.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "279"
-                  endingLineNumber = "279"
-                  offsetFromSymbolStart = "624">
-               </Location>
-               <Location
-                  uuid = "300E94FD-8B6B-46C8-878F-74682F4F0DA9 - 69d9fb41506e0099"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #2 (Swift.Optional&lt;__C.CLHeading&gt;) -&gt; () in ChooChoo.NearestStopView.HeadingView.body.getter : some"
-                  moduleName = "ChooChoo"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/fcody/Desktop/Swift/ChooChoo/proj/ChooChoo/Feature/JourneySearch/NearestStop/NSV.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "280"
-                  endingLineNumber = "280"
-                  offsetFromSymbolStart = "124">
-               </Location>
-               <Location
-                  uuid = "300E94FD-8B6B-46C8-878F-74682F4F0DA9 - 69d9fb41506e0099"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #2 (Swift.Optional&lt;__C.CLHeading&gt;) -&gt; () in ChooChoo.NearestStopView.HeadingView.body.getter : some"
-                  moduleName = "ChooChoo"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/fcody/Desktop/Swift/ChooChoo/proj/ChooChoo/Feature/JourneySearch/NearestStop/NSV.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "280"
-                  endingLineNumber = "280"
-                  offsetFromSymbolStart = "128">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1607,69 +1512,6 @@
                   startingLineNumber = "0"
                   endingLineNumber = "0"
                   offsetFromSymbolStart = "24">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "807A31BB-F420-4BBC-AA84-F79DB5F59B33"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ChooChoo/Feature/JourneySearch/NearestStop/NSV.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "118"
-            endingLineNumber = "118"
-            landmarkName = "content()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "807A31BB-F420-4BBC-AA84-F79DB5F59B33 - f463fb15e866c789"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "ChooChoo.NearestStopView.content() -&gt; some"
-                  moduleName = "ChooChoo"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/fcody/Desktop/Swift/ChooChoo/proj/ChooChoo/Feature/JourneySearch/NearestStop/NSV.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "118"
-                  endingLineNumber = "118"
-                  offsetFromSymbolStart = "4248">
-               </Location>
-               <Location
-                  uuid = "807A31BB-F420-4BBC-AA84-F79DB5F59B33 - f463fb15e866c789"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "ChooChoo.NearestStopView.content() -&gt; some"
-                  moduleName = "ChooChoo"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/fcody/Desktop/Swift/ChooChoo/proj/ChooChoo/Feature/JourneySearch/NearestStop/NSV.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "118"
-                  endingLineNumber = "118"
-                  offsetFromSymbolStart = "4452">
-               </Location>
-               <Location
-                  uuid = "807A31BB-F420-4BBC-AA84-F79DB5F59B33 - f463fb15e866c789"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "ChooChoo.NearestStopView.content() -&gt; some"
-                  moduleName = "ChooChoo"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/fcody/Desktop/Swift/ChooChoo/proj/ChooChoo/Feature/JourneySearch/NearestStop/NSV.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "118"
-                  endingLineNumber = "118"
-                  offsetFromSymbolStart = "4456">
                </Location>
             </Locations>
          </BreakpointContent>

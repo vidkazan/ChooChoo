@@ -12,49 +12,54 @@ import OSLog
 final class Model {
 	static let shared = Model()
 	
-	private var _journeyDetailsViewModels : [String: JourneyDetailsViewModel] = [:]
-	let logStore: OSLogStore? = try? OSLogStore(scope: .currentProcessIdentifier)
+	private var _journeyDetailsViewModels = [String: JourneyDetailsViewModel]()
+	
+	
 	let locationDataManager : ChewLocationDataManager
-	let sheetViewModel : SheetViewModel
-	let logViewModel : LogViewModel
-	let topBarAlertViewModel : TopBarAlertViewModel
+	let chewVM : ChewViewModel
+	let sheetVM : SheetViewModel
+	let logVM : LogViewModel
+	let topBarAlertVM : TopBarAlertViewModel
 	let coreDataStore : CoreDataStore
-	let searchStopsViewModel : SearchStopsViewModel
-	let journeyFollowViewModel : JourneyFollowViewModel
-	let recentSearchesViewModel : RecentSearchesViewModel
-	let alertViewModel : AlertViewModel
+	let searchStopsVM : SearchStopsViewModel
+	let journeyFollowVM : JourneyFollowViewModel
+	let recentSearchesVM : RecentSearchesViewModel
+	let alertVM : AlertViewModel
 	let appSettingsVM : AppSettingsViewModel
 	
 	init(
+		chewVM : ChewViewModel,
 		sheetVM : SheetViewModel,
 		alertVM : TopBarAlertViewModel,
 		searchStopsVM : SearchStopsViewModel,
 		journeyFollowViewModel : JourneyFollowViewModel,
 		recentSearchesViewModel : RecentSearchesViewModel
 	) {
-		self.searchStopsViewModel = searchStopsVM
-		self.topBarAlertViewModel = alertVM
-		self.sheetViewModel = sheetVM
-		self.journeyFollowViewModel = journeyFollowViewModel
-		self.recentSearchesViewModel = recentSearchesViewModel
-		self.alertViewModel = .init()
+		self.chewVM = chewVM
+		self.searchStopsVM = searchStopsVM
+		self.topBarAlertVM = alertVM
+		self.sheetVM = sheetVM
+		self.journeyFollowVM = journeyFollowViewModel
+		self.recentSearchesVM = recentSearchesViewModel
+		self.alertVM = .init()
 		self.coreDataStore = .init()
 		self.locationDataManager = .init()
 		self.appSettingsVM = .init()
-		self.logViewModel = .init()
+		self.logVM = .init()
 	}
 	
 	init() {
-		self.searchStopsViewModel = .init()
-		self.topBarAlertViewModel = .init()
-		self.sheetViewModel = .init()
-		self.journeyFollowViewModel = .init(journeys: [])
-		self.recentSearchesViewModel = .init(searches: [])
-		self.alertViewModel = .init()
+		self.searchStopsVM = .init()
+		self.topBarAlertVM = .init()
+		self.sheetVM = .init()
+		self.journeyFollowVM = .init(journeys: [])
+		self.recentSearchesVM = .init(searches: [])
+		self.alertVM = .init()
 		self.coreDataStore = .init()
 		self.locationDataManager = .init()
 		self.appSettingsVM = .init()
-		self.logViewModel = .init()
+		self.logVM = .init()
+		self.chewVM = .init()
 	}
 }
 

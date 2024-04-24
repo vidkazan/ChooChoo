@@ -32,7 +32,7 @@ struct TimeAndSettingsView: View {
 extension TimeAndSettingsView {
 	@ViewBuilder func settingsBtn() -> some View {
 		Button(action: {
-			Model.shared.sheetViewModel.send(event: .didRequestShow(.journeySettings))
+			Model.shared.sheetVM.send(event: .didRequestShow(.journeySettings))
 		}, label: {
 			Image(.sliderHorizontal)
 				.tint(.primary)

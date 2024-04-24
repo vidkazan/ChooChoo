@@ -10,7 +10,6 @@ import SwiftUI
 enum Tabs : Int,CaseIterable {
 	case search
 	case follow
-//	case appSettings
 }
 
 struct FeatureView: View {
@@ -38,16 +37,7 @@ struct FeatureView: View {
 			}
 		)
 	}()
-//	let tabAppSettingsLabel : some View = {
-//		Label(
-//			title: {
-//				Text("Settings", comment : "TabItem")
-//			},
-//			icon: {
-//				ChooSFSymbols.gearshape.view
-//			}
-//		)
-//	}()
+
 	var handler: Binding<Tabs> { Binding(
 		get: { self.selectedTab },
 		set: {

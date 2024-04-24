@@ -126,7 +126,7 @@ enum Badges : Identifiable,Hashable {
 		switch self{
 		case .remarkImportant(remarks: let remark):
 			return {
-				Model.shared.sheetViewModel.send(event: .didRequestShow(.remark(remarks: remark)))
+				Model.shared.sheetVM.send(event: .didRequestShow(.remark(remarks: remark)))
 			}
 		default:
 			return {}

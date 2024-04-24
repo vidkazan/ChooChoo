@@ -79,7 +79,7 @@ struct JourneyCell: View {
 	}
 	
 	static func followID(journey : JourneyViewData) -> Int64 {
-		let journeys = Model.shared.journeyFollowViewModel.state.journeys
+		let journeys = Model.shared.journeyFollowVM.state.journeys
 		guard let followID = journeys.first(where: {
 			$0.journeyViewData.refreshToken == journey.refreshToken
 		})?.id else {

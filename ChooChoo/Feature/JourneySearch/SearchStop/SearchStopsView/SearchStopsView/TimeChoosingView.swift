@@ -13,7 +13,7 @@ struct TimeChoosingView: View {
 	@State private var selectedOption : TimeSegmentedPickerOptions = .now
 	init(
 		selectedOption: TimeSegmentedPickerOptions = .now,
-		searchStopsVM : SearchStopsViewModel = Model.shared.searchStopsViewModel
+		searchStopsVM : SearchStopsViewModel = Model.shared.searchStopsVM
 	) {
 		self.selectedOption = selectedOption
 		self.searchStopsVM = searchStopsVM
@@ -49,7 +49,7 @@ struct TimeChoosingView: View {
 							mode: .departure
 						)))
 					case .specificDate:
-						Model.shared.sheetViewModel.send(event: .didRequestShow(.date))
+						Model.shared.sheetVM.send(event: .didRequestShow(.date))
 					}
 				}
 			}

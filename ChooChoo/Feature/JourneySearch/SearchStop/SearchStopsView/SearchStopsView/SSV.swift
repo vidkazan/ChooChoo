@@ -32,7 +32,7 @@ struct SearchStopsView: View {
 
 extension SearchStopsView {
 	init(
-		searchStopViewModel: SearchStopsViewModel = Model.shared.searchStopsViewModel,
+		searchStopViewModel: SearchStopsViewModel = Model.shared.searchStopsVM,
 		focusedField: LocationDirectionType? = nil,
 		previuosStatus: ChewViewModel.Status? = nil,
 		topText: String = "",

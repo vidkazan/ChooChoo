@@ -30,7 +30,7 @@ struct JourneyFollowViewMapCell : View {
 			.frame(minHeight: 300)
 			.contextMenu {
 				Button(action: {
-					Model.shared.sheetViewModel.send(
+					Model.shared.sheetVM.send(
 						event: .didRequestShow(.mapDetails(.journey(data.legs)))
 					)
 				}, label: {
@@ -44,7 +44,7 @@ struct JourneyFollowViewMapCell : View {
 					)
 				})
 				Button(action: {
-					Model.shared.sheetViewModel.send(
+					Model.shared.sheetVM.send(
 						event: .didRequestShow(.journeyDebug(legs: data.legs.compactMap {$0.legDTO}))
 					)
 				}, label: {

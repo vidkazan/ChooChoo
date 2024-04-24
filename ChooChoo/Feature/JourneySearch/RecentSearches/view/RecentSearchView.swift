@@ -42,7 +42,7 @@ extension DepartureArrivalPair {
 
 struct RecentSearchesView : View {
 	@EnvironmentObject var chewVM : ChewViewModel
-	@ObservedObject var recentSearchesVM : RecentSearchesViewModel = Model.shared.recentSearchesViewModel
+	@ObservedObject var recentSearchesVM : RecentSearchesViewModel = Model.shared.recentSearchesVM
 	@State var searches : [RecentSearchesViewModel.RecentSearch] = []
 	var body: some View {
 		Group {

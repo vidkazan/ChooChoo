@@ -10,7 +10,7 @@ import SwiftUI
 import OSLog
 
 struct LogViewer: View {
-	@ObservedObject var viewModel = Model.shared.logViewModel
+	@ObservedObject var viewModel = Model.shared.logVM
 
 	var body: some View {
 		VStack {
@@ -30,7 +30,7 @@ struct LogViewer: View {
 			}
 		}
 		.onAppear {
-			Model.shared.logViewModel.send(event: .didTapLoading)
+			Model.shared.logVM.send(event: .didTapLoading)
 		}
 		.navigationTitle("Logs")
 		.toolbar {
@@ -38,18 +38,18 @@ struct LogViewer: View {
 				Button(action: {
 					switch viewModel.state.status {
 					case .loading:
-						Model.shared.logViewModel.send(event: .didCancelLoading)
+						Model.shared.logVM.send(event: .didCancelLoading)
 					case .loaded:
-						Model.shared.logViewModel.send(event: .didTapLoading)
+						Model.shared.logVM.send(event: .didTapLoading)
 					case .error:
-						Model.shared.logViewModel.send(event: .didTapLoading)
+						Model.shared.logVM.send(event: .didTapLoading)
 					}
 				}, label: {
 					switch viewModel.state.status {
 					case .loading:
 						ProgressView()
 							.onTapGesture {
-								Model.shared.logViewModel.send(event: .didCancelLoading)
+								Model.shared.logVM.send(event: .didCancelLoading)
 							}
 					case .loaded:
 						ChooSFSymbols.arrowClockwise.view

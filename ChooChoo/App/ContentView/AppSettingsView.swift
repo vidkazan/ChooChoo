@@ -31,10 +31,10 @@ struct AppSettingsView: View {
 						settings: AppSettings(
 							debugSettings: appSetttingsVM.state.settings.debugSettings,
 							legViewMode: appSetttingsVM.state.settings.legViewMode,
-							tips: Set(AppSettings.ChooTipType.allCases)
+							tips: Set(ChooTip.TipType.allCases)
 						)
 					))
-					Model.shared.sheetViewModel.send(event: .didRequestHide)
+					Model.shared.sheetVM.send(event: .didRequestHide)
 				}, label: {
 					Text("Reset tips")
 				})

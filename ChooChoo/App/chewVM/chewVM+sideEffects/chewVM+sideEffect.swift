@@ -24,7 +24,7 @@ extension ChewViewModel {
 					.eraseToAnyPublisher()
 			}
 			
-			Model.shared.recentSearchesViewModel.send(event: .didTapEdit(
+			Model.shared.recentSearchesVM.send(event: .didTapEdit(
 					action: .adding,
 					search: RecentSearchesViewModel.RecentSearch(
 						depStop: dep,
@@ -46,7 +46,7 @@ extension ChewViewModel {
 	static func whenEditingStops() -> Feedback<State, Event> {
 		Feedback { (state: State) -> AnyPublisher<Event, Never> in
 			if case let .editingStop(type) = state.status {
-				Model.shared.searchStopsViewModel.send(event: .didChangeFieldFocus(type: type))
+				Model.shared.searchStopsVM.send(event: .didChangeFieldFocus(type: type))
 			}
 			return Empty().eraseToAnyPublisher()
 		}

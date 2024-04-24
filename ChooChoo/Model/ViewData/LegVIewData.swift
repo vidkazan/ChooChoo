@@ -154,9 +154,9 @@ extension LegViewData {
 		action: { leg in
 			switch leg.legType {
 			case .line,.transfer:
-				Model.shared.sheetViewModel.send(event: .didRequestShow(.mapDetails(.lineLeg(leg))))
+				Model.shared.sheetVM.send(event: .didRequestShow(.mapDetails(.lineLeg(leg))))
 			default:
-				Model.shared.sheetViewModel.send(event: .didRequestShow(.mapDetails(.footDirection(leg))))
+				Model.shared.sheetVM.send(event: .didRequestShow(.mapDetails(.footDirection(leg))))
 			}
 		},
 		icon: "map",
@@ -169,9 +169,9 @@ extension LegViewData {
 	static let debug = Option(
 		action: { leg in
 			if let dto = leg.legDTO {
-				Model.shared.sheetViewModel.send(event: .didRequestShow(.journeyDebug(legs: [dto])))
+				Model.shared.sheetVM.send(event: .didRequestShow(.journeyDebug(legs: [dto])))
 			} else {
-				Model.shared.topBarAlertViewModel.send(event: .didRequestShow(.generic(msg: "Debug error : legDTO is nil")))
+				Model.shared.topBarAlertVM.send(event: .didRequestShow(.generic(msg: "Debug error : legDTO is nil")))
 			}
 		},
 		icon: "ant",
@@ -182,7 +182,7 @@ extension LegViewData {
 	)
 	static let routeOption = Option(
 		action: { leg in
-			Model.shared.sheetViewModel.send(
+			Model.shared.sheetVM.send(
 				event: .didRequestShow(.route(leg: leg))
 			)
 		},

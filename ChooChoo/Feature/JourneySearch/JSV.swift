@@ -12,8 +12,8 @@ import TipKit
 struct JourneySearchView : View {
 	@Namespace var journeySearchViewNamespace
 	@EnvironmentObject var chewViewModel : ChewViewModel
-	@ObservedObject var searchStopsVM = Model.shared.searchStopsViewModel
-	@ObservedObject var topAlertVM = Model.shared.topBarAlertViewModel
+	@ObservedObject var searchStopsVM = Model.shared.searchStopsVM
+	@ObservedObject var topAlertVM = Model.shared.topBarAlertVM
 	var body: some View {
 		VStack(spacing: 5) {
 			if #available(iOS 17.0, *) {
@@ -45,7 +45,7 @@ struct JourneySearchView : View {
 			)
 			ToolbarItem(placement: .topBarTrailing, content: {
 				Button(action: {
-					Model.shared.sheetViewModel.send(event: .didRequestShow(.appSettings))
+					Model.shared.sheetVM.send(event: .didRequestShow(.appSettings))
 				}, label: {
 					ChooSFSymbols.gearshape.view
 						.tint(.secondary)

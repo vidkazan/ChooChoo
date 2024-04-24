@@ -96,7 +96,7 @@ extension SheetViewModel{
 		}
 		
 		case none
-		case tip(AppSettings.ChooTip)
+		case tip(ChooTip)
 		case date
 		case appSettings
 		case journeySettings
@@ -275,7 +275,7 @@ extension SheetViewModel {
 				return Event.didLoadDataForShowing(.route(leg: leg),RouteViewDataSource(leg: leg))
 			}
 			.catch { error in
-				Model.shared.topBarAlertViewModel.send(event: .didRequestShow(.routeError))
+				Model.shared.topBarAlertVM.send(event: .didRequestShow(.routeError))
 				return Just(Event.didRequestHide).eraseToAnyPublisher()
 			}
 			.eraseToAnyPublisher()

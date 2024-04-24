@@ -46,7 +46,7 @@ extension MapPickerView {
 			case .arrival:
 				chewVM.send(event: .didUpdateSearchData(arr: .location(stop)))
 			}
-			Model.shared.sheetViewModel.send(event: .didRequestHide)
+			Model.shared.sheetVM.send(event: .didRequestHide)
 		}, label: {
 			Text(
 				"Choose",

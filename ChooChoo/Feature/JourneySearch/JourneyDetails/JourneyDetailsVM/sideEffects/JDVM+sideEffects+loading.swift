@@ -63,8 +63,8 @@ extension JourneyDetailsViewModel {
 						return Event.didFailedToLoadJourneyData(error: DataError.nilValue(type: "viewData"))
 					}
 					
-					if Model.shared.journeyFollowViewModel.state.journeys.contains(where: {$0.id == followID}) == true {
-						Model.shared.journeyFollowViewModel.send(event: .didRequestUpdateJourney(res, followID))
+					if Model.shared.journeyFollowVM.state.journeys.contains(where: {$0.id == followID}) == true {
+						Model.shared.journeyFollowVM.send(event: .didRequestUpdateJourney(res, followID))
 					}
 										
 					return Event.didLoadJourneyData(data: res)

@@ -11,8 +11,8 @@ import TipKit
 
 struct JourneyFollowView : View {
 	@EnvironmentObject var chewVM : ChewViewModel
-	@ObservedObject var viewModel : JourneyFollowViewModel = Model.shared.journeyFollowViewModel
-	@ObservedObject var alertVM : TopBarAlertViewModel = Model.shared.topBarAlertViewModel
+	@ObservedObject var viewModel : JourneyFollowViewModel = Model.shared.journeyFollowVM
+	@ObservedObject var alertVM : TopBarAlertViewModel = Model.shared.topBarAlertVM
 	@ObservedObject var appSettingsVM = Model.shared.appSettingsVM
 	let timer = Timer.publish(every: 5, on: .main, in: .common).autoconnect()
 	
@@ -40,7 +40,7 @@ struct JourneyFollowView : View {
 							action: nil
 						)
 						.frame(idealWidth: .infinity,idealHeight: .infinity)
-						AppSettings.ChooTip.followJourney.tipView
+						ChooTip.followJourney.tipView
 							.padding(.horizontal)
 					}
 				default:
@@ -101,7 +101,7 @@ extension JourneyFollowView {
 			List {
 				Section {
 					if appSettingsVM.state.settings.showTip(tip: .swipeActions){
-						AppSettings.ChooTip.swipeActions.tipLabel
+						ChooTip.swipeActions.tipLabel
 							.onDisappear {
 								appSettingsVM.send(event: .didShowTip(tip: .swipeActions))
 							}
@@ -244,7 +244,7 @@ extension JourneyFollowView {
 			}
 			.swipeActions(edge: .trailing) {
 				Button {
-					Model.shared.alertViewModel.send(event: .didRequestShow(
+					Model.shared.alertVM.send(event: .didRequestShow(
 						.destructive(
 							destructiveAction: {
 								vm.send(event: .didTapSubscribingButton(

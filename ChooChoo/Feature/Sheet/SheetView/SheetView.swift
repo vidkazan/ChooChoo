@@ -11,14 +11,14 @@ import MapKit
 
 struct SheetView : View {
 	@EnvironmentObject var chewViewModel : ChewViewModel
-	@ObservedObject var sheetVM : SheetViewModel = Model.shared.sheetViewModel
+	@ObservedObject var sheetVM : SheetViewModel = Model.shared.sheetVM
 	let closeSheet : ()->Void
 	var body: some View {
 		switch sheetVM.state.status {
 		case .error(let error):
 			EmptyView()
 				.onAppear {
-					Model.shared.topBarAlertViewModel.send(
+					Model.shared.topBarAlertVM.send(
 						event: .didAdd([
 							.generic(msg: error.localizedDescription)
 						])

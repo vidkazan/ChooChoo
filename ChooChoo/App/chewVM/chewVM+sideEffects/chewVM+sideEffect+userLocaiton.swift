@@ -18,11 +18,11 @@ extension ChewViewModel {
 			
 			switch Model.shared.locationDataManager.authorizationStatus {
 			case .notDetermined,.restricted,.denied,.none:
-				Model.shared.topBarAlertViewModel.send(event: .didRequestShow(.userLocationError))
+				Model.shared.topBarAlertVM.send(event: .didRequestShow(.userLocationError))
 				return Just(Event.didFailToLoadLocationData).eraseToAnyPublisher()
 			case .authorizedAlways,.authorizedWhenInUse:
 				guard let coords = Model.shared.locationDataManager.location?.coordinate else {
-					Model.shared.topBarAlertViewModel.send(event: .didRequestShow(.userLocationError))
+					Model.shared.topBarAlertVM.send(event: .didRequestShow(.userLocationError))
 					return Just(Event.didFailToLoadLocationData).eraseToAnyPublisher()
 				}
 				Task {
@@ -33,7 +33,7 @@ extension ChewViewModel {
 				}
 				return Empty().eraseToAnyPublisher()
 			@unknown default:
-				Model.shared.topBarAlertViewModel.send(event: .didRequestShow(.userLocationError))
+				Model.shared.topBarAlertVM.send(event: .didRequestShow(.userLocationError))
 				return Just(Event.didFailToLoadLocationData).eraseToAnyPublisher()
 			}
 		}

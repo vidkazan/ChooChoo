@@ -10,19 +10,12 @@ import SwiftUI
 
 extension NearestStopView {
 	@ViewBuilder func header() -> some View {
-		HStack {
-			Text(
-				"Stops Nearby",
-				comment: "NearestStopView: view name"
-			)
-			.chewTextSize(.big)
-			.padding(.leading,10)
-//			.foregroundColor(.secondary)
-			if let acc = locationManager.location?.horizontalAccuracy, acc < Self.enoughAccuracy {
+		HStack(spacing: 2) {
+			if let acc = locationManager.location?.horizontalAccuracy, acc > Self.enoughAccuracy {
 				BadgeView(.generic(msg: "!"))
 					.expandingBadge {
 						OneLineText(Text(
-							"Low location accuracy **\(Int(acc))**",
+							"Low accuracy: +/-**\(Int(acc/2))m**",
 							comment: "NSV: location accuracy not precise")
 						)
 					}
@@ -31,6 +24,11 @@ extension NearestStopView {
 					.foregroundStyle(.secondary)
 					.frame(minWidth: 40)
 			}
+			Text(
+				"Stops Nearby",
+				comment: "NearestStopView: view name"
+			)
+			.chewTextSize(.big)
 			Button(action: {
 				switch nearestStopViewModel.state.status {
 				case .loadingStopDetails,.loadingNearbyStops:
@@ -54,13 +52,12 @@ extension NearestStopView {
 					case .loadingStopDetails,
 							.loadingNearbyStops:
 						ProgressView()
-							.chewTextSize(.medium)
 					default:
 						ChooSFSymbols.arrowClockwise.view
-							.foregroundStyle(.secondary)
 					}
 				}
-				.frame(width: 40,height: 40)
+				.chewTextSize(.big)
+				.foregroundStyle(.secondary)
 			})
 			Spacer()
 		}

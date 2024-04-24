@@ -25,9 +25,9 @@ import TipKit
 // performance: main thread is blocked while updating journeys 
 struct ContentView: View {
 	@EnvironmentObject var chewViewModel : ChewViewModel
-	@ObservedObject var alertVM = Model.shared.alertViewModel
-	@ObservedObject var sheetVM = Model.shared.sheetViewModel
-	@ObservedObject var topAlertVM = Model.shared.topBarAlertViewModel
+	@ObservedObject var alertVM = Model.shared.alertVM
+	@ObservedObject var sheetVM = Model.shared.sheetVM
+	@ObservedObject var topAlertVM = Model.shared.topBarAlertVM
 	
 	@State var state = ChewViewModel.State()
 	@State var sheetState = SheetViewModel.State(status: .showing(.none, result: EmptyDataSource()))
@@ -61,7 +61,7 @@ struct ContentView: View {
 			"confirmation dialog",
 			isPresented: Binding(
 				get: { checkConfirmatioDialog(isSheet: false) },
-				set: { _ in Model.shared.alertViewModel.send(event: .didRequestDismiss) }
+				set: { _ in Model.shared.alertVM.send(event: .didRequestDismiss) }
 			),
 			actions: confirmationDialogActions,
 			message: confirmationDialogMessage
@@ -69,7 +69,7 @@ struct ContentView: View {
 		.alert(
 			isPresented: Binding(
 			get: { checkAlert() },
-			   set: { _ in Model.shared.alertViewModel.send(event: .didRequestDismiss) }
+			   set: { _ in Model.shared.alertVM.send(event: .didRequestDismiss) }
 		   ),
 			content: alert
 		)
@@ -87,7 +87,7 @@ struct ContentView: View {
 					"confirmation dialog sheet",
 					isPresented: Binding(
 						get: { checkConfirmatioDialog(isSheet: true) },
-						set: { _ in Model.shared.alertViewModel.send(event: .didRequestDismiss) }
+						set: { _ in Model.shared.alertVM.send(event: .didRequestDismiss) }
 					),
 					actions: confirmationDialogActions,
 					message: confirmationDialogMessage

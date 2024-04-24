@@ -41,7 +41,7 @@ extension SearchStopsView {
 				if focusedField == type {
 					Button(action: {
 						chewViewModel.send(event: .didCancelEditStop)
-						Model.shared.sheetViewModel.send(event: .didRequestShow(.mapPicker(type: type)))
+						Model.shared.sheetVM.send(event: .didRequestShow(.mapPicker(type: type)))
 					}, label: {
 						Image(systemName: "map")
 							.chewTextSize(.big)

@@ -125,7 +125,7 @@ extension SettingsView {
 	@ViewBuilder func filterDisclaimer() -> some View {
 		if !currentSettings.isDefault() {
 			Section {
-				AppSettings.ChooTip.journeySettingsFilterDisclaimer.tipLabel
+				ChooTip.journeySettingsFilterDisclaimer.tipLabel
 			}
 		}
 	}
@@ -133,7 +133,7 @@ extension SettingsView {
 	@ViewBuilder func reset() -> some View {
 		Section {
 			Button(role: .destructive, action: {
-				Model.shared.alertViewModel.send(
+				Model.shared.alertVM.send(
 					event: .didRequestShow(.destructive(
 						destructiveAction: {
 							chewViewModel.send(

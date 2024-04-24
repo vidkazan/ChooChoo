@@ -27,7 +27,7 @@ extension JourneyDetailsView {
 					case .changingSubscribingState:
 						ProgressView()
 					default:
-						let contains = Model.shared.journeyFollowViewModel.state.journeys.contains(where: {$0.id == viewModel.state.data.id})
+						let contains = Model.shared.journeyFollowVM.state.journeys.contains(where: {$0.id == viewModel.state.data.id})
 						Image(.bookmark)
 							.symbolVariant(contains ? .fill : .none )
 					}
@@ -60,7 +60,7 @@ extension JourneyDetailsView {
 							ref: viewModel.state.data.viewData.refreshToken
 						))
 					case .error(let error):
-						Model.shared.alertViewModel.send(
+						Model.shared.alertVM.send(
 							event: .didRequestShow(.action(
 								action: {
 									viewModel.send(event: .didTapReloadButton(

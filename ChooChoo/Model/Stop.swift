@@ -43,6 +43,9 @@ extension Stop {
 }
 
 struct StopWithDistance : Hashable {
+	func hash(into hasher: inout Hasher) {
+			hasher.combine(stop)
+		}
 	let stop : Stop
 	let distance : Double?
 }

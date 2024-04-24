@@ -447,7 +447,7 @@
     "Logs" : {
 
     },
-    "Low location accuracy **%lld**" : {
+    "Low accuracy: +/-**%lldm**" : {
       "comment" : "NSV: location accuracy not precise"
     },
     "Map" : {
@@ -636,7 +636,7 @@
 
     },
     "Save" : {
-      "comment" : "settingsView: save button\ndatePickerView: save button",
+      "comment" : "datePickerView: save button\nsettingsView: save button",
       "localizations" : {
         "ru" : {
           "stringUnit" : {
@@ -647,7 +647,7 @@
       }
     },
     "Search" : {
-      "comment" : "search tip title\nTabItem",
+      "comment" : "TabItem\nsearch tip title",
       "localizations" : {
         "ru" : {
           "stringUnit" : {

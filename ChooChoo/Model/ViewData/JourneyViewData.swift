@@ -208,7 +208,7 @@ extension JourneyViewData {
 	
 	static let showOnMapOption = Option(
 		action: { data in
-			Model.shared.sheetViewModel.send(
+			Model.shared.sheetVM.send(
 				event: .didRequestShow(.mapDetails(.journey(data.legs)))
 			)
 		},
@@ -220,7 +220,7 @@ extension JourneyViewData {
 	
 	static let journeyDebug = Option(
 		action: { data in
-			Model.shared.sheetViewModel.send(
+			Model.shared.sheetVM.send(
 				event: .didRequestShow(
 					.journeyDebug(legs: data.legs.compactMap {$0.legDTO})))},
 		icon: "ant",

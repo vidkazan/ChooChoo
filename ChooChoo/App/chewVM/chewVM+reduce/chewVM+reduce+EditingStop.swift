@@ -44,7 +44,7 @@ extension ChewViewModel {
 				status: .editingStop(type.next())
 			)
 		case .didLocationButtonPressed(send: let send):
-			switch Model.shared.searchStopsViewModel.state.status {
+			switch Model.shared.searchStopsVM.state.status {
 			case .loading:
 				return State(state: state, status: .idle)
 			default:

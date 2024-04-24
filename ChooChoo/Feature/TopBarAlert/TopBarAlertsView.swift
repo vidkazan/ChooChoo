@@ -16,7 +16,7 @@ extension AnyTransition {
 
 struct TopBarAlertsView: View {
 	@EnvironmentObject var chewJourneyViewModel : ChewViewModel
-	@ObservedObject var alertVM : TopBarAlertViewModel = Model.shared.topBarAlertViewModel
+	@ObservedObject var alertVM : TopBarAlertViewModel = Model.shared.topBarAlertVM
 	let timer = Timer.publish(every: 15, on: .main, in: .common).autoconnect()
 	var body: some View {
 		Group {
