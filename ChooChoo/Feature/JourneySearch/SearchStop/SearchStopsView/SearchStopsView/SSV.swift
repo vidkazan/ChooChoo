@@ -12,6 +12,7 @@ struct SearchStopsView: View {
 	@EnvironmentObject  var chewViewModel : ChewViewModel
 	@ObservedObject var searchStopViewModel : SearchStopsViewModel
 	@FocusState 	var focusedField : LocationDirectionType?
+	
 	@State var previuosStatus : ChewViewModel.Status?
 	@State var status : ChewViewModel.Status = .idle
 	@State var topText : String

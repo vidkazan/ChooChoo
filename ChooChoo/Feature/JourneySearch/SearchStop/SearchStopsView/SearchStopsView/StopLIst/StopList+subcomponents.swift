@@ -78,7 +78,7 @@ extension SearchStopsView {
 									.foregroundColor(.primary)
 									Spacer()
 									if let dist = stop.distance {
-										BadgeView(.distanceInMeters(dist: dist))
+										BadgeView(.distance(dist: dist))
 											.badgeBackgroundStyle(.primary)
 									}
 								}
