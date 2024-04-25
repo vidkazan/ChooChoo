@@ -447,7 +447,7 @@
     "Logs" : {
 
     },
-    "Low accuracy: +/-**%lldm**" : {
+    "Low accuracy:" : {
       "comment" : "NSV: location accuracy not precise"
     },
     "Map" : {

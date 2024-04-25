@@ -119,7 +119,15 @@ extension JourneyFollowView {
 				Section(content: {
 					ForEach(
 						viewModel.state.journeys
-							.filter({$0.journeyViewData.time.statusOnReferenceTime(chewVM.referenceDate) == .active}),
+							.filter({$0.journeyViewData.time.statusOnReferenceTime(chewVM.referenceDate) == .active})
+							.sorted(by: {
+								if let first = $0.journeyViewData.time.date.departure.actualOrPlannedIfActualIsNil(),
+								   let second = $1.journeyViewData.time.date.departure.actualOrPlannedIfActualIsNil() {
+									return first < second
+								} else {
+									return true
+								}
+							}),
 						id: \.id) { journey in
 							listCell(journey: journey, map: true)
 						}
@@ -137,6 +145,14 @@ extension JourneyFollowView {
 								default:
 									return false
 								}
+							})
+							.sorted(by: {
+								if let first = $0.journeyViewData.time.date.departure.actualOrPlannedIfActualIsNil(),
+								   let second = $1.journeyViewData.time.date.departure.actualOrPlannedIfActualIsNil() {
+									return first < second
+								} else {
+									return true
+								}
 							}),
 						id: \.id) { journey in
 							listCell(journey: journey, map: false)
@@ -148,7 +164,15 @@ extension JourneyFollowView {
 				Section(content: {
 					ForEach(
 						viewModel.state.journeys
-							.filter({$0.journeyViewData.time.statusOnReferenceTime(chewVM.referenceDate) == .past}),
+							.filter({$0.journeyViewData.time.statusOnReferenceTime(chewVM.referenceDate) == .past})
+							.sorted(by: {
+								if let first = $0.journeyViewData.time.date.departure.actualOrPlannedIfActualIsNil(),
+								   let second = $1.journeyViewData.time.date.departure.actualOrPlannedIfActualIsNil() {
+									return first < second
+								} else {
+									return true
+								}
+							}),
 						id: \.id) { journey in
 							listCell(journey: journey, map: false)
 						}
