@@ -98,7 +98,7 @@ struct BadgeView : View {
 					.lineLimit(multiline ? 2 :1)
 					.chewTextSize(size)
 					.padding(4)
-			case .distanceInMeters(let dist):
+			case .distance(let dist):
 				OneLineText(
 					Text(Measurement(
 						value: dist,

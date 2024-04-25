@@ -90,7 +90,7 @@ enum Badges : Identifiable,Hashable {
 			return 17
 		case .transfer:
 			return 18
-		case .distanceInMeters:
+		case .distance:
 			return 19
 		case .updatedAtTime:
 			return 20
@@ -119,7 +119,7 @@ enum Badges : Identifiable,Hashable {
 	case legDuration(_ timeContainer : TimeContainer)
 	case walking(_ timeContainer : TimeContainer)
 	case transfer(_ timeContainer : TimeContainer)
-	case distanceInMeters(dist : Double)
+	case distance(dist : Double)
 	case updatedAtTime(referenceTime : Double, isLoading : Bool = false)
 	
 	var badgeAction : ()->Void {
@@ -222,7 +222,7 @@ enum Badges : Identifiable,Hashable {
 					comment: "badge: stopsCount"
 				)
 			)
-		case .distanceInMeters:
+		case .distance:
 			return BadgeData()
 		case .walking(let time):
 			return BadgeData(

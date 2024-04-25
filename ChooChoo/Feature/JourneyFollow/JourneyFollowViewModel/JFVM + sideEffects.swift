@@ -24,7 +24,9 @@ extension JourneyFollowViewModel {
 			var followData = state.journeys
 			
 			guard let index = followData.firstIndex(where: {$0.id == followId}) else {
-				return Just(Event.didFailToUpdateJourney(Error.notFoundInFollowList(""))).eraseToAnyPublisher()
+				return Just(
+					Event.didFailToUpdateJourney(Error.notFoundInFollowList(""))
+				).eraseToAnyPublisher()
 			}
 			
 			let oldViewData = followData[index]
@@ -33,7 +35,11 @@ extension JourneyFollowViewModel {
 				viewData: viewData,
 				stops: oldViewData.stops
 			) == true else {
-				return Just(Event.didFailToUpdateJourney(CoreDataError.failedToUpdateDatabase(type: CDJourney.self))).eraseToAnyPublisher()
+				return Just(
+					Event.didFailToUpdateJourney(
+						CoreDataError.failedToUpdateDatabase(type: CDJourney.self)
+					)
+				).eraseToAnyPublisher()
 			}
 			
 			followData[index] = JourneyFollowData(
@@ -107,7 +113,9 @@ extension JourneyFollowViewModel {
 				}
 				journeys.remove(at: index)
 				send(.didChangedSubscribingState)
-				return Just(Event.didEdit(data: journeys))
+				return Just(
+					Event.didEdit(data: journeys)
+				)
 					.eraseToAnyPublisher()
 			}
 		}

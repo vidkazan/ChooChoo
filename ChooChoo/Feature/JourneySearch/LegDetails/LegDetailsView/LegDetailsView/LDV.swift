@@ -98,12 +98,7 @@ struct LegDetailsView: View {
 		}
 		.onTapGesture {
 //			withAnimation(.smooth, {
-				switch isExpandedState {
-				case .collapsed:
-					isExpandedState = .expanded
-				case .expanded:
-					isExpandedState = .collapsed
-				}
+			isExpandedState = isExpandedState.next()
 //			})
 		}
 		.overlay(alignment: .topTrailing) { options }
