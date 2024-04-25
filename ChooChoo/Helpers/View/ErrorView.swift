@@ -15,8 +15,14 @@ struct ErrorView : View {
 	}
 	let viewType : ViewType
 	let msg : Text
-	let size : ChewPrimaryStyle
+	let size : ChewPrimaryStyle = .big
 	let action : (() -> Void)?
+	
+	init(viewType: ViewType, msg: Text,size: ChewPrimaryStyle = .big, action: (() -> Void)?) {
+		self.viewType = viewType
+		self.msg = msg
+		self.action = action
+	}
 	var body: some View {
 		Label(
 			title: {

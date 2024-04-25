@@ -36,7 +36,6 @@ struct JourneyListView: View {
 				ErrorView(
 					viewType: .error,
 					msg: Text(verbatim: error.localizedDescription),
-					size: .big,
 					action: nil
 				)
 				.frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -65,7 +64,6 @@ extension JourneyListView {
 			ErrorView(
 				viewType: .alert,
 				msg: Text("Connections not found",comment: "JourneyListView: empty state"),
-				size: .big,
 				action: nil
 			)
 				.padding(5)

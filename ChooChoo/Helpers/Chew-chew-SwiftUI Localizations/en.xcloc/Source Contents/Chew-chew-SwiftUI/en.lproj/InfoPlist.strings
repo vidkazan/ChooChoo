@@ -1,4 +1,0 @@
-/* Bundle name */
-"CFBundleName" = "Chew-chew-SwiftUI";
-/* Privacy - Location When In Use Usage Description */
-"NSLocationWhenInUseUsageDescription" = "App needs your location";

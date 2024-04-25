@@ -107,7 +107,6 @@ struct NearestStopView : View {
 					"We need location to find nearby stops",
 					comment: "NSV: location denied"
 				),
-				size: .big,
 				action: {
 					TopBarAlertViewModel.AlertType.userLocationError.infoAction?()
 				}
@@ -166,6 +165,8 @@ struct NearestStopView : View {
 								.transition(.move(edge: .leading))
 							}
 							.animation(.easeInOut, value: self.nearestStops)
+						} else {
+							ErrorView(viewType: .alert, msg: Text("No stops found",comment: "NSV: nearest stops: emptyState"), action: nil)
 						}
 					}
 				}
@@ -188,7 +189,6 @@ struct NearestStopView : View {
 						"Precise location accuracy is needed to find nearby stops",
 						comment: "NSV: location precise accuracy not allowed"
 					),
-					size: .big,
 					action: {
 						TopBarAlertViewModel.AlertType.userLocationError.infoAction?()
 					}
