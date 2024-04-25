@@ -21,9 +21,11 @@ struct NearestStopView : View {
 	)
 	@State var nearestStops : [StopWithDistance] = []
 	@State var selectedStop : StopWithDistance?
+	@State var departuresTypes = Set<LineType>()
 	@State var departures : [LegViewData]?
+	@State var previousLocation : CLLocation?
+	@State var filteredLineType : LineType?
 	
-	let timerForNearbyStopsRequest = Timer.publish(every: 15, on: .main, in: .common).autoconnect()
 	let timerForRequestStopDetails = Timer.publish(every: 60, on: .main, in: .common).autoconnect()
 	
 	var body: some View {
@@ -38,6 +40,12 @@ struct NearestStopView : View {
 			.animation(.easeInOut, value: self.departures)
 			.onReceive(nearestStopViewModel.$state, perform: { state in
 				departures = state.data.selectedStopTrips
+				if let departures = departures {
+					departuresTypes.removeAll()
+					departures.forEach {
+						departuresTypes.insert($0.lineViewData.type)
+					}
+				}
 				Task {
 					if let stop = state.data.selectedStop ,
 					   let coord = locationManager.location?.coordinate {
@@ -56,36 +64,46 @@ struct NearestStopView : View {
 					}
 				}
 			})
-			.onReceive(timerForNearbyStopsRequest, perform: { _ in
-				if let coord = locationManager.location {
-					nearestStopViewModel.send(
-						event: .didDragMap(coord)
-					)
-				}
-			})
 			.onReceive(timerForRequestStopDetails, perform: { _ in
 				if let stop = selectedStop {
 					self.nearestStopViewModel.send(
 						event: .didRequestReloadStopDepartures(stop.stop)
 					)
 				}
+				Task {
+					if let loc = locationManager.location {
+						updateNearbyStopsIfNeeded(newLocation: loc)
+					}
+				}
 			})
 			.onReceive(locationManager.$location, perform: { location in
 				Task {
-					if let cl2 = locationManager.location?.coordinate {
+					if let loc = locationManager.location {
+						updateNearbyStopsIfNeeded(newLocation: loc)
 						if let stop = selectedStop {
 							selectedStop = Self.updateDistanceToStop(
-								from: cl2,
+								from: loc.coordinate,
 								stop: stop.stop
 							)
 						}
 						nearestStops = Self.updateDistanceToStops(
-							from: cl2,
+							from: loc.coordinate,
 							stops: nearestStops.map{$0.stop}
 						)
 					}
 				}
 			})
+	}
+	
+	private func updateNearbyStopsIfNeeded(newLocation : CLLocation) {
+		let targetDistance = CLLocationDistance(500)
+		if let previousLocationCoords = previousLocation?.coordinate,
+		   newLocation.distance(previousLocationCoords) > targetDistance {
+			nearestStopViewModel.send(
+				event: .didDragMap(newLocation)
+			)
+			previousLocation = newLocation
+		}
 	}
 	
 	@ViewBuilder private func content() -> some View {
@@ -129,7 +147,16 @@ struct NearestStopView : View {
 							if let trips = departures {
 								ScrollView(showsIndicators: false) {
 									VStack(alignment: .leading, spacing: 0) {
-										ForEach(trips,id: \.hashValue) { trip in
+										ForEach(
+											trips
+												.filter {
+													if let filteredLineType = filteredLineType {
+														return filteredLineType == $0.lineViewData.type
+													}
+													return true
+												},
+											id: \.hashValue
+										) { trip in
 											Button(action: {
 												Model.shared.sheetVM.send(
 													event: .didRequestShow(.route(leg: trip))
@@ -149,8 +176,7 @@ struct NearestStopView : View {
 							ScrollView(showsIndicators: false) {
 								VStack(spacing:0) {
 									ForEach(
-										nearestStops,
-										id: \.hashValue
+										nearestStops,id: \.hashValue
 									) { stop in
 										Button(
 											action: {

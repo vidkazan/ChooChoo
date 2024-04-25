@@ -63,6 +63,33 @@ extension NearestStopView {
 					.foregroundStyle(.secondary)
 					.transition(.opacity)
 			}
+			if !departuresTypes.isEmpty {
+				BadgeView(.generic(msg: "filter"))
+					.expandingBadge {
+						HStack(spacing: 3) {
+							ForEach(Array(departuresTypes),id:\.hashValue) { type in
+								Button(
+									action: {
+										if filteredLineType == type {
+											filteredLineType = nil
+										} else {
+											filteredLineType = type
+										}
+									},
+									label: {
+										Image(type.iconBig)
+											.frame(minWidth: 25,maxWidth: 25)
+											.opacity(filteredLineType == type ? 1 : 0.3)
+									})
+								.frame(minWidth: 40,maxWidth: 40)
+							}
+						}
+					}
+					.chewTextSize(.medium)
+					.badgeBackgroundStyle(.secondary)
+					.foregroundStyle(.secondary)
+					.transition(.opacity)
+			}
 			Spacer()
 		}
 		.animation(.easeInOut, value: locationManager.location?.horizontalAccuracy)
