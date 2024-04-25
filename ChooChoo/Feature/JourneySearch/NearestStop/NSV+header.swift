@@ -63,8 +63,8 @@ extension NearestStopView {
 					.foregroundStyle(.secondary)
 					.transition(.opacity)
 			}
-			if !departuresTypes.isEmpty {
-				BadgeView(.generic(msg: "filter"))
+			if selectedStop != nil, !departuresTypes.isEmpty {
+				BadgeView(.generic(msg: ">"))
 					.expandingBadge {
 						HStack(spacing: 3) {
 							ForEach(Array(departuresTypes),id:\.hashValue) { type in
