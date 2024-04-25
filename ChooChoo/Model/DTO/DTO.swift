@@ -68,6 +68,11 @@ enum StopOverType : String,Hashable, CaseIterable, Codable{
 		switch self {
 		case .destination, .footBottom:
 			return time.arrivalStatus
+		case .stopover:
+			if time.departureStatus == .cancelled {
+				return time.arrivalStatus
+			}
+			return time.departureStatus
 		default:
 			return time.departureStatus
 		}
