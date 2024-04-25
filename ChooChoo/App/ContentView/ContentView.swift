@@ -9,12 +9,9 @@ import SwiftUI
 import TipKit
 
 // component: reload / loader / error with actions
-// way to contain all bugs
-// feature numbers?
-// learn content shape
 // map picker: tip for long tap / fix animation
 // dashboard with speed etc.
-
+// nsv: updating depending on locaiton changes
 
 // MARK: revise
 // all text revision
