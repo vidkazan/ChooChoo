@@ -889,8 +889,8 @@
             filePath = "ChooChoo/Feature/JourneyFollow/JourneyFollowView/JFV.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "124"
-            endingLineNumber = "124"
+            startingLineNumber = "132"
+            endingLineNumber = "132"
             landmarkName = "followViewInner"
             landmarkType = "24">
          </BreakpointContent>
@@ -905,8 +905,8 @@
             filePath = "ChooChoo/Feature/JourneyFollow/JourneyFollowView/JFV.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "193"
-            endingLineNumber = "193"
+            startingLineNumber = "217"
+            endingLineNumber = "217"
             landmarkName = "listCell(journey:map:)"
             landmarkType = "7">
          </BreakpointContent>

@@ -11,7 +11,7 @@ import Combine
 import CoreLocation
 
 struct NearestStopView : View {
-	static let enoughAccuracy : CLLocationAccuracy = 50
+	static let enoughAccuracy : CLLocationAccuracy = 30
 	@EnvironmentObject var chewVM : ChewViewModel
 	@ObservedObject var locationManager = Model.shared.locationDataManager
 	@StateObject var nearestStopViewModel : NearestStopViewModel = NearestStopViewModel(
@@ -215,10 +215,6 @@ extension NearestStopView {
 		from : CLLocationCoordinate2D,
 		stops: [Stop]
 	) -> [StopWithDistance] {
-		let location = CLLocation(
-			latitude: from.latitude,
-			longitude: from.longitude
-		)
 		return stops
 			.map { stop in
 				updateDistanceToStop(from: from, stop: stop)

@@ -371,7 +371,7 @@ extension NearestStopViewModel {
 	
 	static private func calculateNextCoordinates(loc : CLLocation, time : Double?) -> CLLocationCoordinate2D {
 		let d = loc.speed * (time ?? 0)
-		let brng = loc.course
+		let brng = Model.shared.locationDataManager.heading?.trueHeading ?? loc.course
 		let R = 6371000.0
 		let φ1 = loc.coordinate.latitude.degreesToRadians
 		let λ1 = loc.coordinate.longitude.degreesToRadians

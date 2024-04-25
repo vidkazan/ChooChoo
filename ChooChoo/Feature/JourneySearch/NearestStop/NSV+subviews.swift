@@ -15,7 +15,7 @@ extension NearestStopView {
 				.foregroundColor(.primary)
 			Spacer()
 			if let dist = stop.distance {
-				BadgeView(.distanceInMeters(dist: dist))
+				BadgeView(.distance(dist: dist))
 					.badgeBackgroundStyle(.secondary)
 					.tint(Color.primary)
 			}
