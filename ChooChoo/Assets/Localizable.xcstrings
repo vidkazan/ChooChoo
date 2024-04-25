@@ -18,24 +18,6 @@
     "**Yellow** color shows **daylight**," : {
       "comment" : "SunEventsTipView"
     },
-    "%lld min " : {
-      "comment" : "SettingsView: transferSegment: transfer duration",
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%lld min"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%lld мин"
-          }
-        }
-      }
-    },
     "%lld stop" : {
       "comment" : "badge: stopsCount",
       "localizations" : {
@@ -161,18 +143,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Выбрать"
-          }
-        }
-      }
-    },
-    "Chosen transport types" : {
-      "comment" : "SettingsView: segments: section header",
-      "extractionState" : "stale",
-      "localizations" : {
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Выбранные виды транспорта"
           }
         }
       }
@@ -432,18 +402,6 @@
         }
       }
     },
-    "Leg appearance" : {
-      "comment" : "settingsView: section name",
-      "extractionState" : "stale",
-      "localizations" : {
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Как выглядят поездки"
-          }
-        }
-      }
-    },
     "Logs" : {
 
     },
@@ -468,32 +426,8 @@
     "max 5" : {
       "comment" : "JourneySettings: TransferCountCases"
     },
-    "Maximum count" : {
-      "comment" : "SettingsView: transferSegment: picker name",
-      "extractionState" : "stale",
-      "localizations" : {
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Максимальное количество"
-          }
-        }
-      }
-    },
     "min (self.rawValue) minutes" : {
       "comment" : "JourneySettings: TransferDurationCases"
-    },
-    "Minimum time" : {
-      "comment" : "SettingsView: transferSegment: picker name",
-      "extractionState" : "stale",
-      "localizations" : {
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Минимальная длительность"
-          }
-        }
-      }
     },
     "moderate" : {
       "comment" : "JourneySettings: WalkingSpeed"
@@ -685,18 +619,6 @@
     "Server response data nil" : {
       "comment" : "ApiError"
     },
-    "Show full segment" : {
-      "comment" : "LegDetailsView: menu item",
-      "extractionState" : "stale",
-      "localizations" : {
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Показать всю поездку"
-          }
-        }
-      }
-    },
     "Show on map" : {
       "comment" : "JourneyFollowCellView: menu item\nLegDetailsView: menu item\nJourneyCell: menu item",
       "localizations" : {
@@ -726,18 +648,6 @@
     "Swipe for action" : {
       "comment" : "SwipeActionsTip"
     },
-    "to " : {
-      "comment" : "BadgeView: legDirection",
-      "extractionState" : "stale",
-      "localizations" : {
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "в "
-          }
-        }
-      }
-    },
     "to %@" : {
       "comment" : "BadgeView: legDirection"
     },
@@ -754,18 +664,6 @@
     },
     "transfer %@" : {
       "comment" : "badge"
-    },
-    "transfer %lld min" : {
-      "comment" : "badge",
-      "extractionState" : "stale",
-      "localizations" : {
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "пересадка %lld мин"
-          }
-        }
-      }
     },
     "transport type color" : {
       "comment" : "AppSettings: LegViewMode: description"

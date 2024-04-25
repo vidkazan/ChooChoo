@@ -20,7 +20,6 @@
 		7D02CE252A97E6620048ADE6 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D02CE242A97E6620048ADE6 /* Errors.swift */; };
 		7D02CE272A97E6790048ADE6 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D02CE262A97E6790048ADE6 /* ApiService.swift */; };
 		7D02CE2A2A97E80D0048ADE6 /* Collections in Frameworks */ = {isa = PBXBuildFile; productRef = 7D02CE292A97E80D0048ADE6 /* Collections */; };
-		7D02CE2E2A97E80D0048ADE6 /* OrderedCollections in Frameworks */ = {isa = PBXBuildFile; productRef = 7D02CE2D2A97E80D0048ADE6 /* OrderedCollections */; };
 		7D02CE302A97E96E0048ADE6 /* BadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D02CE2F2A97E96E0048ADE6 /* BadgeView.swift */; };
 		7D02CE342A98E8130048ADE6 /* JLV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D02CE332A98E8130048ADE6 /* JLV.swift */; };
 		7D0685ED2B50304500CCBE6B /* CoreDataStore+fetch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D0685EC2B50304500CCBE6B /* CoreDataStore+fetch.swift */; };
@@ -511,7 +510,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				7D02CE2A2A97E80D0048ADE6 /* Collections in Frameworks */,
-				7D02CE2E2A97E80D0048ADE6 /* OrderedCollections in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1564,7 +1562,6 @@
 			name = ChooChoo;
 			packageProductDependencies = (
 				7D02CE292A97E80D0048ADE6 /* Collections */,
-				7D02CE2D2A97E80D0048ADE6 /* OrderedCollections */,
 			);
 			productName = "Chew-chew-SwiftUI";
 			productReference = 7D6734AF2A96334B00CBE9C1 /* ChooChoo.app */;
@@ -1634,8 +1631,8 @@
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				Base,
 				en,
+				Base,
 			);
 			mainGroup = 7D6734A62A96334B00CBE9C1;
 			packageReferences = (
@@ -2307,11 +2304,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 7D02CE282A97E80D0048ADE6 /* XCRemoteSwiftPackageReference "swift-collections" */;
 			productName = Collections;
-		};
-		7D02CE2D2A97E80D0048ADE6 /* OrderedCollections */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 7D02CE282A97E80D0048ADE6 /* XCRemoteSwiftPackageReference "swift-collections" */;
-			productName = OrderedCollections;
 		};
 /* End XCSwiftPackageProductDependency section */
 
