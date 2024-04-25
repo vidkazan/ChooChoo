@@ -16,7 +16,7 @@ extension SearchStopsView {
 	) -> some View {
 		Group {
 			if !recentStops.isEmpty {
-				ForEach(recentStops,id: \.distance) { stop in
+				ForEach(recentStops,id: \.hashValue) { stop in
 					HStack(alignment: .center) {
 						Button(action: {
 							switch type {
@@ -63,7 +63,7 @@ extension SearchStopsView {
 				if !searchStopViewModel.state.stops.isEmpty {
 					ScrollView {
 						VStack(spacing: 0) {
-							ForEach(stops,id:\.distance) { stop in
+							ForEach(stops,id:\.hashValue) { stop in
 								HStack(alignment: .center, spacing: 1) {
 									Button(
 										action: {
