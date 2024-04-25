@@ -71,7 +71,7 @@ extension LegStopView {
 					.arrivalTrainTimeLabel(
 						legViewData: legViewData,
 						isShowing: showingTimeDetails
-					)	
+					)
 				})
 				.disabled(stopOverType != .origin)
 				.frame(minWidth: 50)

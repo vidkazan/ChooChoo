@@ -22,11 +22,10 @@ struct BottomView: View {
 					settings: state.data.journeySettings
 				)
 			case .idle:
-				RecentSearchesView()
-//				if #available(iOS 16.0, *) {
+				ScrollView {
+					RecentSearchesView()
 					NearestStopView()
-//				}
-				Spacer()
+				}
 			default:
 				Spacer()
 			}
