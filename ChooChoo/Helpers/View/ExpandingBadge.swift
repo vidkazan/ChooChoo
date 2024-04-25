@@ -9,16 +9,16 @@ import Foundation
 import SwiftUI
 
 extension BadgeView {
-	func expandingBadge(_ expandedText: @escaping () -> OneLineText) -> some View {
-		ExpandingBadge(isExpanded: false, baseBadge: self, expandedText: expandedText)
+	func expandingBadge<V>(@ViewBuilder _ expandedView: @escaping () -> V) -> some View where V : View {
+		ExpandingBadge(isExpanded: false, baseBadge: self, expandedView: expandedView)
 	}
 }
 
-struct ExpandingBadge: View {
+struct ExpandingBadge<Content: View>: View {
 	@Namespace var ExpandingBadge
 	@State var isExpanded = false
 	let baseBadge : BadgeView
-	let expandedText : () -> OneLineText
+	let expandedView : () -> Content
 	var body: some View {
 		Button(action: {
 			withAnimation {
@@ -28,7 +28,7 @@ struct ExpandingBadge: View {
 			HStack {
 				baseBadge
 				if isExpanded {
-					expandedText()
+					expandedView()
 						.transition(
 							.opacity.combined(with: .move(edge: .leading))
 						)
