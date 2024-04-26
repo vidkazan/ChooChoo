@@ -49,6 +49,8 @@
 		7D2C0E642BDBBA24000839C1 /* SunEventsTip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2C0E632BDBBA24000839C1 /* SunEventsTip.swift */; };
 		7D2C0E662BDBBDFB000839C1 /* MapPickerLocationPickTipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2C0E652BDBBDFB000839C1 /* MapPickerLocationPickTipView.swift */; };
 		7D2C0E682BDBC487000839C1 /* ReloadableButtonLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2C0E672BDBC487000839C1 /* ReloadableButtonLabel.swift */; };
+		7D2C0E6C2BDBD9DE000839C1 /* ChooButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2C0E6B2BDBD9DE000839C1 /* ChooButton.swift */; };
+		7D2C0E6E2BDBE16C000839C1 /* ButtonIDs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2C0E6D2BDBE16C000839C1 /* ButtonIDs.swift */; };
 		7D2CAF642B0BEA0200577FD4 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7D2CAF622B0BEA0200577FD4 /* Model.xcdatamodeld */; };
 		7D2CAF662B0BEAC000577FD4 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2CAF652B0BEAC000577FD4 /* Persistence.swift */; };
 		7D33A9492B5192940005D723 /* JFVM + reduce.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D33A9482B5192940005D723 /* JFVM + reduce.swift */; };
@@ -316,6 +318,8 @@
 		7D2C0E632BDBBA24000839C1 /* SunEventsTip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SunEventsTip.swift; sourceTree = "<group>"; };
 		7D2C0E652BDBBDFB000839C1 /* MapPickerLocationPickTipView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPickerLocationPickTipView.swift; sourceTree = "<group>"; };
 		7D2C0E672BDBC487000839C1 /* ReloadableButtonLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReloadableButtonLabel.swift; sourceTree = "<group>"; };
+		7D2C0E6B2BDBD9DE000839C1 /* ChooButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooButton.swift; sourceTree = "<group>"; };
+		7D2C0E6D2BDBE16C000839C1 /* ButtonIDs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonIDs.swift; sourceTree = "<group>"; };
 		7D2CAF632B0BEA0200577FD4 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		7D2CAF652B0BEAC000577FD4 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		7D33A9482B5192940005D723 /* JFVM + reduce.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JFVM + reduce.swift"; sourceTree = "<group>"; };
@@ -813,6 +817,7 @@
 				7D55BD9D2B5EA39900A0CE08 /* ChewDatePicker.swift */,
 				7DA085342BA492E5005E72B2 /* ErrorView.swift */,
 				7D2C0E672BDBC487000839C1 /* ReloadableButtonLabel.swift */,
+				7D2C0E6B2BDBD9DE000839C1 /* ChooButton.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1518,6 +1523,7 @@
 				7DF0D98C2B69557C00861C4F /* Iphones.swift */,
 				7DCD200F2AC470AD00788B38 /* Colors.swift */,
 				7D1638532B698A04006E9660 /* SFSymbols.swift */,
+				7D2C0E6D2BDBE16C000839C1 /* ButtonIDs.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -1905,6 +1911,7 @@
 				7D69552A2B58283E00271F56 /* TopBarAlertVM.swift in Sources */,
 				7D23E44A2A98F9800037C3E1 /* LegsView.swift in Sources */,
 				7DCA4AE42BDA7F3F005BA68E /* ArrivalTrainTimeLabelView.swift in Sources */,
+				7D2C0E6C2BDBD9DE000839C1 /* ChooButton.swift in Sources */,
 				7D9BB1112B0CBF54008A3616 /* CDUser+CoreDataProperties.swift in Sources */,
 				7D5B68D72BD29CE700747D97 /* LogView.swift in Sources */,
 				7D5D78532B29C00600E17CC7 /* CDLeg+CoreDataProperties.swift in Sources */,
@@ -1937,6 +1944,7 @@
 				7D7547B82B616FD3002BE434 /* FeatureView.swift in Sources */,
 				7D15AA462BB19E6800B6966D /* AppSettingsVM.swift in Sources */,
 				7D9BB10C2B0CBF54008A3616 /* CDLocation+CoreDataClass.swift in Sources */,
+				7D2C0E6E2BDBE16C000839C1 /* ButtonIDs.swift in Sources */,
 				7D0685ED2B50304500CCBE6B /* CoreDataStore+fetch.swift in Sources */,
 				7DAF62B82A9E5A0B006F1A17 /* DatePickerTimePresetButtons.swift in Sources */,
 				7DBD26C22B99FB1800612A3B /* EnumTraversal.swift in Sources */,
