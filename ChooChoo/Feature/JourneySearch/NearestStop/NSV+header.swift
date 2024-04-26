@@ -68,9 +68,12 @@ extension NearestStopView {
 			if selectedStop != nil, !departuresTypes.isEmpty {
 				BadgeView(.generic(msg: ">"))
 					.expandingBadge {
-						HStack(spacing: 3) {
-							ForEach(Array(departuresTypes),id:\.hashValue) { type in
-								Button(
+						HStack {
+							ForEach(
+								Array(departuresTypes).sorted(by: <),
+								id:\.hashValue
+							) { type in
+								let b = Button(
 									action: {
 										if filteredLineType == type {
 											filteredLineType = nil
@@ -83,7 +86,6 @@ extension NearestStopView {
 											.frame(minWidth: 25,maxWidth: 25)
 											.opacity(filteredLineType == type ? 1 : 0.3)
 									})
-								.frame(minWidth: 40,maxWidth: 40)
 							}
 						}
 					}
