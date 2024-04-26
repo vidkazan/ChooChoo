@@ -11,14 +11,10 @@ import TipKit
 // component: reload / loader / error with actions
 // map picker: tip for long tap / fix animation
 // dashboard with speed etc.
-// nsv: updating depending on locaiton changes
-
-// MARK: revise
-// all text revision
+// nsv: fix filtering
 
 // TODO: feature: ldsv: make stop tappable and show stop details and all leg stopover info
 // TODO: jfv: mapCell: map without interaction, icons
-// searchView: cell with nearest stop departures
 // performance: main thread is blocked while updating journeys 
 struct ContentView: View {
 	@EnvironmentObject var chewViewModel : ChewViewModel
@@ -36,9 +32,7 @@ struct ContentView: View {
 		Group {
 			switch state.status {
 			case .start:
-//				Text(verbatim: "ChooChoo")
-//					.chewTextSize(.huge)
-				EmptyView()
+				ProgressView()
 			default:
 				ZStack(alignment: .top) {
 					FeatureView()
