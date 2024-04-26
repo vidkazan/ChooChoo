@@ -9,6 +9,7 @@ import Foundation
 import SwiftUI
 import Combine
 import CoreLocation
+import OSLog
 
 struct NearestStopView : View {
 	static let enoughAccuracy : CLLocationAccuracy = 30
@@ -23,7 +24,7 @@ struct NearestStopView : View {
 	@State var selectedStop : StopWithDistance?
 	@State var departuresTypes = Set<LineType>()
 	@State var departures : [LegViewData]?
-	@State var previousLocation : CLLocation?
+	@State var previousLocation = CLLocation()
 	@State var filteredLineType : LineType?
 	
 	let timerForRequestStopDetails = Timer.publish(every: 60, on: .main, in: .common).autoconnect()
@@ -95,15 +96,33 @@ struct NearestStopView : View {
 			})
 	}
 	
+	
+//	acc dist
+//	4000 2000
+//	1000 500
+//	200  500
+//	100  500
 	private func updateNearbyStopsIfNeeded(newLocation : CLLocation) {
-		let targetDistance = CLLocationDistance(500)
-		if let previousLocationCoords = previousLocation?.coordinate,
-		   newLocation.distance(previousLocationCoords) > targetDistance {
+		let previousLocationCoords = previousLocation.coordinate
+		let distance = newLocation.distance(previousLocationCoords)
+		let targetDistance = targetDistance(
+			accuracy: newLocation.horizontalAccuracy,
+			distance: distance
+		)
+		Logger.create(category: "\(Self.self)").trace("\(distance) from \(targetDistance)")
+		if newLocation.distance(previousLocationCoords) > targetDistance {
 			nearestStopViewModel.send(
 				event: .didDragMap(newLocation)
 			)
 			previousLocation = newLocation
 		}
+	}
+	private func targetDistance(accuracy : CLLocationAccuracy, distance : CLLocationDistance) -> CLLocationDistance {
+		let targetDistance = CLLocationDistance(500)
+		if accuracy > targetDistance * 2  {
+			return accuracy / 2
+		}
+		return targetDistance
 	}
 	
 	@ViewBuilder private func content() -> some View {

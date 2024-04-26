@@ -220,7 +220,7 @@
       "comment" : "badge"
     },
     "now" : {
-      "comment" : "DatePickerTimePresetButtons\ntimeChoosingView: button on segmented picker"
+      "comment" : "timeChoosingView: button on segmented picker\nDatePickerTimePresetButtons"
     },
     "Offline" : {
       "comment" : "badge"
@@ -271,7 +271,7 @@
 
     },
     "Save" : {
-      "comment" : "datePickerView: save button\nsettingsView: save button"
+      "comment" : "settingsView: save button\ndatePickerView: save button"
     },
     "Search" : {
       "comment" : "TabItem\nsearch tip title"

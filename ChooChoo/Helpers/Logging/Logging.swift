@@ -37,6 +37,9 @@ extension Logger {
 	static let location = Logger(category: .location)
 	static let loadingsInitialData = Logger(category: .loadingsInitialData)
 	static let journeyDetailsViewModel = Logger(category: .journeyDetailsViewModel)
+	static func create(category : String) -> Logger {
+		Logger(subsystem: Bundle.main.bundleIdentifier!, category: category)
+	}
 }
 
 extension Logger {

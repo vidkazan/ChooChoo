@@ -1158,8 +1158,8 @@
             filePath = "ChooChoo/Feature/JourneySearch/NearestStop/NSV.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "74"
-            endingLineNumber = "74"
+            startingLineNumber = "81"
+            endingLineNumber = "81"
             landmarkName = "body"
             landmarkType = "24">
          </BreakpointContent>
@@ -1174,8 +1174,8 @@
             filePath = "ChooChoo/Feature/JourneySearch/NearestStop/NSV.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "73"
-            endingLineNumber = "73"
+            startingLineNumber = "80"
+            endingLineNumber = "80"
             landmarkName = "body"
             landmarkType = "24">
          </BreakpointContent>
@@ -1190,8 +1190,8 @@
             filePath = "ChooChoo/Helpers/Location/LocationManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "27"
-            endingLineNumber = "27"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
             landmarkName = "ChewLocationDataManager"
             landmarkType = "3">
             <Locations>
@@ -1373,8 +1373,8 @@
             filePath = "ChooChoo/Helpers/Location/LocationManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "26"
-            endingLineNumber = "26"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
             landmarkName = "ChewLocationDataManager"
             landmarkType = "3">
             <Locations>
@@ -1526,8 +1526,8 @@
             filePath = "ChooChoo/Feature/JourneySearch/NearestStop/NSV.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "116"
-            endingLineNumber = "116"
+            startingLineNumber = "153"
+            endingLineNumber = "153"
             landmarkName = "content()"
             landmarkType = "7">
          </BreakpointContent>

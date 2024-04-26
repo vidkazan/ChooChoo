@@ -13,7 +13,9 @@ class ChewLocationDataManager : NSObject, ObservableObject {
 	private let locationManager = {
 		let manager = CLLocationManager()
 		manager.desiredAccuracy = kCLLocationAccuracyBest
-		manager.activityType = .otherNavigation
+		manager.distanceFilter = 10
+		manager.headingOrientation = .portrait
+//		manager.activityType = .otherNavigation
 		return manager
 	}()
 	
