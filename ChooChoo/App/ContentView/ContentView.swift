@@ -8,10 +8,11 @@
 import SwiftUI
 import TipKit
 
-// component: reload / loader / error with actions
+ 
 // map picker: tip for long tap / fix animation
 // dashboard with speed etc.
-// nsv: fix filtering
+// nsv: fix filtering: sort types by name
+// logging: put logger to choobutton protocol
 
 // TODO: feature: ldsv: make stop tappable and show stop details and all leg stopover info
 // TODO: jfv: mapCell: map without interaction, icons

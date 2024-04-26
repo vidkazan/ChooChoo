@@ -40,6 +40,11 @@ struct NearestStopView : View {
 			}
 			.animation(.easeInOut, value: self.selectedStop)
 			.animation(.easeInOut, value: self.departures)
+			.onChange(of: selectedStop, perform: { stop in
+				if stop == nil {
+					filteredLineType = nil
+				}
+			})
 			.onReceive(nearestStopViewModel.$state, perform: { state in
 				departures = state.data.selectedStopTrips
 				if let departures = departures {
