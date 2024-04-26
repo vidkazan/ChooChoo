@@ -35,14 +35,16 @@ extension NearestStopView {
 					}
 				}
 			}, label: {
-				Group {
+				ReloadableButtonLabel(state: {
 					switch nearestStopViewModel.state.status {
 					case .loadingStopDetails,.loadingNearbyStops:
-						ProgressView()
-					default:
-						ChooSFSymbols.arrowClockwise.view
+						return .loading
+					case .idle:
+						return .idle
+					case .error:
+						return .error
 					}
-				}
+				}())
 				.frame(minWidth: 30,minHeight: 30)
 				.chewTextSize(.big)
 				.foregroundStyle(.secondary)

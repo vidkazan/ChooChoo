@@ -223,7 +223,7 @@
       "comment" : "badge"
     },
     "now" : {
-      "comment" : "DatePickerTimePresetButtons\ntimeChoosingView: button on segmented picker"
+      "comment" : "timeChoosingView: button on segmented picker\nDatePickerTimePresetButtons"
     },
     "Offline" : {
       "comment" : "badge"

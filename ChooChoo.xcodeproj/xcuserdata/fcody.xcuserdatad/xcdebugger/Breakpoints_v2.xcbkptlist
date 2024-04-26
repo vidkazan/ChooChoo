@@ -365,8 +365,8 @@
             filePath = "ChooChoo/Feature/Map/MapPicker/MapPickerView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "64"
-            endingLineNumber = "64"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
             landmarkName = "selectedStop"
             landmarkType = "24">
          </BreakpointContent>
@@ -381,8 +381,8 @@
             filePath = "ChooChoo/Feature/Map/MapPicker/MapPickerView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "63"
-            endingLineNumber = "63"
+            startingLineNumber = "64"
+            endingLineNumber = "64"
             landmarkName = "selectedStop"
             landmarkType = "24">
          </BreakpointContent>
@@ -505,8 +505,8 @@
             filePath = "ChooChoo/Feature/Map/MapPicker/MapPickerView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "34"
-            endingLineNumber = "34"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
             landmarkName = "init(vm:initialCoords:type:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1158,8 +1158,8 @@
             filePath = "ChooChoo/Feature/JourneySearch/NearestStop/NSV.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "81"
-            endingLineNumber = "81"
+            startingLineNumber = "82"
+            endingLineNumber = "82"
             landmarkName = "body"
             landmarkType = "24">
          </BreakpointContent>
@@ -1174,8 +1174,8 @@
             filePath = "ChooChoo/Feature/JourneySearch/NearestStop/NSV.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "80"
-            endingLineNumber = "80"
+            startingLineNumber = "81"
+            endingLineNumber = "81"
             landmarkName = "body"
             landmarkType = "24">
          </BreakpointContent>
@@ -1526,8 +1526,8 @@
             filePath = "ChooChoo/Feature/JourneySearch/NearestStop/NSV.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "153"
-            endingLineNumber = "153"
+            startingLineNumber = "147"
+            endingLineNumber = "147"
             landmarkName = "content()"
             landmarkType = "7">
          </BreakpointContent>

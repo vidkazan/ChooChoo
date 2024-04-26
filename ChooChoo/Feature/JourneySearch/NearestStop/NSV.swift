@@ -20,6 +20,7 @@ struct NearestStopView : View {
 			Model.shared.locationDataManager.location ?? .init()
 		)
 	)
+	
 	@State var nearestStops : [StopWithDistance] = []
 	@State var selectedStop : StopWithDistance?
 	@State var departuresTypes = Set<LineType>()

@@ -44,4 +44,3 @@ struct ReloadableButtonLabel: View {
 		.padding(5)
 	}
 }
-
