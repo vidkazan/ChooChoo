@@ -7,6 +7,16 @@
 
 import Foundation
 import OSLog
+import SwiftUI
+
+protocol ChewView : View {}
+
+extension ChewView {
+	var log : Logger {
+		Logger(category: .view)
+	}
+}
+
 
 protocol ChewEvent : Equatable {
 	var description : String { get }
@@ -31,13 +41,21 @@ protocol ChewViewModelProtocol : ObservableObject, Identifiable {
 }
 
 extension ChewViewModelProtocol {
-	static func log(_ status : any ChewStatus) {
+	static func log(
+		_ status : any ChewStatus
+	) {
 		Logger.status("\(Self.self)", status: status)
 	}
-	static func log(_ event : any ChewEvent,_ status : any ChewStatus) {
+	static func log(
+		_ event : any ChewEvent,
+		_ status : any ChewStatus
+	) {
 		Logger.event("\(Self.self)", event: event,status: status)
 	}
-	static func logReducerWarning(_ event : any ChewEvent,_ status : any ChewStatus) {
+	static func logReducerWarning(
+		_ event : any ChewEvent,
+		_ status : any ChewStatus
+	) {
 		Logger.reducer("\(Self.self)", event: event,status: status)
 	}
 }
