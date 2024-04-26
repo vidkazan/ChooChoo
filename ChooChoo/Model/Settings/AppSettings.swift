@@ -79,7 +79,7 @@ extension AppSettings {
 			return false
 		}
 		switch tip {
-		case .journeySettingsFilterDisclaimer,.followJourney,.swipeActions:
+		case .journeySettingsFilterDisclaimer,.followJourney,.swipeActions,.mapPickerLocationPick:
 			return true
 		case .sunEventsTip:
 			if self.legViewMode != .colorfulLegs {

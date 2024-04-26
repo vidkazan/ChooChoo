@@ -22,7 +22,6 @@ struct MapPickerUIView: UIViewRepresentable {
 		mapView.delegate = context.coordinator
 		mapView.showsUserLocation = true
 		mapView.isRotateEnabled = false
-//		mapView.userTrackingMode = .follow
 		let initialLocation = mapCenterCoords
 		
 		

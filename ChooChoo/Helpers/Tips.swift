@@ -59,35 +59,3 @@ struct ChooTipFollowJourney : Tip {
 		Image(systemName: ChooSFSymbols.bookmark.rawValue)
 	}
 }
-
-struct HowToFollowJourneyView : View {
-	@State var isPressed : Bool = false
-	let timer = Timer.publish(every: 0.5, on: .main, in: .common).autoconnect()
-	var body: some View {
-		HStack {
-			Spacer()
-			Text("Journey Details",
-				 comment: "info sheet: follow journey button: view name"
-			)
-				.chewTextSize(.big)
-			Spacer()
-			Group {
-				ChooSFSymbols.bookmark.view
-					.symbolVariant(isPressed ? .fill : .none )
-				ChooSFSymbols.arrowClockwise.view
-			}
-			.foregroundStyle(.blue)
-			.frame(width: 15,height: 15)
-			.padding(5)
-		}
-		.onReceive(timer, perform: { _ in
-			withAnimation {
-				isPressed.toggle()
-			}
-		})
-		.padding(10)
-		.background(.regularMaterial)
-		.clipShape(.rect(cornerRadius: 10, style: .continuous))
-		.padding(10)
-	}
-}

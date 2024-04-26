@@ -16,6 +16,7 @@ enum ChooTip : Hashable {
 	func hash(into hasher: inout Hasher) {
 		hasher.combine(description)
 	}
+	case mapPickerLocationPick(onClose: () -> ())
 	case swipeActions
 	case followJourney
 	case journeySettingsFilterDisclaimer
@@ -23,6 +24,8 @@ enum ChooTip : Hashable {
 	
 	var description  : String {
 		switch self {
+		case .mapPickerLocationPick:
+			return "mapPickerLocationPick"
 		case .swipeActions:
 			return "swipe actions"
 		case .journeySettingsFilterDisclaimer:
@@ -37,11 +40,10 @@ enum ChooTip : Hashable {
 	@ViewBuilder var tipView : some View  {
 		Group {
 			switch self {
-			case .swipeActions:
-				EmptyView()
-			case .journeySettingsFilterDisclaimer:
-				EmptyView()
-			case .followJourney:
+			case .mapPickerLocationPick,
+					.swipeActions,
+					.journeySettingsFilterDisclaimer,
+					.followJourney:
 				EmptyView()
 			case .sunEvents:
 				SunEventsTipView(mode: .sunEvents)
@@ -52,12 +54,14 @@ enum ChooTip : Hashable {
 	
 	@ViewBuilder var tipLabel : some View {
 		switch self {
+		case .mapPickerLocationPick(let onClose):
+			Labels.MapPickerLocationPickTipView(onClose: onClose)
 		case .swipeActions:
 			Labels.SwipeActionsTip()
 		case .journeySettingsFilterDisclaimer:
 			Labels.JourneySettingsFilterDisclaimer()
 		case .followJourney:
-			HowToFollowJourneyView()
+			Labels.HowToFollowJourneyView()
 		case let .sunEvents(close, journey):
 			Labels.SunEventsTip(onClose: close, journey: journey)
 		}
@@ -70,5 +74,6 @@ extension ChooTip {
 		case followJourney
 		case sunEventsTip
 		case swipeActions
+		case mapPickerLocationPick
 	}
 }

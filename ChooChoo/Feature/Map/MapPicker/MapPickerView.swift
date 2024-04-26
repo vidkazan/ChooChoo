@@ -14,6 +14,7 @@ struct MapPickerView: View {
 	let type : LocationDirectionType
 	@EnvironmentObject var chewVM : ChewViewModel
 	@ObservedObject var vm : MapPickerViewModel
+	@ObservedObject var tipVM : AppSettingsViewModel = Model.shared.appSettingsVM
 	@State private var mapCenterCoords: CLLocationCoordinate2D
 	
 	var body: some View {
@@ -104,20 +105,28 @@ extension MapPickerView {
 	
 	var overlay : some View {
 		Group {
-			switch vm.state.status {
-			case .loadingNearbyStops:
-				ProgressView()
-			case .error(let chewError):
-				ErrorView(
-					viewType: .error,
-					msg: Text(verbatim: chewError.localizedDescription),
-					size: .medium,
-					action: nil
-				)
-				.foregroundStyle(.secondary)
-				.badgeBackgroundStyle(.accent)
-			case .submitting,.idle,.loadingStopDetails:
-				EmptyView()
+			VStack {
+				switch vm.state.status {
+				case .loadingNearbyStops:
+					ProgressView()
+				case .error(let chewError):
+					ErrorView(
+						viewType: .error,
+						msg: Text(verbatim: chewError.localizedDescription),
+						size: .medium,
+						action: nil
+					)
+					.padding(5)
+					.foregroundStyle(.secondary)
+					.badgeBackgroundStyle(.accent)
+				case .submitting,.idle,.loadingStopDetails:
+					EmptyView()
+				}
+				if tipVM.state.settings.showTip(tip: .mapPickerLocationPick) {
+					ChooTip.mapPickerLocationPick(onClose: {
+						tipVM.send(event: .didShowTip(tip: .journeySettingsFilterDisclaimer))
+					}).tipLabel
+				}
 			}
 		}
 		.padding(5)
