@@ -45,6 +45,10 @@
 		7D2BF7A62B67CA7F00E1CED7 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2BF7A52B67CA7F00E1CED7 /* Model.swift */; };
 		7D2BF7A82B67D30800E1CED7 /* Color+random.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2BF7A72B67D30800E1CED7 /* Color+random.swift */; };
 		7D2C0E5F2BDBB6FF000839C1 /* DeparturesListCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2C0E5E2BDBB6FF000839C1 /* DeparturesListCellView.swift */; };
+		7D2C0E622BDBB9E4000839C1 /* SwipeActionsTip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2C0E612BDBB9E4000839C1 /* SwipeActionsTip.swift */; };
+		7D2C0E642BDBBA24000839C1 /* SunEventsTip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2C0E632BDBBA24000839C1 /* SunEventsTip.swift */; };
+		7D2C0E662BDBBDFB000839C1 /* MapPickerLocationPickTipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2C0E652BDBBDFB000839C1 /* MapPickerLocationPickTipView.swift */; };
+		7D2C0E682BDBC487000839C1 /* ReloadableButtonLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2C0E672BDBC487000839C1 /* ReloadableButtonLabel.swift */; };
 		7D2CAF642B0BEA0200577FD4 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7D2CAF622B0BEA0200577FD4 /* Model.xcdatamodeld */; };
 		7D2CAF662B0BEAC000577FD4 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2CAF652B0BEAC000577FD4 /* Persistence.swift */; };
 		7D33A9492B5192940005D723 /* JFVM + reduce.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D33A9482B5192940005D723 /* JFVM + reduce.swift */; };
@@ -308,6 +312,10 @@
 		7D2BF7A52B67CA7F00E1CED7 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		7D2BF7A72B67D30800E1CED7 /* Color+random.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+random.swift"; sourceTree = "<group>"; };
 		7D2C0E5E2BDBB6FF000839C1 /* DeparturesListCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeparturesListCellView.swift; sourceTree = "<group>"; };
+		7D2C0E612BDBB9E4000839C1 /* SwipeActionsTip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeActionsTip.swift; sourceTree = "<group>"; };
+		7D2C0E632BDBBA24000839C1 /* SunEventsTip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SunEventsTip.swift; sourceTree = "<group>"; };
+		7D2C0E652BDBBDFB000839C1 /* MapPickerLocationPickTipView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPickerLocationPickTipView.swift; sourceTree = "<group>"; };
+		7D2C0E672BDBC487000839C1 /* ReloadableButtonLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReloadableButtonLabel.swift; sourceTree = "<group>"; };
 		7D2CAF632B0BEA0200577FD4 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		7D2CAF652B0BEAC000577FD4 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		7D33A9482B5192940005D723 /* JFVM + reduce.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JFVM + reduce.swift"; sourceTree = "<group>"; };
@@ -668,6 +676,17 @@
 			path = RecentSearches;
 			sourceTree = "<group>";
 		};
+		7D2C0E602BDBB9CB000839C1 /* Labels */ = {
+			isa = PBXGroup;
+			children = (
+				7DCA4AE12BD93A53005BA68E /* ChooTipLabels.swift */,
+				7D2C0E612BDBB9E4000839C1 /* SwipeActionsTip.swift */,
+				7D2C0E632BDBBA24000839C1 /* SunEventsTip.swift */,
+				7D2C0E652BDBBDFB000839C1 /* MapPickerLocationPickTipView.swift */,
+			);
+			path = Labels;
+			sourceTree = "<group>";
+		};
 		7D33A9522B5343320005D723 /* Test */ = {
 			isa = PBXGroup;
 			children = (
@@ -793,6 +812,7 @@
 				7DA001FC2B0F88B6009BB79D /* SegmentedPicker.swift */,
 				7D55BD9D2B5EA39900A0CE08 /* ChewDatePicker.swift */,
 				7DA085342BA492E5005E72B2 /* ErrorView.swift */,
+				7D2C0E672BDBC487000839C1 /* ReloadableButtonLabel.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1347,8 +1367,8 @@
 		7DCA4ADE2BD93903005BA68E /* ChooTip */ = {
 			isa = PBXGroup;
 			children = (
+				7D2C0E602BDBB9CB000839C1 /* Labels */,
 				7DCA4ADF2BD9391B005BA68E /* ChooTipViews.swift */,
-				7DCA4AE12BD93A53005BA68E /* ChooTipLabels.swift */,
 				7DCA4ADC2BD93714005BA68E /* ChooTip.swift */,
 			);
 			path = ChooTip;
@@ -1748,6 +1768,7 @@
 				7D7497922BADBD6B0041FBFB /* AppSettings.swift in Sources */,
 				7DEA645C2B95F794005BEE8A /* JourneyDebugView.swift in Sources */,
 				7D1638502B69841D006E9660 /* LDSV+background.swift in Sources */,
+				7D2C0E682BDBC487000839C1 /* ReloadableButtonLabel.swift in Sources */,
 				7D4B1B952AA8FDA20096F372 /* SSVM+state.swift in Sources */,
 				7D81AB262A978CDC0055AEAF /* DatePickerView.swift in Sources */,
 				7DF5871D2B5EC01100A4F99A /* ApiServiceErrors.swift in Sources */,
@@ -1788,6 +1809,7 @@
 				7D2C0E5F2BDBB6FF000839C1 /* DeparturesListCellView.swift in Sources */,
 				7D462D602AACED6D00BC0D65 /* constructJourneys+Journey.swift in Sources */,
 				7D6955212B58208300271F56 /* TopBarAlertsView.swift in Sources */,
+				7D2C0E622BDBB9E4000839C1 /* SwipeActionsTip.swift in Sources */,
 				7D72C9142BA88A2000D924A7 /* ArrivingTrainTimeVM.swift in Sources */,
 				7DD5BAFB2B72BAE900CFE768 /* JLV+list.swift in Sources */,
 				7D68D9F52ABDB36D00579711 /* constructJourneys+Leg+Stop.swift in Sources */,
@@ -1796,6 +1818,7 @@
 				7DD4A8D62AAC90B9001AA30C /* SSVM+reduce+Loading.swift in Sources */,
 				7DE640F02AB079710087FC64 /* JLVM+reduce+LoadingUpdate.swift in Sources */,
 				7D991E8A2B7B8C93000E26AD /* Annotations.swift in Sources */,
+				7D2C0E642BDBBA24000839C1 /* SunEventsTip.swift in Sources */,
 				7DA13A452B28F01F0045061F /* LineType.swift in Sources */,
 				7D9BB10D2B0CBF54008A3616 /* CDLocation+CoreDataProperties.swift in Sources */,
 				7D181D692AD6F7C6003AB021 /* RecentSearchCell.swift in Sources */,
@@ -1894,6 +1917,7 @@
 				7D991E882B7AE42E000E26AD /* MapPickerUIView.swift in Sources */,
 				7D10BD3F2BB1B37B00702D83 /* CoreDataStore+delete.swift in Sources */,
 				7D8A3E3C2B83A8AC005B61CC /* JLVM+sideEffects+fetchJourneyList.swift in Sources */,
+				7D2C0E662BDBBDFB000839C1 /* MapPickerLocationPickTipView.swift in Sources */,
 				7D4B1B932AA8FD9D0096F372 /* SSVM+reduce.swift in Sources */,
 				7DD4A8D82AAC90C3001AA30C /* SSVM+reduce+Loaded.swift in Sources */,
 				7D4034B22BD15E2700EB5F17 /* Logging.swift in Sources */,
