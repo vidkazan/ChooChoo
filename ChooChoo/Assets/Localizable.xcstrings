@@ -7,6 +7,9 @@
     "**Blue** color - **moonlight**" : {
       "comment" : "SunEventsTipView"
     },
+    "**Long tap** to pick custom location" : {
+      "comment" : "mapPickerTip"
+    },
     "**Yellow** color shows **daylight**," : {
       "comment" : "SunEventsTipView"
     },
@@ -220,7 +223,7 @@
       "comment" : "badge"
     },
     "now" : {
-      "comment" : "timeChoosingView: button on segmented picker\nDatePickerTimePresetButtons"
+      "comment" : "DatePickerTimePresetButtons\ntimeChoosingView: button on segmented picker"
     },
     "Offline" : {
       "comment" : "badge"
@@ -271,7 +274,7 @@
 
     },
     "Save" : {
-      "comment" : "settingsView: save button\ndatePickerView: save button"
+      "comment" : "datePickerView: save button\nsettingsView: save button"
     },
     "Search" : {
       "comment" : "TabItem\nsearch tip title"

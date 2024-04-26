@@ -86,19 +86,17 @@ extension JourneyDetailsView {
 					}
 				},
 				label: {
-					Group {
+					ReloadableButtonLabel {
 						switch viewModel.state.status {
 						case .loading, .loadingIfNeeded:
-							ProgressView()
+							return .loading
 						case .loadedJourneyData,
 								.changingSubscribingState:
-							Image(.arrowClockwise)
+							return .idle
 						case .error:
-							Image(.exclamationmarkCircle)
+							return .error
 						}
 					}
-					.frame(width: 15,height: 15)
-					.padding(5)
 				}
 			)
 		}
