@@ -73,7 +73,7 @@ extension NearestStopView {
 								Array(departuresTypes).sorted(by: <),
 								id:\.hashValue
 							) { type in
-								let b = Button(
+								Button(
 									action: {
 										if filteredLineType == type {
 											filteredLineType = nil

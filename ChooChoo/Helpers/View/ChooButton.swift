@@ -11,9 +11,9 @@ import OSLog
 
 extension Button {
 	init(
-		buttonID : ChooButtonID,
 		action: @escaping () -> Void,
-		@ViewBuilder label: () -> Label
+		@ViewBuilder label: () -> Label,
+		buttonID : ChooButtonID
 	) {
 		self.init(
 			action: {
@@ -27,8 +27,8 @@ extension Button {
 
 extension View {
 	func onTapGesture(
-		onTapId : ChooOnTapID,
-		perform action: @escaping () -> Void
+		perform action: @escaping () -> Void,
+		onTapId : ChooOnTapID
 	) -> some View {
 		self
 		.onTapGesture(perform: {

@@ -10,7 +10,11 @@ import SwiftUI
 
 extension BadgeView {
 	func expandingBadge<V>(@ViewBuilder _ expandedView: @escaping () -> V) -> some View where V : View {
-		ExpandingBadge(isExpanded: false, baseBadge: self, expandedView: expandedView)
+		ExpandingBadge(
+			isExpanded: false,
+			baseBadge: self,
+			expandedView: expandedView
+		)
 	}
 }
 
