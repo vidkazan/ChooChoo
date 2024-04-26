@@ -86,7 +86,7 @@ extension JourneyDetailsView {
 					}
 				},
 				label: {
-					ReloadableButtonLabel {
+					ReloadableButtonLabel(state: {
 						switch viewModel.state.status {
 						case .loading, .loadingIfNeeded:
 							return .loading
@@ -96,7 +96,7 @@ extension JourneyDetailsView {
 						case .error:
 							return .error
 						}
-					}
+					}())
 				}
 			)
 		}

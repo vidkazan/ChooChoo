@@ -15,26 +15,30 @@ struct ReloadableButtonLabel: View {
 		case error
 	}
 	
-	let stateFn : () -> ReloadableButtonStatus
+	let state : ReloadableButtonStatus
+	let mainIcon : ChooSFSymbols
+	let errorIcon : ChooSFSymbols
 	
-	init(_ stateFn: @escaping () -> ReloadableButtonStatus) {
-		self.stateFn = stateFn
+	init(
+		state : ReloadableButtonStatus,
+		mainIcon: ChooSFSymbols = .arrowClockwise,
+		errorIcon: ChooSFSymbols = .exclamationmarkCircle
+	) {
+		self.state = state
+		self.mainIcon = mainIcon
+		self.errorIcon = errorIcon
 	}
 	
-	@State var state : ReloadableButtonStatus = .idle
 	var body: some View {
 		Group {
 			switch state {
 			case .loading:
 				ProgressView()
 			case .idle:
-				Image(.arrowClockwise)
+				mainIcon.view
 			case .error:
-				Image(.exclamationmarkCircle)
+				errorIcon.view
 			}
-		}
-		.onAppear {
-			state = stateFn()
 		}
 		.frame(width: 15,height: 15)
 		.padding(5)
