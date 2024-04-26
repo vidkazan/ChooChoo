@@ -44,6 +44,7 @@
 		7D28BAD32B82C689008B9979 /* Mock.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D28BAD12B82C533008B9979 /* Mock.xcassets */; };
 		7D2BF7A62B67CA7F00E1CED7 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2BF7A52B67CA7F00E1CED7 /* Model.swift */; };
 		7D2BF7A82B67D30800E1CED7 /* Color+random.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2BF7A72B67D30800E1CED7 /* Color+random.swift */; };
+		7D2C0E5F2BDBB6FF000839C1 /* DeparturesListCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2C0E5E2BDBB6FF000839C1 /* DeparturesListCellView.swift */; };
 		7D2CAF642B0BEA0200577FD4 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7D2CAF622B0BEA0200577FD4 /* Model.xcdatamodeld */; };
 		7D2CAF662B0BEAC000577FD4 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2CAF652B0BEAC000577FD4 /* Persistence.swift */; };
 		7D33A9492B5192940005D723 /* JFVM + reduce.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D33A9482B5192940005D723 /* JFVM + reduce.swift */; };
@@ -306,6 +307,7 @@
 		7D28BAD12B82C533008B9979 /* Mock.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Mock.xcassets; sourceTree = "<group>"; };
 		7D2BF7A52B67CA7F00E1CED7 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		7D2BF7A72B67D30800E1CED7 /* Color+random.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+random.swift"; sourceTree = "<group>"; };
+		7D2C0E5E2BDBB6FF000839C1 /* DeparturesListCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeparturesListCellView.swift; sourceTree = "<group>"; };
 		7D2CAF632B0BEA0200577FD4 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		7D2CAF652B0BEAC000577FD4 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		7D33A9482B5192940005D723 /* JFVM + reduce.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JFVM + reduce.swift"; sourceTree = "<group>"; };
@@ -1246,6 +1248,7 @@
 				7D14D98D2B7AD83A00FB67AC /* Annotation */,
 				7DAC40832B7A16C4006B3E55 /* MapPickerViewModel.swift */,
 				7DAC40952B7A5C02006B3E55 /* MapPickerView.swift */,
+				7D2C0E5E2BDBB6FF000839C1 /* DeparturesListCellView.swift */,
 			);
 			path = MapPicker;
 			sourceTree = "<group>";
@@ -1782,6 +1785,7 @@
 				7DAF62C22A9E8C2B006F1A17 /* Solar.swift in Sources */,
 				7DF845692B767E6C00D76B14 /* AlertVM.swift in Sources */,
 				7D69BE7F2AD7ECF1007855B3 /* Publisher+AsyncMap.swift in Sources */,
+				7D2C0E5F2BDBB6FF000839C1 /* DeparturesListCellView.swift in Sources */,
 				7D462D602AACED6D00BC0D65 /* constructJourneys+Journey.swift in Sources */,
 				7D6955212B58208300271F56 /* TopBarAlertsView.swift in Sources */,
 				7D72C9142BA88A2000D924A7 /* ArrivingTrainTimeVM.swift in Sources */,

@@ -95,13 +95,7 @@ struct NearestStopView : View {
 				}
 			})
 	}
-	
-	
-//	acc dist
-//	4000 2000
-//	1000 500
-//	200  500
-//	100  500
+
 	private func updateNearbyStopsIfNeeded(newLocation : CLLocation) {
 		let previousLocationCoords = previousLocation.coordinate
 		let distance = newLocation.distance(previousLocationCoords)
@@ -109,7 +103,6 @@ struct NearestStopView : View {
 			accuracy: newLocation.horizontalAccuracy,
 			distance: distance
 		)
-		Logger.create(category: "\(Self.self)").trace("\(distance) from \(targetDistance)")
 		if newLocation.distance(previousLocationCoords) > targetDistance {
 			nearestStopViewModel.send(
 				event: .didDragMap(newLocation)
