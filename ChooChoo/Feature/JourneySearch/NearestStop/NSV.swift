@@ -77,11 +77,6 @@ struct NearestStopView : View {
 						event: .didRequestReloadStopDepartures(stop.stop)
 					)
 				}
-				Task {
-					if let loc = locationManager.location {
-						updateNearbyStopsIfNeeded(newLocation: loc)
-					}
-				}
 			})
 			.onReceive(locationManager.$location, perform: { location in
 				Task {
@@ -117,7 +112,7 @@ struct NearestStopView : View {
 		}
 	}
 	private func targetDistance(accuracy : CLLocationAccuracy, distance : CLLocationDistance) -> CLLocationDistance {
-		let targetDistance = CLLocationDistance(500)
+		let targetDistance = CLLocationDistance(300)
 		if accuracy > targetDistance * 2  {
 			return accuracy / 2
 		}
@@ -166,13 +161,12 @@ struct NearestStopView : View {
 								ScrollView(showsIndicators: false) {
 									VStack(alignment: .leading, spacing: 0) {
 										ForEach(
-											trips
-												.filter {
-													if let filteredLineType = filteredLineType {
-														return filteredLineType == $0.lineViewData.type
-													}
-													return true
-												},
+											trips.filter {
+												if let filteredLineType = filteredLineType {
+													return filteredLineType == $0.lineViewData.type
+												}
+												return true
+											},
 											id: \.hashValue
 										) { trip in
 											Button(action: {
@@ -282,5 +276,29 @@ extension NearestStopView {
 				)
 			)
 		)
+	}
+}
+
+struct StopDeparturesListView : View {
+	let departures : [LegViewData]?
+	var body: some View {
+		if let trips = departures {
+			ScrollView(showsIndicators: false) {
+				VStack(alignment: .leading, spacing: 0) {
+					ForEach(
+						trips,
+						id: \.hashValue
+					) { trip in
+						Button(action: {
+							Model.shared.sheetVM.send(
+								event: .didRequestShow(.route(leg: trip))
+							)
+						}, label: {
+							DeparturesListCellView(trip: trip)
+						})
+					}
+				}
+			}
+		}
 	}
 }

@@ -51,6 +51,7 @@
 		7D2C0E682BDBC487000839C1 /* ReloadableButtonLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2C0E672BDBC487000839C1 /* ReloadableButtonLabel.swift */; };
 		7D2C0E6C2BDBD9DE000839C1 /* ChooButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2C0E6B2BDBD9DE000839C1 /* ChooButton.swift */; };
 		7D2C0E6E2BDBE16C000839C1 /* ButtonIDs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2C0E6D2BDBE16C000839C1 /* ButtonIDs.swift */; };
+		7D2C0E712BDC0679000839C1 /* StopDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2C0E702BDC0679000839C1 /* StopDetailsView.swift */; };
 		7D2CAF642B0BEA0200577FD4 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7D2CAF622B0BEA0200577FD4 /* Model.xcdatamodeld */; };
 		7D2CAF662B0BEAC000577FD4 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2CAF652B0BEAC000577FD4 /* Persistence.swift */; };
 		7D33A9492B5192940005D723 /* JFVM + reduce.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D33A9482B5192940005D723 /* JFVM + reduce.swift */; };
@@ -320,6 +321,7 @@
 		7D2C0E672BDBC487000839C1 /* ReloadableButtonLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReloadableButtonLabel.swift; sourceTree = "<group>"; };
 		7D2C0E6B2BDBD9DE000839C1 /* ChooButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooButton.swift; sourceTree = "<group>"; };
 		7D2C0E6D2BDBE16C000839C1 /* ButtonIDs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonIDs.swift; sourceTree = "<group>"; };
+		7D2C0E702BDC0679000839C1 /* StopDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopDetailsView.swift; sourceTree = "<group>"; };
 		7D2CAF632B0BEA0200577FD4 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		7D2CAF652B0BEAC000577FD4 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		7D33A9482B5192940005D723 /* JFVM + reduce.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JFVM + reduce.swift"; sourceTree = "<group>"; };
@@ -689,6 +691,14 @@
 				7D2C0E652BDBBDFB000839C1 /* MapPickerLocationPickTipView.swift */,
 			);
 			path = Labels;
+			sourceTree = "<group>";
+		};
+		7D2C0E6F2BDC065A000839C1 /* StopDetailsView */ = {
+			isa = PBXGroup;
+			children = (
+				7D2C0E702BDC0679000839C1 /* StopDetailsView.swift */,
+			);
+			path = StopDetailsView;
 			sourceTree = "<group>";
 		};
 		7D33A9522B5343320005D723 /* Test */ = {
@@ -1402,6 +1412,7 @@
 		7DD5BADD2B728C6500CFE768 /* JourneySearch */ = {
 			isa = PBXGroup;
 			children = (
+				7D2C0E6F2BDC065A000839C1 /* StopDetailsView */,
 				7DBFA3B62BD2FE6800205757 /* NearestStop */,
 				7DD5BADE2B728CA700CFE768 /* JSV.swift */,
 				7D72C9122BA889EF00D924A7 /* ArrivingTrainTime */,
@@ -1936,6 +1947,7 @@
 				7D7A553D2AA4B407000256EF /* System.swift in Sources */,
 				7DE8A35A2B6AC50D00C3A378 /* SunEventsGradient.swift in Sources */,
 				7DCB2BFF2AAC8831007C672A /* SSVM+reduce+Idle.swift in Sources */,
+				7D2C0E712BDC0679000839C1 /* StopDetailsView.swift in Sources */,
 				7DAC40842B7A16C4006B3E55 /* MapPickerViewModel.swift in Sources */,
 				7DAC408E2B7A5920006B3E55 /* MapDetailsView.swift in Sources */,
 				7DBABFF92B879FA400C990FD /* ChildAnnotationViews.swift in Sources */,

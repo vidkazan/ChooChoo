@@ -23,8 +23,10 @@ struct BottomView: View {
 				)
 			case .idle:
 				ScrollView {
-					RecentSearchesView()
-					NearestStopView()
+					VStack {
+						RecentSearchesView()
+						NearestStopView()
+					}
 				}
 			default:
 				Spacer()

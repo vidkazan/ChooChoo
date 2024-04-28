@@ -67,6 +67,7 @@ enum Query {
 	case bike(Bool)
 	case startWithWalking(Bool)
 	case walkingSpeed(JourneySettings.WalkingSpeed)
+	case linesOfStops(show : Bool)
 	func queryItem() -> URLQueryItem {
 		switch self {
 		case .walkingSpeed(let speed):

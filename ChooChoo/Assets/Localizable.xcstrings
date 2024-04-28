@@ -277,7 +277,7 @@
       "comment" : "datePickerView: save button\nsettingsView: save button"
     },
     "Search" : {
-      "comment" : "TabItem\nsearch tip title"
+      "comment" : "search tip title\nTabItem"
     },
     "Search now" : {
       "comment" : "JourneyFollowView: listCell: swipe action item"

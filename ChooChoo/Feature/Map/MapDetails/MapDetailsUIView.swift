@@ -22,7 +22,7 @@ struct MapDetailsUIView: UIViewRepresentable {
 		mapView.showsUserLocation = true
 		mapView.isZoomEnabled = true
 		mapView.isUserInteractionEnabled = true
-		mapView.pointOfInterestFilter = .excludingAll
+		mapView.pointOfInterestFilter = .includingAll
 		
 		
 		legs.forEach({ leg in
