@@ -31,12 +31,21 @@ struct DatePickerView: View {
 					label: {}
 				)
 				.pickerStyle(.segmented)
-				ChewDatePicker(date: $date,mode: .date, style: .inline)
-					.scaleEffect(0.9)
-					.frame(maxWidth: .infinity,maxHeight: 280)
-					.padding(5)
-					.background(Color.chewFillTertiary.opacity(0.15))
-					.cornerRadius(10)
+				if #available(iOS 16.0, *) {
+					ChewDatePicker(date: $date,mode: .date, style: .inline)
+	//					.scaleEffect(0.9)
+						.frame(maxWidth: .infinity,maxHeight: 320)
+						.padding(5)
+						.background(Color.chewFillTertiary.opacity(0.15))
+						.cornerRadius(10)
+				} else {
+					ChewDatePicker(date: $date,mode: .date, style: .inline)
+						.scaleEffect(0.9)
+						.frame(maxWidth: .infinity,maxHeight: 320)
+						.padding(5)
+						.background(Color.chewFillTertiary.opacity(0.15))
+						.cornerRadius(10)
+				}
 				DatePickerTimePresetButtons(closeSheet: closeSheet, mode: type)
 				Spacer()
 			}
