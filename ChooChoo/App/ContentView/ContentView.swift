@@ -8,12 +8,15 @@
 import SwiftUI
 import TipKit
 
- 
 // SSV: all widgets depend and reload on every chewVM state change
 // map picker: tip for long tap / fix animation
 // dashboard with speed etc.
 // nsv: fix filtering: sort types by name
 // logging: put logger to choobutton protocol
+// normal privacy policy page
+// normal feedback form
+// used content list
+// mailto
 
 // TODO: feature: ldsv: make stop tappable and show stop details and all leg stopover info
 // TODO: jfv: mapCell: map without interaction, icons
