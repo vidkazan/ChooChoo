@@ -9,6 +9,7 @@ import SwiftUI
 import TipKit
 
  
+// SSV: all widgets depend and reload on every chewVM state change
 // map picker: tip for long tap / fix animation
 // dashboard with speed etc.
 // nsv: fix filtering: sort types by name

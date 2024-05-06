@@ -124,7 +124,7 @@ extension MapPickerView {
 				}
 				if tipVM.state.settings.showTip(tip: .mapPickerLocationPick) {
 					ChooTip.mapPickerLocationPick(onClose: {
-						tipVM.send(event: .didShowTip(tip: .journeySettingsFilterDisclaimer))
+						tipVM.send(event: .didShowTip(tip: .mapPickerLocationPick))
 					}).tipLabel
 				}
 			}
