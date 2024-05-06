@@ -33,7 +33,7 @@ struct DatePickerView: View {
 				.pickerStyle(.segmented)
 				if #available(iOS 16.0, *) {
 					ChewDatePicker(date: $date,mode: .date, style: .inline)
-						.frame(maxWidth: .infinity,maxHeight: 320)
+//						.frame(maxWidth: .infinity)
 						.padding(5)
 						.background(Color.chewFillTertiary.opacity(0.15))
 						.cornerRadius(10)
