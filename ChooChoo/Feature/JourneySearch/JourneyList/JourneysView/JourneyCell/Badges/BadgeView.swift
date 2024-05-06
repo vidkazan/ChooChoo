@@ -130,11 +130,21 @@ struct BadgeView : View {
 				if let dep = time.date.departure.actualOrPlannedIfActualIsNil(),
 				   let arr = time.date.arrival.actualOrPlannedIfActualIsNil() {
 					OneLineText(
-						Text(dep, style: .time)
+						Text(
+							verbatim: DateParcer.getTimeStringFromDate(
+								date: dep
+							) ?? ""
+						)
+//						Text(dep, style: .time)
 						+
 						Text(verbatim: "-")
 						+
-						Text(arr, style: .time)
+//						Text(arr, style: .time)
+						Text(
+							verbatim: DateParcer.getTimeStringFromDate(
+								date: arr
+							) ?? ""
+						)
 					)
 					.chewTextSize(size)
 					.padding(4)

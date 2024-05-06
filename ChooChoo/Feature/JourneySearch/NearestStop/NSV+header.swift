@@ -65,6 +65,7 @@ extension NearestStopView {
 					.foregroundStyle(.secondary)
 					.transition(.opacity)
 			}
+			#if DEBUG
 			if selectedStop != nil, !departuresTypes.isEmpty {
 				BadgeView(.generic(msg: ">"))
 					.expandingBadge {
@@ -94,6 +95,7 @@ extension NearestStopView {
 					.foregroundStyle(.secondary)
 					.transition(.opacity)
 			}
+			#endif
 			Spacer()
 		}
 		.animation(.easeInOut, value: locationManager.location?.horizontalAccuracy)
