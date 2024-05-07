@@ -8,10 +8,12 @@
 import SwiftUI
 import TipKit
 
+
+// NSV: after tap on stop add icon to get foot path on map to this stop
+// SSV: search field right button: location is not updating
 // SSV: all widgets depend and reload on every chewVM state change
 // map picker: tip for long tap / fix animation
 // dashboard with speed etc.
-// nsv: fix filtering: sort types by name
 // logging: put logger to choobutton protocol
 // normal privacy policy page
 // normal feedback form
@@ -20,7 +22,8 @@ import TipKit
 
 // TODO: feature: ldsv: make stop tappable and show stop details and all leg stopover info
 // TODO: jfv: mapCell: map without interaction, icons
-// performance: main thread is blocked while updating journeys 
+// performance: main thread is blocked while updating journeys
+// TimeChooserView: long tap on segmented picker -> reload?
 struct ContentView: View {
 	@EnvironmentObject var chewViewModel : ChewViewModel
 	@ObservedObject var alertVM = Model.shared.alertVM
