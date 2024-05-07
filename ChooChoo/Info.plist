@@ -4,10 +4,9 @@
 <dict>
 	<key>MKDirectionsApplicationSupportedModes</key>
 	<array>
-		<string>MKDirectionsModeBus</string>
-		<string>MKDirectionsModeSubway</string>
-		<string>MKDirectionsModeTrain</string>
+		<string>MKDirectionsModePedestrian</string>
 	</array>
+	<key>ITSAppUsesNonExemptEncryption</key><false/>
 	<key>UILaunchScreen</key>
 	<dict/>
 </dict>
