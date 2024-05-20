@@ -8,7 +8,9 @@
 import SwiftUI
 import TipKit
 
-
+// make colored trasport legView as default
+// API unavailable policy
+// SSV: optimise request rate while searching the stop
 // NSV: after tap on stop add icon to get foot path on map to this stop
 // SSV: search field right button: location is not updating
 // SSV: all widgets depend and reload on every chewVM state change

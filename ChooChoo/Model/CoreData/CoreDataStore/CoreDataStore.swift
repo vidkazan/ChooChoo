@@ -34,31 +34,6 @@ extension CoreDataStore {
 }
 
 
-// MARK: Entities enum
-extension CoreDataStore {
-	enum Entities {
-		case user
-		case locations(stop : Stop, user : CDUser)
-		case journeys
-		case recentSearches
-		
-		var type : NSManagedObject.Type {
-			switch self {
-			case .recentSearches:
-				return CDRecentSearch.self
-			case .user:
-				return CDUser.self
-			case .locations:
-				return CDLocation.self
-			case .journeys:
-				return CDJourney.self
-			}
-		}
-	}
-}
-
-
-
 enum CoreDataError : ChewError {
 	static func == (lhs: CoreDataError, rhs: CoreDataError) -> Bool {
 		return lhs.description == rhs.description
