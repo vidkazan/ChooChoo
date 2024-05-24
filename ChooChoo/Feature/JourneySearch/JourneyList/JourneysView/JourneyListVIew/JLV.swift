@@ -36,7 +36,7 @@ struct JourneyListView: View {
 				ErrorView(
 					viewType: .error,
 					msg: Text(verbatim: error.localizedDescription),
-					action: {
+					reloadAction: {
 						journeyViewModel.send(event: .onReloadJourneyList)
 					}
 				)
