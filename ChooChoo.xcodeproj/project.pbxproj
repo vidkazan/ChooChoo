@@ -847,7 +847,6 @@
 		7D462D552AACD1E000BC0D65 /* Feature */ = {
 			isa = PBXGroup;
 			children = (
-				7DBFA3B92BD303E000205757 /* NearestStop */,
 				7DAC40822B7A1698006B3E55 /* Map */,
 				7DF845632B767DE300D76B14 /* Alert */,
 				7D63DB0B2B738F05008297DD /* Sheet */,
@@ -1360,13 +1359,6 @@
 				7DBFA3B72BD2FE7900205757 /* NSV.swift */,
 				7DCA4ADA2BD83D35005BA68E /* NSV+header.swift */,
 				7DCA4AD82BD83CAA005BA68E /* NSV+subviews.swift */,
-			);
-			path = NearestStop;
-			sourceTree = "<group>";
-		};
-		7DBFA3B92BD303E000205757 /* NearestStop */ = {
-			isa = PBXGroup;
-			children = (
 			);
 			path = NearestStop;
 			sourceTree = "<group>";

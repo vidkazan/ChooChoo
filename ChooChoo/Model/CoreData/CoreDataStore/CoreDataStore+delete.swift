@@ -31,6 +31,7 @@ extension CoreDataStore {
 		}
 		return result
 	}
+	
 	func deleteRecentLocationIfFound(name : String) -> Bool {
 		var result = false
 		
