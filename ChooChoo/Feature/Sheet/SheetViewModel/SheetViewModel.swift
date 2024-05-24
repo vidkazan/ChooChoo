@@ -330,7 +330,7 @@ extension SheetViewModel {
 			)
 		)
 		request.transportType = .walking
-	
+		
 		let directions = MKDirections(request: request)
 		
 		
@@ -357,7 +357,9 @@ extension SheetViewModel {
 			if let locFirst = leg.legStopsViewData.first,
 			   let locLast = leg.legStopsViewData.last {
 				guard let mapLegData = mapLegData(leg: leg) else {
-					return Just(Event.didFailToLoadData(DataError.nilValue(type: "mapLegData"))).eraseToAnyPublisher()
+					return Just(Event.didFailToLoadData(
+						DataError.nilValue(type: "mapLegData")
+					)).eraseToAnyPublisher()
 				}
 				return Just(Event.didLoadDataForShowing(
 					.mapDetails(request),
@@ -383,7 +385,7 @@ extension SheetViewModel {
 							locFirst: locFirst.locationCoordinates,
 							locLast: locLast.locationCoordinates
 						),
-						mapLegDataList: .init(mapLegDataList)  
+						mapLegDataList: .init(mapLegDataList)
 					)
 				)).eraseToAnyPublisher()
 			}
@@ -451,51 +453,51 @@ extension SheetViewModel {
 			  let locLast = leg.legStopsViewData.last else {
 			return Just(Event.didFailToLoadData(DataError.nilValue(type: "start/end stop"))).eraseToAnyPublisher()
 		}
-			switch leg.legType {
-			case .line,.transfer:
-				return Just(Event.didFailToLoadData(DataError.generic(msg: "\(#function): wrong type"))).eraseToAnyPublisher()
-			case .footEnd,.footMiddle,.footStart:
-				let mapRegion = constructMapRegion(
-					locFirst: locFirst.locationCoordinates,
-					locLast: locLast.locationCoordinates
-				)
-				return makeDirectionsRequest(from: locFirst.locationCoordinates, to: locLast.locationCoordinates)
-					.map { res in
-						return Event.didLoadDataForShowing(
-							.mapDetails(.footDirection(leg)),
-							MapDetailsViewDataSource(
-								coordRegion: mapRegion,
-								mapLegDataList: [
-									MapLegData(
-										type: leg.legType,
-										lineType: leg.lineViewData.type,
-										stops: [locFirst,locLast],
-										route: res.routes.first?.polyline,
-										currenLocation: leg.legDTO?.currentLocation
-									)
-								]
-							)
+		switch leg.legType {
+		case .line,.transfer:
+			return Just(Event.didFailToLoadData(DataError.generic(msg: "\(#function): wrong type"))).eraseToAnyPublisher()
+		case .footEnd,.footMiddle,.footStart:
+			let mapRegion = constructMapRegion(
+				locFirst: locFirst.locationCoordinates,
+				locLast: locLast.locationCoordinates
+			)
+			return makeDirectionsRequest(from: locFirst.locationCoordinates, to: locLast.locationCoordinates)
+				.map { res in
+					return Event.didLoadDataForShowing(
+						.mapDetails(.footDirection(leg)),
+						MapDetailsViewDataSource(
+							coordRegion: mapRegion,
+							mapLegDataList: [
+								MapLegData(
+									type: leg.legType,
+									lineType: leg.lineViewData.type,
+									stops: [locFirst,locLast],
+									route: res.routes.first?.polyline,
+									currenLocation: leg.legDTO?.currentLocation
+								)
+							]
 						)
-					}
-					.catch { error in
-						Logger.location.error("whenLoadingLocationDetails: makeDirecitonsRequest: \(error)")
-						return Just(Event.didLoadDataForShowing(
-							.mapDetails(.footDirection(leg)),
-							MapDetailsViewDataSource(
-								coordRegion: mapRegion,
-								mapLegDataList: [
-									MapLegData(
-										type: leg.legType,
-										lineType: leg.lineViewData.type,
-										stops: [locFirst,locLast],
-										route: nil,
-										currenLocation: leg.legDTO?.currentLocation
-									)
-								]
-							)
-						))
-					}
-					.eraseToAnyPublisher()
-			}
+					)
+				}
+				.catch { error in
+					Logger.location.error("whenLoadingLocationDetails: makeDirecitonsRequest: \(error)")
+					return Just(Event.didLoadDataForShowing(
+						.mapDetails(.footDirection(leg)),
+						MapDetailsViewDataSource(
+							coordRegion: mapRegion,
+							mapLegDataList: [
+								MapLegData(
+									type: leg.legType,
+									lineType: leg.lineViewData.type,
+									stops: [locFirst,locLast],
+									route: nil,
+									currenLocation: leg.legDTO?.currentLocation
+								)
+							]
+						)
+					))
+				}
+				.eraseToAnyPublisher()
+		}
 	}
 }
