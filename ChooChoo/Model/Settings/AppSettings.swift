@@ -32,7 +32,7 @@ struct AppSettings : Hashable, Codable {
 	}
 	
 	init() {
-		self.legViewMode = .sunEvents
+		self.legViewMode = .colorfulLegs
 		self.tipsToShow = Set(ChooTip.TipType.allCases)
 		self.debugSettings = ChewDebugSettings(prettyJSON: false, alternativeSearchPage: false)
 	}
