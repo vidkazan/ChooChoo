@@ -156,6 +156,7 @@ struct NearestStopView : View {
 								})
 								.frame(width: 40, height: 40)
 								stopWithDistance(stop: stop)
+									.contextMenu { menu(stop: stop.stop) }
 							}
 							if let trips = departures {
 								ScrollView(showsIndicators: false) {
@@ -198,6 +199,7 @@ struct NearestStopView : View {
 												stopWithDistance(stop: stop)
 											}
 										)
+										.contextMenu { menu(stop: stop.stop) }
 									}
 								}
 								.transition(.move(edge: .leading))
@@ -245,6 +247,38 @@ struct NearestStopView : View {
 	//				.foregroundStyle(.secondary)
 	//				.padding(5)
 	//			#endif
+}
+
+
+extension NearestStopView {
+	@ViewBuilder func menu(stop : Stop) -> some View {
+		Group {
+			Button(action: {
+				chewVM.send(event: .didUpdateSearchData(dep: .location(stop)))
+			}, label: {
+				Label(
+					title: {
+						Text("Set as departure", comment: "NearestStopView: stop cell: context menu")
+					},
+					icon: {
+						Image(.location)
+					}
+				)
+			})
+			Button(action: {
+				chewVM.send(event: .didUpdateSearchData(arr: .location(stop)))
+			}, label: {
+				Label(
+					title: {
+						Text("Set as arrival", comment: "NearestStopView: stop cell: context menu")
+					},
+					icon: {
+						Image(systemName: "arrow.right.to.line")
+					}
+				)
+			})
+		}
+	}
 }
 
 
