@@ -36,7 +36,9 @@ struct JourneyListView: View {
 				ErrorView(
 					viewType: .error,
 					msg: Text(verbatim: error.localizedDescription),
-					action: nil
+					action: {
+						journeyViewModel.send(event: .onReloadJourneyList)
+					}
 				)
 				.frame(maxWidth: .infinity, maxHeight: .infinity)
 			}
