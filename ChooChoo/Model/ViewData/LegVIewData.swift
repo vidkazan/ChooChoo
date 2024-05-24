@@ -49,6 +49,43 @@ extension LegViewData {
 	}
 }
 
+extension LegViewData {
+	init(footPathStops : DepartureArrivalPair<Stop>){
+		self.isReachable = true
+		self.legType = .footMiddle
+		self.tripId = ""
+		self.direction = ""
+		self.legTopPosition = 0
+		self.legBottomPosition = 0
+		self.delayedAndNextIsNotReachable = false
+		self.legStopsViewData = [
+			.init(
+				id: nil,
+				locationCoordinates: footPathStops.departure.coordinates,
+				name: "",
+				platforms: .init(departure: .init(), arrival: .init()),
+				time: .init(),
+				stopOverType: .origin
+			),
+			.init(
+				id: nil,
+				locationCoordinates: footPathStops.arrival.coordinates,
+				name: "",
+				platforms: .init(departure: .init(), arrival: .init()),
+				time: .init(),
+				stopOverType: .destination
+			)
+		]
+		self.footDistance = 0
+		self.lineViewData = LineViewData(type: .subway, name: "", shortName: "")
+		self.progressSegments = Segments(segments: [], heightTotalCollapsed: 0, heightTotalExtended: 0)
+		self.time = TimeContainer(plannedDeparture: "", plannedArrival: "", actualDeparture: "", actualArrival: "", cancelled: false)
+		self.remarks = []
+		self.polyline = nil
+		self.legDTO = nil
+	}
+}
+
 enum LocationDirectionType : Int, Hashable, CaseIterable {
 	case departure
 	case arrival
