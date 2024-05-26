@@ -50,7 +50,7 @@ extension LegViewData {
 }
 
 extension LegViewData {
-	init(footPathStops : DepartureArrivalPair<Stop>){
+	init(footPathStops : DepartureArrivalPairStop){
 		self.isReachable = true
 		self.legType = .footMiddle
 		self.tripId = ""
@@ -77,7 +77,7 @@ extension LegViewData {
 			)
 		]
 		self.footDistance = 0
-		self.lineViewData = LineViewData(type: .subway, name: "", shortName: "")
+		self.lineViewData = LineViewData(type: .foot, name: "", shortName: "")
 		self.progressSegments = Segments(segments: [], heightTotalCollapsed: 0, heightTotalExtended: 0)
 		self.time = TimeContainer(plannedDeparture: "", plannedArrival: "", actualDeparture: "", actualArrival: "", cancelled: false)
 		self.remarks = []
