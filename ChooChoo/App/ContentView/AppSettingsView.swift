@@ -64,7 +64,7 @@ extension AppSettingsView {
 				)
 			})
 		}, header: {
-			Text("Journey appearance", comment: "settingsView: section name")
+			Text("Tap to change route cell appearance", comment: "settingsView: section name")
 		})
    }
 }
