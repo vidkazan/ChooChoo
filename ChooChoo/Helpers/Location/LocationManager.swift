@@ -15,7 +15,6 @@ class ChewLocationDataManager : NSObject, ObservableObject {
 		manager.desiredAccuracy = kCLLocationAccuracyBest
 		manager.distanceFilter = 10
 		manager.headingOrientation = .portrait
-//		manager.activityType = .otherNavigation
 		return manager
 	}()
 	
@@ -28,7 +27,8 @@ class ChewLocationDataManager : NSObject, ObservableObject {
 	@Published var location: CLLocation?
 	@Published var accuracyAuthorization: CLAccuracyAuthorization?
 	
-	override init() {
+	override init(
+	) {
 		super.init()
 		locationManager.delegate = self
 		location = locationManager.location
@@ -49,6 +49,9 @@ extension ChewLocationDataManager {
 	func startUpdatingLocationAndHeading() {
 		locationManager.startUpdatingHeading()
 		locationManager.startUpdatingLocation()
+	}
+	func requestLocation() {
+		locationManager.requestLocation()
 	}
 	func stopUpdatingLocationAndHeading() {
 		locationManager.stopUpdatingLocation()
