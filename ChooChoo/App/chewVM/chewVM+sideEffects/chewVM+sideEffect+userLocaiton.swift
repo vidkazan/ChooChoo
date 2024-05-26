@@ -15,13 +15,12 @@ extension ChewViewModel {
 			guard case .loadingLocation(let send) = state.status else {
 				return Empty().eraseToAnyPublisher()
 			}
-			
+		
 			switch Model.shared.locationDataManager.authorizationStatus {
 			case .notDetermined,.restricted,.denied,.none:
 				Model.shared.topBarAlertVM.send(event: .didRequestShow(.userLocationError))
 				return Just(Event.didFailToLoadLocationData).eraseToAnyPublisher()
 			case .authorizedAlways,.authorizedWhenInUse:
-				#warning("location is not updating!")
 				Model.shared.locationDataManager.requestLocation()
 				guard let coords = Model.shared.locationDataManager.location?.coordinate else {
 					Model.shared.topBarAlertVM.send(event: .didRequestShow(.userLocationError))

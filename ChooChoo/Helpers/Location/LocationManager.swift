@@ -27,13 +27,15 @@ class ChewLocationDataManager : NSObject, ObservableObject {
 	@Published var location: CLLocation?
 	@Published var accuracyAuthorization: CLAccuracyAuthorization?
 	
-	override init(
-	) {
+//	var didUpdateLocation : ((Result<Coordinate,Error>) -> ())?
+	
+	override init() {
 		super.init()
 		locationManager.delegate = self
 		location = locationManager.location
 		accuracyAuthorization = locationManager.accuracyAuthorization
 	}
+	
 	
 	func reverseGeocoding(coords : Coordinate) async -> String? {
 		if self.locationManager.location != nil,
@@ -44,6 +46,13 @@ class ChewLocationDataManager : NSObject, ObservableObject {
 		return nil
 	}
 }
+
+//extension ChewLocationDataManager {
+//	convenience init(_ didGetLocationHandler : (Result<Coordinate,Error>) -> () ) {
+//		self.init()
+//		self.didUpdateLocation = didUpdateLocation
+//	}
+//}
 
 extension ChewLocationDataManager {
 	func startUpdatingLocationAndHeading() {
@@ -89,6 +98,11 @@ extension ChewLocationDataManager : CLLocationManagerDelegate {
 	
 	func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
 		self.location = locations.first
+//		if let coords = self.location?.coordinate {
+//			didUpdateLocation?(.success(Coordinate(coords)))
+//		} else {
+//			didUpdateLocation?(.failure(DataError.nilValue(type: "LocationManager: location request result is nil")))
+//		}
 	}
 	
 	func locationManager(
@@ -104,5 +118,6 @@ extension ChewLocationDataManager : CLLocationManagerDelegate {
 		didFailWithError error: Error
 	) {
 		Logger.locationManager.error("\(error.localizedDescription)")
+//		didUpdateLocation?(.failure(error))
 	}
 }
