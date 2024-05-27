@@ -14,6 +14,8 @@ struct JourneySearchView : View {
 	@EnvironmentObject var chewViewModel : ChewViewModel
 	@ObservedObject var searchStopsVM = Model.shared.searchStopsVM
 	@ObservedObject var topAlertVM = Model.shared.topBarAlertVM
+	@ObservedObject var locationManager : ChewLocationDataManager = Model.shared.locationDataManager
+
 	var body: some View {
 		VStack(spacing: 5) {
 			if #available(iOS 17.0, *) {
@@ -53,6 +55,22 @@ struct JourneySearchView : View {
 				.frame(maxWidth: 40,maxHeight: 40)
 			})
 		}
+		.onReceive(locationManager.$location, perform: { loc in
+			if
+				case .loadingLocation = chewViewModel.state.status,
+				let lat = loc?.coordinate.latitude,
+				let long = loc?.coordinate.longitude {
+				chewViewModel.send(event: .didReceiveLocationData(
+					Stop(
+						coordinates: Coordinate(
+							latitude: lat,
+							longitude: long),
+						type: .location,
+						stopDTO: nil
+					)
+				))
+			}
+		})
 	}
 }
 

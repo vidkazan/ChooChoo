@@ -8,6 +8,7 @@
 import Foundation
 import CoreLocation
 import OSLog
+import SwiftUI
 
 class ChewLocationDataManager : NSObject, ObservableObject {
 	private let locationManager = {
@@ -27,7 +28,7 @@ class ChewLocationDataManager : NSObject, ObservableObject {
 	@Published var location: CLLocation?
 	@Published var accuracyAuthorization: CLAccuracyAuthorization?
 	
-//	var didUpdateLocation : ((Result<Coordinate,Error>) -> ())?
+	private var isFollowingLocation = false
 	
 	override init() {
 		super.init()
@@ -47,24 +48,25 @@ class ChewLocationDataManager : NSObject, ObservableObject {
 	}
 }
 
-//extension ChewLocationDataManager {
-//	convenience init(_ didGetLocationHandler : (Result<Coordinate,Error>) -> () ) {
-//		self.init()
-//		self.didUpdateLocation = didUpdateLocation
-//	}
-//}
-
 extension ChewLocationDataManager {
 	func startUpdatingLocationAndHeading() {
 		locationManager.startUpdatingHeading()
 		locationManager.startUpdatingLocation()
+		isFollowingLocation = true
 	}
-	func requestLocation() {
+	func requestLocation() -> Coordinate? {
+		Logger.locationManager.debug("didRequesLocation")
+		if isFollowingLocation,
+		   let coords = self.location?.coordinate {
+			return Coordinate(coords)
+		}
 		locationManager.requestLocation()
+		return nil
 	}
 	func stopUpdatingLocationAndHeading() {
 		locationManager.stopUpdatingLocation()
 		locationManager.stopUpdatingHeading()
+		isFollowingLocation = false
 	}
 }
 
@@ -97,12 +99,8 @@ extension ChewLocationDataManager : CLLocationManagerDelegate {
 	}
 	
 	func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+		Logger.locationManager.debug("didUpdateLocation")
 		self.location = locations.first
-//		if let coords = self.location?.coordinate {
-//			didUpdateLocation?(.success(Coordinate(coords)))
-//		} else {
-//			didUpdateLocation?(.failure(DataError.nilValue(type: "LocationManager: location request result is nil")))
-//		}
 	}
 	
 	func locationManager(
@@ -118,6 +116,5 @@ extension ChewLocationDataManager : CLLocationManagerDelegate {
 		didFailWithError error: Error
 	) {
 		Logger.locationManager.error("\(error.localizedDescription)")
-//		didUpdateLocation?(.failure(error))
 	}
 }
