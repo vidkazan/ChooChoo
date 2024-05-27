@@ -156,6 +156,9 @@
     "Follow journey" : {
       "comment" : "tip: follow journey: title"
     },
+    "Foot path" : {
+      "comment" : "NearestStopView: stop cell: context menu"
+    },
     "full" : {
       "comment" : "JourneySettings: Accessiblity"
     },
@@ -277,7 +280,7 @@
       "comment" : "datePickerView: save button\nsettingsView: save button"
     },
     "Search" : {
-      "comment" : "search tip title\nTabItem"
+      "comment" : "TabItem\nsearch tip title"
     },
     "Search now" : {
       "comment" : "JourneyFollowView: listCell: swipe action item"
@@ -290,6 +293,12 @@
     },
     "Server response data nil" : {
       "comment" : "ApiError"
+    },
+    "Set as arrival" : {
+      "comment" : "NearestStopView: stop cell: context menu"
+    },
+    "Set as departure" : {
+      "comment" : "NearestStopView: stop cell: context menu"
     },
     "Show on map" : {
       "comment" : "JourneyFollowCellView: menu item\nLegDetailsView: menu item\nJourneyCell: menu item"
