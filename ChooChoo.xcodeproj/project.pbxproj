@@ -853,7 +853,6 @@
 				7DD5BADD2B728C6500CFE768 /* JourneySearch */,
 				7D6955222B58235800271F56 /* TopBarAlert */,
 				7DE727C72AD93874002FF033 /* JourneyFollow */,
-				7DCA4AE32BDA7F3F005BA68E /* ArrivalTrainTimeLabelView.swift */,
 			);
 			path = Feature;
 			sourceTree = "<group>";
@@ -1112,6 +1111,7 @@
 		7D72C9122BA889EF00D924A7 /* ArrivingTrainTime */ = {
 			isa = PBXGroup;
 			children = (
+				7DCA4AE32BDA7F3F005BA68E /* ArrivalTrainTimeLabelView.swift */,
 				7D72C9132BA88A2000D924A7 /* ArrivingTrainTimeVM.swift */,
 			);
 			path = ArrivingTrainTime;
