@@ -277,6 +277,31 @@ extension NearestStopView {
 					}
 				)
 			})
+			Button(action: {
+				Model.shared.locationDataManager.requestLocation()
+				if let coord = Model.shared.locationDataManager.location?.coordinate {
+					Model.shared.sheetVM.send(event: .didRequestShow(
+						.mapDetails(.footDirection(
+							LegViewData(footPathStops: DepartureArrivalPairStop(
+								departure: Stop(
+								 coordinates: Coordinate(coord),
+								 type: .location,
+								 stopDTO: nil
+							 ),
+							 arrival: stop
+						 ))))
+					))
+				}
+			}, label: {
+				Label(
+					title: {
+						Text("Foot path", comment: "NearestStopView: stop cell: context menu")
+					},
+					icon: {
+						Image(ChooSFSymbols.figureWalk)
+					}
+				)
+			})
 		}
 	}
 }

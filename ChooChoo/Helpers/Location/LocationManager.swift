@@ -8,6 +8,7 @@
 import Foundation
 import CoreLocation
 import OSLog
+import SwiftUI
 
 class ChewLocationDataManager : NSObject, ObservableObject {
 	private let locationManager = {
@@ -15,7 +16,6 @@ class ChewLocationDataManager : NSObject, ObservableObject {
 		manager.desiredAccuracy = kCLLocationAccuracyBest
 		manager.distanceFilter = 10
 		manager.headingOrientation = .portrait
-//		manager.activityType = .otherNavigation
 		return manager
 	}()
 	
@@ -28,12 +28,15 @@ class ChewLocationDataManager : NSObject, ObservableObject {
 	@Published var location: CLLocation?
 	@Published var accuracyAuthorization: CLAccuracyAuthorization?
 	
+	private var isFollowingLocation = false
+	
 	override init() {
 		super.init()
 		locationManager.delegate = self
 		location = locationManager.location
 		accuracyAuthorization = locationManager.accuracyAuthorization
 	}
+	
 	
 	func reverseGeocoding(coords : Coordinate) async -> String? {
 		if self.locationManager.location != nil,
@@ -49,10 +52,21 @@ extension ChewLocationDataManager {
 	func startUpdatingLocationAndHeading() {
 		locationManager.startUpdatingHeading()
 		locationManager.startUpdatingLocation()
+		isFollowingLocation = true
+	}
+	func requestLocation() -> Coordinate? {
+		Logger.locationManager.debug("didRequesLocation")
+		if isFollowingLocation,
+		   let coords = self.location?.coordinate {
+			return Coordinate(coords)
+		}
+		locationManager.requestLocation()
+		return nil
 	}
 	func stopUpdatingLocationAndHeading() {
 		locationManager.stopUpdatingLocation()
 		locationManager.stopUpdatingHeading()
+		isFollowingLocation = false
 	}
 }
 
@@ -85,6 +99,7 @@ extension ChewLocationDataManager : CLLocationManagerDelegate {
 	}
 	
 	func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+		Logger.locationManager.debug("didUpdateLocation")
 		self.location = locations.first
 	}
 	

@@ -15,21 +15,18 @@ extension ChewViewModel {
 			guard case .loadingLocation(let send) = state.status else {
 				return Empty().eraseToAnyPublisher()
 			}
-			
 			switch Model.shared.locationDataManager.authorizationStatus {
 			case .notDetermined,.restricted,.denied,.none:
 				Model.shared.topBarAlertVM.send(event: .didRequestShow(.userLocationError))
 				return Just(Event.didFailToLoadLocationData).eraseToAnyPublisher()
 			case .authorizedAlways,.authorizedWhenInUse:
-				guard let coords = Model.shared.locationDataManager.location?.coordinate else {
-					Model.shared.topBarAlertVM.send(event: .didRequestShow(.userLocationError))
-					return Just(Event.didFailToLoadLocationData).eraseToAnyPublisher()
-				}
-				Task {
-					await Self.reverseGeocoding(
-						coords : Coordinate(coords),
-						send:send
-					)
+				if let coords = Model.shared.locationDataManager.requestLocation() {
+					Task {
+						await Self.reverseGeocoding(
+							coords : coords,
+							send:send
+						)
+					}
 				}
 				return Empty().eraseToAnyPublisher()
 			@unknown default:
