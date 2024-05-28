@@ -111,17 +111,6 @@
         }
       }
     },
-    "Add" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Add"
-          }
-        }
-      }
-    },
     "all" : {
       "comment" : "JourneySettings: TransportMode",
       "localizations" : {
@@ -155,6 +144,17 @@
         }
       }
     },
+    "App needs your location to find nearby stops" : {
+      "comment" : "NSV: location denied",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Die App benötigt Ihren Standort, um Haltestellen in der Nähe zu finden"
+          }
+        }
+      }
+    },
     "App system settings" : {
       "comment" : "AppSettingsView",
       "localizations" : {
@@ -178,15 +178,7 @@
       }
     },
     "Bad server response (code)" : {
-      "comment" : "ApiError",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ungültige Serverantwort (Code)"
-          }
-        }
-      }
+      "comment" : "ApiError"
     },
     "Bad url" : {
       "comment" : "ApiError",
@@ -369,7 +361,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Direkte"
+            "value" : "Direkt"
           }
         }
       }
@@ -408,15 +400,7 @@
       }
     },
     "error: (msg)" : {
-      "comment" : "DataError",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Fehler: (msg)"
-          }
-        }
-      }
+      "comment" : "DataError"
     },
     "error: try reload" : {
       "comment" : "JourneyListView: error: failed to load laterRef rides",
@@ -458,17 +442,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Der Benutzerstandort konnte nicht ermittelt werden"
-          }
-        }
-      }
-    },
-    "fast" : {
-      "comment" : "JourneySettings: WalkingSpeed",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "schnell"
           }
         }
       }
@@ -703,27 +676,8 @@
         }
       }
     },
-    "moderate" : {
-      "comment" : "JourneySettings: WalkingSpeed",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "mittlere"
-          }
-        }
-      }
-    },
     "nil error: (type)" : {
-      "comment" : "DataError",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "nil error: (type)"
-          }
-        }
-      }
+      "comment" : "DataError"
     },
     "No stops found" : {
       "comment" : "NSV: nearest stops: emptyState",
@@ -731,7 +685,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "keine Haltestelle gefunden"
+            "value" : "Keine Haltestelle gefunden"
           }
         }
       }
@@ -748,7 +702,7 @@
       }
     },
     "now" : {
-      "comment" : "timeChoosingView: button on segmented picker\nDatePickerTimePresetButtons",
+      "comment" : "DatePickerTimePresetButtons\ntimeChoosingView: button on segmented picker",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -814,14 +768,7 @@
       }
     },
     "popopopo" : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "popopop"
-          }
-        }
-      }
+
     },
     "Precise location accuracy is needed to find nearby stops" : {
       "comment" : "NSV: location precise accuracy not allowed",
@@ -1021,22 +968,59 @@
       }
     },
     "Show on map" : {
-      "comment" : "JourneyFollowCellView: menu item\nLegDetailsView: menu item\nJourneyCell: menu item"
+      "comment" : "JourneyFollowCellView: menu item\nLegDetailsView: menu item\nJourneyCell: menu item",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Auf dem Map zeigen"
+          }
+        }
+      }
     },
     "Show whole route" : {
-      "comment" : "LegDetailsView: menu item"
-    },
-    "slow" : {
-      "comment" : "JourneySettings: WalkingSpeed"
+      "comment" : "LegDetailsView: menu item",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ganze Route anzeigen"
+          }
+        }
+      }
     },
     "Stop not found" : {
-      "comment" : "ApiError"
+      "comment" : "ApiError",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Haltestelle nicht gefunden"
+          }
+        }
+      }
     },
     "Stops Nearby" : {
-      "comment" : "NearestStopView: view name"
+      "comment" : "NearestStopView: view name",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Haltestellen in der Hähe"
+          }
+        }
+      }
     },
     "sunlight / moonlight color" : {
-      "comment" : "AppSettings: LegViewMode: description"
+      "comment" : "AppSettings: LegViewMode: description",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sonnenlicht / Monflichtfarbe"
+          }
+        }
+      }
     },
     "Swipe for action" : {
       "comment" : "SwipeActionsTip",
@@ -1044,7 +1028,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "wischen für Action"
+            "value" : "Wischen Sie für Action"
           }
         }
       }
@@ -1053,73 +1037,238 @@
       "comment" : "settingsView: section name"
     },
     "The entire route could not be loaded" : {
-      "comment" : "badge"
+      "comment" : "badge",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Die gesamte Route konnte nicht geladen werden"
+          }
+        }
+      }
     },
     "to %@" : {
-      "comment" : "BadgeView: legDirection"
+      "comment" : "BadgeView: legDirection",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "nach %@"
+          }
+        }
+      }
     },
     "Transfer" : {
-      "comment" : "SettingsView: transferSegment: section header"
+      "comment" : "SettingsView: transferSegment: section header",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Überweisung"
+          }
+        }
+      }
     },
     "transfer %@" : {
-      "comment" : "badge"
+      "comment" : "badge",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Überweisung %@"
+          }
+        }
+      }
     },
     "transport type color" : {
-      "comment" : "AppSettings: LegViewMode: description"
+      "comment" : "AppSettings: LegViewMode: description",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Farbe des Transporttyps"
+          }
+        }
+      }
     },
     "Transport types" : {
-      "comment" : "SettingsView: transportTypes: section header"
+      "comment" : "SettingsView: transportTypes: section header",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Transporttyps"
+          }
+        }
+      }
     },
     "Try repeat" : {
-      "comment" : "JDV: reload error: action description"
+      "comment" : "JDV: reload error: action description",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wiederholen"
+          }
+        }
+      }
     },
     "unable to update" : {
-      "comment" : "badge"
+      "comment" : "badge",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aktualisierung nicht möglich"
+          }
+        }
+      }
     },
     "unfollow" : {
-      "comment" : "JourneyFollowViewModel.Action"
+      "comment" : "JourneyFollowViewModel.Action",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "nicht folgen"
+          }
+        }
+      }
     },
     "Unfollow" : {
-      "comment" : "JourneyFollowView: listCell: swipe action item\nalert: actionDescription"
+      "comment" : "JourneyFollowView: listCell: swipe action item\nalert: actionDescription",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nicht folgen"
+          }
+        }
+      }
     },
     "Unfollow journey?" : {
-      "comment" : "alert: description"
+      "comment" : "alert: description",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reise nicht folgen?"
+          }
+        }
+      }
     },
     "Unknown hafas error" : {
-      "comment" : "ApiError"
+      "comment" : "ApiError",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unbekannt hafas error"
+          }
+        }
+      }
     },
     "unlimited" : {
-      "comment" : "JourneySettings: TransferCountCases"
+      "comment" : "JourneySettings: TransferCountCases",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "unbegrenzt"
+          }
+        }
+      }
     },
     "updated %@ ago" : {
-      "comment" : "badge"
+      "comment" : "badge",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "aktualisiert vor %@"
+          }
+        }
+      }
     },
     "updated now" : {
-      "comment" : "badge: updated at"
+      "comment" : "badge: updated at",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "jetzt aktualisiert"
+          }
+        }
+      }
     },
     "validation error: (msg)" : {
       "comment" : "DataError"
     },
     "walk %lld min" : {
-      "comment" : "badge: walking"
-    },
-    "We need location to find nearby stops" : {
-      "comment" : "NSV: location denied"
+      "comment" : "badge: walking",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@Min. zu Fuß"
+          }
+        }
+      }
     },
     "What does this colorful line mean?" : {
-      "comment" : "jlv: header info: sunevents"
+      "comment" : "jlv: header info: sunevents",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Was bedeutet diese bunte Linie?"
+          }
+        }
+      }
     },
     "With bicycle" : {
-      "comment" : "Settings"
+      "comment" : "Settings",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mit Fahrrad"
+          }
+        }
+      }
     },
     "With transfers" : {
-      "comment" : "SettingsView: connections: picker option"
+      "comment" : "SettingsView: connections: picker option",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mit Überweisungen"
+          }
+        }
+      }
     },
     "You have no followed journeys" : {
-      "comment" : "JourneyFollowView: empty view: msg"
+      "comment" : "JourneyFollowView: empty view: msg",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sie haben keine verfolgten Reisen"
+          }
+        }
+      }
     },
     "Your followed journeys always appear on follow page." : {
-      "comment" : "tip: follow journey: title"
+      "comment" : "tip: follow journey: title",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ihre verfolgten Reisen werden immer auf der Folgeseite angezeigt."
+          }
+        }
+      }
     }
   },
   "version" : "1.0"
