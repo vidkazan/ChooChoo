@@ -158,7 +158,7 @@ enum Badges : Identifiable,Hashable {
 		case .routeError:
 			return BadgeData(
 				Text(
-					"Failed to load full leg",
+					"The entire route could not be loaded",
 					comment: "badge"
 				)
 			)
@@ -172,7 +172,7 @@ enum Badges : Identifiable,Hashable {
 		case .locationError:
 			return BadgeData(
 				Text(
-					"Failed to get Location",
+					"Failed to get location",
 					comment: "badge"
 				)
 			)
