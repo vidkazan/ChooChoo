@@ -155,6 +155,17 @@
         }
       }
     },
+    "App Settings" : {
+      "comment" : "SheetViewModel: SheetType",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "App Einstellungen"
+          }
+        }
+      }
+    },
     "App system settings" : {
       "comment" : "AppSettingsView",
       "localizations" : {
@@ -319,6 +330,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "ÖPNV"
+          }
+        }
+      }
+    },
+    "Date" : {
+      "comment" : "SheetViewModel: SheetType",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Datum"
           }
         }
       }
@@ -545,6 +567,17 @@
         }
       }
     },
+    "Journey Debug" : {
+      "comment" : "SheetViewModel: SheetType",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Journey Debug"
+          }
+        }
+      }
+    },
     "Journey details" : {
       "comment" : "navigationBarTitle",
       "localizations" : {
@@ -578,6 +611,17 @@
         }
       }
     },
+    "Journey Settings" : {
+      "comment" : "SheetViewModel: SheetType",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reiseeinstellungen"
+          }
+        }
+      }
+    },
     "Logs" : {
       "localizations" : {
         "de" : {
@@ -606,6 +650,28 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "das Map"
+          }
+        }
+      }
+    },
+    "Map Details" : {
+      "comment" : "SheetViewModel: SheetType",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kartendetails"
+          }
+        }
+      }
+    },
+    "Map picker" : {
+      "comment" : "SheetViewModel: SheetType",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kartenauswahl"
           }
         }
       }
@@ -702,7 +768,7 @@
       }
     },
     "now" : {
-      "comment" : "DatePickerTimePresetButtons\ntimeChoosingView: button on segmented picker",
+      "comment" : "timeChoosingView: button on segmented picker\nDatePickerTimePresetButtons",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -719,6 +785,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Offline"
+          }
+        }
+      }
+    },
+    "Onboarding" : {
+      "comment" : "SheetViewModel: SheetType",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Onboarding"
           }
         }
       }
@@ -825,6 +902,17 @@
         }
       }
     },
+    "Remarks" : {
+      "comment" : "SheetViewModel: SheetType",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bemerkungen"
+          }
+        }
+      }
+    },
     "Request rate exceeded" : {
       "comment" : "ApiError",
       "localizations" : {
@@ -879,8 +967,19 @@
         }
       }
     },
+    "Route" : {
+      "comment" : "SheetViewModel: SheetType",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Route"
+          }
+        }
+      }
+    },
     "Save" : {
-      "comment" : "datePickerView: save button\nsettingsView: save button",
+      "comment" : "settingsView: save button\ndatePickerView: save button",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -1034,7 +1133,15 @@
       }
     },
     "Tap to change route cell appearance" : {
-      "comment" : "settingsView: section name"
+      "comment" : "settingsView: section name",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tippen Sie hier, um das Erscheinungsbild der Routenzelle zu ändern"
+          }
+        }
+      }
     },
     "The entire route could not be loaded" : {
       "comment" : "badge",
@@ -1043,6 +1150,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Die gesamte Route konnte nicht geladen werden"
+          }
+        }
+      }
+    },
+    "Tip" : {
+      "comment" : "SheetViewModel: SheetType",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tip"
           }
         }
       }
