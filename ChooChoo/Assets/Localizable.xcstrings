@@ -990,7 +990,7 @@
       }
     },
     "Search" : {
-      "comment" : "TabItem\nsearch tip title",
+      "comment" : "search tip title\nTabItem",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -1328,7 +1328,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "%@Min. zu Fuß"
+            "value" : "%lldMin. zu Fuß"
           }
         }
       }
