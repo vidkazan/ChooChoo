@@ -12,7 +12,9 @@ import OSLog
 final class Model {
 	static let shared = Model()
 	static let preview = Model(
-		coreDataStore: CoreDataStore(container: PersistenceController.preview.container)
+		coreDataStore: CoreDataStore(
+			container: PersistenceController.preview.container
+		)
 	)
 	
 	private var _journeyDetailsViewModels = [String: JourneyDetailsViewModel]()
@@ -53,20 +55,6 @@ final class Model {
 		self.locationDataManager = locationDataManager
 		self.appSettingsVM = appSettingsVM
 		self.logVM = logVM
-	}
-	
-	init() {
-		self.searchStopsVM = .init()
-		self.topBarAlertVM = .init()
-		self.sheetVM = .init()
-		self.journeyFollowVM = .init(journeys: [])
-		self.recentSearchesVM = .init(searches: [])
-		self.alertVM = .init()
-		self.coreDataStore = .init()
-		self.locationDataManager = .init()
-		self.appSettingsVM = .init()
-		self.logVM = .init()
-		self.chewVM = .init()
 	}
 }
 

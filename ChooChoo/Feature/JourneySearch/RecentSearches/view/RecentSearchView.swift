@@ -51,32 +51,11 @@ struct RecentSearchesView : View {
 	}
 }
 
-private func geenrateRecentSearches(count : Int) -> [RecentSearchesViewModel.RecentSearch] {
-	var res = [RecentSearchesViewModel.RecentSearch]()
-	for _ in 0..<count {
-		let nums = (String(Int.random(in: 0...1000)),String(Int.random(in: 0...1000)))
-		res.append(.init(
-			depStop: Stop(
-			 coordinates: .init(latitude: 0, longitude: 0),
-			 type: .location,
-			 stopDTO: .init(type: nil, id: nums.0, name: nums.0, address: nil, location: nil, latitude: nil, longitude: nil, poi: nil, products: nil, distance: nil, station: nil)
-		 ),
-		 arrStop: Stop(
-			 coordinates: .init(latitude: 0, longitude: 0),
-			 type: .pointOfInterest,
-			 stopDTO: .init(type: nil, id: nums.1, name: nums.1, address: nil, location: nil, latitude: nil, longitude: nil, poi: nil, products: nil, distance: nil, station: nil)
-		 ),
-			searchTS: Date.now.timeIntervalSince1970
-	 ))
-	}
-	return res
-}
-
 #if DEBUG
 struct RecentSearchView_Previews: PreviewProvider {
 	static var previews: some View {
 		let chewVM = ChewViewModel()
-		let recentSearchViewModel = RecentSearchesViewModel(searches: geenrateRecentSearches(count: 1000))
+		let recentSearchViewModel = RecentSearchesViewModel(searches: geenrateRecentSearches(count: 10))
 		VStack {
 			RecentSearchesView(recentSearchesVM: recentSearchViewModel)
 				.environmentObject(chewVM)
@@ -89,3 +68,61 @@ struct RecentSearchView_Previews: PreviewProvider {
 	}
 }
 #endif
+
+private func geenrateRecentSearches(count : Int) -> [RecentSearchesViewModel.RecentSearch] {
+	var res = [RecentSearchesViewModel.RecentSearch]()
+	for _ in 0..<count {
+		let nums = (String(Int.random(in: 0...1000)),String(Int.random(in: 0...1000)))
+		res.append(.init(
+			depStop: Stop(
+			 coordinates: .init(latitude: 0, longitude: 0),
+			 type: .stop,
+			 stopDTO: .init(
+				type: nil,
+				id: nums.0,
+				name: nums.0,
+				address: nil,
+				location: nil,
+				latitude: nil,
+				longitude: nil,
+				poi: Bool.random(),
+				products: .init(
+					regional: Bool.random(),
+					suburban: Bool.random(),
+					bus: Bool.random(),
+					subway: Bool.random(),
+					tram: Bool.random()
+				),
+				distance: nil,
+				station: nil
+			 )
+		 ),
+		 arrStop: Stop(
+			coordinates: .init(latitude: 0, longitude: 0),
+			type: .stop,
+			stopDTO: .init(
+				type: nil,
+			   id: nums.1,
+			   name: nums.1,
+			   address: nil,
+			   location: nil,
+			   latitude: nil,
+			   longitude: nil,
+				poi: Bool.random(),
+				products: .init(
+					nationalExpress: Bool.random(),
+					national: Bool.random(),
+					regionalExpress: Bool.random(),
+					regional: Bool.random(),
+					suburban: Bool.random(),
+					subway: Bool.random()
+				),
+				distance: nil,
+			   station: nil
+			)
+		 ),
+			searchTS: Date.now.timeIntervalSince1970
+	 ))
+	}
+	return res
+}
