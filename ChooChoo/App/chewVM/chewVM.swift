@@ -13,6 +13,7 @@ import CoreData
 
 final class ChewViewModel : ChewViewModelProtocol {
 	let referenceDate : ChewDate
+	
 	@Published private(set) var state : State {
 		didSet {
 			Self.log(state.status)
@@ -23,11 +24,11 @@ final class ChewViewModel : ChewViewModelProtocol {
 	
 	init (
 		initialState : State = State(),
-		referenceDate : ChewDate = .now
+		referenceDate : ChewDate = .now,
+		coreDataStore : CoreDataStore
 	) {
-		self.state = initialState
+		self.state = initialState	
 		self.referenceDate = referenceDate
-		
 		Publishers.system(
 			initial: state,
 			reduce: Self.reduce,
@@ -36,7 +37,7 @@ final class ChewViewModel : ChewViewModelProtocol {
 				Self.userInput(input: input.eraseToAnyPublisher()),
 				Self.whenIdleCheckForSufficientDataForJourneyRequest(),
 				Self.whenLoadingUserLocation(),
-				Self.whenLoadingInitialData(),
+				Self.whenLoadingInitialData(coreDataStore: coreDataStore),
 				Self.whenEditingStops()
 			]
 		)

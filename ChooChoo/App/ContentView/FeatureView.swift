@@ -65,11 +65,6 @@ struct FeatureView: View {
 				}
 					.tabItem { tabFollowLabel }
 					.tag(Tabs.follow)
-//				NavigationStack {
-//					AppSettingsView()
-//				}
-//					.tabItem { tabAppSettingsLabel }
-//					.tag(Tabs.appSettings)
 			} else {
 				NavigationView {
 					JourneySearchView()
@@ -81,11 +76,6 @@ struct FeatureView: View {
 				}
 					.tabItem { tabFollowLabel }
 					.tag(Tabs.follow)
-//				NavigationView {
-//					AppSettingsView()
-//				}
-//					.tabItem { tabAppSettingsLabel }
-//					.tag(Tabs.appSettings)
 			}
 		}
 		.onReceive(chewViewModel.$state, perform: { state in

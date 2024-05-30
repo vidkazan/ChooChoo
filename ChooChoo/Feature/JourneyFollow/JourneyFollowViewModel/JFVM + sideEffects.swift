@@ -15,7 +15,7 @@ extension JourneyFollowViewModel {
 		}
 	}
 	
-	static func whenUpdatingJourney() -> Feedback<State, Event> {
+	static func whenUpdatingJourney(coreDataStore : CoreDataStore) -> Feedback<State, Event> {
 		Feedback { (state: State) -> AnyPublisher<Event, Never> in
 			guard case let .updatingJourney(viewData, followId) = state.status else {
 				return Empty().eraseToAnyPublisher()
@@ -30,7 +30,7 @@ extension JourneyFollowViewModel {
 			}
 			
 			let oldViewData = followData[index]
-			guard Model.shared.coreDataStore.updateJourney(
+			guard coreDataStore.updateJourney(
 				id: followId,
 				viewData: viewData,
 				stops: oldViewData.stops
@@ -52,7 +52,7 @@ extension JourneyFollowViewModel {
 		}
 	}
 	
-	static func whenEditing() -> Feedback<State, Event> {
+	static func whenEditing(coreDataStore : CoreDataStore) -> Feedback<State, Event> {
 		Feedback {  (state: State) -> AnyPublisher<Event, Never> in
 			guard case let .editing(action,followId, viewData,send) = state.status else {
 				return Empty().eraseToAnyPublisher()
@@ -78,7 +78,7 @@ extension JourneyFollowViewModel {
 					)).eraseToAnyPublisher()
 				}
 				guard
-					Model.shared.coreDataStore.addJourney(
+					coreDataStore.addJourney(
 						id : viewData.id,
 						viewData: viewData.journeyViewData,
 						stops: viewData.stops
@@ -104,7 +104,7 @@ extension JourneyFollowViewModel {
 						error: Error.notFoundInFollowList("not found in follow list to delete")
 					)).eraseToAnyPublisher()
 				}
-				guard Model.shared.coreDataStore.deleteJourneyIfFound(id: followId) == true else {
+				guard coreDataStore.deleteJourneyIfFound(id: followId) == true else {
 					send(.didFailToChangeSubscribingState(error: CoreDataError.failedToDelete(type: CDJourney.self)))
 					return Just(Event.didFailToEdit(
 						action: action,

@@ -18,8 +18,11 @@ class AppSettingsViewModel : ChewViewModelProtocol {
 	private var bag = Set<AnyCancellable>()
 	private let input = PassthroughSubject<Event,Never>()
 	
-	
-	init(settings : AppSettings = AppSettings(),status : Status = .idle) {
+	init(
+		settings : AppSettings = AppSettings(),
+		status : Status = .idle,
+		coreDataStore : CoreDataStore
+	) {
 		self.state = State(settings: settings,status: status)
 		Publishers.system(
 			initial: State(settings: settings,status: status),
@@ -27,7 +30,7 @@ class AppSettingsViewModel : ChewViewModelProtocol {
 			scheduler: RunLoop.main,
 			feedbacks: [
 				Self.userInput(input: input.eraseToAnyPublisher()),
-				Self.whenUpdatedSettings()
+				Self.whenUpdatedSettings(coreDataStore: coreDataStore)
 			]
 		)
 		.weakAssign(to: \.state, on: self)
@@ -74,6 +77,7 @@ extension AppSettingsViewModel  {
 		case didRequestToShowTip(tip : ChooTip.TipType)
 		case didRequestToChangeLegViewMode(mode : AppSettings.LegViewMode)
 		case didUpdateData
+		
 		var description : String {
 			switch self {
 			case .didRequestToShowTip:
@@ -154,12 +158,12 @@ extension AppSettingsViewModel {
 		}
 	}
 		
-	static func whenUpdatedSettings() -> Feedback<State, Event> {
+	static func whenUpdatedSettings(coreDataStore : CoreDataStore) -> Feedback<State, Event> {
 		Feedback { (state: State) -> AnyPublisher<Event, Never> in
 			guard case .updating = state.status else {
 				return Empty().eraseToAnyPublisher()
 			}
-			Model.shared.coreDataStore.updateAppSettings(
+			coreDataStore.updateAppSettings(
 				newSettings: state.settings
 			)
 			return Just(Event.didUpdateData).eraseToAnyPublisher()

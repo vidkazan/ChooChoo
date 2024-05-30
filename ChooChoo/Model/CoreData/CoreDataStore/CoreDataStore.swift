@@ -4,7 +4,6 @@
 //
 //  Created by Dmitrii Grigorev on 07.01.24.
 //
-
 import Foundation
 import CoreData
 import CoreLocation
@@ -12,6 +11,8 @@ import OSLog
 
 
 final class CoreDataStore : ObservableObject {
+	static let preview : CoreDataStore = CoreDataStore(container: PersistenceController.preview.container)
+	
 	var asyncContext: NSManagedObjectContext
 	var user : CDUser? = nil
 
