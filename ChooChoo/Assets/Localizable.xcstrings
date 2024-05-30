@@ -42,6 +42,9 @@
     "Active" : {
       "comment" : "JourneyFollowView: section name"
     },
+    "Add" : {
+
+    },
     "all" : {
       "comment" : "JourneySettings: TransportMode"
     },
@@ -120,12 +123,6 @@
     "Duration" : {
       "comment" : "SettingsView: transferSegment: picker name"
     },
-    "earlier route arrival time is later than later route departure" : {
-      "comment" : "DataError: validationError"
-    },
-    "earlier route destination stop and later origin stop sre not the same" : {
-      "comment" : "DataError: validationError"
-    },
     "error: (msg)" : {
       "comment" : "DataError"
     },
@@ -170,9 +167,6 @@
     },
     "in 15 min" : {
       "comment" : "DatePickerTimePresetButtons"
-    },
-    "Journey appearance" : {
-      "comment" : "settingsView: section name"
     },
     "Journey debug" : {
       "comment" : "JourneyFollowCellView: menu item\nJourneyCell: menu item"
@@ -280,7 +274,7 @@
       "comment" : "datePickerView: save button\nsettingsView: save button"
     },
     "Search" : {
-      "comment" : "TabItem\nsearch tip title"
+      "comment" : "search tip title\nTabItem"
     },
     "Search now" : {
       "comment" : "JourneyFollowView: listCell: swipe action item"
@@ -320,6 +314,9 @@
     },
     "Swipe for action" : {
       "comment" : "SwipeActionsTip"
+    },
+    "Tap to change route cell appearance" : {
+      "comment" : "settingsView: section name"
     },
     "to %@" : {
       "comment" : "BadgeView: legDirection"
