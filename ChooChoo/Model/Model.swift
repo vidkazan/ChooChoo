@@ -13,17 +13,17 @@ final class Model {
 	static let shared = {
 		let coredata = CoreDataStore(container: PersistenceController.shared.container)
 		return Model(
-			chewVM: ChewViewModel(coreDataStore: coredata),
 			coreDataStore: coredata,
-			recentSearchesViewModel: RecentSearchesViewModel(searches: [], coreDataStore: coredata)
+			recentSearchesViewModel: RecentSearchesViewModel(searches: [], coreDataStore: coredata),
+			appSettingsVM: AppSettingsViewModel(coreDataStore: coredata)
 		)
 	}()
 	static let preview = {
 		let coredata = CoreDataStore(container: PersistenceController.preview.container)
 		return Model(
-			chewVM: ChewViewModel(coreDataStore: coredata),
 			coreDataStore: coredata,
-			recentSearchesViewModel: RecentSearchesViewModel(searches: [], coreDataStore: coredata)
+			recentSearchesViewModel: RecentSearchesViewModel(searches: [], coreDataStore: coredata),
+			appSettingsVM: AppSettingsViewModel(coreDataStore: coredata)
 		)
 	}()
 	
@@ -31,7 +31,7 @@ final class Model {
 	
 	
 	let locationDataManager : ChewLocationDataManager
-	let chewVM : ChewViewModel
+
 	let sheetVM : SheetViewModel
 	let logVM : LogViewModel
 	let topBarAlertVM : TopBarAlertViewModel
@@ -43,7 +43,6 @@ final class Model {
 	let appSettingsVM : AppSettingsViewModel
 	
 	init(
-		chewVM : ChewViewModel,
 		sheetVM : SheetViewModel = .init(),
 		alertVM : TopBarAlertViewModel = .init(),
 		searchStopsVM : SearchStopsViewModel = .init(),
@@ -51,10 +50,9 @@ final class Model {
 		coreDataStore : CoreDataStore,
 		recentSearchesViewModel : RecentSearchesViewModel,
 		locationDataManager : ChewLocationDataManager = .init(),
-		appSettingsVM : AppSettingsViewModel = .init(),
+		appSettingsVM : AppSettingsViewModel,
 		logVM : LogViewModel = .init()
 	) {
-		self.chewVM = chewVM
 		self.searchStopsVM = searchStopsVM
 		self.topBarAlertVM = alertVM
 		self.sheetVM = sheetVM

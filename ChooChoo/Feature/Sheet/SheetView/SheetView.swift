@@ -85,7 +85,7 @@ struct SheetViewInner : View {
 	var body: some View {
 		switch type {
 		case .appSettings:
-			AppSettingsView()
+			AppSettingsView(appSetttingsVM: Model.shared.appSettingsVM)
 		case .tip(let tipType):
 			tipType.tipView
 		case .journeySettings:

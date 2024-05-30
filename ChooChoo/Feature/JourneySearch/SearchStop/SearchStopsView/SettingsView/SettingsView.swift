@@ -100,27 +100,6 @@ struct SettingsView: View {
 	}
 }
 
-struct LegViewSettingsView : View {
-	let mode : AppSettings.LegViewMode
-	let mock = Mock.journeys.journeyNeussWolfsburg.decodedData?.journey.journeyViewData(depStop: nil, arrStop: nil, realtimeDataUpdatedAt: 0,settings: .init())
-	var body: some View {
-		if let mock = mock {
-			VStack(alignment: .leading, spacing: 0) {
-				LegsView(
-					journey: mock,
-					mode: mode,
-					showLabels: false
-				)
-				ForEach(mode.description,id:\.hashValue, content: {
-					Text(verbatim: "• " + $0)
-						.font(.system(.footnote))
-						.tint(.secondary)
-				})
-			}
-		}
-	}
-}
-
 extension SettingsView {
 	@ViewBuilder func filterDisclaimer() -> some View {
 		if !currentSettings.isDefault() {
