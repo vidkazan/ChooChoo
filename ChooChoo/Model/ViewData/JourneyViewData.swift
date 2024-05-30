@@ -126,6 +126,7 @@ extension MultiJourneyViewData {
 	func mergeLegs(lhs: [LegViewData], rhs : [LegViewData]) throws -> [LegViewData] {
 		 throw DataError.generic(msg: "not implemented")
 	}
+	
 }
 
 struct JourneyViewData : Identifiable, Hashable {
