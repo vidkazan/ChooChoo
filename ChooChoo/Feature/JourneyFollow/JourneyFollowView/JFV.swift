@@ -326,7 +326,7 @@ struct FollowPreviews: PreviewProvider {
 				},
 				initialStatus: .idle
 			))
-			.environmentObject(ChewViewModel(referenceDate: .specificDate(data.last?.time.timestamp.departure.actualOrPlannedIfActualIsNil() ?? 0)))
+			.environmentObject(ChewViewModel(referenceDate: .specificDate(data.last?.time.timestamp.departure.actualOrPlannedIfActualIsNil() ?? 0),coreDataStore: .preview))
 		}
 	}
 }

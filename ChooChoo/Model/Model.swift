@@ -10,12 +10,22 @@ import SwiftUI
 import OSLog
 
 final class Model {
-	static let shared = Model()
-	static let preview = Model(
-		coreDataStore: CoreDataStore(
-			container: PersistenceController.preview.container
+	static let shared = {
+		let coredata = CoreDataStore(container: PersistenceController.shared.container)
+		return Model(
+			chewVM: ChewViewModel(coreDataStore: coredata),
+			coreDataStore: coredata,
+			recentSearchesViewModel: RecentSearchesViewModel(searches: [], coreDataStore: coredata)
 		)
-	)
+	}()
+	static let preview = {
+		let coredata = CoreDataStore(container: PersistenceController.preview.container)
+		return Model(
+			chewVM: ChewViewModel(coreDataStore: coredata),
+			coreDataStore: coredata,
+			recentSearchesViewModel: RecentSearchesViewModel(searches: [], coreDataStore: coredata)
+		)
+	}()
 	
 	private var _journeyDetailsViewModels = [String: JourneyDetailsViewModel]()
 	
@@ -33,13 +43,13 @@ final class Model {
 	let appSettingsVM : AppSettingsViewModel
 	
 	init(
-		chewVM : ChewViewModel = .init(),
+		chewVM : ChewViewModel,
 		sheetVM : SheetViewModel = .init(),
 		alertVM : TopBarAlertViewModel = .init(),
 		searchStopsVM : SearchStopsViewModel = .init(),
 		journeyFollowViewModel : JourneyFollowViewModel = .init(journeys: []),
-		recentSearchesViewModel : RecentSearchesViewModel = .init(searches: []),
-		coreDataStore : CoreDataStore = .init(),
+		coreDataStore : CoreDataStore,
+		recentSearchesViewModel : RecentSearchesViewModel,
 		locationDataManager : ChewLocationDataManager = .init(),
 		appSettingsVM : AppSettingsViewModel = .init(),
 		logVM : LogViewModel = .init()

@@ -54,7 +54,7 @@ struct TimeAndSettingsPreview : PreviewProvider {
 	static var previews: some View {
 		TimeAndSettingsView()
 			.padding(10)
-			.environmentObject(ChewViewModel(referenceDate: .now))
+			.environmentObject(ChewViewModel(referenceDate: .now,coreDataStore: .preview))
 			.background(Color.chewFillPrimary)
 	}
 }

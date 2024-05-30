@@ -11,7 +11,7 @@ import TipKit
 
 @main
 struct ChooChooApp: App {
-	var chewViewModel = ChewViewModel(referenceDate: .now)
+	var chewViewModel = ChewViewModel(referenceDate: .now, coreDataStore: Model.shared.coreDataStore)
 	
 	var body: some Scene {
 		WindowGroup {

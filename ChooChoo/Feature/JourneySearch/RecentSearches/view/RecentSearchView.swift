@@ -54,8 +54,8 @@ struct RecentSearchesView : View {
 #if DEBUG
 struct RecentSearchView_Previews: PreviewProvider {
 	static var previews: some View {
-		let chewVM = ChewViewModel()
-		let recentSearchViewModel = RecentSearchesViewModel(searches: geenrateRecentSearches(count: 10))
+		let chewVM = ChewViewModel(coreDataStore: .preview)
+		let recentSearchViewModel = RecentSearchesViewModel(searches: geenrateRecentSearches(count: 0),coreDataStore: .preview)
 		VStack {
 			RecentSearchesView(recentSearchesVM: recentSearchViewModel)
 				.environmentObject(chewVM)
@@ -64,6 +64,13 @@ struct RecentSearchView_Previews: PreviewProvider {
 					event: .didTapEdit(action: .adding, search: geenrateRecentSearches(count: 1).first)
 				)
 			})
+			.buttonStyle(.bordered)
+		}
+		.onAppear {
+			chewVM.send(event: .didStartViewAppear)
+			recentSearchViewModel.send(
+				event: .didTapEdit(action: .adding, search: geenrateRecentSearches(count: 1).first)
+			)
 		}
 	}
 }

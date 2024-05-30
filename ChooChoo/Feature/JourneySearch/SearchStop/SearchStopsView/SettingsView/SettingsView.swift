@@ -168,7 +168,7 @@ struct SettingsPreview: PreviewProvider {
 			settings: .init(),
 			closeSheet: {}
 		)
-			.environmentObject(ChewViewModel(referenceDate: .now))
+		.environmentObject(ChewViewModel(referenceDate: .now,coreDataStore: .preview))
 	}
 }
 #endif
