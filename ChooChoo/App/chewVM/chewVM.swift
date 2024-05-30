@@ -12,7 +12,6 @@ import CoreLocation
 import CoreData
 
 final class ChewViewModel : ChewViewModelProtocol {
-	private let coreDataStore : CoreDataStore
 	let referenceDate : ChewDate
 	
 	@Published private(set) var state : State {
@@ -30,7 +29,6 @@ final class ChewViewModel : ChewViewModelProtocol {
 	) {
 		self.state = initialState	
 		self.referenceDate = referenceDate
-		self.coreDataStore = coreDataStore
 		Publishers.system(
 			initial: state,
 			reduce: Self.reduce,

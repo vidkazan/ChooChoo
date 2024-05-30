@@ -162,9 +162,9 @@ extension AppSettingsViewModel {
 			guard case .updating = state.status else {
 				return Empty().eraseToAnyPublisher()
 			}
-//			coreDataStore.updateAppSettings(
-//				newSettings: state.settings
-//			)
+			coreDataStore.updateAppSettings(
+				newSettings: state.settings
+			)
 			return Just(Event.didUpdateData).eraseToAnyPublisher()
 		}
 	}
