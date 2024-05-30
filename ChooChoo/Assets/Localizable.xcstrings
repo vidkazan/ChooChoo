@@ -21,7 +21,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "**die Blaue** Farbe - **das Mondlicht**"
+            "value" : "**Blaue** Farbe - das **Mondlicht**"
           }
         }
       }
@@ -43,7 +43,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "**die Gelbe** Farbe zeigt **das Tageslicht**,"
+            "value" : "**Gelbe** Farbe zeigt das **Tageslicht**,"
           }
         }
       }
@@ -194,7 +194,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Schlechte Suchanfrage"
+            "value" : "Falsche Suchanfrage"
           }
         }
       }
@@ -208,7 +208,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Schlechte URL"
+            "value" : "Bad URL"
           }
         }
       }
@@ -394,7 +394,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Standortbestimmung"
+            "value" : " Standortbestimmung"
           }
         }
       }
@@ -432,16 +432,8 @@
         }
       }
     },
-    "earlier route destination stop and later origin stop sre not the same" : {
-      "comment" : "DataError: validationError",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Frühere Zielhaltestelle der Route und spätere Ursprungshaltestelle sind nicht identisch"
-          }
-        }
-      }
+    "earlier route destination stop and later origin stop are not the same" : {
+      "comment" : "DataError: validationError"
     },
     "error: (msg)" : {
       "comment" : "DataError"
@@ -551,18 +543,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "volle"
-          }
-        }
-      }
-    },
-    "If you want to update your search, simply press here" : {
-      "comment" : "tip: now button: text",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Klicken Sie einfach hier, wenn Sie Ihre Suche aktualisieren möchten"
+            "value" : "voll"
           }
         }
       }
@@ -671,7 +652,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "geringe Standortgenauigkeit"
+            "value" : "Geringe Standortgenauigkeit"
           }
         }
       }
@@ -688,26 +669,10 @@
       }
     },
     "Map Details" : {
-      "comment" : "SheetViewModel: SheetType",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Map details"
-          }
-        }
-      }
+      "comment" : "SheetViewModel: SheetType"
     },
     "Map picker" : {
-      "comment" : "SheetViewModel: SheetType",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Map picker"
-          }
-        }
-      }
+      "comment" : "SheetViewModel: SheetType"
     },
     "max 1" : {
       "comment" : "JourneySettings: TransferCountCases",
@@ -765,15 +730,7 @@
       }
     },
     "min (self.rawValue) minutes" : {
-      "comment" : "JourneySettings: TransferDurationCases",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "min (self.rawValue) minuten"
-          }
-        }
-      }
+      "comment" : "JourneySettings: TransferDurationCases"
     },
     "nil error: (type)" : {
       "comment" : "DataError"
@@ -795,13 +752,13 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "verbindung fällt aus"
+            "value" : "Verbindung fällt aus"
           }
         }
       }
     },
     "now" : {
-      "comment" : "DatePickerTimePresetButtons\ntimeChoosingView: button on segmented picker",
+      "comment" : "timeChoosingView: button on segmented picker\nDatePickerTimePresetButtons",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -839,7 +796,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Zukuntige"
+            "value" : "Zuküntige"
           }
         }
       }
@@ -886,7 +843,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Die App benötigt eine genaue Standortgenauigkeit \num Haltestellen in der Nähe zu finden"
+            "value" : "Die App benötigt eine genaue Standort \num Haltestellen in der Nähe zu finden"
           }
         }
       }
@@ -947,15 +904,7 @@
       }
     },
     "Request rate exceeded" : {
-      "comment" : "ApiError",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Anforderungsrate überschritten"
-          }
-        }
-      }
+      "comment" : "ApiError"
     },
     "Reset" : {
       "comment" : "alert: actionDescription",
@@ -1012,7 +961,7 @@
       }
     },
     "Save" : {
-      "comment" : "settingsView: save button\ndatePickerView: save button",
+      "comment" : "datePickerView: save button\nsettingsView: save button",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -1044,38 +993,11 @@
         }
       }
     },
-    "Search update" : {
-      "comment" : "tip: now button: title",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Aktualisierung der Suche"
-          }
-        }
-      }
-    },
     "Server response data decoding" : {
-      "comment" : "ApiError",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Server response data decoding"
-          }
-        }
-      }
+      "comment" : "ApiError"
     },
     "Server response data nil" : {
-      "comment" : "ApiError",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Server response data nil"
-          }
-        }
-      }
+      "comment" : "ApiError"
     },
     "Set as arrival" : {
       "comment" : "NearestStopView: stop cell: context menu",
@@ -1083,7 +1005,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "als Ankunft festlegen"
+            "value" : "Als Ankunft festlegen"
           }
         }
       }
@@ -1094,7 +1016,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "als Abfahrt festlegen"
+            "value" : "Als Abfahrt festlegen"
           }
         }
       }
@@ -1248,7 +1170,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Farbe des Transporttyps"
+            "value" : "Farbe des Verkehrsmittels"
           }
         }
       }
@@ -1259,7 +1181,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Transporttyps"
+            "value" : "Verkehrsmittel"
           }
         }
       }
@@ -1281,7 +1203,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Aktualisierung nicht möglich"
+            "value" : "Update nicht möglich"
           }
         }
       }
@@ -1314,7 +1236,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Reise nicht folgen?"
+            "value" : "Wollen Sie die Reise enfolgen?"
           }
         }
       }
@@ -1358,7 +1280,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "jetzt aktualisiert"
+            "value" : "gerade aktualisiert"
           }
         }
       }
@@ -1422,7 +1344,15 @@
       }
     },
     "Your followed journeys appear on follow page." : {
-      "comment" : "tip: follow journey: title"
+      "comment" : "tip: follow journey: title",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ihre verfolgten Reisen werden auf der Folgeseite angezeigt"
+          }
+        }
+      }
     }
   },
   "version" : "1.0"
