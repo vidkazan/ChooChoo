@@ -24,6 +24,7 @@ final class CoreDataStore : ObservableObject {
 
 extension CoreDataStore {
 	func saveAsyncContext(){
+		guard asyncContext.hasChanges else { return }
 		do {
 			try asyncContext.save()
 			Logger.coreData.debug("\(#function)")
