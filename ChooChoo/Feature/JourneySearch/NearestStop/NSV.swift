@@ -278,7 +278,6 @@ extension NearestStopView {
 				)
 			})
 			Button(action: {
-				Model.shared.locationDataManager.requestLocation()
 				if let coord = Model.shared.locationDataManager.location?.coordinate {
 					Model.shared.sheetVM.send(event: .didRequestShow(
 						.mapDetails(.footDirection(
