@@ -12,7 +12,7 @@ import SwiftUI
 @available(iOS 17, *)
 struct ChooTips {
 	static let followJourney = ChooTipFollowJourney()
-	static let searchNowButtonTip = ChooTipNowButton()
+//	static let searchNowButtonTip = ChooTipNowButton()
 	static let searchTip = ChooTipSearch()
 }
 
@@ -32,19 +32,19 @@ struct ChooTipSearch : Tip {
 	}
 }
 
-@available(iOS 17, *)
-struct ChooTipNowButton : Tip {
-	var title: Text {
-		Text("Search update", comment: "tip: now button: title")
-	}
-	var message: Text? {
-		Text("If you want to update your search, simply press here",
-			 comment: "tip: now button: text")
-	}
-	var image: Image? {
-		Image(systemName: "hand.tap")
-	}
-}
+//@available(iOS 17, *)
+//struct ChooTipNowButton : Tip {
+//	var title: Text {
+//		Text("Search update", comment: "tip: now button: title")
+//	}
+//	var message: Text? {
+//		Text("If you want to update your search, simply press here",
+//			 comment: "tip: now button: text")
+//	}
+//	var image: Image? {
+//		Image(systemName: "hand.tap")
+//	}
+//}
 
 @available(iOS 17, *)
 struct ChooTipFollowJourney : Tip {
