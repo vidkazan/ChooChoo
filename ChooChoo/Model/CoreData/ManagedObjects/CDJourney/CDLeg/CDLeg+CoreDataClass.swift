@@ -57,10 +57,14 @@ extension CDLeg {
 		guard let time = TimeContainer(isoEncoded: self.time) else {
 			return nil
 		}
-		guard let legDTOdata = legDTO,
-			let legDTOobj = try? JSONDecoder().decode(LegDTO.self,from: legDTOdata) else {
+		
+		let legDTOobj : LegDTO? = {
+			if let legDTOdata = legDTO {
+				return try? JSONDecoder().decode(LegDTO.self,from: legDTOdata)
+			}
 			return nil
-		}
+		}()
+		
 		guard let legTypeData = self.legType,
 		   let legType = try? JSONDecoder().decode(LegViewData.LegType.self,from: legTypeData) else {
 				return nil
