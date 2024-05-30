@@ -7,7 +7,7 @@
 
 import XCTest
 import CoreLocation
-@testable import Chew_chew_SwiftUI
+@testable import ChooChoo
 	
 	
 final class Chew_chew_LocationTest: XCTestCase {

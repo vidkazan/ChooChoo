@@ -77,6 +77,7 @@ extension AppSettingsViewModel  {
 		case didRequestToShowTip(tip : ChooTip.TipType)
 		case didRequestToChangeLegViewMode(mode : AppSettings.LegViewMode)
 		case didUpdateData
+		
 		var description : String {
 			switch self {
 			case .didRequestToShowTip:

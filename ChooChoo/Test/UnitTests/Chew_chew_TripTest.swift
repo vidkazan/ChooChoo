@@ -7,33 +7,35 @@
 
 import CoreLocation
 import XCTest
-@testable import Chew_chew_SwiftUI
+@testable import ChooChoo
 
-final class Chew_chew_TripTest: XCTestCase {
+final class ChooChooTripTest: XCTestCase {
 	func testNormalTrip() {
-		runTest(with: Mock.trip.RE6NeussMinden)
+		runTest(with: Mock.trip.RE6NeussMinden.decodedData!)
 	}
 	
 	func testTripCancelledFirstStop() {
-		runTest(with: Mock.trip.cancelledFirstStopRE11DussKassel)
+		runTest(with: Mock.trip.cancelledFirstStopRE11DussKassel.decodedData!)
 	}
 	
 	func testTripCancelledLastStop() {
-		runTest(with: Mock.trip.cancelledLastStopRE11DussKassel)
+		runTest(with: Mock.trip.cancelledLastStopRE11DussKassel.decodedData!)
 	}
 }
 
-extension Chew_chew_TripTest {
-	fileprivate func runTest(with data: TripMockFile) {
-		let actualViewData: LegViewData = constructLegData(
-			leg: data.decodedData!.trip,
+extension ChooChooTripTest {
+	fileprivate func runTest(with data: TripDTO) {
+		XCTAssertNil(data)
+		
+		let actualViewData: LegViewData? = data.trip.legViewData(
 			firstTS: .now,
 			lastTS: .now,
 			legs: nil
-		)!
+		)
 		
-		XCTAssertEqual(actualViewData.duration, data.expectedData.durationString)
-		XCTAssertEqual(actualViewData.direction, data.expectedData.direction)
+		XCTAssertNil(actualViewData)
+		XCTAssertEqual(actualViewData?.time.durationInMinutes, 222)
+		XCTAssertEqual(actualViewData?.direction, "Minden(Westf)")
 	}
 
 }
