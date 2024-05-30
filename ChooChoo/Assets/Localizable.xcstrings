@@ -32,7 +32,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "**Lange drucken**, um Ihren Punkt auf dem Map auszuwählen "
+            "value" : "**Lange klicken**, um Ihren Ziel auf dem Map auszuwählen"
           }
         }
       }
@@ -106,7 +106,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Aktive"
+            "value" : "Gegenwärtige"
           }
         }
       }
@@ -139,7 +139,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Die App hat keine Suchschaltfläche. **Die Suche beginnt**, wenn Sie beide Haltestellen **Abfahrt** und **Ankunft** ausfüllen."
+            "value" : "Die App hat keine Suchbutton. **Die Suche beginnt**, wenn Sie beide Haltestellen **Abfahrt** und **Ankunft** auswählen."
           }
         }
       }
@@ -173,6 +173,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "App-Systemeinstellungen"
+          }
+        }
+      }
+    },
+    "Arrival" : {
+      "comment" : "LocationDirationType: description",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ankunft"
           }
         }
       }
@@ -366,6 +377,17 @@
         }
       }
     },
+    "Departure" : {
+      "comment" : "LocationDirationType: description",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abfahrt"
+          }
+        }
+      }
+    },
     "Determining location" : {
       "comment" : "NSV: location notDetermined",
       "localizations" : {
@@ -512,6 +534,17 @@
         }
       }
     },
+    "from" : {
+      "comment" : "LocationDirationType: textFieldPlaceholder",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "von"
+          }
+        }
+      }
+    },
     "full" : {
       "comment" : "JourneySettings: Accessiblity",
       "localizations" : {
@@ -551,7 +584,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "in 15Min."
+            "value" : "in 15 Min."
           }
         }
       }
@@ -649,7 +682,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "das Map"
+            "value" : "Map"
           }
         }
       }
@@ -660,7 +693,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Kartendetails"
+            "value" : "Map details"
           }
         }
       }
@@ -671,7 +704,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Kartenauswahl"
+            "value" : "Map picker"
           }
         }
       }
@@ -768,7 +801,7 @@
       }
     },
     "now" : {
-      "comment" : "timeChoosingView: button on segmented picker\nDatePickerTimePresetButtons",
+      "comment" : "DatePickerTimePresetButtons\ntimeChoosingView: button on segmented picker",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -806,7 +839,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Laugende"
+            "value" : "Zukuntige"
           }
         }
       }
@@ -828,7 +861,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "vergangege"
+            "value" : "Vergangene"
           }
         }
       }
@@ -864,7 +897,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Letzte"
+            "value" : "Letzte Suche"
           }
         }
       }
@@ -897,7 +930,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Aktualisiren"
+            "value" : "Aktualisieren"
           }
         }
       }
@@ -962,7 +995,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Zurücksetzen tipps"
+            "value" : "Tipps zurücksetzen"
           }
         }
       }
@@ -1083,7 +1116,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "ganze Route anzeigen"
+            "value" : "Ganze Route anzeigen"
           }
         }
       }
@@ -1116,18 +1149,18 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Sonnenlicht / Monflichtfarbe"
+            "value" : "Sonnenlicht - Mondlicht"
           }
         }
       }
     },
-    "Swipe for action" : {
+    "Swipe for options" : {
       "comment" : "SwipeActionsTip",
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Wischen Sie für Action"
+            "value" : "Swipe für Optionen"
           }
         }
       }
@@ -1138,7 +1171,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Tippen Sie hier, um das Erscheinungsbild der Routenzelle zu ändern"
+            "value" : "Klicken Sie hier, um das Erscheinungsbild der Routenzelle zu ändern"
           }
         }
       }
@@ -1165,6 +1198,17 @@
         }
       }
     },
+    "to" : {
+      "comment" : "LocationDirationType: textFieldPlaceholder",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "nach"
+          }
+        }
+      }
+    },
     "to %@" : {
       "comment" : "BadgeView: legDirection",
       "localizations" : {
@@ -1182,7 +1226,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Überweisung"
+            "value" : "Anschlüss"
           }
         }
       }
@@ -1193,7 +1237,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Überweisung %@"
+            "value" : "Anschlüss %@"
           }
         }
       }
@@ -1248,7 +1292,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "nicht folgen"
+            "value" : "entfolgen"
           }
         }
       }
@@ -1259,7 +1303,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Nicht folgen"
+            "value" : "Entfolgen"
           }
         }
       }
@@ -1328,7 +1372,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "%lldMin. zu Fuß"
+            "value" : "%lld Min. zu Fuß"
           }
         }
       }
@@ -1350,7 +1394,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Mit Fahrrad"
+            "value" : "Fahrrad"
           }
         }
       }
@@ -1361,7 +1405,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Mit Überweisungen"
+            "value" : "Anschlüsse"
           }
         }
       }
@@ -1377,16 +1421,8 @@
         }
       }
     },
-    "Your followed journeys always appear on follow page." : {
-      "comment" : "tip: follow journey: title",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ihre verfolgten Reisen werden immer auf der Folgeseite angezeigt."
-          }
-        }
-      }
+    "Your followed journeys appear on follow page." : {
+      "comment" : "tip: follow journey: title"
     }
   },
   "version" : "1.0"

@@ -93,18 +93,18 @@ enum LocationDirectionType : Int, Hashable, CaseIterable {
 	var placeholder : String {
 		switch self {
 		case .departure:
-			return "from"
+			return NSLocalizedString("from", comment: "LocationDirationType: textFieldPlaceholder")
 		case .arrival:
-			return "to"
+			return NSLocalizedString("to", comment: "LocationDirationType: textFieldPlaceholder")
 		}
 	}
 	
 	var description : String {
 		switch self {
 		case .departure:
-			return "departure"
+			return NSLocalizedString("Departure", comment: "LocationDirationType: description")
 		case .arrival:
-			return "arrival"
+			return NSLocalizedString("Arrival", comment: "LocationDirationType: description")
 		}
 	}
 	

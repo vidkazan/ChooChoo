@@ -52,7 +52,7 @@ struct ChooTipFollowJourney : Tip {
 		Text("Follow journey",comment: "tip: follow journey: title")
 	}
 	var message: Text? {
-		Text("Your followed journeys always appear on follow page.",
+		Text("Your followed journeys appear on follow page.",
 			 comment: "tip: follow journey: title")
 	}
 	var image: Image? {
