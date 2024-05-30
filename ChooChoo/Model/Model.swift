@@ -13,7 +13,8 @@ final class Model {
 	static let shared = {
 		let coredata = CoreDataStore(container: PersistenceController.shared.container)
 		return Model(
-			journeyFollowViewModel: .init(journeys: [], coreDataStore: coredata), coreDataStore: coredata,
+			journeyFollowViewModel: .init(journeys: [], coreDataStore: coredata),
+			coreDataStore: coredata,
 			recentSearchesViewModel: RecentSearchesViewModel(searches: [], coreDataStore: coredata),
 			appSettingsVM: AppSettingsViewModel(coreDataStore: coredata)
 		)
@@ -21,7 +22,8 @@ final class Model {
 	static let preview = {
 		let coredata = CoreDataStore(container: PersistenceController.preview.container)
 		return Model(
-			journeyFollowViewModel: .init(journeys: [], coreDataStore: coredata), coreDataStore: coredata,
+			journeyFollowViewModel: .init(journeys: [], coreDataStore: coredata),
+			coreDataStore: coredata,
 			recentSearchesViewModel: RecentSearchesViewModel(searches: [], coreDataStore: coredata),
 			appSettingsVM: AppSettingsViewModel(coreDataStore: coredata)
 		)
