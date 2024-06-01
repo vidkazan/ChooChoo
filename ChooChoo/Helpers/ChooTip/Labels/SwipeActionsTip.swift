@@ -25,7 +25,7 @@ extension ChooTip.Labels {
 						colorScheme == .dark ? Color.chewFillAccent : .white
 					)
 					.overlay{
-						Text("Swipe for action",comment: "SwipeActionsTip")
+						Text("Swipe for options",comment: "SwipeActionsTip")
 							.chewTextSize(.medium)
 							.foregroundStyle(.primary.opacity(0.8))
 					}
