@@ -85,7 +85,7 @@ struct LegStopPreview : PreviewProvider {
 								.environmentObject(
 									ChewViewModel(
 										referenceDate: .specificDate((
-											viewData.time.timestamp.departure.actual ?? 0))))
+											viewData.time.timestamp.departure.actual ?? 0)), coreDataStore: .preview))
 								.padding(5)
 								.background(Color.chewFillAccent)
 								.cornerRadius(8)

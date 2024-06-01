@@ -197,7 +197,10 @@ struct LegDetailsPreview : PreviewProvider {
 								isExpanded: .collapsed,
 								leg: viewData
 							)
-							.environmentObject(ChewViewModel(referenceDate: .specificDate((viewData.time.timestamp.departure.planned ?? 0) + 900)))
+							.environmentObject(ChewViewModel(
+								referenceDate: .specificDate((viewData.time.timestamp.departure.planned ?? 0) + 900),
+								coreDataStore : .preview
+							))
 							.frame(minWidth: 350)
 						}
 					})
@@ -213,7 +216,10 @@ struct LegDetailsPreview : PreviewProvider {
 								isExpanded: .collapsed,
 								leg: viewData
 							)
-							.environmentObject(ChewViewModel(referenceDate: .specificDate((viewData.time.timestamp.departure.planned ?? 0) + 900)))
+							.environmentObject(ChewViewModel(
+								referenceDate: .specificDate((viewData.time.timestamp.departure.planned ?? 0) + 900),
+								coreDataStore : .preview
+							))
 							.frame(minWidth: 350)
 						}
 					}

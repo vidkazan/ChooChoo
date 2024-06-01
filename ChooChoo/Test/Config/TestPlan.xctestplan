@@ -1,0 +1,25 @@
+{
+  "configurations" : [
+    {
+      "id" : "D0816D4C-F7B5-4FE9-8DE8-7C0201BD8CCD",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "testTimeoutsEnabled" : true
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:ChooChoo.xcodeproj",
+        "identifier" : "7D932B9C2B14E46A00A1A390",
+        "name" : "UnitTests"
+      }
+    }
+  ],
+  "version" : 1
+}

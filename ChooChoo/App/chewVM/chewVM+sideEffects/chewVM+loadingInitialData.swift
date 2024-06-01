@@ -12,32 +12,32 @@ import OSLog
 
 
 extension ChewViewModel {
-	static func whenLoadingInitialData() -> Feedback<State, Event> {
+	static func whenLoadingInitialData(coreDataStore : CoreDataStore) -> Feedback<State, Event> {
 		Feedback { (state: State) -> AnyPublisher<Event, Never> in
 			guard case .loadingInitialData = state.status else {
 				return Empty().eraseToAnyPublisher()
 			}
-			guard Model.shared.coreDataStore.fetchUser() != nil else {
+			guard coreDataStore.fetchUser() != nil else {
 				Logger.loadingsInitialData.info("\(#function): user is nil: loading default data")
 				return Just(Event.didLoadInitialData(JourneySettings()))
 					.eraseToAnyPublisher()
 			}
 
 			Task {
-				if let appSettings = Model.shared.coreDataStore.fetchAppSettings() {
+				if let appSettings = coreDataStore.fetchAppSettings() {
 					Model.shared.appSettingsVM.send(
 						event: .didRequestToLoadInitialData(settings: appSettings)
 					)
 				} else {
 					Logger.loadingsInitialData.info("\(#function): appSettings is nil")
 				}
-				if let stops = Model.shared.coreDataStore.fetchLocations() {
+				if let stops = coreDataStore.fetchLocations() {
 					Model.shared.searchStopsVM.send(event: .didRecentStopsUpdated(recentStops: stops))
 				}
-				if let recentSearches = Model.shared.coreDataStore.fetchRecentSearches() {
+				if let recentSearches = coreDataStore.fetchRecentSearches() {
 					Model.shared.recentSearchesVM.send(event: .didUpdateData(recentSearches))
 				}
-				if let chewJourneys = Model.shared.coreDataStore.fetchJourneys() {
+				if let chewJourneys = coreDataStore.fetchJourneys() {
 					Model.shared.journeyFollowVM.send(
 						event: .didUpdateData(
 							chewJourneys.compactMap{$0.journeyFollowData()}
@@ -45,7 +45,7 @@ extension ChewViewModel {
 					)
 				}
 			}
-			if let settings = Model.shared.coreDataStore.fetchSettings() {
+			if let settings = coreDataStore.fetchSettings() {
 				return Just(Event.didLoadInitialData(settings))
 					.eraseToAnyPublisher()
 			} else {

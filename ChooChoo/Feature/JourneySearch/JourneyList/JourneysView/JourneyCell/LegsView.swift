@@ -186,7 +186,7 @@ struct LegsViewPreviews: PreviewProvider {
 						.environmentObject(ChewViewModel(
 							referenceDate: .specificDate(
 								(viewData?.time.timestamp.departure.actual ?? 0) + 2000
-							))
+							), coreDataStore: .preview)
 						)
 				}
 			}

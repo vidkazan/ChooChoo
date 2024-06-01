@@ -31,7 +31,8 @@ final class JourneyFollowViewModel : ChewViewModelProtocol {
 	private let input = PassthroughSubject<Event,Never>()
 	init(
 		journeys : [JourneyFollowData],
-		initialStatus : Status = .updating
+		initialStatus : Status = .updating,
+		coreDataStore : CoreDataStore
 	) {
 		state = State(
 			journeys: journeys,
@@ -43,8 +44,8 @@ final class JourneyFollowViewModel : ChewViewModelProtocol {
 			scheduler: RunLoop.main,
 			feedbacks: [
 				Self.userInput(input: input.eraseToAnyPublisher()),
-				Self.whenEditing(),
-				Self.whenUpdatingJourney()
+				Self.whenEditing(coreDataStore: coreDataStore),
+				Self.whenUpdatingJourney(coreDataStore: coreDataStore)
 			]
 		)
 		.weakAssign(to: \.state, on: self)

@@ -33,7 +33,7 @@ extension CoreDataStore {
 	) -> Bool {
 		var res = false
 		guard let user = self.user else {
-			Logger.coreData.error("\(#function): ref / user/ journeys")
+			Logger.coreData.error("\(#function): user is nil")
 			return false
 		}
 		asyncContext.performAndWait {
