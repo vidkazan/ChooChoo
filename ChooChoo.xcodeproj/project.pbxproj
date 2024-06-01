@@ -197,8 +197,6 @@
 		7D3B98182C08D6F800A3AAEB /* PresentationDetent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DEE69D02B9BCE8B00A063B4 /* PresentationDetent.swift */; };
 		7D3B98192C08D70000A3AAEB /* AppSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D10BD3C2BB1A2C100702D83 /* AppSettingsView.swift */; };
 		7D3B981B2C08D70000A3AAEB /* TimeAndSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D787DD32B5D9E7D007D2A3A /* TimeAndSettingsView.swift */; };
-		7D3B981C2C08D70000A3AAEB /* BottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D787DD52B5DA113007D2A3A /* BottomView.swift */; };
-		7D3B981D2C08D70000A3AAEB /* FeatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7547B72B616FD3002BE434 /* FeatureView.swift */; };
 		7D3B98252C08D70B00A3AAEB /* AppSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D10BD3C2BB1A2C100702D83 /* AppSettingsView.swift */; };
 		7D3B98262C08D70B00A3AAEB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D6734B42A96334B00CBE9C1 /* ContentView.swift */; };
 		7D3B98272C08D70B00A3AAEB /* TimeAndSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D787DD32B5D9E7D007D2A3A /* TimeAndSettingsView.swift */; };
@@ -335,7 +333,6 @@
 		7D3B98AC2C08D7A700A3AAEB /* SheetViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DBD26C42B9A202F00612A3B /* SheetViewDataSource.swift */; };
 		7D3B98AD2C08D7AF00A3AAEB /* StopDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2C0E702BDC0679000839C1 /* StopDetailsView.swift */; };
 		7D3B98AE2C08D7AF00A3AAEB /* StopDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2C0E702BDC0679000839C1 /* StopDetailsView.swift */; };
-		7D3B98AF2C08D7D100A3AAEB /* JSV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD5BADE2B728CA700CFE768 /* JSV.swift */; };
 		7D3B98B02C08D7D100A3AAEB /* NSVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DBFA3BE2BD3095E00205757 /* NSVM.swift */; };
 		7D3B98B12C08D7D100A3AAEB /* NSV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DBFA3B72BD2FE7900205757 /* NSV.swift */; };
 		7D3B98B22C08D7D100A3AAEB /* NSV+subviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCA4AD82BD83CAA005BA68E /* NSV+subviews.swift */; };
@@ -463,7 +460,6 @@
 		7D3B99332C08D84900A3AAEB /* RecentSearchesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE6FDA42B5BE5B300AC8DE3 /* RecentSearchesViewModel.swift */; };
 		7D3B99342C08D84900A3AAEB /* RecentSearchesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE6FDA42B5BE5B300AC8DE3 /* RecentSearchesViewModel.swift */; };
 		7D3B99352C08D85300A3AAEB /* RecentSearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D181D682AD6F7C6003AB021 /* RecentSearchCell.swift */; };
-		7D3B99362C08D85300A3AAEB /* RecentSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D181D632AD6D595003AB021 /* RecentSearchView.swift */; };
 		7D3B99372C08D85400A3AAEB /* RecentSearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D181D682AD6F7C6003AB021 /* RecentSearchCell.swift */; };
 		7D3B99382C08D85400A3AAEB /* RecentSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D181D632AD6D595003AB021 /* RecentSearchView.swift */; };
 		7D3B99392C08D85B00A3AAEB /* LDV+background.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE8A3572B6ABCFA00C3A378 /* LDV+background.swift */; };
@@ -2615,7 +2611,6 @@
 				7D3B97EB2C08D6DA00A3AAEB /* UIView+Constraints.swift in Sources */,
 				7D3B97E72C08D6DA00A3AAEB /* FlowLayout.swift in Sources */,
 				7D3B98C02C08D7E700A3AAEB /* JDVM+state.swift in Sources */,
-				7D3B98AF2C08D7D100A3AAEB /* JSV.swift in Sources */,
 				7D3B984B2C08D73400A3AAEB /* Settings+Types.swift in Sources */,
 				7D3B98942C08D78800A3AAEB /* AnnotationView.swift in Sources */,
 				7D3B98692C08D75000A3AAEB /* CDStop+CoreDataProperties.swift in Sources */,
@@ -2660,7 +2655,6 @@
 				7D3B99022C08D82F00A3AAEB /* JLVM+state.swift in Sources */,
 				7D3B98DF2C08D7F800A3AAEB /* SSVM+state.swift in Sources */,
 				7D3B99462C08D86500A3AAEB /* TopBarAlertView.swift in Sources */,
-				7D3B981D2C08D70000A3AAEB /* FeatureView.swift in Sources */,
 				7D3B993D2C08D86000A3AAEB /* LDSV.swift in Sources */,
 				7D3B97A52C08D53800A3AAEB /* Protocols.swift in Sources */,
 				7D3B98422C08D72F00A3AAEB /* ButtonIDs.swift in Sources */,
@@ -2669,7 +2663,6 @@
 				7D183A0C2C08F3260009FDAA /* CoreDataStore.swift in Sources */,
 				7D3B98662C08D75000A3AAEB /* CDJourney+CoreDataProperties.swift in Sources */,
 				7D3B993A2C08D85B00A3AAEB /* LDV.swift in Sources */,
-				7D3B99362C08D85300A3AAEB /* RecentSearchView.swift in Sources */,
 				7D3B98592C08D74300A3AAEB /* CoreDataStore+add.swift in Sources */,
 				7D3B98892C08D77D00A3AAEB /* constructJourneys+TimeLabel.swift in Sources */,
 				7D33A9962B5343320005D723 /* ChooTripTest.swift in Sources */,
@@ -2768,7 +2761,6 @@
 				7D3B97B82C08D57100A3AAEB /* Stop.swift in Sources */,
 				7D3B979C2C08D50600A3AAEB /* constructJourneys+Leg.swift in Sources */,
 				7DB62DEF2C0914A400CA1BCA /* ChooTip.swift in Sources */,
-				7D3B981C2C08D70000A3AAEB /* BottomView.swift in Sources */,
 				7D3B98382C08D71B00A3AAEB /* chewVM+reduce+Idle.swift in Sources */,
 				7D3B98402C08D72200A3AAEB /* Feedback.swift in Sources */,
 				7D3B98B02C08D7D100A3AAEB /* NSVM.swift in Sources */,
