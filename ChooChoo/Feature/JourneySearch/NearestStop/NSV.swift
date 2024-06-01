@@ -35,7 +35,7 @@ struct NearestStopView : View {
 				header()
 				Color.chewFillAccent.opacity(0.5)
 					.clipShape(.rect(cornerRadius: 8))
-					.frame(maxWidth: .infinity,minHeight: 170, maxHeight: 170)
+					.frame(maxWidth: .infinity,minHeight: 220, maxHeight: 220)
 					.overlay { content() }
 			}
 			.animation(.easeInOut, value: self.selectedStop)
@@ -147,7 +147,7 @@ struct NearestStopView : View {
 			case .fullAccuracy:
 				VStack(spacing: 0) {
 					if let stop = selectedStop {
-						VStack(alignment: .leading, spacing: 0) {
+						VStack(alignment: .leading) {
 							HStack(alignment: .center, spacing: 1) {
 								Button(action: {
 									nearestStopViewModel.send(event: .didDeselectStop)
@@ -160,7 +160,7 @@ struct NearestStopView : View {
 							}
 							if let trips = departures {
 								ScrollView(showsIndicators: false) {
-									VStack(alignment: .leading, spacing: 0) {
+									VStack(alignment: .leading,spacing: 1) {
 										ForEach(
 											trips.filter {
 												if let filteredLineType = filteredLineType {
@@ -176,6 +176,7 @@ struct NearestStopView : View {
 												)
 											}, label: {
 												DeparturesListCellView(trip: trip)
+													.frame(minHeight: 40)
 											})
 										}
 									}

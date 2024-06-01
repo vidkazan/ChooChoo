@@ -16,7 +16,8 @@ struct DeparturesListCellView : View {
 				lineType: trip.lineViewData.type,
 				num: trip.lineViewData.name)
 			)
-			.frame(minWidth: 80,alignment: .leading)
+			.frame(width: 80,alignment: .leading)
+//			Spacer()
 			BadgeView(Badges.legDirection(
 				dir: trip.direction,
 				strikethrough: trip.time.departureStatus == .cancelled,
@@ -27,7 +28,7 @@ struct DeparturesListCellView : View {
 			Spacer()
 			TimeLabelView(
 				size: .big,
-				arragement: .left,
+				arragement: .bottom,
 				delayStatus: trip.time.departureStatus,
 				time: trip.time.date.departure
 			)
@@ -43,3 +44,20 @@ struct DeparturesListCellView : View {
 		.frame(minHeight : 30)
 	}
 }
+
+
+#if DEBUG
+struct DeparturesListCellViewPreview: PreviewProvider {
+	static var previews: some View {
+		if let data = Mock.stopDepartures.stopDeparturesNeussHbf.decodedData?.departures?.compactMap({$0.legViewData(type:.departure)}) {
+			ScrollView {
+				ForEach(data) {
+					DeparturesListCellView(trip: $0)
+				}
+				.padding(15)
+			}
+		}
+	}
+}
+#endif
+
