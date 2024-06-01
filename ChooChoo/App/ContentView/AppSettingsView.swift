@@ -63,7 +63,7 @@ extension AppSettingsView {
 					mode: appSetttingsVM.state.settings.legViewMode
 				)
 			})
-		}, header: {
+		}, footer: {
 			Text("Tap to change route cell appearance", comment: "settingsView: section name")
 		})
    }
