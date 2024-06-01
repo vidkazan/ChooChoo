@@ -145,10 +145,18 @@ extension RecentSearchesViewModel {
 					guard let data = data else {
 						return Just(Event.didFailToEdit(action: action,msg: "data is nil")).eraseToAnyPublisher()
 					}
-					guard !searches.contains(where: {
+					if let index = searches.firstIndex(where: {
 						return $0.stops.id == data.stops.id
-					}) else {
-						return Just(Event.didFailToEdit(action: action,msg: "search been added already")).eraseToAnyPublisher()
+					}) {
+						let search = searches[index]
+						let updatedSearch = RecentSearchesViewModel.RecentSearch(stops: search.stops, searchTS: Date.now.timeIntervalSince1970)
+						searches.remove(at: index)
+						searches.append(updatedSearch)
+						if Model.shared.coreDataStore.updateRecentSearchTS(search: updatedSearch) != true {
+							return Just(Event.didFailToEdit(action: action,msg: "coredata: failed to update")).eraseToAnyPublisher()
+						}
+						return Just(Event.didEdit(data: searches))
+							.eraseToAnyPublisher()
 					}
 					
 					guard coreDataStore.addRecentSearch(search: data) == true else {
