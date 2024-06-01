@@ -60,7 +60,7 @@ extension SearchStopsView {
 		Group {
 			switch searchStopViewModel.state.status {
 			case .loaded,.updatingRecentStops,.loading:
-				if !searchStopViewModel.state.stops.isEmpty {
+				if stops.isEmpty == false {
 					ScrollView {
 						VStack(spacing: 0) {
 							ForEach(stops,id:\.hashValue) { stop in
