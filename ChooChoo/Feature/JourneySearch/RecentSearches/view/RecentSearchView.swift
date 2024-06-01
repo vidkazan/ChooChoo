@@ -51,31 +51,6 @@ struct RecentSearchesView : View {
 	}
 }
 
-#if DEBUG
-struct RecentSearchView_Previews: PreviewProvider {
-	static var previews: some View {
-		let chewVM = ChewViewModel(coreDataStore: .preview)
-		let recentSearchViewModel = RecentSearchesViewModel(searches: geenrateRecentSearches(count: 0),coreDataStore: .preview)
-		VStack {
-			RecentSearchesView(recentSearchesVM: recentSearchViewModel)
-				.environmentObject(chewVM)
-			Button("Add", action: {
-				recentSearchViewModel.send(
-					event: .didTapEdit(action: .adding, search: geenrateRecentSearches(count: 1).first)
-				)
-			})
-			.buttonStyle(.bordered)
-		}
-		.onAppear {
-			chewVM.send(event: .didStartViewAppear)
-			recentSearchViewModel.send(
-				event: .didTapEdit(action: .adding, search: geenrateRecentSearches(count: 1).first)
-			)
-		}
-	}
-}
-#endif
-
 private func geenrateRecentSearches(count : Int) -> [RecentSearchesViewModel.RecentSearch] {
 	var res = [RecentSearchesViewModel.RecentSearch]()
 	for _ in 0..<count {
@@ -133,3 +108,29 @@ private func geenrateRecentSearches(count : Int) -> [RecentSearchesViewModel.Rec
 	}
 	return res
 }
+
+
+#if DEBUG
+struct RecentSearchView_Previews: PreviewProvider {
+	static var previews: some View {
+		let chewVM = ChewViewModel(coreDataStore: .preview)
+		let recentSearchViewModel = RecentSearchesViewModel(searches: geenrateRecentSearches(count: 0),coreDataStore: .preview)
+		VStack {
+			RecentSearchesView(recentSearchesVM: recentSearchViewModel)
+				.environmentObject(chewVM)
+			Button("Add", action: {
+				recentSearchViewModel.send(
+					event: .didTapEdit(action: .adding, search: geenrateRecentSearches(count: 1).first)
+				)
+			})
+			.buttonStyle(.bordered)
+		}
+		.onAppear {
+			chewVM.send(event: .didStartViewAppear)
+			recentSearchViewModel.send(
+				event: .didTapEdit(action: .adding, search: geenrateRecentSearches(count: 1).first)
+			)
+		}
+	}
+}
+#endif
