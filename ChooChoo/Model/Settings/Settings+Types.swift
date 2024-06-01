@@ -156,11 +156,11 @@ extension JourneySettings {
 		var string : String {
 			switch self {
 			case .fast:
-				NSLocalizedString("fast", comment: "JourneySettings: WalkingSpeed")
+				"fast"
 			case .moderate:
-				NSLocalizedString("moderate", comment: "JourneySettings: WalkingSpeed")
+				"moderate"
 			case .slow:
-				NSLocalizedString("slow", comment: "JourneySettings: WalkingSpeed")
+				"slow"
 			}
 		}
 		

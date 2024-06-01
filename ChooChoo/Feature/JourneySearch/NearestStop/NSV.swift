@@ -135,7 +135,7 @@ struct NearestStopView : View {
 			ErrorView(
 				viewType: .error,
 				msg: Text(
-					"We need location to find nearby stops",
+					"App needs your location to find nearby stops",
 					comment: "NSV: location denied"
 				),
 				action: {

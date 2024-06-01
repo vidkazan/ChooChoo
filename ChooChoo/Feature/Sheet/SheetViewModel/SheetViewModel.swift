@@ -137,27 +137,27 @@ extension SheetViewModel{
 		var description : String {
 			switch self {
 			case .tip:
-				return "Tip"
+				return NSLocalizedString("Tip", comment: "SheetViewModel: SheetType")
 			case .mapPicker:
-				return "Map picker"
+				return NSLocalizedString("Map picker", comment: "SheetViewModel: SheetType")
 			case .none:
-				return "none"
+				return ""
 			case .date:
-				return "Date"
+				return NSLocalizedString("Date", comment: "SheetViewModel: SheetType")
 			case .appSettings:
-				return "App Settings"
+				return NSLocalizedString("App Settings", comment: "SheetViewModel: SheetType")
 			case .journeySettings:
-				return "Journey Settings"
+				return NSLocalizedString("Journey Settings", comment: "SheetViewModel: SheetType")
 			case .route:
-				return "Route"
+				return NSLocalizedString("Route", comment: "SheetViewModel: SheetType")
 			case .mapDetails:
-				return "Map Details"
+				return NSLocalizedString("Map Details", comment: "SheetViewModel: SheetType")
 			case .onboarding:
-				return "Onboarding"
+				return NSLocalizedString("Onboarding", comment: "SheetViewModel: SheetType")
 			case .remark:
-				return "Remarks"
+				return NSLocalizedString("Remarks", comment: "SheetViewModel: SheetType")
 			case .journeyDebug:
-				return "Journey Debug"
+				return NSLocalizedString("Journey Debug", comment: "SheetViewModel: SheetType")
 			}
 		}
 		
