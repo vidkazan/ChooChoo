@@ -111,9 +111,6 @@
         }
       }
     },
-    "Add" : {
-
-    },
     "all" : {
       "comment" : "JourneySettings: TransportMode",
       "localizations" : {
@@ -1133,9 +1130,6 @@
           }
         }
       }
-    },
-    "Tap to change route cell appearance" : {
-      "comment" : "settingsView: section name"
     },
     "to %@" : {
       "comment" : "BadgeView: legDirection",
