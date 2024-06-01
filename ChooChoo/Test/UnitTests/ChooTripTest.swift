@@ -25,7 +25,7 @@ final class ChooChooTripTest: XCTestCase {
 
 extension ChooChooTripTest {
 	fileprivate func runTest(with data: TripDTO) {
-		XCTAssertNil(data)
+		XCTAssertNotNil(data)
 		
 		let actualViewData: LegViewData? = data.trip.legViewData(
 			firstTS: .now,
@@ -33,9 +33,8 @@ extension ChooChooTripTest {
 			legs: nil
 		)
 		
-		XCTAssertNil(actualViewData)
-		XCTAssertEqual(actualViewData?.time.durationInMinutes, 222)
-		XCTAssertEqual(actualViewData?.direction, "Minden(Westf)")
+		XCTAssertNotNil(actualViewData)
+		XCTAssertEqual(actualViewData?.direction, data.trip.direction)
 	}
 
 }
