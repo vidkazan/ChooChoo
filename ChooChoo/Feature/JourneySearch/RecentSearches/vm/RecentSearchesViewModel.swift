@@ -81,15 +81,15 @@ extension RecentSearchesViewModel {
 	}
 	
 	enum Status : ChewStatus {
-		case error(error : String)
+		case error(action : String, error : any ChewError)
 		case idle
 		case editing(_ action: Action, search : RecentSearch?)
 		case updating
 		
 		var description : String {
 			switch self {
-			case .error(let action):
-				return "error \(action.description)"
+			case let .error(action, error):
+				return "error \(action.description) \(error.localizedDescription)"
 			case .idle:
 				return "idle"
 			case .updating:
@@ -113,8 +113,8 @@ extension RecentSearchesViewModel {
 		
 		var description : String {
 			switch self {
-			case .didFailToEdit:
-				return "didFailToEdit"
+			case .didFailToEdit(let action,let msg):
+				return "didFailToEdit \(action) \(msg)"
 			case .didEdit:
 				return "didEdit"
 			case .didTapEdit:

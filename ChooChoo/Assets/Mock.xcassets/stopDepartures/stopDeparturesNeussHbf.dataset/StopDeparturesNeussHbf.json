@@ -1,0 +1,1273 @@
+{
+  "departures": [
+	{
+	  "tripId": "1|386104|9|80|1062024",
+	  "stop": {
+		"type": "station",
+		"id": "8000274",
+		"name": "Neuss Hbf",
+		"location": {
+		  "type": "location",
+		  "id": "8000274",
+		  "latitude": 51.204373,
+		  "longitude": 6.684415
+		},
+		"products": {
+		  "nationalExpress": true,
+		  "national": false,
+		  "regionalExpress": true,
+		  "regional": true,
+		  "suburban": true,
+		  "bus": true,
+		  "ferry": false,
+		  "subway": true,
+		  "tram": true,
+		  "taxi": true
+		}
+	  },
+	  "when": "2024-06-01T17:23:00+02:00",
+	  "plannedWhen": "2024-06-01T17:10:00+02:00",
+	  "delay": 780,
+	  "platform": "4",
+	  "plannedPlatform": "4",
+	  "prognosisType": "prognosed",
+	  "direction": "Koblenz Hbf",
+	  "provenance": null,
+	  "line": {
+		"type": "line",
+		"id": "re-5",
+		"fahrtNr": "28525",
+		"name": "RE 5",
+		"public": true,
+		"adminCode": "NXRE__",
+		"productName": "RE",
+		"mode": "train",
+		"product": "regional",
+		"operator": {
+		  "type": "operator",
+		  "id": "national-express",
+		  "name": "National Express"
+		},
+		"additionalName": "RE 5"
+	  },
+	  "remarks": [],
+	  "origin": null,
+	  "destination": {
+		"type": "station",
+		"id": "8000206",
+		"name": "Koblenz Hbf",
+		"location": {
+		  "type": "location",
+		  "id": "8000206",
+		  "latitude": 50.350775,
+		  "longitude": 7.588343
+		},
+		"products": {
+		  "nationalExpress": true,
+		  "national": true,
+		  "regionalExpress": true,
+		  "regional": true,
+		  "suburban": false,
+		  "bus": true,
+		  "ferry": false,
+		  "subway": false,
+		  "tram": false,
+		  "taxi": true
+		}
+	  },
+	  "currentTripPosition": {
+		"type": "location",
+		"latitude": 51.194934,
+		"longitude": 6.679614
+	  }
+	},
+	{
+	  "tripId": "1|1630265|10|80|1062024",
+	  "stop": {
+		"type": "stop",
+		"id": "369055",
+		"name": "Hauptbahnhof Nordeingang, Neuss",
+		"location": {
+		  "type": "location",
+		  "id": "369055",
+		  "latitude": 51.204076,
+		  "longitude": 6.682221
+		},
+		"products": {
+		  "nationalExpress": true,
+		  "national": false,
+		  "regionalExpress": true,
+		  "regional": true,
+		  "suburban": true,
+		  "bus": true,
+		  "ferry": false,
+		  "subway": true,
+		  "tram": true,
+		  "taxi": true
+		},
+		"station": {
+		  "type": "station",
+		  "id": "8000274",
+		  "name": "Neuss Hbf",
+		  "location": {
+			"type": "location",
+			"id": "8000274",
+			"latitude": 51.204373,
+			"longitude": 6.684415
+		  },
+		  "products": {
+			"nationalExpress": true,
+			"national": false,
+			"regionalExpress": true,
+			"regional": true,
+			"suburban": true,
+			"bus": true,
+			"ferry": false,
+			"subway": true,
+			"tram": true,
+			"taxi": true
+		  }
+		}
+	  },
+	  "when": "2024-06-01T17:23:00+02:00",
+	  "plannedWhen": "2024-06-01T17:22:00+02:00",
+	  "delay": 60,
+	  "platform": null,
+	  "plannedPlatform": null,
+	  "prognosisType": "prognosed",
+	  "direction": "Belsenplatz, Düsseldorf",
+	  "provenance": null,
+	  "line": {
+		"type": "line",
+		"id": "5-vrr072-828",
+		"fahrtNr": "0",
+		"name": "Bus 828",
+		"public": true,
+		"adminCode": "vrr072",
+		"productName": "Bus",
+		"mode": "bus",
+		"product": "bus",
+		"operator": {
+		  "type": "operator",
+		  "id": "nahreisezug",
+		  "name": "Nahreisezug"
+		}
+	  },
+	  "remarks": [],
+	  "origin": null,
+	  "destination": {
+		"type": "stop",
+		"id": "378273",
+		"name": "Belsenplatz, Düsseldorf",
+		"location": {
+		  "type": "location",
+		  "id": "378273",
+		  "latitude": 51.231925,
+		  "longitude": 6.747123
+		},
+		"products": {
+		  "nationalExpress": false,
+		  "national": false,
+		  "regionalExpress": false,
+		  "regional": false,
+		  "suburban": false,
+		  "bus": true,
+		  "ferry": false,
+		  "subway": true,
+		  "tram": false,
+		  "taxi": false
+		},
+		"station": {
+		  "type": "station",
+		  "id": "653414",
+		  "name": "Belsenplatz, Düsseldorf",
+		  "location": {
+			"type": "location",
+			"id": "653414",
+			"latitude": 51.231331,
+			"longitude": 6.747645
+		  },
+		  "products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": false,
+			"suburban": false,
+			"bus": true,
+			"ferry": false,
+			"subway": true,
+			"tram": false,
+			"taxi": false
+		  }
+		}
+	  },
+	  "currentTripPosition": {
+		"type": "location",
+		"latitude": 51.205371,
+		"longitude": 6.679875
+	  }
+	},
+	{
+	  "tripId": "1|740713|9|80|1062024",
+	  "stop": {
+		"type": "station",
+		"id": "8000274",
+		"name": "Neuss Hbf",
+		"location": {
+		  "type": "location",
+		  "id": "8000274",
+		  "latitude": 51.204373,
+		  "longitude": 6.684415
+		},
+		"products": {
+		  "nationalExpress": true,
+		  "national": false,
+		  "regionalExpress": true,
+		  "regional": true,
+		  "suburban": true,
+		  "bus": true,
+		  "ferry": false,
+		  "subway": true,
+		  "tram": true,
+		  "taxi": true
+		}
+	  },
+	  "when": "2024-06-01T17:24:00+02:00",
+	  "plannedWhen": "2024-06-01T17:17:00+02:00",
+	  "delay": 420,
+	  "platform": "6",
+	  "plannedPlatform": "6",
+	  "prognosisType": null,
+	  "direction": "Mettmann Stadtwald",
+	  "provenance": null,
+	  "line": {
+		"type": "line",
+		"id": "4-m2-28",
+		"fahrtNr": "77241",
+		"name": "S 28",
+		"public": true,
+		"adminCode": "M2____",
+		"productName": "S",
+		"mode": "train",
+		"product": "suburban",
+		"operator": {
+		  "type": "operator",
+		  "id": "regiobahn",
+		  "name": "REGIOBAHN"
+		}
+	  },
+	  "remarks": [],
+	  "origin": null,
+	  "destination": {
+		"type": "station",
+		"id": "8004005",
+		"name": "Mettmann Stadtwald",
+		"location": {
+		  "type": "location",
+		  "id": "8004005",
+		  "latitude": 51.250982,
+		  "longitude": 6.987243
+		},
+		"products": {
+		  "nationalExpress": false,
+		  "national": false,
+		  "regionalExpress": false,
+		  "regional": true,
+		  "suburban": true,
+		  "bus": true,
+		  "ferry": false,
+		  "subway": false,
+		  "tram": false,
+		  "taxi": false
+		}
+	  },
+	  "currentTripPosition": {
+		"type": "location",
+		"latitude": 51.204741,
+		"longitude": 6.683758
+	  }
+	},
+	{
+	  "tripId": "1|1631832|5|80|1062024",
+	  "stop": {
+		"type": "stop",
+		"id": "374055",
+		"name": "Hauptbahnhof, Neuss",
+		"location": {
+		  "type": "location",
+		  "id": "374055",
+		  "latitude": 51.202881,
+		  "longitude": 6.684307
+		},
+		"products": {
+		  "nationalExpress": true,
+		  "national": false,
+		  "regionalExpress": true,
+		  "regional": true,
+		  "suburban": true,
+		  "bus": true,
+		  "ferry": false,
+		  "subway": true,
+		  "tram": true,
+		  "taxi": true
+		},
+		"station": {
+		  "type": "station",
+		  "id": "8000274",
+		  "name": "Neuss Hbf",
+		  "location": {
+			"type": "location",
+			"id": "8000274",
+			"latitude": 51.204373,
+			"longitude": 6.684415
+		  },
+		  "products": {
+			"nationalExpress": true,
+			"national": false,
+			"regionalExpress": true,
+			"regional": true,
+			"suburban": true,
+			"bus": true,
+			"ferry": false,
+			"subway": true,
+			"tram": true,
+			"taxi": true
+		  }
+		}
+	  },
+	  "when": "2024-06-01T17:24:00+02:00",
+	  "plannedWhen": "2024-06-01T17:21:00+02:00",
+	  "delay": 180,
+	  "platform": null,
+	  "plannedPlatform": null,
+	  "prognosisType": "prognosed",
+	  "direction": "Haus Meer, Meerbusch",
+	  "provenance": null,
+	  "line": {
+		"type": "line",
+		"id": "5-vrr072-830",
+		"fahrtNr": "0",
+		"name": "Bus 830",
+		"public": true,
+		"adminCode": "vrr072",
+		"productName": "Bus",
+		"mode": "bus",
+		"product": "bus",
+		"operator": {
+		  "type": "operator",
+		  "id": "nahreisezug",
+		  "name": "Nahreisezug"
+		}
+	  },
+	  "remarks": [],
+	  "origin": null,
+	  "destination": {
+		"type": "stop",
+		"id": "418141",
+		"name": "Haus Meer, Meerbusch",
+		"location": {
+		  "type": "location",
+		  "id": "418141",
+		  "latitude": 51.266039,
+		  "longitude": 6.668099
+		},
+		"products": {
+		  "nationalExpress": false,
+		  "national": false,
+		  "regionalExpress": false,
+		  "regional": false,
+		  "suburban": false,
+		  "bus": true,
+		  "ferry": false,
+		  "subway": true,
+		  "tram": false,
+		  "taxi": false
+		},
+		"station": {
+		  "type": "station",
+		  "id": "659242",
+		  "name": "Haus Meer U-Bahnhof, Meerbusch",
+		  "location": {
+			"type": "location",
+			"id": "659242",
+			"latitude": 51.26594,
+			"longitude": 6.66872
+		  },
+		  "products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": false,
+			"suburban": false,
+			"bus": true,
+			"ferry": false,
+			"subway": true,
+			"tram": false,
+			"taxi": false
+		  }
+		}
+	  },
+	  "currentTripPosition": {
+		"type": "location",
+		"latitude": 51.202521,
+		"longitude": 6.68472
+	  }
+	},
+	{
+	  "tripId": "1|1651217|9|80|1062024",
+	  "stop": {
+		"type": "stop",
+		"id": "369055",
+		"name": "Hauptbahnhof Nordeingang, Neuss",
+		"location": {
+		  "type": "location",
+		  "id": "369055",
+		  "latitude": 51.204076,
+		  "longitude": 6.682221
+		},
+		"products": {
+		  "nationalExpress": true,
+		  "national": false,
+		  "regionalExpress": true,
+		  "regional": true,
+		  "suburban": true,
+		  "bus": true,
+		  "ferry": false,
+		  "subway": true,
+		  "tram": true,
+		  "taxi": true
+		},
+		"station": {
+		  "type": "station",
+		  "id": "8000274",
+		  "name": "Neuss Hbf",
+		  "location": {
+			"type": "location",
+			"id": "8000274",
+			"latitude": 51.204373,
+			"longitude": 6.684415
+		  },
+		  "products": {
+			"nationalExpress": true,
+			"national": false,
+			"regionalExpress": true,
+			"regional": true,
+			"suburban": true,
+			"bus": true,
+			"ferry": false,
+			"subway": true,
+			"tram": true,
+			"taxi": true
+		  }
+		}
+	  },
+	  "when": "2024-06-01T17:24:00+02:00",
+	  "plannedWhen": "2024-06-01T17:24:00+02:00",
+	  "delay": null,
+	  "platform": null,
+	  "plannedPlatform": null,
+	  "prognosisType": null,
+	  "direction": "Johanna-Etienne-Krankenhaus, Neuss",
+	  "provenance": null,
+	  "line": {
+		"type": "line",
+		"id": "5-vrr060-848",
+		"fahrtNr": "0",
+		"name": "Bus 848",
+		"public": true,
+		"adminCode": "vrr060",
+		"productName": "Bus",
+		"mode": "bus",
+		"product": "bus",
+		"operator": {
+		  "type": "operator",
+		  "id": "nahreisezug",
+		  "name": "Nahreisezug"
+		}
+	  },
+	  "remarks": [],
+	  "origin": null,
+	  "destination": {
+		"type": "stop",
+		"id": "660633",
+		"name": "Johanna-Etienne-Krankenhaus, Neuss",
+		"location": {
+		  "type": "location",
+		  "id": "660633",
+		  "latitude": 51.21382,
+		  "longitude": 6.660872
+		},
+		"products": {
+		  "nationalExpress": false,
+		  "national": false,
+		  "regionalExpress": false,
+		  "regional": false,
+		  "suburban": false,
+		  "bus": true,
+		  "ferry": false,
+		  "subway": false,
+		  "tram": false,
+		  "taxi": true
+		}
+	  },
+	  "currentTripPosition": {
+		"type": "location",
+		"latitude": 51.203923,
+		"longitude": 6.682491
+	  }
+	},
+	{
+	  "tripId": "1|1651397|0|80|1062024",
+	  "stop": {
+		"type": "stop",
+		"id": "369055",
+		"name": "Hauptbahnhof Nordeingang, Neuss",
+		"location": {
+		  "type": "location",
+		  "id": "369055",
+		  "latitude": 51.204076,
+		  "longitude": 6.682221
+		},
+		"products": {
+		  "nationalExpress": true,
+		  "national": false,
+		  "regionalExpress": true,
+		  "regional": true,
+		  "suburban": true,
+		  "bus": true,
+		  "ferry": false,
+		  "subway": true,
+		  "tram": true,
+		  "taxi": true
+		},
+		"station": {
+		  "type": "station",
+		  "id": "8000274",
+		  "name": "Neuss Hbf",
+		  "location": {
+			"type": "location",
+			"id": "8000274",
+			"latitude": 51.204373,
+			"longitude": 6.684415
+		  },
+		  "products": {
+			"nationalExpress": true,
+			"national": false,
+			"regionalExpress": true,
+			"regional": true,
+			"suburban": true,
+			"bus": true,
+			"ferry": false,
+			"subway": true,
+			"tram": true,
+			"taxi": true
+		  }
+		}
+	  },
+	  "when": "2024-06-01T17:24:00+02:00",
+	  "plannedWhen": "2024-06-01T17:24:00+02:00",
+	  "delay": null,
+	  "platform": null,
+	  "plannedPlatform": null,
+	  "prognosisType": null,
+	  "direction": "Elchstr. Schleife, Kaarst",
+	  "provenance": null,
+	  "line": {
+		"type": "line",
+		"id": "5-vrr060-851",
+		"fahrtNr": "0",
+		"name": "Bus 851",
+		"public": true,
+		"adminCode": "vrr060",
+		"productName": "Bus",
+		"mode": "bus",
+		"product": "bus",
+		"operator": {
+		  "type": "operator",
+		  "id": "nahreisezug",
+		  "name": "Nahreisezug"
+		}
+	  },
+	  "remarks": [],
+	  "origin": null,
+	  "destination": {
+		"type": "stop",
+		"id": "657886",
+		"name": "Elchstr. Schleife, Kaarst",
+		"location": {
+		  "type": "location",
+		  "id": "657886",
+		  "latitude": 51.233516,
+		  "longitude": 6.591772
+		},
+		"products": {
+		  "nationalExpress": false,
+		  "national": false,
+		  "regionalExpress": false,
+		  "regional": false,
+		  "suburban": false,
+		  "bus": true,
+		  "ferry": false,
+		  "subway": false,
+		  "tram": false,
+		  "taxi": false
+		}
+	  },
+	  "currentTripPosition": {
+		"type": "location",
+		"latitude": 51.203923,
+		"longitude": 6.682491
+	  }
+	},
+	{
+	  "tripId": "1|1636341|53|80|1062024",
+	  "stop": {
+		"type": "stop",
+		"id": "373055",
+		"name": "Hauptbahnhof, Neuss",
+		"location": {
+		  "type": "location",
+		  "id": "373055",
+		  "latitude": 51.203438,
+		  "longitude": 6.684702
+		},
+		"products": {
+		  "nationalExpress": true,
+		  "national": false,
+		  "regionalExpress": true,
+		  "regional": true,
+		  "suburban": true,
+		  "bus": true,
+		  "ferry": false,
+		  "subway": true,
+		  "tram": true,
+		  "taxi": true
+		},
+		"station": {
+		  "type": "station",
+		  "id": "8000274",
+		  "name": "Neuss Hbf",
+		  "location": {
+			"type": "location",
+			"id": "8000274",
+			"latitude": 51.204373,
+			"longitude": 6.684415
+		  },
+		  "products": {
+			"nationalExpress": true,
+			"national": false,
+			"regionalExpress": true,
+			"regional": true,
+			"suburban": true,
+			"bus": true,
+			"ferry": false,
+			"subway": true,
+			"tram": true,
+			"taxi": true
+		  }
+		}
+	  },
+	  "when": "2024-06-01T17:25:00+02:00",
+	  "plannedWhen": "2024-06-01T17:25:00+02:00",
+	  "delay": 0,
+	  "platform": null,
+	  "plannedPlatform": null,
+	  "prognosisType": "prognosed",
+	  "direction": "Vennhauser Allee, Düsseldorf",
+	  "provenance": null,
+	  "line": {
+		"type": "line",
+		"id": "7-vrr070-75",
+		"fahrtNr": "0",
+		"name": "U 75",
+		"public": true,
+		"adminCode": "vrr070",
+		"productName": "U",
+		"mode": "train",
+		"product": "subway",
+		"operator": {
+		  "type": "operator",
+		  "id": "nahreisezug",
+		  "name": "Nahreisezug"
+		}
+	  },
+	  "remarks": [],
+	  "origin": null,
+	  "destination": {
+		"type": "station",
+		"id": "653885",
+		"name": "Vennhauser Allee, Düsseldorf",
+		"location": {
+		  "type": "location",
+		  "id": "653885",
+		  "latitude": 51.199213,
+		  "longitude": 6.845942
+		},
+		"products": {
+		  "nationalExpress": false,
+		  "national": false,
+		  "regionalExpress": false,
+		  "regional": false,
+		  "suburban": false,
+		  "bus": true,
+		  "ferry": false,
+		  "subway": true,
+		  "tram": true,
+		  "taxi": true
+		}
+	  }
+	},
+	{
+	  "tripId": "1|347448|8|80|1062024",
+	  "stop": {
+		"type": "station",
+		"id": "8000274",
+		"name": "Neuss Hbf",
+		"location": {
+		  "type": "location",
+		  "id": "8000274",
+		  "latitude": 51.204373,
+		  "longitude": 6.684415
+		},
+		"products": {
+		  "nationalExpress": true,
+		  "national": false,
+		  "regionalExpress": true,
+		  "regional": true,
+		  "suburban": true,
+		  "bus": true,
+		  "ferry": false,
+		  "subway": true,
+		  "tram": true,
+		  "taxi": true
+		}
+	  },
+	  "when": "2024-06-01T17:28:00+02:00",
+	  "plannedWhen": "2024-06-01T17:26:00+02:00",
+	  "delay": 120,
+	  "platform": "7",
+	  "plannedPlatform": "7",
+	  "prognosisType": "prognosed",
+	  "direction": "Bergisch Gladbach",
+	  "provenance": null,
+	  "line": {
+		"type": "line",
+		"id": "4-8003s-11",
+		"fahrtNr": "33192",
+		"name": "S 11",
+		"public": true,
+		"adminCode": "8003S_",
+		"productName": "S",
+		"mode": "train",
+		"product": "suburban",
+		"operator": {
+		  "type": "operator",
+		  "id": "db-regio-ag-nrw",
+		  "name": "DB Regio AG NRW"
+		}
+	  },
+	  "remarks": [],
+	  "origin": null,
+	  "destination": {
+		"type": "station",
+		"id": "8000899",
+		"name": "Bergisch Gladbach",
+		"location": {
+		  "type": "location",
+		  "id": "8000899",
+		  "latitude": 50.991688,
+		  "longitude": 7.125192
+		},
+		"products": {
+		  "nationalExpress": false,
+		  "national": false,
+		  "regionalExpress": false,
+		  "regional": true,
+		  "suburban": true,
+		  "bus": true,
+		  "ferry": false,
+		  "subway": false,
+		  "tram": false,
+		  "taxi": false
+		}
+	  },
+	  "currentTripPosition": {
+		"type": "location",
+		"latitude": 51.220284,
+		"longitude": 6.697638
+	  }
+	},
+	{
+	  "tripId": "1|385148|1|80|1062024",
+	  "stop": {
+		"type": "station",
+		"id": "8000274",
+		"name": "Neuss Hbf",
+		"location": {
+		  "type": "location",
+		  "id": "8000274",
+		  "latitude": 51.204373,
+		  "longitude": 6.684415
+		},
+		"products": {
+		  "nationalExpress": true,
+		  "national": false,
+		  "regionalExpress": true,
+		  "regional": true,
+		  "suburban": true,
+		  "bus": true,
+		  "ferry": false,
+		  "subway": true,
+		  "tram": true,
+		  "taxi": true
+		}
+	  },
+	  "when": "2024-06-01T17:28:00+02:00",
+	  "plannedWhen": "2024-06-01T17:27:00+02:00",
+	  "delay": 60,
+	  "platform": "5",
+	  "plannedPlatform": "5",
+	  "prognosisType": "prognosed",
+	  "direction": "Dortmund Hbf",
+	  "provenance": null,
+	  "line": {
+		"type": "line",
+		"id": "re-4",
+		"fahrtNr": "26427",
+		"name": "RE 4",
+		"public": true,
+		"adminCode": "NXRE__",
+		"productName": "RE",
+		"mode": "train",
+		"product": "regional",
+		"operator": {
+		  "type": "operator",
+		  "id": "national-express",
+		  "name": "National Express"
+		},
+		"additionalName": "RE 4"
+	  },
+	  "remarks": [],
+	  "origin": null,
+	  "destination": {
+		"type": "station",
+		"id": "8000080",
+		"name": "Dortmund Hbf",
+		"location": {
+		  "type": "location",
+		  "id": "8000080",
+		  "latitude": 51.517872,
+		  "longitude": 7.459276
+		},
+		"products": {
+		  "nationalExpress": true,
+		  "national": true,
+		  "regionalExpress": true,
+		  "regional": true,
+		  "suburban": true,
+		  "bus": true,
+		  "ferry": false,
+		  "subway": true,
+		  "tram": false,
+		  "taxi": false
+		}
+	  },
+	  "currentTripPosition": {
+		"type": "location",
+		"latitude": 51.197487,
+		"longitude": 6.61589
+	  }
+	},
+	{
+	  "tripId": "1|1651286|3|80|1062024",
+	  "stop": {
+		"type": "stop",
+		"id": "660610",
+		"name": "Hauptbahnhof, Neuss",
+		"location": {
+		  "type": "location",
+		  "id": "660610",
+		  "latitude": 51.203249,
+		  "longitude": 6.683408
+		},
+		"products": {
+		  "nationalExpress": true,
+		  "national": false,
+		  "regionalExpress": true,
+		  "regional": true,
+		  "suburban": true,
+		  "bus": true,
+		  "ferry": false,
+		  "subway": true,
+		  "tram": true,
+		  "taxi": true
+		},
+		"station": {
+		  "type": "station",
+		  "id": "8000274",
+		  "name": "Neuss Hbf",
+		  "location": {
+			"type": "location",
+			"id": "8000274",
+			"latitude": 51.204373,
+			"longitude": 6.684415
+		  },
+		  "products": {
+			"nationalExpress": true,
+			"national": false,
+			"regionalExpress": true,
+			"regional": true,
+			"suburban": true,
+			"bus": true,
+			"ferry": false,
+			"subway": true,
+			"tram": true,
+			"taxi": true
+		  }
+		}
+	  },
+	  "when": "2024-06-01T17:28:00+02:00",
+	  "plannedWhen": "2024-06-01T17:28:00+02:00",
+	  "delay": null,
+	  "platform": null,
+	  "plannedPlatform": null,
+	  "prognosisType": null,
+	  "direction": "Bernh.-Letterhaus-Str., Neuss",
+	  "provenance": null,
+	  "line": {
+		"type": "line",
+		"id": "5-vrr060-854",
+		"fahrtNr": "0",
+		"name": "Bus 854",
+		"public": true,
+		"adminCode": "vrr060",
+		"productName": "Bus",
+		"mode": "bus",
+		"product": "bus",
+		"operator": {
+		  "type": "operator",
+		  "id": "nahreisezug",
+		  "name": "Nahreisezug"
+		}
+	  },
+	  "remarks": [],
+	  "origin": null,
+	  "destination": {
+		"type": "stop",
+		"id": "660543",
+		"name": "Bernh.-Letterhaus-Str., Neuss",
+		"location": {
+		  "type": "location",
+		  "id": "660543",
+		  "latitude": 51.160236,
+		  "longitude": 6.703966
+		},
+		"products": {
+		  "nationalExpress": false,
+		  "national": false,
+		  "regionalExpress": false,
+		  "regional": false,
+		  "suburban": false,
+		  "bus": true,
+		  "ferry": false,
+		  "subway": false,
+		  "tram": false,
+		  "taxi": false
+		}
+	  },
+	  "currentTripPosition": {
+		"type": "location",
+		"latitude": 51.213101,
+		"longitude": 6.680388
+	  }
+	},
+	{
+	  "tripId": "1|394022|0|80|1062024",
+	  "stop": {
+		"type": "station",
+		"id": "8000274",
+		"name": "Neuss Hbf",
+		"location": {
+		  "type": "location",
+		  "id": "8000274",
+		  "latitude": 51.204373,
+		  "longitude": 6.684415
+		},
+		"products": {
+		  "nationalExpress": true,
+		  "national": false,
+		  "regionalExpress": true,
+		  "regional": true,
+		  "suburban": true,
+		  "bus": true,
+		  "ferry": false,
+		  "subway": true,
+		  "tram": true,
+		  "taxi": true
+		}
+	  },
+	  "when": "2024-06-01T17:30:00+02:00",
+	  "plannedWhen": "2024-06-01T17:24:00+02:00",
+	  "delay": 360,
+	  "platform": "3",
+	  "plannedPlatform": "3",
+	  "prognosisType": "prognosed",
+	  "direction": "Köln/Bonn Flughafen",
+	  "provenance": null,
+	  "line": {
+		"type": "line",
+		"id": "re-6",
+		"fahrtNr": "89726",
+		"name": "RE 6",
+		"public": true,
+		"adminCode": "NXRE__",
+		"productName": "RE",
+		"mode": "train",
+		"product": "regional",
+		"operator": {
+		  "type": "operator",
+		  "id": "national-express",
+		  "name": "National Express"
+		},
+		"additionalName": "RE 6"
+	  },
+	  "remarks": [],
+	  "origin": null,
+	  "destination": {
+		"type": "station",
+		"id": "8003330",
+		"name": "Köln/Bonn Flughafen",
+		"location": {
+		  "type": "location",
+		  "id": "8003330",
+		  "latitude": 50.878909,
+		  "longitude": 7.119259
+		},
+		"products": {
+		  "nationalExpress": true,
+		  "national": true,
+		  "regionalExpress": false,
+		  "regional": true,
+		  "suburban": true,
+		  "bus": true,
+		  "ferry": false,
+		  "subway": false,
+		  "tram": false,
+		  "taxi": false
+		}
+	  },
+	  "currentTripPosition": {
+		"type": "location",
+		"latitude": 51.212427,
+		"longitude": 6.747204
+	  }
+	},
+	{
+	  "tripId": "1|1651208|17|80|1062024",
+	  "stop": {
+		"type": "stop",
+		"id": "660610",
+		"name": "Hauptbahnhof, Neuss",
+		"location": {
+		  "type": "location",
+		  "id": "660610",
+		  "latitude": 51.203249,
+		  "longitude": 6.683408
+		},
+		"products": {
+		  "nationalExpress": true,
+		  "national": false,
+		  "regionalExpress": true,
+		  "regional": true,
+		  "suburban": true,
+		  "bus": true,
+		  "ferry": false,
+		  "subway": true,
+		  "tram": true,
+		  "taxi": true
+		},
+		"station": {
+		  "type": "station",
+		  "id": "8000274",
+		  "name": "Neuss Hbf",
+		  "location": {
+			"type": "location",
+			"id": "8000274",
+			"latitude": 51.204373,
+			"longitude": 6.684415
+		  },
+		  "products": {
+			"nationalExpress": true,
+			"national": false,
+			"regionalExpress": true,
+			"regional": true,
+			"suburban": true,
+			"bus": true,
+			"ferry": false,
+			"subway": true,
+			"tram": true,
+			"taxi": true
+		  }
+		}
+	  },
+	  "when": "2024-06-01T17:30:00+02:00",
+	  "plannedWhen": "2024-06-01T17:30:00+02:00",
+	  "delay": null,
+	  "platform": null,
+	  "plannedPlatform": null,
+	  "prognosisType": null,
+	  "direction": "Lukaskrankenhaus, Neuss",
+	  "provenance": null,
+	  "line": {
+		"type": "line",
+		"id": "5-vrr060-848",
+		"fahrtNr": "0",
+		"name": "Bus 848",
+		"public": true,
+		"adminCode": "vrr060",
+		"productName": "Bus",
+		"mode": "bus",
+		"product": "bus",
+		"operator": {
+		  "type": "operator",
+		  "id": "nahreisezug",
+		  "name": "Nahreisezug"
+		}
+	  },
+	  "remarks": [],
+	  "origin": null,
+	  "destination": {
+		"type": "station",
+		"id": "660664",
+		"name": "Lukaskrankenhaus, Neuss",
+		"location": {
+		  "type": "location",
+		  "id": "660664",
+		  "latitude": 51.189594,
+		  "longitude": 6.669915
+		},
+		"products": {
+		  "nationalExpress": false,
+		  "national": false,
+		  "regionalExpress": false,
+		  "regional": false,
+		  "suburban": false,
+		  "bus": true,
+		  "ferry": false,
+		  "subway": false,
+		  "tram": false,
+		  "taxi": true
+		}
+	  },
+	  "currentTripPosition": {
+		"type": "location",
+		"latitude": 51.209506,
+		"longitude": 6.664665
+	  }
+	},
+	{
+	  "tripId": "1|1651371|16|80|1062024",
+	  "stop": {
+		"type": "stop",
+		"id": "367055",
+		"name": "Hauptbahnhof, Neuss",
+		"location": {
+		  "type": "location",
+		  "id": "367055",
+		  "latitude": 51.203411,
+		  "longitude": 6.684603
+		},
+		"products": {
+		  "nationalExpress": true,
+		  "national": false,
+		  "regionalExpress": true,
+		  "regional": true,
+		  "suburban": true,
+		  "bus": true,
+		  "ferry": false,
+		  "subway": true,
+		  "tram": true,
+		  "taxi": true
+		},
+		"station": {
+		  "type": "station",
+		  "id": "8000274",
+		  "name": "Neuss Hbf",
+		  "location": {
+			"type": "location",
+			"id": "8000274",
+			"latitude": 51.204373,
+			"longitude": 6.684415
+		  },
+		  "products": {
+			"nationalExpress": true,
+			"national": false,
+			"regionalExpress": true,
+			"regional": true,
+			"suburban": true,
+			"bus": true,
+			"ferry": false,
+			"subway": true,
+			"tram": true,
+			"taxi": true
+		  }
+		}
+	  },
+	  "when": "2024-06-01T17:31:00+02:00",
+	  "plannedWhen": "2024-06-01T17:31:00+02:00",
+	  "delay": null,
+	  "platform": null,
+	  "plannedPlatform": null,
+	  "prognosisType": null,
+	  "direction": "Blankenheimer Str., Neuss",
+	  "provenance": null,
+	  "line": {
+		"type": "line",
+		"id": "5-vrr060-849",
+		"fahrtNr": "0",
+		"name": "Bus 849",
+		"public": true,
+		"adminCode": "vrr060",
+		"productName": "Bus",
+		"mode": "bus",
+		"product": "bus",
+		"operator": {
+		  "type": "operator",
+		  "id": "nahreisezug",
+		  "name": "Nahreisezug"
+		}
+	  },
+	  "remarks": [],
+	  "origin": null,
+	  "destination": {
+		"type": "stop",
+		"id": "660547",
+		"name": "Blankenheimer Str., Neuss",
+		"location": {
+		  "type": "location",
+		  "id": "660547",
+		  "latitude": 51.164146,
+		  "longitude": 6.728642
+		},
+		"products": {
+		  "nationalExpress": false,
+		  "national": false,
+		  "regionalExpress": false,
+		  "regional": false,
+		  "suburban": false,
+		  "bus": true,
+		  "ferry": false,
+		  "subway": false,
+		  "tram": false,
+		  "taxi": true
+		}
+	  },
+	  "currentTripPosition": {
+		"type": "location",
+		"latitude": 51.196849,
+		"longitude": 6.664962
+	  }
+	}
+  ],
+  "realtimeDataUpdatedAt": 1717255332
+}
