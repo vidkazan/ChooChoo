@@ -47,4 +47,20 @@ extension CoreDataStore {
 			self.saveAsyncContext()
 		}
 	}
+	
+	func updateRecentSearchTS(search : RecentSearchesViewModel.RecentSearch) -> Bool {
+		var result = false
+		if let objects = self.fetch(CDRecentSearch.self) {
+			 asyncContext.performAndWait {
+				if let res = objects.first(where: { obj in
+					return obj.id == search.stops.id
+				}) {
+					res.searchDate = Date(timeIntervalSince1970: search.searchTS)
+					self.saveAsyncContext()
+					result = true
+				}
+			}
+		}
+		return result
+	}
 }
