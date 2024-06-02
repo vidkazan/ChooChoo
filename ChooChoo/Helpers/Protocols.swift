@@ -46,6 +46,12 @@ extension ChewViewModelProtocol {
 	) {
 		Logger.status("\(Self.self)", status: status)
 	}
+	static func warning(
+		_ status : any ChewStatus,
+		_ msg: String
+	) {
+		Logger.warning("\(Self.self)", status: status,msg: msg)
+	}
 	static func log(
 		_ event : any ChewEvent,
 		_ status : any ChewStatus
