@@ -5,6 +5,24 @@
    <BuildAction
       parallelizeBuildables = "YES"
       buildImplicitDependencies = "YES">
+      <PreActions>
+         <ExecutionAction
+            ActionType = "Xcode.IDEStandardExecutionActionsCore.ExecutionActionType.ShellScriptAction">
+            <ActionContent
+               title = "Run Script"
+               scriptText = "branch=&quot;main&quot;&#10;&#10;git_path=$(which git)&#10;if [ -e $git_path ]; then&#10;&#9;branch=$($git_path --git-dir=$PROJECT_DIR/.git rev-parse --abbrev-ref HEAD)&#10;fi&#10;&#10;plistName=$PROJECT_DIR/ChooChoo/Branch&#10;plistPath=$plistName.plist&#10;if [ ! -e $plistPath ]; then&#10;touch $plistPath&#10;fi&#10;chmod u+wr,g+wr,o+r $plistPath&#10;defaults write $plistName &quot;branch&quot; $branch&#10;">
+               <EnvironmentBuildable>
+                  <BuildableReference
+                     BuildableIdentifier = "primary"
+                     BlueprintIdentifier = "7D6734AE2A96334B00CBE9C1"
+                     BuildableName = "ChooChoo.app"
+                     BlueprintName = "ChooChoo"
+                     ReferencedContainer = "container:ChooChoo.xcodeproj">
+                  </BuildableReference>
+               </EnvironmentBuildable>
+            </ActionContent>
+         </ExecutionAction>
+      </PreActions>
       <BuildActionEntries>
          <BuildActionEntry
             buildForTesting = "YES"
