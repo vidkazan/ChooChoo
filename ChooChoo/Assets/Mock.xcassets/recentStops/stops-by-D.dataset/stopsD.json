@@ -1,0 +1,2509 @@
+[
+	{
+		"type": "station",
+		"id": "8000085",
+		"name": "Düsseldorf Hbf",
+		"location": {
+			"type": "location",
+			"id": "8000085",
+			"latitude": 51.219708,
+			"longitude": 6.794011
+		},
+		"products": {
+			"nationalExpress": true,
+			"national": true,
+			"regionalExpress": true,
+			"regional": true,
+			"suburban": true,
+			"bus": true,
+			"ferry": false,
+			"subway": true,
+			"tram": true,
+			"taxi": false
+		}
+	},
+	{
+		"type": "station",
+		"id": "8000068",
+		"name": "Darmstadt Hbf",
+		"location": {
+			"type": "location",
+			"id": "8000068",
+			"latitude": 49.872549,
+			"longitude": 8.629707
+		},
+		"products": {
+			"nationalExpress": true,
+			"national": true,
+			"regionalExpress": true,
+			"regional": true,
+			"suburban": true,
+			"bus": true,
+			"ferry": false,
+			"subway": false,
+			"tram": true,
+			"taxi": false
+		}
+	},
+	{
+		"type": "station",
+		"id": "8001354",
+		"name": "Dachau Bahnhof",
+		"location": {
+			"type": "location",
+			"id": "8001354",
+			"latitude": 48.254697,
+			"longitude": 11.444266
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": true,
+			"suburban": true,
+			"bus": true,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": true
+		}
+	},
+	{
+		"type": "station",
+		"id": "8011340",
+		"name": "Dahlewitz",
+		"location": {
+			"type": "location",
+			"id": "8011340",
+			"latitude": 52.32664,
+			"longitude": 13.419726
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": true,
+			"suburban": false,
+			"bus": true,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": false
+		}
+	},
+	{
+		"type": "station",
+		"id": "8080260",
+		"name": "Dallgow-Döberitz",
+		"location": {
+			"type": "location",
+			"id": "8080260",
+			"latitude": 52.543631,
+			"longitude": 13.05898
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": true,
+			"suburban": false,
+			"bus": true,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": false
+		}
+	},
+	{
+		"type": "station",
+		"id": "8001359",
+		"name": "Dahlem(Eifel)",
+		"location": {
+			"type": "location",
+			"id": "8001359",
+			"latitude": 50.385617,
+			"longitude": 6.550215
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": true,
+			"suburban": false,
+			"bus": true,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": true
+		}
+	},
+	{
+		"type": "station",
+		"id": "8011334",
+		"name": "Dabendorf",
+		"location": {
+			"type": "location",
+			"id": "8011334",
+			"latitude": 52.237683,
+			"longitude": 13.43739
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": true,
+			"suburban": false,
+			"bus": true,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": false
+		}
+	},
+	{
+		"type": "stop",
+		"id": "8013447",
+		"name": "Dalzig Groß",
+		"location": {
+			"type": "location",
+			"id": "8013447",
+			"latitude": 51.208364,
+			"longitude": 12.271255
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": true,
+			"suburban": false,
+			"bus": true,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": false
+		}
+	},
+	{
+		"type": "station",
+		"id": "8007077",
+		"name": "Daaden",
+		"location": {
+			"type": "location",
+			"id": "8007077",
+			"latitude": 50.740538,
+			"longitude": 7.963661
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": true,
+			"suburban": false,
+			"bus": true,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": true
+		}
+	},
+	{
+		"type": "station",
+		"id": "8001365",
+		"name": "Dalheim",
+		"location": {
+			"type": "location",
+			"id": "8001365",
+			"latitude": 51.149062,
+			"longitude": 6.178151
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": true,
+			"suburban": false,
+			"bus": true,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": false
+		}
+	},
+	{
+		"type": "station",
+		"id": "8011339",
+		"name": "Dahlen(Sachs)",
+		"location": {
+			"type": "location",
+			"id": "8011339",
+			"latitude": 51.350924,
+			"longitude": 12.984657
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": true,
+			"suburban": true,
+			"bus": true,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": true
+		}
+	},
+	{
+		"type": "station",
+		"id": "8007769",
+		"name": "Dagebüll Mole",
+		"location": {
+			"type": "location",
+			"id": "8007769",
+			"latitude": 54.730023,
+			"longitude": 8.689629
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": true,
+			"regionalExpress": false,
+			"regional": true,
+			"suburban": false,
+			"bus": true,
+			"ferry": true,
+			"subway": false,
+			"tram": false,
+			"taxi": false
+		}
+	},
+	{
+		"type": "station",
+		"id": "8077770",
+		"name": "Dagebüll Kirche",
+		"location": {
+			"type": "location",
+			"id": "8077770",
+			"latitude": 54.730023,
+			"longitude": 8.728616
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": true,
+			"regionalExpress": false,
+			"regional": true,
+			"suburban": false,
+			"bus": true,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": false
+		}
+	},
+	{
+		"type": "station",
+		"id": "8001355",
+		"name": "Dachau Stadt",
+		"location": {
+			"type": "location",
+			"id": "8001355",
+			"latitude": 48.266878,
+			"longitude": 11.439529
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": true,
+			"suburban": true,
+			"bus": true,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": false
+		}
+	},
+	{
+		"type": "station",
+		"id": "8011335",
+		"name": "Dachrieden",
+		"location": {
+			"type": "location",
+			"id": "8011335",
+			"latitude": 51.269167,
+			"longitude": 10.443218
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": true,
+			"suburban": false,
+			"bus": true,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": false
+		}
+	},
+	{
+		"type": "station",
+		"id": "8001362",
+		"name": "Dahlerbrück",
+		"location": {
+			"type": "location",
+			"id": "8001362",
+			"latitude": 51.252195,
+			"longitude": 7.517112
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": true,
+			"suburban": false,
+			"bus": true,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": false
+		}
+	},
+	{
+		"type": "stop",
+		"id": "8011336",
+		"name": "Dachwig",
+		"location": {
+			"type": "location",
+			"id": "8011336",
+			"latitude": 51.072348,
+			"longitude": 10.850412
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": true,
+			"suburban": false,
+			"bus": true,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": false
+		}
+	},
+	{
+		"type": "stop",
+		"id": "8001357",
+		"name": "Dahl",
+		"location": {
+			"type": "location",
+			"id": "8001357",
+			"latitude": 51.303353,
+			"longitude": 7.527864
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": true,
+			"suburban": false,
+			"bus": true,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": false
+		}
+	},
+	{
+		"type": "stop",
+		"id": "8001358",
+		"name": "Dahlbruch",
+		"location": {
+			"type": "location",
+			"id": "8001358",
+			"latitude": 50.970482,
+			"longitude": 8.05384
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": true,
+			"suburban": false,
+			"bus": true,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": true
+		}
+	},
+	{
+		"type": "stop",
+		"id": "8302091",
+		"name": "Damiano d'Asti S",
+		"location": {
+			"type": "location",
+			"id": "8302091",
+			"latitude": 44.878951,
+			"longitude": 8.125907
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": true,
+			"suburban": false,
+			"bus": false,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": false
+		}
+	},
+	{
+		"type": "station",
+		"id": "8079085",
+		"name": "Dahn",
+		"location": {
+			"type": "location",
+			"id": "8079085",
+			"latitude": 49.154374,
+			"longitude": 7.771444
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": true,
+			"suburban": false,
+			"bus": true,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": true
+		}
+	},
+	{
+		"type": "station",
+		"id": "8079118",
+		"name": "Dahn-Reichenbach",
+		"location": {
+			"type": "location",
+			"id": "8079118",
+			"latitude": 49.138858,
+			"longitude": 7.799823
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": true,
+			"suburban": false,
+			"bus": true,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": true
+		}
+	},
+	{
+		"type": "station",
+		"id": "8001366",
+		"name": "Dallau",
+		"location": {
+			"type": "location",
+			"id": "8001366",
+			"latitude": 49.388003,
+			"longitude": 9.18747
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": true,
+			"suburban": true,
+			"bus": true,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": true
+		}
+	},
+	{
+		"type": "stop",
+		"id": "678528",
+		"name": "Dachsbergstraße, Lauf a.d. Pegnitz",
+		"location": {
+			"type": "location",
+			"id": "678528",
+			"latitude": 49.522752,
+			"longitude": 11.271907
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": false,
+			"suburban": false,
+			"bus": true,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": true
+		}
+	},
+	{
+		"type": "station",
+		"id": "8001372",
+		"name": "Dannenberg Ost",
+		"location": {
+			"type": "location",
+			"id": "8001372",
+			"latitude": 53.105025,
+			"longitude": 11.118317
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": true,
+			"suburban": false,
+			"bus": true,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": true
+		}
+	},
+	{
+		"type": "station",
+		"id": "8001360",
+		"name": "Dahlenburg",
+		"location": {
+			"type": "location",
+			"id": "8001360",
+			"latitude": 53.169334,
+			"longitude": 10.708786
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": true,
+			"suburban": false,
+			"bus": true,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": true
+		}
+	},
+	{
+		"type": "stop",
+		"id": "8079081",
+		"name": "Dahn Süd",
+		"location": {
+			"type": "location",
+			"id": "8079081",
+			"latitude": 49.149088,
+			"longitude": 7.776586
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": true,
+			"suburban": false,
+			"bus": true,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": true
+		}
+	},
+	{
+		"type": "station",
+		"id": "8011342",
+		"name": "Dambeck(Altm)",
+		"location": {
+			"type": "location",
+			"id": "8011342",
+			"latitude": 52.801279,
+			"longitude": 11.165825
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": false,
+			"suburban": false,
+			"bus": true,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": true
+		}
+	},
+	{
+		"type": "stop",
+		"id": "504382",
+		"name": "D.-Bonhoeffer-Str., Donaueschingen",
+		"location": {
+			"type": "location",
+			"id": "504382",
+			"latitude": 47.945873,
+			"longitude": 8.493413
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": false,
+			"suburban": false,
+			"bus": true,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": true
+		}
+	},
+	{
+		"type": "stop",
+		"id": "333053",
+		"name": "D.-Bonhoeffer-Str., Waren (Müritz)",
+		"location": {
+			"type": "location",
+			"id": "333053",
+			"latitude": 53.523176,
+			"longitude": 12.658151
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": false,
+			"suburban": false,
+			"bus": true,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": false
+		}
+	},
+	{
+		"type": "stop",
+		"id": "585227",
+		"name": "D'horn, Langerwehe",
+		"location": {
+			"type": "location",
+			"id": "585227",
+			"latitude": 50.810061,
+			"longitude": 6.396625
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": false,
+			"suburban": false,
+			"bus": true,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": false
+		}
+	},
+	{
+		"type": "stop",
+		"id": "268603",
+		"name": "D'horn Schlicher Straße, Langerwehe",
+		"location": {
+			"type": "location",
+			"id": "268603",
+			"latitude": 50.807966,
+			"longitude": 6.398908
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": false,
+			"suburban": false,
+			"bus": true,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": false
+		}
+	},
+	{
+		"type": "stop",
+		"id": "103368",
+		"name": "Daimlerstraße, Bad Homburg v.d. Höhe",
+		"location": {
+			"type": "location",
+			"id": "103368",
+			"latitude": 50.218481,
+			"longitude": 8.622741
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": false,
+			"suburban": false,
+			"bus": true,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": false
+		}
+	},
+	{
+		"type": "stop",
+		"id": "714198",
+		"name": "Dankerode, Rotenburg a.d. Fulda",
+		"location": {
+			"type": "location",
+			"id": "714198",
+			"latitude": 51.067629,
+			"longitude": 9.777432
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": false,
+			"suburban": false,
+			"bus": true,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": true
+		}
+	},
+	{
+		"type": "stop",
+		"id": "165863",
+		"name": "D.-Bonhoeffer-Ring, Lüdinghausen",
+		"location": {
+			"type": "location",
+			"id": "165863",
+			"latitude": 51.775044,
+			"longitude": 7.448444
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": false,
+			"suburban": false,
+			"bus": true,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": false
+		}
+	},
+	{
+		"type": "stop",
+		"id": "469035",
+		"name": "D.-Bonhoeffer-Str., Marktheidenfeld",
+		"location": {
+			"type": "location",
+			"id": "469035",
+			"latitude": 49.835711,
+			"longitude": 9.602996
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": false,
+			"suburban": false,
+			"bus": true,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": false
+		}
+	},
+	{
+		"type": "stop",
+		"id": "585126",
+		"name": "D'horn Rothaus, Langerwehe",
+		"location": {
+			"type": "location",
+			"id": "585126",
+			"latitude": 50.811005,
+			"longitude": 6.398234
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": false,
+			"suburban": false,
+			"bus": true,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": false
+		}
+	},
+	{
+		"type": "stop",
+		"id": "5100250",
+		"name": "Dabrowa Gornicza",
+		"location": {
+			"type": "location",
+			"id": "5100250",
+			"latitude": 50.330172,
+			"longitude": 19.185452
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": true,
+			"regionalExpress": true,
+			"regional": true,
+			"suburban": false,
+			"bus": true,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": false
+		}
+	},
+	{
+		"type": "stop",
+		"id": "8400167",
+		"name": "Dalfsen",
+		"location": {
+			"type": "location",
+			"id": "8400167",
+			"latitude": 52.498343,
+			"longitude": 6.259018
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": true,
+			"regional": true,
+			"suburban": false,
+			"bus": false,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": false
+		}
+	},
+	{
+		"type": "stop",
+		"id": "7000682",
+		"name": "Dalmuir",
+		"location": {
+			"type": "location",
+			"id": "7000682",
+			"latitude": 55.912051,
+			"longitude": -4.427286
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": true,
+			"regional": true,
+			"suburban": false,
+			"bus": false,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": false
+		}
+	},
+	{
+		"type": "stop",
+		"id": "736512",
+		"name": "Dahlewitz Bahnhof, Blankenfelde-Mahlow",
+		"location": {
+			"type": "location",
+			"id": "736512",
+			"latitude": 52.327027,
+			"longitude": 13.419708
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": true,
+			"suburban": false,
+			"bus": true,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": false
+		},
+		"station": {
+			"type": "station",
+			"id": "8011340",
+			"name": "Dahlewitz",
+			"location": {
+				"type": "location",
+				"id": "8011340",
+				"latitude": 52.32664,
+				"longitude": 13.419726
+			},
+			"products": {
+				"nationalExpress": false,
+				"national": false,
+				"regionalExpress": false,
+				"regional": true,
+				"suburban": false,
+				"bus": true,
+				"ferry": false,
+				"subway": false,
+				"tram": false,
+				"taxi": false
+			}
+		}
+	},
+	{
+		"type": "stop",
+		"id": "7600123",
+		"name": "Dale",
+		"location": {
+			"type": "location",
+			"id": "7600123",
+			"latitude": 60.586235,
+			"longitude": 5.815895
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": true,
+			"regionalExpress": true,
+			"regional": true,
+			"suburban": false,
+			"bus": false,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": false
+		}
+	},
+	{
+		"type": "stop",
+		"id": "7000636",
+		"name": "Dagenham Dock",
+		"location": {
+			"type": "location",
+			"id": "7000636",
+			"latitude": 51.526007,
+			"longitude": 0.146497
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": true,
+			"regional": true,
+			"suburban": false,
+			"bus": false,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": false
+		}
+	},
+	{
+		"type": "stop",
+		"id": "7000679",
+		"name": "Dalmeny",
+		"location": {
+			"type": "location",
+			"id": "7000679",
+			"latitude": 55.986364,
+			"longitude": -3.381706
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": true,
+			"regional": true,
+			"suburban": false,
+			"bus": false,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": false
+		}
+	},
+	{
+		"type": "stop",
+		"id": "7000719",
+		"name": "Dalry",
+		"location": {
+			"type": "location",
+			"id": "7000719",
+			"latitude": 55.706117,
+			"longitude": -4.711067
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": true,
+			"regional": true,
+			"suburban": false,
+			"bus": false,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": false
+		}
+	},
+	{
+		"type": "stop",
+		"id": "638206",
+		"name": "Daglfing Bahnhof Ost, München",
+		"location": {
+			"type": "location",
+			"id": "638206",
+			"latitude": 48.148858,
+			"longitude": 11.649975
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": true,
+			"suburban": true,
+			"bus": true,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": false
+		},
+		"station": {
+			"type": "station",
+			"id": "8004143",
+			"name": "München-Daglfing",
+			"location": {
+				"type": "location",
+				"id": "8004143",
+				"latitude": 48.148939,
+				"longitude": 11.649454
+			},
+			"products": {
+				"nationalExpress": false,
+				"national": false,
+				"regionalExpress": false,
+				"regional": true,
+				"suburban": true,
+				"bus": true,
+				"ferry": false,
+				"subway": false,
+				"tram": false,
+				"taxi": false
+			}
+		}
+	},
+	{
+		"type": "stop",
+		"id": "638205",
+		"name": "Daglfing Bahnhof West, München",
+		"location": {
+			"type": "location",
+			"id": "638205",
+			"latitude": 48.148463,
+			"longitude": 11.648195
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": true,
+			"suburban": true,
+			"bus": true,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": false
+		},
+		"station": {
+			"type": "station",
+			"id": "8004143",
+			"name": "München-Daglfing",
+			"location": {
+				"type": "location",
+				"id": "8004143",
+				"latitude": 48.148939,
+				"longitude": 11.649454
+			},
+			"products": {
+				"nationalExpress": false,
+				"national": false,
+				"regionalExpress": false,
+				"regional": true,
+				"suburban": true,
+				"bus": true,
+				"ferry": false,
+				"subway": false,
+				"tram": false,
+				"taxi": false
+			}
+		}
+	},
+	{
+		"type": "stop",
+		"id": "676486",
+		"name": "Dambach Alte Veste, Fürth (Bayern)",
+		"location": {
+			"type": "location",
+			"id": "676486",
+			"latitude": 49.454326,
+			"longitude": 10.972368
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": true,
+			"suburban": false,
+			"bus": true,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": false
+		},
+		"station": {
+			"type": "station",
+			"id": "8000511",
+			"name": "Alte Veste",
+			"location": {
+				"type": "location",
+				"id": "8000511",
+				"latitude": 49.454308,
+				"longitude": 10.972386
+			},
+			"products": {
+				"nationalExpress": false,
+				"national": false,
+				"regionalExpress": false,
+				"regional": true,
+				"suburban": false,
+				"bus": true,
+				"ferry": false,
+				"subway": false,
+				"tram": false,
+				"taxi": false
+			}
+		}
+	},
+	{
+		"type": "stop",
+		"id": "7002879",
+		"name": "Dalgety Bay",
+		"location": {
+			"type": "location",
+			"id": "7002879",
+			"latitude": 56.042322,
+			"longitude": -3.367467
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": true,
+			"regional": true,
+			"suburban": false,
+			"bus": false,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": false
+		}
+	},
+	{
+		"type": "stop",
+		"id": "736510",
+		"name": "Dabendorf Bahnhof, Zossen",
+		"location": {
+			"type": "location",
+			"id": "736510",
+			"latitude": 52.238042,
+			"longitude": 13.437093
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": true,
+			"suburban": false,
+			"bus": true,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": false
+		},
+		"station": {
+			"type": "station",
+			"id": "8011334",
+			"name": "Dabendorf",
+			"location": {
+				"type": "location",
+				"id": "8011334",
+				"latitude": 52.237683,
+				"longitude": 13.43739
+			},
+			"products": {
+				"nationalExpress": false,
+				"national": false,
+				"regionalExpress": false,
+				"regional": true,
+				"suburban": false,
+				"bus": true,
+				"ferry": false,
+				"subway": false,
+				"tram": false,
+				"taxi": false
+			}
+		}
+	},
+	{
+		"type": "stop",
+		"id": "5100925",
+		"name": "Dabrowa Gornicza Golonog",
+		"location": {
+			"type": "location",
+			"id": "5100925",
+			"latitude": 50.343719,
+			"longitude": 19.225688
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": true,
+			"suburban": false,
+			"bus": true,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": false
+		}
+	},
+	{
+		"type": "stop",
+		"id": "5100098",
+		"name": "Dabrowa Gornicza Zabkowice",
+		"location": {
+			"type": "location",
+			"id": "5100098",
+			"latitude": 50.366479,
+			"longitude": 19.264441
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": true,
+			"suburban": false,
+			"bus": true,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": false
+		}
+	},
+	{
+		"type": "stop",
+		"id": "7000641",
+		"name": "Daisy Hill",
+		"location": {
+			"type": "location",
+			"id": "7000641",
+			"latitude": 53.539483,
+			"longitude": -2.515865
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": true,
+			"suburban": false,
+			"bus": true,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": false
+		}
+	},
+	{
+		"type": "stop",
+		"id": "8400164",
+		"name": "Daarlerveen",
+		"location": {
+			"type": "location",
+			"id": "8400164",
+			"latitude": 52.441306,
+			"longitude": 6.575834
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": true,
+			"suburban": false,
+			"bus": false,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": false
+		}
+	},
+	{
+		"type": "stop",
+		"id": "5500402",
+		"name": "Dabas",
+		"location": {
+			"type": "location",
+			"id": "5500402",
+			"latitude": 47.195238,
+			"longitude": 19.329639
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": true,
+			"suburban": false,
+			"bus": false,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": false
+		}
+	},
+	{
+		"type": "stop",
+		"id": "8701022",
+		"name": "Dachstein(F)",
+		"location": {
+			"type": "location",
+			"id": "8701022",
+			"latitude": 48.542811,
+			"longitude": 7.532646
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": true,
+			"suburban": false,
+			"bus": false,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": false
+		}
+	},
+	{
+		"type": "stop",
+		"id": "7600085",
+		"name": "Dal",
+		"location": {
+			"type": "location",
+			"id": "7600085",
+			"latitude": 60.248959,
+			"longitude": 11.202816
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": true,
+			"suburban": false,
+			"bus": false,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": false
+		}
+	},
+	{
+		"type": "stop",
+		"id": "8400161",
+		"name": "Dalen(NL)",
+		"location": {
+			"type": "location",
+			"id": "8400161",
+			"latitude": 52.694218,
+			"longitude": 6.75818
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": true,
+			"suburban": false,
+			"bus": false,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": false
+		}
+	},
+	{
+		"type": "stop",
+		"id": "8508552",
+		"name": "Dallenwil LDW",
+		"location": {
+			"type": "location",
+			"id": "8508552",
+			"latitude": 46.925202,
+			"longitude": 8.386963
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": true,
+			"regional": true,
+			"suburban": true,
+			"bus": true,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": false
+		}
+	},
+	{
+		"type": "stop",
+		"id": "7000643",
+		"name": "Dalmarnock",
+		"location": {
+			"type": "location",
+			"id": "7000643",
+			"latitude": 55.841081,
+			"longitude": -4.215527
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": true,
+			"suburban": false,
+			"bus": false,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": false
+		}
+	},
+	{
+		"type": "stop",
+		"id": "7000705",
+		"name": "Dalreoch",
+		"location": {
+			"type": "location",
+			"id": "7000705",
+			"latitude": 55.947657,
+			"longitude": -4.57773
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": true,
+			"suburban": false,
+			"bus": false,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": false
+		}
+	},
+	{
+		"type": "stop",
+		"id": "7004529",
+		"name": "Dalston Junction Stn ELL",
+		"location": {
+			"type": "location",
+			"id": "7004529",
+			"latitude": 51.545666,
+			"longitude": -0.075078
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": true,
+			"suburban": false,
+			"bus": false,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": false
+		}
+	},
+	{
+		"type": "stop",
+		"id": "7000721",
+		"name": "Dalston(Kingsland)",
+		"location": {
+			"type": "location",
+			"id": "7000721",
+			"latitude": 51.548219,
+			"longitude": -0.076013
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": true,
+			"suburban": false,
+			"bus": false,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": false
+		}
+	},
+	{
+		"type": "stop",
+		"id": "5600778",
+		"name": "Danielov Dom",
+		"location": {
+			"type": "location",
+			"id": "5600778",
+			"latitude": 49.117095,
+			"longitude": 20.166203
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": true,
+			"suburban": false,
+			"bus": false,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": false
+		}
+	},
+	{
+		"type": "station",
+		"id": "8508392",
+		"name": "Dallenwil",
+		"location": {
+			"type": "location",
+			"id": "8508392",
+			"latitude": 46.933777,
+			"longitude": 8.391961
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": true,
+			"regional": true,
+			"suburban": true,
+			"bus": true,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": false
+		}
+	},
+	{
+		"type": "stop",
+		"id": "6010017",
+		"name": "Dalkey",
+		"location": {
+			"type": "location",
+			"id": "6010017",
+			"latitude": 53.275622,
+			"longitude": -6.103127
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": false,
+			"suburban": true,
+			"bus": false,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": false
+		}
+	},
+	{
+		"type": "station",
+		"id": "8502004",
+		"name": "Dagmersellen",
+		"location": {
+			"type": "location",
+			"id": "8502004",
+			"latitude": 47.217558,
+			"longitude": 7.979023
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": true,
+			"suburban": true,
+			"bus": true,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": false
+		}
+	},
+	{
+		"type": "stop",
+		"id": "7000677",
+		"name": "Dalton",
+		"location": {
+			"type": "location",
+			"id": "7000677",
+			"latitude": 54.154282,
+			"longitude": -3.179125
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": true,
+			"regional": true,
+			"suburban": false,
+			"bus": false,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": false
+		}
+	},
+	{
+		"type": "stop",
+		"id": "7000638",
+		"name": "Danescourt",
+		"location": {
+			"type": "location",
+			"id": "7000638",
+			"latitude": 51.500612,
+			"longitude": -3.233842
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": true,
+			"regional": true,
+			"suburban": false,
+			"bus": false,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": false
+		}
+	},
+	{
+		"type": "stop",
+		"id": "655160",
+		"name": "Dahlhausen Bahnhof, Bochum",
+		"location": {
+			"type": "location",
+			"id": "655160",
+			"latitude": 51.427161,
+			"longitude": 7.142415
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": true,
+			"suburban": true,
+			"bus": true,
+			"ferry": false,
+			"subway": false,
+			"tram": true,
+			"taxi": true
+		},
+		"station": {
+			"type": "station",
+			"id": "8001038",
+			"name": "Bochum-Dahlhausen",
+			"location": {
+				"type": "location",
+				"id": "8001038",
+				"latitude": 51.426245,
+				"longitude": 7.141516
+			},
+			"products": {
+				"nationalExpress": false,
+				"national": false,
+				"regionalExpress": false,
+				"regional": true,
+				"suburban": true,
+				"bus": true,
+				"ferry": false,
+				"subway": false,
+				"tram": true,
+				"taxi": true
+			}
+		}
+	},
+	{
+		"type": "stop",
+		"id": "585485",
+		"name": "Dalheim Bahnhof (Bus), Wegberg",
+		"location": {
+			"type": "location",
+			"id": "585485",
+			"latitude": 51.149422,
+			"longitude": 6.178933
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": true,
+			"suburban": false,
+			"bus": true,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": false
+		},
+		"station": {
+			"type": "station",
+			"id": "8001365",
+			"name": "Dalheim",
+			"location": {
+				"type": "location",
+				"id": "8001365",
+				"latitude": 51.149062,
+				"longitude": 6.178151
+			},
+			"products": {
+				"nationalExpress": false,
+				"national": false,
+				"regionalExpress": false,
+				"regional": true,
+				"suburban": false,
+				"bus": true,
+				"ferry": false,
+				"subway": false,
+				"tram": false,
+				"taxi": false
+			}
+		}
+	},
+	{
+		"type": "station",
+		"id": "723864",
+		"name": "Dammerstock, Karlsruhe",
+		"location": {
+			"type": "location",
+			"id": "723864",
+			"latitude": 48.984109,
+			"longitude": 8.403674
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": false,
+			"suburban": true,
+			"bus": true,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": true
+		}
+	},
+	{
+		"type": "stop",
+		"id": "8703197",
+		"name": "Dammartin-Juilly-St-Mard",
+		"location": {
+			"type": "location",
+			"id": "8703197",
+			"latitude": 49.032264,
+			"longitude": 2.698993
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": true,
+			"suburban": true,
+			"bus": true,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": false
+		}
+	},
+	{
+		"type": "stop",
+		"id": "5200087",
+		"name": "Dabovo",
+		"location": {
+			"type": "location",
+			"id": "5200087",
+			"latitude": 42.61411,
+			"longitude": 25.637613
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": true,
+			"regional": true,
+			"suburban": false,
+			"bus": false,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": false
+		}
+	},
+	{
+		"type": "stop",
+		"id": "215026",
+		"name": "Dachrieden Bahnhof, Unstruttal",
+		"location": {
+			"type": "location",
+			"id": "215026",
+			"latitude": 51.269077,
+			"longitude": 10.442562
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": true,
+			"suburban": false,
+			"bus": true,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": false
+		},
+		"station": {
+			"type": "station",
+			"id": "8011335",
+			"name": "Dachrieden",
+			"location": {
+				"type": "location",
+				"id": "8011335",
+				"latitude": 51.269167,
+				"longitude": 10.443218
+			},
+			"products": {
+				"nationalExpress": false,
+				"national": false,
+				"regionalExpress": false,
+				"regional": true,
+				"suburban": false,
+				"bus": true,
+				"ferry": false,
+				"subway": false,
+				"tram": false,
+				"taxi": false
+			}
+		}
+	},
+	{
+		"type": "stop",
+		"id": "881592",
+		"name": "Dahlerbrück, Schalksmühle",
+		"location": {
+			"type": "location",
+			"id": "881592",
+			"latitude": 51.252366,
+			"longitude": 7.517715
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": true,
+			"suburban": false,
+			"bus": true,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": false
+		},
+		"station": {
+			"type": "station",
+			"id": "8001362",
+			"name": "Dahlerbrück",
+			"location": {
+				"type": "location",
+				"id": "8001362",
+				"latitude": 51.252195,
+				"longitude": 7.517112
+			},
+			"products": {
+				"nationalExpress": false,
+				"national": false,
+				"regionalExpress": false,
+				"regional": true,
+				"suburban": false,
+				"bus": true,
+				"ferry": false,
+				"subway": false,
+				"tram": false,
+				"taxi": false
+			}
+		}
+	},
+	{
+		"type": "station",
+		"id": "8506049",
+		"name": "Dachsen",
+		"location": {
+			"type": "location",
+			"id": "8506049",
+			"latitude": 47.666767,
+			"longitude": 8.613967
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": true,
+			"suburban": true,
+			"bus": true,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": false
+		}
+	},
+	{
+		"type": "stop",
+		"id": "5100875",
+		"name": "Dalekie",
+		"location": {
+			"type": "location",
+			"id": "5100875",
+			"latitude": 52.682631,
+			"longitude": 21.494575
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": true,
+			"suburban": false,
+			"bus": true,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": false
+		}
+	},
+	{
+		"type": "stop",
+		"id": "8700301",
+		"name": "Dambach-la Ville",
+		"location": {
+			"type": "location",
+			"id": "8700301",
+			"latitude": 48.321775,
+			"longitude": 7.435751
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": true,
+			"suburban": false,
+			"bus": true,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": false
+		}
+	},
+	{
+		"type": "stop",
+		"id": "8703196",
+		"name": "Damiatte St Paul",
+		"location": {
+			"type": "location",
+			"id": "8703196",
+			"latitude": 43.656616,
+			"longitude": 1.973357
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": true,
+			"suburban": false,
+			"bus": true,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": false
+		}
+	},
+	{
+		"type": "stop",
+		"id": "731529",
+		"name": "Dahlem-Dorf (U), Berlin",
+		"location": {
+			"type": "location",
+			"id": "731529",
+			"latitude": 52.457451,
+			"longitude": 13.289751
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": false,
+			"suburban": false,
+			"bus": true,
+			"ferry": false,
+			"subway": true,
+			"tram": false,
+			"taxi": false
+		}
+	},
+	{
+		"type": "stop",
+		"id": "5200399",
+		"name": "Dabene",
+		"location": {
+			"type": "location",
+			"id": "5200399",
+			"latitude": 42.594792,
+			"longitude": 24.780527
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": true,
+			"suburban": false,
+			"bus": false,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": false
+		}
+	},
+	{
+		"type": "stop",
+		"id": "5100896",
+		"name": "Dabie k. Debicy",
+		"location": {
+			"type": "location",
+			"id": "5100896",
+			"latitude": 50.169876,
+			"longitude": 21.495321
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": true,
+			"suburban": false,
+			"bus": false,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": false
+		}
+	},
+	{
+		"type": "stop",
+		"id": "5100884",
+		"name": "Dabkowizna",
+		"location": {
+			"type": "location",
+			"id": "5100884",
+			"latitude": 52.423625,
+			"longitude": 21.085242
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": true,
+			"suburban": false,
+			"bus": false,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": false
+		}
+	},
+	{
+		"type": "stop",
+		"id": "5500403",
+		"name": "Dabronc",
+		"location": {
+			"type": "location",
+			"id": "5500403",
+			"latitude": 47.025656,
+			"longitude": 17.167455
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": true,
+			"suburban": false,
+			"bus": false,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": false
+		}
+	},
+	{
+		"type": "stop",
+		"id": "5100295",
+		"name": "Dabroszyn",
+		"location": {
+			"type": "location",
+			"id": "5100295",
+			"latitude": 52.617783,
+			"longitude": 14.707988
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": true,
+			"suburban": false,
+			"bus": false,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": false
+		}
+	},
+	{
+		"type": "stop",
+		"id": "5100928",
+		"name": "Dabrowa Gornicza Sikorka",
+		"location": {
+			"type": "location",
+			"id": "5100928",
+			"latitude": 50.388817,
+			"longitude": 19.299076
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": true,
+			"suburban": false,
+			"bus": false,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": false
+		}
+	},
+	{
+		"type": "stop",
+		"id": "5100903",
+		"name": "Dabrowa-Lazy",
+		"location": {
+			"type": "location",
+			"id": "5100903",
+			"latitude": 52.841156,
+			"longitude": 22.45874
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": true,
+			"suburban": false,
+			"bus": false,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": false
+		}
+	},
+	{
+		"type": "stop",
+		"id": "5100956",
+		"name": "Dabrowa Niemodlinska",
+		"location": {
+			"type": "location",
+			"id": "5100956",
+			"latitude": 50.692212,
+			"longitude": 17.752437
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": true,
+			"suburban": false,
+			"bus": false,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": false
+		}
+	},
+	{
+		"type": "stop",
+		"id": "5100995",
+		"name": "Dabrowice Skierniew.",
+		"location": {
+			"type": "location",
+			"id": "5100995",
+			"latitude": 51.93347,
+			"longitude": 20.103251
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": true,
+			"suburban": false,
+			"bus": false,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": false
+		}
+	},
+	{
+		"type": "stop",
+		"id": "5100906",
+		"name": "Dabrowka Zablotnia",
+		"location": {
+			"type": "location",
+			"id": "5100906",
+			"latitude": 51.317035,
+			"longitude": 21.048206
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": true,
+			"suburban": false,
+			"bus": false,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": false
+		}
+	},
+	{
+		"type": "stop",
+		"id": "5400774",
+		"name": "Dacice",
+		"location": {
+			"type": "location",
+			"id": "5400774",
+			"latitude": 49.085975,
+			"longitude": 15.43927
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": true,
+			"suburban": false,
+			"bus": false,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": false
+		}
+	},
+	{
+		"type": "stop",
+		"id": "5400775",
+		"name": "Dacice mesto",
+		"location": {
+			"type": "location",
+			"id": "5400775",
+			"latitude": 49.078442,
+			"longitude": 15.439683
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": true,
+			"suburban": false,
+			"bus": false,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": false
+		}
+	},
+	{
+		"type": "stop",
+		"id": "5322486",
+		"name": "Daesti",
+		"location": {
+			"type": "location",
+			"id": "5322486",
+			"latitude": 45.199785,
+			"longitude": 24.381748
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": true,
+			"suburban": false,
+			"bus": false,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": false
+		}
+	},
+	{
+		"type": "stop",
+		"id": "9400280",
+		"name": "Dagorda-Peniche",
+		"location": {
+			"type": "location",
+			"id": "9400280",
+			"latitude": 39.348464,
+			"longitude": -9.17031
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": true,
+			"suburban": false,
+			"bus": false,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": false
+		}
+	},
+	{
+		"type": "stop",
+		"id": "5100879",
+		"name": "Daleszewo Gryfinskie",
+		"location": {
+			"type": "location",
+			"id": "5100879",
+			"latitude": 53.305934,
+			"longitude": 14.529436
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": true,
+			"suburban": false,
+			"bus": false,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": false
+		}
+	},
+	{
+		"type": "stop",
+		"id": "5200038",
+		"name": "Dalgopol",
+		"location": {
+			"type": "location",
+			"id": "5200038",
+			"latitude": 43.048037,
+			"longitude": 27.341168
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": true,
+			"suburban": false,
+			"bus": false,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": false
+		}
+	},
+	{
+		"type": "stop",
+		"id": "5400776",
+		"name": "Dalovice",
+		"location": {
+			"type": "location",
+			"id": "5400776",
+			"latitude": 50.254671,
+			"longitude": 12.886522
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": true,
+			"suburban": false,
+			"bus": false,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": false
+		}
+	},
+	{
+		"type": "stop",
+		"id": "7000722",
+		"name": "Dalston",
+		"location": {
+			"type": "location",
+			"id": "7000722",
+			"latitude": 54.846253,
+			"longitude": -2.988446
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": true,
+			"suburban": false,
+			"bus": false,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": false
+		}
+	},
+	{
+		"type": "stop",
+		"id": "8770014",
+		"name": "Danjoutin",
+		"location": {
+			"type": "location",
+			"id": "8770014",
+			"latitude": 47.620553,
+			"longitude": 6.866114
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": true,
+			"suburban": false,
+			"bus": false,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": false
+		}
+	}
+]

@@ -14,6 +14,7 @@ enum Mock {
 	static let journeys = JourneyMockFiles.self
 	static let journeyList = JourneyListMockFiles.self
 	static let stopDepartures = StopDeparturesMockFiles.self
+	static let stops = StopsMockFiles.self
 }
 
 struct StopDeparturesMockFiles {
@@ -21,6 +22,17 @@ struct StopDeparturesMockFiles {
 	
 	static let stopDeparturesNeussHbf = type.init(
 		"stopDeparturesNeussHbf"
+	)
+}
+
+struct StopsMockFiles {
+	static let type = MockService<[StopDTO]>.self
+	
+	static let stopByK = type.init(
+		"stops-by-K"
+	)
+	static let stopByD = type.init(
+		"stops-by-D"
 	)
 }
 
