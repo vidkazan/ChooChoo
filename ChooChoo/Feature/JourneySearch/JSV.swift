@@ -17,60 +17,72 @@ struct JourneySearchView : View {
 	@ObservedObject var locationManager : ChewLocationDataManager = Model.shared.locationDataManager
 
 	var body: some View {
-		VStack(spacing: 5) {
-			if #available(iOS 17.0, *) {
-				TipView(ChooTips.searchTip)
+		VStack(spacing: 0) {
+			#if DEBUG
+			if let name = GitBranch.current?.branchName {
+				Text(verbatim: name)
+					.foregroundStyle(.secondary)
+					.padding(2)
+					.chewTextSize(.medium)
+					.badgeBackgroundStyle(.secondary)
+					.padding(1)
 			}
-			SearchStopsView()
-			TimeAndSettingsView()
-			BottomView()
-		}
-		.contentShape(Rectangle())
-		.padding(.horizontal,10)
-		.background(alignment: .top, content: {
-			gradient()
-		})
-		.background(Color.chewFillPrimary)
-		.navigationTitle(
-			Text(verbatim: "Choo Choo")
-		)
-		.navigationBarTitleDisplayMode(.inline)
-		.toolbar {
-			ToolbarItem(
-				placement: .topBarLeading,
-				content: {
-					if topAlertVM.state.alerts.contains(.offline) {
-						BadgeView(.offlineMode)
-							.badgeBackgroundStyle(.blue)
-					}
+			#endif
+			VStack(spacing: 5) {
+				if #available(iOS 17.0, *) {
+					TipView(ChooTips.searchTip)
 				}
+				SearchStopsView()
+				TimeAndSettingsView()
+				BottomView()
+			}
+			.contentShape(Rectangle())
+			.padding(.horizontal,10)
+			.background(alignment: .top, content: {
+				gradient()
+			})
+			.background(Color.chewFillPrimary)
+			.navigationTitle(
+				Text(verbatim: Constants.navigationTitle)
 			)
-			ToolbarItem(placement: .topBarTrailing, content: {
-				Button(action: {
-					Model.shared.sheetVM.send(event: .didRequestShow(.appSettings))
-				}, label: {
-					ChooSFSymbols.gearshape.view
-						.tint(.secondary)
+			.navigationBarTitleDisplayMode(.inline)
+			.toolbar {
+				ToolbarItem(
+					placement: .topBarLeading,
+					content: {
+						if topAlertVM.state.alerts.contains(.offline) {
+							BadgeView(.offlineMode)
+								.badgeBackgroundStyle(.blue)
+						}
+					}
+				)
+				ToolbarItem(placement: .topBarTrailing, content: {
+					Button(action: {
+						Model.shared.sheetVM.send(event: .didRequestShow(.appSettings))
+					}, label: {
+						ChooSFSymbols.gearshape.view
+							.tint(.secondary)
+					})
+					.frame(maxWidth: 40,maxHeight: 40)
 				})
-				.frame(maxWidth: 40,maxHeight: 40)
+			}
+			.onReceive(locationManager.$location, perform: { loc in
+				if
+					case .loadingLocation = chewViewModel.state.status,
+					let lat = loc?.coordinate.latitude,
+					let long = loc?.coordinate.longitude {
+					chewViewModel.send(event: .didReceiveLocationData(
+						Stop(
+							coordinates: Coordinate(
+								latitude: lat,
+								longitude: long),
+							type: .location,
+							stopDTO: nil
+						)
+					))
+				}
 			})
 		}
-		.onReceive(locationManager.$location, perform: { loc in
-			if
-				case .loadingLocation = chewViewModel.state.status,
-				let lat = loc?.coordinate.latitude,
-				let long = loc?.coordinate.longitude {
-				chewViewModel.send(event: .didReceiveLocationData(
-					Stop(
-						coordinates: Coordinate(
-							latitude: lat,
-							longitude: long),
-						type: .location,
-						stopDTO: nil
-					)
-				))
-			}
-		})
 	}
 }
 
