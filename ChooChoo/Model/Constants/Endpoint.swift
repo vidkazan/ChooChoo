@@ -15,6 +15,15 @@ struct Constants {
 		)
 		.queryItem()
 	]
+	
+	static let navigationTitle = {
+		#if DEBUG
+				return GitBranch.current ?? "main"
+		#else
+				return "Choo Choo"
+		#endif
+	}()
+	
 	struct apiData {
 		static let urlBase = "v6.db.transport.rest"
 		static let urlPathStops = "/stops/"

@@ -16,6 +16,7 @@ struct ChooLogMessage : Codable {
 }
 
 enum LoggerCategories : String,Hashable,CaseIterable, Codable {
+	case gitbranch
 	case mockService
 	case locationManager
 	case status
@@ -44,6 +45,7 @@ extension Logger {
 	static let buttonTap = Logger(category: .tapButton)
 	static let tapNonTappable = Logger(category: .tapNonTappable)
 	static let loadingsInitialData = Logger(category: .loadingsInitialData)
+	static let gitBranch = Logger(category: .gitbranch)
 	static let journeyDetailsViewModel = Logger(
 		category: .journeyDetailsViewModel
 	)

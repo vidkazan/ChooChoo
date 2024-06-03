@@ -32,7 +32,7 @@ struct JourneySearchView : View {
 		})
 		.background(Color.chewFillPrimary)
 		.navigationTitle(
-			Text(verbatim: "Choo Choo")
+			Text(verbatim: Constants.navigationTitle)
 		)
 		.navigationBarTitleDisplayMode(.inline)
 		.toolbar {
