@@ -27,6 +27,8 @@ extension ChewViewModel {
 							send:send
 						)
 					}
+				} else {
+					Self.warning(state.status, "whenLoadingUserLocation: coords nil -> bypassing geocoding")
 				}
 				return Empty().eraseToAnyPublisher()
 			@unknown default:
@@ -50,6 +52,7 @@ extension ChewViewModel {
 				type: .location,
 				stopDTO: StopDTO(name: String(coords.latitude) + " " + String(coords.longitude),products: nil)
 			)
+			Self.warning(Status.loadingLocation(send: {_ in}), "whenLoadingUserLocation: geocoding failed, putting coordinates")
 			send(Event.didReceiveLocationData(stop))
 		}
 	}
