@@ -15,6 +15,9 @@ struct Constants {
 		)
 		.queryItem()
 	]
+	
+	static let navigationTitle = "Choo Choo"
+	
 	struct apiData {
 		static let urlBase = "v6.db.transport.rest"
 		static let urlPathStops = "/stops/"
