@@ -106,7 +106,42 @@ extension SearchStopsView {
 		default:
 			focusedField = nil
 		}
-		
 		previuosStatus = state.status
 	}
 }
+
+#if DEBUG
+struct SSV_Previews: PreviewProvider {
+	static var previews: some View {
+		let chewVM = ChewViewModel(
+			coreDataStore: .preview
+		)
+		
+		if let stopsK = Mock.stops.stopByK.decodedData,
+		   let stopsL = Mock.stops.stopByD.decodedData {
+			VStack {
+				SearchStopsView(
+//					searchStopViewModel: SearchStopsViewModel(.init(
+//						previousStops: (stopsK + stopsL).compactMap({$0.stop()}),
+//						stops: [],
+//						status: .loading("pop")
+//					)),
+					searchStopViewModel: Model.shared.searchStopsVM,
+					topText: "",
+					bottomText: ""
+				)
+				.onAppear(perform: {
+					chewVM.send(event: .didStartViewAppear)
+				})
+				.environmentObject(chewVM)
+				.padding(10)
+				.padding(.top,20)
+				Spacer()
+			}
+			.background(Color(.green))
+			.frame(maxWidth: .infinity, maxHeight: .infinity)
+//			.environment(\.locale, .init(identifier: "de"))
+		}
+	}
+}
+#endif

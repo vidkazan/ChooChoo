@@ -119,3 +119,18 @@ extension JourneySearchView {
 		}
 	}
 }
+
+#if DEBUG
+struct JSV_Previews: PreviewProvider {
+	static var previews: some View {
+		let chewVM = ChewViewModel(
+			coreDataStore: .preview
+		)
+		JourneySearchView()
+			.onAppear(perform: {
+				chewVM.send(event: .didStartViewAppear)
+			})
+		.environmentObject(chewVM)
+	}
+}
+#endif
