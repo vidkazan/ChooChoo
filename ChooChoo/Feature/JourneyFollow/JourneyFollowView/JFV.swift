@@ -314,19 +314,28 @@ struct FollowPreviews: PreviewProvider {
 				arrStop:  .init(coordinates: .init(), type: .stop, stopDTO: nil),
 				settings: .init()
 			)
-			JourneyFollowView(viewModel: .init(
-				journeys: data.map {
-					JourneyFollowData(
-						id: 0,
-						journeyViewData: $0,
+			let chewVM = ChewViewModel(referenceDate: .specificDate(data.last?.time.timestamp.departure.actualOrPlannedIfActualIsNil() ?? 0),coreDataStore: .preview)
+			let jfvm : JourneyFollowViewModel = .init(
+				journeys: [],
+				initialStatus: .idle,
+				coreDataStore: .preview
+			)
+			JourneyFollowView(viewModel: jfvm)
+			.onAppear {
+				chewVM.send(event: .didStartViewAppear)
+				jfvm.send(event: .didTapEdit(
+					action: .adding,
+					followId: .max,
+					followData: JourneyFollowData(
+						id: .random(in: 0...1000),
+						journeyViewData: data.first!,
 						stops: .init(
 							departure: .init(coordinates: .init(), type: .stop, stopDTO: nil),
 							arrival: .init(coordinates: .init(), type: .stop, stopDTO: nil))
-					)
-				},
-				initialStatus: .idle
-			))
-			.environmentObject(ChewViewModel(referenceDate: .specificDate(data.last?.time.timestamp.departure.actualOrPlannedIfActualIsNil() ?? 0)))
+					),
+					sendToJourneyDetailsViewModel: { _ in }))
+			}
+			.environmentObject(chewVM)
 		}
 	}
 }

@@ -10,13 +10,30 @@ import SwiftUI
 import OSLog
 
 final class Model {
-	static let shared = Model()
+	static let shared = {
+		let coredata = CoreDataStore(container: PersistenceController.shared.container)
+		return Model(
+			journeyFollowViewModel: .init(journeys: [], coreDataStore: coredata),
+			coreDataStore: coredata,
+			recentSearchesViewModel: RecentSearchesViewModel(searches: [], coreDataStore: coredata),
+			appSettingsVM: AppSettingsViewModel(coreDataStore: coredata)
+		)
+	}()
+	static let preview = {
+		let coredata = CoreDataStore(container: PersistenceController.preview.container)
+		return Model(
+			journeyFollowViewModel: .init(journeys: [], coreDataStore: coredata),
+			coreDataStore: coredata,
+			recentSearchesViewModel: RecentSearchesViewModel(searches: [], coreDataStore: coredata),
+			appSettingsVM: AppSettingsViewModel(coreDataStore: coredata)
+		)
+	}()
 	
 	private var _journeyDetailsViewModels = [String: JourneyDetailsViewModel]()
 	
 	
 	let locationDataManager : ChewLocationDataManager
-	let chewVM : ChewViewModel
+
 	let sheetVM : SheetViewModel
 	let logVM : LogViewModel
 	let topBarAlertVM : TopBarAlertViewModel
@@ -28,38 +45,26 @@ final class Model {
 	let appSettingsVM : AppSettingsViewModel
 	
 	init(
-		chewVM : ChewViewModel,
-		sheetVM : SheetViewModel,
-		alertVM : TopBarAlertViewModel,
-		searchStopsVM : SearchStopsViewModel,
+		sheetVM : SheetViewModel = .init(),
+		alertVM : TopBarAlertViewModel = .init(),
+		searchStopsVM : SearchStopsViewModel = .init(),
 		journeyFollowViewModel : JourneyFollowViewModel,
-		recentSearchesViewModel : RecentSearchesViewModel
+		coreDataStore : CoreDataStore,
+		recentSearchesViewModel : RecentSearchesViewModel,
+		locationDataManager : ChewLocationDataManager = .init(),
+		appSettingsVM : AppSettingsViewModel,
+		logVM : LogViewModel = .init()
 	) {
-		self.chewVM = chewVM
 		self.searchStopsVM = searchStopsVM
 		self.topBarAlertVM = alertVM
 		self.sheetVM = sheetVM
 		self.journeyFollowVM = journeyFollowViewModel
 		self.recentSearchesVM = recentSearchesViewModel
 		self.alertVM = .init()
-		self.coreDataStore = .init()
-		self.locationDataManager = .init()
-		self.appSettingsVM = .init()
-		self.logVM = .init()
-	}
-	
-	init() {
-		self.searchStopsVM = .init()
-		self.topBarAlertVM = .init()
-		self.sheetVM = .init()
-		self.journeyFollowVM = .init(journeys: [])
-		self.recentSearchesVM = .init(searches: [])
-		self.alertVM = .init()
-		self.coreDataStore = .init()
-		self.locationDataManager = .init()
-		self.appSettingsVM = .init()
-		self.logVM = .init()
-		self.chewVM = .init()
+		self.coreDataStore = coreDataStore
+		self.locationDataManager = locationDataManager
+		self.appSettingsVM = appSettingsVM
+		self.logVM = logVM
 	}
 }
 

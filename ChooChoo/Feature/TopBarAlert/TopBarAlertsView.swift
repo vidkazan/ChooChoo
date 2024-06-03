@@ -81,7 +81,7 @@ struct AlertViewPreview : PreviewProvider {
 			TopBarAlertsView(alertVM: vm)
 			Bla(vm: vm)
 		}
-		.environmentObject(ChewViewModel())
+		.environmentObject(ChewViewModel(coreDataStore: .preview))
 	}
 }
 #endif

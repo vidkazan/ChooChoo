@@ -11,7 +11,7 @@ import SwiftUI
 
 struct AppSettingsView: View {
 	@ObservedObject var appSetttingsVM : AppSettingsViewModel
-	init(appSetttingsVM: AppSettingsViewModel = Model.shared.appSettingsVM) {
+	init(appSetttingsVM: AppSettingsViewModel) {
 		self.appSetttingsVM = appSetttingsVM
 	}
 	var body : some View {
@@ -63,12 +63,36 @@ extension AppSettingsView {
 					mode: appSetttingsVM.state.settings.legViewMode
 				)
 			})
-		}, header: {
-			Text("Journey appearance", comment: "settingsView: section name")
+		}, footer: {
+			Text("Tap to change route cell appearance", comment: "settingsView: section name")
 		})
    }
 }
 
+struct LegViewSettingsView : View {
+	let mode : AppSettings.LegViewMode
+	let mock = Mock.journeys.journeyNeussWolfsburg.decodedData?.journey.journeyViewData(depStop: nil, arrStop: nil, realtimeDataUpdatedAt: 0,settings: .init())
+	var body: some View {
+		if let mock = mock {
+			VStack(alignment: .leading, spacing: 0) {
+				LegsView(
+					journey: mock,
+					mode: mode,
+					showLabels: false
+				)
+				ForEach(mode.description,id:\.hashValue, content: {
+					Text(verbatim: "• " + $0)
+						.font(.system(.footnote))
+						.tint(.secondary)
+				})
+			}
+		}
+	}
+}
+
 #Preview {
-	AppSettingsView(appSetttingsVM: .init()).journeyAppearence()
+	AppSettingsView(appSetttingsVM: .init(coreDataStore: .preview))
+		.environmentObject(ChewViewModel(
+			referenceDate: .now, coreDataStore: .preview)
+		)
 }

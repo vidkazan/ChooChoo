@@ -8,6 +8,7 @@
 import Foundation
 import SwiftUI
 
+
 extension NearestStopView {
 	@ViewBuilder func stopWithDistance(stop : StopWithDistance) -> some View {
 		HStack(alignment: .center, spacing: 1) {

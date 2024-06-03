@@ -32,7 +32,7 @@ struct Preview : PreviewProvider {
 		if let mock = mock?.trip,
 		   let viewData = mock.legViewData(firstTS: .now, lastTS: .now, legs: [mock]) {
 			RouteSheet(leg: viewData)
-			.environmentObject(ChewViewModel())
+				.environmentObject(ChewViewModel(coreDataStore: CoreDataStore.preview))
 		} else {
 			Text(verbatim: "error")
 		}

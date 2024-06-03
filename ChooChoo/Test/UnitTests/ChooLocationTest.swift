@@ -7,10 +7,10 @@
 
 import XCTest
 import CoreLocation
-@testable import Chew_chew_SwiftUI
+@testable import ChooChoo
 	
 	
-final class Chew_chew_LocationTest: XCTestCase {
+final class ChooChooLocationTest: XCTestCase {
 	func testFetchLocations() {
 		let client = MockClient()
 		let service = ApiService(client: client)

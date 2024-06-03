@@ -41,7 +41,7 @@ struct ContentView: View {
 			}
 		}
 		.confirmationDialog(
-			"confirmation dialog",
+			"",
 			isPresented: Binding(
 				get: { checkConfirmatioDialog(isSheet: false) },
 				set: { _ in Model.shared.alertVM.send(event: .didRequestDismiss) }
@@ -67,7 +67,7 @@ struct ContentView: View {
 				})
 				.alert(isPresented: $alertIsPresented, content: alert)
 				.confirmationDialog(
-					"confirmation dialog sheet",
+					"",
 					isPresented: Binding(
 						get: { checkConfirmatioDialog(isSheet: true) },
 						set: { _ in Model.shared.alertVM.send(event: .didRequestDismiss) }

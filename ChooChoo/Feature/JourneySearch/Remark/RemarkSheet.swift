@@ -61,7 +61,7 @@ struct SheetPreviews: PreviewProvider {
 							closeSheet: {}
 						)
 						.frame(maxWidth: 350,maxHeight: 1000,alignment: .leading)
-						.environmentObject(ChewViewModel())
+						.environmentObject(ChewViewModel(coreDataStore: .preview))
 					}
 					.padding()
 				}

@@ -30,10 +30,13 @@ final class RecentSearchesViewModel : ChewViewModelProtocol {
 	}
 	private var bag = Set<AnyCancellable>()
 	private let input = PassthroughSubject<Event,Never>()
+	private let coreDataStore : CoreDataStore
 	
 	init(
-		searches : [RecentSearch]
+		searches : [RecentSearch],
+		coreDataStore : CoreDataStore
 	) {
+		self.coreDataStore = coreDataStore
 		state = State(
 			searches: searches,
 			status: .updating
@@ -44,7 +47,7 @@ final class RecentSearchesViewModel : ChewViewModelProtocol {
 			scheduler: RunLoop.main,
 			feedbacks: [
 				Self.userInput(input: input.eraseToAnyPublisher()),
-				Self.whenEditing()
+				Self.whenEditing(coreDataStore: coreDataStore)
 			]
 		)
 		.weakAssign(to: \.state, on: self)
@@ -78,15 +81,15 @@ extension RecentSearchesViewModel {
 	}
 	
 	enum Status : ChewStatus {
-		case error(error : String)
+		case error(action : String, error : any ChewError)
 		case idle
 		case editing(_ action: Action, search : RecentSearch?)
 		case updating
 		
 		var description : String {
 			switch self {
-			case .error(let action):
-				return "error \(action.description)"
+			case let .error(action, error):
+				return "error \(action.description) \(error.localizedDescription)"
 			case .idle:
 				return "idle"
 			case .updating:
@@ -110,8 +113,8 @@ extension RecentSearchesViewModel {
 		
 		var description : String {
 			switch self {
-			case .didFailToEdit:
-				return "didFailToEdit"
+			case .didFailToEdit(let action,let msg):
+				return "didFailToEdit \(action) \(msg)"
 			case .didEdit:
 				return "didEdit"
 			case .didTapEdit:
@@ -132,7 +135,7 @@ extension RecentSearchesViewModel {
 			return input
 		}
 	}
-	static func whenEditing() -> Feedback<State, Event> {
+	static func whenEditing(coreDataStore : CoreDataStore) -> Feedback<State, Event> {
 		Feedback { (state: State) -> AnyPublisher<Event, Never> in
 			switch state.status {
 			case .editing(let action, let data):
@@ -142,13 +145,21 @@ extension RecentSearchesViewModel {
 					guard let data = data else {
 						return Just(Event.didFailToEdit(action: action,msg: "data is nil")).eraseToAnyPublisher()
 					}
-					guard !searches.contains(where: {
+					if let index = searches.firstIndex(where: {
 						return $0.stops.id == data.stops.id
-					}) else {
-						return Just(Event.didFailToEdit(action: action,msg: "search been added already")).eraseToAnyPublisher()
+					}) {
+						let search = searches[index]
+						let updatedSearch = RecentSearchesViewModel.RecentSearch(stops: search.stops, searchTS: Date.now.timeIntervalSince1970)
+						searches.remove(at: index)
+						searches.append(updatedSearch)
+						if Model.shared.coreDataStore.updateRecentSearchTS(search: updatedSearch) != true {
+							return Just(Event.didFailToEdit(action: action,msg: "coredata: failed to update")).eraseToAnyPublisher()
+						}
+						return Just(Event.didEdit(data: searches))
+							.eraseToAnyPublisher()
 					}
 					
-					guard Model.shared.coreDataStore.addRecentSearch(search: data) == true else {
+					guard coreDataStore.addRecentSearch(search: data) == true else {
 						return Just(Event.didFailToEdit(action: action,msg: "coredata: failed to add")).eraseToAnyPublisher()
 					}
 					
@@ -167,7 +178,7 @@ extension RecentSearchesViewModel {
 						return Just(Event.didFailToEdit(action: action,msg: "not found in list to delete")).eraseToAnyPublisher()
 					}
 					guard
-						Model.shared.coreDataStore.deleteRecentSearchIfFound(id: id) == true
+						coreDataStore.deleteRecentSearchIfFound(id: id) == true
 					else {
 						return Just(Event.didFailToEdit(action: action,msg: "not found in db to delete")).eraseToAnyPublisher()
 					}

@@ -93,9 +93,9 @@ struct BadgeView : View {
 		Group {
 			switch badge {
 			case let .legDirection(dir,strikethrough, multiline):
-				Text("to \(dir)", comment: "BadgeView: legDirection")
+				Text("\(dir)", comment: "BadgeView: legDirection")
 					.strikethrough(strikethrough)
-					.lineLimit(multiline ? 2 :1)
+					.lineLimit(multiline ? 3 : 1)
 					.chewTextSize(size)
 					.padding(4)
 			case .distance(let dist):
