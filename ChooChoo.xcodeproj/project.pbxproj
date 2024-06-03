@@ -375,17 +375,12 @@
 		7D3B98E02C08D7F800A3AAEB /* SSVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9E10922AA77E0B00820B92 /* SSVM.swift */; };
 		7D3B98E12C08D7F800A3AAEB /* SSVM+sideEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4B1B962AA8FDDB0096F372 /* SSVM+sideEffect.swift */; };
 		7D3B98E22C08D7F800A3AAEB /* SSVM+state.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4B1B942AA8FDA20096F372 /* SSVM+state.swift */; };
-		7D3B98E32C08D80200A3AAEB /* StopList+subcomponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D8A3E392B83A68F005B61CC /* StopList+subcomponents.swift */; };
-		7D3B98E42C08D80200A3AAEB /* StopList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D462D532AAC972200BC0D65 /* StopList.swift */; };
 		7D3B98E52C08D80200A3AAEB /* StopListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DBFE7992BA23B4C008E1221 /* StopListCell.swift */; };
 		7D3B98E62C08D80200A3AAEB /* TimeChoosingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D6734DE2A96394E00CBE9C1 /* TimeChoosingView.swift */; };
 		7D3B98E72C08D80200A3AAEB /* StopList+subcomponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D8A3E392B83A68F005B61CC /* StopList+subcomponents.swift */; };
 		7D3B98E82C08D80200A3AAEB /* StopList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D462D532AAC972200BC0D65 /* StopList.swift */; };
 		7D3B98E92C08D80200A3AAEB /* StopListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DBFE7992BA23B4C008E1221 /* StopListCell.swift */; };
 		7D3B98EA2C08D80200A3AAEB /* TimeChoosingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D6734DE2A96394E00CBE9C1 /* TimeChoosingView.swift */; };
-		7D3B98EB2C08D80600A3AAEB /* SSV+TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4B1B902AA8DB5B0096F372 /* SSV+TextField.swift */; };
-		7D3B98EC2C08D80600A3AAEB /* SSV+RightButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D462D512AAC96C000BC0D65 /* SSV+RightButton.swift */; };
-		7D3B98ED2C08D80600A3AAEB /* SSV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9E10862AA6752B00820B92 /* SSV.swift */; };
 		7D3B98EE2C08D80700A3AAEB /* SSV+TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4B1B902AA8DB5B0096F372 /* SSV+TextField.swift */; };
 		7D3B98EF2C08D80700A3AAEB /* SSV+RightButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D462D512AAC96C000BC0D65 /* SSV+RightButton.swift */; };
 		7D3B98F02C08D80700A3AAEB /* SSV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9E10862AA6752B00820B92 /* SSV.swift */; };
@@ -2570,7 +2565,6 @@
 				7D3B98472C08D73400A3AAEB /* Settings+init.swift in Sources */,
 				7D3B98012C08D6EC00A3AAEB /* TextModifier.swift in Sources */,
 				7D3B98092C08D6EF00A3AAEB /* Solar.swift in Sources */,
-				7D3B98ED2C08D80600A3AAEB /* SSV.swift in Sources */,
 				7D3B98B92C08D7DA00A3AAEB /* ArrivalTrainTimeLabelView.swift in Sources */,
 				7D3B98932C08D78800A3AAEB /* ChildAnnotationViews.swift in Sources */,
 				7D3B98022C08D6EC00A3AAEB /* Styles.swift in Sources */,
@@ -2610,7 +2604,6 @@
 				7D3B98062C08D6EF00A3AAEB /* SunEvent.swift in Sources */,
 				7D3B97BA2C08D58200A3AAEB /* chewVM.swift in Sources */,
 				7D3B98882C08D77D00A3AAEB /* constructJourneys+Badges.swift in Sources */,
-				7D3B98EB2C08D80600A3AAEB /* SSV+TextField.swift in Sources */,
 				7D3B97F32C08D6E000A3AAEB /* SegmentedPicker.swift in Sources */,
 				7D3B97E82C08D6DA00A3AAEB /* Color+random.swift in Sources */,
 				7D3B98C12C08D7E700A3AAEB /* RouteView.swift in Sources */,
@@ -2636,7 +2629,6 @@
 				7D33A98A2B5343320005D723 /* Mock.swift in Sources */,
 				7D3B97E92C08D6DA00A3AAEB /* ExpandingBadge.swift in Sources */,
 				7D3B987F2C08D77500A3AAEB /* constructJourneyList.swift in Sources */,
-				7D3B98EC2C08D80600A3AAEB /* SSV+RightButton.swift in Sources */,
 				7D3B98412C08D72F00A3AAEB /* Iphones.swift in Sources */,
 				7D3B98162C08D6F800A3AAEB /* PresentationDetent.swift in Sources */,
 				7D3B97ED2C08D6DC00A3AAEB /* TimeLabelView+subviews.swift in Sources */,
@@ -2647,7 +2639,6 @@
 				7D3B98982C08D78C00A3AAEB /* MapDetailsUIView.swift in Sources */,
 				7D3B98C32C08D7E700A3AAEB /* JDVM+reduce.swift in Sources */,
 				7D3B991F2C08D84000A3AAEB /* JourneyCell.swift in Sources */,
-				7D3B98E42C08D80200A3AAEB /* StopList.swift in Sources */,
 				7D3B97F52C08D6E000A3AAEB /* ErrorView.swift in Sources */,
 				7D3B98822C08D77800A3AAEB /* constructJourneys+Journey+TransferCount.swift in Sources */,
 				7D3B98F52C08D81100A3AAEB /* SettingsView+saveSettings.swift in Sources */,
@@ -2715,7 +2706,6 @@
 				7D3B98AA2C08D7A600A3AAEB /* SheetViewDataSource.swift in Sources */,
 				7D3B986F2C08D75D00A3AAEB /* CDUser+CoreDataClass.swift in Sources */,
 				7D3B99332C08D84900A3AAEB /* RecentSearchesViewModel.swift in Sources */,
-				7D3B98E32C08D80200A3AAEB /* StopList+subcomponents.swift in Sources */,
 				7D3B98A52C08D79800A3AAEB /* AlertVM.swift in Sources */,
 				7D3B983C2C08D71B00A3AAEB /* chewVM+reduce+Journeys.swift in Sources */,
 				7D3B97CA2C08D64100A3AAEB /* SunEventsTip.swift in Sources */,
