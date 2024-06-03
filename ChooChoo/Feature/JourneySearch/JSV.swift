@@ -19,14 +19,12 @@ struct JourneySearchView : View {
 	var body: some View {
 		VStack(spacing: 0) {
 			#if DEBUG
-			if let name = GitBranch.current?.branchName {
-				Text(verbatim: name)
+				Text(verbatim: GitBranch.current?.branchName ?? "main")
 					.foregroundStyle(.secondary)
 					.padding(2)
 					.chewTextSize(.medium)
 					.badgeBackgroundStyle(.secondary)
 					.padding(1)
-			}
 			#endif
 			VStack(spacing: 5) {
 				if #available(iOS 17.0, *) {
