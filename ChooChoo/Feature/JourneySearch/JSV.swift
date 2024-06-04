@@ -17,16 +17,15 @@ struct JourneySearchView : View {
 	@ObservedObject var locationManager : ChewLocationDataManager = Model.shared.locationDataManager
 
 	var body: some View {
-		VStack(spacing: 0) {
-			#if DEBUG
-				Text(verbatim: GitBranch.current?.branchName ?? "main")
-					.foregroundStyle(.secondary)
-					.padding(2)
-					.chewTextSize(.medium)
-					.badgeBackgroundStyle(.secondary)
-					.padding(1)
-			#endif
 			VStack(spacing: 5) {
+				#if DEBUG
+					Text(verbatim: GitBranch.current?.branchName ?? "main")
+						.foregroundStyle(.secondary)
+						.padding(4)
+						.chewTextSize(.medium)
+						.badgeBackgroundStyle(.secondary)
+						.padding(2)
+				#endif
 				if #available(iOS 17.0, *) {
 					TipView(ChooTips.searchTip)
 				}
@@ -80,7 +79,6 @@ struct JourneySearchView : View {
 					))
 				}
 			})
-		}
 	}
 }
 
