@@ -32,6 +32,7 @@ enum LoggerCategories : String,Hashable,CaseIterable, Codable {
 	case tapButton
 	case tapNonTappable
 	case journeyDetailsViewModel
+	case presentConfirmationDialog
 }
 
 extension Logger {
@@ -46,6 +47,7 @@ extension Logger {
 	static let tapNonTappable = Logger(category: .tapNonTappable)
 	static let loadingsInitialData = Logger(category: .loadingsInitialData)
 	static let gitBranch = Logger(category: .gitbranch)
+	static let presentConfirmationDialog = Logger(category: .presentConfirmationDialog)
 	static let journeyDetailsViewModel = Logger(
 		category: .journeyDetailsViewModel
 	)
