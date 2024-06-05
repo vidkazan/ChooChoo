@@ -18,6 +18,7 @@ struct ChooLogMessage : Codable {
 enum LoggerCategories : String,Hashable,CaseIterable, Codable {
 	case gitbranch
 	case mockService
+	case viewModel
 	case locationManager
 	case status
 	case event
@@ -72,6 +73,13 @@ extension Logger {
 		status : any ChewStatus
 	) {
 		Logger(category: .status).trace("\(viewModelName): \(status.description)")
+	}
+	static func warning(
+		_ viewModelName : String,
+		status : any ChewStatus,
+		msg : String
+	) {
+		Logger(category: .viewModel).warning("\(viewModelName): \(status.description): \(msg)")
 	}
 	static func event(
 		_ viewModelName : String,
