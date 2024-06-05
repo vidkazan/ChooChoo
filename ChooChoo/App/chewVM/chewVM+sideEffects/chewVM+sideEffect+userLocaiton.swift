@@ -20,10 +20,10 @@ extension ChewViewModel {
 				Model.shared.topBarAlertVM.send(event: .didRequestShow(.userLocationError))
 				return Just(Event.didFailToLoadLocationData).eraseToAnyPublisher()
 			case .authorizedAlways,.authorizedWhenInUse:
-				if let coords = Model.shared.locationDataManager.requestLocation() {
+				if let coords = Model.shared.locationDataManager.location?.coordinate {
 					Task {
 						await Self.reverseGeocoding(
-							coords : coords,
+							coords : Coordinate(coords),
 							send:send
 						)
 					}
