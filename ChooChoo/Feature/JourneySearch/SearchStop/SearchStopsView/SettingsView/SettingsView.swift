@@ -130,7 +130,8 @@ extension SettingsView {
 							"Reset",
 							comment: "alert: actionDescription"
 						),
-						id: UUID()
+						id: UUID(),
+						presentedOn: .sheet
 					))
 				)
 			}, label: {

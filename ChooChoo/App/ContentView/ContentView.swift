@@ -7,6 +7,7 @@
 
 import SwiftUI
 import TipKit
+import OSLog
 
 struct ContentView: View {
 	@EnvironmentObject var chewViewModel : ChewViewModel
@@ -43,7 +44,7 @@ struct ContentView: View {
 		.confirmationDialog(
 			"",
 			isPresented: Binding(
-				get: { checkConfirmatioDialog(isSheet: false) },
+				get: { presentConfirmatioDialog(isSheet: false, thisDialogType: .base) },
 				set: { _ in Model.shared.alertVM.send(event: .didRequestDismiss) }
 			),
 			actions: confirmationDialogActions,
@@ -69,7 +70,7 @@ struct ContentView: View {
 				.confirmationDialog(
 					"",
 					isPresented: Binding(
-						get: { checkConfirmatioDialog(isSheet: true) },
+						get: { presentConfirmatioDialog(isSheet: true,thisDialogType: .sheet) },
 						set: { _ in Model.shared.alertVM.send(event: .didRequestDismiss) }
 					),
 					actions: confirmationDialogActions,
@@ -100,12 +101,32 @@ struct ContentView: View {
 }
 
 extension ContentView {
-	func checkConfirmatioDialog(isSheet : Bool) -> Bool {
+	enum ConfirmationDialogType : String {
+		case base
+		case sheet
+	}
+}
+
+extension ContentView {
+	func presentConfirmatioDialog(isSheet : Bool, thisDialogType: ConfirmationDialogType) -> Bool {
 		switch alertState.alert {
 		case .none,.info,.action:
+//			Logger.presentConfirmationDialog.debug("confirmationDialog: dismissing: \(thisDialogType.rawValue)")
 			return false
-		case .destructive:
-			return sheetIsPresented ? isSheet : !isSheet
+		case let .destructive(_,_,_,_,orderedDialogType):
+			var res : Bool {
+				switch orderedDialogType {
+				case .base:
+					return orderedDialogType == thisDialogType
+				case .sheet:
+					return orderedDialogType == thisDialogType && sheetIsPresented
+				}
+			}
+//			let res = sheetIsPresented ? isSheet : !isSheet
+			if res == true {
+				Logger.presentConfirmationDialog.debug("confirmationDialog: showing: \(thisDialogType.rawValue)")
+			}
+			return res
 		}
 	}
 }
@@ -126,7 +147,7 @@ extension ContentView {
 		switch alertVM.state.alert {
 		case .none,.info,.action:
 			EmptyView()
-		case .destructive(let destructiveAction, _, let actionDescription, _):
+		case .destructive(let destructiveAction, _, let actionDescription, _,_):
 			Button(actionDescription, role: .destructive, action: destructiveAction)
 		}
 	}
@@ -135,14 +156,14 @@ extension ContentView {
 		switch alertState.alert {
 		case .none,.info,.action:
 			EmptyView()
-		case .destructive(_, let description, _, _):
+		case .destructive(_, let description, _, _,_):
 			Text(verbatim: description)
 		}
 	}
 	
 	func alert() -> Alert {
 		switch alertState.alert {
-		case let .destructive(destructiveAction, description, actionDescripton,_):
+		case let .destructive(destructiveAction, description, actionDescripton,_,_):
 			return Alert(
 				title: Text(verbatim: description) ,
 				primaryButton: .cancel(),

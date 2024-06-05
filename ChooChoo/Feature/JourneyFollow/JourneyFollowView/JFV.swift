@@ -288,7 +288,8 @@ extension JourneyFollowView {
 						},
 						description: NSLocalizedString("Unfollow journey?", comment: "alert: description"),
 						actionDescription: NSLocalizedString("Unfollow", comment: "alert: actionDescription"),
-						id: UUID()
+						id: UUID(),
+						presentedOn: .base
 					)))
 				} label: {
 					Label(

@@ -393,11 +393,6 @@
 		7D3B98F22C08D80D00A3AAEB /* DatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D81AB252A978CDC0055AEAF /* DatePickerView.swift */; };
 		7D3B98F32C08D80D00A3AAEB /* DatePickerTimePresetButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAF62B72A9E5A0B006F1A17 /* DatePickerTimePresetButtons.swift */; };
 		7D3B98F42C08D80D00A3AAEB /* DatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D81AB252A978CDC0055AEAF /* DatePickerView.swift */; };
-		7D3B98F52C08D81100A3AAEB /* SettingsView+saveSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D6CCAF02B5FFB9200BCF62E /* SettingsView+saveSettings.swift */; };
-		7D3B98F62C08D81100A3AAEB /* SettingsView+TransportTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D740CCA2AEAB8F900E9FFD4 /* SettingsView+TransportTypes.swift */; };
-		7D3B98F72C08D81100A3AAEB /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D345E4B2AE97FC8003CA948 /* SettingsView.swift */; };
-		7D3B98F82C08D81100A3AAEB /* SettingsView+Connections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D740CC62AEA796B00E9FFD4 /* SettingsView+Connections.swift */; };
-		7D3B98F92C08D81100A3AAEB /* SettingsView+TransportModesSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D6CCAEE2B5FFB7300BCF62E /* SettingsView+TransportModesSection.swift */; };
 		7D3B98FA2C08D81100A3AAEB /* SettingsView+saveSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D6CCAF02B5FFB9200BCF62E /* SettingsView+saveSettings.swift */; };
 		7D3B98FB2C08D81100A3AAEB /* SettingsView+TransportTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D740CCA2AEAB8F900E9FFD4 /* SettingsView+TransportTypes.swift */; };
 		7D3B98FC2C08D81100A3AAEB /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D345E4B2AE97FC8003CA948 /* SettingsView.swift */; };
@@ -2536,7 +2531,6 @@
 				7D3B99032C08D83300A3AAEB /* JLVM+sideEffects.swift in Sources */,
 				7D3B98492C08D73400A3AAEB /* AppSettingsVM.swift in Sources */,
 				7D3B98CE2C08D7EA00A3AAEB /* JDV.swift in Sources */,
-				7D3B98F92C08D81100A3AAEB /* SettingsView+TransportModesSection.swift in Sources */,
 				7D3B98BA2C08D7DA00A3AAEB /* ArrivingTrainTimeVM.swift in Sources */,
 				7D3B99352C08D85300A3AAEB /* RecentSearchCell.swift in Sources */,
 				7D3B97F42C08D6E000A3AAEB /* ChewDatePicker.swift in Sources */,
@@ -2582,7 +2576,6 @@
 				7D3B98B92C08D7DA00A3AAEB /* ArrivalTrainTimeLabelView.swift in Sources */,
 				7D3B98932C08D78800A3AAEB /* ChildAnnotationViews.swift in Sources */,
 				7D3B98022C08D6EC00A3AAEB /* Styles.swift in Sources */,
-				7D3B98F82C08D81100A3AAEB /* SettingsView+Connections.swift in Sources */,
 				7D3B98672C08D75000A3AAEB /* CDLeg+CoreDataProperties.swift in Sources */,
 				7D3B985E2C08D74900A3AAEB /* CDRecentSearch+CoreDataClass.swift in Sources */,
 				7D3B990E2C08D83700A3AAEB /* JLVM+reduce+LoadingUpdate.swift in Sources */,
@@ -2633,7 +2626,6 @@
 				7D3B98072C08D6EF00A3AAEB /* Tips.swift in Sources */,
 				7D3B990F2C08D83700A3AAEB /* JLVM+reduce.swift in Sources */,
 				7D3B98CD2C08D7EA00A3AAEB /* JDV+Header.swift in Sources */,
-				7D3B98F62C08D81100A3AAEB /* SettingsView+TransportTypes.swift in Sources */,
 				7D3B98D52C08D7F500A3AAEB /* SSVM+reduce+Loading.swift in Sources */,
 				7D3B97D82C08D6A500A3AAEB /* LocationManager.swift in Sources */,
 				7D3B98122C08D6F300A3AAEB /* LogView.swift in Sources */,
@@ -2658,7 +2650,6 @@
 				7D3B98E42C08D80200A3AAEB /* StopList.swift in Sources */,
 				7D3B97F52C08D6E000A3AAEB /* ErrorView.swift in Sources */,
 				7D3B98822C08D77800A3AAEB /* constructJourneys+Journey+TransferCount.swift in Sources */,
-				7D3B98F52C08D81100A3AAEB /* SettingsView+saveSettings.swift in Sources */,
 				7D3B99172C08D83A00A3AAEB /* JLV+footer.swift in Sources */,
 				7D3B990D2C08D83700A3AAEB /* JLVM+reduce+JourneysLoaded.swift in Sources */,
 				7D3B994C2C08D86A00A3AAEB /* JFVM + reduce.swift in Sources */,
@@ -2689,7 +2680,6 @@
 				7D3B981B2C08D70000A3AAEB /* TimeAndSettingsView.swift in Sources */,
 				7D3B99392C08D85B00A3AAEB /* LDV+background.swift in Sources */,
 				7D3B990C2C08D83700A3AAEB /* JLVM+reduce+LoadingJourneys.swift in Sources */,
-				7D3B98F72C08D81100A3AAEB /* SettingsView.swift in Sources */,
 				7D3B97F62C08D6E000A3AAEB /* ReloadableButtonLabel.swift in Sources */,
 				7D3B99402C08D86000A3AAEB /* LDSV+subviews.swift in Sources */,
 				7D3B98042C08D6EC00A3AAEB /* BadgeStyle.swift in Sources */,

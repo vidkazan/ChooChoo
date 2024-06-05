@@ -50,7 +50,8 @@ extension AlertViewModel {
 			destructiveAction : ()->Void,
 			description : String,
 			actionDescription : String,
-			id : UUID
+			id : UUID,
+			presentedOn: ContentView.ConfirmationDialogType
 		)
 		case action(
 			action : ()->Void,
@@ -68,8 +69,8 @@ extension AlertViewModel {
 				return "info \(title)"
 			case let .action(_,name,_,id):
 				return "action \(name) \(id)"
-			case let .destructive(_,name,_,id):
-				return "destructive \(name) \(id)"
+			case let .destructive(_,name,_,id, type):
+				return "destructive \(name) \(id) \(type.rawValue)"
 			}
 		}
 	}
