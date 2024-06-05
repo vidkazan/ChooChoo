@@ -29,13 +29,17 @@ extension SearchStopsView {
 extension SearchStopsView {
 	func update(type : LocationDirectionType) {
 		Task {
-			stops = SearchStopsViewModel.sortedStopsByLocationWithDistance(stops: searchStopViewModel.state.stops)
 			let recentStopsAll = searchStopViewModel.state.previousStops.filter { stop in
 				return stop.name.hasPrefix(type == .departure ? topText : bottomText )
 			}
 			recentStopsData = Array(
 				SearchStopsViewModel.sortedStopsByLocationWithDistance(stops: recentStopsAll).prefix(2)
 			)
+			
+			stops = SearchStopsViewModel.sortedStopsByLocationWithDistance(stops: searchStopViewModel.state.stops)
+			stops.removeAll(where: { stop in
+				recentStopsData.contains(where: {$0.stop.name == stop.stop.name})
+			})
 		}
 	}
 }
