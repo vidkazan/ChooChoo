@@ -20,13 +20,15 @@ extension ChewViewModel {
 				Model.shared.topBarAlertVM.send(event: .didRequestShow(.userLocationError))
 				return Just(Event.didFailToLoadLocationData).eraseToAnyPublisher()
 			case .authorizedAlways,.authorizedWhenInUse:
-				if let coords = Model.shared.locationDataManager.requestLocation() {
+				if let coords = Model.shared.locationDataManager.location?.coordinate {
 					Task {
 						await Self.reverseGeocoding(
-							coords : coords,
+							coords : Coordinate(coords),
 							send:send
 						)
 					}
+				} else {
+					Self.warning(state.status, "whenLoadingUserLocation: coords nil -> bypassing geocoding")
 				}
 				return Empty().eraseToAnyPublisher()
 			@unknown default:
@@ -50,6 +52,7 @@ extension ChewViewModel {
 				type: .location,
 				stopDTO: StopDTO(name: String(coords.latitude) + " " + String(coords.longitude),products: nil)
 			)
+			Self.warning(Status.loadingLocation(send: {_ in}), "whenLoadingUserLocation: geocoding failed, putting coordinates")
 			send(Event.didReceiveLocationData(stop))
 		}
 	}

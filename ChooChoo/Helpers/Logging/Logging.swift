@@ -16,7 +16,9 @@ struct ChooLogMessage : Codable {
 }
 
 enum LoggerCategories : String,Hashable,CaseIterable, Codable {
+	case gitbranch
 	case mockService
+	case viewModel
 	case locationManager
 	case status
 	case event
@@ -31,6 +33,7 @@ enum LoggerCategories : String,Hashable,CaseIterable, Codable {
 	case tapButton
 	case tapNonTappable
 	case journeyDetailsViewModel
+	case presentConfirmationDialog
 }
 
 extension Logger {
@@ -44,6 +47,8 @@ extension Logger {
 	static let buttonTap = Logger(category: .tapButton)
 	static let tapNonTappable = Logger(category: .tapNonTappable)
 	static let loadingsInitialData = Logger(category: .loadingsInitialData)
+	static let gitBranch = Logger(category: .gitbranch)
+	static let presentConfirmationDialog = Logger(category: .presentConfirmationDialog)
 	static let journeyDetailsViewModel = Logger(
 		category: .journeyDetailsViewModel
 	)
@@ -70,6 +75,13 @@ extension Logger {
 		status : any ChewStatus
 	) {
 		Logger(category: .status).trace("\(viewModelName): \(status.description)")
+	}
+	static func warning(
+		_ viewModelName : String,
+		status : any ChewStatus,
+		msg : String
+	) {
+		Logger(category: .viewModel).warning("\(viewModelName): \(status.description): \(msg)")
 	}
 	static func event(
 		_ viewModelName : String,
