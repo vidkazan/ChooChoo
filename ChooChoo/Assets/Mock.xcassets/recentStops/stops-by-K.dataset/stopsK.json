@@ -1,0 +1,2556 @@
+[
+	{
+		"type": "stop",
+		"id": "8096022",
+		"name": "KÖLN",
+		"location": {
+			"type": "location",
+			"id": "8096022",
+			"latitude": 50.941312,
+			"longitude": 6.967206
+		},
+		"products": {
+			"nationalExpress": true,
+			"national": true,
+			"regionalExpress": true,
+			"regional": true,
+			"suburban": true,
+			"bus": true,
+			"ferry": false,
+			"subway": false,
+			"tram": true,
+			"taxi": false
+		},
+		"isMeta": true
+	},
+	{
+		"type": "station",
+		"id": "8000191",
+		"name": "Karlsruhe Hbf",
+		"location": {
+			"type": "location",
+			"id": "8000191",
+			"latitude": 48.99353,
+			"longitude": 8.401939
+		},
+		"products": {
+			"nationalExpress": true,
+			"national": true,
+			"regionalExpress": true,
+			"regional": true,
+			"suburban": true,
+			"bus": true,
+			"ferry": false,
+			"subway": false,
+			"tram": true,
+			"taxi": true
+		}
+	},
+	{
+		"type": "station",
+		"id": "8000189",
+		"name": "Kaiserslautern Hbf",
+		"location": {
+			"type": "location",
+			"id": "8000189",
+			"latitude": 49.436042,
+			"longitude": 7.768765
+		},
+		"products": {
+			"nationalExpress": true,
+			"national": true,
+			"regionalExpress": false,
+			"regional": true,
+			"suburban": true,
+			"bus": true,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": true
+		}
+	},
+	{
+		"type": "station",
+		"id": "8003158",
+		"name": "Kall",
+		"location": {
+			"type": "location",
+			"id": "8003158",
+			"latitude": 50.538587,
+			"longitude": 6.5571
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": true,
+			"suburban": false,
+			"bus": true,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": true
+		}
+	},
+	{
+		"type": "station",
+		"id": "8007054",
+		"name": "Kaltenkirchen(Holst)",
+		"location": {
+			"type": "location",
+			"id": "8007054",
+			"latitude": 53.835084,
+			"longitude": 9.965145
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": true,
+			"suburban": false,
+			"bus": true,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": true
+		}
+	},
+	{
+		"type": "station",
+		"id": "8003143",
+		"name": "Kahl(Main)",
+		"location": {
+			"type": "location",
+			"id": "8003143",
+			"latitude": 50.076703,
+			"longitude": 9.005358
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": true,
+			"suburban": false,
+			"bus": true,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": false
+		}
+	},
+	{
+		"type": "station",
+		"id": "8011985",
+		"name": "Kahla(Thür)",
+		"location": {
+			"type": "location",
+			"id": "8011985",
+			"latitude": 50.808865,
+			"longitude": 11.589208
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": true,
+			"suburban": false,
+			"bus": true,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": false
+		}
+	},
+	{
+		"type": "station",
+		"id": "8003160",
+		"name": "Kalscheuren",
+		"location": {
+			"type": "location",
+			"id": "8003160",
+			"latitude": 50.875628,
+			"longitude": 6.909981
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": true,
+			"suburban": false,
+			"bus": true,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": false
+		}
+	},
+	{
+		"type": "station",
+		"id": "8010069",
+		"name": "Kalawa (Dolna Luzyca)",
+		"location": {
+			"type": "location",
+			"id": "8010069",
+			"latitude": 51.738107,
+			"longitude": 13.979673
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": true,
+			"suburban": false,
+			"bus": true,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": true
+		}
+	},
+	{
+		"type": "station",
+		"id": "8007204",
+		"name": "Kaltenkirchen Süd",
+		"location": {
+			"type": "location",
+			"id": "8007204",
+			"latitude": 53.824602,
+			"longitude": 9.973478
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": true,
+			"suburban": false,
+			"bus": true,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": false
+		}
+	},
+	{
+		"type": "stop",
+		"id": "8003154",
+		"name": "Kalchreuth",
+		"location": {
+			"type": "location",
+			"id": "8003154",
+			"latitude": 49.55852,
+			"longitude": 11.140107
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": true,
+			"suburban": false,
+			"bus": true,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": true
+		}
+	},
+	{
+		"type": "stop",
+		"id": "8005339",
+		"name": "Kall-Scheven",
+		"location": {
+			"type": "location",
+			"id": "8005339",
+			"latitude": 50.559693,
+			"longitude": 6.592266
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": true,
+			"suburban": false,
+			"bus": true,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": true
+		}
+	},
+	{
+		"type": "stop",
+		"id": "8007203",
+		"name": "Kaltenkirchen Therme",
+		"location": {
+			"type": "location",
+			"id": "8007203",
+			"latitude": 53.839839,
+			"longitude": 9.946178
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": true,
+			"suburban": false,
+			"bus": false,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": false
+		}
+	},
+	{
+		"type": "station",
+		"id": "8003150",
+		"name": "Kaiserslautern Pfaffwerk",
+		"location": {
+			"type": "location",
+			"id": "8003150",
+			"latitude": 49.434801,
+			"longitude": 7.751084
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": true,
+			"suburban": false,
+			"bus": true,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": true
+		}
+	},
+	{
+		"type": "station",
+		"id": "8000432",
+		"name": "Kaarst Mitte/Holzbüttgen",
+		"location": {
+			"type": "location",
+			"id": "8000432",
+			"latitude": 51.219502,
+			"longitude": 6.617184
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": true,
+			"suburban": true,
+			"bus": true,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": true
+		}
+	},
+	{
+		"type": "station",
+		"id": "8003141",
+		"name": "Kaarster Bahnhof",
+		"location": {
+			"type": "location",
+			"id": "8003141",
+			"latitude": 51.2229,
+			"longitude": 6.60628
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": true,
+			"suburban": true,
+			"bus": true,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": true
+		}
+	},
+	{
+		"type": "station",
+		"id": "8003148",
+		"name": "Kaisersesch",
+		"location": {
+			"type": "location",
+			"id": "8003148",
+			"latitude": 50.232019,
+			"longitude": 7.129444
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": true,
+			"suburban": false,
+			"bus": true,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": false
+		}
+	},
+	{
+		"type": "station",
+		"id": "8002943",
+		"name": "Kaiserslautern-Hohenecken",
+		"location": {
+			"type": "location",
+			"id": "8002943",
+			"latitude": 49.416185,
+			"longitude": 7.699818
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": true,
+			"suburban": false,
+			"bus": true,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": false
+		}
+	},
+	{
+		"type": "station",
+		"id": "8003151",
+		"name": "Kaiserslautern West",
+		"location": {
+			"type": "location",
+			"id": "8003151",
+			"latitude": 49.447503,
+			"longitude": 7.749879
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": true,
+			"suburban": false,
+			"bus": true,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": false
+		}
+	},
+	{
+		"type": "station",
+		"id": "8000190",
+		"name": "Kaldenkirchen",
+		"location": {
+			"type": "location",
+			"id": "8000190",
+			"latitude": 51.327192,
+			"longitude": 6.203249
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": true,
+			"suburban": false,
+			"bus": true,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": false
+		}
+	},
+	{
+		"type": "station",
+		"id": "8001261",
+		"name": "Kaarst-Büttgen",
+		"location": {
+			"type": "location",
+			"id": "8001261",
+			"latitude": 51.197208,
+			"longitude": 6.606298
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": true,
+			"suburban": true,
+			"bus": true,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": true
+		}
+	},
+	{
+		"type": "station",
+		"id": "8003165",
+		"name": "Kaltenweide Langenh.",
+		"location": {
+			"type": "location",
+			"id": "8003165",
+			"latitude": 52.479699,
+			"longitude": 9.736441
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": true,
+			"suburban": true,
+			"bus": true,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": true
+		}
+	},
+	{
+		"type": "station",
+		"id": "8000430",
+		"name": "Kaarster See",
+		"location": {
+			"type": "location",
+			"id": "8000430",
+			"latitude": 51.226477,
+			"longitude": 6.594729
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": true,
+			"suburban": true,
+			"bus": true,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": false
+		}
+	},
+	{
+		"type": "station",
+		"id": "8006032",
+		"name": "Kall-Urft",
+		"location": {
+			"type": "location",
+			"id": "8006032",
+			"latitude": 50.512428,
+			"longitude": 6.580041
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": true,
+			"suburban": false,
+			"bus": true,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": true
+		}
+	},
+	{
+		"type": "station",
+		"id": "8000438",
+		"name": "Kaarst IKEA",
+		"location": {
+			"type": "location",
+			"id": "8000438",
+			"latitude": 51.217012,
+			"longitude": 6.63003
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": true,
+			"suburban": true,
+			"bus": true,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": true
+		}
+	},
+	{
+		"type": "stop",
+		"id": "8011981",
+		"name": "Kablow",
+		"location": {
+			"type": "location",
+			"id": "8011981",
+			"latitude": 52.300095,
+			"longitude": 13.721036
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": true,
+			"suburban": false,
+			"bus": true,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": false
+		}
+	},
+	{
+		"type": "station",
+		"id": "8070164",
+		"name": "Kahl Kopp/Heide",
+		"location": {
+			"type": "location",
+			"id": "8070164",
+			"latitude": 50.079049,
+			"longitude": 9.015515
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": true,
+			"suburban": false,
+			"bus": false,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": false
+		}
+	},
+	{
+		"type": "stop",
+		"id": "8003144",
+		"name": "Kailbach Hesseneck",
+		"location": {
+			"type": "location",
+			"id": "8003144",
+			"latitude": 49.539319,
+			"longitude": 9.077361
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": true,
+			"suburban": false,
+			"bus": true,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": true
+		}
+	},
+	{
+		"type": "stop",
+		"id": "8002175",
+		"name": "Kaiserslautern Galgenschanze",
+		"location": {
+			"type": "location",
+			"id": "8002175",
+			"latitude": 49.435511,
+			"longitude": 7.74409
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": true,
+			"suburban": false,
+			"bus": true,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": false
+		}
+	},
+	{
+		"type": "stop",
+		"id": "8011995",
+		"name": "Kalsow",
+		"location": {
+			"type": "location",
+			"id": "8011995",
+			"latitude": 53.925596,
+			"longitude": 11.578259
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": true,
+			"suburban": false,
+			"bus": true,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": true
+		}
+	},
+	{
+		"type": "station",
+		"id": "654552",
+		"name": "K.-Wilhelm-Park, Essen (Ruhr)",
+		"location": {
+			"type": "location",
+			"id": "654552",
+			"latitude": 51.49058,
+			"longitude": 7.009204
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": false,
+			"suburban": false,
+			"bus": true,
+			"ferry": false,
+			"subway": true,
+			"tram": false,
+			"taxi": false
+		}
+	},
+	{
+		"type": "station",
+		"id": "8070889",
+		"name": "Kaiserslautern Friedhof",
+		"location": {
+			"type": "location",
+			"id": "8070889",
+			"latitude": 49.44468,
+			"longitude": 7.794861
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": false,
+			"suburban": false,
+			"bus": true,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": false
+		}
+	},
+	{
+		"type": "station",
+		"id": "878206",
+		"name": "K.-Adenauer-Ring/ZOB, Iserlohn",
+		"location": {
+			"type": "location",
+			"id": "878206",
+			"latitude": 51.374323,
+			"longitude": 7.704672
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": false,
+			"suburban": false,
+			"bus": true,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": true
+		}
+	},
+	{
+		"type": "stop",
+		"id": "878867",
+		"name": "K.-Adenauer-Ring ZOB1A, Iserlohn",
+		"location": {
+			"type": "location",
+			"id": "878867",
+			"latitude": 51.374224,
+			"longitude": 7.704547
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": false,
+			"suburban": false,
+			"bus": true,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": true
+		},
+		"station": {
+			"type": "station",
+			"id": "878206",
+			"name": "K.-Adenauer-Ring/ZOB, Iserlohn",
+			"location": {
+				"type": "location",
+				"id": "878206",
+				"latitude": 51.374323,
+				"longitude": 7.704672
+			},
+			"products": {
+				"nationalExpress": false,
+				"national": false,
+				"regionalExpress": false,
+				"regional": false,
+				"suburban": false,
+				"bus": true,
+				"ferry": false,
+				"subway": false,
+				"tram": false,
+				"taxi": true
+			}
+		}
+	},
+	{
+		"type": "stop",
+		"id": "878215",
+		"name": "K.-Adenauer-Ring ZOB1B/1C/1D, Iserlohn",
+		"location": {
+			"type": "location",
+			"id": "878215",
+			"latitude": 51.373631,
+			"longitude": 7.704349
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": false,
+			"suburban": false,
+			"bus": true,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": true
+		},
+		"station": {
+			"type": "station",
+			"id": "878206",
+			"name": "K.-Adenauer-Ring/ZOB, Iserlohn",
+			"location": {
+				"type": "location",
+				"id": "878206",
+				"latitude": 51.374323,
+				"longitude": 7.704672
+			},
+			"products": {
+				"nationalExpress": false,
+				"national": false,
+				"regionalExpress": false,
+				"regional": false,
+				"suburban": false,
+				"bus": true,
+				"ferry": false,
+				"subway": false,
+				"tram": false,
+				"taxi": true
+			}
+		}
+	},
+	{
+		"type": "stop",
+		"id": "879330",
+		"name": "K.-Adenauer-Ring ZOB2B/2C, Iserlohn",
+		"location": {
+			"type": "location",
+			"id": "879330",
+			"latitude": 51.374152,
+			"longitude": 7.704762
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": false,
+			"suburban": false,
+			"bus": true,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": true
+		},
+		"station": {
+			"type": "station",
+			"id": "878206",
+			"name": "K.-Adenauer-Ring/ZOB, Iserlohn",
+			"location": {
+				"type": "location",
+				"id": "878206",
+				"latitude": 51.374323,
+				"longitude": 7.704672
+			},
+			"products": {
+				"nationalExpress": false,
+				"national": false,
+				"regionalExpress": false,
+				"regional": false,
+				"suburban": false,
+				"bus": true,
+				"ferry": false,
+				"subway": false,
+				"tram": false,
+				"taxi": true
+			}
+		}
+	},
+	{
+		"type": "stop",
+		"id": "877615",
+		"name": "K.-Adenauer-Ring ZOB, Iserlohn",
+		"location": {
+			"type": "location",
+			"id": "877615",
+			"latitude": 51.373478,
+			"longitude": 7.70425
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": false,
+			"suburban": false,
+			"bus": true,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": true
+		}
+	},
+	{
+		"type": "stop",
+		"id": "980072",
+		"name": "K.-Kollwitz-Straße, Auerbach/Vogtl.",
+		"location": {
+			"type": "location",
+			"id": "980072",
+			"latitude": 50.510181,
+			"longitude": 12.406759
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": false,
+			"suburban": false,
+			"bus": true,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": true
+		}
+	},
+	{
+		"type": "stop",
+		"id": "983790",
+		"name": "K-Kollwitz-Gymnasium, Zwickau",
+		"location": {
+			"type": "location",
+			"id": "983790",
+			"latitude": 50.730246,
+			"longitude": 12.482996
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": false,
+			"suburban": false,
+			"bus": true,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": true
+		}
+	},
+	{
+		"type": "stop",
+		"id": "506319",
+		"name": "K.-Adenauer-Platz, Frankenthal (Pfalz)",
+		"location": {
+			"type": "location",
+			"id": "506319",
+			"latitude": 49.52899,
+			"longitude": 8.342951
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": false,
+			"suburban": false,
+			"bus": true,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": false
+		}
+	},
+	{
+		"type": "station",
+		"id": "656197",
+		"name": "K.-E.-Osthaus-Str., Hagen (Westf)",
+		"location": {
+			"type": "location",
+			"id": "656197",
+			"latitude": 51.354825,
+			"longitude": 7.502775
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": false,
+			"suburban": false,
+			"bus": true,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": false
+		}
+	},
+	{
+		"type": "stop",
+		"id": "891071",
+		"name": "K.-Groth-Weg, Wolfenbüttel",
+		"location": {
+			"type": "location",
+			"id": "891071",
+			"latitude": 52.154011,
+			"longitude": 10.521155
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": false,
+			"suburban": false,
+			"bus": true,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": false
+		}
+	},
+	{
+		"type": "stop",
+		"id": "734546",
+		"name": "K.-Kurzbach-Platz, Neuruppin",
+		"location": {
+			"type": "location",
+			"id": "734546",
+			"latitude": 52.924674,
+			"longitude": 12.808235
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": false,
+			"suburban": false,
+			"bus": true,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": false
+		}
+	},
+	{
+		"type": "stop",
+		"id": "211530",
+		"name": "K.-Liebknecht-Straße, Münchenbernsdorf",
+		"location": {
+			"type": "location",
+			"id": "211530",
+			"latitude": 50.820722,
+			"longitude": 11.935041
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": false,
+			"suburban": false,
+			"bus": true,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": false
+		}
+	},
+	{
+		"type": "stop",
+		"id": "665605",
+		"name": "K.-Schumacher-Br., Essen (Ruhr)",
+		"location": {
+			"type": "location",
+			"id": "665605",
+			"latitude": 51.442335,
+			"longitude": 7.078223
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": false,
+			"suburban": false,
+			"bus": true,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": false
+		}
+	},
+	{
+		"type": "stop",
+		"id": "998603",
+		"name": "K.-W.-Heck-Str., Isny im Allgäu",
+		"location": {
+			"type": "location",
+			"id": "998603",
+			"latitude": 47.692845,
+			"longitude": 10.035647
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": false,
+			"suburban": false,
+			"bus": true,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": false
+		}
+	},
+	{
+		"type": "station",
+		"id": "8079068",
+		"name": "Kalterherberg",
+		"location": {
+			"type": "location",
+			"id": "8079068",
+			"latitude": 50.52122,
+			"longitude": 6.20653
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": false,
+			"suburban": false,
+			"bus": true,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": true
+		}
+	},
+	{
+		"type": "station",
+		"id": "8070807",
+		"name": "Kalteneck",
+		"location": {
+			"type": "location",
+			"id": "8070807",
+			"latitude": 48.689892,
+			"longitude": 13.453265
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": true,
+			"suburban": false,
+			"bus": true,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": true
+		}
+	},
+	{
+		"type": "station",
+		"id": "8079739",
+		"name": "Kalsow Abzweig B105",
+		"location": {
+			"type": "location",
+			"id": "8079739",
+			"latitude": 53.915735,
+			"longitude": 11.584543
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": true,
+			"suburban": false,
+			"bus": true,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": false
+		}
+	},
+	{
+		"type": "stop",
+		"id": "8003146",
+		"name": "Kainzenbad",
+		"location": {
+			"type": "location",
+			"id": "8003146",
+			"latitude": 47.483054,
+			"longitude": 11.115494
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": true,
+			"suburban": false,
+			"bus": true,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": false
+		}
+	},
+	{
+		"type": "stop",
+		"id": "8070018",
+		"name": "Kalenborn(Westerw)",
+		"location": {
+			"type": "location",
+			"id": "8070018",
+			"latitude": 50.615525,
+			"longitude": 7.312725
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": true,
+			"suburban": false,
+			"bus": true,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": false
+		}
+	},
+	{
+		"type": "station",
+		"id": "8070973",
+		"name": "Kaltenberg",
+		"location": {
+			"type": "location",
+			"id": "8070973",
+			"latitude": 48.124543,
+			"longitude": 11.001322
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": false,
+			"suburban": false,
+			"bus": true,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": true
+		}
+	},
+	{
+		"type": "station",
+		"id": "8071232",
+		"name": "Kaarst Mitte/Holzbüttgen Pfarrzentrum",
+		"location": {
+			"type": "location",
+			"id": "8071232",
+			"latitude": 51.216742,
+			"longitude": 6.616357
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": true,
+			"suburban": true,
+			"bus": true,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": true
+		}
+	},
+	{
+		"type": "stop",
+		"id": "8071234",
+		"name": "Kaarst IKEA Bruchweg",
+		"location": {
+			"type": "location",
+			"id": "8071234",
+			"latitude": 51.215582,
+			"longitude": 6.629464
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": true,
+			"suburban": true,
+			"bus": true,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": true
+		}
+	},
+	{
+		"type": "stop",
+		"id": "250120",
+		"name": "K.-Leisner-Str., Xanten",
+		"location": {
+			"type": "location",
+			"id": "250120",
+			"latitude": 51.659542,
+			"longitude": 6.467865
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": false,
+			"suburban": false,
+			"bus": true,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": true
+		}
+	},
+	{
+		"type": "stop",
+		"id": "968539",
+		"name": "K.-Liebknecht-Str., Oelsnitz/Vogtl.",
+		"location": {
+			"type": "location",
+			"id": "968539",
+			"latitude": 50.419435,
+			"longitude": 12.173129
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": false,
+			"suburban": false,
+			"bus": true,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": true
+		}
+	},
+	{
+		"type": "stop",
+		"id": "880911",
+		"name": "K.-Adenauer-Ring(St 3), Iserlohn",
+		"location": {
+			"type": "location",
+			"id": "880911",
+			"latitude": 51.375321,
+			"longitude": 7.70549
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": false,
+			"suburban": false,
+			"bus": true,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": true
+		}
+	},
+	{
+		"type": "stop",
+		"id": "751751",
+		"name": "K.-Adenauer-Str., Rottenburg am Neckar",
+		"location": {
+			"type": "location",
+			"id": "751751",
+			"latitude": 48.466681,
+			"longitude": 8.928823
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": false,
+			"suburban": false,
+			"bus": true,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": false
+		}
+	},
+	{
+		"type": "stop",
+		"id": "555171",
+		"name": "K.-Ferd.-Braun-Straße, Backnang",
+		"location": {
+			"type": "location",
+			"id": "555171",
+			"latitude": 48.963533,
+			"longitude": 9.424102
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": false,
+			"suburban": false,
+			"bus": true,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": false
+		}
+	},
+	{
+		"type": "stop",
+		"id": "376625",
+		"name": "K.-Hornschuch-Straße, Urbach (Rems)",
+		"location": {
+			"type": "location",
+			"id": "376625",
+			"latitude": 48.809152,
+			"longitude": 9.578465
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": false,
+			"suburban": false,
+			"bus": true,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": false
+		}
+	},
+	{
+		"type": "stop",
+		"id": "727734",
+		"name": "K.-Liebknecht-Allee, Dahme (Mark)",
+		"location": {
+			"type": "location",
+			"id": "727734",
+			"latitude": 51.871282,
+			"longitude": 13.434343
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": false,
+			"suburban": false,
+			"bus": true,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": false
+		}
+	},
+	{
+		"type": "stop",
+		"id": "728326",
+		"name": "K.-Liebknecht-Str., Kyritz",
+		"location": {
+			"type": "location",
+			"id": "728326",
+			"latitude": 52.944702,
+			"longitude": 12.411451
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": false,
+			"suburban": false,
+			"bus": true,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": false
+		}
+	},
+	{
+		"type": "stop",
+		"id": "736869",
+		"name": "K.-Liebknecht-Str., Ludwigsfelde",
+		"location": {
+			"type": "location",
+			"id": "736869",
+			"latitude": 52.30281,
+			"longitude": 13.247727
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": false,
+			"suburban": false,
+			"bus": true,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": false
+		}
+	},
+	{
+		"type": "stop",
+		"id": "729461",
+		"name": "K.-Liebknecht-Str., Schulzendorf b Eichwalde",
+		"location": {
+			"type": "location",
+			"id": "729461",
+			"latitude": 52.367352,
+			"longitude": 13.607439
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": false,
+			"suburban": false,
+			"bus": true,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": false
+		}
+	},
+	{
+		"type": "stop",
+		"id": "736989",
+		"name": "K.-Marx-Str., Schulzendorf b Eichwalde",
+		"location": {
+			"type": "location",
+			"id": "736989",
+			"latitude": 52.372728,
+			"longitude": 13.602073
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": false,
+			"suburban": false,
+			"bus": true,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": false
+		}
+	},
+	{
+		"type": "stop",
+		"id": "737547",
+		"name": "K.-Liebknecht-Str., Gumtow",
+		"location": {
+			"type": "location",
+			"id": "737547",
+			"latitude": 52.977837,
+			"longitude": 12.248738
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": false,
+			"suburban": false,
+			"bus": true,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": true
+		}
+	},
+	{
+		"type": "stop",
+		"id": "509515",
+		"name": "K.-Adenauer-Platz, Schifferstadt",
+		"location": {
+			"type": "location",
+			"id": "509515",
+			"latitude": 49.380066,
+			"longitude": 8.384625
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": false,
+			"suburban": false,
+			"bus": false,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": true
+		}
+	},
+	{
+		"type": "stop",
+		"id": "377617",
+		"name": "K.-Adenauer-Ring, Kirchheimbolanden",
+		"location": {
+			"type": "location",
+			"id": "377617",
+			"latitude": 49.669483,
+			"longitude": 7.996121
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": false,
+			"suburban": false,
+			"bus": true,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": false
+		}
+	},
+	{
+		"type": "stop",
+		"id": "363709",
+		"name": "K.-Dressel Str., Malchin",
+		"location": {
+			"type": "location",
+			"id": "363709",
+			"latitude": 53.740913,
+			"longitude": 12.761347
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": false,
+			"suburban": false,
+			"bus": true,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": false
+		}
+	},
+	{
+		"type": "stop",
+		"id": "375773",
+		"name": "K.-Kollwitz-Str., Neuruppin",
+		"location": {
+			"type": "location",
+			"id": "375773",
+			"latitude": 52.910786,
+			"longitude": 12.80561
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": false,
+			"suburban": false,
+			"bus": true,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": false
+		}
+	},
+	{
+		"type": "stop",
+		"id": "727692",
+		"name": "K.-Liebknecht-Str., Perleberg",
+		"location": {
+			"type": "location",
+			"id": "727692",
+			"latitude": 53.077949,
+			"longitude": 11.856709
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": false,
+			"suburban": false,
+			"bus": true,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": true
+		}
+	},
+	{
+		"type": "stop",
+		"id": "901914",
+		"name": "K.-von-Galen-Hauptsch., Dülmen",
+		"location": {
+			"type": "location",
+			"id": "901914",
+			"latitude": 51.834382,
+			"longitude": 7.273765
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": false,
+			"suburban": false,
+			"bus": true,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": false
+		}
+	},
+	{
+		"type": "stop",
+		"id": "111411",
+		"name": "K.-Weißgerber-Schule Gersweiler, Saarbrücken",
+		"location": {
+			"type": "location",
+			"id": "111411",
+			"latitude": 49.230548,
+			"longitude": 6.921236
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": false,
+			"suburban": false,
+			"bus": true,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": false
+		}
+	},
+	{
+		"type": "stop",
+		"id": "422111",
+		"name": "K.Adenauer - Schule, Pforzheim",
+		"location": {
+			"type": "location",
+			"id": "422111",
+			"latitude": 48.888419,
+			"longitude": 8.729245
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": false,
+			"suburban": false,
+			"bus": true,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": false
+		}
+	},
+	{
+		"type": "stop",
+		"id": "8800183",
+		"name": "Kalmthout",
+		"location": {
+			"type": "location",
+			"id": "8800183",
+			"latitude": 51.391375,
+			"longitude": 4.466506
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": true,
+			"regionalExpress": false,
+			"regional": true,
+			"suburban": false,
+			"bus": false,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": false
+		}
+	},
+	{
+		"type": "stop",
+		"id": "440458",
+		"name": "Kalk Trimbornstr., Köln",
+		"location": {
+			"type": "location",
+			"id": "440458",
+			"latitude": 50.935191,
+			"longitude": 6.996934
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": true,
+			"suburban": true,
+			"bus": true,
+			"ferry": false,
+			"subway": false,
+			"tram": true,
+			"taxi": false
+		},
+		"station": {
+			"type": "station",
+			"id": "8003320",
+			"name": "Köln Trimbornstr",
+			"location": {
+				"type": "location",
+				"id": "8003320",
+				"latitude": 50.93591,
+				"longitude": 6.996754
+			},
+			"products": {
+				"nationalExpress": false,
+				"national": false,
+				"regionalExpress": false,
+				"regional": true,
+				"suburban": true,
+				"bus": true,
+				"ferry": false,
+				"subway": false,
+				"tram": false,
+				"taxi": false
+			}
+		}
+	},
+	{
+		"type": "stop",
+		"id": "5400071",
+		"name": "Kadan-Prunerov",
+		"location": {
+			"type": "location",
+			"id": "5400071",
+			"latitude": 50.411344,
+			"longitude": 13.258145
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": true,
+			"regional": true,
+			"suburban": false,
+			"bus": false,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": false
+		}
+	},
+	{
+		"type": "stop",
+		"id": "443633",
+		"name": "Kalscheuren Bahnhof, Hürth",
+		"location": {
+			"type": "location",
+			"id": "443633",
+			"latitude": 50.875646,
+			"longitude": 6.90839
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": true,
+			"suburban": false,
+			"bus": true,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": false
+		},
+		"station": {
+			"type": "station",
+			"id": "8003160",
+			"name": "Hürth-Kalscheuren",
+			"location": {
+				"type": "location",
+				"id": "8003160",
+				"latitude": 50.875628,
+				"longitude": 6.909981
+			},
+			"products": {
+				"nationalExpress": false,
+				"national": false,
+				"regionalExpress": false,
+				"regional": true,
+				"suburban": false,
+				"bus": true,
+				"ferry": false,
+				"subway": false,
+				"tram": false,
+				"taxi": false
+			}
+		}
+	},
+	{
+		"type": "stop",
+		"id": "5501547",
+		"name": "Kaba",
+		"location": {
+			"type": "location",
+			"id": "5501547",
+			"latitude": 47.3689,
+			"longitude": 21.259048
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": true,
+			"regionalExpress": true,
+			"regional": true,
+			"suburban": false,
+			"bus": false,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": false
+		}
+	},
+	{
+		"type": "stop",
+		"id": "102596",
+		"name": "Kaiserlei Ostseite, Offenbach am Main",
+		"location": {
+			"type": "location",
+			"id": "102596",
+			"latitude": 50.105468,
+			"longitude": 8.74085
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": true,
+			"suburban": true,
+			"bus": true,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": false
+		},
+		"station": {
+			"type": "station",
+			"id": "8070092",
+			"name": "Offenbach(Main) Kaiserlei",
+			"location": {
+				"type": "location",
+				"id": "8070092",
+				"latitude": 50.105163,
+				"longitude": 8.73845
+			},
+			"products": {
+				"nationalExpress": false,
+				"national": false,
+				"regionalExpress": false,
+				"regional": true,
+				"suburban": true,
+				"bus": true,
+				"ferry": false,
+				"subway": false,
+				"tram": false,
+				"taxi": false
+			}
+		}
+	},
+	{
+		"type": "stop",
+		"id": "102598",
+		"name": "Kaiserlei Westseite, Offenbach am Main",
+		"location": {
+			"type": "location",
+			"id": "102598",
+			"latitude": 50.105639,
+			"longitude": 8.73703
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": true,
+			"suburban": true,
+			"bus": true,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": false
+		},
+		"station": {
+			"type": "station",
+			"id": "8070092",
+			"name": "Offenbach(Main) Kaiserlei",
+			"location": {
+				"type": "location",
+				"id": "8070092",
+				"latitude": 50.105163,
+				"longitude": 8.73845
+			},
+			"products": {
+				"nationalExpress": false,
+				"national": false,
+				"regionalExpress": false,
+				"regional": true,
+				"suburban": true,
+				"bus": true,
+				"ferry": false,
+				"subway": false,
+				"tram": false,
+				"taxi": false
+			}
+		}
+	},
+	{
+		"type": "stop",
+		"id": "5401408",
+		"name": "Kadan",
+		"location": {
+			"type": "location",
+			"id": "5401408",
+			"latitude": 50.381491,
+			"longitude": 13.276861
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": true,
+			"regional": true,
+			"suburban": false,
+			"bus": false,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": false
+		}
+	},
+	{
+		"type": "stop",
+		"id": "5454561",
+		"name": "Kadan-Bystrice",
+		"location": {
+			"type": "location",
+			"id": "5454561",
+			"latitude": 50.396854,
+			"longitude": 13.275342
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": true,
+			"regional": true,
+			"suburban": false,
+			"bus": false,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": false
+		}
+	},
+	{
+		"type": "stop",
+		"id": "5500128",
+		"name": "Kal-Kapolna",
+		"location": {
+			"type": "location",
+			"id": "5500128",
+			"latitude": 47.73468,
+			"longitude": 20.254504
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": true,
+			"regional": true,
+			"suburban": false,
+			"bus": false,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": false
+		}
+	},
+	{
+		"type": "stop",
+		"id": "7400528",
+		"name": "Kaallered station",
+		"location": {
+			"type": "location",
+			"id": "7400528",
+			"latitude": 57.61067,
+			"longitude": 12.048377
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": true,
+			"suburban": false,
+			"bus": false,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": false
+		}
+	},
+	{
+		"type": "stop",
+		"id": "8601216",
+		"name": "Kagerup Station (Hilleroed)",
+		"location": {
+			"type": "location",
+			"id": "8601216",
+			"latitude": 55.997259,
+			"longitude": 12.286187
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": true,
+			"suburban": false,
+			"bus": false,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": false
+		}
+	},
+	{
+		"type": "stop",
+		"id": "2400012",
+		"name": "Kaisiadorys",
+		"location": {
+			"type": "location",
+			"id": "2400012",
+			"latitude": 54.863063,
+			"longitude": 24.462102
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": true,
+			"suburban": false,
+			"bus": false,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": false
+		}
+	},
+	{
+		"type": "stop",
+		"id": "5101571",
+		"name": "Kaleczyn",
+		"location": {
+			"type": "location",
+			"id": "5101571",
+			"latitude": 52.707486,
+			"longitude": 20.747508
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": true,
+			"suburban": false,
+			"bus": false,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": false
+		}
+	},
+	{
+		"type": "stop",
+		"id": "7400529",
+		"name": "Kallhäll station",
+		"location": {
+			"type": "location",
+			"id": "7400529",
+			"latitude": 59.453297,
+			"longitude": 17.805437
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": true,
+			"suburban": false,
+			"bus": false,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": false
+		}
+	},
+	{
+		"type": "stop",
+		"id": "7400074",
+		"name": "Kalmar Central",
+		"location": {
+			"type": "location",
+			"id": "7400074",
+			"latitude": 56.661445,
+			"longitude": 16.35963
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": true,
+			"suburban": false,
+			"bus": false,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": false
+		}
+	},
+	{
+		"type": "station",
+		"id": "8501684",
+		"name": "Kalpetran",
+		"location": {
+			"type": "location",
+			"id": "8501684",
+			"latitude": 46.214263,
+			"longitude": 7.836913
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": true,
+			"suburban": false,
+			"bus": false,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": false
+		}
+	},
+	{
+		"type": "stop",
+		"id": "8100281",
+		"name": "Kaltenbach-Stumm im Zillertal",
+		"location": {
+			"type": "location",
+			"id": "8100281",
+			"latitude": 47.292339,
+			"longitude": 11.875964
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": true,
+			"suburban": false,
+			"bus": false,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": false
+		}
+	},
+	{
+		"type": "station",
+		"id": "8508311",
+		"name": "Kaiserstuhl OW",
+		"location": {
+			"type": "location",
+			"id": "8508311",
+			"latitude": 46.814356,
+			"longitude": 8.175419
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": true,
+			"regional": true,
+			"suburban": false,
+			"bus": true,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": false
+		}
+	},
+	{
+		"type": "stop",
+		"id": "5100017",
+		"name": "Kalisz",
+		"location": {
+			"type": "location",
+			"id": "5100017",
+			"latitude": 51.742818,
+			"longitude": 18.071914
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": true,
+			"regionalExpress": true,
+			"regional": true,
+			"suburban": false,
+			"bus": false,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": false
+		}
+	},
+	{
+		"type": "stop",
+		"id": "665556",
+		"name": "Kaarster Bahnhof, Kaarst",
+		"location": {
+			"type": "location",
+			"id": "665556",
+			"latitude": 51.221623,
+			"longitude": 6.607665
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": true,
+			"suburban": true,
+			"bus": true,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": true
+		},
+		"station": {
+			"type": "station",
+			"id": "8003141",
+			"name": "Kaarster Bahnhof",
+			"location": {
+				"type": "location",
+				"id": "8003141",
+				"latitude": 51.2229,
+				"longitude": 6.60628
+			},
+			"products": {
+				"nationalExpress": false,
+				"national": false,
+				"regionalExpress": false,
+				"regional": true,
+				"suburban": true,
+				"bus": true,
+				"ferry": false,
+				"subway": false,
+				"tram": false,
+				"taxi": true
+			}
+		}
+	},
+	{
+		"type": "stop",
+		"id": "587292",
+		"name": "Kaldenkirchen Bahnhof, Nettetal",
+		"location": {
+			"type": "location",
+			"id": "587292",
+			"latitude": 51.325565,
+			"longitude": 6.204912
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": true,
+			"suburban": false,
+			"bus": true,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": false
+		},
+		"station": {
+			"type": "station",
+			"id": "8000190",
+			"name": "Kaldenkirchen",
+			"location": {
+				"type": "location",
+				"id": "8000190",
+				"latitude": 51.327192,
+				"longitude": 6.203249
+			},
+			"products": {
+				"nationalExpress": false,
+				"national": false,
+				"regionalExpress": false,
+				"regional": true,
+				"suburban": false,
+				"bus": true,
+				"ferry": false,
+				"subway": false,
+				"tram": false,
+				"taxi": false
+			}
+		}
+	},
+	{
+		"type": "station",
+		"id": "8500300",
+		"name": "Kaiseraugst",
+		"location": {
+			"type": "location",
+			"id": "8500300",
+			"latitude": 47.538491,
+			"longitude": 7.724116
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": true,
+			"regional": true,
+			"suburban": true,
+			"bus": true,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": false
+		}
+	},
+	{
+		"type": "stop",
+		"id": "638056",
+		"name": "Kaltenweide Bahnhof, Langenhagen (Hannover)",
+		"location": {
+			"type": "location",
+			"id": "638056",
+			"latitude": 52.479744,
+			"longitude": 9.736154
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": true,
+			"suburban": true,
+			"bus": true,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": true
+		},
+		"station": {
+			"type": "station",
+			"id": "8003165",
+			"name": "Langenhagen-Kaltenweide",
+			"location": {
+				"type": "location",
+				"id": "8003165",
+				"latitude": 52.479699,
+				"longitude": 9.736441
+			},
+			"products": {
+				"nationalExpress": false,
+				"national": false,
+				"regionalExpress": false,
+				"regional": true,
+				"suburban": true,
+				"bus": true,
+				"ferry": false,
+				"subway": false,
+				"tram": false,
+				"taxi": true
+			}
+		}
+	},
+	{
+		"type": "stop",
+		"id": "589141",
+		"name": "Kaarster See, Kaarst",
+		"location": {
+			"type": "location",
+			"id": "589141",
+			"latitude": 51.22743,
+			"longitude": 6.594523
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": true,
+			"suburban": true,
+			"bus": true,
+			"ferry": false,
+			"subway": false,
+			"tram": false,
+			"taxi": false
+		},
+		"station": {
+			"type": "station",
+			"id": "8000430",
+			"name": "Kaarster See",
+			"location": {
+				"type": "location",
+				"id": "8000430",
+				"latitude": 51.226477,
+				"longitude": 6.594729
+			},
+			"products": {
+				"nationalExpress": false,
+				"national": false,
+				"regionalExpress": false,
+				"regional": true,
+				"suburban": true,
+				"bus": true,
+				"ferry": false,
+				"subway": false,
+				"tram": false,
+				"taxi": false
+			}
+		}
+	},
+	{
+		"type": "stop",
+		"id": "731088",
+		"name": "Kaiserdamm (U), Berlin",
+		"location": {
+			"type": "location",
+			"id": "731088",
+			"latitude": 52.510029,
+			"longitude": 13.282218
+		},
+		"products": {
+			"nationalExpress": false,
+			"national": false,
+			"regionalExpress": false,
+			"regional": true,
+			"suburban": true,
+			"bus": true,
+			"ferry": false,
+			"subway": true,
+			"tram": false,
+			"taxi": false
+		}
+	}
+]

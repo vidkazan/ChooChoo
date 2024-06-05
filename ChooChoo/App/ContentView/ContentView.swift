@@ -188,3 +188,17 @@ extension ContentView {
 		}
 	}
 }
+
+#if DEBUG
+struct ContentView_Previews: PreviewProvider {
+	static var previews: some View {
+		ContentView()
+		.environmentObject(
+			ChewViewModel(
+				initialState: .init(data: .init(depStop: .textOnly(""), arrStop: .textOnly(""), journeySettings: .init(), date: .init(date: .now, mode: .departure)), status: .idle),
+				coreDataStore: .preview
+			)
+		)
+	}
+}
+#endif
