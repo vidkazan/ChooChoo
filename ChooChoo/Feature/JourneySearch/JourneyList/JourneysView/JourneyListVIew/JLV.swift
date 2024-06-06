@@ -9,6 +9,7 @@ import SwiftUI
 
 
 struct JourneyListView: View {
+	@Environment(\.displayScale) var displayScale
 	@EnvironmentObject var chewVM : ChewViewModel
 	@ObservedObject var journeyViewModel : JourneyListViewModel
 	@ObservedObject var appSettingsViewModel = Model.shared.appSettingsVM
@@ -41,6 +42,7 @@ struct JourneyListView: View {
 					}
 				)
 				.frame(maxWidth: .infinity, maxHeight: .infinity)
+				
 			}
 		}
 		.animation(.easeInOut, value: appSettingsViewModel.state.settings)

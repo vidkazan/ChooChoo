@@ -110,29 +110,76 @@ extension JourneyCell {
 	}
 }
 
-//
-//struct JourneyCellPreview: PreviewProvider {
-//	static var previews: some View {
-//		let mocks = [
-//			Mock.journeys.journeyNeussWolfsburg.decodedData,
+@available(iOS 16.0, *)
+struct ExportView<Content : View> : View {
+	@EnvironmentObject var chewVM : ChewViewModel
+	@ViewBuilder let content : () -> Content
+	
+	@State var renderedImage : Image? = Image(systemName: "map")
+	let scale : CGFloat
+	var body: some View {
+		VStack {
+			self.content()
+			.onAppear {
+				renderedImage = render(view: content(),scale: scale)
+			}
+			if let renderedImage = renderedImage {
+				ShareLink(
+					"Export",
+					item: renderedImage,
+					preview: SharePreview(Text("Shared image"), image: renderedImage)
+				)
+			}
+		}
+	}
+}
+
+#if DEBUG
+@available(iOS 16.0, *)
+struct JourneyCellPreview: PreviewProvider {
+	
+	static var previews: some View {
+		let mocks = [
+			Mock.journeys.journeyNeussWolfsburg.decodedData
 //			Mock.journeys.journeyNeussWolfsburgFirstCancelled.decodedData
-//		]
-//		VStack {
-//			ForEach(mocks,id: \.?.realtimeDataUpdatedAt){ mock in
-//				if let mock = mock,
-//				   let viewData = mock.journey.journeyViewData(
-//						depStop: .init(),
-//						arrStop: .init(),
-//						realtimeDataUpdatedAt: 0,
-//						settings: .init()
-//					) {
-//					JourneyCell(journey: viewData,stops: .init(departure: .init(), arrival: .init()))
-//						.environmentObject(ChewViewModel())
-//				} else {
-//					Text(verbatim: "error")
-//				}
-//			}
-//		}
-//		.padding()
-//	}
-//}
+		]
+		VStack {
+			Spacer()
+			ForEach(mocks,id: \.?.realtimeDataUpdatedAt){ mock in
+				if let mock = mock {
+					let viewData = mock.journey.journeyViewData(
+					   depStop: nil,
+					   arrStop: nil,
+					   realtimeDataUpdatedAt: 0,
+					   settings: .init()
+				   )
+					ExportView(content: {
+						JourneyCell(
+							journey: viewData!,
+							stops: .init(departure: .init(coordinates: .init(), type: .stop, stopDTO: nil), arrival: .init(coordinates: .init(), type: .stop, stopDTO: nil))
+						)
+						.environmentObject(ChewViewModel(
+							referenceDate: .specificDate(
+								(viewData?.time.timestamp.departure.actual ?? 0) + 2000
+							),
+							coreDataStore: .preview
+						))
+					}, scale: 1)
+				}
+			}
+			Spacer()
+		}
+		.padding()
+	}
+}
+#endif
+
+@available(iOS 16.0, *)
+@MainActor func render(view : some View, scale : CGFloat) -> Image? {
+	let renderer = ImageRenderer(content: view)
+
+	// make sure and use the correct display scale for this device
+	renderer.scale = scale
+	
+	return Image(uiImage: renderer.uiImage!)
+}

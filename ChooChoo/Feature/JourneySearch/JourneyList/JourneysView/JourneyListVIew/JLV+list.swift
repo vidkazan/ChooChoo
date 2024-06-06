@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+
 extension JourneyListView {
 	func list() -> some View {
 		return ScrollViewReader { val in
@@ -22,10 +23,15 @@ extension JourneyListView {
 						.tipLabel
 					}
 					ForEach(journeyViewModel.state.data.journeys,id: \.id) { journey in
-						JourneyCell(
-							journey: journey,
-							stops: journeyViewModel.state.data.stops
-						)
+						if #available(iOS 16.0, *) {
+							ExportView(content: {
+								JourneyCell(
+									journey: journey,
+									stops: journeyViewModel.state.data.stops
+								)
+								.environmentObject(chewVM)
+							}, scale: displayScale)
+						}
 					}
 					.id(1)
 					switch journeyViewModel.state.status {
