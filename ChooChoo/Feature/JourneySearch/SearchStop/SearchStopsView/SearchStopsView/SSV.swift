@@ -70,7 +70,7 @@ extension SearchStopsView {
 				stopList(type: type)
 			}
 		}
-		 .background(Color.chewStopListBG.opacity(0.8))
+		.background(Color.chewStopListBG.opacity(0.8))
 		.clipShape(.rect(cornerRadius: 10))
 	}
 	
@@ -111,6 +111,7 @@ extension SearchStopsView {
 }
 
 #if DEBUG
+@available(iOS 16.0, *)
 struct SSV_Previews: PreviewProvider {
 	static var previews: some View {
 		let chewVM = ChewViewModel(
@@ -140,7 +141,6 @@ struct SSV_Previews: PreviewProvider {
 			}
 			.background(Color(.green))
 			.frame(maxWidth: .infinity, maxHeight: .infinity)
-//			.environment(\.locale, .init(identifier: "de"))
 		}
 	}
 }
