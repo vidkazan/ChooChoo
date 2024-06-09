@@ -48,6 +48,9 @@
         }
       }
     },
+    "%@" : {
+      "comment" : "BadgeView: legDirection"
+    },
     "%lld stop" : {
       "comment" : "badge: stopsCount",
       "localizations" : {
@@ -110,6 +113,9 @@
           }
         }
       }
+    },
+    "Add" : {
+
     },
     "all" : {
       "comment" : "JourneySettings: TransportMode",
@@ -208,7 +214,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Bad URL"
+            "value" : "Falsche URL"
           }
         }
       }
@@ -263,7 +269,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Verbindung ist nicht gefunden"
+            "value" : "Verbindung nicht gefunden"
           }
         }
       }
@@ -285,7 +291,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Verbindungen sind nicht gefunden"
+            "value" : "Verbindungen nicht gefunden"
           }
         }
       }
@@ -357,25 +363,10 @@
       }
     },
     "Debug" : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Debug"
-          }
-        }
-      }
+
     },
     "Debug leg" : {
-      "comment" : "Debug",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Debug leg"
-          }
-        }
-      }
+      "comment" : "Debug"
     },
     "Departure" : {
       "comment" : "LocationDirationType: description",
@@ -423,6 +414,7 @@
     },
     "earlier route arrival time is later than later route departure" : {
       "comment" : "DataError: validationError",
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -431,9 +423,6 @@
           }
         }
       }
-    },
-    "earlier route destination stop and later origin stop are not the same" : {
-      "comment" : "DataError: validationError"
     },
     "error: (msg)" : {
       "comment" : "DataError"
@@ -444,7 +433,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Fehler: Versuchen Sie es neu zu laden"
+            "value" : "Fehler: Versuchen Sie die Seite neu zu laden"
           }
         }
       }
@@ -571,26 +560,10 @@
       }
     },
     "Journey debug" : {
-      "comment" : "JourneyFollowCellView: menu item\nJourneyCell: menu item",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Journey debug"
-          }
-        }
-      }
+      "comment" : "JourneyFollowCellView: menu item\nJourneyCell: menu item"
     },
     "Journey Debug" : {
-      "comment" : "SheetViewModel: SheetType",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Journey Debug"
-          }
-        }
-      }
+      "comment" : "SheetViewModel: SheetType"
     },
     "Journey details" : {
       "comment" : "navigationBarTitle",
@@ -620,7 +593,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Reise folgen"
+            "value" : "Reise verfolgen"
           }
         }
       }
@@ -637,14 +610,7 @@
       }
     },
     "Logs" : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Logs"
-          }
-        }
-      }
+
     },
     "Low accuracy:" : {
       "comment" : "NSV: location accuracy not precise",
@@ -658,15 +624,7 @@
       }
     },
     "Map" : {
-      "comment" : "JourneyFollowView: listCell: swipe action item",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Map"
-          }
-        }
-      }
+      "comment" : "JourneyFollowView: listCell: swipe action item"
     },
     "Map Details" : {
       "comment" : "SheetViewModel: SheetType"
@@ -675,59 +633,19 @@
       "comment" : "SheetViewModel: SheetType"
     },
     "max 1" : {
-      "comment" : "JourneySettings: TransferCountCases",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "max 1"
-          }
-        }
-      }
+      "comment" : "JourneySettings: TransferCountCases"
     },
     "max 2" : {
-      "comment" : "JourneySettings: TransferCountCases",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "max 2"
-          }
-        }
-      }
+      "comment" : "JourneySettings: TransferCountCases"
     },
     "max 3" : {
-      "comment" : "JourneySettings: TransferCountCases",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "max 3"
-          }
-        }
-      }
+      "comment" : "JourneySettings: TransferCountCases"
     },
     "max 4" : {
-      "comment" : "JourneySettings: TransferCountCases",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "max 4"
-          }
-        }
-      }
+      "comment" : "JourneySettings: TransferCountCases"
     },
     "max 5" : {
-      "comment" : "JourneySettings: TransferCountCases",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "max 5"
-          }
-        }
-      }
+      "comment" : "JourneySettings: TransferCountCases"
     },
     "min (self.rawValue) minutes" : {
       "comment" : "JourneySettings: TransferDurationCases"
@@ -752,13 +670,13 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Verbindung fällt aus"
+            "value" : "Verbindung kann nicht erreicht werden"
           }
         }
       }
     },
     "now" : {
-      "comment" : "timeChoosingView: button on segmented picker\nDatePickerTimePresetButtons",
+      "comment" : "DatePickerTimePresetButtons\ntimeChoosingView: button on segmented picker",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -769,26 +687,10 @@
       }
     },
     "Offline" : {
-      "comment" : "badge",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Offline"
-          }
-        }
-      }
+      "comment" : "badge"
     },
     "Onboarding" : {
-      "comment" : "SheetViewModel: SheetType",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Onboarding"
-          }
-        }
-      }
+      "comment" : "SheetViewModel: SheetType"
     },
     "Ongoing" : {
       "comment" : "JourneyFollowView: section name",
@@ -796,7 +698,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Zuküntige"
+            "value" : "Zukünftige"
           }
         }
       }
@@ -843,7 +745,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Die App benötigt eine genaue Standort \num Haltestellen in der Nähe zu finden"
+            "value" : "Die App benötigt einen genauen Standort \num Haltestellen in der Nähe zu finden"
           }
         }
       }
@@ -860,26 +762,10 @@
       }
     },
     "regional" : {
-      "comment" : "JourneySettings: TransportMode",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "regional"
-          }
-        }
-      }
+      "comment" : "JourneySettings: TransportMode"
     },
     "Regional" : {
-      "comment" : "SettingsView: transportTypes: picker option",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Regional"
-          }
-        }
-      }
+      "comment" : "SettingsView: transportTypes: picker option"
     },
     "Reload" : {
       "comment" : "JourneyFollowView: listCell: swipe action item",
@@ -950,18 +836,10 @@
       }
     },
     "Route" : {
-      "comment" : "SheetViewModel: SheetType",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Route"
-          }
-        }
-      }
+      "comment" : "SheetViewModel: SheetType"
     },
     "Save" : {
-      "comment" : "datePickerView: save button\nsettingsView: save button",
+      "comment" : "settingsView: save button\ndatePickerView: save button",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -1027,7 +905,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Auf dem Map zeigen"
+            "value" : "Auf der Karte zeigen"
           }
         }
       }
@@ -1060,7 +938,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Haltestellen in der Hähe"
+            "value" : "Haltestellen in der Nähe"
           }
         }
       }
@@ -1110,15 +988,7 @@
       }
     },
     "Tip" : {
-      "comment" : "SheetViewModel: SheetType",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Tip"
-          }
-        }
-      }
+      "comment" : "SheetViewModel: SheetType"
     },
     "to" : {
       "comment" : "LocationDirationType: textFieldPlaceholder",
@@ -1133,6 +1003,7 @@
     },
     "to %@" : {
       "comment" : "BadgeView: legDirection",
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -1148,7 +1019,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Anschlüss"
+            "value" : "Anschlüsse"
           }
         }
       }
@@ -1159,7 +1030,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Anschlüss %@"
+            "value" : "Anschluss %@"
           }
         }
       }
@@ -1236,18 +1107,18 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Wollen Sie die Reise enfolgen?"
+            "value" : "Wollen Sie die Reise entfolgen?"
           }
         }
       }
     },
-    "Unknown hafas error" : {
+    "Unknown error" : {
       "comment" : "ApiError",
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Unbekannt hafas error"
+            "value" : "Unbekannter Fehler"
           }
         }
       }
