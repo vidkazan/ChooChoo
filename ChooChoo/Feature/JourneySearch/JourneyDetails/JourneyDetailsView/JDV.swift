@@ -14,7 +14,7 @@ struct JourneyDetailsView: View {
 	@ObservedObject var viewModel : JourneyDetailsViewModel
 	@ObservedObject var appSettingsVM : AppSettingsViewModel = Model.shared.appSettingsVM
 	@State var scrollToLegId : UUID?
-	init(journeyDetailsViewModel : JourneyDetailsViewModel) {
+	init( journeyDetailsViewModel : JourneyDetailsViewModel ) {
 		viewModel = journeyDetailsViewModel
 	}
 	var body: some View {
@@ -35,7 +35,8 @@ struct JourneyDetailsView: View {
 										isExpanded: .collapsed,
 										leg: leg
 									)
-									.background(leg.legType == LegViewData.LegType.line ? Color.chewLegDetailsCellGray : .clear )
+									.background( leg.legType == LegViewData.LegType.line ? Color.chewLegDetailsCellGray : .clear
+									)
 									.cornerRadius(10)
 									.id(leg.id)
 								}
@@ -87,34 +88,41 @@ extension JourneyDetailsView {
 		})
 	}
 }
-//
-//struct JourneyDetailsPreview : PreviewProvider {
-//	static var previews: some View {
-//		let mocks = [
-//			Mock.journeys.journeyNeussWolfsburgFirstCancelled.decodedData!.journey,
-////			Mock.journeys.journeyNeussWolfsburgMissedConnection.decodedData!.journey
-//		]
-////		ScrollView(.horizontal) {
-////			LazyHStack {
-//				ForEach(mocks.prefix(1),id: \.id) { mock in
-//					let viewData = mock.journeyViewData(
-//						depStop:  .init(coordinates: .init(),type: .stop,stopDTO: nil),
-//						arrStop:  .init(coordinates: .init(),type: .stop,stopDTO: nil),
-//						realtimeDataUpdatedAt: 0,
-//						settings: .init()
-//					)
-//					JourneyDetailsView(
-//						journeyDetailsViewModel: JourneyDetailsViewModel(
-//							followId: 0,
-//							data: viewData!,
-//							depStop: .init(),
-//							arrStop: .init(),
-//							chewVM: .init()
-//						))
-//					.environmentObject(ChewViewModel(referenceDate: .specificDate((viewData!.time.timestamp.departure.actual ?? 0) + 1000)))
+
+struct JourneyDetailsPreview : PreviewProvider {
+	static var previews: some View {
+		let mock =
+		Mock
+			.journeys
+			.journeyNeussMuenchen2
+			.decodedData!
+			.journey
+			.journeyViewData(
+				depStop: .init(coordinates: .init(), type: .stop, stopDTO: nil),
+				arrStop: .init(coordinates: .init(), type: .stop, stopDTO: nil),
+				realtimeDataUpdatedAt: 0,
+				settings: .init()
+		)!
+		let chewVM = ChewViewModel(referenceDate: .specificDate((mock.time.timestamp.departure.actual ?? 0) + 9500), coreDataStore: Model.preview.coreDataStore)
+		let jdvm = JourneyDetailsViewModel(
+			followId: 0,
+			data: mock,
+			depStop: Stop(coordinates: .init(), type: .stop, stopDTO: nil),
+			arrStop: Stop(coordinates: .init(), type: .stop, stopDTO: nil),
+			chewVM: chewVM
+		)
+//			LazyHStack {
+//				ForEach(mock,id: \.id) { mock in
+					JourneyDetailsView(
+						journeyDetailsViewModel: jdvm
+					)
+					.environmentObject(chewVM)
+					.onAppear(perform: {
+						chewVM.send(event: .didStartViewAppear)
+						jdvm.send(event: .didLoadJourneyData(data: mock))
+					})
 //				}
-////			}
-////		}
-////		.previewDevice(PreviewDevice(.iPadMini6gen))
+			}
+//		.previewDevice(PreviewDevice(.iPadMini6gen))
 //	}
-//}
+}

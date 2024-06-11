@@ -1,4 +1,4 @@
-//
+	//
 //  LegsView.swift
 //  Chew-chew-SwiftUI
 //
@@ -170,8 +170,8 @@ extension LegsView {
 struct LegsViewPreviews: PreviewProvider {
 	static var previews: some View {
 		let mocks = [
-			Mock.journeys.journeyNeussWolfsburg.decodedData,
-			Mock.journeys.journeyNeussWolfsburgFirstCancelled.decodedData
+			Mock.journeys.journeyNeussMuenchen.decodedData
+//			Mock.journeys.journeyNeussWolfsburgFirstCancelled.decodedData
 		]
 		VStack {
 			ForEach(mocks,id: \.?.realtimeDataUpdatedAt){ mock in
@@ -185,7 +185,7 @@ struct LegsViewPreviews: PreviewProvider {
 					LegsView(journey: viewData,mode : .sunEvents)
 						.environmentObject(ChewViewModel(
 							referenceDate: .specificDate(
-								(viewData?.time.timestamp.departure.actual ?? 0) + 2000
+								(viewData?.time.timestamp.departure.actual ?? 0) + 9500
 							), coreDataStore: .preview)
 						)
 				}

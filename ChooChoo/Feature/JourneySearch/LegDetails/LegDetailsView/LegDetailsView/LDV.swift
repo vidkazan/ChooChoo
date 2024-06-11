@@ -176,16 +176,16 @@ extension LegDetailsView {
 @available(iOS 16.0, *)
 struct LegDetailsPreview : PreviewProvider {
 	static var previews : some View {
-		let mocks = [
-//			Mock.trip.cancelledFirstStopRE11DussKassel.decodedData?.trip,
-//			Mock.trip.cancelledMiddleStopsRE6NeussMinden.decodedData?.trip,
-			Mock.trip.cancelledLastStopRE11DussKassel.decodedData?.trip
-		]
-		let mock = Mock.journeys.journeyNeussWolfsburg.decodedData
+//		let mocks = [
+////			Mock.trip.cancelledFirstStopRE11DussKassel.decodedData?.trip,
+////			Mock.trip.cancelledMiddleStopsRE6NeussMinden.decodedData?.trip,
+//			Mock.trip.cancelledLastStopRE11DussKassel.decodedData?.trip
+//		]
+		let mock = Mock.journeys.journeyNeussMuenchen2.decodedData
 		if let mock = mock?.journey {
 			ScrollView {
 				FlowLayout {
-					ForEach(mock.legs, content: { leg in
+					ForEach(mock.legs.dropFirst().dropLast(4), content: { leg in
 						if let viewData = leg.legViewData(
 							firstTS: .now,
 							lastTS: .now,
@@ -193,42 +193,43 @@ struct LegDetailsPreview : PreviewProvider {
 						) {
 							LegDetailsView(
 								send: {_ in },
-								referenceDate: .specificDate((viewData.time.timestamp.departure.planned ?? 0) + 900),
+								referenceDate: .specificDate((viewData.time.timestamp.departure.planned ?? 0) + 3400),
 								isExpanded: .collapsed,
 								leg: viewData
 							)
+							.background(Color.chewLegDetailsCellGray)
+							.cornerRadius(10)
 							.environmentObject(ChewViewModel(
-								referenceDate: .specificDate((viewData.time.timestamp.departure.planned ?? 0) + 900),
+								referenceDate: .specificDate((viewData.time.timestamp.departure.planned ?? 0) + 3400),
 								coreDataStore : .preview
 							))
 							.frame(minWidth: 350)
 						}
 					})
-					ForEach(mocks,id: \.?.id) { mock in
-						if let viewData = mock!.legViewData(
-							firstTS: .now,
-							lastTS: .now,
-							legs: [mock!]
-						) {
-							LegDetailsView(
-								send: {_ in },
-								referenceDate: .specificDate((viewData.time.timestamp.departure.planned ?? 0) + 900),
-								isExpanded: .collapsed,
-								leg: viewData
-							)
-							.environmentObject(ChewViewModel(
-								referenceDate: .specificDate((viewData.time.timestamp.departure.planned ?? 0) + 900),
-								coreDataStore : .preview
-							))
-							.frame(minWidth: 350)
-						}
-					}
+//					ForEach(mocks,id: \.?.id) { mock in
+//						if let viewData = mock!.legViewData(
+//							firstTS: .now,
+//							lastTS: .now,
+//							legs: [mock!]
+//						) {
+//							LegDetailsView(
+//								send: {_ in },
+//								referenceDate: .specificDate((viewData.time.timestamp.departure.planned ?? 0) + 900),
+//								isExpanded: .collapsed,
+//								leg: viewData
+//							)
+//							.environmentObject(ChewViewModel(
+//								referenceDate: .specificDate((viewData.time.timestamp.departure.planned ?? 0) + 900),
+//								coreDataStore : .preview
+//							))
+//							.frame(minWidth: 350)
+//						}
+//					}
 				}
 			}
 			.padding(5)
 //			.previewDevice(PreviewDevice(.iPadMini6gen))
 			.background(Color.chewFillPrimary)
-//			.previewInterfaceOrientation(.landscapeLeft)
 		} else {
 			Text(verbatim: "error")
 		}
