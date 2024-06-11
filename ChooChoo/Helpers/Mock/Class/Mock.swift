@@ -56,6 +56,15 @@ struct TripMockFiles {
 struct JourneyMockFiles{
 	static let type = MockService<JourneyWrapper>.self
 	
+	static let journeyNeussWolfsburg2 = type.init(
+		"journey-Neuss-Wolfsburg-2"
+	)
+	static let journeyNeussMuenchen = type.init(
+		"journey-Neuss-Muenchen"
+	)
+	static let journeyNeussMuenchen2 = type.init(
+		"journey-Neuss-Muenchen2"
+	)
 	static let journeyNeussWolfsburg = type.init(
 		"journey-Neuss-Wolfsburg"
 	)
