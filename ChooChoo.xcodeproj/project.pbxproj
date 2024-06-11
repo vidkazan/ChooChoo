@@ -559,6 +559,7 @@
 		7D9BB10F2B0CBF54008A3616 /* CDJourney+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9BB1092B0CBF53008A3616 /* CDJourney+CoreDataProperties.swift */; };
 		7D9BB1102B0CBF54008A3616 /* CDUser+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9BB10A2B0CBF53008A3616 /* CDUser+CoreDataClass.swift */; };
 		7D9BB1112B0CBF54008A3616 /* CDUser+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9BB10B2B0CBF54008A3616 /* CDUser+CoreDataProperties.swift */; };
+		7D9D64A02C187B1F002FB9DE /* DTO+Logging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9D649F2C187B1F002FB9DE /* DTO+Logging.swift */; };
 		7D9E10872AA6752B00820B92 /* SSV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9E10862AA6752B00820B92 /* SSV.swift */; };
 		7D9E10932AA77E0B00820B92 /* SSVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9E10922AA77E0B00820B92 /* SSVM.swift */; };
 		7DA001FD2B0F88B6009BB79D /* SegmentedPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA001FC2B0F88B6009BB79D /* SegmentedPicker.swift */; };
@@ -819,6 +820,7 @@
 		7D9BB1092B0CBF53008A3616 /* CDJourney+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDJourney+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		7D9BB10A2B0CBF53008A3616 /* CDUser+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDUser+CoreDataClass.swift"; sourceTree = "<group>"; };
 		7D9BB10B2B0CBF54008A3616 /* CDUser+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDUser+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		7D9D649F2C187B1F002FB9DE /* DTO+Logging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DTO+Logging.swift"; sourceTree = "<group>"; };
 		7D9E10862AA6752B00820B92 /* SSV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSV.swift; sourceTree = "<group>"; };
 		7D9E10922AA77E0B00820B92 /* SSVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSVM.swift; sourceTree = "<group>"; };
 		7DA001FC2B0F88B6009BB79D /* SegmentedPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedPicker.swift; sourceTree = "<group>"; };
@@ -1323,6 +1325,7 @@
 			isa = PBXGroup;
 			children = (
 				7D02CE082A97E32D0048ADE6 /* DTO.swift */,
+				7D9D649F2C187B1F002FB9DE /* DTO+Logging.swift */,
 				7D1AD8EB2AE94A7500868056 /* GeoDTO.swift */,
 			);
 			path = DTO;
@@ -2199,6 +2202,7 @@
 				7DBFA3B82BD2FE7900205757 /* NSV.swift in Sources */,
 				7D2BF7A82B67D30800E1CED7 /* Color+random.swift in Sources */,
 				7DFA4A832AB10531005ECAEB /* constructJourneys+Badges.swift in Sources */,
+				7D9D64A02C187B1F002FB9DE /* DTO+Logging.swift in Sources */,
 				7D9E10872AA6752B00820B92 /* SSV.swift in Sources */,
 				7D33A9492B5192940005D723 /* JFVM + reduce.swift in Sources */,
 				7D10BD3D2BB1A2C100702D83 /* AppSettingsView.swift in Sources */,
