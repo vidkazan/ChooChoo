@@ -149,7 +149,7 @@ extension LegDTO {
 	func legViewData(firstTS: Date?, lastTS: Date?, legs : [LegDTO]?) -> LegViewData? {
 		do {
 			return try legViewDataThrows(firstTS: firstTS, lastTS: lastTS, legs: legs)
-		} catch  {
+		} catch {
 			return nil
 		}
 	}
@@ -162,6 +162,11 @@ extension LegDTO {
 			actualArrival: arrival,
 			cancelled: nil
 		)
+		
+		guard container.timestamp.departure.planned != container.timestamp.arrival.planned else {
+			throw DataError.nilValue(type: "leg duration is 0")
+		}
+		
 		guard
 			let plannedDeparturePosition = getTimeLabelPosition(
 				firstTS: firstTS,
@@ -176,8 +181,7 @@ extension LegDTO {
 			throw DataError.nilValue(type: "plannedArrivalPosition or plannedDeparturePosition")
 		}
 		
-		
-		guard let tripId = walking == true ? UUID().uuidString : tripId else  {
+		guard let tripId = walking == true ? UUID().uuidString : tripId else {
 			throw DataError.nilValue(type: "tripId")
 		}
 		
