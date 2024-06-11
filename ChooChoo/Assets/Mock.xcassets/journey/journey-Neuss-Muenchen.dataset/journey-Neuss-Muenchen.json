@@ -1,0 +1,4587 @@
+{
+	"journey": {
+		"type": "journey",
+		"legs": [
+			{
+				"origin": {
+					"type": "station",
+					"id": "8000274",
+					"name": "Neuss Hbf",
+					"location": {
+						"type": "location",
+						"id": "8000274",
+						"latitude": 51.204373,
+						"longitude": 6.684415
+					},
+					"products": {
+						"nationalExpress": true,
+						"national": false,
+						"regionalExpress": true,
+						"regional": true,
+						"suburban": true,
+						"bus": true,
+						"ferry": false,
+						"subway": true,
+						"tram": true,
+						"taxi": true
+					}
+				},
+				"destination": {
+					"type": "station",
+					"id": "8000206",
+					"name": "Koblenz Hbf",
+					"location": {
+						"type": "location",
+						"id": "8000206",
+						"latitude": 50.350775,
+						"longitude": 7.588343
+					},
+					"products": {
+						"nationalExpress": true,
+						"national": true,
+						"regionalExpress": true,
+						"regional": true,
+						"suburban": false,
+						"bus": true,
+						"ferry": false,
+						"subway": false,
+						"tram": false,
+						"taxi": true
+					}
+				},
+				"departure": "2024-06-06T14:10:00+02:00",
+				"plannedDeparture": "2024-06-06T14:10:00+02:00",
+				"departureDelay": null,
+				"arrival": "2024-06-06T15:42:00+02:00",
+				"plannedArrival": "2024-06-06T15:42:00+02:00",
+				"arrivalDelay": null,
+				"reachable": true,
+				"tripId": "1|391494|6|80|6062024",
+				"line": {
+					"type": "line",
+					"id": "re-5",
+					"fahrtNr": "28519",
+					"name": "RE 5",
+					"public": true,
+					"adminCode": "NXRE__",
+					"productName": "RE",
+					"mode": "train",
+					"product": "regional",
+					"operator": {
+						"type": "operator",
+						"id": "national-express",
+						"name": "National Express"
+					},
+					"additionalName": "RE 5"
+				},
+				"direction": "Koblenz Hbf",
+				"arrivalPlatform": "2",
+				"plannedArrivalPlatform": "2",
+				"arrivalPrognosisType": "prognosed",
+				"departurePlatform": "4",
+				"plannedDeparturePlatform": "4",
+				"departurePrognosisType": null,
+				"stopovers": [
+					{
+						"stop": {
+							"type": "station",
+							"id": "8000274",
+							"name": "Neuss Hbf",
+							"location": {
+								"type": "location",
+								"id": "8000274",
+								"latitude": 51.204373,
+								"longitude": 6.684415
+							},
+							"products": {
+								"nationalExpress": true,
+								"national": false,
+								"regionalExpress": true,
+								"regional": true,
+								"suburban": true,
+								"bus": true,
+								"ferry": false,
+								"subway": true,
+								"tram": true,
+								"taxi": true
+							}
+						},
+						"arrival": null,
+						"plannedArrival": null,
+						"arrivalDelay": null,
+						"arrivalPlatform": null,
+						"arrivalPrognosisType": null,
+						"plannedArrivalPlatform": null,
+						"departure": "2024-06-06T14:10:00+02:00",
+						"plannedDeparture": "2024-06-06T14:10:00+02:00",
+						"departureDelay": null,
+						"departurePlatform": "4",
+						"departurePrognosisType": null,
+						"plannedDeparturePlatform": "4"
+					},
+					{
+						"stop": {
+							"type": "station",
+							"id": "8001506",
+							"name": "Dormagen",
+							"location": {
+								"type": "location",
+								"id": "8001506",
+								"latitude": 51.099828,
+								"longitude": 6.814417
+							},
+							"products": {
+								"nationalExpress": false,
+								"national": false,
+								"regionalExpress": false,
+								"regional": true,
+								"suburban": true,
+								"bus": true,
+								"ferry": false,
+								"subway": false,
+								"tram": false,
+								"taxi": true
+							}
+						},
+						"arrival": "2024-06-06T14:18:00+02:00",
+						"plannedArrival": "2024-06-06T14:18:00+02:00",
+						"arrivalDelay": null,
+						"arrivalPlatform": "2",
+						"arrivalPrognosisType": null,
+						"plannedArrivalPlatform": "2",
+						"departure": "2024-06-06T14:19:00+02:00",
+						"plannedDeparture": "2024-06-06T14:19:00+02:00",
+						"departureDelay": null,
+						"departurePlatform": "2",
+						"departurePrognosisType": null,
+						"plannedDeparturePlatform": "2"
+					},
+					{
+						"stop": {
+							"type": "station",
+							"id": "8003361",
+							"name": "Köln Süd",
+							"location": {
+								"type": "location",
+								"id": "8003361",
+								"latitude": 50.927002,
+								"longitude": 6.938486
+							},
+							"products": {
+								"nationalExpress": true,
+								"national": true,
+								"regionalExpress": false,
+								"regional": true,
+								"suburban": false,
+								"bus": true,
+								"ferry": false,
+								"subway": false,
+								"tram": true,
+								"taxi": false
+							}
+						},
+						"arrival": "2024-06-06T14:38:00+02:00",
+						"plannedArrival": "2024-06-06T14:38:00+02:00",
+						"arrivalDelay": null,
+						"arrivalPlatform": "1",
+						"arrivalPrognosisType": null,
+						"plannedArrivalPlatform": "1",
+						"departure": "2024-06-06T14:39:00+02:00",
+						"plannedDeparture": "2024-06-06T14:39:00+02:00",
+						"departureDelay": null,
+						"departurePlatform": "1",
+						"departurePrognosisType": null,
+						"plannedDeparturePlatform": "1"
+					},
+					{
+						"stop": {
+							"type": "station",
+							"id": "8001215",
+							"name": "Brühl",
+							"location": {
+								"type": "location",
+								"id": "8001215",
+								"latitude": 50.829262,
+								"longitude": 6.91266
+							},
+							"products": {
+								"nationalExpress": false,
+								"national": false,
+								"regionalExpress": false,
+								"regional": true,
+								"suburban": false,
+								"bus": true,
+								"ferry": false,
+								"subway": false,
+								"tram": false,
+								"taxi": false
+							}
+						},
+						"arrival": "2024-06-06T14:45:00+02:00",
+						"plannedArrival": "2024-06-06T14:45:00+02:00",
+						"arrivalDelay": null,
+						"arrivalPlatform": "1",
+						"arrivalPrognosisType": null,
+						"plannedArrivalPlatform": "1",
+						"departure": "2024-06-06T14:46:00+02:00",
+						"plannedDeparture": "2024-06-06T14:46:00+02:00",
+						"departureDelay": null,
+						"departurePlatform": "1",
+						"departurePrognosisType": null,
+						"plannedDeparturePlatform": "1"
+					},
+					{
+						"stop": {
+							"type": "station",
+							"id": "8000044",
+							"name": "Bonn Hbf",
+							"location": {
+								"type": "location",
+								"id": "8000044",
+								"latitude": 50.731963,
+								"longitude": 7.096678
+							},
+							"products": {
+								"nationalExpress": true,
+								"national": true,
+								"regionalExpress": true,
+								"regional": true,
+								"suburban": true,
+								"bus": true,
+								"ferry": false,
+								"subway": false,
+								"tram": true,
+								"taxi": false
+							}
+						},
+						"arrival": "2024-06-06T14:55:00+02:00",
+						"plannedArrival": "2024-06-06T14:55:00+02:00",
+						"arrivalDelay": null,
+						"arrivalPlatform": "3",
+						"arrivalPrognosisType": null,
+						"plannedArrivalPlatform": "3",
+						"departure": "2024-06-06T14:57:00+02:00",
+						"plannedDeparture": "2024-06-06T14:57:00+02:00",
+						"departureDelay": null,
+						"departurePlatform": "3",
+						"departurePrognosisType": null,
+						"plannedDeparturePlatform": "3"
+					},
+					{
+						"stop": {
+							"type": "stop",
+							"id": "8001091",
+							"name": "Bonn UN Campus",
+							"location": {
+								"type": "location",
+								"id": "8001091",
+								"latitude": 50.714542,
+								"longitude": 7.118009
+							},
+							"products": {
+								"nationalExpress": false,
+								"national": false,
+								"regionalExpress": false,
+								"regional": true,
+								"suburban": false,
+								"bus": false,
+								"ferry": false,
+								"subway": false,
+								"tram": false,
+								"taxi": false
+							}
+						},
+						"arrival": "2024-06-06T14:59:00+02:00",
+						"plannedArrival": "2024-06-06T14:59:00+02:00",
+						"arrivalDelay": null,
+						"arrivalPlatform": "2",
+						"arrivalPrognosisType": null,
+						"plannedArrivalPlatform": "2",
+						"departure": "2024-06-06T15:00:00+02:00",
+						"plannedDeparture": "2024-06-06T15:00:00+02:00",
+						"departureDelay": null,
+						"departurePlatform": "2",
+						"departurePrognosisType": null,
+						"plannedDeparturePlatform": "2"
+					},
+					{
+						"stop": {
+							"type": "station",
+							"id": "8001082",
+							"name": "Bonn-Bad Godesberg",
+							"location": {
+								"type": "location",
+								"id": "8001082",
+								"latitude": 50.683816,
+								"longitude": 7.159692
+							},
+							"products": {
+								"nationalExpress": false,
+								"national": false,
+								"regionalExpress": false,
+								"regional": true,
+								"suburban": false,
+								"bus": true,
+								"ferry": false,
+								"subway": false,
+								"tram": true,
+								"taxi": true
+							}
+						},
+						"arrival": "2024-06-06T15:03:00+02:00",
+						"plannedArrival": "2024-06-06T15:03:00+02:00",
+						"arrivalDelay": null,
+						"arrivalPlatform": "1",
+						"arrivalPrognosisType": null,
+						"plannedArrivalPlatform": "1",
+						"departure": "2024-06-06T15:04:00+02:00",
+						"plannedDeparture": "2024-06-06T15:04:00+02:00",
+						"departureDelay": null,
+						"departurePlatform": "1",
+						"departurePrognosisType": null,
+						"plannedDeparturePlatform": "1"
+					},
+					{
+						"stop": {
+							"type": "station",
+							"id": "8004604",
+							"name": "Oberwinter",
+							"location": {
+								"type": "location",
+								"id": "8004604",
+								"latitude": 50.611363,
+								"longitude": 7.207785
+							},
+							"products": {
+								"nationalExpress": false,
+								"national": false,
+								"regionalExpress": false,
+								"regional": true,
+								"suburban": false,
+								"bus": true,
+								"ferry": false,
+								"subway": false,
+								"tram": false,
+								"taxi": true
+							}
+						},
+						"arrival": "2024-06-06T15:10:00+02:00",
+						"plannedArrival": "2024-06-06T15:10:00+02:00",
+						"arrivalDelay": null,
+						"arrivalPlatform": "1",
+						"arrivalPrognosisType": null,
+						"plannedArrivalPlatform": "1",
+						"departure": "2024-06-06T15:11:00+02:00",
+						"plannedDeparture": "2024-06-06T15:11:00+02:00",
+						"departureDelay": null,
+						"departurePlatform": "1",
+						"departurePrognosisType": null,
+						"plannedDeparturePlatform": "1"
+					},
+					{
+						"stop": {
+							"type": "station",
+							"id": "8000310",
+							"name": "Remagen",
+							"location": {
+								"type": "location",
+								"id": "8000310",
+								"latitude": 50.577222,
+								"longitude": 7.2297
+							},
+							"products": {
+								"nationalExpress": true,
+								"national": true,
+								"regionalExpress": false,
+								"regional": true,
+								"suburban": false,
+								"bus": true,
+								"ferry": false,
+								"subway": false,
+								"tram": false,
+								"taxi": true
+							}
+						},
+						"arrival": "2024-06-06T15:15:00+02:00",
+						"plannedArrival": "2024-06-06T15:15:00+02:00",
+						"arrivalDelay": null,
+						"arrivalPlatform": "3",
+						"arrivalPrognosisType": null,
+						"plannedArrivalPlatform": "3",
+						"departure": "2024-06-06T15:16:00+02:00",
+						"plannedDeparture": "2024-06-06T15:16:00+02:00",
+						"departureDelay": null,
+						"departurePlatform": "3",
+						"departurePrognosisType": null,
+						"plannedDeparturePlatform": "3"
+					},
+					{
+						"stop": {
+							"type": "station",
+							"id": "8005580",
+							"name": "Sinzig(Rhein)",
+							"location": {
+								"type": "location",
+								"id": "8005580",
+								"latitude": 50.546893,
+								"longitude": 7.258124
+							},
+							"products": {
+								"nationalExpress": false,
+								"national": false,
+								"regionalExpress": false,
+								"regional": true,
+								"suburban": false,
+								"bus": true,
+								"ferry": false,
+								"subway": false,
+								"tram": false,
+								"taxi": true
+							}
+						},
+						"arrival": "2024-06-06T15:19:00+02:00",
+						"plannedArrival": "2024-06-06T15:19:00+02:00",
+						"arrivalDelay": null,
+						"arrivalPlatform": "1",
+						"arrivalPrognosisType": null,
+						"plannedArrivalPlatform": "1",
+						"departure": "2024-06-06T15:19:00+02:00",
+						"plannedDeparture": "2024-06-06T15:19:00+02:00",
+						"departureDelay": null,
+						"departurePlatform": "1",
+						"departurePrognosisType": null,
+						"plannedDeparturePlatform": "1"
+					},
+					{
+						"stop": {
+							"type": "station",
+							"id": "8000694",
+							"name": "Bad Breisig",
+							"location": {
+								"type": "location",
+								"id": "8000694",
+								"latitude": 50.504059,
+								"longitude": 7.304832
+							},
+							"products": {
+								"nationalExpress": false,
+								"national": false,
+								"regionalExpress": false,
+								"regional": true,
+								"suburban": false,
+								"bus": true,
+								"ferry": false,
+								"subway": false,
+								"tram": false,
+								"taxi": true
+							}
+						},
+						"arrival": "2024-06-06T15:23:00+02:00",
+						"plannedArrival": "2024-06-06T15:23:00+02:00",
+						"arrivalDelay": null,
+						"arrivalPlatform": "2",
+						"arrivalPrognosisType": null,
+						"plannedArrivalPlatform": "2",
+						"departure": "2024-06-06T15:23:00+02:00",
+						"plannedDeparture": "2024-06-06T15:23:00+02:00",
+						"departureDelay": null,
+						"departurePlatform": "2",
+						"departurePrognosisType": null,
+						"plannedDeparturePlatform": "2"
+					},
+					{
+						"stop": {
+							"type": "station",
+							"id": "8000331",
+							"name": "Andernach",
+							"location": {
+								"type": "location",
+								"id": "8000331",
+								"latitude": 50.434743,
+								"longitude": 7.404442
+							},
+							"products": {
+								"nationalExpress": true,
+								"national": true,
+								"regionalExpress": false,
+								"regional": true,
+								"suburban": false,
+								"bus": true,
+								"ferry": false,
+								"subway": false,
+								"tram": false,
+								"taxi": true
+							}
+						},
+						"arrival": "2024-06-06T15:29:00+02:00",
+						"plannedArrival": "2024-06-06T15:29:00+02:00",
+						"arrivalDelay": null,
+						"arrivalPlatform": "1",
+						"arrivalPrognosisType": null,
+						"plannedArrivalPlatform": "1",
+						"departure": "2024-06-06T15:30:00+02:00",
+						"plannedDeparture": "2024-06-06T15:30:00+02:00",
+						"departureDelay": null,
+						"departurePlatform": "1",
+						"departurePrognosisType": null,
+						"plannedDeparturePlatform": "1"
+					},
+					{
+						"stop": {
+							"type": "station",
+							"id": "8003341",
+							"name": "Koblenz Stadtmitte",
+							"location": {
+								"type": "location",
+								"id": "8003341",
+								"latitude": 50.358137,
+								"longitude": 7.590051
+							},
+							"products": {
+								"nationalExpress": false,
+								"national": false,
+								"regionalExpress": false,
+								"regional": true,
+								"suburban": false,
+								"bus": true,
+								"ferry": false,
+								"subway": false,
+								"tram": false,
+								"taxi": true
+							}
+						},
+						"arrival": "2024-06-06T15:39:00+02:00",
+						"plannedArrival": "2024-06-06T15:39:00+02:00",
+						"arrivalDelay": null,
+						"arrivalPlatform": "2",
+						"arrivalPrognosisType": null,
+						"plannedArrivalPlatform": "2",
+						"departure": "2024-06-06T15:39:00+02:00",
+						"plannedDeparture": "2024-06-06T15:39:00+02:00",
+						"departureDelay": null,
+						"departurePlatform": "2",
+						"departurePrognosisType": null,
+						"plannedDeparturePlatform": "2"
+					},
+					{
+						"stop": {
+							"type": "station",
+							"id": "8000206",
+							"name": "Koblenz Hbf",
+							"location": {
+								"type": "location",
+								"id": "8000206",
+								"latitude": 50.350775,
+								"longitude": 7.588343
+							},
+							"products": {
+								"nationalExpress": true,
+								"national": true,
+								"regionalExpress": true,
+								"regional": true,
+								"suburban": false,
+								"bus": true,
+								"ferry": false,
+								"subway": false,
+								"tram": false,
+								"taxi": true
+							}
+						},
+						"arrival": "2024-06-06T15:42:00+02:00",
+						"plannedArrival": "2024-06-06T15:42:00+02:00",
+						"arrivalDelay": null,
+						"arrivalPlatform": "2",
+						"arrivalPrognosisType": "prognosed",
+						"plannedArrivalPlatform": "2",
+						"departure": null,
+						"plannedDeparture": null,
+						"departureDelay": null,
+						"departurePlatform": null,
+						"departurePrognosisType": null,
+						"plannedDeparturePlatform": null
+					}
+				],
+				"remarks": [
+					{
+						"type": "hint",
+						"code": "N ",
+						"text": "\"RRX Rhein-Ruhr-Express\""
+					},
+					{
+						"text": "Number of bicycles conveyed limited",
+						"type": "hint",
+						"code": "bicycle-conveyance",
+						"summary": "bicycles conveyed"
+					},
+					{
+						"text": "Behindertengerechtes Fahrzeug",
+						"type": "hint",
+						"code": "barrier-free-vehicle",
+						"summary": "barrier-free vehicle"
+					},
+					{
+						"text": "space for wheelchairs",
+						"type": "hint",
+						"code": "wheelchairs-space",
+						"summary": "space for wheelchairs"
+					},
+					{
+						"text": "power sockets for laptop",
+						"type": "hint",
+						"code": "power-sockets",
+						"summary": "power sockets available"
+					},
+					{
+						"text": "air conditioning",
+						"type": "hint",
+						"code": "air-conditioned",
+						"summary": "air-conditioned vehicle"
+					},
+					{
+						"text": "Wifi available",
+						"type": "hint",
+						"code": "wifi",
+						"summary": "WiFi available"
+					}
+				]
+			},
+			{
+				"origin": {
+					"type": "station",
+					"id": "8000206",
+					"name": "Koblenz Hbf",
+					"location": {
+						"type": "location",
+						"id": "8000206",
+						"latitude": 50.350775,
+						"longitude": 7.588343
+					},
+					"products": {
+						"nationalExpress": true,
+						"national": true,
+						"regionalExpress": true,
+						"regional": true,
+						"suburban": false,
+						"bus": true,
+						"ferry": false,
+						"subway": false,
+						"tram": false,
+						"taxi": true
+					}
+				},
+				"destination": {
+					"type": "station",
+					"id": "8000105",
+					"name": "Frankfurt(Main)Hbf",
+					"location": {
+						"type": "location",
+						"id": "8000105",
+						"latitude": 50.106817,
+						"longitude": 8.663003
+					},
+					"products": {
+						"nationalExpress": true,
+						"national": true,
+						"regionalExpress": true,
+						"regional": true,
+						"suburban": true,
+						"bus": true,
+						"ferry": false,
+						"subway": true,
+						"tram": true,
+						"taxi": false
+					}
+				},
+				"departure": "2024-06-06T15:52:00+02:00",
+				"plannedDeparture": "2024-06-06T15:52:00+02:00",
+				"departureDelay": null,
+				"arrival": "2024-06-06T18:24:00+02:00",
+				"plannedArrival": "2024-06-06T18:04:00+02:00",
+				"arrivalDelay": 1200,
+				"reachable": true,
+				"tripId": "1|390038|8|80|6062024",
+				"line": {
+					"type": "line",
+					"id": "via-rb10",
+					"fahrtNr": "25025",
+					"name": "VIA RB10",
+					"public": true,
+					"adminCode": "R4RH__",
+					"productName": "VIA",
+					"mode": "train",
+					"product": "regional",
+					"operator": {
+						"type": "operator",
+						"id": "vias-gmbh",
+						"name": "VIAS GmbH"
+					},
+					"additionalName": "VIA RB10"
+				},
+				"direction": "Frankfurt(Main)Hbf",
+				"currentLocation": {
+					"type": "location",
+					"latitude": 50.100183,
+					"longitude": 8.644333
+				},
+				"arrivalPlatform": "24",
+				"plannedArrivalPlatform": "24",
+				"arrivalPrognosisType": null,
+				"departurePlatform": "8",
+				"plannedDeparturePlatform": "8",
+				"departurePrognosisType": null,
+				"stopovers": [
+					{
+						"stop": {
+							"type": "station",
+							"id": "8000206",
+							"name": "Koblenz Hbf",
+							"location": {
+								"type": "location",
+								"id": "8000206",
+								"latitude": 50.350775,
+								"longitude": 7.588343
+							},
+							"products": {
+								"nationalExpress": true,
+								"national": true,
+								"regionalExpress": true,
+								"regional": true,
+								"suburban": false,
+								"bus": true,
+								"ferry": false,
+								"subway": false,
+								"tram": false,
+								"taxi": true
+							}
+						},
+						"arrival": null,
+						"plannedArrival": null,
+						"arrivalDelay": null,
+						"arrivalPlatform": null,
+						"arrivalPrognosisType": null,
+						"plannedArrivalPlatform": null,
+						"departure": "2024-06-06T15:52:00+02:00",
+						"plannedDeparture": "2024-06-06T15:52:00+02:00",
+						"departureDelay": null,
+						"departurePlatform": "8",
+						"departurePrognosisType": null,
+						"plannedDeparturePlatform": "8"
+					},
+					{
+						"stop": {
+							"type": "station",
+							"id": "8000278",
+							"name": "Niederlahnstein",
+							"location": {
+								"type": "location",
+								"id": "8000278",
+								"latitude": 50.316382,
+								"longitude": 7.599382
+							},
+							"products": {
+								"nationalExpress": false,
+								"national": false,
+								"regionalExpress": false,
+								"regional": true,
+								"suburban": false,
+								"bus": true,
+								"ferry": false,
+								"subway": false,
+								"tram": false,
+								"taxi": false
+							}
+						},
+						"arrival": "2024-06-06T15:59:00+02:00",
+						"plannedArrival": "2024-06-06T15:59:00+02:00",
+						"arrivalDelay": null,
+						"arrivalPlatform": "5",
+						"arrivalPrognosisType": null,
+						"plannedArrivalPlatform": "5",
+						"departure": "2024-06-06T15:59:00+02:00",
+						"plannedDeparture": "2024-06-06T15:59:00+02:00",
+						"departureDelay": null,
+						"departurePlatform": "5",
+						"departurePrognosisType": null,
+						"plannedDeparturePlatform": "5"
+					},
+					{
+						"stop": {
+							"type": "stop",
+							"id": "8004550",
+							"name": "Oberlahnstein",
+							"location": {
+								"type": "location",
+								"id": "8004550",
+								"latitude": 50.299977,
+								"longitude": 7.603921
+							},
+							"products": {
+								"nationalExpress": false,
+								"national": false,
+								"regionalExpress": false,
+								"regional": true,
+								"suburban": false,
+								"bus": false,
+								"ferry": false,
+								"subway": false,
+								"tram": false,
+								"taxi": false
+							}
+						},
+						"arrival": "2024-06-06T16:02:00+02:00",
+						"plannedArrival": "2024-06-06T16:02:00+02:00",
+						"arrivalDelay": null,
+						"arrivalPlatform": "2",
+						"arrivalPrognosisType": null,
+						"plannedArrivalPlatform": "2",
+						"departure": "2024-06-06T16:02:00+02:00",
+						"plannedDeparture": "2024-06-06T16:02:00+02:00",
+						"departureDelay": null,
+						"departurePlatform": "2",
+						"departurePrognosisType": null,
+						"plannedDeparturePlatform": "2"
+					},
+					{
+						"stop": {
+							"type": "station",
+							"id": "8001130",
+							"name": "Braubach",
+							"location": {
+								"type": "location",
+								"id": "8001130",
+								"latitude": 50.274151,
+								"longitude": 7.643222
+							},
+							"products": {
+								"nationalExpress": false,
+								"national": false,
+								"regionalExpress": false,
+								"regional": true,
+								"suburban": false,
+								"bus": true,
+								"ferry": false,
+								"subway": false,
+								"tram": false,
+								"taxi": true
+							}
+						},
+						"arrival": "2024-06-06T16:05:00+02:00",
+						"plannedArrival": "2024-06-06T16:05:00+02:00",
+						"arrivalDelay": null,
+						"arrivalPlatform": "2",
+						"arrivalPrognosisType": null,
+						"plannedArrivalPlatform": "2",
+						"departure": "2024-06-06T16:06:00+02:00",
+						"plannedDeparture": "2024-06-06T16:06:00+02:00",
+						"departureDelay": null,
+						"departurePlatform": "2",
+						"departurePrognosisType": null,
+						"plannedDeparturePlatform": "2"
+					},
+					{
+						"stop": {
+							"type": "stop",
+							"id": "8004706",
+							"name": "Osterspai",
+							"location": {
+								"type": "location",
+								"id": "8004706",
+								"latitude": 50.24508,
+								"longitude": 7.614996
+							},
+							"products": {
+								"nationalExpress": false,
+								"national": false,
+								"regionalExpress": false,
+								"regional": true,
+								"suburban": false,
+								"bus": false,
+								"ferry": false,
+								"subway": false,
+								"tram": false,
+								"taxi": false
+							}
+						},
+						"arrival": "2024-06-06T16:10:00+02:00",
+						"plannedArrival": "2024-06-06T16:10:00+02:00",
+						"arrivalDelay": null,
+						"arrivalPlatform": "1",
+						"arrivalPrognosisType": null,
+						"plannedArrivalPlatform": "1",
+						"departure": "2024-06-06T16:10:00+02:00",
+						"plannedDeparture": "2024-06-06T16:10:00+02:00",
+						"departureDelay": null,
+						"departurePlatform": "1",
+						"departurePrognosisType": null,
+						"plannedDeparturePlatform": "1"
+					},
+					{
+						"stop": {
+							"type": "stop",
+							"id": "8001983",
+							"name": "Filsen",
+							"location": {
+								"type": "location",
+								"id": "8001983",
+								"latitude": 50.238743,
+								"longitude": 7.583462
+							},
+							"products": {
+								"nationalExpress": false,
+								"national": false,
+								"regionalExpress": false,
+								"regional": true,
+								"suburban": false,
+								"bus": false,
+								"ferry": false,
+								"subway": false,
+								"tram": false,
+								"taxi": false
+							}
+						},
+						"arrival": "2024-06-06T16:13:00+02:00",
+						"plannedArrival": "2024-06-06T16:13:00+02:00",
+						"arrivalDelay": null,
+						"arrivalPlatform": "2",
+						"arrivalPrognosisType": null,
+						"plannedArrivalPlatform": "2",
+						"departure": "2024-06-06T16:13:00+02:00",
+						"plannedDeparture": "2024-06-06T16:13:00+02:00",
+						"departureDelay": null,
+						"departurePlatform": "2",
+						"departurePrognosisType": null,
+						"plannedDeparturePlatform": "2"
+					},
+					{
+						"stop": {
+							"type": "stop",
+							"id": "8003170",
+							"name": "Kamp-Bornhofen",
+							"location": {
+								"type": "location",
+								"id": "8003170",
+								"latitude": 50.227928,
+								"longitude": 7.618322
+							},
+							"products": {
+								"nationalExpress": false,
+								"national": false,
+								"regionalExpress": false,
+								"regional": true,
+								"suburban": false,
+								"bus": false,
+								"ferry": false,
+								"subway": false,
+								"tram": false,
+								"taxi": false
+							}
+						},
+						"arrival": "2024-06-06T16:16:00+02:00",
+						"plannedArrival": "2024-06-06T16:16:00+02:00",
+						"arrivalDelay": null,
+						"arrivalPlatform": "1",
+						"arrivalPrognosisType": null,
+						"plannedArrivalPlatform": "1",
+						"departure": "2024-06-06T16:16:00+02:00",
+						"plannedDeparture": "2024-06-06T16:16:00+02:00",
+						"departureDelay": null,
+						"departurePlatform": "1",
+						"departurePrognosisType": null,
+						"plannedDeparturePlatform": "1"
+					},
+					{
+						"stop": {
+							"type": "stop",
+							"id": "8003241",
+							"name": "Kestert",
+							"location": {
+								"type": "location",
+								"id": "8003241",
+								"latitude": 50.187064,
+								"longitude": 7.649029
+							},
+							"products": {
+								"nationalExpress": false,
+								"national": false,
+								"regionalExpress": false,
+								"regional": true,
+								"suburban": false,
+								"bus": false,
+								"ferry": false,
+								"subway": false,
+								"tram": false,
+								"taxi": false
+							}
+						},
+						"arrival": "2024-06-06T16:20:00+02:00",
+						"plannedArrival": "2024-06-06T16:20:00+02:00",
+						"arrivalDelay": null,
+						"arrivalPlatform": "1",
+						"arrivalPrognosisType": null,
+						"plannedArrivalPlatform": "1",
+						"departure": "2024-06-06T16:21:00+02:00",
+						"plannedDeparture": "2024-06-06T16:21:00+02:00",
+						"departureDelay": null,
+						"departurePlatform": "1",
+						"departurePrognosisType": null,
+						"plannedDeparturePlatform": "1"
+					},
+					{
+						"stop": {
+							"type": "station",
+							"id": "8005646",
+							"name": "St Goarshausen",
+							"location": {
+								"type": "location",
+								"id": "8005646",
+								"latitude": 50.156015,
+								"longitude": 7.714228
+							},
+							"products": {
+								"nationalExpress": false,
+								"national": false,
+								"regionalExpress": false,
+								"regional": true,
+								"suburban": false,
+								"bus": true,
+								"ferry": false,
+								"subway": false,
+								"tram": false,
+								"taxi": true
+							}
+						},
+						"arrival": "2024-06-06T16:26:00+02:00",
+						"plannedArrival": "2024-06-06T16:26:00+02:00",
+						"arrivalDelay": null,
+						"arrivalPlatform": "1",
+						"arrivalPrognosisType": null,
+						"plannedArrivalPlatform": "1",
+						"departure": "2024-06-06T16:27:00+02:00",
+						"plannedDeparture": "2024-06-06T16:27:00+02:00",
+						"departureDelay": null,
+						"departurePlatform": "1",
+						"departurePrognosisType": null,
+						"plannedDeparturePlatform": "1"
+					},
+					{
+						"stop": {
+							"type": "stop",
+							"id": "8003216",
+							"name": "Kaub",
+							"location": {
+								"type": "location",
+								"id": "8003216",
+								"latitude": 50.083652,
+								"longitude": 7.768262
+							},
+							"products": {
+								"nationalExpress": false,
+								"national": false,
+								"regionalExpress": false,
+								"regional": true,
+								"suburban": false,
+								"bus": false,
+								"ferry": false,
+								"subway": false,
+								"tram": false,
+								"taxi": false
+							}
+						},
+						"arrival": "2024-06-06T16:35:00+02:00",
+						"plannedArrival": "2024-06-06T16:35:00+02:00",
+						"arrivalDelay": null,
+						"arrivalPlatform": "2",
+						"arrivalPrognosisType": null,
+						"plannedArrivalPlatform": "2",
+						"departure": "2024-06-06T16:36:00+02:00",
+						"plannedDeparture": "2024-06-06T16:36:00+02:00",
+						"departureDelay": null,
+						"departurePlatform": "2",
+						"departurePrognosisType": null,
+						"plannedDeparturePlatform": "2"
+					},
+					{
+						"stop": {
+							"type": "stop",
+							"id": "8003753",
+							"name": "Lorchhausen",
+							"location": {
+								"type": "location",
+								"id": "8003753",
+								"latitude": 50.054545,
+								"longitude": 7.780523
+							},
+							"products": {
+								"nationalExpress": false,
+								"national": false,
+								"regionalExpress": false,
+								"regional": true,
+								"suburban": false,
+								"bus": false,
+								"ferry": false,
+								"subway": false,
+								"tram": false,
+								"taxi": false
+							}
+						},
+						"arrival": "2024-06-06T16:39:00+02:00",
+						"plannedArrival": "2024-06-06T16:39:00+02:00",
+						"arrivalDelay": null,
+						"arrivalPlatform": "1",
+						"arrivalPrognosisType": null,
+						"plannedArrivalPlatform": "1",
+						"departure": "2024-06-06T16:39:00+02:00",
+						"plannedDeparture": "2024-06-06T16:39:00+02:00",
+						"departureDelay": null,
+						"departurePlatform": "1",
+						"departurePrognosisType": null,
+						"plannedDeparturePlatform": "1"
+					},
+					{
+						"stop": {
+							"type": "station",
+							"id": "8003751",
+							"name": "Lorch(Rhein)",
+							"location": {
+								"type": "location",
+								"id": "8003751",
+								"latitude": 50.040297,
+								"longitude": 7.812849
+							},
+							"products": {
+								"nationalExpress": false,
+								"national": false,
+								"regionalExpress": false,
+								"regional": true,
+								"suburban": false,
+								"bus": true,
+								"ferry": false,
+								"subway": false,
+								"tram": false,
+								"taxi": true
+							}
+						},
+						"arrival": "2024-06-06T16:42:00+02:00",
+						"plannedArrival": "2024-06-06T16:42:00+02:00",
+						"arrivalDelay": null,
+						"arrivalPlatform": "2",
+						"arrivalPrognosisType": null,
+						"plannedArrivalPlatform": "2",
+						"departure": "2024-06-06T16:42:00+02:00",
+						"plannedDeparture": "2024-06-06T16:42:00+02:00",
+						"departureDelay": null,
+						"departurePlatform": "2",
+						"departurePrognosisType": null,
+						"plannedDeparturePlatform": "2"
+					},
+					{
+						"stop": {
+							"type": "station",
+							"id": "8000635",
+							"name": "Assmannshausen",
+							"location": {
+								"type": "location",
+								"id": "8000635",
+								"latitude": 49.985292,
+								"longitude": 7.867431
+							},
+							"products": {
+								"nationalExpress": false,
+								"national": false,
+								"regionalExpress": false,
+								"regional": true,
+								"suburban": false,
+								"bus": true,
+								"ferry": false,
+								"subway": false,
+								"tram": false,
+								"taxi": true
+							}
+						},
+						"arrival": "2024-06-06T16:48:00+02:00",
+						"plannedArrival": "2024-06-06T16:48:00+02:00",
+						"arrivalDelay": null,
+						"arrivalPlatform": "2",
+						"arrivalPrognosisType": null,
+						"plannedArrivalPlatform": "2",
+						"departure": "2024-06-06T16:48:00+02:00",
+						"plannedDeparture": "2024-06-06T16:48:00+02:00",
+						"departureDelay": null,
+						"departurePlatform": "2",
+						"departurePrognosisType": null,
+						"plannedDeparturePlatform": "2"
+					},
+					{
+						"stop": {
+							"type": "station",
+							"id": "8005213",
+							"name": "Rüdesheim(Rhein)",
+							"location": {
+								"type": "location",
+								"id": "8005213",
+								"latitude": 49.976932,
+								"longitude": 7.915424
+							},
+							"products": {
+								"nationalExpress": false,
+								"national": false,
+								"regionalExpress": false,
+								"regional": true,
+								"suburban": false,
+								"bus": true,
+								"ferry": false,
+								"subway": false,
+								"tram": false,
+								"taxi": true
+							}
+						},
+						"arrival": "2024-06-06T16:52:00+02:00",
+						"plannedArrival": "2024-06-06T16:52:00+02:00",
+						"arrivalDelay": null,
+						"arrivalPlatform": "2",
+						"arrivalPrognosisType": null,
+						"plannedArrivalPlatform": "2",
+						"departure": "2024-06-06T16:53:00+02:00",
+						"plannedDeparture": "2024-06-06T16:53:00+02:00",
+						"departureDelay": null,
+						"departurePlatform": "2",
+						"departurePrognosisType": null,
+						"plannedDeparturePlatform": "2"
+					},
+					{
+						"stop": {
+							"type": "station",
+							"id": "8002212",
+							"name": "Geisenheim",
+							"location": {
+								"type": "location",
+								"id": "8002212",
+								"latitude": 49.985633,
+								"longitude": 7.968029
+							},
+							"products": {
+								"nationalExpress": false,
+								"national": false,
+								"regionalExpress": false,
+								"regional": true,
+								"suburban": false,
+								"bus": true,
+								"ferry": false,
+								"subway": false,
+								"tram": false,
+								"taxi": true
+							}
+						},
+						"arrival": "2024-06-06T16:57:00+02:00",
+						"plannedArrival": "2024-06-06T16:57:00+02:00",
+						"arrivalDelay": null,
+						"arrivalPlatform": "1",
+						"arrivalPrognosisType": null,
+						"plannedArrivalPlatform": "1",
+						"departure": "2024-06-06T16:57:00+02:00",
+						"plannedDeparture": "2024-06-06T16:57:00+02:00",
+						"departureDelay": null,
+						"departurePlatform": "1",
+						"departurePrognosisType": null,
+						"plannedDeparturePlatform": "1"
+					},
+					{
+						"stop": {
+							"type": "station",
+							"id": "8004635",
+							"name": "Oestrich-Winkel",
+							"location": {
+								"type": "location",
+								"id": "8004635",
+								"latitude": 50.002641,
+								"longitude": 8.018899
+							},
+							"products": {
+								"nationalExpress": false,
+								"national": false,
+								"regionalExpress": false,
+								"regional": true,
+								"suburban": false,
+								"bus": true,
+								"ferry": false,
+								"subway": false,
+								"tram": false,
+								"taxi": false
+							}
+						},
+						"arrival": "2024-06-06T17:01:00+02:00",
+						"plannedArrival": "2024-06-06T17:01:00+02:00",
+						"arrivalDelay": null,
+						"arrivalPlatform": "1",
+						"arrivalPrognosisType": null,
+						"plannedArrivalPlatform": "1",
+						"departure": "2024-06-06T17:01:00+02:00",
+						"plannedDeparture": "2024-06-06T17:01:00+02:00",
+						"departureDelay": null,
+						"departurePlatform": "1",
+						"departurePrognosisType": null,
+						"plannedDeparturePlatform": "1"
+					},
+					{
+						"stop": {
+							"type": "station",
+							"id": "8002635",
+							"name": "Hattenheim",
+							"location": {
+								"type": "location",
+								"id": "8002635",
+								"latitude": 50.013644,
+								"longitude": 8.056816
+							},
+							"products": {
+								"nationalExpress": false,
+								"national": false,
+								"regionalExpress": false,
+								"regional": true,
+								"suburban": false,
+								"bus": true,
+								"ferry": false,
+								"subway": false,
+								"tram": false,
+								"taxi": true
+							}
+						},
+						"arrival": "2024-06-06T17:04:00+02:00",
+						"plannedArrival": "2024-06-06T17:04:00+02:00",
+						"arrivalDelay": null,
+						"arrivalPlatform": "1",
+						"arrivalPrognosisType": null,
+						"plannedArrivalPlatform": "1",
+						"departure": "2024-06-06T17:04:00+02:00",
+						"plannedDeparture": "2024-06-06T17:04:00+02:00",
+						"departureDelay": null,
+						"departurePlatform": "1",
+						"departurePrognosisType": null,
+						"plannedDeparturePlatform": "1"
+					},
+					{
+						"stop": {
+							"type": "stop",
+							"id": "8001818",
+							"name": "Erbach(Rheingau)",
+							"location": {
+								"type": "location",
+								"id": "8001818",
+								"latitude": 50.02328,
+								"longitude": 8.094669
+							},
+							"products": {
+								"nationalExpress": false,
+								"national": false,
+								"regionalExpress": false,
+								"regional": true,
+								"suburban": false,
+								"bus": false,
+								"ferry": false,
+								"subway": false,
+								"tram": false,
+								"taxi": false
+							}
+						},
+						"arrival": "2024-06-06T17:07:00+02:00",
+						"plannedArrival": "2024-06-06T17:07:00+02:00",
+						"arrivalDelay": null,
+						"arrivalPlatform": "1",
+						"arrivalPrognosisType": null,
+						"plannedArrivalPlatform": "1",
+						"departure": "2024-06-06T17:08:00+02:00",
+						"plannedDeparture": "2024-06-06T17:08:00+02:00",
+						"departureDelay": null,
+						"departurePlatform": "1",
+						"departurePrognosisType": null,
+						"plannedDeparturePlatform": "1"
+					},
+					{
+						"stop": {
+							"type": "station",
+							"id": "8001763",
+							"name": "Eltville",
+							"location": {
+								"type": "location",
+								"id": "8001763",
+								"latitude": 50.027568,
+								"longitude": 8.12161
+							},
+							"products": {
+								"nationalExpress": false,
+								"national": false,
+								"regionalExpress": false,
+								"regional": true,
+								"suburban": false,
+								"bus": true,
+								"ferry": false,
+								"subway": false,
+								"tram": false,
+								"taxi": false
+							}
+						},
+						"arrival": "2024-06-06T17:10:00+02:00",
+						"plannedArrival": "2024-06-06T17:10:00+02:00",
+						"arrivalDelay": null,
+						"arrivalPlatform": "1",
+						"arrivalPrognosisType": null,
+						"plannedArrivalPlatform": "1",
+						"departure": "2024-06-06T17:10:00+02:00",
+						"plannedDeparture": "2024-06-06T17:10:00+02:00",
+						"departureDelay": null,
+						"departurePlatform": "1",
+						"departurePrognosisType": null,
+						"plannedDeparturePlatform": "1"
+					},
+					{
+						"stop": {
+							"type": "station",
+							"id": "8004418",
+							"name": "Niederwalluf",
+							"location": {
+								"type": "location",
+								"id": "8004418",
+								"latitude": 50.036602,
+								"longitude": 8.159113
+							},
+							"products": {
+								"nationalExpress": false,
+								"national": false,
+								"regionalExpress": false,
+								"regional": true,
+								"suburban": false,
+								"bus": true,
+								"ferry": false,
+								"subway": false,
+								"tram": false,
+								"taxi": false
+							}
+						},
+						"arrival": "2024-06-06T17:13:00+02:00",
+						"plannedArrival": "2024-06-06T17:13:00+02:00",
+						"arrivalDelay": null,
+						"arrivalPlatform": "1",
+						"arrivalPrognosisType": null,
+						"plannedArrivalPlatform": "1",
+						"departure": "2024-06-06T17:13:00+02:00",
+						"plannedDeparture": "2024-06-06T17:13:00+02:00",
+						"departureDelay": null,
+						"departurePlatform": "1",
+						"departurePrognosisType": null,
+						"plannedDeparturePlatform": "1"
+					},
+					{
+						"stop": {
+							"type": "stop",
+							"id": "8006409",
+							"name": "Wiesbaden-Schierstein",
+							"location": {
+								"type": "location",
+								"id": "8006409",
+								"latitude": 50.047578,
+								"longitude": 8.19454
+							},
+							"products": {
+								"nationalExpress": false,
+								"national": false,
+								"regionalExpress": false,
+								"regional": true,
+								"suburban": false,
+								"bus": false,
+								"ferry": false,
+								"subway": false,
+								"tram": false,
+								"taxi": false
+							}
+						},
+						"arrival": "2024-06-06T17:16:00+02:00",
+						"plannedArrival": "2024-06-06T17:16:00+02:00",
+						"arrivalDelay": null,
+						"arrivalPlatform": "1",
+						"arrivalPrognosisType": null,
+						"plannedArrivalPlatform": "1",
+						"departure": "2024-06-06T17:16:00+02:00",
+						"plannedDeparture": "2024-06-06T17:16:00+02:00",
+						"departureDelay": null,
+						"departurePlatform": "1",
+						"departurePrognosisType": null,
+						"plannedDeparturePlatform": "1"
+					},
+					{
+						"stop": {
+							"type": "station",
+							"id": "8000288",
+							"name": "Wiesbaden-Biebrich",
+							"location": {
+								"type": "location",
+								"id": "8000288",
+								"latitude": 50.048809,
+								"longitude": 8.236393
+							},
+							"products": {
+								"nationalExpress": false,
+								"national": false,
+								"regionalExpress": false,
+								"regional": true,
+								"suburban": false,
+								"bus": true,
+								"ferry": false,
+								"subway": false,
+								"tram": false,
+								"taxi": false
+							}
+						},
+						"arrival": "2024-06-06T17:19:00+02:00",
+						"plannedArrival": "2024-06-06T17:19:00+02:00",
+						"arrivalDelay": null,
+						"arrivalPlatform": "1",
+						"arrivalPrognosisType": null,
+						"plannedArrivalPlatform": "1",
+						"departure": "2024-06-06T17:19:00+02:00",
+						"plannedDeparture": "2024-06-06T17:19:00+02:00",
+						"departureDelay": null,
+						"departurePlatform": "1",
+						"departurePrognosisType": null,
+						"plannedDeparturePlatform": "1"
+					},
+					{
+						"stop": {
+							"type": "station",
+							"id": "8000250",
+							"name": "Wiesbaden Hbf",
+							"location": {
+								"type": "location",
+								"id": "8000250",
+								"latitude": 50.070563,
+								"longitude": 8.243639
+							},
+							"products": {
+								"nationalExpress": true,
+								"national": false,
+								"regionalExpress": false,
+								"regional": true,
+								"suburban": true,
+								"bus": true,
+								"ferry": false,
+								"subway": false,
+								"tram": false,
+								"taxi": false
+							}
+						},
+						"arrival": "2024-06-06T17:25:00+02:00",
+						"plannedArrival": "2024-06-06T17:25:00+02:00",
+						"arrivalDelay": null,
+						"arrivalPlatform": "7",
+						"arrivalPrognosisType": null,
+						"plannedArrivalPlatform": "7",
+						"departure": "2024-06-06T17:32:00+02:00",
+						"plannedDeparture": "2024-06-06T17:32:00+02:00",
+						"departureDelay": null,
+						"departurePlatform": "7",
+						"departurePrognosisType": null,
+						"plannedDeparturePlatform": "7"
+					},
+					{
+						"stop": {
+							"type": "station",
+							"id": "8000615",
+							"name": "Mainz-Kastel",
+							"location": {
+								"type": "location",
+								"id": "8000615",
+								"latitude": 50.006758,
+								"longitude": 8.282966
+							},
+							"products": {
+								"nationalExpress": false,
+								"national": false,
+								"regionalExpress": false,
+								"regional": true,
+								"suburban": true,
+								"bus": true,
+								"ferry": false,
+								"subway": false,
+								"tram": false,
+								"taxi": false
+							}
+						},
+						"arrival": "2024-06-06T17:39:00+02:00",
+						"plannedArrival": "2024-06-06T17:39:00+02:00",
+						"arrivalDelay": null,
+						"arrivalPlatform": "2",
+						"arrivalPrognosisType": null,
+						"plannedArrivalPlatform": "2",
+						"departure": "2024-06-06T17:39:00+02:00",
+						"plannedDeparture": "2024-06-06T17:39:00+02:00",
+						"departureDelay": null,
+						"departurePlatform": "2",
+						"departurePrognosisType": null,
+						"plannedDeparturePlatform": "2"
+					},
+					{
+						"stop": {
+							"type": "station",
+							"id": "8000106",
+							"name": "Frankfurt-Höchst",
+							"location": {
+								"type": "location",
+								"id": "8000106",
+								"latitude": 50.102754,
+								"longitude": 8.542449
+							},
+							"products": {
+								"nationalExpress": false,
+								"national": false,
+								"regionalExpress": false,
+								"regional": true,
+								"suburban": true,
+								"bus": true,
+								"ferry": false,
+								"subway": false,
+								"tram": false,
+								"taxi": true
+							}
+						},
+						"arrival": null,
+						"plannedArrival": "2024-06-06T17:55:00+02:00",
+						"arrivalDelay": null,
+						"arrivalPlatform": null,
+						"arrivalPrognosisType": null,
+						"plannedArrivalPlatform": null,
+						"departure": null,
+						"plannedDeparture": "2024-06-06T17:55:00+02:00",
+						"departureDelay": null,
+						"departurePlatform": null,
+						"departurePrognosisType": null,
+						"plannedDeparturePlatform": null,
+						"cancelled": true,
+						"remarks": []
+					},
+					{
+						"stop": {
+							"type": "station",
+							"id": "8000105",
+							"name": "Frankfurt(Main)Hbf",
+							"location": {
+								"type": "location",
+								"id": "8000105",
+								"latitude": 50.106817,
+								"longitude": 8.663003
+							},
+							"products": {
+								"nationalExpress": true,
+								"national": true,
+								"regionalExpress": true,
+								"regional": true,
+								"suburban": true,
+								"bus": true,
+								"ferry": false,
+								"subway": true,
+								"tram": true,
+								"taxi": false
+							}
+						},
+						"arrival": "2024-06-06T18:24:00+02:00",
+						"plannedArrival": "2024-06-06T18:04:00+02:00",
+						"arrivalDelay": 1200,
+						"arrivalPlatform": "24",
+						"arrivalPrognosisType": "prognosed",
+						"plannedArrivalPlatform": "24",
+						"departure": null,
+						"plannedDeparture": null,
+						"departureDelay": null,
+						"departurePlatform": null,
+						"departurePrognosisType": null,
+						"plannedDeparturePlatform": null,
+						"remarks": [
+							{
+								"type": "status",
+								"code": null,
+								"text": "Delay due to earlier journey"
+							}
+						]
+					}
+				],
+				"remarks": [
+					{
+						"text": "Number of bicycles conveyed limited",
+						"type": "hint",
+						"code": "bicycle-conveyance",
+						"summary": "bicycles conveyed"
+					},
+					{
+						"text": "vehicle-mounted access aid",
+						"type": "hint",
+						"code": "boarding-ramp",
+						"summary": "vehicle-mounted boarding ramp available"
+					},
+					{
+						"text": "power sockets for laptop",
+						"type": "hint",
+						"code": "power-sockets",
+						"summary": "power sockets available"
+					},
+					{
+						"text": "air conditioning",
+						"type": "hint",
+						"code": "air-conditioned",
+						"summary": "air-conditioned vehicle"
+					},
+					{
+						"type": "status",
+						"code": null,
+						"text": "VIA25025: Hattenheim - Mainz-Kastel: Information. No bicycles allowed"
+					}
+				]
+			},
+			{
+				"origin": {
+					"type": "station",
+					"id": "8000105",
+					"name": "Frankfurt(Main)Hbf",
+					"location": {
+						"type": "location",
+						"id": "8000105",
+						"latitude": 50.106817,
+						"longitude": 8.663003
+					},
+					"products": {
+						"nationalExpress": true,
+						"national": true,
+						"regionalExpress": true,
+						"regional": true,
+						"suburban": true,
+						"bus": true,
+						"ferry": false,
+						"subway": true,
+						"tram": true,
+						"taxi": false
+					}
+				},
+				"destination": {
+					"type": "station",
+					"id": "8000260",
+					"name": "Würzburg Hbf",
+					"location": {
+						"type": "location",
+						"id": "8000260",
+						"latitude": 49.802163,
+						"longitude": 9.93593
+					},
+					"products": {
+						"nationalExpress": true,
+						"national": true,
+						"regionalExpress": true,
+						"regional": true,
+						"suburban": false,
+						"bus": true,
+						"ferry": false,
+						"subway": false,
+						"tram": true,
+						"taxi": false
+					}
+				},
+				"departure": "2024-06-06T18:34:00+02:00",
+				"plannedDeparture": "2024-06-06T18:34:00+02:00",
+				"departureDelay": 0,
+				"arrival": "2024-06-06T20:21:00+02:00",
+				"plannedArrival": "2024-06-06T20:21:00+02:00",
+				"arrivalDelay": 0,
+				"reachable": true,
+				"tripId": "1|374432|0|80|6062024",
+				"line": {
+					"type": "line",
+					"id": "re-55",
+					"fahrtNr": "4627",
+					"name": "RE 55",
+					"public": true,
+					"adminCode": "800772",
+					"productName": "RE",
+					"mode": "train",
+					"product": "regional",
+					"operator": {
+						"type": "operator",
+						"id": "db-regio-ag-bayern",
+						"name": "DB Regio AG Bayern"
+					},
+					"additionalName": "RE 55"
+				},
+				"direction": "Würzburg Hbf",
+				"arrivalPlatform": "10A-C",
+				"plannedArrivalPlatform": "10A-C",
+				"arrivalPrognosisType": null,
+				"departurePlatform": "7",
+				"plannedDeparturePlatform": "9",
+				"departurePrognosisType": null,
+				"stopovers": [
+					{
+						"stop": {
+							"type": "station",
+							"id": "8000105",
+							"name": "Frankfurt(Main)Hbf",
+							"location": {
+								"type": "location",
+								"id": "8000105",
+								"latitude": 50.106817,
+								"longitude": 8.663003
+							},
+							"products": {
+								"nationalExpress": true,
+								"national": true,
+								"regionalExpress": true,
+								"regional": true,
+								"suburban": true,
+								"bus": true,
+								"ferry": false,
+								"subway": true,
+								"tram": true,
+								"taxi": false
+							}
+						},
+						"arrival": null,
+						"plannedArrival": null,
+						"arrivalDelay": null,
+						"arrivalPlatform": null,
+						"arrivalPrognosisType": null,
+						"plannedArrivalPlatform": null,
+						"departure": "2024-06-06T18:34:00+02:00",
+						"plannedDeparture": "2024-06-06T18:34:00+02:00",
+						"departureDelay": 0,
+						"departurePlatform": "7",
+						"departurePrognosisType": null,
+						"plannedDeparturePlatform": "9",
+						"remarks": []
+					},
+					{
+						"stop": {
+							"type": "station",
+							"id": "8002041",
+							"name": "Frankfurt(Main)Süd",
+							"location": {
+								"type": "location",
+								"id": "8002041",
+								"latitude": 50.099302,
+								"longitude": 8.686187
+							},
+							"products": {
+								"nationalExpress": true,
+								"national": true,
+								"regionalExpress": true,
+								"regional": true,
+								"suburban": true,
+								"bus": true,
+								"ferry": false,
+								"subway": true,
+								"tram": true,
+								"taxi": false
+							}
+						},
+						"arrival": "2024-06-06T18:39:00+02:00",
+						"plannedArrival": "2024-06-06T18:39:00+02:00",
+						"arrivalDelay": 0,
+						"arrivalPlatform": "6",
+						"arrivalPrognosisType": null,
+						"plannedArrivalPlatform": "6",
+						"departure": "2024-06-06T18:40:00+02:00",
+						"plannedDeparture": "2024-06-06T18:40:00+02:00",
+						"departureDelay": 0,
+						"departurePlatform": "6",
+						"departurePrognosisType": null,
+						"plannedDeparturePlatform": "6"
+					},
+					{
+						"stop": {
+							"type": "station",
+							"id": "8000349",
+							"name": "Offenbach(Main)Hbf",
+							"location": {
+								"type": "location",
+								"id": "8000349",
+								"latitude": 50.099185,
+								"longitude": 8.760833
+							},
+							"products": {
+								"nationalExpress": false,
+								"national": false,
+								"regionalExpress": true,
+								"regional": true,
+								"suburban": true,
+								"bus": true,
+								"ferry": false,
+								"subway": false,
+								"tram": false,
+								"taxi": false
+							}
+						},
+						"arrival": "2024-06-06T18:44:00+02:00",
+						"plannedArrival": "2024-06-06T18:44:00+02:00",
+						"arrivalDelay": 0,
+						"arrivalPlatform": "3",
+						"arrivalPrognosisType": null,
+						"plannedArrivalPlatform": "3",
+						"departure": "2024-06-06T18:45:00+02:00",
+						"plannedDeparture": "2024-06-06T18:45:00+02:00",
+						"departureDelay": 0,
+						"departurePlatform": "3",
+						"departurePrognosisType": null,
+						"plannedDeparturePlatform": "3"
+					},
+					{
+						"stop": {
+							"type": "station",
+							"id": "8000150",
+							"name": "Hanau Hbf",
+							"location": {
+								"type": "location",
+								"id": "8000150",
+								"latitude": 50.120903,
+								"longitude": 8.92921
+							},
+							"products": {
+								"nationalExpress": true,
+								"national": true,
+								"regionalExpress": true,
+								"regional": true,
+								"suburban": true,
+								"bus": true,
+								"ferry": false,
+								"subway": false,
+								"tram": false,
+								"taxi": true
+							}
+						},
+						"arrival": "2024-06-06T18:55:00+02:00",
+						"plannedArrival": "2024-06-06T18:55:00+02:00",
+						"arrivalDelay": 0,
+						"arrivalPlatform": "103",
+						"arrivalPrognosisType": null,
+						"plannedArrivalPlatform": "103",
+						"departure": "2024-06-06T18:59:00+02:00",
+						"plannedDeparture": "2024-06-06T18:58:00+02:00",
+						"departureDelay": 60,
+						"departurePlatform": "103",
+						"departurePrognosisType": null,
+						"plannedDeparturePlatform": "103"
+					},
+					{
+						"stop": {
+							"type": "station",
+							"id": "8003143",
+							"name": "Kahl(Main)",
+							"location": {
+								"type": "location",
+								"id": "8003143",
+								"latitude": 50.076703,
+								"longitude": 9.005358
+							},
+							"products": {
+								"nationalExpress": false,
+								"national": false,
+								"regionalExpress": false,
+								"regional": true,
+								"suburban": false,
+								"bus": true,
+								"ferry": false,
+								"subway": false,
+								"tram": false,
+								"taxi": false
+							}
+						},
+						"arrival": "2024-06-06T19:03:00+02:00",
+						"plannedArrival": "2024-06-06T19:03:00+02:00",
+						"arrivalDelay": 0,
+						"arrivalPlatform": "2",
+						"arrivalPrognosisType": null,
+						"plannedArrivalPlatform": "2",
+						"departure": "2024-06-06T19:04:00+02:00",
+						"plannedDeparture": "2024-06-06T19:03:00+02:00",
+						"departureDelay": 60,
+						"departurePlatform": "2",
+						"departurePrognosisType": null,
+						"plannedDeparturePlatform": "2"
+					},
+					{
+						"stop": {
+							"type": "station",
+							"id": "8001427",
+							"name": "Dettingen(Main)",
+							"location": {
+								"type": "location",
+								"id": "8001427",
+								"latitude": 50.042571,
+								"longitude": 9.036847
+							},
+							"products": {
+								"nationalExpress": false,
+								"national": false,
+								"regionalExpress": false,
+								"regional": true,
+								"suburban": false,
+								"bus": true,
+								"ferry": false,
+								"subway": false,
+								"tram": false,
+								"taxi": false
+							}
+						},
+						"arrival": "2024-06-06T19:07:00+02:00",
+						"plannedArrival": "2024-06-06T19:06:00+02:00",
+						"arrivalDelay": 60,
+						"arrivalPlatform": "1",
+						"arrivalPrognosisType": null,
+						"plannedArrivalPlatform": "1",
+						"departure": "2024-06-06T19:08:00+02:00",
+						"plannedDeparture": "2024-06-06T19:07:00+02:00",
+						"departureDelay": 60,
+						"departurePlatform": "1",
+						"departurePrognosisType": null,
+						"plannedDeparturePlatform": "1"
+					},
+					{
+						"stop": {
+							"type": "stop",
+							"id": "8003314",
+							"name": "Kleinostheim",
+							"location": {
+								"type": "location",
+								"id": "8003314",
+								"latitude": 50.002893,
+								"longitude": 9.072004
+							},
+							"products": {
+								"nationalExpress": false,
+								"national": false,
+								"regionalExpress": false,
+								"regional": true,
+								"suburban": false,
+								"bus": false,
+								"ferry": false,
+								"subway": false,
+								"tram": false,
+								"taxi": false
+							}
+						},
+						"arrival": "2024-06-06T19:11:00+02:00",
+						"plannedArrival": "2024-06-06T19:10:00+02:00",
+						"arrivalDelay": 60,
+						"arrivalPlatform": "1",
+						"arrivalPrognosisType": null,
+						"plannedArrivalPlatform": "1",
+						"departure": "2024-06-06T19:11:00+02:00",
+						"plannedDeparture": "2024-06-06T19:11:00+02:00",
+						"departureDelay": 0,
+						"departurePlatform": "1",
+						"departurePrognosisType": null,
+						"plannedDeparturePlatform": "1"
+					},
+					{
+						"stop": {
+							"type": "station",
+							"id": "8000010",
+							"name": "Aschaffenburg Hbf",
+							"location": {
+								"type": "location",
+								"id": "8000010",
+								"latitude": 49.98059,
+								"longitude": 9.143854
+							},
+							"products": {
+								"nationalExpress": true,
+								"national": false,
+								"regionalExpress": true,
+								"regional": true,
+								"suburban": false,
+								"bus": true,
+								"ferry": false,
+								"subway": false,
+								"tram": false,
+								"taxi": false
+							}
+						},
+						"arrival": "2024-06-06T19:15:00+02:00",
+						"plannedArrival": "2024-06-06T19:15:00+02:00",
+						"arrivalDelay": 0,
+						"arrivalPlatform": "6",
+						"arrivalPrognosisType": null,
+						"plannedArrivalPlatform": "6",
+						"departure": "2024-06-06T19:17:00+02:00",
+						"plannedDeparture": "2024-06-06T19:16:00+02:00",
+						"departureDelay": 60,
+						"departurePlatform": "6",
+						"departurePrognosisType": null,
+						"plannedDeparturePlatform": "6"
+					},
+					{
+						"stop": {
+							"type": "station",
+							"id": "8002696",
+							"name": "Heigenbrücken",
+							"location": {
+								"type": "location",
+								"id": "8002696",
+								"latitude": 50.022516,
+								"longitude": 9.381116
+							},
+							"products": {
+								"nationalExpress": false,
+								"national": false,
+								"regionalExpress": false,
+								"regional": true,
+								"suburban": false,
+								"bus": true,
+								"ferry": false,
+								"subway": false,
+								"tram": false,
+								"taxi": false
+							}
+						},
+						"arrival": "2024-06-06T19:26:00+02:00",
+						"plannedArrival": "2024-06-06T19:26:00+02:00",
+						"arrivalDelay": 0,
+						"arrivalPlatform": "2",
+						"arrivalPrognosisType": null,
+						"plannedArrivalPlatform": "2",
+						"departure": "2024-06-06T19:27:00+02:00",
+						"plannedDeparture": "2024-06-06T19:27:00+02:00",
+						"departureDelay": 0,
+						"departurePlatform": "2",
+						"departurePrognosisType": null,
+						"plannedDeparturePlatform": "2"
+					},
+					{
+						"stop": {
+							"type": "station",
+							"id": "8004756",
+							"name": "Partenstein",
+							"location": {
+								"type": "location",
+								"id": "8004756",
+								"latitude": 50.037995,
+								"longitude": 9.525222
+							},
+							"products": {
+								"nationalExpress": false,
+								"national": false,
+								"regionalExpress": false,
+								"regional": true,
+								"suburban": false,
+								"bus": true,
+								"ferry": false,
+								"subway": false,
+								"tram": false,
+								"taxi": true
+							}
+						},
+						"arrival": "2024-06-06T19:35:00+02:00",
+						"plannedArrival": "2024-06-06T19:35:00+02:00",
+						"arrivalDelay": 0,
+						"arrivalPlatform": "2",
+						"arrivalPrognosisType": null,
+						"plannedArrivalPlatform": "2",
+						"departure": "2024-06-06T19:36:00+02:00",
+						"plannedDeparture": "2024-06-06T19:36:00+02:00",
+						"departureDelay": 0,
+						"departurePlatform": "2",
+						"departurePrognosisType": null,
+						"plannedDeparturePlatform": "2"
+					},
+					{
+						"stop": {
+							"type": "station",
+							"id": "8003740",
+							"name": "Lohr Bahnhof",
+							"location": {
+								"type": "location",
+								"id": "8003740",
+								"latitude": 50.004277,
+								"longitude": 9.580703
+							},
+							"products": {
+								"nationalExpress": false,
+								"national": false,
+								"regionalExpress": false,
+								"regional": true,
+								"suburban": false,
+								"bus": true,
+								"ferry": false,
+								"subway": false,
+								"tram": false,
+								"taxi": true
+							}
+						},
+						"arrival": "2024-06-06T19:41:00+02:00",
+						"plannedArrival": "2024-06-06T19:41:00+02:00",
+						"arrivalDelay": 0,
+						"arrivalPlatform": "1",
+						"arrivalPrognosisType": null,
+						"plannedArrivalPlatform": "1",
+						"departure": "2024-06-06T19:41:00+02:00",
+						"plannedDeparture": "2024-06-06T19:41:00+02:00",
+						"departureDelay": 0,
+						"departurePlatform": "1",
+						"departurePrognosisType": null,
+						"plannedDeparturePlatform": "1"
+					},
+					{
+						"stop": {
+							"type": "stop",
+							"id": "8003548",
+							"name": "Langenprozelten",
+							"location": {
+								"type": "location",
+								"id": "8003548",
+								"latitude": 50.061547,
+								"longitude": 9.661417
+							},
+							"products": {
+								"nationalExpress": false,
+								"national": false,
+								"regionalExpress": false,
+								"regional": true,
+								"suburban": false,
+								"bus": false,
+								"ferry": false,
+								"subway": false,
+								"tram": false,
+								"taxi": false
+							}
+						},
+						"arrival": "2024-06-06T19:47:00+02:00",
+						"plannedArrival": "2024-06-06T19:47:00+02:00",
+						"arrivalDelay": 0,
+						"arrivalPlatform": "1",
+						"arrivalPrognosisType": null,
+						"plannedArrivalPlatform": "1",
+						"departure": "2024-06-06T19:48:00+02:00",
+						"plannedDeparture": "2024-06-06T19:48:00+02:00",
+						"departureDelay": 0,
+						"departurePlatform": "1",
+						"departurePrognosisType": null,
+						"plannedDeparturePlatform": "1"
+					},
+					{
+						"stop": {
+							"type": "station",
+							"id": "8000120",
+							"name": "Gemünden(Main)",
+							"location": {
+								"type": "location",
+								"id": "8000120",
+								"latitude": 50.049942,
+								"longitude": 9.700044
+							},
+							"products": {
+								"nationalExpress": false,
+								"national": false,
+								"regionalExpress": false,
+								"regional": true,
+								"suburban": false,
+								"bus": true,
+								"ferry": false,
+								"subway": false,
+								"tram": false,
+								"taxi": true
+							}
+						},
+						"arrival": "2024-06-06T19:51:00+02:00",
+						"plannedArrival": "2024-06-06T19:51:00+02:00",
+						"arrivalDelay": 0,
+						"arrivalPlatform": "7",
+						"arrivalPrognosisType": null,
+						"plannedArrivalPlatform": "7",
+						"departure": "2024-06-06T19:52:00+02:00",
+						"plannedDeparture": "2024-06-06T19:52:00+02:00",
+						"departureDelay": 0,
+						"departurePlatform": "7",
+						"departurePrognosisType": null,
+						"plannedDeparturePlatform": "7"
+					},
+					{
+						"stop": {
+							"type": "station",
+							"id": "8003189",
+							"name": "Karlstadt(Main)",
+							"location": {
+								"type": "location",
+								"id": "8003189",
+								"latitude": 49.962935,
+								"longitude": 9.768254
+							},
+							"products": {
+								"nationalExpress": false,
+								"national": false,
+								"regionalExpress": false,
+								"regional": true,
+								"suburban": false,
+								"bus": true,
+								"ferry": false,
+								"subway": false,
+								"tram": false,
+								"taxi": true
+							}
+						},
+						"arrival": "2024-06-06T20:00:00+02:00",
+						"plannedArrival": "2024-06-06T20:00:00+02:00",
+						"arrivalDelay": 0,
+						"arrivalPlatform": "2",
+						"arrivalPrognosisType": null,
+						"plannedArrivalPlatform": "2",
+						"departure": "2024-06-06T20:00:00+02:00",
+						"plannedDeparture": "2024-06-06T20:00:00+02:00",
+						"departureDelay": 0,
+						"departurePlatform": "2",
+						"departurePrognosisType": null,
+						"plannedDeparturePlatform": "2"
+					},
+					{
+						"stop": {
+							"type": "station",
+							"id": "8005049",
+							"name": "Retzbach-Zellingen",
+							"location": {
+								"type": "location",
+								"id": "8005049",
+								"latitude": 49.905396,
+								"longitude": 9.814189
+							},
+							"products": {
+								"nationalExpress": false,
+								"national": false,
+								"regionalExpress": false,
+								"regional": true,
+								"suburban": false,
+								"bus": true,
+								"ferry": false,
+								"subway": false,
+								"tram": false,
+								"taxi": true
+							}
+						},
+						"arrival": "2024-06-06T20:05:00+02:00",
+						"plannedArrival": "2024-06-06T20:05:00+02:00",
+						"arrivalDelay": 0,
+						"arrivalPlatform": "3",
+						"arrivalPrognosisType": null,
+						"plannedArrivalPlatform": "3",
+						"departure": "2024-06-06T20:05:00+02:00",
+						"plannedDeparture": "2024-06-06T20:05:00+02:00",
+						"departureDelay": 0,
+						"departurePlatform": "3",
+						"departurePrognosisType": null,
+						"plannedDeparturePlatform": "3"
+					},
+					{
+						"stop": {
+							"type": "station",
+							"id": "8000260",
+							"name": "Würzburg Hbf",
+							"location": {
+								"type": "location",
+								"id": "8000260",
+								"latitude": 49.802163,
+								"longitude": 9.93593
+							},
+							"products": {
+								"nationalExpress": true,
+								"national": true,
+								"regionalExpress": true,
+								"regional": true,
+								"suburban": false,
+								"bus": true,
+								"ferry": false,
+								"subway": false,
+								"tram": true,
+								"taxi": false
+							}
+						},
+						"arrival": "2024-06-06T20:21:00+02:00",
+						"plannedArrival": "2024-06-06T20:21:00+02:00",
+						"arrivalDelay": 0,
+						"arrivalPlatform": "10A-C",
+						"arrivalPrognosisType": null,
+						"plannedArrivalPlatform": "10A-C",
+						"departure": null,
+						"plannedDeparture": null,
+						"departureDelay": null,
+						"departurePlatform": null,
+						"departurePrognosisType": null,
+						"plannedDeparturePlatform": null
+					}
+				],
+				"remarks": [
+					{
+						"text": "Number of bicycles conveyed limited",
+						"type": "hint",
+						"code": "bicycle-conveyance",
+						"summary": "bicycles conveyed"
+					},
+					{
+						"type": "hint",
+						"code": "RC",
+						"text": "Reservations at DB ticket machines/travel centres & many DB agencies"
+					},
+					{
+						"text": "vehicle-mounted access aid",
+						"type": "hint",
+						"code": "boarding-ramp",
+						"summary": "vehicle-mounted boarding ramp available"
+					},
+					{
+						"text": "air conditioning",
+						"type": "hint",
+						"code": "air-conditioned",
+						"summary": "air-conditioned vehicle"
+					}
+				]
+			},
+			{
+				"origin": {
+					"type": "station",
+					"id": "8000260",
+					"name": "Würzburg Hbf",
+					"location": {
+						"type": "location",
+						"id": "8000260",
+						"latitude": 49.802163,
+						"longitude": 9.93593
+					},
+					"products": {
+						"nationalExpress": true,
+						"national": true,
+						"regionalExpress": true,
+						"regional": true,
+						"suburban": false,
+						"bus": true,
+						"ferry": false,
+						"subway": false,
+						"tram": true,
+						"taxi": false
+					}
+				},
+				"destination": {
+					"type": "station",
+					"id": "8000013",
+					"name": "Augsburg Hbf",
+					"location": {
+						"type": "location",
+						"id": "8000013",
+						"latitude": 48.365247,
+						"longitude": 10.885595
+					},
+					"products": {
+						"nationalExpress": true,
+						"national": true,
+						"regionalExpress": true,
+						"regional": true,
+						"suburban": false,
+						"bus": true,
+						"ferry": false,
+						"subway": false,
+						"tram": true,
+						"taxi": false
+					}
+				},
+				"departure": "2024-06-06T20:41:00+02:00",
+				"plannedDeparture": "2024-06-06T20:41:00+02:00",
+				"departureDelay": 0,
+				"arrival": "2024-06-06T23:40:00+02:00",
+				"plannedArrival": "2024-06-06T23:40:00+02:00",
+				"arrivalDelay": 0,
+				"reachable": true,
+				"tripId": "1|472296|0|80|6062024",
+				"line": {
+					"type": "line",
+					"id": "re-80",
+					"fahrtNr": "57229",
+					"name": "RE 80",
+					"public": true,
+					"adminCode": "GYRE__",
+					"productName": "RE",
+					"mode": "train",
+					"product": "regional",
+					"operator": {
+						"type": "operator",
+						"id": "go-ahead-bayern-gmbh",
+						"name": "Go-Ahead Bayern GmbH"
+					},
+					"additionalName": "RE 80"
+				},
+				"direction": "Augsburg Hbf",
+				"arrivalPlatform": "8 C-E",
+				"plannedArrivalPlatform": "8 C-E",
+				"arrivalPrognosisType": null,
+				"departurePlatform": "3",
+				"plannedDeparturePlatform": "3",
+				"departurePrognosisType": null,
+				"stopovers": [
+					{
+						"stop": {
+							"type": "station",
+							"id": "8000260",
+							"name": "Würzburg Hbf",
+							"location": {
+								"type": "location",
+								"id": "8000260",
+								"latitude": 49.802163,
+								"longitude": 9.93593
+							},
+							"products": {
+								"nationalExpress": true,
+								"national": true,
+								"regionalExpress": true,
+								"regional": true,
+								"suburban": false,
+								"bus": true,
+								"ferry": false,
+								"subway": false,
+								"tram": true,
+								"taxi": false
+							}
+						},
+						"arrival": null,
+						"plannedArrival": null,
+						"arrivalDelay": null,
+						"arrivalPlatform": null,
+						"arrivalPrognosisType": null,
+						"plannedArrivalPlatform": null,
+						"departure": "2024-06-06T20:41:00+02:00",
+						"plannedDeparture": "2024-06-06T20:41:00+02:00",
+						"departureDelay": 0,
+						"departurePlatform": "3",
+						"departurePrognosisType": null,
+						"plannedDeparturePlatform": "3"
+					},
+					{
+						"stop": {
+							"type": "station",
+							"id": "8006582",
+							"name": "Würzburg Süd",
+							"location": {
+								"type": "location",
+								"id": "8006582",
+								"latitude": 49.7885,
+								"longitude": 9.944056
+							},
+							"products": {
+								"nationalExpress": false,
+								"national": false,
+								"regionalExpress": false,
+								"regional": true,
+								"suburban": false,
+								"bus": true,
+								"ferry": false,
+								"subway": false,
+								"tram": false,
+								"taxi": false
+							}
+						},
+						"arrival": "2024-06-06T20:44:00+02:00",
+						"plannedArrival": "2024-06-06T20:44:00+02:00",
+						"arrivalDelay": 0,
+						"arrivalPlatform": "1",
+						"arrivalPrognosisType": null,
+						"plannedArrivalPlatform": "1",
+						"departure": "2024-06-06T20:44:00+02:00",
+						"plannedDeparture": "2024-06-06T20:44:00+02:00",
+						"departureDelay": 0,
+						"departurePlatform": "1",
+						"departurePrognosisType": null,
+						"plannedDeparturePlatform": "1"
+					},
+					{
+						"stop": {
+							"type": "station",
+							"id": "8006580",
+							"name": "Würzburg-Heidingsfeld Ost",
+							"location": {
+								"type": "location",
+								"id": "8006580",
+								"latitude": 49.761137,
+								"longitude": 9.953261
+							},
+							"products": {
+								"nationalExpress": false,
+								"national": false,
+								"regionalExpress": false,
+								"regional": true,
+								"suburban": false,
+								"bus": true,
+								"ferry": false,
+								"subway": false,
+								"tram": false,
+								"taxi": false
+							}
+						},
+						"arrival": "2024-06-06T20:48:00+02:00",
+						"plannedArrival": "2024-06-06T20:48:00+02:00",
+						"arrivalDelay": 0,
+						"arrivalPlatform": "2",
+						"arrivalPrognosisType": null,
+						"plannedArrivalPlatform": "2",
+						"departure": "2024-06-06T20:48:00+02:00",
+						"plannedDeparture": "2024-06-06T20:48:00+02:00",
+						"departureDelay": 0,
+						"departurePlatform": "2",
+						"departurePrognosisType": null,
+						"plannedDeparturePlatform": "2"
+					},
+					{
+						"stop": {
+							"type": "stop",
+							"id": "8006488",
+							"name": "Winterhausen",
+							"location": {
+								"type": "location",
+								"id": "8006488",
+								"latitude": 49.708945,
+								"longitude": 10.011259
+							},
+							"products": {
+								"nationalExpress": false,
+								"national": false,
+								"regionalExpress": false,
+								"regional": true,
+								"suburban": false,
+								"bus": false,
+								"ferry": false,
+								"subway": false,
+								"tram": false,
+								"taxi": false
+							}
+						},
+						"arrival": "2024-06-06T20:53:00+02:00",
+						"plannedArrival": "2024-06-06T20:53:00+02:00",
+						"arrivalDelay": 0,
+						"arrivalPlatform": "4",
+						"arrivalPrognosisType": null,
+						"plannedArrivalPlatform": "4",
+						"departure": "2024-06-06T20:53:00+02:00",
+						"plannedDeparture": "2024-06-06T20:53:00+02:00",
+						"departureDelay": 0,
+						"departurePlatform": "4",
+						"departurePrognosisType": null,
+						"plannedDeparturePlatform": "4"
+					},
+					{
+						"stop": {
+							"type": "station",
+							"id": "8002333",
+							"name": "Goßmannsdorf",
+							"location": {
+								"type": "location",
+								"id": "8002333",
+								"latitude": 49.685286,
+								"longitude": 10.024851
+							},
+							"products": {
+								"nationalExpress": false,
+								"national": false,
+								"regionalExpress": false,
+								"regional": true,
+								"suburban": false,
+								"bus": true,
+								"ferry": false,
+								"subway": false,
+								"tram": false,
+								"taxi": false
+							}
+						},
+						"arrival": "2024-06-06T20:55:00+02:00",
+						"plannedArrival": "2024-06-06T20:55:00+02:00",
+						"arrivalDelay": 0,
+						"arrivalPlatform": "1",
+						"arrivalPrognosisType": null,
+						"plannedArrivalPlatform": "1",
+						"departure": "2024-06-06T20:56:00+02:00",
+						"plannedDeparture": "2024-06-06T20:56:00+02:00",
+						"departureDelay": 0,
+						"departurePlatform": "1",
+						"departurePrognosisType": null,
+						"plannedDeparturePlatform": "1"
+					},
+					{
+						"stop": {
+							"type": "station",
+							"id": "8000818",
+							"name": "Ochsenfurt",
+							"location": {
+								"type": "location",
+								"id": "8000818",
+								"latitude": 49.663082,
+								"longitude": 10.07164
+							},
+							"products": {
+								"nationalExpress": false,
+								"national": false,
+								"regionalExpress": false,
+								"regional": true,
+								"suburban": false,
+								"bus": true,
+								"ferry": false,
+								"subway": false,
+								"tram": false,
+								"taxi": true
+							}
+						},
+						"arrival": "2024-06-06T20:59:00+02:00",
+						"plannedArrival": "2024-06-06T20:59:00+02:00",
+						"arrivalDelay": 0,
+						"arrivalPlatform": "3",
+						"arrivalPrognosisType": null,
+						"plannedArrivalPlatform": "3",
+						"departure": "2024-06-06T21:00:00+02:00",
+						"plannedDeparture": "2024-06-06T21:00:00+02:00",
+						"departureDelay": 0,
+						"departurePlatform": "3",
+						"departurePrognosisType": null,
+						"plannedDeparturePlatform": "3"
+					},
+					{
+						"stop": {
+							"type": "station",
+							"id": "8003881",
+							"name": "Marktbreit",
+							"location": {
+								"type": "location",
+								"id": "8003881",
+								"latitude": 49.663864,
+								"longitude": 10.1459
+							},
+							"products": {
+								"nationalExpress": false,
+								"national": false,
+								"regionalExpress": false,
+								"regional": true,
+								"suburban": false,
+								"bus": true,
+								"ferry": false,
+								"subway": false,
+								"tram": false,
+								"taxi": true
+							}
+						},
+						"arrival": "2024-06-06T21:03:00+02:00",
+						"plannedArrival": "2024-06-06T21:03:00+02:00",
+						"arrivalDelay": 0,
+						"arrivalPlatform": "3",
+						"arrivalPrognosisType": null,
+						"plannedArrivalPlatform": "3",
+						"departure": "2024-06-06T21:04:00+02:00",
+						"plannedDeparture": "2024-06-06T21:04:00+02:00",
+						"departureDelay": 0,
+						"departurePlatform": "3",
+						"departurePrognosisType": null,
+						"plannedDeparturePlatform": "3"
+					},
+					{
+						"stop": {
+							"type": "station",
+							"id": "8005947",
+							"name": "Uffenheim",
+							"location": {
+								"type": "location",
+								"id": "8005947",
+								"latitude": 49.551283,
+								"longitude": 10.242831
+							},
+							"products": {
+								"nationalExpress": false,
+								"national": false,
+								"regionalExpress": false,
+								"regional": true,
+								"suburban": false,
+								"bus": true,
+								"ferry": false,
+								"subway": false,
+								"tram": false,
+								"taxi": true
+							}
+						},
+						"arrival": "2024-06-06T21:14:00+02:00",
+						"plannedArrival": "2024-06-06T21:14:00+02:00",
+						"arrivalDelay": 0,
+						"arrivalPlatform": "1",
+						"arrivalPrognosisType": null,
+						"plannedArrivalPlatform": "1",
+						"departure": "2024-06-06T21:15:00+02:00",
+						"plannedDeparture": "2024-06-06T21:15:00+02:00",
+						"departureDelay": 0,
+						"departurePlatform": "1",
+						"departurePrognosisType": null,
+						"plannedDeparturePlatform": "1"
+					},
+					{
+						"stop": {
+							"type": "station",
+							"id": "8000091",
+							"name": "Steinach(b Rothenburg ob der Tauber)",
+							"location": {
+								"type": "location",
+								"id": "8000091",
+								"latitude": 49.453202,
+								"longitude": 10.27343
+							},
+							"products": {
+								"nationalExpress": false,
+								"national": true,
+								"regionalExpress": false,
+								"regional": true,
+								"suburban": false,
+								"bus": true,
+								"ferry": false,
+								"subway": false,
+								"tram": false,
+								"taxi": false
+							}
+						},
+						"arrival": "2024-06-06T21:23:00+02:00",
+						"plannedArrival": "2024-06-06T21:23:00+02:00",
+						"arrivalDelay": 0,
+						"arrivalPlatform": "3",
+						"arrivalPrognosisType": null,
+						"plannedArrivalPlatform": "3",
+						"departure": "2024-06-06T21:24:00+02:00",
+						"plannedDeparture": "2024-06-06T21:24:00+02:00",
+						"departureDelay": 0,
+						"departurePlatform": "3",
+						"departurePrognosisType": null,
+						"plannedDeparturePlatform": "3"
+					},
+					{
+						"stop": {
+							"type": "stop",
+							"id": "8001278",
+							"name": "Burgbernheim-Wildbad",
+							"location": {
+								"type": "location",
+								"id": "8001278",
+								"latitude": 49.443332,
+								"longitude": 10.312218
+							},
+							"products": {
+								"nationalExpress": false,
+								"national": false,
+								"regionalExpress": false,
+								"regional": true,
+								"suburban": false,
+								"bus": false,
+								"ferry": false,
+								"subway": false,
+								"tram": false,
+								"taxi": false
+							}
+						},
+						"arrival": "2024-06-06T21:26:00+02:00",
+						"plannedArrival": "2024-06-06T21:26:00+02:00",
+						"arrivalDelay": 0,
+						"arrivalPlatform": "2",
+						"arrivalPrognosisType": null,
+						"plannedArrivalPlatform": "2",
+						"departure": "2024-06-06T21:27:00+02:00",
+						"plannedDeparture": "2024-06-06T21:27:00+02:00",
+						"departureDelay": 0,
+						"departurePlatform": "2",
+						"departurePrognosisType": null,
+						"plannedDeparturePlatform": "2"
+					},
+					{
+						"stop": {
+							"type": "station",
+							"id": "8004521",
+							"name": "Oberdachstetten",
+							"location": {
+								"type": "location",
+								"id": "8004521",
+								"latitude": 49.418522,
+								"longitude": 10.42195
+							},
+							"products": {
+								"nationalExpress": false,
+								"national": false,
+								"regionalExpress": false,
+								"regional": true,
+								"suburban": false,
+								"bus": true,
+								"ferry": false,
+								"subway": false,
+								"tram": false,
+								"taxi": false
+							}
+						},
+						"arrival": "2024-06-06T21:33:00+02:00",
+						"plannedArrival": "2024-06-06T21:33:00+02:00",
+						"arrivalDelay": 0,
+						"arrivalPlatform": "1",
+						"arrivalPrognosisType": null,
+						"plannedArrivalPlatform": "1",
+						"departure": "2024-06-06T21:33:00+02:00",
+						"plannedDeparture": "2024-06-06T21:33:00+02:00",
+						"departureDelay": 0,
+						"departurePlatform": "1",
+						"departurePrognosisType": null,
+						"plannedDeparturePlatform": "1"
+					},
+					{
+						"stop": {
+							"type": "station",
+							"id": "8000009",
+							"name": "Ansbach",
+							"location": {
+								"type": "location",
+								"id": "8000009",
+								"latitude": 49.29794,
+								"longitude": 10.577733
+							},
+							"products": {
+								"nationalExpress": true,
+								"national": true,
+								"regionalExpress": true,
+								"regional": true,
+								"suburban": true,
+								"bus": true,
+								"ferry": false,
+								"subway": false,
+								"tram": false,
+								"taxi": true
+							}
+						},
+						"arrival": "2024-06-06T21:45:00+02:00",
+						"plannedArrival": "2024-06-06T21:45:00+02:00",
+						"arrivalDelay": 0,
+						"arrivalPlatform": "4",
+						"arrivalPrognosisType": null,
+						"plannedArrivalPlatform": "4",
+						"departure": "2024-06-06T21:54:00+02:00",
+						"plannedDeparture": "2024-06-06T21:54:00+02:00",
+						"departureDelay": 0,
+						"departurePlatform": "4",
+						"departurePrognosisType": null,
+						"plannedDeparturePlatform": "4"
+					},
+					{
+						"stop": {
+							"type": "station",
+							"id": "8005907",
+							"name": "Triesdorf",
+							"location": {
+								"type": "location",
+								"id": "8005907",
+								"latitude": 49.200255,
+								"longitude": 10.680039
+							},
+							"products": {
+								"nationalExpress": false,
+								"national": false,
+								"regionalExpress": false,
+								"regional": true,
+								"suburban": false,
+								"bus": true,
+								"ferry": false,
+								"subway": false,
+								"tram": false,
+								"taxi": false
+							}
+						},
+						"arrival": "2024-06-06T22:03:00+02:00",
+						"plannedArrival": "2024-06-06T22:03:00+02:00",
+						"arrivalDelay": 0,
+						"arrivalPlatform": "1",
+						"arrivalPrognosisType": null,
+						"plannedArrivalPlatform": "1",
+						"departure": "2024-06-06T22:04:00+02:00",
+						"plannedDeparture": "2024-06-06T22:04:00+02:00",
+						"departureDelay": 0,
+						"departurePlatform": "1",
+						"departurePrognosisType": null,
+						"plannedDeparturePlatform": "1"
+					},
+					{
+						"stop": {
+							"type": "station",
+							"id": "8000534",
+							"name": "Muhr a See",
+							"location": {
+								"type": "location",
+								"id": "8000534",
+								"latitude": 49.154365,
+								"longitude": 10.720472
+							},
+							"products": {
+								"nationalExpress": false,
+								"national": false,
+								"regionalExpress": false,
+								"regional": true,
+								"suburban": false,
+								"bus": true,
+								"ferry": false,
+								"subway": false,
+								"tram": false,
+								"taxi": false
+							}
+						},
+						"arrival": "2024-06-06T22:08:00+02:00",
+						"plannedArrival": "2024-06-06T22:08:00+02:00",
+						"arrivalDelay": 0,
+						"arrivalPlatform": "1",
+						"arrivalPrognosisType": null,
+						"plannedArrivalPlatform": "1",
+						"departure": "2024-06-06T22:08:00+02:00",
+						"plannedDeparture": "2024-06-06T22:08:00+02:00",
+						"departureDelay": 0,
+						"departurePlatform": "1",
+						"departurePrognosisType": null,
+						"plannedDeparturePlatform": "1"
+					},
+					{
+						"stop": {
+							"type": "station",
+							"id": "8000385",
+							"name": "Gunzenhausen",
+							"location": {
+								"type": "location",
+								"id": "8000385",
+								"latitude": 49.120341,
+								"longitude": 10.754829
+							},
+							"products": {
+								"nationalExpress": false,
+								"national": false,
+								"regionalExpress": false,
+								"regional": true,
+								"suburban": false,
+								"bus": true,
+								"ferry": false,
+								"subway": false,
+								"tram": false,
+								"taxi": true
+							}
+						},
+						"arrival": "2024-06-06T22:12:00+02:00",
+						"plannedArrival": "2024-06-06T22:12:00+02:00",
+						"arrivalDelay": 0,
+						"arrivalPlatform": "4",
+						"arrivalPrognosisType": null,
+						"plannedArrivalPlatform": "4",
+						"departure": "2024-06-06T22:15:00+02:00",
+						"plannedDeparture": "2024-06-06T22:15:00+02:00",
+						"departureDelay": 0,
+						"departurePlatform": "4",
+						"departurePrognosisType": null,
+						"plannedDeparturePlatform": "4"
+					},
+					{
+						"stop": {
+							"type": "station",
+							"id": "8000122",
+							"name": "Treuchtlingen",
+							"location": {
+								"type": "location",
+								"id": "8000122",
+								"latitude": 48.961142,
+								"longitude": 10.908104
+							},
+							"products": {
+								"nationalExpress": true,
+								"national": true,
+								"regionalExpress": false,
+								"regional": true,
+								"suburban": false,
+								"bus": true,
+								"ferry": false,
+								"subway": false,
+								"tram": false,
+								"taxi": true
+							}
+						},
+						"arrival": "2024-06-06T22:29:00+02:00",
+						"plannedArrival": "2024-06-06T22:29:00+02:00",
+						"arrivalDelay": 0,
+						"arrivalPlatform": "7",
+						"arrivalPrognosisType": null,
+						"plannedArrivalPlatform": "7",
+						"departure": "2024-06-06T22:34:00+02:00",
+						"plannedDeparture": "2024-06-06T22:34:00+02:00",
+						"departureDelay": 0,
+						"departurePlatform": "7",
+						"departurePrognosisType": null,
+						"plannedDeparturePlatform": "7"
+					},
+					{
+						"stop": {
+							"type": "station",
+							"id": "8004731",
+							"name": "Otting-Weilheim",
+							"location": {
+								"type": "location",
+								"id": "8004731",
+								"latitude": 48.880877,
+								"longitude": 10.81894
+							},
+							"products": {
+								"nationalExpress": false,
+								"national": false,
+								"regionalExpress": false,
+								"regional": true,
+								"suburban": false,
+								"bus": true,
+								"ferry": false,
+								"subway": false,
+								"tram": false,
+								"taxi": true
+							}
+						},
+						"arrival": "2024-06-06T22:42:00+02:00",
+						"plannedArrival": "2024-06-06T22:42:00+02:00",
+						"arrivalDelay": 0,
+						"arrivalPlatform": "3",
+						"arrivalPrognosisType": null,
+						"plannedArrivalPlatform": "3",
+						"departure": "2024-06-06T22:43:00+02:00",
+						"plannedDeparture": "2024-06-06T22:43:00+02:00",
+						"departureDelay": 0,
+						"departurePlatform": "3",
+						"departurePrognosisType": null,
+						"plannedDeparturePlatform": "3"
+					},
+					{
+						"stop": {
+							"type": "station",
+							"id": "8000078",
+							"name": "Donauwörth",
+							"location": {
+								"type": "location",
+								"id": "8000078",
+								"latitude": 48.714028,
+								"longitude": 10.771522
+							},
+							"products": {
+								"nationalExpress": true,
+								"national": true,
+								"regionalExpress": false,
+								"regional": true,
+								"suburban": false,
+								"bus": true,
+								"ferry": false,
+								"subway": false,
+								"tram": false,
+								"taxi": true
+							}
+						},
+						"arrival": "2024-06-06T22:57:00+02:00",
+						"plannedArrival": "2024-06-06T22:57:00+02:00",
+						"arrivalDelay": 0,
+						"arrivalPlatform": "5",
+						"arrivalPrognosisType": null,
+						"plannedArrivalPlatform": "5",
+						"departure": "2024-06-06T22:59:00+02:00",
+						"plannedDeparture": "2024-06-06T22:59:00+02:00",
+						"departureDelay": 0,
+						"departurePlatform": "5",
+						"departurePrognosisType": null,
+						"plannedDeparturePlatform": "5"
+					},
+					{
+						"stop": {
+							"type": "station",
+							"id": "8000778",
+							"name": "Bäumenheim",
+							"location": {
+								"type": "location",
+								"id": "8000778",
+								"latitude": 48.679788,
+								"longitude": 10.810383
+							},
+							"products": {
+								"nationalExpress": false,
+								"national": false,
+								"regionalExpress": false,
+								"regional": true,
+								"suburban": false,
+								"bus": true,
+								"ferry": false,
+								"subway": false,
+								"tram": false,
+								"taxi": false
+							}
+						},
+						"arrival": "2024-06-06T23:03:00+02:00",
+						"plannedArrival": "2024-06-06T23:03:00+02:00",
+						"arrivalDelay": 0,
+						"arrivalPlatform": "1",
+						"arrivalPrognosisType": null,
+						"plannedArrivalPlatform": "1",
+						"departure": "2024-06-06T23:04:00+02:00",
+						"plannedDeparture": "2024-06-06T23:04:00+02:00",
+						"departureDelay": 0,
+						"departurePlatform": "1",
+						"departurePrognosisType": null,
+						"plannedDeparturePlatform": "1"
+					},
+					{
+						"stop": {
+							"type": "station",
+							"id": "8003989",
+							"name": "Mertingen Bahnhof",
+							"location": {
+								"type": "location",
+								"id": "8003989",
+								"latitude": 48.66047,
+								"longitude": 10.825143
+							},
+							"products": {
+								"nationalExpress": false,
+								"national": false,
+								"regionalExpress": false,
+								"regional": true,
+								"suburban": false,
+								"bus": true,
+								"ferry": false,
+								"subway": false,
+								"tram": false,
+								"taxi": false
+							}
+						},
+						"arrival": "2024-06-06T23:06:00+02:00",
+						"plannedArrival": "2024-06-06T23:06:00+02:00",
+						"arrivalDelay": 0,
+						"arrivalPlatform": "1",
+						"arrivalPrognosisType": null,
+						"plannedArrivalPlatform": "1",
+						"departure": "2024-06-06T23:07:00+02:00",
+						"plannedDeparture": "2024-06-06T23:07:00+02:00",
+						"departureDelay": 0,
+						"departurePlatform": "1",
+						"departurePrognosisType": null,
+						"plannedDeparturePlatform": "1"
+					},
+					{
+						"stop": {
+							"type": "station",
+							"id": "8004451",
+							"name": "Nordendorf",
+							"location": {
+								"type": "location",
+								"id": "8004451",
+								"latitude": 48.593438,
+								"longitude": 10.837305
+							},
+							"products": {
+								"nationalExpress": false,
+								"national": false,
+								"regionalExpress": false,
+								"regional": true,
+								"suburban": false,
+								"bus": true,
+								"ferry": false,
+								"subway": false,
+								"tram": false,
+								"taxi": false
+							}
+						},
+						"arrival": "2024-06-06T23:12:00+02:00",
+						"plannedArrival": "2024-06-06T23:12:00+02:00",
+						"arrivalDelay": 0,
+						"arrivalPlatform": "1",
+						"arrivalPrognosisType": null,
+						"plannedArrivalPlatform": "1",
+						"departure": "2024-06-06T23:12:00+02:00",
+						"plannedDeparture": "2024-06-06T23:12:00+02:00",
+						"departureDelay": 0,
+						"departurePlatform": "1",
+						"departurePrognosisType": null,
+						"plannedDeparturePlatform": "1"
+					},
+					{
+						"stop": {
+							"type": "stop",
+							"id": "8006363",
+							"name": "Westendorf",
+							"location": {
+								"type": "location",
+								"id": "8006363",
+								"latitude": 48.571801,
+								"longitude": 10.843382
+							},
+							"products": {
+								"nationalExpress": false,
+								"national": false,
+								"regionalExpress": false,
+								"regional": true,
+								"suburban": false,
+								"bus": false,
+								"ferry": false,
+								"subway": false,
+								"tram": false,
+								"taxi": false
+							}
+						},
+						"arrival": "2024-06-06T23:15:00+02:00",
+						"plannedArrival": "2024-06-06T23:15:00+02:00",
+						"arrivalDelay": 0,
+						"arrivalPlatform": "1",
+						"arrivalPrognosisType": null,
+						"plannedArrivalPlatform": "1",
+						"departure": "2024-06-06T23:16:00+02:00",
+						"plannedDeparture": "2024-06-06T23:16:00+02:00",
+						"departureDelay": 0,
+						"departurePlatform": "1",
+						"departurePrognosisType": null,
+						"plannedDeparturePlatform": "1"
+					},
+					{
+						"stop": {
+							"type": "station",
+							"id": "8003952",
+							"name": "Meitingen",
+							"location": {
+								"type": "location",
+								"id": "8003952",
+								"latitude": 48.545921,
+								"longitude": 10.848056
+							},
+							"products": {
+								"nationalExpress": false,
+								"national": false,
+								"regionalExpress": false,
+								"regional": true,
+								"suburban": false,
+								"bus": true,
+								"ferry": false,
+								"subway": false,
+								"tram": false,
+								"taxi": true
+							}
+						},
+						"arrival": "2024-06-06T23:18:00+02:00",
+						"plannedArrival": "2024-06-06T23:18:00+02:00",
+						"arrivalDelay": 0,
+						"arrivalPlatform": "2",
+						"arrivalPrognosisType": null,
+						"plannedArrivalPlatform": "2",
+						"departure": "2024-06-06T23:19:00+02:00",
+						"plannedDeparture": "2024-06-06T23:19:00+02:00",
+						"departureDelay": 0,
+						"departurePlatform": "2",
+						"departurePrognosisType": null,
+						"plannedDeparturePlatform": "2"
+					},
+					{
+						"stop": {
+							"type": "stop",
+							"id": "8002761",
+							"name": "Herbertshofen",
+							"location": {
+								"type": "location",
+								"id": "8002761",
+								"latitude": 48.52957,
+								"longitude": 10.848029
+							},
+							"products": {
+								"nationalExpress": false,
+								"national": false,
+								"regionalExpress": false,
+								"regional": true,
+								"suburban": false,
+								"bus": false,
+								"ferry": false,
+								"subway": false,
+								"tram": false,
+								"taxi": false
+							}
+						},
+						"arrival": "2024-06-06T23:20:00+02:00",
+						"plannedArrival": "2024-06-06T23:20:00+02:00",
+						"arrivalDelay": 0,
+						"arrivalPlatform": "1",
+						"arrivalPrognosisType": null,
+						"plannedArrivalPlatform": "1",
+						"departure": "2024-06-06T23:21:00+02:00",
+						"plannedDeparture": "2024-06-06T23:21:00+02:00",
+						"departureDelay": 0,
+						"departurePlatform": "1",
+						"departurePrognosisType": null,
+						"plannedDeparturePlatform": "1"
+					},
+					{
+						"stop": {
+							"type": "station",
+							"id": "8003560",
+							"name": "Langweid(Lech)",
+							"location": {
+								"type": "location",
+								"id": "8003560",
+								"latitude": 48.490448,
+								"longitude": 10.847966
+							},
+							"products": {
+								"nationalExpress": false,
+								"national": false,
+								"regionalExpress": false,
+								"regional": true,
+								"suburban": false,
+								"bus": true,
+								"ferry": false,
+								"subway": false,
+								"tram": false,
+								"taxi": false
+							}
+						},
+						"arrival": "2024-06-06T23:24:00+02:00",
+						"plannedArrival": "2024-06-06T23:24:00+02:00",
+						"arrivalDelay": 0,
+						"arrivalPlatform": "1",
+						"arrivalPrognosisType": null,
+						"plannedArrivalPlatform": "1",
+						"departure": "2024-06-06T23:25:00+02:00",
+						"plannedDeparture": "2024-06-06T23:25:00+02:00",
+						"departureDelay": 0,
+						"departurePlatform": "1",
+						"departurePrognosisType": null,
+						"plannedDeparturePlatform": "1"
+					},
+					{
+						"stop": {
+							"type": "station",
+							"id": "8002162",
+							"name": "Gablingen",
+							"location": {
+								"type": "location",
+								"id": "8002162",
+								"latitude": 48.463418,
+								"longitude": 10.850753
+							},
+							"products": {
+								"nationalExpress": false,
+								"national": false,
+								"regionalExpress": false,
+								"regional": true,
+								"suburban": false,
+								"bus": true,
+								"ferry": false,
+								"subway": false,
+								"tram": false,
+								"taxi": false
+							}
+						},
+						"arrival": "2024-06-06T23:28:00+02:00",
+						"plannedArrival": "2024-06-06T23:28:00+02:00",
+						"arrivalDelay": 0,
+						"arrivalPlatform": "2",
+						"arrivalPrognosisType": null,
+						"plannedArrivalPlatform": "2",
+						"departure": "2024-06-06T23:28:00+02:00",
+						"plannedDeparture": "2024-06-06T23:28:00+02:00",
+						"departureDelay": 0,
+						"departurePlatform": "2",
+						"departurePrognosisType": null,
+						"plannedDeparturePlatform": "2"
+					},
+					{
+						"stop": {
+							"type": "station",
+							"id": "8002256",
+							"name": "Gersthofen",
+							"location": {
+								"type": "location",
+								"id": "8002256",
+								"latitude": 48.423011,
+								"longitude": 10.861199
+							},
+							"products": {
+								"nationalExpress": false,
+								"national": false,
+								"regionalExpress": false,
+								"regional": true,
+								"suburban": false,
+								"bus": true,
+								"ferry": false,
+								"subway": false,
+								"tram": false,
+								"taxi": false
+							}
+						},
+						"arrival": "2024-06-06T23:31:00+02:00",
+						"plannedArrival": "2024-06-06T23:31:00+02:00",
+						"arrivalDelay": 0,
+						"arrivalPlatform": "3",
+						"arrivalPrognosisType": null,
+						"plannedArrivalPlatform": "3",
+						"departure": "2024-06-06T23:32:00+02:00",
+						"plannedDeparture": "2024-06-06T23:32:00+02:00",
+						"departureDelay": 0,
+						"departurePlatform": "3",
+						"departurePrognosisType": null,
+						"plannedDeparturePlatform": "3"
+					},
+					{
+						"stop": {
+							"type": "station",
+							"id": "8000662",
+							"name": "Augsburg-Oberhausen",
+							"location": {
+								"type": "location",
+								"id": "8000662",
+								"latitude": 48.380744,
+								"longitude": 10.872516
+							},
+							"products": {
+								"nationalExpress": false,
+								"national": false,
+								"regionalExpress": false,
+								"regional": true,
+								"suburban": false,
+								"bus": true,
+								"ferry": false,
+								"subway": false,
+								"tram": true,
+								"taxi": false
+							}
+						},
+						"arrival": "2024-06-06T23:36:00+02:00",
+						"plannedArrival": "2024-06-06T23:36:00+02:00",
+						"arrivalDelay": 0,
+						"arrivalPlatform": "5",
+						"arrivalPrognosisType": null,
+						"plannedArrivalPlatform": "5",
+						"departure": "2024-06-06T23:37:00+02:00",
+						"plannedDeparture": "2024-06-06T23:37:00+02:00",
+						"departureDelay": 0,
+						"departurePlatform": "5",
+						"departurePrognosisType": null,
+						"plannedDeparturePlatform": "5"
+					},
+					{
+						"stop": {
+							"type": "station",
+							"id": "8000013",
+							"name": "Augsburg Hbf",
+							"location": {
+								"type": "location",
+								"id": "8000013",
+								"latitude": 48.365247,
+								"longitude": 10.885595
+							},
+							"products": {
+								"nationalExpress": true,
+								"national": true,
+								"regionalExpress": true,
+								"regional": true,
+								"suburban": false,
+								"bus": true,
+								"ferry": false,
+								"subway": false,
+								"tram": true,
+								"taxi": false
+							}
+						},
+						"arrival": "2024-06-06T23:40:00+02:00",
+						"plannedArrival": "2024-06-06T23:40:00+02:00",
+						"arrivalDelay": 0,
+						"arrivalPlatform": "8 C-E",
+						"arrivalPrognosisType": null,
+						"plannedArrivalPlatform": "8 C-E",
+						"departure": null,
+						"plannedDeparture": null,
+						"departureDelay": null,
+						"departurePlatform": null,
+						"departurePrognosisType": null,
+						"plannedDeparturePlatform": null
+					}
+				],
+				"remarks": [
+					{
+						"text": "Number of bicycles conveyed limited",
+						"type": "hint",
+						"code": "bicycle-conveyance",
+						"summary": "bicycles conveyed"
+					},
+					{
+						"type": "hint",
+						"code": "GL",
+						"text": "Conveyance of groups is limited"
+					},
+					{
+						"text": "Behindertengerechtes Fahrzeug",
+						"type": "hint",
+						"code": "barrier-free-vehicle",
+						"summary": "barrier-free vehicle"
+					}
+				]
+			},
+			{
+				"origin": {
+					"type": "station",
+					"id": "8000013",
+					"name": "Augsburg Hbf",
+					"location": {
+						"type": "location",
+						"id": "8000013",
+						"latitude": 48.365247,
+						"longitude": 10.885595
+					},
+					"products": {
+						"nationalExpress": true,
+						"national": true,
+						"regionalExpress": true,
+						"regional": true,
+						"suburban": false,
+						"bus": true,
+						"ferry": false,
+						"subway": false,
+						"tram": true,
+						"taxi": false
+					}
+				},
+				"destination": {
+					"type": "station",
+					"id": "8004158",
+					"name": "München-Pasing",
+					"location": {
+						"type": "location",
+						"id": "8004158",
+						"latitude": 48.150036,
+						"longitude": 11.461633
+					},
+					"products": {
+						"nationalExpress": true,
+						"national": true,
+						"regionalExpress": true,
+						"regional": true,
+						"suburban": true,
+						"bus": true,
+						"ferry": false,
+						"subway": false,
+						"tram": true,
+						"taxi": false
+					}
+				},
+				"departure": "2024-06-06T23:49:00+02:00",
+				"plannedDeparture": "2024-06-06T23:49:00+02:00",
+				"departureDelay": 0,
+				"arrival": "2024-06-07T00:29:00+02:00",
+				"plannedArrival": "2024-06-07T00:29:00+02:00",
+				"arrivalDelay": 0,
+				"reachable": true,
+				"tripId": "1|471909|0|80|6062024",
+				"line": {
+					"type": "line",
+					"id": "re-9",
+					"fahrtNr": "57089",
+					"name": "RE 9",
+					"public": true,
+					"adminCode": "GYRE__",
+					"productName": "RE",
+					"mode": "train",
+					"product": "regional",
+					"operator": {
+						"type": "operator",
+						"id": "go-ahead-bayern-gmbh",
+						"name": "Go-Ahead Bayern GmbH"
+					},
+					"additionalName": "RE 9"
+				},
+				"direction": "München-Pasing",
+				"arrivalPlatform": "9",
+				"plannedArrivalPlatform": "9",
+				"arrivalPrognosisType": null,
+				"departurePlatform": "9",
+				"plannedDeparturePlatform": "9",
+				"departurePrognosisType": null,
+				"stopovers": [
+					{
+						"stop": {
+							"type": "station",
+							"id": "8000013",
+							"name": "Augsburg Hbf",
+							"location": {
+								"type": "location",
+								"id": "8000013",
+								"latitude": 48.365247,
+								"longitude": 10.885595
+							},
+							"products": {
+								"nationalExpress": true,
+								"national": true,
+								"regionalExpress": true,
+								"regional": true,
+								"suburban": false,
+								"bus": true,
+								"ferry": false,
+								"subway": false,
+								"tram": true,
+								"taxi": false
+							}
+						},
+						"arrival": null,
+						"plannedArrival": null,
+						"arrivalDelay": null,
+						"arrivalPlatform": null,
+						"arrivalPrognosisType": null,
+						"plannedArrivalPlatform": null,
+						"departure": "2024-06-06T23:49:00+02:00",
+						"plannedDeparture": "2024-06-06T23:49:00+02:00",
+						"departureDelay": 0,
+						"departurePlatform": "9",
+						"departurePrognosisType": null,
+						"plannedDeparturePlatform": "9"
+					},
+					{
+						"stop": {
+							"type": "station",
+							"id": "8000658",
+							"name": "Augsburg Haunstetterstraße",
+							"location": {
+								"type": "location",
+								"id": "8000658",
+								"latitude": 48.355287,
+								"longitude": 10.900895
+							},
+							"products": {
+								"nationalExpress": false,
+								"national": false,
+								"regionalExpress": false,
+								"regional": true,
+								"suburban": false,
+								"bus": true,
+								"ferry": false,
+								"subway": false,
+								"tram": true,
+								"taxi": false
+							}
+						},
+						"arrival": "2024-06-06T23:51:00+02:00",
+						"plannedArrival": "2024-06-06T23:51:00+02:00",
+						"arrivalDelay": 0,
+						"arrivalPlatform": "4",
+						"arrivalPrognosisType": null,
+						"plannedArrivalPlatform": "4",
+						"departure": "2024-06-06T23:52:00+02:00",
+						"plannedDeparture": "2024-06-06T23:52:00+02:00",
+						"departureDelay": 0,
+						"departurePlatform": "4",
+						"departurePrognosisType": null,
+						"plannedDeparturePlatform": "4"
+					},
+					{
+						"stop": {
+							"type": "station",
+							"id": "8000661",
+							"name": "Augsburg-Hochzoll",
+							"location": {
+								"type": "location",
+								"id": "8000661",
+								"latitude": 48.353039,
+								"longitude": 10.94532
+							},
+							"products": {
+								"nationalExpress": false,
+								"national": false,
+								"regionalExpress": false,
+								"regional": true,
+								"suburban": false,
+								"bus": true,
+								"ferry": false,
+								"subway": false,
+								"tram": false,
+								"taxi": false
+							}
+						},
+						"arrival": "2024-06-06T23:54:00+02:00",
+						"plannedArrival": "2024-06-06T23:54:00+02:00",
+						"arrivalDelay": 0,
+						"arrivalPlatform": "4",
+						"arrivalPrognosisType": null,
+						"plannedArrivalPlatform": "4",
+						"departure": "2024-06-06T23:55:00+02:00",
+						"plannedDeparture": "2024-06-06T23:55:00+02:00",
+						"departureDelay": 0,
+						"departurePlatform": "4",
+						"departurePrognosisType": null,
+						"plannedDeparturePlatform": "4"
+					},
+					{
+						"stop": {
+							"type": "station",
+							"id": "8003299",
+							"name": "Kissing",
+							"location": {
+								"type": "location",
+								"id": "8003299",
+								"latitude": 48.300246,
+								"longitude": 10.959756
+							},
+							"products": {
+								"nationalExpress": false,
+								"national": false,
+								"regionalExpress": false,
+								"regional": true,
+								"suburban": false,
+								"bus": true,
+								"ferry": false,
+								"subway": false,
+								"tram": false,
+								"taxi": false
+							}
+						},
+						"arrival": "2024-06-06T23:59:00+02:00",
+						"plannedArrival": "2024-06-06T23:59:00+02:00",
+						"arrivalDelay": 0,
+						"arrivalPlatform": "5",
+						"arrivalPrognosisType": null,
+						"plannedArrivalPlatform": "5",
+						"departure": "2024-06-07T00:00:00+02:00",
+						"plannedDeparture": "2024-06-07T00:00:00+02:00",
+						"departureDelay": 0,
+						"departurePlatform": "5",
+						"departurePrognosisType": null,
+						"plannedDeparturePlatform": "5"
+					},
+					{
+						"stop": {
+							"type": "stop",
+							"id": "8004008",
+							"name": "Mering-St Afra",
+							"location": {
+								"type": "location",
+								"id": "8004008",
+								"latitude": 48.275022,
+								"longitude": 10.970453
+							},
+							"products": {
+								"nationalExpress": false,
+								"national": false,
+								"regionalExpress": false,
+								"regional": true,
+								"suburban": false,
+								"bus": false,
+								"ferry": false,
+								"subway": false,
+								"tram": false,
+								"taxi": false
+							}
+						},
+						"arrival": "2024-06-07T00:02:00+02:00",
+						"plannedArrival": "2024-06-07T00:02:00+02:00",
+						"arrivalDelay": 0,
+						"arrivalPlatform": "4",
+						"arrivalPrognosisType": null,
+						"plannedArrivalPlatform": "4",
+						"departure": "2024-06-07T00:03:00+02:00",
+						"plannedDeparture": "2024-06-07T00:03:00+02:00",
+						"departureDelay": 0,
+						"departurePlatform": "4",
+						"departurePrognosisType": null,
+						"plannedDeparturePlatform": "4"
+					},
+					{
+						"stop": {
+							"type": "station",
+							"id": "8003982",
+							"name": "Mering",
+							"location": {
+								"type": "location",
+								"id": "8003982",
+								"latitude": 48.262976,
+								"longitude": 10.987848
+							},
+							"products": {
+								"nationalExpress": false,
+								"national": false,
+								"regionalExpress": false,
+								"regional": true,
+								"suburban": false,
+								"bus": true,
+								"ferry": false,
+								"subway": false,
+								"tram": false,
+								"taxi": true
+							}
+						},
+						"arrival": "2024-06-07T00:05:00+02:00",
+						"plannedArrival": "2024-06-07T00:05:00+02:00",
+						"arrivalDelay": 0,
+						"arrivalPlatform": "4",
+						"arrivalPrognosisType": null,
+						"plannedArrivalPlatform": "4",
+						"departure": "2024-06-07T00:06:00+02:00",
+						"plannedDeparture": "2024-06-07T00:06:00+02:00",
+						"departureDelay": 0,
+						"departurePlatform": "4",
+						"departurePrognosisType": null,
+						"plannedDeparturePlatform": "4"
+					},
+					{
+						"stop": {
+							"type": "stop",
+							"id": "8000545",
+							"name": "Althegnenberg",
+							"location": {
+								"type": "location",
+								"id": "8000545",
+								"latitude": 48.236836,
+								"longitude": 11.061883
+							},
+							"products": {
+								"nationalExpress": false,
+								"national": false,
+								"regionalExpress": false,
+								"regional": true,
+								"suburban": false,
+								"bus": false,
+								"ferry": false,
+								"subway": false,
+								"tram": false,
+								"taxi": false
+							}
+						},
+						"arrival": "2024-06-07T00:10:00+02:00",
+						"plannedArrival": "2024-06-07T00:10:00+02:00",
+						"arrivalDelay": 0,
+						"arrivalPlatform": "4",
+						"arrivalPrognosisType": null,
+						"plannedArrivalPlatform": "4",
+						"departure": "2024-06-07T00:10:00+02:00",
+						"plannedDeparture": "2024-06-07T00:10:00+02:00",
+						"departureDelay": 0,
+						"departurePlatform": "4",
+						"departurePrognosisType": null,
+						"plannedDeparturePlatform": "4"
+					},
+					{
+						"stop": {
+							"type": "station",
+							"id": "8002623",
+							"name": "Haspelmoor",
+							"location": {
+								"type": "location",
+								"id": "8002623",
+								"latitude": 48.223262,
+								"longitude": 11.098613
+							},
+							"products": {
+								"nationalExpress": false,
+								"national": false,
+								"regionalExpress": false,
+								"regional": true,
+								"suburban": false,
+								"bus": true,
+								"ferry": false,
+								"subway": false,
+								"tram": false,
+								"taxi": false
+							}
+						},
+						"arrival": "2024-06-07T00:13:00+02:00",
+						"plannedArrival": "2024-06-07T00:13:00+02:00",
+						"arrivalDelay": 0,
+						"arrivalPlatform": "4",
+						"arrivalPrognosisType": null,
+						"plannedArrivalPlatform": "4",
+						"departure": "2024-06-07T00:13:00+02:00",
+						"plannedDeparture": "2024-06-07T00:13:00+02:00",
+						"departureDelay": 0,
+						"departurePlatform": "4",
+						"departurePrognosisType": null,
+						"plannedDeparturePlatform": "4"
+					},
+					{
+						"stop": {
+							"type": "station",
+							"id": "8004204",
+							"name": "Mammendorf",
+							"location": {
+								"type": "location",
+								"id": "8004204",
+								"latitude": 48.217015,
+								"longitude": 11.173942
+							},
+							"products": {
+								"nationalExpress": false,
+								"national": false,
+								"regionalExpress": false,
+								"regional": true,
+								"suburban": true,
+								"bus": true,
+								"ferry": false,
+								"subway": false,
+								"tram": false,
+								"taxi": false
+							}
+						},
+						"arrival": "2024-06-07T00:17:00+02:00",
+						"plannedArrival": "2024-06-07T00:17:00+02:00",
+						"arrivalDelay": 0,
+						"arrivalPlatform": "4",
+						"arrivalPrognosisType": null,
+						"plannedArrivalPlatform": "4",
+						"departure": "2024-06-07T00:18:00+02:00",
+						"plannedDeparture": "2024-06-07T00:18:00+02:00",
+						"departureDelay": 0,
+						"departurePlatform": "4",
+						"departurePrognosisType": null,
+						"plannedDeparturePlatform": "4"
+					},
+					{
+						"stop": {
+							"type": "station",
+							"id": "8004158",
+							"name": "München-Pasing",
+							"location": {
+								"type": "location",
+								"id": "8004158",
+								"latitude": 48.150036,
+								"longitude": 11.461633
+							},
+							"products": {
+								"nationalExpress": true,
+								"national": true,
+								"regionalExpress": true,
+								"regional": true,
+								"suburban": true,
+								"bus": true,
+								"ferry": false,
+								"subway": false,
+								"tram": true,
+								"taxi": false
+							}
+						},
+						"arrival": "2024-06-07T00:29:00+02:00",
+						"plannedArrival": "2024-06-07T00:29:00+02:00",
+						"arrivalDelay": 0,
+						"arrivalPlatform": "9",
+						"arrivalPrognosisType": null,
+						"plannedArrivalPlatform": "9",
+						"departure": null,
+						"plannedDeparture": null,
+						"departureDelay": null,
+						"departurePlatform": null,
+						"departurePrognosisType": null,
+						"plannedDeparturePlatform": null
+					}
+				],
+				"remarks": [
+					{
+						"text": "Number of bicycles conveyed limited",
+						"type": "hint",
+						"code": "bicycle-conveyance",
+						"summary": "bicycles conveyed"
+					},
+					{
+						"type": "hint",
+						"code": "GL",
+						"text": "Conveyance of groups is limited"
+					},
+					{
+						"text": "Behindertengerechtes Fahrzeug",
+						"type": "hint",
+						"code": "barrier-free-vehicle",
+						"summary": "barrier-free vehicle"
+					}
+				]
+			},
+			{
+				"origin": {
+					"type": "station",
+					"id": "8004158",
+					"name": "München-Pasing",
+					"location": {
+						"type": "location",
+						"id": "8004158",
+						"latitude": 48.150036,
+						"longitude": 11.461633
+					},
+					"products": {
+						"nationalExpress": true,
+						"national": true,
+						"regionalExpress": true,
+						"regional": true,
+						"suburban": true,
+						"bus": true,
+						"ferry": false,
+						"subway": false,
+						"tram": true,
+						"taxi": false
+					}
+				},
+				"destination": {
+					"type": "stop",
+					"id": "8098263",
+					"name": "München Hbf (tief)",
+					"location": {
+						"type": "location",
+						"id": "8098263",
+						"latitude": 48.141496,
+						"longitude": 11.559166
+					},
+					"products": {
+						"nationalExpress": true,
+						"national": true,
+						"regionalExpress": true,
+						"regional": true,
+						"suburban": true,
+						"bus": true,
+						"ferry": false,
+						"subway": true,
+						"tram": true,
+						"taxi": false
+					},
+					"station": {
+						"type": "station",
+						"id": "8000261",
+						"name": "München Hbf",
+						"location": {
+							"type": "location",
+							"id": "8000261",
+							"latitude": 48.140364,
+							"longitude": 11.558744
+						},
+						"products": {
+							"nationalExpress": true,
+							"national": true,
+							"regionalExpress": true,
+							"regional": true,
+							"suburban": true,
+							"bus": true,
+							"ferry": false,
+							"subway": true,
+							"tram": true,
+							"taxi": false
+						}
+					}
+				},
+				"departure": "2024-06-07T00:36:00+02:00",
+				"plannedDeparture": "2024-06-07T00:36:00+02:00",
+				"departureDelay": null,
+				"arrival": "2024-06-07T00:47:00+02:00",
+				"plannedArrival": "2024-06-07T00:47:00+02:00",
+				"arrivalDelay": null,
+				"reachable": true,
+				"tripId": "1|380890|0|80|7062024",
+				"line": {
+					"type": "line",
+					"id": "4-800725-6",
+					"fahrtNr": "8631",
+					"name": "S 6",
+					"public": true,
+					"adminCode": "800725",
+					"productName": "S",
+					"mode": "train",
+					"product": "suburban",
+					"operator": {
+						"type": "operator",
+						"id": "db-regio-ag-s-bahn-munchen",
+						"name": "DB Regio AG S-Bahn München"
+					}
+				},
+				"direction": "München Ost",
+				"arrivalPlatform": "1",
+				"plannedArrivalPlatform": "1",
+				"arrivalPrognosisType": null,
+				"departurePlatform": "5",
+				"plannedDeparturePlatform": "5",
+				"departurePrognosisType": null,
+				"stopovers": [
+					{
+						"stop": {
+							"type": "station",
+							"id": "8004158",
+							"name": "München-Pasing",
+							"location": {
+								"type": "location",
+								"id": "8004158",
+								"latitude": 48.150036,
+								"longitude": 11.461633
+							},
+							"products": {
+								"nationalExpress": true,
+								"national": true,
+								"regionalExpress": true,
+								"regional": true,
+								"suburban": true,
+								"bus": true,
+								"ferry": false,
+								"subway": false,
+								"tram": true,
+								"taxi": false
+							}
+						},
+						"arrival": null,
+						"plannedArrival": null,
+						"arrivalDelay": null,
+						"arrivalPlatform": null,
+						"arrivalPrognosisType": null,
+						"plannedArrivalPlatform": null,
+						"departure": "2024-06-07T00:36:00+02:00",
+						"plannedDeparture": "2024-06-07T00:36:00+02:00",
+						"departureDelay": null,
+						"departurePlatform": "5",
+						"departurePrognosisType": null,
+						"plannedDeparturePlatform": "5"
+					},
+					{
+						"stop": {
+							"type": "station",
+							"id": "8004151",
+							"name": "München-Laim",
+							"location": {
+								"type": "location",
+								"id": "8004151",
+								"latitude": 48.144283,
+								"longitude": 11.504206
+							},
+							"products": {
+								"nationalExpress": false,
+								"national": false,
+								"regionalExpress": false,
+								"regional": true,
+								"suburban": true,
+								"bus": true,
+								"ferry": false,
+								"subway": false,
+								"tram": false,
+								"taxi": false
+							}
+						},
+						"arrival": "2024-06-07T00:39:00+02:00",
+						"plannedArrival": "2024-06-07T00:39:00+02:00",
+						"arrivalDelay": null,
+						"arrivalPlatform": "3",
+						"arrivalPrognosisType": null,
+						"plannedArrivalPlatform": "3",
+						"departure": "2024-06-07T00:40:00+02:00",
+						"plannedDeparture": "2024-06-07T00:40:00+02:00",
+						"departureDelay": null,
+						"departurePlatform": "3",
+						"departurePrognosisType": null,
+						"plannedDeparturePlatform": "3"
+					},
+					{
+						"stop": {
+							"type": "station",
+							"id": "8004179",
+							"name": "München Hirschgarten",
+							"location": {
+								"type": "location",
+								"id": "8004179",
+								"latitude": 48.143546,
+								"longitude": 11.519506
+							},
+							"products": {
+								"nationalExpress": false,
+								"national": false,
+								"regionalExpress": false,
+								"regional": true,
+								"suburban": true,
+								"bus": true,
+								"ferry": false,
+								"subway": false,
+								"tram": false,
+								"taxi": false
+							}
+						},
+						"arrival": "2024-06-07T00:41:00+02:00",
+						"plannedArrival": "2024-06-07T00:41:00+02:00",
+						"arrivalDelay": null,
+						"arrivalPlatform": "2",
+						"arrivalPrognosisType": null,
+						"plannedArrivalPlatform": "2",
+						"departure": "2024-06-07T00:42:00+02:00",
+						"plannedDeparture": "2024-06-07T00:42:00+02:00",
+						"departureDelay": null,
+						"departurePlatform": "2",
+						"departurePrognosisType": null,
+						"plannedDeparturePlatform": "2"
+					},
+					{
+						"stop": {
+							"type": "station",
+							"id": "8004128",
+							"name": "München Donnersbergerbrücke",
+							"location": {
+								"type": "location",
+								"id": "8004128",
+								"latitude": 48.142683,
+								"longitude": 11.537133
+							},
+							"products": {
+								"nationalExpress": false,
+								"national": false,
+								"regionalExpress": false,
+								"regional": true,
+								"suburban": true,
+								"bus": true,
+								"ferry": false,
+								"subway": false,
+								"tram": false,
+								"taxi": false
+							}
+						},
+						"arrival": "2024-06-07T00:43:00+02:00",
+						"plannedArrival": "2024-06-07T00:43:00+02:00",
+						"arrivalDelay": null,
+						"arrivalPlatform": "3",
+						"arrivalPrognosisType": null,
+						"plannedArrivalPlatform": "3",
+						"departure": "2024-06-07T00:44:00+02:00",
+						"plannedDeparture": "2024-06-07T00:44:00+02:00",
+						"departureDelay": null,
+						"departurePlatform": "3",
+						"departurePrognosisType": null,
+						"plannedDeparturePlatform": "3"
+					},
+					{
+						"stop": {
+							"type": "station",
+							"id": "8004129",
+							"name": "München Hackerbrücke",
+							"location": {
+								"type": "location",
+								"id": "8004129",
+								"latitude": 48.141946,
+								"longitude": 11.548765
+							},
+							"products": {
+								"nationalExpress": false,
+								"national": false,
+								"regionalExpress": false,
+								"regional": true,
+								"suburban": true,
+								"bus": true,
+								"ferry": false,
+								"subway": false,
+								"tram": true,
+								"taxi": false
+							}
+						},
+						"arrival": "2024-06-07T00:45:00+02:00",
+						"plannedArrival": "2024-06-07T00:45:00+02:00",
+						"arrivalDelay": null,
+						"arrivalPlatform": "1",
+						"arrivalPrognosisType": null,
+						"plannedArrivalPlatform": "1",
+						"departure": "2024-06-07T00:45:00+02:00",
+						"plannedDeparture": "2024-06-07T00:45:00+02:00",
+						"departureDelay": null,
+						"departurePlatform": "1",
+						"departurePrognosisType": null,
+						"plannedDeparturePlatform": "1"
+					},
+					{
+						"stop": {
+							"type": "stop",
+							"id": "8098263",
+							"name": "München Hbf (tief)",
+							"location": {
+								"type": "location",
+								"id": "8098263",
+								"latitude": 48.141496,
+								"longitude": 11.559166
+							},
+							"products": {
+								"nationalExpress": true,
+								"national": true,
+								"regionalExpress": true,
+								"regional": true,
+								"suburban": true,
+								"bus": true,
+								"ferry": false,
+								"subway": true,
+								"tram": true,
+								"taxi": false
+							},
+							"station": {
+								"type": "station",
+								"id": "8000261",
+								"name": "München Hbf",
+								"location": {
+									"type": "location",
+									"id": "8000261",
+									"latitude": 48.140364,
+									"longitude": 11.558744
+								},
+								"products": {
+									"nationalExpress": true,
+									"national": true,
+									"regionalExpress": true,
+									"regional": true,
+									"suburban": true,
+									"bus": true,
+									"ferry": false,
+									"subway": true,
+									"tram": true,
+									"taxi": false
+								}
+							}
+						},
+						"arrival": "2024-06-07T00:47:00+02:00",
+						"plannedArrival": "2024-06-07T00:47:00+02:00",
+						"arrivalDelay": null,
+						"arrivalPlatform": "1",
+						"arrivalPrognosisType": null,
+						"plannedArrivalPlatform": "1",
+						"departure": null,
+						"plannedDeparture": null,
+						"departureDelay": null,
+						"departurePlatform": null,
+						"departurePrognosisType": null,
+						"plannedDeparturePlatform": null
+					}
+				],
+				"remarks": [
+					{
+						"text": "Number of bicycles conveyed limited",
+						"type": "hint",
+						"code": "bicycle-conveyance",
+						"summary": "bicycles conveyed"
+					},
+					{
+						"type": "hint",
+						"code": "FS",
+						"text": "conveying bicycles: mind the excluded times"
+					},
+					{
+						"text": "2nd class only",
+						"type": "hint",
+						"code": "2nd-class-only",
+						"summary": "2. class only"
+					},
+					{
+						"type": "status",
+						"summary": "S 6: München-Pasing->München Hbf (tief): Information.",
+						"code": null,
+						"text": "Wegen der möglichen Entschärfung eines Blindgängers kann es am Samstag, 8. Juni, ab 10 Uhr zu starken Einschränkungen im Fern- und Regionalverkehr der DB in Bayern kommen. Die S-Bahn München fährt mit einem Sonderfahrplan. Bitte informieren Sie sich am Freitagabend, 7. Juni ab 20 Uhr, sowie kurz vor Beginn Ihrer Fahrt über die aktuelle Situation auf www.bahn.de und www.s-bahn-muenchen.de/aktuell."
+					}
+				],
+				"cycle": {
+					"min": 1200,
+					"max": 2820,
+					"nr": 5
+				},
+				"alternatives": [
+					{
+						"tripId": "1|380954|0|80|6062024",
+						"line": {
+							"type": "line",
+							"id": "4-800725-6",
+							"fahrtNr": "8673",
+							"name": "S 6",
+							"public": true,
+							"adminCode": "800725",
+							"productName": "S",
+							"mode": "train",
+							"product": "suburban",
+							"operator": {
+								"type": "operator",
+								"id": "db-regio-ag-s-bahn-munchen",
+								"name": "DB Regio AG S-Bahn München"
+							}
+						},
+						"direction": "München Ost",
+						"when": "2024-06-07T00:56:00+02:00",
+						"plannedWhen": "2024-06-07T00:56:00+02:00",
+						"delay": null
+					},
+					{
+						"tripId": "1|380896|0|80|6062024",
+						"line": {
+							"type": "line",
+							"id": "4-800725-6",
+							"fahrtNr": "8635",
+							"name": "S 6",
+							"public": true,
+							"adminCode": "800725",
+							"productName": "S",
+							"mode": "train",
+							"product": "suburban",
+							"operator": {
+								"type": "operator",
+								"id": "db-regio-ag-s-bahn-munchen",
+								"name": "DB Regio AG S-Bahn München"
+							}
+						},
+						"direction": "München Ost",
+						"when": "2024-06-07T01:16:00+02:00",
+						"plannedWhen": "2024-06-07T01:16:00+02:00",
+						"delay": null
+					},
+					{
+						"tripId": "1|380967|0|80|6062024",
+						"line": {
+							"type": "line",
+							"id": "4-800725-6",
+							"fahrtNr": "8695",
+							"name": "S 6",
+							"public": true,
+							"adminCode": "800725",
+							"productName": "S",
+							"mode": "train",
+							"product": "suburban",
+							"operator": {
+								"type": "operator",
+								"id": "db-regio-ag-s-bahn-munchen",
+								"name": "DB Regio AG S-Bahn München"
+							}
+						},
+						"direction": "München Ost",
+						"when": "2024-06-07T01:36:00+02:00",
+						"plannedWhen": "2024-06-07T01:36:00+02:00",
+						"delay": null
+					},
+					{
+						"tripId": "1|381308|0|80|6062024",
+						"line": {
+							"type": "line",
+							"id": "4-800725-8",
+							"fahrtNr": "8843",
+							"name": "S 8",
+							"public": true,
+							"adminCode": "800725",
+							"productName": "S",
+							"mode": "train",
+							"product": "suburban",
+							"operator": {
+								"type": "operator",
+								"id": "db-regio-ag-s-bahn-munchen",
+								"name": "DB Regio AG S-Bahn München"
+							}
+						},
+						"direction": "München Flughafen Terminal",
+						"when": "2024-06-07T02:23:00+02:00",
+						"plannedWhen": "2024-06-07T02:23:00+02:00",
+						"delay": null
+					},
+					{
+						"tripId": "1|381342|0|80|6062024",
+						"line": {
+							"type": "line",
+							"id": "4-800725-8",
+							"fahrtNr": "8893",
+							"name": "S 8",
+							"public": true,
+							"adminCode": "800725",
+							"productName": "S",
+							"mode": "train",
+							"product": "suburban",
+							"operator": {
+								"type": "operator",
+								"id": "db-regio-ag-s-bahn-munchen",
+								"name": "DB Regio AG S-Bahn München"
+							}
+						},
+						"direction": "München Flughafen Terminal",
+						"when": "2024-06-07T02:58:00+02:00",
+						"plannedWhen": "2024-06-07T02:58:00+02:00",
+						"delay": null
+					}
+				]
+			}
+		],
+		"refreshToken": "T$A=1@O=Neuss Hbf@L=8000274@a=128@$A=1@O=Koblenz Hbf@L=8000206@a=128@$202406061410$202406061542$RE 28519$$1$$$$$$§T$A=1@O=Koblenz Hbf@L=8000206@a=128@$A=1@O=Frankfurt(Main)Hbf@L=8000105@a=128@$202406061552$202406061804$VIA25025$$3$$$$$$§T$A=1@O=Frankfurt(Main)Hbf@L=8000105@a=128@$A=1@O=Würzburg Hbf@L=8000260@a=128@$202406061834$202406062021$RE  4627$$1$$$$$$§T$A=1@O=Würzburg Hbf@L=8000260@a=128@$A=1@O=Augsburg Hbf@L=8000013@a=128@$202406062041$202406062340$RE 57229$$1$$$$$$§T$A=1@O=Augsburg Hbf@L=8000013@a=128@$A=1@O=München-Pasing@L=8004158@a=128@$202406062349$202406070029$RE 57089$$1$$$$$$§T$A=1@O=München-Pasing@L=8004158@a=128@$A=1@O=München Hbf (tief)@L=8098263@a=128@$202406070036$202406070047$S      6$$1$$$$$$",
+		"cycle": {
+			"min": 1200
+		},
+		"remarks": [],
+		"price": null
+	},
+	"realtimeDataUpdatedAt": 1717690883
+}
