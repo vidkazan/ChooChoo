@@ -33,7 +33,7 @@ struct Coordinate: Hashable, Codable {
 	}
 }
 
-enum StopOverType : String,Hashable, CaseIterable, Codable{
+enum StopOverType : String,Hashable, CaseIterable, Codable {
 	case origin
 	case stopover
 	case destination
@@ -148,7 +148,7 @@ enum StopOverCancellationType : Equatable {
 	case fullyCancelled
 }
 
-struct StopWithTimeDTO : Codable,Hashable,Identifiable {
+struct StopWithTimeDTO : ChewDTO, Identifiable {
 	let id = UUID()
 	let stop				: StopDTO?
 	let departure,
@@ -184,7 +184,7 @@ struct StopWithTimeDTO : Codable,Hashable,Identifiable {
 	}
 }
 
-struct TripDTO : Codable,Equatable,Identifiable {
+struct TripDTO : Identifiable, ChewDTO {
 	let id = UUID()
 	let trip : LegDTO
 	private enum CodingKeys : String, CodingKey {
@@ -192,7 +192,7 @@ struct TripDTO : Codable,Equatable,Identifiable {
 	}
 }
 
-struct LegDTO : Codable,Identifiable, Hashable {
+struct LegDTO : Identifiable, ChewDTO {
 //	let id = UUID()
 	var id : Int { hashValue }
 	let origin : StopDTO?
@@ -277,12 +277,12 @@ struct LegDTO : Codable,Identifiable, Hashable {
 	}
 }
 
-struct StopTripsDTO : Codable,Equatable {
+struct StopTripsDTO : ChewDTO {
 	let departures : [StopTripDTO]?
 	let arrivals : [StopTripDTO]?
 }
 
-struct StopTripDTO : Codable,Equatable, Identifiable {
+struct StopTripDTO : ChewDTO, Identifiable {
 	let id = UUID()
 	let stop : StopDTO?
 	let origin : StopDTO?
@@ -317,17 +317,17 @@ struct StopTripDTO : Codable,Equatable, Identifiable {
 
 
 
-struct PriceDTO : Codable,Equatable {
+struct PriceDTO : ChewDTO {
 	let amount		: Double?
 	let currency	: String?
 	let hint		: String?
 }
 
-struct JourneyWrapper : Codable,Equatable {
+struct JourneyWrapper : ChewDTO {
 	let journey : JourneyDTO
 	let realtimeDataUpdatedAt: Int64?
 }
-struct JourneyDTO : Codable,Identifiable,Equatable {
+struct JourneyDTO : ChewDTO,Identifiable {
 	let id = UUID()
 	let type : String?
 	let legs : [LegDTO]
@@ -343,7 +343,7 @@ struct JourneyDTO : Codable,Identifiable,Equatable {
 	}
 }
 
-struct JourneyListDTO : Codable,Equatable {
+struct JourneyListDTO : ChewDTO {
 	let earlierRef: String?
 	let laterRef: String?
 	let journeys : [JourneyDTO]?
@@ -370,7 +370,7 @@ enum LocationType : Int16, Hashable, Codable {
 	}
 }
 
-struct StationDTO : Codable, Identifiable, Hashable {
+struct StationDTO : ChewDTO,Identifiable {
 	let type	: String?
 	let id		: String?
 	let name	: String?
@@ -390,7 +390,7 @@ struct StationDTO : Codable, Identifiable, Hashable {
 	}
 }
 
-struct StopDTO : Codable, Identifiable, Hashable {
+struct StopDTO : ChewDTO, Identifiable {
 	let type	: String?
 	let id		: String?
 	let name	: String?
