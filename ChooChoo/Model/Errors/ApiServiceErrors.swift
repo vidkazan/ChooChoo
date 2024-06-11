@@ -58,7 +58,7 @@ import Foundation
 			case .generic(let description):
 				return description
 			case .hafasError(let error):
-				return error.hafasDescription ?? error.hafasMessage ?? error.message ?? NSLocalizedString("Unknown hafas error", comment: "ApiError")
+				return error.hafasDescription ?? error.hafasMessage ?? error.message ?? NSLocalizedString("Unknown error", comment: "ApiError")
 			case .badUrl:
 				return NSLocalizedString(
 					"Bad url",
