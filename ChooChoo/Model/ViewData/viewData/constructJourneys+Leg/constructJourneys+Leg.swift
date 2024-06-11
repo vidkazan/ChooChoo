@@ -9,12 +9,18 @@ import Foundation
 import UIKit
 import SwiftUI
 import CoreLocation
+import OSLog
 
 extension StopTripDTO {
 	func legViewData(type : LocationDirectionType) -> LegViewData? {
 		do {
 			return try legViewDataThrows(type: type)
-		} catch  {
+		} catch let err{
+			if let err = err as? DataError {
+				Self.error(err.localizedDescription)
+			} else {
+				Self.error(err.localizedDescription)
+			}
 			return nil
 		}
 	}
@@ -39,6 +45,11 @@ extension StopTripDTO {
 				)
 			}
 		}()
+		
+		guard container.timestamp.departure.planned != container.timestamp.arrival.planned else {
+			throw DataError.nilValue(type: "\(origin?.name ?? "origin is empty") \(destination?.name  ?? "destination is empty"): leg duration is 0")
+		}
+
 		guard let tripId = tripId else  {
 			throw DataError.nilValue(type: "tripId")
 		}
@@ -149,7 +160,12 @@ extension LegDTO {
 	func legViewData(firstTS: Date?, lastTS: Date?, legs : [LegDTO]?) -> LegViewData? {
 		do {
 			return try legViewDataThrows(firstTS: firstTS, lastTS: lastTS, legs: legs)
-		} catch {
+		} catch let err {
+			if let err = err as? DataError {
+				Self.error(err.localizedDescription)
+			} else {
+				Self.error(err.localizedDescription)
+			}
 			return nil
 		}
 	}
@@ -164,7 +180,7 @@ extension LegDTO {
 		)
 		
 		guard container.timestamp.departure.planned != container.timestamp.arrival.planned else {
-			throw DataError.nilValue(type: "leg duration is 0")
+			throw DataError.nilValue(type: "\(origin?.name ?? "origin is empty") \(destination?.name  ?? "destination is empty"): leg duration is 0")
 		}
 		
 		guard
