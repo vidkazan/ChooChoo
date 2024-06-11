@@ -95,8 +95,8 @@ extension JourneySearchView {
 		Color.transport.shipCyan.opacity(0.05)
 	]
 	static private let debugColors = [
-		Color.transport.tramRed.opacity(0.4),
-		Color.transport.tramRed.opacity(0.2)
+		Color.transport.busMagenta.opacity(0.4),
+		Color.transport.busMagenta.opacity(0.2)
 	]
 	@ViewBuilder func gradient() -> some View {
 		ZStack {
