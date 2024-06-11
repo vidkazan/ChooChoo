@@ -19,6 +19,7 @@ enum LoggerCategories : String,Hashable,CaseIterable, Codable {
 	case gitbranch
 	case mockService
 	case viewModel
+	case viewData
 	case locationManager
 	case status
 	case event
@@ -49,6 +50,7 @@ extension Logger {
 	static let loadingsInitialData = Logger(category: .loadingsInitialData)
 	static let gitBranch = Logger(category: .gitbranch)
 	static let presentConfirmationDialog = Logger(category: .presentConfirmationDialog)
+	static let viewData = Logger(category: .viewData)
 	static let journeyDetailsViewModel = Logger(
 		category: .journeyDetailsViewModel
 	)
