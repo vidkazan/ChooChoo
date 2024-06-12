@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftUI
+import UniformTypeIdentifiers
 
 struct StopWithTimeDebugView : View {
 	let stopDTO : StopWithTimeDTO?
@@ -222,6 +223,18 @@ struct JourneyDebugView : View {
 					.badgeBackgroundStyle(.secondary)
 					.padding(.horizontal,10)
 				})
+				Button(action: {
+					if let data = try? JSONEncoder().encode(legsDTO),
+					   let string = String(data: data, encoding: String.Encoding.utf8) {
+						UIPasteboard.general.setValue(
+							string, forPasteboardType: UTType.plainText.identifier
+						)
+					}
+	}, label: {
+		Text(verbatim: "Copy DTO")
+	})
+	.buttonStyle(.borderedProminent)
+
 			}
 		}
 	}
