@@ -14,7 +14,16 @@ struct GitBranch {
 		static let plistFileName = "Branch"
 		static let pattern = "CHOO-\\d+"
 	}
-	static var current: (branchNumber : String,branchName : String)? {
+	
+	static let shared = GitBranch()
+	 
+	init() {
+		self.current = Self.getCurrent()
+	}
+	
+	let current: (branchNumber : String, branchName : String)?
+	
+	private static func getCurrent() -> (branchNumber : String, branchName : String)? {
 		guard let path: String = Bundle.main.path(forResource: Constants.plistFileName, ofType: "plist") else {
 			Logger.gitBranch.error("Branch.plist not found")
 			return nil
@@ -33,7 +42,7 @@ struct GitBranch {
 			return (String(result),string)
 		} else {
 			Logger.gitBranch.error("Branch.plist: branch number string  parse error:")
-			return nil
+			return ("","main")
 		}
 	}
 }
