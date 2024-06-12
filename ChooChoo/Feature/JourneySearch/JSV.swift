@@ -19,7 +19,7 @@ struct JourneySearchView : View {
 	var body: some View {
 			VStack(spacing: 5) {
 				#if DEBUG
-					Text(verbatim: GitBranch.current?.branchName ?? "main")
+				Text(verbatim: GitBranch.shared.current?.branchName ?? "main")
 						.foregroundStyle(.secondary)
 						.padding(4)
 						.chewTextSize(.medium)
