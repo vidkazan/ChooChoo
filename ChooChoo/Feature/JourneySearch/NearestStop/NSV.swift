@@ -175,10 +175,8 @@ struct NearestStopView : View {
 													event: .didRequestShow(.route(leg: trip))
 												)
 											}, label: {
-												HStack {
-													DeparturesListCellView(trip: trip,showDestinaitonHeading : true)
-														.frame(minHeight: 40)
-												}
+												DeparturesListCellView(trip: trip,showDestinaitonHeading : true)
+													.frame(minHeight: 40)
 											})
 										}
 									}

@@ -24,6 +24,10 @@ struct DeparturesListCellView : View {
 			)
 			.frame(width: 80,alignment: .leading)
 //			Spacer()
+			if showDestinaitonHeading == true,
+			   let coord = trip.legStopsViewData.last?.locationCoordinates.cllocation {
+				HeadingView(targetStopLocation: coord,arrowWIthCircle: false)
+			}
 			BadgeView(Badges.legDirection(
 				dir: trip.direction,
 				strikethrough: trip.time.departureStatus == .cancelled,
@@ -43,11 +47,7 @@ struct DeparturesListCellView : View {
 			HStack {
 				if let platform = platform  {
 					PlatformView(isShowingPlatormWord: false, platform: platform)
-				} else if
-					showDestinaitonHeading == true,
-				 let coord = trip.legStopsViewData.last?.locationCoordinates.cllocation {
-				 HeadingView(targetStopLocation: coord,arrowWIthCircle: false)
-			 }
+				}
 			}
 			.frame(minWidth: 45)
 		}

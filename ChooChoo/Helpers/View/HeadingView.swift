@@ -30,15 +30,21 @@ struct HeadingView : View {
 	var body: some View {
 		Group {
 			if let heading = heading {
-				Group {
-					arrowWIthCircle == true ? ChooSFSymbols.arrowUpCircle.view : ChooSFSymbols.arrowUp.view
+				if arrowWIthCircle == true {
+					ChooSFSymbols.arrowUpCircle.view
+						.animation(nil, value: heading)
+						.rotationEffect(Angle(radians: heading))
+						.animation(.easeInOut, value: heading)
+				} else {
+					ChooSFSymbols.arrowUp.view
+						.chewTextSize(.medium)
+						.animation(nil, value: heading)
+						.rotationEffect(Angle(radians: heading))
+						.animation(.easeInOut, value: heading)
 				}
-				.tint(.secondary)
-				.animation(nil, value: heading)
-				.rotationEffect(Angle(radians: heading))
-				.animation(.easeInOut, value: heading)
 			}
 		}
+		.tint(.secondary)
 		.onReceive(locationManager.$heading, perform: { head in
 			Task {
 				if let loc = locationManager.location,
