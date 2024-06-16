@@ -520,11 +520,19 @@ struct Departure : Codable,Equatable {
 
 
 // MARK: - Location
-struct LocationCoordinatesDTO : Codable,Hashable {
+struct LocationCoordinatesDTO : ChewDTO {
 	let type		: String?
 	let id			: String?
 	let latitude	: Double?
 	let longitude	: Double?
+	
+	func cllocation() -> CLLocation? {
+		if let latitude = latitude,
+		   let longitude = longitude {
+			return CLLocation(latitude: latitude, longitude: longitude)
+		}
+		return nil
+	}
 }
 
 // MARK: - Products
