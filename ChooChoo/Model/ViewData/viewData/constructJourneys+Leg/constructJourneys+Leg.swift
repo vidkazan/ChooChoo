@@ -60,14 +60,12 @@ extension StopTripDTO {
 				return [
 					StopViewData(
 						id: origin.id,
-						locationCoordinates: Coordinate(latitude: origin.latitude ?? 0, longitude: origin.longitude ?? 0),
+						locationCoordinates: Coordinate(latitude: origin.location?.latitude ?? 0, longitude: origin.location?.longitude ?? 0),
 						name: origin.name ?? "",
 						platforms: .init(
 							departure: .init(),
 							arrival: .init()
 						),
-//						departurePlatform: .init(),
-//						arrivalPlatform: .init(),
 						time: .init(),
 						stopOverType: .origin
 					),
@@ -79,8 +77,6 @@ extension StopTripDTO {
 							departure: .init(),
 							arrival: .init(actual: platform,planned: plannedPlatform)
 						),
-//						departurePlatform: .init(),
-//						arrivalPlatform: .init(actual: platform,planned: plannedPlatform),
 						time: container,
 						stopOverType: .destination
 					)
@@ -97,21 +93,17 @@ extension StopTripDTO {
 							departure: .init(actual: platform,planned: plannedPlatform),
 							arrival: .init()
 						),
-//						departurePlatform: .init(actual: platform,planned: plannedPlatform),
-//						arrivalPlatform: .init(),
 						time: container,
 						stopOverType: .origin
 					),
 					StopViewData(
 						id: destination.id,
-						locationCoordinates: Coordinate(latitude: destination.latitude ?? 0, longitude: destination.longitude ?? 0),
+						locationCoordinates: Coordinate(latitude: destination.location?.latitude ?? 0, longitude: destination.location?.longitude ?? 0),
 						name: destination.name ?? "",
 						platforms: .init(
 							departure: .init(),
 							arrival: .init()
 						),
-//						departurePlatform: .init(),
-//						arrivalPlatform: .init(),
 						time: .init(),
 						stopOverType: .destination
 					)
