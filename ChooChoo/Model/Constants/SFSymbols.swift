@@ -33,6 +33,7 @@ enum ChooSFSymbols : String {
 	case arrowTriangle2Circlepath = "arrow.triangle.2.circlepath"
 	case arrowLeft = "arrow.left"
 	case arrowUpCircle = "arrow.up.circle"
+	case arrowUp = "arrow.up"
 	case map = "map"
 	case mapCircle = "map.circle"
  
