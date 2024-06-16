@@ -10,6 +10,12 @@ import SwiftUI
 
 struct DeparturesListCellView : View {
 	let trip : LegViewData
+	let showDestinaitonHeading : Bool
+	
+	init(trip: LegViewData, showDestinaitonHeading: Bool = false) {
+		self.trip = trip
+		self.showDestinaitonHeading = showDestinaitonHeading
+	}
 	var body: some View {
 		HStack(spacing: 0) {
 			BadgeView(Badges.lineNumber(
@@ -37,7 +43,11 @@ struct DeparturesListCellView : View {
 			HStack {
 				if let platform = platform  {
 					PlatformView(isShowingPlatormWord: false, platform: platform)
-				}
+				} else if
+					showDestinaitonHeading == true,
+				 let coord = trip.legStopsViewData.last?.locationCoordinates.cllocation {
+				 HeadingView(targetStopLocation: coord,arrowWIthCircle: false)
+			 }
 			}
 			.frame(minWidth: 45)
 		}
