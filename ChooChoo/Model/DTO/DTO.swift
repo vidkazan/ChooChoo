@@ -8,6 +8,7 @@
 import Foundation
 import SwiftUI
 import CoreLocation
+import ChooViews
 
 struct Coordinate: Hashable, Codable {
 	let latitude, longitude: Double
@@ -365,7 +366,7 @@ enum LocationType : Int16, Hashable, Codable {
 		case .pointOfInterest:
 			return ChooSFSymbols.building2CropCircle.rawValue
 		case .location:
-			return ChooSFSymbols.building2CropCircle.fill.rawValue
+			return ChooSFSymbols.building2CropCircle.rawValue
 		}
 	}
 }

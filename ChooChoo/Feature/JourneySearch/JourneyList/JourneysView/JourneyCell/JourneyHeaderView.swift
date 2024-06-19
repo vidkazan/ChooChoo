@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-
+import ChooViews
 
 struct JourneyHeaderView: View {
 	let journey : JourneyViewData

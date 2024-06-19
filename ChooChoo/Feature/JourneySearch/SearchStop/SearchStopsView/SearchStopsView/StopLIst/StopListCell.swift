@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftUI
+import ChooViews
 
 struct StopListCell : View {
 	let stop : StopWithDistance

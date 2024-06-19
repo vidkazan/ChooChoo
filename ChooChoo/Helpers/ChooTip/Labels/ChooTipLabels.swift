@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftUI
+import ChooViews
 
 extension ChooTip {
 	struct Labels {}

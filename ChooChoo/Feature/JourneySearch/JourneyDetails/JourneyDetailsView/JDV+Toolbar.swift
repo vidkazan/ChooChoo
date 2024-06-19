@@ -7,6 +7,7 @@
 
 import SwiftUI
 import MapKit
+import ChooViews
 
 extension JourneyDetailsView {
 	@ViewBuilder func follow() -> some View {

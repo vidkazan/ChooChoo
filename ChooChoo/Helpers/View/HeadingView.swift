@@ -8,6 +8,7 @@
 import Foundation
 import SwiftUI
 import CoreLocation
+import ChooViews
 
 struct HeadingView : View {
 	@ObservedObject var locationManager = Model.shared.locationDataManager

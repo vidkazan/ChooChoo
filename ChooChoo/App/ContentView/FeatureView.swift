@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import ChooViews
 
 enum Tabs : Int,CaseIterable {
 	case search

@@ -9,6 +9,7 @@ import Foundation
 import SwiftUI
 import CoreLocation
 import MapKit
+import ChooViews
 
 struct LegDetailsView: View {
 	@EnvironmentObject var chewVM : ChewViewModel

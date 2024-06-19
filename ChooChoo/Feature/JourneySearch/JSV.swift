@@ -8,6 +8,7 @@
 import Foundation
 import SwiftUI
 import TipKit
+import ChooViews
 
 struct JourneySearchView : View {
 	@Namespace var journeySearchViewNamespace

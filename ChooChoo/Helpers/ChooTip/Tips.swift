@@ -7,6 +7,7 @@
 
 import Foundation
 import TipKit
+import ChooViews
 import SwiftUI
 
 @available(iOS 17, *)

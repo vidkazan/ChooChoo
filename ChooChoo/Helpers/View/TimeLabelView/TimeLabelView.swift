@@ -7,8 +7,8 @@
 
 import Foundation
 import SwiftUI
+import ChooViews
 
-// TODO: tests
 struct TimeLabelView: View {
 	enum Arragement {
 		case left

@@ -10,6 +10,7 @@ import SwiftUI
 import Combine
 import CoreLocation
 import OSLog
+import ChooViews
 
 struct NearestStopView : View {
 	static let enoughAccuracy : CLLocationAccuracy = 30

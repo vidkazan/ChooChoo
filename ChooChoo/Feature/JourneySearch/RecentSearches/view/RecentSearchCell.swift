@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftUI
+import ChooViews
 
 struct RecentSearchCell: View {
 	@EnvironmentObject var chewVM : ChewViewModel

@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftUI
+import ChooViews
 
 struct RemarkViewData : Hashable, Codable {
 	let type : RemarkType

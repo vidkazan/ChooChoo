@@ -8,6 +8,7 @@
 import Foundation
 import SwiftUI
 import CoreLocation
+import ChooViews
 
 struct LegViewData : Hashable,Identifiable {
 	let id = UUID()

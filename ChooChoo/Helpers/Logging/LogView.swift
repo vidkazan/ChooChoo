@@ -8,6 +8,7 @@
 import Foundation
 import SwiftUI
 import OSLog
+import ChooViews
 
 struct LogViewer: View {
 	@ObservedObject var viewModel = Model.shared.logVM

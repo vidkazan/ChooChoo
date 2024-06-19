@@ -8,6 +8,7 @@
 import Foundation
 import SwiftUI
 import TipKit
+import ChooViews
 
 struct JourneyFollowView : View {
 	@EnvironmentObject var chewVM : ChewViewModel

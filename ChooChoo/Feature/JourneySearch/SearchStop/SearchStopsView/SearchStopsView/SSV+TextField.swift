@@ -5,6 +5,7 @@
 //  Created by Dmitrii Grigorev on 06.09.23.
 //
 import SwiftUI
+import ChooViews
 
 extension SearchStopsView {
 	func textField(type : LocationDirectionType, text : Binding<String>) -> some View {

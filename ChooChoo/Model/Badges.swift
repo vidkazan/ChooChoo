@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftUI
+import ChooViews
 
 struct BadgeData : Equatable {
 	static func == (lhs: BadgeData, rhs: BadgeData) -> Bool {

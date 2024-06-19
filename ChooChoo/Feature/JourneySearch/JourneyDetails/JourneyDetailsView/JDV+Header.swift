@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import ChooViews
 
 extension JourneyDetailsView {
 	func header() -> some View {

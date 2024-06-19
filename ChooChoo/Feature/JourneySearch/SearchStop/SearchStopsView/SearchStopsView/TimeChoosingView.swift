@@ -6,6 +6,8 @@
 //
 
 import SwiftUI
+import ChooViews
+
 
 struct TimeChoosingView: View {
 	@EnvironmentObject var chewVM : ChewViewModel
