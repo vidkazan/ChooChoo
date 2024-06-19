@@ -11,7 +11,13 @@ import MapKit
 
 struct SheetView : View {
 	@EnvironmentObject var chewViewModel : ChewViewModel
-	@ObservedObject var sheetVM : SheetViewModel = Model.shared.sheetVM
+	@ObservedObject var sheetVM : SheetViewModel
+	
+	init(sheetVM: SheetViewModel = Model.shared.sheetVM, closeSheet: @escaping () -> Void) {
+		self.sheetVM = sheetVM
+		self.closeSheet = closeSheet
+	}
+	
 	let closeSheet : ()->Void
 	var body: some View {
 		switch sheetVM.state.status {
