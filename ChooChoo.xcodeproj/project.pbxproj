@@ -595,7 +595,6 @@
 		7DC0D2A12B2221D200B1FB5A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D46ABE72B220B1600A4145E /* Assets.xcassets */; };
 		7DC0D2A32B2221E900B1FB5A /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7DC0D2A22B2221D800B1FB5A /* Colors.xcassets */; };
 		7DCA4AD32BD807D8005BA68E /* FloatingPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCA4AD22BD807D8005BA68E /* FloatingPoint.swift */; };
-		7DCA4AD52BD83C03005BA68E /* ExpandingBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCA4AD42BD83C03005BA68E /* ExpandingBadge.swift */; };
 		7DCA4AD72BD83C33005BA68E /* HeadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCA4AD62BD83C33005BA68E /* HeadingView.swift */; };
 		7DCA4AD92BD83CAA005BA68E /* NSV+subviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCA4AD82BD83CAA005BA68E /* NSV+subviews.swift */; };
 		7DCA4ADB2BD83D35005BA68E /* NSV+header.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCA4ADA2BD83D35005BA68E /* NSV+header.swift */; };
@@ -852,7 +851,6 @@
 		7DBFE7992BA23B4C008E1221 /* StopListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopListCell.swift; sourceTree = "<group>"; };
 		7DC0D2A22B2221D800B1FB5A /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		7DCA4AD22BD807D8005BA68E /* FloatingPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingPoint.swift; sourceTree = "<group>"; };
-		7DCA4AD42BD83C03005BA68E /* ExpandingBadge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandingBadge.swift; sourceTree = "<group>"; };
 		7DCA4AD62BD83C33005BA68E /* HeadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadingView.swift; sourceTree = "<group>"; };
 		7DCA4AD82BD83CAA005BA68E /* NSV+subviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSV+subviews.swift"; sourceTree = "<group>"; };
 		7DCA4ADA2BD83D35005BA68E /* NSV+header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSV+header.swift"; sourceTree = "<group>"; };
@@ -1158,7 +1156,6 @@
 		7D33A9A22B54335E0005D723 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				7DCA4AD42BD83C03005BA68E /* ExpandingBadge.swift */,
 				7DCA4AD62BD83C33005BA68E /* HeadingView.swift */,
 				7D2BF7A72B67D30800E1CED7 /* Color+random.swift */,
 				7D704F432B8558C200F8334F /* UIView+Constraints.swift */,
@@ -2230,7 +2227,6 @@
 				7DE3599F2AB9E9430028CA59 /* chewVM+reduce+LoadingLocaiton.swift in Sources */,
 				7DEE69D12B9BCE8B00A063B4 /* PresentationDetent.swift in Sources */,
 				7D181D642AD6D595003AB021 /* RecentSearchView.swift in Sources */,
-				7DCA4AD52BD83C03005BA68E /* ExpandingBadge.swift in Sources */,
 				7DD5BAE52B72AE9500CFE768 /* JDVM+sideEffects+fetch.swift in Sources */,
 				7DE8A35D2B6AF4FC00C3A378 /* ChewDate.swift in Sources */,
 				7D4034B42BD1684000EB5F17 /* Protocols.swift in Sources */,
