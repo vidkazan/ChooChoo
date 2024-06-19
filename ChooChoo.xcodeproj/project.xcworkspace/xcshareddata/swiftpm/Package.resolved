@@ -1,6 +1,15 @@
 {
   "pins" : [
     {
+      "identity" : "chooviews",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/vidkazan/ChooViews",
+      "state" : {
+        "branch" : "main",
+        "revision" : "7b51cdfbc80430582e36f566cbd58596da9c7522"
+      }
+    },
+    {
       "identity" : "swift-collections",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/apple/swift-collections.git",

@@ -141,13 +141,11 @@
 		7D3B97DD2C08D6A900A3AAEB /* Publisher+AsyncMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D69BE7E2AD7ECF1007855B3 /* Publisher+AsyncMap.swift */; };
 		7D3B97E12C08D6D900A3AAEB /* FlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF0D98E2B6956DD00861C4F /* FlowLayout.swift */; };
 		7D3B97E22C08D6D900A3AAEB /* Color+random.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2BF7A72B67D30800E1CED7 /* Color+random.swift */; };
-		7D3B97E32C08D6D900A3AAEB /* ExpandingBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCA4AD42BD83C03005BA68E /* ExpandingBadge.swift */; };
 		7D3B97E42C08D6D900A3AAEB /* NavigationLazyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D000CFA2AB87ACD00566120 /* NavigationLazyView.swift */; };
 		7D3B97E52C08D6D900A3AAEB /* UIView+Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D704F432B8558C200F8334F /* UIView+Constraints.swift */; };
 		7D3B97E62C08D6D900A3AAEB /* HeadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCA4AD62BD83C33005BA68E /* HeadingView.swift */; };
 		7D3B97E72C08D6DA00A3AAEB /* FlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF0D98E2B6956DD00861C4F /* FlowLayout.swift */; };
 		7D3B97E82C08D6DA00A3AAEB /* Color+random.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2BF7A72B67D30800E1CED7 /* Color+random.swift */; };
-		7D3B97E92C08D6DA00A3AAEB /* ExpandingBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCA4AD42BD83C03005BA68E /* ExpandingBadge.swift */; };
 		7D3B97EA2C08D6DA00A3AAEB /* NavigationLazyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D000CFA2AB87ACD00566120 /* NavigationLazyView.swift */; };
 		7D3B97EB2C08D6DA00A3AAEB /* UIView+Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D704F432B8558C200F8334F /* UIView+Constraints.swift */; };
 		7D3B97EC2C08D6DA00A3AAEB /* HeadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCA4AD62BD83C33005BA68E /* HeadingView.swift */; };
@@ -624,6 +622,7 @@
 		7DD5BAFD2B72BBDB00CFE768 /* PlatformView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD5BAFC2B72BBDB00CFE768 /* PlatformView.swift */; };
 		7DDA96352B82AB3900E831B3 /* Symbols.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7DDA96342B82AB3900E831B3 /* Symbols.xcassets */; };
 		7DDAA85D2B98D71A00109F7D /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DDAA85C2B98D71A00109F7D /* Launch Screen.storyboard */; };
+		7DDD6BF32C231257004B3A38 /* ChooViews in Frameworks */ = {isa = PBXBuildFile; productRef = 7DDD6BF22C231257004B3A38 /* ChooViews */; };
 		7DE3599F2AB9E9430028CA59 /* chewVM+reduce+LoadingLocaiton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE3599E2AB9E9430028CA59 /* chewVM+reduce+LoadingLocaiton.swift */; };
 		7DE640F02AB079710087FC64 /* JLVM+reduce+LoadingUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE640EF2AB079710087FC64 /* JLVM+reduce+LoadingUpdate.swift */; };
 		7DE640FB2AB08EF80087FC64 /* CLLOcationCoordinate2D+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE640FA2AB08EF80087FC64 /* CLLOcationCoordinate2D+.swift */; };
@@ -913,6 +912,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7DDD6BF32C231257004B3A38 /* ChooViews in Frameworks */,
 				7D02CE2A2A97E80D0048ADE6 /* Collections in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1337,6 +1337,7 @@
 			children = (
 				7D6734B12A96334B00CBE9C1 /* ChooChoo */,
 				7D6734B02A96334B00CBE9C1 /* Products */,
+				7DDD6BE92C230DA2004B3A38 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1782,6 +1783,13 @@
 			path = JourneyListVIew;
 			sourceTree = "<group>";
 		};
+		7DDD6BE92C230DA2004B3A38 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		7DE6FD9F2B5AD02500AC8DE3 /* CDRecentSearch */ = {
 			isa = PBXGroup;
 			children = (
@@ -1938,6 +1946,7 @@
 			name = ChooChoo;
 			packageProductDependencies = (
 				7D02CE292A97E80D0048ADE6 /* Collections */,
+				7DDD6BF22C231257004B3A38 /* ChooViews */,
 			);
 			productName = "Chew-chew-SwiftUI";
 			productReference = 7D6734AF2A96334B00CBE9C1 /* ChooChoo.app */;
@@ -2014,6 +2023,7 @@
 			mainGroup = 7D6734A62A96334B00CBE9C1;
 			packageReferences = (
 				7D02CE282A97E80D0048ADE6 /* XCRemoteSwiftPackageReference "swift-collections" */,
+				7DDD6BF12C231257004B3A38 /* XCRemoteSwiftPackageReference "ChooViews" */,
 			);
 			productRefGroup = 7D6734B02A96334B00CBE9C1 /* Products */;
 			projectDirPath = "";
@@ -2419,7 +2429,6 @@
 				7D3B987A2C08D76600A3AAEB /* Query.swift in Sources */,
 				7D33A9892B5343320005D723 /* Mock.swift in Sources */,
 				7D3B98262C08D70B00A3AAEB /* ContentView.swift in Sources */,
-				7D3B97E32C08D6D900A3AAEB /* ExpandingBadge.swift in Sources */,
 				7D183A082C08E7410009FDAA /* CLLocation.swift in Sources */,
 				7D3B98802C08D77600A3AAEB /* constructJourneyList.swift in Sources */,
 				7D3B98EF2C08D80700A3AAEB /* SSV+RightButton.swift in Sources */,
@@ -2631,7 +2640,6 @@
 				7D3B97DA2C08D6A900A3AAEB /* CombineWeakAssign.swift in Sources */,
 				7D3B98772C08D76600A3AAEB /* Query.swift in Sources */,
 				7D33A98A2B5343320005D723 /* Mock.swift in Sources */,
-				7D3B97E92C08D6DA00A3AAEB /* ExpandingBadge.swift in Sources */,
 				7D3B987F2C08D77500A3AAEB /* constructJourneyList.swift in Sources */,
 				7D3B98412C08D72F00A3AAEB /* Iphones.swift in Sources */,
 				7D3B98162C08D6F800A3AAEB /* PresentationDetent.swift in Sources */,
@@ -3088,6 +3096,14 @@
 				minimumVersion = 1.0.0;
 			};
 		};
+		7DDD6BF12C231257004B3A38 /* XCRemoteSwiftPackageReference "ChooViews" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/vidkazan/ChooViews";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -3095,6 +3111,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 7D02CE282A97E80D0048ADE6 /* XCRemoteSwiftPackageReference "swift-collections" */;
 			productName = Collections;
+		};
+		7DDD6BF22C231257004B3A38 /* ChooViews */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7DDD6BF12C231257004B3A38 /* XCRemoteSwiftPackageReference "ChooViews" */;
+			productName = ChooViews;
 		};
 /* End XCSwiftPackageProductDependency section */
 
