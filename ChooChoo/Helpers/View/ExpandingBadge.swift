@@ -19,28 +19,3 @@ extension BadgeView {
 		)
 	}
 }
-//
-//struct ExpandingBadge<Content: View,T : View>: View {
-//	@Namespace var ExpandingBadge
-//	@State var isExpanded = false
-//	let baseBadge : T
-//	let expandedView : () -> Content
-//	var body: some View {
-//		Button(action: {
-//			withAnimation {
-//				isExpanded.toggle()
-//			}
-//		}, label: {
-//			HStack {
-//				baseBadge
-//				if isExpanded {
-//					expandedView()
-//						.transition(
-//							.opacity.combined(with: .move(edge: .leading))
-//						)
-//				}
-//			}
-//			.padding(5)
-//		})
-//	}
-//}
