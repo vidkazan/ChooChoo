@@ -736,9 +736,6 @@
         }
       }
     },
-    "popopopo" : {
-
-    },
     "Precise location accuracy is needed to find nearby stops" : {
       "comment" : "NSV: location precise accuracy not allowed",
       "localizations" : {
@@ -850,7 +847,7 @@
       }
     },
     "Search" : {
-      "comment" : "search tip title\nTabItem",
+      "comment" : "TabItem\nsearch tip title",
       "localizations" : {
         "de" : {
           "stringUnit" : {

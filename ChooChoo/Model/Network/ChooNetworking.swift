@@ -10,58 +10,11 @@ import Combine
 import CoreLocation
 import OSLog
 
-protocol ChooClient {
-	func execute<T:Decodable>(_ t : T.Type,request: URLRequest, type : ChooNetworking.Requests) -> AnyPublisher<T,ChooNetworking.ApiError>
-}
-
 class ChooNetworking  {
 	let client : ChooClient
 	
 	init(client : ChooClient = ApiClient()) {
 		self.client = client
-	}
-}
-
-extension ChooNetworking {
-	class ApiClient : ChooClient {
-		 func execute<T: Decodable>(
-			_ t : T.Type,
-			request : URLRequest,
-			type : ChooNetworking.Requests
-		) -> AnyPublisher<T, ApiError> {
-			return URLSession.shared
-				.dataTaskPublisher(for: request)
-				.tryMap { data, response -> T in
-					guard let response = response as? HTTPURLResponse else {
-						throw ApiError.cannotDecodeRawData
-					}
-					switch response.statusCode {
-					case 400...599:
-						if let data = try? JSONDecoder().decode(HafasErrorDTO.self, from: data) {
-							throw ApiError.hafasError(data)
-						}
-						throw ApiError.badServerResponse(code: response.statusCode)
-					default:
-						break
-					}
-					let value = try JSONDecoder().decode(T.self, from: data)
-					let url = request.url?.path ?? ""
-					Logger.networking.trace("done: \(type.description)  \(url)")
-					return value
-				}
-				.receive(on: DispatchQueue.main)
-				.mapError{ error -> ApiError in
-					let url = request.url?.path ?? ""
-					Logger.networking.error("\(type.description) \(url) \(error)")
-					switch error {
-					case let error as ApiError:
-						return error
-					default:
-						return .generic(description: error.localizedDescription)
-					}
-				}
-				.eraseToAnyPublisher()
-		}
 	}
 }
 
@@ -89,27 +42,6 @@ extension ChooNetworking {
 		)
 	}
 }
-
-extension ChooNetworking {
-	class MockClient : ChooClient {
-		var inputRequest: URLRequest?
-		var executeCalled = false
-		var requestType : ChooNetworking.Requests?
-		
-		func execute<T: Decodable>(
-			_ t : T.Type,
-			request : URLRequest,
-			type : ChooNetworking.Requests
-		) -> AnyPublisher<T, ApiError> {
-			executeCalled = true
-			inputRequest = request
-			requestType = type
-			return Empty().eraseToAnyPublisher()
-		}
-	}
-}
-
-
 
 extension ChooNetworking {
 	enum Requests : Equatable {
