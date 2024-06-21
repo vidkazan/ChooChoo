@@ -145,7 +145,7 @@ extension ArrivingTrainTimeViewModel {
 				return Just(Event.didFail(DataError.validationError(msg: "request validation filed"))).eraseToAnyPublisher()
 			}
 			
-			return ApiService().fetch(
+			return ChooNetworking().fetch(
 				JourneyListDTO.self,
 				query: Query.queryItems(methods: [
 					.departureStopId(departureStopId: searchDepStop.id),
@@ -163,7 +163,7 @@ extension ArrivingTrainTimeViewModel {
 					.ferry(ferry: false),
 					.arrivalTime(arrivalTime: searchArrivalTime),
 				]),
-				type: ApiService.Requests.journeys
+				type: ChooNetworking.Requests.journeys
 			)
 			.mapError { $0 }
 			.asyncFlatMap { journeyListDTO in

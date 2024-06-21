@@ -10,14 +10,14 @@ import Combine
 import OSLog
 
 protocol ChewClient {
-	func execute<T:Decodable>(_ t : T.Type,request: URLRequest, type : ApiService.Requests) -> AnyPublisher<T,ApiError>
+	func execute<T:Decodable>(_ t : T.Type,request: URLRequest, type : ChooNetworking.Requests) -> AnyPublisher<T,ApiError>
 }
 
 class ApiClient : ChewClient {
 	func execute<T: Decodable>(
 		_ t : T.Type,
 		request : URLRequest,
-		type : ApiService.Requests
+		type : ChooNetworking.Requests
 	) -> AnyPublisher<T, ApiError> {
 		return URLSession.shared
 			.dataTaskPublisher(for: request)
@@ -54,15 +54,16 @@ class ApiClient : ChewClient {
 	}
 }
 
-extension ApiService {
+extension ChooNetworking {
 	func fetch<T: Decodable>(
 		_ t : T.Type,
 		query : [URLQueryItem],
 		type : Requests
 	) -> AnyPublisher<T, ApiError> {
-		guard let url = ApiService.generateUrl(
+		guard let url = ChooNetworking.generateUrl(
 			query: query,
-			type: type
+			type: type,
+			host: Constants.apiData.urlBase
 		) else {
 			return Future<T,ApiError> {
 				return $0(.failure(.badUrl))
@@ -82,12 +83,12 @@ class MockClient : ChewClient {
 	
 	var inputRequest: URLRequest?
 	var executeCalled = false
-	var requestType : ApiService.Requests?
+	var requestType : ChooNetworking.Requests?
 	
 	func execute<T: Decodable>(
 		_ t : T.Type,
 		request : URLRequest,
-		type : ApiService.Requests
+		type : ChooNetworking.Requests
 	) -> AnyPublisher<T, ApiError> {
 		executeCalled = true
 		inputRequest = request

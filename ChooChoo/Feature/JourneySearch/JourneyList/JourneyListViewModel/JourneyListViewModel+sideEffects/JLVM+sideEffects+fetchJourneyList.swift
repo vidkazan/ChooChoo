@@ -29,7 +29,7 @@ extension JourneyListViewModel {
 				Query.stopovers(isShowing: true)
 			]
 		)
-		return ApiService().fetch(JourneyListDTO.self,query: query, type: ApiService.Requests.journeys)
+		return ChooNetworking().fetch(JourneyListDTO.self,query: query, type: ChooNetworking.Requests.journeys)
 	}
 	
 	static func addJourneyListStopsQuery(dep : Stop,arr : Stop) -> [URLQueryItem] {

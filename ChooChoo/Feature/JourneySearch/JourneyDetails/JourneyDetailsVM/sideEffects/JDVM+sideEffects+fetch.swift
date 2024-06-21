@@ -30,21 +30,21 @@ extension JourneyDetailsViewModel {
 				]
 			}
 		}()
-		return ApiService().fetch(
+		return ChooNetworking().fetch(
 			JourneyWrapper.self,
 			query: Query.queryItems(
 				methods: queryMethods
 			),
-			type: ApiService.Requests.journeyByRefreshToken(ref: ref)
+			type: ChooNetworking.Requests.journeyByRefreshToken(ref: ref)
 		)
 		.eraseToAnyPublisher()
 	}
 	
 	static func fetchTrip(tripId : String) -> AnyPublisher<LegDTO,ApiError> {
-		return ApiService().fetch(
+		return ChooNetworking().fetch(
 			TripDTO.self,
 			query: [],
-			type: ApiService.Requests.trips(tripId: tripId)
+			type: ChooNetworking.Requests.trips(tripId: tripId)
 		)
 		.map { $0.trip }
 		.eraseToAnyPublisher()

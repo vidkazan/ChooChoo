@@ -366,25 +366,25 @@ extension MapPickerViewModel {
 	}
 	
 	static func fetchLocatonsNearby(coords : CLLocationCoordinate2D) -> AnyPublisher<[StopDTO],ApiError> {
-		return ApiService().fetch(
+		return ChooNetworking().fetch(
 			[StopDTO].self,
 			query: [
 				Query.longitude(longitude: String(coords.longitude)).queryItem(),
 				Query.latitude(latitude: String(coords.latitude)).queryItem()
 			],
-			type: ApiService.Requests.locationsNearby(coords: coords)
+			type: ChooNetworking.Requests.locationsNearby(coords: coords)
 		)
 		.eraseToAnyPublisher()
 	}
 	
 	static func fetchStopDepartures(stop : Stop) -> AnyPublisher<StopTripsDTO,ApiError> {
-		return ApiService().fetch(
+		return ChooNetworking().fetch(
 			StopTripsDTO.self,
 			query: [
 				Query.duration(minutes: 60).queryItem(),
 				Query.results(max: 40).queryItem()
 			],
-			type: ApiService.Requests.stopDepartures(stopId: stop.id)
+			type: ChooNetworking.Requests.stopDepartures(stopId: stop.id)
 		)
 		.eraseToAnyPublisher()
 	}

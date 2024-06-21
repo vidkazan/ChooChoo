@@ -346,25 +346,25 @@ extension NearestStopViewModel {
 	
 	static func fetchLocatonsNearby(coords : CLLocation) -> AnyPublisher<[StopDTO],ApiError> {
 		let predictedCoords = Self.calculateNextCoordinates(loc: coords, time: 7.5)
-		return ApiService().fetch(
+		return ChooNetworking().fetch(
 			[StopDTO].self,
 			query: [
 				Query.longitude(longitude: String(predictedCoords.longitude)).queryItem(),
 				Query.latitude(latitude: String(predictedCoords.latitude)).queryItem()
 			],
-			type: ApiService.Requests.locationsNearby(coords: coords.coordinate)
+			type: ChooNetworking.Requests.locationsNearby(coords: coords.coordinate)
 		)
 		.eraseToAnyPublisher()
 	}
 	
 	static func fetchStopDepartures(stop : Stop) -> AnyPublisher<StopTripsDTO,ApiError> {
-		return ApiService().fetch(
+		return ChooNetworking().fetch(
 			StopTripsDTO.self,
 			query: [
 				Query.duration(minutes: 60).queryItem(),
 				Query.results(max: 20).queryItem()
 			],
-			type: ApiService.Requests.stopDepartures(stopId: stop.id)
+			type: ChooNetworking.Requests.stopDepartures(stopId: stop.id)
 		)
 		.eraseToAnyPublisher()
 	}

@@ -18,7 +18,7 @@
 		7D02CE152A97E4940048ADE6 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D02CE142A97E4940048ADE6 /* Endpoint.swift */; };
 		7D02CE232A97E64E0048ADE6 /* Query.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D02CE222A97E64E0048ADE6 /* Query.swift */; };
 		7D02CE252A97E6620048ADE6 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D02CE242A97E6620048ADE6 /* Errors.swift */; };
-		7D02CE272A97E6790048ADE6 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D02CE262A97E6790048ADE6 /* ApiService.swift */; };
+		7D02CE272A97E6790048ADE6 /* ChooNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D02CE262A97E6790048ADE6 /* ChooNetworking.swift */; };
 		7D02CE2A2A97E80D0048ADE6 /* Collections in Frameworks */ = {isa = PBXBuildFile; productRef = 7D02CE292A97E80D0048ADE6 /* Collections */; };
 		7D02CE302A97E96E0048ADE6 /* BadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D02CE2F2A97E96E0048ADE6 /* BadgeView.swift */; };
 		7D02CE342A98E8130048ADE6 /* JLV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D02CE332A98E8130048ADE6 /* JLV.swift */; };
@@ -249,10 +249,10 @@
 		7D3B98732C08D76000A3AAEB /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2CAF652B0BEAC000577FD4 /* Persistence.swift */; };
 		7D3B98742C08D76000A3AAEB /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2CAF652B0BEAC000577FD4 /* Persistence.swift */; };
 		7D3B98752C08D76600A3AAEB /* ApiServiceCombine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE727C82AD93955002FF033 /* ApiServiceCombine.swift */; };
-		7D3B98762C08D76600A3AAEB /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D02CE262A97E6790048ADE6 /* ApiService.swift */; };
+		7D3B98762C08D76600A3AAEB /* ChooNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D02CE262A97E6790048ADE6 /* ChooNetworking.swift */; };
 		7D3B98772C08D76600A3AAEB /* Query.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D02CE222A97E64E0048ADE6 /* Query.swift */; };
 		7D3B98782C08D76600A3AAEB /* ApiServiceCombine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE727C82AD93955002FF033 /* ApiServiceCombine.swift */; };
-		7D3B98792C08D76600A3AAEB /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D02CE262A97E6790048ADE6 /* ApiService.swift */; };
+		7D3B98792C08D76600A3AAEB /* ChooNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D02CE262A97E6790048ADE6 /* ChooNetworking.swift */; };
 		7D3B987A2C08D76600A3AAEB /* Query.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D02CE222A97E64E0048ADE6 /* Query.swift */; };
 		7D3B987B2C08D76D00A3AAEB /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2BF7A52B67CA7F00E1CED7 /* Model.swift */; };
 		7D3B987C2C08D76D00A3AAEB /* Badges.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DBF1E582ABC522E009B85EF /* Badges.swift */; };
@@ -648,7 +648,7 @@
 		7D02CE142A97E4940048ADE6 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		7D02CE222A97E64E0048ADE6 /* Query.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Query.swift; sourceTree = "<group>"; };
 		7D02CE242A97E6620048ADE6 /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
-		7D02CE262A97E6790048ADE6 /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
+		7D02CE262A97E6790048ADE6 /* ChooNetworking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooNetworking.swift; sourceTree = "<group>"; };
 		7D02CE2F2A97E96E0048ADE6 /* BadgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeView.swift; sourceTree = "<group>"; };
 		7D02CE332A98E8130048ADE6 /* JLV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JLV.swift; sourceTree = "<group>"; };
 		7D0685EC2B50304500CCBE6B /* CoreDataStore+fetch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreDataStore+fetch.swift"; sourceTree = "<group>"; };
@@ -1483,7 +1483,7 @@
 			children = (
 				7D02CE222A97E64E0048ADE6 /* Query.swift */,
 				7DE727C82AD93955002FF033 /* ApiServiceCombine.swift */,
-				7D02CE262A97E6790048ADE6 /* ApiService.swift */,
+				7D02CE262A97E6790048ADE6 /* ChooNetworking.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -2147,7 +2147,7 @@
 				7D9BB10E2B0CBF54008A3616 /* CDJourney+CoreDataClass.swift in Sources */,
 				7D02CE342A98E8130048ADE6 /* JLV.swift in Sources */,
 				7D63DB0F2B739048008297DD /* SheetViewModel.swift in Sources */,
-				7D02CE272A97E6790048ADE6 /* ApiService.swift in Sources */,
+				7D02CE272A97E6790048ADE6 /* ChooNetworking.swift in Sources */,
 				7D68D9F82ABDB3A800579711 /* constructJourneys+Journey+TransferCount.swift in Sources */,
 				7DE6FD9E2B5AD00F00AC8DE3 /* CDRecentSearch+CoreDataProperties.swift in Sources */,
 				7DEE69CD2B9BCDF200A063B4 /* Tips.swift in Sources */,
@@ -2241,7 +2241,7 @@
 				7D3B98BC2C08D7DB00A3AAEB /* ArrivingTrainTimeVM.swift in Sources */,
 				7D3B99372C08D85400A3AAEB /* RecentSearchCell.swift in Sources */,
 				7D3B97F92C08D6E000A3AAEB /* ChewDatePicker.swift in Sources */,
-				7D3B98792C08D76600A3AAEB /* ApiService.swift in Sources */,
+				7D3B98792C08D76600A3AAEB /* ChooNetworking.swift in Sources */,
 				7D3B987D2C08D76E00A3AAEB /* Model.swift in Sources */,
 				7D3B98302C08D71700A3AAEB /* chewVM+loadingInitialData.swift in Sources */,
 				7D3B99082C08D83300A3AAEB /* JLVM+sideEffects+fetchJourneyList.swift in Sources */,
@@ -2456,7 +2456,7 @@
 				7D3B98BA2C08D7DA00A3AAEB /* ArrivingTrainTimeVM.swift in Sources */,
 				7D3B99352C08D85300A3AAEB /* RecentSearchCell.swift in Sources */,
 				7D3B97F42C08D6E000A3AAEB /* ChewDatePicker.swift in Sources */,
-				7D3B98762C08D76600A3AAEB /* ApiService.swift in Sources */,
+				7D3B98762C08D76600A3AAEB /* ChooNetworking.swift in Sources */,
 				7D3B987B2C08D76D00A3AAEB /* Model.swift in Sources */,
 				7D3B982D2C08D71700A3AAEB /* chewVM+loadingInitialData.swift in Sources */,
 				7D3B99042C08D83300A3AAEB /* JLVM+sideEffects+fetchJourneyList.swift in Sources */,

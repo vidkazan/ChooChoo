@@ -9,13 +9,15 @@ import Foundation
 import Combine
 import CoreLocation
 
-class ApiService  {
+class ChooNetworking  {
 	let client : ChewClient
 	
 	init(client : ChewClient = ApiClient()) {
 		self.client = client
 	}
-	
+}
+
+extension ChooNetworking {
 	enum Requests : Equatable {
 		case journeys
 		case journeyByRefreshToken(ref : String)
@@ -95,7 +97,7 @@ class ApiService  {
 		}
 	}
 
-	static func generateUrl(query : [URLQueryItem], type : Requests) -> URL? {
+	static func generateUrl(query : [URLQueryItem], type : Requests, host : String) -> URL? {
 		let url : URL? = {
 			switch type {
 			case .generic(let path):
@@ -103,7 +105,7 @@ class ApiService  {
 			default:
 				var components = URLComponents()
 				components.path = type.urlString
-				components.host = Constants.apiData.urlBase
+				components.host = host
 				components.scheme = "https"
 				components.queryItems = query
 				return components.url
