@@ -281,7 +281,7 @@ extension SheetViewModel {
 			.eraseToAnyPublisher()
 	}
 
-	static func fetchTrip(tripId : String) -> AnyPublisher<LegDTO,ApiError> {
+	static func fetchTrip(tripId : String) -> AnyPublisher<LegDTO,ChooNetworking.ApiError> {
 		return ChooNetworking().fetch(
 			TripDTO.self,
 			query: [],
@@ -315,7 +315,7 @@ extension SheetViewModel {
 	
 	
 	static func makeDirectionsRequest(from: Coordinate, to: Coordinate
-	) -> AnyPublisher<MKDirections.Response, ApiError> {
+	) -> AnyPublisher<MKDirections.Response, ChooNetworking.ApiError> {
 		let request = MKDirections.Request()
 		request.source = MKMapItem(
 			placemark: MKPlacemark(
@@ -334,13 +334,13 @@ extension SheetViewModel {
 		let directions = MKDirections(request: request)
 		
 		
-		let subject = Future<MKDirections.Response,ApiError> { promise in
+		let subject = Future<MKDirections.Response,ChooNetworking.ApiError> { promise in
 			directions.calculate { resp, error in
 				if let error = error {
 					return promise(.failure(.cannotConnectToHost(error.localizedDescription)))
 				}
 				guard let resp = resp else {
-					return promise(.failure(ApiError.cannotDecodeRawData))
+					return promise(.failure(ChooNetworking.ApiError.cannotDecodeRawData))
 				}
 				return promise(.success(resp))
 			}

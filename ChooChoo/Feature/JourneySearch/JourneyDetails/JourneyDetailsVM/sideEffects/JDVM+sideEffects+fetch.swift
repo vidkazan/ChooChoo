@@ -16,7 +16,7 @@ extension JourneyDetailsViewModel {
 		case withoutPolylines
 	}
 	
-	static func fetchJourneyByRefreshToken(ref : String, mode : FetchJourneyByRefreshTokenMode = .full) -> (AnyPublisher<JourneyWrapper,ApiError>) {
+	static func fetchJourneyByRefreshToken(ref : String, mode : FetchJourneyByRefreshTokenMode = .full) -> (AnyPublisher<JourneyWrapper,ChooNetworking.ApiError>) {
 		let queryMethods = {
 			switch mode {
 			case .full:
@@ -40,7 +40,7 @@ extension JourneyDetailsViewModel {
 		.eraseToAnyPublisher()
 	}
 	
-	static func fetchTrip(tripId : String) -> AnyPublisher<LegDTO,ApiError> {
+	static func fetchTrip(tripId : String) -> AnyPublisher<LegDTO,ChooNetworking.ApiError> {
 		return ChooNetworking().fetch(
 			TripDTO.self,
 			query: [],

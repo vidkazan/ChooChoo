@@ -16,7 +16,7 @@ extension JourneyListViewModel {
 		time: Date,
 		mode: LocationDirectionType,
 		settings : JourneySettings
-	) -> AnyPublisher<JourneyListDTO,ApiError> {
+	) -> AnyPublisher<JourneyListDTO,ChooNetworking.ApiError> {
 		var query = addJourneyListStopsQuery(dep: dep, arr: arr)
 		query += addJourneyListTransfersQuery(settings: settings)
 		query += addJourneyListTransportModes(settings: settings)

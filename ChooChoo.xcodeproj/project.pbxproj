@@ -213,8 +213,8 @@
 		7D3B984E2C08D73400A3AAEB /* AppSettingsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D15AA452BB19E6800B6966D /* AppSettingsVM.swift */; };
 		7D3B984F2C08D73400A3AAEB /* JourneySettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D345E492AE95E7C003CA948 /* JourneySettings.swift */; };
 		7D3B98502C08D73400A3AAEB /* Settings+Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DBD26BF2B99F13700612A3B /* Settings+Types.swift */; };
-		7D3B98512C08D73800A3AAEB /* ApiServiceErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF5871C2B5EC01100A4F99A /* ApiServiceErrors.swift */; };
-		7D3B98522C08D73800A3AAEB /* ApiServiceErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF5871C2B5EC01100A4F99A /* ApiServiceErrors.swift */; };
+		7D3B98512C08D73800A3AAEB /* ChooNetworking+Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF5871C2B5EC01100A4F99A /* ChooNetworking+Error.swift */; };
+		7D3B98522C08D73800A3AAEB /* ChooNetworking+Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF5871C2B5EC01100A4F99A /* ChooNetworking+Error.swift */; };
 		7D3B98532C08D74200A3AAEB /* CoreDataStore+update.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D10BD422BB1B40200702D83 /* CoreDataStore+update.swift */; };
 		7D3B98542C08D74200A3AAEB /* CoreDataStore+delete.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D10BD3E2BB1B37B00702D83 /* CoreDataStore+delete.swift */; };
 		7D3B98552C08D74200A3AAEB /* CoreDataStore+add.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D10BD402BB1B3B000702D83 /* CoreDataStore+add.swift */; };
@@ -608,7 +608,7 @@
 		7DEE69CD2B9BCDF200A063B4 /* Tips.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DEE69CC2B9BCDF200A063B4 /* Tips.swift */; };
 		7DEE69D12B9BCE8B00A063B4 /* PresentationDetent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DEE69D02B9BCE8B00A063B4 /* PresentationDetent.swift */; };
 		7DF0D98D2B69557D00861C4F /* Iphones.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF0D98C2B69557C00861C4F /* Iphones.swift */; };
-		7DF5871D2B5EC01100A4F99A /* ApiServiceErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF5871C2B5EC01100A4F99A /* ApiServiceErrors.swift */; };
+		7DF5871D2B5EC01100A4F99A /* ChooNetworking+Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF5871C2B5EC01100A4F99A /* ChooNetworking+Error.swift */; };
 		7DF845602B764AEA00D76B14 /* RemarkSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF8455F2B764AEA00D76B14 /* RemarkSheet.swift */; };
 		7DF845622B764B7D00D76B14 /* RemarkViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF845612B764B7D00D76B14 /* RemarkViewData.swift */; };
 		7DF845692B767E6C00D76B14 /* AlertVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF845682B767E6C00D76B14 /* AlertVM.swift */; };
@@ -851,7 +851,7 @@
 		7DEE69CC2B9BCDF200A063B4 /* Tips.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tips.swift; sourceTree = "<group>"; };
 		7DEE69D02B9BCE8B00A063B4 /* PresentationDetent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentationDetent.swift; sourceTree = "<group>"; };
 		7DF0D98C2B69557C00861C4F /* Iphones.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Iphones.swift; sourceTree = "<group>"; };
-		7DF5871C2B5EC01100A4F99A /* ApiServiceErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiServiceErrors.swift; sourceTree = "<group>"; };
+		7DF5871C2B5EC01100A4F99A /* ChooNetworking+Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChooNetworking+Error.swift"; sourceTree = "<group>"; };
 		7DF8455F2B764AEA00D76B14 /* RemarkSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemarkSheet.swift; sourceTree = "<group>"; };
 		7DF845612B764B7D00D76B14 /* RemarkViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemarkViewData.swift; sourceTree = "<group>"; };
 		7DF845682B767E6C00D76B14 /* AlertVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertVM.swift; sourceTree = "<group>"; };
@@ -1478,6 +1478,7 @@
 			isa = PBXGroup;
 			children = (
 				7D02CE222A97E64E0048ADE6 /* Query.swift */,
+				7DF5871C2B5EC01100A4F99A /* ChooNetworking+Error.swift */,
 				7D02CE262A97E6790048ADE6 /* ChooNetworking.swift */,
 			);
 			path = Network;
@@ -1828,7 +1829,6 @@
 			isa = PBXGroup;
 			children = (
 				7D02CE242A97E6620048ADE6 /* Errors.swift */,
-				7DF5871C2B5EC01100A4F99A /* ApiServiceErrors.swift */,
 			);
 			path = Errors;
 			sourceTree = "<group>";
@@ -2045,7 +2045,7 @@
 				7D1638502B69841D006E9660 /* LDSV+background.swift in Sources */,
 				7D4B1B952AA8FDA20096F372 /* SSVM+state.swift in Sources */,
 				7D81AB262A978CDC0055AEAF /* DatePickerView.swift in Sources */,
-				7DF5871D2B5EC01100A4F99A /* ApiServiceErrors.swift in Sources */,
+				7DF5871D2B5EC01100A4F99A /* ChooNetworking+Error.swift in Sources */,
 				7DD5BADF2B728CA700CFE768 /* JSV.swift in Sources */,
 				7D462D522AAC96C000BC0D65 /* SSV+RightButton.swift in Sources */,
 				7D7B3DA22AB9CC7E0070E44D /* LDSV.swift in Sources */,
@@ -2259,7 +2259,7 @@
 				7D3B97FF2C08D6EC00A3AAEB /* NetworkMonitor.swift in Sources */,
 				7D3B988E2C08D77E00A3AAEB /* constructJourneys+Leg+Type.swift in Sources */,
 				7D3B98912C08D77E00A3AAEB /* JourneyViewData.swift in Sources */,
-				7D3B98522C08D73800A3AAEB /* ApiServiceErrors.swift in Sources */,
+				7D3B98522C08D73800A3AAEB /* ChooNetworking+Error.swift in Sources */,
 				7D3B97F22C08D6DD00A3AAEB /* TimeLabelView+Init.swift in Sources */,
 				7D3B991D2C08D84000A3AAEB /* PlatformView.swift in Sources */,
 				7D3B979F2C08D52100A3AAEB /* LegVIewData.swift in Sources */,
@@ -2470,7 +2470,7 @@
 				7D3B98032C08D6EC00A3AAEB /* NetworkMonitor.swift in Sources */,
 				7D3B98872C08D77D00A3AAEB /* constructJourneys+Leg+Type.swift in Sources */,
 				7D3B988A2C08D77D00A3AAEB /* JourneyViewData.swift in Sources */,
-				7D3B98512C08D73800A3AAEB /* ApiServiceErrors.swift in Sources */,
+				7D3B98512C08D73800A3AAEB /* ChooNetworking+Error.swift in Sources */,
 				7D3B97EF2C08D6DC00A3AAEB /* TimeLabelView+Init.swift in Sources */,
 				7D3B99202C08D84000A3AAEB /* PlatformView.swift in Sources */,
 				7D3B979E2C08D51E00A3AAEB /* LegVIewData.swift in Sources */,

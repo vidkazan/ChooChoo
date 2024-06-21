@@ -25,7 +25,7 @@ extension SearchStopsViewModel {
 				.mapError { $0 }
 				.asyncFlatMap { stops in
 					if stops.isEmpty {
-						return Event.onDataLoadError(ApiError.stopNotFound)
+						return Event.onDataLoadError(ChooNetworking.ApiError.stopNotFound)
 					}
 					let stops = stops.compactMap { stop -> Stop? in
 						return stop.stop()
@@ -33,7 +33,7 @@ extension SearchStopsViewModel {
 					return Event.onDataLoaded(stops,type)
 				}
 				.catch { error in
-					return Just(Event.onDataLoadError(error as? ApiError ?? .generic(description: error.localizedDescription))).eraseToAnyPublisher()
+					return Just(Event.onDataLoadError(error as? ChooNetworking.ApiError ?? .generic(description: error.localizedDescription))).eraseToAnyPublisher()
 				}
 				.eraseToAnyPublisher()
 		}
@@ -58,7 +58,7 @@ extension SearchStopsViewModel {
 
 
 extension SearchStopsViewModel {
-	static func fetchLocations(text : String, type : LocationDirectionType) -> AnyPublisher<[StopDTO],ApiError> {
+	static func fetchLocations(text : String, type : LocationDirectionType) -> AnyPublisher<[StopDTO],ChooNetworking.ApiError> {
 		var query : [URLQueryItem] = Constants.initialQuery
 		query = Query.queryItems(methods: [
 			Query.location(location: text),

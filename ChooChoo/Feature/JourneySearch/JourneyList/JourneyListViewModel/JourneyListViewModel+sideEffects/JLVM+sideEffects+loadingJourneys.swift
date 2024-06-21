@@ -37,7 +37,7 @@ extension JourneyListViewModel {
 						JourneyUpdateType.initial
 					)
 				}
-				.catch { error in Just(Event.onFailedToLoadJourneyListData(error as? ApiError ?? .generic(description: error.localizedDescription)))}
+				.catch { error in Just(Event.onFailedToLoadJourneyListData(error as? ChooNetworking.ApiError ?? .generic(description: error.localizedDescription)))}
 				.eraseToAnyPublisher()
 		}
 	}

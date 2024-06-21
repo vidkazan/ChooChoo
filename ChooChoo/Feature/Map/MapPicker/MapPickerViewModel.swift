@@ -327,7 +327,7 @@ extension MapPickerViewModel {
 					return Event.didLoadNearbyStops(stops)
 				}
 				.catch { error in
-					return Just(Event.didFailToLoad(error as? ApiError ?? .generic(description: error.localizedDescription))).eraseToAnyPublisher()
+					return Just(Event.didFailToLoad(error as? ChooNetworking.ApiError ?? .generic(description: error.localizedDescription))).eraseToAnyPublisher()
 				}
 				.eraseToAnyPublisher()
 		}
@@ -365,7 +365,7 @@ extension MapPickerViewModel {
 		}
 	}
 	
-	static func fetchLocatonsNearby(coords : CLLocationCoordinate2D) -> AnyPublisher<[StopDTO],ApiError> {
+	static func fetchLocatonsNearby(coords : CLLocationCoordinate2D) -> AnyPublisher<[StopDTO],ChooNetworking.ApiError> {
 		return ChooNetworking().fetch(
 			[StopDTO].self,
 			query: [
@@ -377,7 +377,7 @@ extension MapPickerViewModel {
 		.eraseToAnyPublisher()
 	}
 	
-	static func fetchStopDepartures(stop : Stop) -> AnyPublisher<StopTripsDTO,ApiError> {
+	static func fetchStopDepartures(stop : Stop) -> AnyPublisher<StopTripsDTO,ChooNetworking.ApiError> {
 		return ChooNetworking().fetch(
 			StopTripsDTO.self,
 			query: [

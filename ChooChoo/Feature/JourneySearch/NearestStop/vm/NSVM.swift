@@ -307,7 +307,7 @@ extension NearestStopViewModel {
 				}
 				.catch { error in
 					return Just(
-						Event.didFailToLoad(error as? ApiError ?? .generic(description: error.localizedDescription))
+						Event.didFailToLoad(error as? ChooNetworking.ApiError ?? .generic(description: error.localizedDescription))
 					).eraseToAnyPublisher()
 				}
 				.eraseToAnyPublisher()
@@ -334,7 +334,7 @@ extension NearestStopViewModel {
 					}
 					.catch { err in
 						return Just(
-							Event.didFailToLoad(err as? ApiError ?? .generic(description: err.localizedDescription))
+							Event.didFailToLoad(err as? ChooNetworking.ApiError ?? .generic(description: err.localizedDescription))
 						).eraseToAnyPublisher()
 					}
 					.eraseToAnyPublisher()
@@ -344,7 +344,7 @@ extension NearestStopViewModel {
 		}
 	}
 	
-	static func fetchLocatonsNearby(coords : CLLocation) -> AnyPublisher<[StopDTO],ApiError> {
+	static func fetchLocatonsNearby(coords : CLLocation) -> AnyPublisher<[StopDTO],ChooNetworking.ApiError> {
 		let predictedCoords = Self.calculateNextCoordinates(loc: coords, time: 7.5)
 		return ChooNetworking().fetch(
 			[StopDTO].self,
@@ -357,7 +357,7 @@ extension NearestStopViewModel {
 		.eraseToAnyPublisher()
 	}
 	
-	static func fetchStopDepartures(stop : Stop) -> AnyPublisher<StopTripsDTO,ApiError> {
+	static func fetchStopDepartures(stop : Stop) -> AnyPublisher<StopTripsDTO,ChooNetworking.ApiError> {
 		return ChooNetworking().fetch(
 			StopTripsDTO.self,
 			query: [

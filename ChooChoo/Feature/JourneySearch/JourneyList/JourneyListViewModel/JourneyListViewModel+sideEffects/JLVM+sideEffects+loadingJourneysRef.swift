@@ -47,7 +47,7 @@ extension JourneyListViewModel {
 						)
 					}
 					.catch { error in
-						Just(Event.didFailToLoadEarlierRef(error as? ApiError ?? .generic(description: error.localizedDescription)))
+						Just(Event.didFailToLoadEarlierRef(error as? ChooNetworking.ApiError ?? .generic(description: error.localizedDescription)))
 					}
 					.eraseToAnyPublisher()
 				
@@ -80,14 +80,14 @@ extension JourneyListViewModel {
 						)
 					}
 					.catch { error in
-						Just(Event.didFailToLoadLaterRef(error as? ApiError ?? .generic(description: error.localizedDescription)))
+						Just(Event.didFailToLoadLaterRef(error as? ChooNetworking.ApiError ?? .generic(description: error.localizedDescription)))
 					}
 					.eraseToAnyPublisher()
 			}
 		}
 	}
 	
-	static func fetchEarlierOrLaterRef(dep : Stop,arr : Stop,ref : String, type : JourneyUpdateType,settings : JourneySettings) -> AnyPublisher<JourneyListDTO,ApiError> {
+	static func fetchEarlierOrLaterRef(dep : Stop,arr : Stop,ref : String, type : JourneyUpdateType,settings : JourneySettings) -> AnyPublisher<JourneyListDTO,ChooNetworking.ApiError> {
 		var query = addJourneyListStopsQuery(dep: dep, arr: arr)
 		query += Query.queryItems(methods: [
 			type == .earlierRef ? Query.earlierThan(earlierRef: ref) : Query.laterThan(laterRef: ref),

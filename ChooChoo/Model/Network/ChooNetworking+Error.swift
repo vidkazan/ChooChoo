@@ -7,6 +7,8 @@
 
 import Foundation
 
+
+extension ChooNetworking {
 	enum ApiError : ChewError {
 		static func == (lhs: ApiError, rhs: ApiError) -> Bool {
 			return lhs.localizedDescription == rhs.localizedDescription
@@ -109,3 +111,4 @@ import Foundation
 			}
 		}
 	}
+}
