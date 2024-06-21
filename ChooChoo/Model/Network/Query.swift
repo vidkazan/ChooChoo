@@ -7,6 +7,18 @@
 
 import Foundation
 
+protocol ChooQuery {
+	associatedtype T : ChooQuery
+	func queryItem() -> URLQueryItem
+}
+
+extension ChooQuery {
+	static func queryItems(methods : [T]) -> [URLQueryItem] {
+		return methods.map {
+			$0.queryItem()
+		}
+	}
+}
 
 extension URLQueryItem {
 	func departure() -> Self {
@@ -21,7 +33,9 @@ extension URLQueryItem {
 	}
 }
 
-enum Query {
+enum Query : ChooQuery {
+	typealias T = Self
+	
 	case transferTime(transferTime: Int)
 	case location(location : String?)
 	case when(time : Date?)
@@ -68,6 +82,7 @@ enum Query {
 	case startWithWalking(Bool)
 	case walkingSpeed(JourneySettings.WalkingSpeed)
 	case linesOfStops(show : Bool)
+	
 	func queryItem() -> URLQueryItem {
 		switch self {
 		case .walkingSpeed(let speed):
@@ -235,11 +250,6 @@ enum Query {
 			return URLQueryItem(
 				name: "name",
 				value: poiName)
-		}
-	}
-	static func queryItems(methods : [Query]) -> [URLQueryItem] {
-		return methods.map {
-			$0.queryItem()
 		}
 	}
 }
