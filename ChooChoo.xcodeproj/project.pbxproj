@@ -248,10 +248,8 @@
 		7D3B98722C08D75D00A3AAEB /* CDUser+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9BB10B2B0CBF54008A3616 /* CDUser+CoreDataProperties.swift */; };
 		7D3B98732C08D76000A3AAEB /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2CAF652B0BEAC000577FD4 /* Persistence.swift */; };
 		7D3B98742C08D76000A3AAEB /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2CAF652B0BEAC000577FD4 /* Persistence.swift */; };
-		7D3B98752C08D76600A3AAEB /* ApiServiceCombine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE727C82AD93955002FF033 /* ApiServiceCombine.swift */; };
 		7D3B98762C08D76600A3AAEB /* ChooNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D02CE262A97E6790048ADE6 /* ChooNetworking.swift */; };
 		7D3B98772C08D76600A3AAEB /* Query.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D02CE222A97E64E0048ADE6 /* Query.swift */; };
-		7D3B98782C08D76600A3AAEB /* ApiServiceCombine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE727C82AD93955002FF033 /* ApiServiceCombine.swift */; };
 		7D3B98792C08D76600A3AAEB /* ChooNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D02CE262A97E6790048ADE6 /* ChooNetworking.swift */; };
 		7D3B987A2C08D76600A3AAEB /* Query.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D02CE222A97E64E0048ADE6 /* Query.swift */; };
 		7D3B987B2C08D76D00A3AAEB /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2BF7A52B67CA7F00E1CED7 /* Model.swift */; };
@@ -600,7 +598,6 @@
 		7DE6FDA32B5BE58100AC8DE3 /* NetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE6FDA22B5BE58100AC8DE3 /* NetworkMonitor.swift */; };
 		7DE6FDA52B5BE5B300AC8DE3 /* RecentSearchesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE6FDA42B5BE5B300AC8DE3 /* RecentSearchesViewModel.swift */; };
 		7DE727C62AD93869002FF033 /* JFV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE727C52AD93869002FF033 /* JFV.swift */; };
-		7DE727C92AD93955002FF033 /* ApiServiceCombine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE727C82AD93955002FF033 /* ApiServiceCombine.swift */; };
 		7DE8A34F2B6AB0AF00C3A378 /* TimeLabelView+Init.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE8A34E2B6AB0AE00C3A378 /* TimeLabelView+Init.swift */; };
 		7DE8A3512B6AB13800C3A378 /* TimeLabelView+subviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE8A3502B6AB13800C3A378 /* TimeLabelView+subviews.swift */; };
 		7DE8A3552B6ABB3400C3A378 /* LDSV+subviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE8A3542B6ABB3400C3A378 /* LDSV+subviews.swift */; };
@@ -844,7 +841,6 @@
 		7DE6FDA22B5BE58100AC8DE3 /* NetworkMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMonitor.swift; sourceTree = "<group>"; };
 		7DE6FDA42B5BE5B300AC8DE3 /* RecentSearchesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentSearchesViewModel.swift; sourceTree = "<group>"; };
 		7DE727C52AD93869002FF033 /* JFV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JFV.swift; sourceTree = "<group>"; wrapsLines = 0; };
-		7DE727C82AD93955002FF033 /* ApiServiceCombine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiServiceCombine.swift; sourceTree = "<group>"; };
 		7DE8A34E2B6AB0AE00C3A378 /* TimeLabelView+Init.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimeLabelView+Init.swift"; sourceTree = "<group>"; };
 		7DE8A3502B6AB13800C3A378 /* TimeLabelView+subviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimeLabelView+subviews.swift"; sourceTree = "<group>"; };
 		7DE8A3542B6ABB3400C3A378 /* LDSV+subviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LDSV+subviews.swift"; sourceTree = "<group>"; };
@@ -1482,7 +1478,6 @@
 			isa = PBXGroup;
 			children = (
 				7D02CE222A97E64E0048ADE6 /* Query.swift */,
-				7DE727C82AD93955002FF033 /* ApiServiceCombine.swift */,
 				7D02CE262A97E6790048ADE6 /* ChooNetworking.swift */,
 			);
 			path = Network;
@@ -2073,7 +2068,6 @@
 				7D9BB10F2B0CBF54008A3616 /* CDJourney+CoreDataProperties.swift in Sources */,
 				7D462D4B2AAC948700BC0D65 /* JLVM+reduce+JourneysLoaded.swift in Sources */,
 				7D8A3E3A2B83A68F005B61CC /* StopList+subcomponents.swift in Sources */,
-				7DE727C92AD93955002FF033 /* ApiServiceCombine.swift in Sources */,
 				7D63DB112B739213008297DD /* SheetView.swift in Sources */,
 				7D33A9882B5343320005D723 /* Mock.swift in Sources */,
 				7DE6FD9D2B5AD00F00AC8DE3 /* CDRecentSearch+CoreDataClass.swift in Sources */,
@@ -2294,7 +2288,6 @@
 				7D3B99562C08D86E00A3AAEB /* JFCV.swift in Sources */,
 				7D3B98BE2C08D7DF00A3AAEB /* RemarkSheet.swift in Sources */,
 				7D3B990A2C08D83300A3AAEB /* JLVM+sideEffects+loadingJourneys.swift in Sources */,
-				7D3B98782C08D76600A3AAEB /* ApiServiceCombine.swift in Sources */,
 				7D3B99002C08D82F00A3AAEB /* JLVM+state.swift in Sources */,
 				7D3B98E22C08D7F800A3AAEB /* SSVM+state.swift in Sources */,
 				7D3B99492C08D86600A3AAEB /* TopBarAlertView.swift in Sources */,
@@ -2503,7 +2496,6 @@
 				7D3B99532C08D86D00A3AAEB /* JFCV.swift in Sources */,
 				7D1641012C09046F003B0A1E /* CDJourney+CoreDataClass.swift in Sources */,
 				7D3B99062C08D83300A3AAEB /* JLVM+sideEffects+loadingJourneys.swift in Sources */,
-				7D3B98752C08D76600A3AAEB /* ApiServiceCombine.swift in Sources */,
 				7D3B99022C08D82F00A3AAEB /* JLVM+state.swift in Sources */,
 				7D3B98DF2C08D7F800A3AAEB /* SSVM+state.swift in Sources */,
 				7D3B99462C08D86500A3AAEB /* TopBarAlertView.swift in Sources */,
