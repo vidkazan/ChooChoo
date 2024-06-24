@@ -352,7 +352,7 @@ extension NearestStopViewModel {
 				Query.longitude(longitude: String(predictedCoords.longitude)).queryItem(),
 				Query.latitude(latitude: String(predictedCoords.latitude)).queryItem()
 			],
-			type: ChooNetworking.Requests.locationsNearby(coords: coords.coordinate)
+			type: Requests.locationsNearby(coords: coords.coordinate)
 		)
 		.eraseToAnyPublisher()
 	}
@@ -364,7 +364,7 @@ extension NearestStopViewModel {
 				Query.duration(minutes: 60).queryItem(),
 				Query.results(max: 20).queryItem()
 			],
-			type: ChooNetworking.Requests.stopDepartures(stopId: stop.id)
+			type: Requests.stopDepartures(stopId: stop.id)
 		)
 		.eraseToAnyPublisher()
 	}

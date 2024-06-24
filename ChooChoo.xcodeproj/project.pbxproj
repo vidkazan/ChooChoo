@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -552,6 +552,7 @@
 		7DB62DEF2C0914A400CA1BCA /* ChooTip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCA4ADC2BD93714005BA68E /* ChooTip.swift */; };
 		7DB62DF02C0914C500CA1BCA /* ChooTipLabels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCA4AE12BD93A53005BA68E /* ChooTipLabels.swift */; };
 		7DB62DF12C0914CE00CA1BCA /* SwipeActionsTip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2C0E612BDBB9E4000839C1 /* SwipeActionsTip.swift */; };
+		7DBABA0E2C25E725000D79C1 /* ChooNetworking in Frameworks */ = {isa = PBXBuildFile; productRef = 7DBABA0D2C25E725000D79C1 /* ChooNetworking */; };
 		7DBABFF92B879FA400C990FD /* ChildAnnotationViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DBABFF82B879FA400C990FD /* ChildAnnotationViews.swift */; };
 		7DBABFFC2B87A99B00C990FD /* MapDetailsUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DBABFFB2B87A99B00C990FD /* MapDetailsUIView.swift */; };
 		7DBD26BE2B99F10600612A3B /* Settings+init.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DBD26BD2B99F10600612A3B /* Settings+init.swift */; };
@@ -870,6 +871,7 @@
 			files = (
 				7DDD6BF32C231257004B3A38 /* ChooViews in Frameworks */,
 				7D02CE2A2A97E80D0048ADE6 /* Collections in Frameworks */,
+				7DBABA0E2C25E725000D79C1 /* ChooNetworking in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1884,6 +1886,7 @@
 			packageProductDependencies = (
 				7D02CE292A97E80D0048ADE6 /* Collections */,
 				7DDD6BF22C231257004B3A38 /* ChooViews */,
+				7DBABA0D2C25E725000D79C1 /* ChooNetworking */,
 			);
 			productName = "Chew-chew-SwiftUI";
 			productReference = 7D6734AF2A96334B00CBE9C1 /* ChooChoo.app */;
@@ -1961,6 +1964,7 @@
 			packageReferences = (
 				7D02CE282A97E80D0048ADE6 /* XCRemoteSwiftPackageReference "swift-collections" */,
 				7DDD6BF12C231257004B3A38 /* XCRemoteSwiftPackageReference "ChooViews" */,
+				7D85D1642C25E81C0025D707 /* XCLocalSwiftPackageReference "../../packages/ChooNetwork" */,
 			);
 			productRefGroup = 7D6734B02A96334B00CBE9C1 /* Products */;
 			projectDirPath = "";
@@ -2991,6 +2995,13 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCLocalSwiftPackageReference section */
+		7D85D1642C25E81C0025D707 /* XCLocalSwiftPackageReference "../../packages/ChooNetwork" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../../packages/ChooNetwork;
+		};
+/* End XCLocalSwiftPackageReference section */
+
 /* Begin XCRemoteSwiftPackageReference section */
 		7D02CE282A97E80D0048ADE6 /* XCRemoteSwiftPackageReference "swift-collections" */ = {
 			isa = XCRemoteSwiftPackageReference;
@@ -3015,6 +3026,10 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 7D02CE282A97E80D0048ADE6 /* XCRemoteSwiftPackageReference "swift-collections" */;
 			productName = Collections;
+		};
+		7DBABA0D2C25E725000D79C1 /* ChooNetworking */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = ChooNetworking;
 		};
 		7DDD6BF22C231257004B3A38 /* ChooViews */ = {
 			isa = XCSwiftPackageProductDependency;

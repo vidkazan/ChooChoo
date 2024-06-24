@@ -163,7 +163,7 @@ extension ArrivingTrainTimeViewModel {
 					.ferry(ferry: false),
 					.arrivalTime(arrivalTime: searchArrivalTime),
 				]),
-				type: ChooNetworking.Requests.journeys
+				type: Requests.journeys
 			)
 			.mapError { $0 }
 			.asyncFlatMap { journeyListDTO in

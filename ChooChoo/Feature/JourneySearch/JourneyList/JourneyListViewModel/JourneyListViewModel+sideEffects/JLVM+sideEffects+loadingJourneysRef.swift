@@ -96,7 +96,7 @@ extension JourneyListViewModel {
 			Query.stopovers(isShowing: true)
 		])
 		query += self.addJourneyListTransportModes(settings: settings)
-		return ChooNetworking().fetch(JourneyListDTO.self,query: query, type: ChooNetworking.Requests.journeys)
+		return ChooNetworking().fetch(JourneyListDTO.self,query: query, type: Requests.journeys)
 	}
 }
 

@@ -7,9 +7,12 @@
 
 import Foundation
 import CoreLocation
+import ChooNetworking
 
-extension ChooNetworking {
-	enum Requests : Equatable {
+//extension ChooNetworking {
+	enum Requests : ChooRequest {
+		typealias T = Self
+		
 		case journeys
 		case journeyByRefreshToken(ref : String)
 		case locations
@@ -87,7 +90,9 @@ extension ChooNetworking {
 			}
 		}
 	}
+//}
 
+extension ChooNetworking {
 	static func generateUrl(query : [URLQueryItem], type : Requests, host : String) -> URL? {
 		let url : URL? = {
 			switch type {
@@ -105,4 +110,3 @@ extension ChooNetworking {
 		return url
 	}
 }
-

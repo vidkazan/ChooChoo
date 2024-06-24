@@ -6,32 +6,7 @@
 //
 
 import Foundation
-
-protocol ChooQuery {
-	associatedtype T : ChooQuery
-	func queryItem() -> URLQueryItem
-}
-
-extension ChooQuery {
-	static func queryItems(methods : [T]) -> [URLQueryItem] {
-		return methods.map {
-			$0.queryItem()
-		}
-	}
-}
-
-extension URLQueryItem {
-	func departure() -> Self {
-		var item  = self
-		item.name = "from." + item.name
-		return item
-	}
-	func arrival() -> Self {
-		var item  = self
-		item.name = "to." + item.name
-		return item
-	}
-}
+import ChooNetworking
 
 enum Query : ChooQuery {
 	typealias T = Self

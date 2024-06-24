@@ -285,7 +285,7 @@ extension SheetViewModel {
 		return ChooNetworking().fetch(
 			TripDTO.self,
 			query: [],
-			type: ChooNetworking.Requests.trips(tripId: tripId)
+			type: Requests.trips(tripId: tripId)
 		)
 		.map { $0.trip }
 		.eraseToAnyPublisher()

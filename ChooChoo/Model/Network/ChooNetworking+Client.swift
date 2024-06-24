@@ -9,18 +9,11 @@ import Foundation
 import Combine
 import CoreLocation
 import OSLog
-
-protocol ChooClient {
-	func execute<T:Decodable>(_ t : T.Type,request: URLRequest, type : ChooNetworking.Requests) -> AnyPublisher<T,ChooNetworking.ApiError>
-}
+import ChooNetworking
 
 extension ChooNetworking {
 	class ApiClient : ChooClient {
-		 func execute<T: Decodable>(
-			_ t : T.Type,
-			request : URLRequest,
-			type : ChooNetworking.Requests
-		) -> AnyPublisher<T, ApiError> {
+		func execute<T:Decodable,V:ChooRequest>(_ t : T.Type,request: URLRequest, type : V) -> AnyPublisher<T,ChooNetworking.ApiError> {
 			return URLSession.shared
 				.dataTaskPublisher(for: request)
 				.tryMap { data, response -> T in
@@ -61,13 +54,9 @@ extension ChooNetworking {
 	class MockClient : ChooClient {
 		var inputRequest: URLRequest?
 		var executeCalled = false
-		var requestType : ChooNetworking.Requests?
+		var requestType : (any ChooRequest)?
 		
-		func execute<T: Decodable>(
-			_ t : T.Type,
-			request : URLRequest,
-			type : ChooNetworking.Requests
-		) -> AnyPublisher<T, ApiError> {
+		func execute<T:Decodable,V:ChooRequest>(_ t : T.Type,request: URLRequest, type : V) -> AnyPublisher<T,ChooNetworking.ApiError> {
 			executeCalled = true
 			inputRequest = request
 			requestType = type

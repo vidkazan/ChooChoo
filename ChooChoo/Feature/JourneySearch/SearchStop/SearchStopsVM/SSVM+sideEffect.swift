@@ -64,7 +64,7 @@ extension SearchStopsViewModel {
 			Query.location(location: text),
 			Query.results(max: 10)
 		])
-		return ChooNetworking().fetch([StopDTO].self,query: query, type: ChooNetworking.Requests.locations)
+		return ChooNetworking().fetch([StopDTO].self,query: query, type: Requests.locations)
 	}
 }
 

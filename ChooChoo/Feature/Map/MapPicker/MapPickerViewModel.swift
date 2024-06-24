@@ -372,7 +372,7 @@ extension MapPickerViewModel {
 				Query.longitude(longitude: String(coords.longitude)).queryItem(),
 				Query.latitude(latitude: String(coords.latitude)).queryItem()
 			],
-			type: ChooNetworking.Requests.locationsNearby(coords: coords)
+			type: Requests.locationsNearby(coords: coords)
 		)
 		.eraseToAnyPublisher()
 	}
@@ -384,7 +384,7 @@ extension MapPickerViewModel {
 				Query.duration(minutes: 60).queryItem(),
 				Query.results(max: 40).queryItem()
 			],
-			type: ChooNetworking.Requests.stopDepartures(stopId: stop.id)
+			type: Requests.stopDepartures(stopId: stop.id)
 		)
 		.eraseToAnyPublisher()
 	}
