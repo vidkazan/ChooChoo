@@ -21,17 +21,7 @@ extension CDUser {
 
 extension CDUser {
 	static func createWith(using managedObjectContext: NSManagedObjectContext) -> CDUser? {
-		managedObjectContext.performAndWait {
-			let user = CDUser(entity: CDUser.entity(), insertInto: managedObjectContext)
-			do {
-				try managedObjectContext.save()
-				return user
-			} catch {
-				let nserror = error as NSError
-				Logger.coreData.error("cdUser: \(#function): \(nserror.description) \(nserror.userInfo)")
-				return nil
-			}
-		}
+		managedObjectContext.createManagedObject(CDUser.self)
 	}
 }
 
