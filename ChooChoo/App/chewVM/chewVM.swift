@@ -25,7 +25,7 @@ final class ChewViewModel : ChewViewModelProtocol {
 	init (
 		initialState : State = State(),
 		referenceDate : ChewDate = .now,
-		coreDataStore : CoreDataStore
+		coreDataStore : ChooDataStore
 	) {
 		self.state = initialState	
 		self.referenceDate = referenceDate

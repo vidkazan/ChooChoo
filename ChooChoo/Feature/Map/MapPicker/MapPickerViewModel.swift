@@ -10,6 +10,7 @@ import Combine
 import CoreLocation
 import MapKit
 import SwiftUI
+import ChooNetworking
 
 class MapPickerViewModel : ChewViewModelProtocol {
 	@Published private(set) var state : State {
@@ -75,7 +76,7 @@ extension MapPickerViewModel {
 	
 	enum Status :  ChewStatus {
 		case idle
-		case error(any ChewError)
+		case error(any ChooError)
 		case submitting(Stop)
 		case loadingStopDetails(
 			Stop,_ send : (MapPickerViewModel.Event)->Void
@@ -108,7 +109,7 @@ extension MapPickerViewModel {
 		case didLoadNearbyStops([Stop])
 		
 		case didCancelLoading
-		case didFailToLoad(any ChewError)
+		case didFailToLoad(any ChooError)
 		var description : String {
 			switch self {
 			case .didDeselectStop:
@@ -327,7 +328,7 @@ extension MapPickerViewModel {
 					return Event.didLoadNearbyStops(stops)
 				}
 				.catch { error in
-					return Just(Event.didFailToLoad(error as? ChooNetworking.ApiError ?? .generic(description: error.localizedDescription))).eraseToAnyPublisher()
+					return Just(Event.didFailToLoad(error as? DataError ?? DataError.generic(msg: error.localizedDescription))).eraseToAnyPublisher()
 				}
 				.eraseToAnyPublisher()
 		}
@@ -365,26 +366,26 @@ extension MapPickerViewModel {
 		}
 	}
 	
-	static func fetchLocatonsNearby(coords : CLLocationCoordinate2D) -> AnyPublisher<[StopDTO],ChooNetworking.ApiError> {
+	static func fetchLocatonsNearby(coords : CLLocationCoordinate2D) -> AnyPublisher<[StopDTO],ChooApiError> {
 		return ChooNetworking().fetch(
 			[StopDTO].self,
 			query: [
 				Query.longitude(longitude: String(coords.longitude)).queryItem(),
 				Query.latitude(latitude: String(coords.latitude)).queryItem()
 			],
-			type: Requests.locationsNearby(coords: coords)
+			type: ChooRequest.locationsNearby(coords: coords)
 		)
 		.eraseToAnyPublisher()
 	}
 	
-	static func fetchStopDepartures(stop : Stop) -> AnyPublisher<StopTripsDTO,ChooNetworking.ApiError> {
+	static func fetchStopDepartures(stop : Stop) -> AnyPublisher<StopTripsDTO,ChooApiError> {
 		return ChooNetworking().fetch(
 			StopTripsDTO.self,
 			query: [
 				Query.duration(minutes: 60).queryItem(),
 				Query.results(max: 40).queryItem()
 			],
-			type: Requests.stopDepartures(stopId: stop.id)
+			type: ChooRequest.stopDepartures(stopId: stop.id)
 		)
 		.eraseToAnyPublisher()
 	}

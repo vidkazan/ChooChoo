@@ -6,16 +6,18 @@
 //
 
 import Foundation
+import ChooNetworking
+
 extension JourneyDetailsViewModel {
 	static func reduce(_ state: State, _ event: Event) -> State {
 		Self.log(event, state.status)
 		switch state.status {
 		case .changingSubscribingState:
 			switch event {
-			case .didFailToChangeSubscribingState:
+			case .didFailToChangeSubscribingState(let error):
 				return State(
 					data: state.data,
-					status: .error(error: ChooNetworking.ApiError.cannotDecodeRawData)
+					status: .error(error: error)
 				)
 			case .didChangedSubscribingState:
 				return State(

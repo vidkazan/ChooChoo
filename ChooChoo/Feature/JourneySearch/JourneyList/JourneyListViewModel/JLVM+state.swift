@@ -58,9 +58,9 @@ extension JourneyListViewModel {
 		case loadingRef(JourneyUpdateType)
 		case loadingJourneyList
 		case journeysLoaded
-		case failedToLoadLaterRef(any ChewError)
-		case failedToLoadEarlierRef(any ChewError)
-		case failedToLoadJourneyList(any ChewError)
+		case failedToLoadLaterRef(any ChooError)
+		case failedToLoadEarlierRef(any ChooError)
+		case failedToLoadJourneyList(any ChooError)
 		
 		var description : String {
 			switch self {
@@ -82,12 +82,12 @@ extension JourneyListViewModel {
 	
 	enum Event : ChewEvent {
 		case onNewJourneyListData(JourneyListViewData,JourneyUpdateType)
-		case onFailedToLoadJourneyListData(any ChewError)
+		case onFailedToLoadJourneyListData(any ChooError)
 		case onReloadJourneyList
 		case onLaterRef
 		case onEarlierRef
-		case didFailToLoadLaterRef(any ChewError)
-		case didFailToLoadEarlierRef(any ChewError)
+		case didFailToLoadLaterRef(any ChooError)
+		case didFailToLoadEarlierRef(any ChooError)
 		var description : String {
 			switch self {
 			case .onNewJourneyListData:

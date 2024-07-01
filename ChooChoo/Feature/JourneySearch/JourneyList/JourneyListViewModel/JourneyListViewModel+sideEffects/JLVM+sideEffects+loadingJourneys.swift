@@ -7,6 +7,7 @@
 
 import Foundation
 import Combine
+import ChooNetworking
 
 extension JourneyListViewModel {
 	static func whenLoadingJourneyList() -> Feedback<State, Event> {
@@ -37,7 +38,10 @@ extension JourneyListViewModel {
 						JourneyUpdateType.initial
 					)
 				}
-				.catch { error in Just(Event.onFailedToLoadJourneyListData(error as? ChooNetworking.ApiError ?? .generic(description: error.localizedDescription)))}
+				.catch { error in
+					Just(Event.onFailedToLoadJourneyListData( error as? ChooApiError ?? ChooApiError.generic(description: error.localizedDescription))
+					)
+				}
 				.eraseToAnyPublisher()
 		}
 	}

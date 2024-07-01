@@ -8,10 +8,11 @@
 import Foundation
 import SwiftUI
 import OSLog
+import FcodyCoreData
 
 final class Model {
 	static let shared = {
-		let coredata = CoreDataStore(container: PersistenceController.shared.container)
+		let coredata = ChooDataStore(container: PersistenceController.shared.container)
 		return Model(
 			journeyFollowViewModel: .init(journeys: [], coreDataStore: coredata),
 			coreDataStore: coredata,
@@ -20,7 +21,7 @@ final class Model {
 		)
 	}()
 	static let preview = {
-		let coredata = CoreDataStore(container: PersistenceController.preview.container)
+		let coredata = ChooDataStore(container: PersistenceController.preview.container)
 		return Model(
 			journeyFollowViewModel: .init(journeys: [], coreDataStore: coredata),
 			coreDataStore: coredata,
@@ -37,7 +38,7 @@ final class Model {
 	let sheetVM : SheetViewModel
 	let logVM : LogViewModel
 	let topBarAlertVM : TopBarAlertViewModel
-	let coreDataStore : CoreDataStore
+	let coreDataStore : ChooDataStore
 	let searchStopsVM : SearchStopsViewModel
 	let journeyFollowVM : JourneyFollowViewModel
 	let recentSearchesVM : RecentSearchesViewModel
@@ -49,7 +50,7 @@ final class Model {
 		alertVM : TopBarAlertViewModel = .init(),
 		searchStopsVM : SearchStopsViewModel = .init(),
 		journeyFollowViewModel : JourneyFollowViewModel,
-		coreDataStore : CoreDataStore,
+		coreDataStore : ChooDataStore,
 		recentSearchesViewModel : RecentSearchesViewModel,
 		locationDataManager : ChewLocationDataManager = .init(),
 		appSettingsVM : AppSettingsViewModel,

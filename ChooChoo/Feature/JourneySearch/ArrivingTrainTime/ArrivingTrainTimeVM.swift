@@ -57,7 +57,7 @@ extension ArrivingTrainTimeViewModel  {
 	enum Status : ChewStatus {
 		case idle
 		case loading(leg : LegViewData)
-		case error(any ChewError)
+		case error(any ChooError)
 		
 		var description : String {
 			switch self {
@@ -75,7 +75,7 @@ extension ArrivingTrainTimeViewModel  {
 		case didRequestTime(leg : LegViewData)
 		case didCancelRequestTime
 		case didLoad(time : Prognosed<Date>)
-		case didFail(any ChewError)
+		case didFail(any ChooError)
 		
 		var description : String {
 			switch self {
@@ -163,7 +163,7 @@ extension ArrivingTrainTimeViewModel {
 					.ferry(ferry: false),
 					.arrivalTime(arrivalTime: searchArrivalTime),
 				]),
-				type: Requests.journeys
+				type: ChooRequest.journeys
 			)
 			.mapError { $0 }
 			.asyncFlatMap { journeyListDTO in
@@ -206,7 +206,7 @@ extension ArrivingTrainTimeViewModel {
 				return Event.didLoad(time: resultTimeContainer.date.arrival)
 			}
 			.catch { error in
-				return Just(Event.didFail(error as! any ChewError)).eraseToAnyPublisher()
+				return Just(Event.didFail(error as? any ChooError ?? DataError.generic(msg: "unknown error"))).eraseToAnyPublisher()
 			}
 			.eraseToAnyPublisher()
 		}

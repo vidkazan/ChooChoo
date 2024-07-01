@@ -10,7 +10,7 @@ import CoreData
 @testable import ChooChoo
 
 final class ChooCoreDataStoreTest: XCTestCase {
-	let coreDataStore = CoreDataStore.preview
+	let coreDataStore = ChooDataStore.preview
 	let dataName = Mock.journeys.journeyNeussWolfsburg
 
 	var APIdecodedData : JourneyWrapper!

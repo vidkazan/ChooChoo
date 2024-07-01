@@ -9,9 +9,10 @@ import Foundation
 import CoreData
 import CoreLocation
 import OSLog
+import FcodyCoreData
 
 // MARK: update
-extension CoreDataStore {
+extension ChooDataStore {
 	func updateJourney(id: Int64,viewData : JourneyViewData,stops : DepartureArrivalPairStop) -> Bool {
 		if deleteJourneyIfFound(id: id) {
 			return addJourney(id: id,viewData: viewData, stops: stops)

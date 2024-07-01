@@ -9,9 +9,10 @@ import Foundation
 import CoreData
 import CoreLocation
 import OSLog
+import FcodyCoreData
 
 // MARK: Fetch
-extension CoreDataStore {
+extension ChooDataStore {
 	func fetchUser() -> CDUser? {
 		let user = self.fetchOrCreateUser()?.first
 		self.user = user
@@ -92,30 +93,5 @@ extension CoreDataStore {
 			self.user = CDUser.createWith(using: self.asyncContext)
 		}
 		return fetch(CDUser.self)
-	}
-	
-	func fetch<T : NSManagedObject>(_ t : T.Type) -> [T]? {
-		var object : [T]? = nil
-		 asyncContext.performAndWait {
-			guard let fetchRequest = T.fetchRequest() as? NSFetchRequest<T> else {
-				Logger.coreData.error("fetch: \(T.self): generate fetch request error")
-				return
-			}
-			do {
-				let res = try self.asyncContext.fetch(fetchRequest)
-				if !res.isEmpty {
-					Logger.coreData.trace("fetch: \(T.self) done")
-					object = res
-					return
-				}
-				object = []
-				Logger.coreData.info(
-					"fetch: \(T.self): result is empty"
-				)
-			} catch {
-				Logger.coreData.error("fetch: \(T.self) failed")
-			}
-		}
-		return object
 	}
 }

@@ -7,6 +7,8 @@
 
 import Foundation
 import Combine
+import FcodyCoreData
+
 
 extension JourneyFollowViewModel {
 	static func userInput(input: AnyPublisher<Event, Never>) -> Feedback<State, Event> {
@@ -15,7 +17,7 @@ extension JourneyFollowViewModel {
 		}
 	}
 	
-	static func whenUpdatingJourney(coreDataStore : CoreDataStore) -> Feedback<State, Event> {
+	static func whenUpdatingJourney(coreDataStore : ChooDataStore) -> Feedback<State, Event> {
 		Feedback { (state: State) -> AnyPublisher<Event, Never> in
 			guard case let .updatingJourney(viewData, followId) = state.status else {
 				return Empty().eraseToAnyPublisher()
@@ -52,7 +54,7 @@ extension JourneyFollowViewModel {
 		}
 	}
 	
-	static func whenEditing(coreDataStore : CoreDataStore) -> Feedback<State, Event> {
+	static func whenEditing(coreDataStore : ChooDataStore) -> Feedback<State, Event> {
 		Feedback {  (state: State) -> AnyPublisher<Event, Never> in
 			guard case let .editing(action,followId, viewData,send) = state.status else {
 				return Empty().eraseToAnyPublisher()

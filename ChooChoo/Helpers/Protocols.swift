@@ -37,8 +37,7 @@ extension ChewStatus {
 	}
 }
 
-protocol ChewViewModelProtocol : ObservableObject, Identifiable {
-}
+protocol ChewViewModelProtocol : ObservableObject, Identifiable {}
 
 extension ChewViewModelProtocol {
 	static func log(

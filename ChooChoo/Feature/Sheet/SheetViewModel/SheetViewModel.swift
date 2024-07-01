@@ -12,6 +12,7 @@ import MapKit
 import CoreLocation
 import OSLog
 import OrderedCollections
+import ChooNetworking
 
 class SheetViewModel : ChewViewModelProtocol {
 	@Published private(set) var state : State {
@@ -56,7 +57,7 @@ extension SheetViewModel{
 	
 	enum Status : ChewStatus {
 		case loading(_ type : SheetType)
-		case error(_ error : any ChewError)
+		case error(_ error : any ChooError)
 		case showing(_ type : SheetType, result: any SheetViewDataSource)
 		
 		var description : String {
@@ -75,7 +76,7 @@ extension SheetViewModel{
 		case didRequestHide
 		case didRequestShow(_ type : SheetType)
 		case didLoadDataForShowing(_ type : SheetType,_ result : SheetViewDataSource)
-		case didFailToLoadData(_ error : any ChewError)
+		case didFailToLoadData(_ error : any ChooError)
 		
 		var description : String {
 			switch self {
@@ -281,11 +282,11 @@ extension SheetViewModel {
 			.eraseToAnyPublisher()
 	}
 
-	static func fetchTrip(tripId : String) -> AnyPublisher<LegDTO,ChooNetworking.ApiError> {
+	static func fetchTrip(tripId : String) -> AnyPublisher<LegDTO,ChooApiError> {
 		return ChooNetworking().fetch(
 			TripDTO.self,
 			query: [],
-			type: Requests.trips(tripId: tripId)
+			type: ChooRequest.trips(tripId: tripId)
 		)
 		.map { $0.trip }
 		.eraseToAnyPublisher()
@@ -315,7 +316,7 @@ extension SheetViewModel {
 	
 	
 	static func makeDirectionsRequest(from: Coordinate, to: Coordinate
-	) -> AnyPublisher<MKDirections.Response, ChooNetworking.ApiError> {
+	) -> AnyPublisher<MKDirections.Response, ChooApiError> {
 		let request = MKDirections.Request()
 		request.source = MKMapItem(
 			placemark: MKPlacemark(
@@ -334,13 +335,13 @@ extension SheetViewModel {
 		let directions = MKDirections(request: request)
 		
 		
-		let subject = Future<MKDirections.Response,ChooNetworking.ApiError> { promise in
+		let subject = Future<MKDirections.Response,ChooApiError> { promise in
 			directions.calculate { resp, error in
 				if let error = error {
 					return promise(.failure(.cannotConnectToHost(error.localizedDescription)))
 				}
 				guard let resp = resp else {
-					return promise(.failure(ChooNetworking.ApiError.cannotDecodeRawData))
+					return promise(.failure(.cannotDecodeRawData))
 				}
 				return promise(.success(resp))
 			}

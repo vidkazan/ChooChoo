@@ -9,6 +9,7 @@ import Foundation
 import Combine
 import CoreLocation
 import MapKit
+import ChooNetworking
 
 extension JourneyDetailsViewModel {
 	enum FetchJourneyByRefreshTokenMode {
@@ -16,7 +17,7 @@ extension JourneyDetailsViewModel {
 		case withoutPolylines
 	}
 	
-	static func fetchJourneyByRefreshToken(ref : String, mode : FetchJourneyByRefreshTokenMode = .full) -> (AnyPublisher<JourneyWrapper,ChooNetworking.ApiError>) {
+	static func fetchJourneyByRefreshToken(ref : String, mode : FetchJourneyByRefreshTokenMode = .full) -> (AnyPublisher<JourneyWrapper,ChooApiError>) {
 		let queryMethods = {
 			switch mode {
 			case .full:
@@ -35,16 +36,16 @@ extension JourneyDetailsViewModel {
 			query: Query.queryItems(
 				methods: queryMethods
 			),
-			type: Requests.journeyByRefreshToken(ref: ref)
+			type: ChooRequest.journeyByRefreshToken(ref: ref)
 		)
 		.eraseToAnyPublisher()
 	}
 	
-	static func fetchTrip(tripId : String) -> AnyPublisher<LegDTO,ChooNetworking.ApiError> {
+	static func fetchTrip(tripId : String) -> AnyPublisher<LegDTO,ChooApiError> {
 		return ChooNetworking().fetch(
 			TripDTO.self,
 			query: [],
-			type: Requests.trips(tripId: tripId)
+			type: ChooRequest.trips(tripId: tripId)
 		)
 		.map { $0.trip }
 		.eraseToAnyPublisher()

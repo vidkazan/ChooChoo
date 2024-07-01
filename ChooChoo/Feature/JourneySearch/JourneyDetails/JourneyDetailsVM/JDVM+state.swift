@@ -83,7 +83,7 @@ extension JourneyDetailsViewModel {
 		case loading(id : Int64,token : String)
 		case loadingIfNeeded(id : Int64,token : String,timeStatus: TimeContainer.Status)
 		case loadedJourneyData
-		case error(error : any ChewError)
+		case error(error : any ChooError)
 		
 		
 		case changingSubscribingState(id: Int64, ref : String, journeyDetailsViewModel: JourneyDetailsViewModel?)
@@ -110,11 +110,11 @@ extension JourneyDetailsViewModel {
 	enum Event : ChewEvent {
 		case didCancelToLoadData
 		case didLoadJourneyData(data : JourneyViewData)
-		case didFailedToLoadJourneyData(error : any ChewError)
+		case didFailedToLoadJourneyData(error : any ChooError)
 		case didRequestReloadIfNeeded(id: Int64, ref : String,timeStatus: TimeContainer.Status)
 		case didTapReloadButton(id : Int64, ref : String)
 		case didTapSubscribingButton(id : Int64, ref : String,journeyDetailsViewModel: JourneyDetailsViewModel?)
-		case didFailToChangeSubscribingState(error : any ChewError)
+		case didFailToChangeSubscribingState(error : any ChooError)
 		case didChangedSubscribingState
 	
 		

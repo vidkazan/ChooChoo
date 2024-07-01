@@ -30,11 +30,11 @@ final class RecentSearchesViewModel : ChewViewModelProtocol {
 	}
 	private var bag = Set<AnyCancellable>()
 	private let input = PassthroughSubject<Event,Never>()
-	private let coreDataStore : CoreDataStore
+	private let coreDataStore : ChooDataStore
 	
 	init(
 		searches : [RecentSearch],
-		coreDataStore : CoreDataStore
+		coreDataStore : ChooDataStore
 	) {
 		self.coreDataStore = coreDataStore
 		state = State(
@@ -81,7 +81,7 @@ extension RecentSearchesViewModel {
 	}
 	
 	enum Status : ChewStatus {
-		case error(action : String, error : any ChewError)
+		case error(action : String, error : any ChooError)
 		case idle
 		case editing(_ action: Action, search : RecentSearch?)
 		case updating
@@ -135,7 +135,7 @@ extension RecentSearchesViewModel {
 			return input
 		}
 	}
-	static func whenEditing(coreDataStore : CoreDataStore) -> Feedback<State, Event> {
+	static func whenEditing(coreDataStore : ChooDataStore) -> Feedback<State, Event> {
 		Feedback { (state: State) -> AnyPublisher<Event, Never> in
 			switch state.status {
 			case .editing(let action, let data):

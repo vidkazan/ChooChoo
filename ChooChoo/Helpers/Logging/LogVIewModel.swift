@@ -64,7 +64,7 @@ extension LogViewModel  {
 	enum Status : ChewStatus {
 		case loading
 		case loaded
-		case error(any ChewError)
+		case error(any ChooError)
 		
 		var description : String {
 			switch self {
@@ -82,7 +82,7 @@ extension LogViewModel  {
 		case didTapLoading
 		case didCancelLoading
 		case didLoad(logs : [OSLogEntryLog])
-		case didFailToLoad(error : any ChewError)
+		case didFailToLoad(error : any ChooError)
 		
 		var description : String {
 			switch self {

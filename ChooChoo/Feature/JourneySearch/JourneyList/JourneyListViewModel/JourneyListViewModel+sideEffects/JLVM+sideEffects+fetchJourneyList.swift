@@ -8,6 +8,7 @@
 import Foundation
 import Combine
 import OSLog
+import ChooNetworking
 
 extension JourneyListViewModel {
 	static func fetchJourneyList(
@@ -16,7 +17,7 @@ extension JourneyListViewModel {
 		time: Date,
 		mode: LocationDirectionType,
 		settings : JourneySettings
-	) -> AnyPublisher<JourneyListDTO,ChooNetworking.ApiError> {
+	) -> AnyPublisher<JourneyListDTO,ChooApiError> {
 		var query = addJourneyListStopsQuery(dep: dep, arr: arr)
 		query += addJourneyListTransfersQuery(settings: settings)
 		query += addJourneyListTransportModes(settings: settings)
@@ -29,7 +30,7 @@ extension JourneyListViewModel {
 				Query.stopovers(isShowing: true)
 			]
 		)
-		return ChooNetworking().fetch(JourneyListDTO.self,query: query, type: Requests.journeys)
+		return ChooNetworking().fetch(JourneyListDTO.self,query: query, type: ChooRequest.journeys)
 	}
 	
 	static func addJourneyListStopsQuery(dep : Stop,arr : Stop) -> [URLQueryItem] {

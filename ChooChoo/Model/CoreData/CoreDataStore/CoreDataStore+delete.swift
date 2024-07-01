@@ -9,9 +9,10 @@ import Foundation
 import CoreData
 import CoreLocation
 import OSLog
+import FcodyCoreData
 
 // MARK: remove
-extension CoreDataStore {
+extension ChooDataStore {
 	func deleteJourneyIfFound(id : Int64) -> Bool {
 		var result = false
 		if let objects = self.fetchJourneys() {

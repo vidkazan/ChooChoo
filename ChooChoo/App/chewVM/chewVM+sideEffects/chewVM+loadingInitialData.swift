@@ -12,7 +12,7 @@ import OSLog
 
 
 extension ChewViewModel {
-	static func whenLoadingInitialData(coreDataStore : CoreDataStore) -> Feedback<State, Event> {
+	static func whenLoadingInitialData(coreDataStore : ChooDataStore) -> Feedback<State, Event> {
 		Feedback { (state: State) -> AnyPublisher<Event, Never> in
 			guard case .loadingInitialData = state.status else {
 				return Empty().eraseToAnyPublisher()

@@ -6,7 +6,6 @@
 //  Copyright © 2020 Vadym Bulavin. All rights reserved.
 //
 
-import Foundation
 import Combine
 
 struct Feedback<State, Event> {

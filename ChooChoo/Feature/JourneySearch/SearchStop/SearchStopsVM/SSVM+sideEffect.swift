@@ -7,6 +7,7 @@
 
 import Foundation
 import Combine
+import ChooNetworking
 
 extension SearchStopsViewModel {
 	static func userInput(input: AnyPublisher<Event, Never>) -> Feedback<State, Event> {
@@ -25,7 +26,7 @@ extension SearchStopsViewModel {
 				.mapError { $0 }
 				.asyncFlatMap { stops in
 					if stops.isEmpty {
-						return Event.onDataLoadError(ChooNetworking.ApiError.stopNotFound)
+						return Event.onDataLoadError(DataError.stopNotFound)
 					}
 					let stops = stops.compactMap { stop -> Stop? in
 						return stop.stop()
@@ -33,7 +34,7 @@ extension SearchStopsViewModel {
 					return Event.onDataLoaded(stops,type)
 				}
 				.catch { error in
-					return Just(Event.onDataLoadError(error as? ChooNetworking.ApiError ?? .generic(description: error.localizedDescription))).eraseToAnyPublisher()
+					return Just(Event.onDataLoadError(error as? ChooApiError ?? ChooApiError.generic(description: error.localizedDescription))).eraseToAnyPublisher()
 				}
 				.eraseToAnyPublisher()
 		}
@@ -58,13 +59,13 @@ extension SearchStopsViewModel {
 
 
 extension SearchStopsViewModel {
-	static func fetchLocations(text : String, type : LocationDirectionType) -> AnyPublisher<[StopDTO],ChooNetworking.ApiError> {
+	static func fetchLocations(text : String, type : LocationDirectionType) -> AnyPublisher<[StopDTO],ChooApiError> {
 		var query : [URLQueryItem] = Constants.initialQuery
 		query = Query.queryItems(methods: [
 			Query.location(location: text),
 			Query.results(max: 10)
 		])
-		return ChooNetworking().fetch([StopDTO].self,query: query, type: Requests.locations)
+		return ChooNetworking().fetch([StopDTO].self,query: query, type: ChooRequest.locations)
 	}
 }
 

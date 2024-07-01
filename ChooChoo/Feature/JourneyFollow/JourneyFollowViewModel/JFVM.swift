@@ -32,7 +32,7 @@ final class JourneyFollowViewModel : ChewViewModelProtocol {
 	init(
 		journeys : [JourneyFollowData],
 		initialStatus : Status = .updating,
-		coreDataStore : CoreDataStore
+		coreDataStore : ChooDataStore
 	) {
 		state = State(
 			journeys: journeys,
@@ -109,11 +109,11 @@ extension JourneyFollowViewModel {
 	}
 	
 	enum Event : ChewEvent {
-		case didFailToEdit(action : Action, error : any ChewError)
+		case didFailToEdit(action : Action, error : any ChooError)
 		case didTapUpdate
 		case didUpdateData([JourneyFollowData])
 		case didRequestUpdateJourney(JourneyViewData, Int64)
-		case didFailToUpdateJourney(_ error : any ChewError)
+		case didFailToUpdateJourney(_ error : any ChooError)
 		
 		case didTapEdit(
 			action : Action,
@@ -143,7 +143,7 @@ extension JourneyFollowViewModel {
 		}
 	}
 	
-	enum Error : ChewError {
+	enum Error : ChooError {
 		static func == (lhs: Error, rhs: Error) -> Bool {
 			return lhs.description == rhs.description
 		}

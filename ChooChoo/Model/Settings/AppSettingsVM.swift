@@ -7,7 +7,7 @@
 
 import Foundation
 import Combine
-
+import FcodyCoreData
 
 class AppSettingsViewModel : ChewViewModelProtocol {
 	@Published private(set) var state : State {
@@ -21,7 +21,7 @@ class AppSettingsViewModel : ChewViewModelProtocol {
 	init(
 		settings : AppSettings = AppSettings(),
 		status : Status = .idle,
-		coreDataStore : CoreDataStore
+		coreDataStore : ChooDataStore
 	) {
 		self.state = State(settings: settings,status: status)
 		Publishers.system(
@@ -158,7 +158,7 @@ extension AppSettingsViewModel {
 		}
 	}
 		
-	static func whenUpdatedSettings(coreDataStore : CoreDataStore) -> Feedback<State, Event> {
+	static func whenUpdatedSettings(coreDataStore : ChooDataStore) -> Feedback<State, Event> {
 		Feedback { (state: State) -> AnyPublisher<Event, Never> in
 			guard case .updating = state.status else {
 				return Empty().eraseToAnyPublisher()

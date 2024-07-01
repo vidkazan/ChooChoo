@@ -9,9 +9,10 @@ import Foundation
 import CoreData
 import CoreLocation
 import OSLog
+import FcodyCoreData
 
 // MARK: add
-extension CoreDataStore {
+extension ChooDataStore {
 	func addRecentLocation(stop : Stop){
 		guard let user = self.user else { return }
 		 asyncContext.performAndWait {

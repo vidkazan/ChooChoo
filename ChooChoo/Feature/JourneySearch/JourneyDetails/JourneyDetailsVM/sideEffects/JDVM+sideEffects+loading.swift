@@ -69,8 +69,10 @@ extension JourneyDetailsViewModel {
 										
 					return Event.didLoadJourneyData(data: res)
 				}
-				.catch {
-					error in Just(.didFailedToLoadJourneyData(error: error as! (any ChewError)))
+				.catch { error in
+					Just(.didFailedToLoadJourneyData(
+						error: error as? ChooApiError ?? ChooApiError.generic(description: error.localizedDescription)
+					))
 				}
 				.eraseToAnyPublisher()
 		}

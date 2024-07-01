@@ -10,6 +10,7 @@ import Combine
 import CoreLocation
 import MapKit
 import SwiftUI
+import ChooNetworking
 
 class NearestStopViewModel : ChewViewModelProtocol {
 	@Published private(set) var state : State {
@@ -75,7 +76,7 @@ extension NearestStopViewModel {
 	
 	enum Status :  ChewStatus {
 		case idle
-		case error(any ChewError)
+		case error(any ChooError)
 		case loadingStopDetails(Stop)
 		case loadingNearbyStops(_ coordinates : CLLocation)
 		var description : String {
@@ -100,7 +101,7 @@ extension NearestStopViewModel {
 		case didLoadStopDetails(Stop,_ stopTrips : [LegViewData])
 		case didLoadNearbyStops([Stop])
 		case didCancelLoading
-		case didFailToLoad(any ChewError)
+		case didFailToLoad(any ChooError)
 		var description : String {
 			switch self {
 			case .didDeselectStop:
@@ -307,7 +308,7 @@ extension NearestStopViewModel {
 				}
 				.catch { error in
 					return Just(
-						Event.didFailToLoad(error as? ChooNetworking.ApiError ?? .generic(description: error.localizedDescription))
+						Event.didFailToLoad(error as? DataError ?? DataError.generic(msg: error.localizedDescription))
 					).eraseToAnyPublisher()
 				}
 				.eraseToAnyPublisher()
@@ -334,7 +335,7 @@ extension NearestStopViewModel {
 					}
 					.catch { err in
 						return Just(
-							Event.didFailToLoad(err as? ChooNetworking.ApiError ?? .generic(description: err.localizedDescription))
+							Event.didFailToLoad(err as? DataError ?? DataError.generic(msg: err.localizedDescription))
 						).eraseToAnyPublisher()
 					}
 					.eraseToAnyPublisher()
@@ -344,7 +345,7 @@ extension NearestStopViewModel {
 		}
 	}
 	
-	static func fetchLocatonsNearby(coords : CLLocation) -> AnyPublisher<[StopDTO],ChooNetworking.ApiError> {
+	static func fetchLocatonsNearby(coords : CLLocation) -> AnyPublisher<[StopDTO],ChooApiError> {
 		let predictedCoords = Self.calculateNextCoordinates(loc: coords, time: 7.5)
 		return ChooNetworking().fetch(
 			[StopDTO].self,
@@ -352,19 +353,19 @@ extension NearestStopViewModel {
 				Query.longitude(longitude: String(predictedCoords.longitude)).queryItem(),
 				Query.latitude(latitude: String(predictedCoords.latitude)).queryItem()
 			],
-			type: Requests.locationsNearby(coords: coords.coordinate)
+			type: ChooRequest.locationsNearby(coords: coords.coordinate)
 		)
 		.eraseToAnyPublisher()
 	}
 	
-	static func fetchStopDepartures(stop : Stop) -> AnyPublisher<StopTripsDTO,ChooNetworking.ApiError> {
+	static func fetchStopDepartures(stop : Stop) -> AnyPublisher<StopTripsDTO,ChooApiError> {
 		return ChooNetworking().fetch(
 			StopTripsDTO.self,
 			query: [
 				Query.duration(minutes: 60).queryItem(),
 				Query.results(max: 20).queryItem()
 			],
-			type: Requests.stopDepartures(stopId: stop.id)
+			type: ChooRequest.stopDepartures(stopId: stop.id)
 		)
 		.eraseToAnyPublisher()
 	}

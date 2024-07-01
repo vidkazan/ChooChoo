@@ -8,6 +8,7 @@
 import Foundation
 import Combine
 import OSLog
+import ChooNetworking
 
 extension JourneyListViewModel {
 	static func whenLoadingJourneyRef() -> Feedback<State, Event> {
@@ -47,7 +48,7 @@ extension JourneyListViewModel {
 						)
 					}
 					.catch { error in
-						Just(Event.didFailToLoadEarlierRef(error as? ChooNetworking.ApiError ?? .generic(description: error.localizedDescription)))
+						Just(Event.didFailToLoadEarlierRef(error as? DataError ?? DataError.generic(msg: error.localizedDescription)))
 					}
 					.eraseToAnyPublisher()
 				
@@ -80,14 +81,14 @@ extension JourneyListViewModel {
 						)
 					}
 					.catch { error in
-						Just(Event.didFailToLoadLaterRef(error as? ChooNetworking.ApiError ?? .generic(description: error.localizedDescription)))
+						Just(Event.didFailToLoadLaterRef(error as? DataError ?? DataError.generic(msg: error.localizedDescription)))
 					}
 					.eraseToAnyPublisher()
 			}
 		}
 	}
 	
-	static func fetchEarlierOrLaterRef(dep : Stop,arr : Stop,ref : String, type : JourneyUpdateType,settings : JourneySettings) -> AnyPublisher<JourneyListDTO,ChooNetworking.ApiError> {
+	static func fetchEarlierOrLaterRef(dep : Stop,arr : Stop,ref : String, type : JourneyUpdateType,settings : JourneySettings) -> AnyPublisher<JourneyListDTO,ChooApiError> {
 		var query = addJourneyListStopsQuery(dep: dep, arr: arr)
 		query += Query.queryItems(methods: [
 			type == .earlierRef ? Query.earlierThan(earlierRef: ref) : Query.laterThan(laterRef: ref),
@@ -96,7 +97,7 @@ extension JourneyListViewModel {
 			Query.stopovers(isShowing: true)
 		])
 		query += self.addJourneyListTransportModes(settings: settings)
-		return ChooNetworking().fetch(JourneyListDTO.self,query: query, type: Requests.journeys)
+		return ChooNetworking().fetch(JourneyListDTO.self,query: query, type: ChooRequest.journeys)
 	}
 }
 
