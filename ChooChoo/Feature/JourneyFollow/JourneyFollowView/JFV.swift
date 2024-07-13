@@ -324,7 +324,7 @@ extension JourneyFollowView {
 					)
 				}
 				.disabled(
-					evaluateAlternativesBtnAppearance(
+					evaluatePastTrip(
 						arrivalTime: journey
 							.journeyViewData
 							.time
@@ -388,7 +388,7 @@ extension JourneyFollowView {
 }
 
 private extension JourneyFollowView {
-	func evaluateAlternativesBtnAppearance(arrivalTime : Date) -> Bool {
+	func evaluatePastTrip(arrivalTime : Date) -> Bool {
 		arrivalTime < Date.now
 	}
 }
