@@ -39,6 +39,11 @@ struct RouteViewDataSource : SheetViewDataSource {
 struct RemarksViewDataSource : SheetViewDataSource {
 	let remarks : [RemarkViewData]
 }
+
+struct JourneyAlternativesViewDataSource	: SheetViewDataSource {
+	let journey : JourneyFollowData
+}
+
 struct DatePickerViewDataSource	: SheetViewDataSource {}
 struct EmptyDataSource				: SheetViewDataSource {}
 struct JourneySettingsViewDataSource		: SheetViewDataSource {}
