@@ -8,7 +8,6 @@
 import Foundation
 import SwiftUI
 
-
 struct AppSettingsView: View {
 	@ObservedObject var appSetttingsVM : AppSettingsViewModel
 	init(appSetttingsVM: AppSettingsViewModel) {
