@@ -266,21 +266,26 @@ extension JourneyFollowView {
 							}
 							return false
 						}
-						guard !currentLegs.isEmpty, currentLegs.count == 1, let leg = currentLegs.first else {
+						guard 
+							!currentLegs.isEmpty,
+								currentLegs.count == 1,
+								let leg = currentLegs.first else {
 							return
 						}
-						if let stopViewData = leg.legStopsViewData.first(where: {
-							if let arrival = $0.time.date.arrival.actualOrPlannedIfActualIsNil() {
-								return arrival > now
-							}
-							return false
-						}), let stop = stopViewData.stop() {
-							chewVM.send(
-								event: .didUpdateSearchData(
-									dep: .location(stop),
-									arr: .location(journey.stops.arrival),
-									date: SearchStopsDate(date: .now, mode: .departure)
-								)
+						if 
+							let stopViewData = leg.legStopsViewData.first(where: {
+								if let arrival = $0.time.date.arrival.actualOrPlannedIfActualIsNil() {
+									return arrival > now
+								}
+								return false
+							}),
+							let stop = stopViewData.stop() {
+								chewVM.send(
+									event: .didUpdateSearchData(
+										dep: .location(stop),
+										arr: .location(journey.stops.arrival),
+										date: SearchStopsDate(date: .now, mode: .departure)
+									)
 							)
 							return
 						}
@@ -293,7 +298,11 @@ extension JourneyFollowView {
 							}
 							return false
 						}
-						guard !nearestStops.isEmpty, nearestStops.count == 1, let stopViewData = nearestStops.first, let stop = stopViewData.stop() else {
+						guard 
+							!nearestStops.isEmpty,
+								nearestStops.count == 1,
+								let stopViewData = nearestStops.first,
+								let stop = stopViewData.stop() else {
 							return
 						}
 						chewVM.send(
@@ -307,14 +316,24 @@ extension JourneyFollowView {
 				} label: {
 					Label(
 						title: {
-							Text("Find alternatives", comment: "JourneyFollowView: listCell: swipe action item")
+							Text("Alternatives", comment: "JourneyFollowView: listCell: swipe action item")
 						},
 						icon: {
 							Image(ChooSFSymbols.arrowTriangleBranch)
 						}
 					)
 				}
-				.tint(.chewFillMagenta)
+				.disabled(
+					evaluateAlternativesBtnAppearance(
+						arrivalTime: journey
+							.journeyViewData
+							.time
+							.date
+							.arrival
+							.actualOrPlannedIfActualIsNil() ?? .now
+					)
+				)
+				.tint(.chewFillMagenta.opacity(0.7))
 			}
 			.swipeActions(edge: .leading) {
 				Button {
@@ -365,6 +384,12 @@ extension JourneyFollowView {
 				}
 				.tint(.chewFillRedPrimary)
 			}
+	}
+}
+
+private extension JourneyFollowView {
+	func evaluateAlternativesBtnAppearance(arrivalTime : Date) -> Bool {
+		arrivalTime < Date.now
 	}
 }
 

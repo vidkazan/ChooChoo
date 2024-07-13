@@ -578,8 +578,6 @@
 		7DAF62B82A9E5A0B006F1A17 /* DatePickerTimePresetButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAF62B72A9E5A0B006F1A17 /* DatePickerTimePresetButtons.swift */; };
 		7DAF62C22A9E8C2B006F1A17 /* Solar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAF62C12A9E8C2B006F1A17 /* Solar.swift */; };
 		7DAF62C42A9F78D0006F1A17 /* SunEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAF62C32A9F78CF006F1A17 /* SunEvent.swift */; };
-		7DB62DEB2C0913D000CA1BCA /* JFV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE727C52AD93869002FF033 /* JFV.swift */; };
-		7DB62DEC2C0913D100CA1BCA /* JFV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE727C52AD93869002FF033 /* JFV.swift */; };
 		7DB62DEF2C0914A400CA1BCA /* ChooTip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCA4ADC2BD93714005BA68E /* ChooTip.swift */; };
 		7DB62DF02C0914C500CA1BCA /* ChooTipLabels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCA4AE12BD93A53005BA68E /* ChooTipLabels.swift */; };
 		7DB62DF12C0914CE00CA1BCA /* SwipeActionsTip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2C0E612BDBB9E4000839C1 /* SwipeActionsTip.swift */; };
@@ -2501,7 +2499,6 @@
 				7D3B97F12C08D6DD00A3AAEB /* TimeLabelView.swift in Sources */,
 				7D3B97AD2C08D55100A3AAEB /* StopVIewData.swift in Sources */,
 				7D3B985B2C08D74800A3AAEB /* CDRecentSearch+CoreDataProperties.swift in Sources */,
-				7DB62DEB2C0913D000CA1BCA /* JFV.swift in Sources */,
 				7D3B97CF2C08D69300A3AAEB /* ChooTip.swift in Sources */,
 				7D3B98542C08D74200A3AAEB /* CoreDataStore+delete.swift in Sources */,
 				7D3B98AC2C08D7A700A3AAEB /* SheetViewDataSource.swift in Sources */,
@@ -2703,7 +2700,6 @@
 				7D3B97EE2C08D6DC00A3AAEB /* TimeLabelView.swift in Sources */,
 				7D3B97AC2C08D55000A3AAEB /* StopVIewData.swift in Sources */,
 				7D3B985D2C08D74900A3AAEB /* CDRecentSearch+CoreDataProperties.swift in Sources */,
-				7DB62DEC2C0913D100CA1BCA /* JFV.swift in Sources */,
 				7D3B98582C08D74300A3AAEB /* CoreDataStore+delete.swift in Sources */,
 				7D3B98AA2C08D7A600A3AAEB /* SheetViewDataSource.swift in Sources */,
 				7D3B986F2C08D75D00A3AAEB /* CDUser+CoreDataClass.swift in Sources */,
