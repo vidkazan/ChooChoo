@@ -24,7 +24,7 @@ extension SheetViewModel {
 		case onboarding
 		case remark(remarks : [RemarkViewData])
 		case journeyDebug(legs : [LegDTO])
-		case alternatives(for: JourneyFollowData)
+		case alternatives(for: JourneyDetailsViewModel)
 		
 		var detents : [ChewPresentationDetent] {
 			switch self {

@@ -194,7 +194,7 @@ extension JourneyFollowView {
 			mapActionButton(journey: journey)
 		}
 		.swipeActions(edge: .trailing) {
-			alternativesActionButton(journey: journey)
+			alternativesActionButton(jdvm: vm)
 		}
 		.swipeActions(edge: .leading) {
 			searchNowActionButton(journey: journey)

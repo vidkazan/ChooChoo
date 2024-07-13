@@ -11,65 +11,10 @@ import OSLog
 
 extension JourneyFollowView {
 	func alternativesActionButton(
-		journey : JourneyFollowData
+		jdvm : JourneyDetailsViewModel
 	) -> some View {
 		Button {
-			let now = Date.now
-			Task {
-				let currentLegs = journey.journeyViewData.legs.filter { leg in
-					if let arrival = leg.time.date.arrival.actualOrPlannedIfActualIsNil(),
-					   let departure = leg.time.date.departure.actualOrPlannedIfActualIsNil() {
-						return now > departure && arrival > now
-					}
-					return false
-				}
-				guard
-					!currentLegs.isEmpty,
-					currentLegs.count == 1,
-					let leg = currentLegs.first else {
-					return
-				}
-				if
-					let stopViewData = leg.legStopsViewData.first(where: {
-						if let arrival = $0.time.date.arrival.actualOrPlannedIfActualIsNil() {
-							return arrival > now
-						}
-						return false
-					}),
-					let stop = stopViewData.stop() {
-					chewVM.send(
-						event: .didUpdateSearchData(
-							dep: .location(stop),
-							arr: .location(journey.stops.arrival),
-							date: SearchStopsDate(date: .now, mode: .departure)
-						)
-					)
-					return
-				}
-				
-				let nearestStops = leg.legStopsViewData.filter { stop in
-					if let arrival = stop.time.date.arrival.actualOrPlannedIfActualIsNil(),
-					   let departure = stop.time.date.departure.actualOrPlannedIfActualIsNil() {
-						Logger.viewData.debug("\(arrival) - \(now) - \(departure)")
-						return now > arrival && departure > now
-					}
-					return false
-				}
-				guard
-					!nearestStops.isEmpty,
-					nearestStops.count == 1,
-					let stopViewData = nearestStops.first,
-					let stop = stopViewData.stop() else {
-					return
-				}
-				chewVM.send(
-					event: .didUpdateSearchData(
-						dep: .location(stop),
-						arr: .location(journey.stops.arrival),
-						date: SearchStopsDate(date: .now, mode: .departure)
-					)
-				)
-			}
+			Model.shared.sheetVM.send(event: .didRequestShow(.alternatives(for: jdvm)))
 		} label: {
 			Label(
 				title: {
@@ -82,11 +27,9 @@ extension JourneyFollowView {
 		}
 		.disabled(
 			evaluatePastTrip(
-				arrivalTime: journey
-					.journeyViewData
-					.time
-					.date
-					.arrival
+				arrivalTime: jdvm
+					.state.data.viewData
+					.time.date.arrival
 					.actualOrPlannedIfActualIsNil() ?? .now
 			)
 		)
