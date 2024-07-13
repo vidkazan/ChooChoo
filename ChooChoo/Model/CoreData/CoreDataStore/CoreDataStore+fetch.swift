@@ -19,6 +19,16 @@ extension ChooDataStore {
 		return user
 	}
 	
+	private func fetchOrCreateUser() -> [CDUser]? {
+		if let res = fetch(CDUser.self), !res.isEmpty {
+			return res
+		}
+		 asyncContext.performAndWait {
+			 self.user = self.asyncContext.createManagedObject(CDUser.self)
+		}
+		return fetch(CDUser.self)
+	}
+	
 	func fetchAppSettings() -> AppSettings? {
 		var res : AppSettings?
 		
@@ -82,16 +92,5 @@ extension ChooDataStore {
 	
 	func fetchJourneys() -> [CDJourney]? {
 		fetch(CDJourney.self)
-	}
-	
-	
-	private func fetchOrCreateUser() -> [CDUser]? {
-		if let res = fetch(CDUser.self), !res.isEmpty {
-			return res
-		}
-		 asyncContext.performAndWait {
-			self.user = CDUser.createWith(using: self.asyncContext)
-		}
-		return fetch(CDUser.self)
 	}
 }

@@ -20,13 +20,6 @@ extension CDUser {
 }
 
 extension CDUser {
-	static func createWith(using managedObjectContext: NSManagedObjectContext) -> CDUser? {
-		managedObjectContext.createManagedObject(CDUser.self)
-	}
-}
-
-extension CDUser {
-
 	@objc(addChewJourneysObject:)
 	@NSManaged public func addToChewJourneys(_ value: CDJourney)
 

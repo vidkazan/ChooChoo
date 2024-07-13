@@ -17,10 +17,6 @@ extension CDLocation {
 	enum ParentEntity {
 		case recentLocation(_ user : CDUser)
 		case savedLocation(_ user : CDUser)
-//		case followedJourneyDepStop(_ followedJourney : CDJourney)
-//		case followedJourneyArrStop(_ followedJourney : CDJourney)
-//		case recentSearchDepStop(_ recentSearch : CDRecentSearch)
-//		case recentSearchArrStop(_ recentSearch : CDRecentSearch)
 	}
 
 	convenience init(
@@ -28,7 +24,6 @@ extension CDLocation {
 		stop : Stop,
 		parent : ParentEntity
 	){
-		
 		self.init(entity: CDLocation.entity(), insertInto: context)
 
 		switch parent {
@@ -36,14 +31,6 @@ extension CDLocation {
 			user.addToRecentLocations(self)
 		case .recentLocation(let user):
 			user.addToRecentLocations(self)
-//		case .followedJourneyDepStop(let journeyDep):
-//			self.chewJourneyDep = journeyDep
-//		case .followedJourneyArrStop(let journeyArr):
-//			self.chewJourneyArr = journeyArr
-//		case .recentSearchDepStop(let recentSearchDepStop):
-//			self.chewRecentSearchDepStop = recentSearchDepStop
-//		case .recentSearchArrStop(let recentSearchArrStop):
-//			self.chewRecentSearchArrStop = recentSearchArrStop
 		}
 		
 		
