@@ -10,6 +10,7 @@ import SwiftUI
 import OSLog
 
 struct JourneyAlternativesView: View {
+	@Namespace private var journeyAlternativesViewNamespace
 	let secondTimer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
 	let minuteTimer = Timer.publish(every: 60, on: .main, in: .common).autoconnect()
 	@EnvironmentObject var chewVM : ChewViewModel
@@ -40,8 +41,10 @@ struct JourneyAlternativesView: View {
 							
 						}
 						if let alternativeJourneyDepartureStop = alternativeJourneyDepartureStop {
-							Text("\(alternativeJourneyDepartureStop.name)")
+							Text("\(alternativeJourneyDepartureStop.name) ")
+								.matchedGeometryEffect(id: "name", in: self.journeyAlternativesViewNamespace)
 								.chewTextSize(.big)
+								.transition(.move(edge: .top))
 							Spacer()
 							if let time = alternativeJourneyDepartureStop.time.date.arrival.actualOrPlannedIfActualIsNil(),
 							   let min = DateParcer.getTwoDateIntervalInMinutes(date1: Date.now, date2: time),
@@ -56,13 +59,15 @@ struct JourneyAlternativesView: View {
 										return nil
 									}
 							}() {
-								HStack(spacing: 0) {
+								VStack {
 									text
-									.frame(minWidth: 50)
+										.frame(minWidth: 50)
+										.padding(5)
+										.badgeBackgroundStyle(.secondary)
+//									TimeLabelView(size: .medium, arragement: .bottom, delayStatus: alternativeJourneyDepartureStop.time.arrivalStatus, time: alternativeJourneyDepartureStop.time.date.arrival)
+//									TimeLabelView(size: .medium, arragement: .bottom, delayStatus: alternativeJourneyDepartureStop.time.departureStatus, time: alternativeJourneyDepartureStop.time.date.departure)
 								}
 								.chewTextSize(.medium)
-								.padding(5)
-								.badgeBackgroundStyle(.secondary)
 							}
 						} else {
 							
@@ -73,17 +78,21 @@ struct JourneyAlternativesView: View {
 			Spacer()
 		}
 		.onReceive(secondTimer, perform: { _ in
-			let res = getAlternativeJourneyDepartureStop(journey: jdvm.state.data.viewData)
-			alternativeJourneyDepartureStop = res?.1
-			currentLeg = res?.0
+			withAnimation(.easeInOut, {
+				let res = getAlternativeJourneyDepartureStop(journey: jdvm.state.data.viewData)
+				alternativeJourneyDepartureStop = res?.1
+				currentLeg = res?.0
+			})
 		})
 		.onReceive(minuteTimer, perform: { _ in
 			jdvm.send(event: .didRequestReloadIfNeeded(id: jdvm.state.data.id, ref: jdvm.state.data.viewData.refreshToken, timeStatus: .active))
 		})
 		.onAppear {
-			let res = getAlternativeJourneyDepartureStop(journey: jdvm.state.data.viewData)
-			alternativeJourneyDepartureStop = res?.1
-			currentLeg = res?.0
+			withAnimation(.easeInOut, {
+				let res = getAlternativeJourneyDepartureStop(journey: jdvm.state.data.viewData)
+				alternativeJourneyDepartureStop = res?.1
+				currentLeg = res?.0
+			})
 		}
 		.padding(10)
 	}
