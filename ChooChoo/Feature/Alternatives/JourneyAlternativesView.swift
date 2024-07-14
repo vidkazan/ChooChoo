@@ -40,23 +40,33 @@ struct JourneyAlternativesView: View {
 							
 						}
 						if let alternativeJourneyDepartureStop = alternativeJourneyDepartureStop {
-							if let time = alternativeJourneyDepartureStop.time.date.arrival.actualOrPlannedIfActualIsNil() {
+							Text("\(alternativeJourneyDepartureStop.name)")
+								.chewTextSize(.big)
+							Spacer()
+							if let time = alternativeJourneyDepartureStop.time.date.arrival.actualOrPlannedIfActualIsNil(),
+							   let min = DateParcer.getTwoDateIntervalInMinutes(date1: Date.now, date2: time),
+								let text : Text? = {
+									switch min {
+									case 0..<1:
+										return Text("now", comment: "JourneyAlternativesView")
+									default:
+										if let dur = DateParcer.timeDuration(min) {
+											return Text("in \(dur)", comment: "JourneyAlternativesView")
+										}
+										return nil
+									}
+							}() {
 								HStack(spacing: 0) {
-									Text(NSLocalizedString("in ", comment: "JourneyAlternativesView: next stop view: time to stop")
-									)
-									Text(time, style: .relative)
-										.frame(minWidth: 50)
+									text
+									.frame(minWidth: 50)
 								}
 								.chewTextSize(.medium)
 								.padding(5)
 								.badgeBackgroundStyle(.secondary)
 							}
-							Text("\(alternativeJourneyDepartureStop.name)")
-								.chewTextSize(.big)
 						} else {
 							
 						}
-						Spacer()
 					}
 				})
 			}
