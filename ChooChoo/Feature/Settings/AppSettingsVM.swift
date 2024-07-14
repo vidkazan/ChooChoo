@@ -72,7 +72,7 @@ extension AppSettingsViewModel  {
 		}
 	}
 	enum Event : ChewEvent {
-		case didRequestToLoadInitialData(settings : AppSettings)
+		case didRequestToUpdateAppSettings(settings : AppSettings)
 		case didShowTip(tip : ChooTip.TipType)
 		case didRequestToShowTip(tip : ChooTip.TipType)
 		case didRequestToChangeLegViewMode(mode : AppSettings.LegViewMode)
@@ -84,8 +84,8 @@ extension AppSettingsViewModel  {
 				return "didRequestToShowTip"
 			case .didUpdateData:
 				return "didUpdateData"
-			case .didRequestToLoadInitialData:
-				return "didRequestToLoadInitialData"
+			case .didRequestToUpdateAppSettings:
+				return "didRequestToUpdateAppSettings"
 			case .didShowTip:
 				return "didShowTip"
 			case .didRequestToChangeLegViewMode:
@@ -109,7 +109,7 @@ extension AppSettingsViewModel {
 						oldSettings: state.settings,
 						tips: tips
 					),status: .updating)
-				case .didRequestToLoadInitialData(let settings):
+				case .didRequestToUpdateAppSettings(let settings):
 					return State(settings: settings, status: .idle)
 				case .didShowTip(let tip):
 					var tips = state.settings.tipsToShow
@@ -130,7 +130,7 @@ extension AppSettingsViewModel {
 			switch event {
 				case .didRequestToShowTip:
 					return state
-				case .didRequestToLoadInitialData(let settings):
+				case .didRequestToUpdateAppSettings(let settings):
 					return State(settings: settings, status: .idle)
 				case .didShowTip(let tip):
 					var tips = state.settings.tipsToShow

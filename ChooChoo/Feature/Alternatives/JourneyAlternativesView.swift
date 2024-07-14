@@ -47,7 +47,7 @@ struct JourneyAlternativesView: View {
 								.transition(.move(edge: .top))
 							Spacer()
 							if let time = alternativeJourneyDepartureStop.time.date.arrival.actualOrPlannedIfActualIsNil(),
-							   let min = DateParcer.getTwoDateIntervalInMinutes(date1: Date.now, date2: time),
+							   let min = DateParcer.getTwoDateIntervalInMinutes(date1: chewVM.referenceDate.date, date2: time),
 								let text : Text? = {
 									switch min {
 									case 0..<1:
@@ -77,9 +77,16 @@ struct JourneyAlternativesView: View {
 			}
 			Spacer()
 		}
+		.onReceive(chewVM.$referenceDate, perform: { date in
+			withAnimation(.easeInOut, {
+				let res = getAlternativeJourneyDepartureStop(journey: jdvm.state.data.viewData, referenceDate: date)
+				alternativeJourneyDepartureStop = res?.1
+				currentLeg = res?.0
+			})
+		})
 		.onReceive(secondTimer, perform: { _ in
 			withAnimation(.easeInOut, {
-				let res = getAlternativeJourneyDepartureStop(journey: jdvm.state.data.viewData)
+				let res = getAlternativeJourneyDepartureStop(journey: jdvm.state.data.viewData, referenceDate: chewVM.referenceDate)
 				alternativeJourneyDepartureStop = res?.1
 				currentLeg = res?.0
 			})
@@ -89,7 +96,7 @@ struct JourneyAlternativesView: View {
 		})
 		.onAppear {
 			withAnimation(.easeInOut, {
-				let res = getAlternativeJourneyDepartureStop(journey: jdvm.state.data.viewData)
+				let res = getAlternativeJourneyDepartureStop(journey: jdvm.state.data.viewData,referenceDate: chewVM.referenceDate)
 				alternativeJourneyDepartureStop = res?.1
 				currentLeg = res?.0
 			})
@@ -99,8 +106,8 @@ struct JourneyAlternativesView: View {
 }
 
 extension JourneyAlternativesView {
-	func getAlternativeJourneyDepartureStop(journey : JourneyViewData) -> (LegViewData,StopViewData)? {
-		let now = Date.now
+	func getAlternativeJourneyDepartureStop(journey : JourneyViewData,referenceDate: ChewDate) -> (LegViewData,StopViewData)? {
+		let now = referenceDate.date
 		let currentLegs = journey.legs.filter { leg in
 			if let arrival = leg.time.date.arrival.actualOrPlannedIfActualIsNil(),
 			   let departure = leg.time.date.departure.actualOrPlannedIfActualIsNil() {
@@ -144,9 +151,9 @@ extension JourneyAlternativesView {
 }
 
 extension JourneyAlternativesView {
-	static func update(_ refTime : Double) -> Text? {
+	static func update(_ refTime : Double,referenceDate: ChewDate) -> Text? {
 		let minutes = DateParcer.getTwoDateIntervalInMinutes(
-			date1: .now,
+			date1: referenceDate.date,
 			date2: Date(timeIntervalSince1970: .init(floatLiteral: refTime))
 		)
 		

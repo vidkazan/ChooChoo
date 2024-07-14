@@ -26,7 +26,7 @@ struct AppSettingsView: View {
 			#if DEBUG
 			Section("Debug", content: {
 				Button(action: {
-					appSetttingsVM.send(event: .didRequestToLoadInitialData(
+					appSetttingsVM.send(event: .didRequestToUpdateAppSettings(
 						settings: AppSettings(
 							debugSettings: appSetttingsVM.state.settings.debugSettings,
 							legViewMode: appSetttingsVM.state.settings.legViewMode,
@@ -36,6 +36,20 @@ struct AppSettingsView: View {
 					Model.shared.sheetVM.send(event: .didRequestHide)
 				}, label: {
 					Text("Reset tips")
+				})
+				Button(action: {
+					appSetttingsVM.send(event: .didRequestToUpdateAppSettings(settings: AppSettings(
+						debugSettings: .init(
+							prettyJSON: appSetttingsVM.state.settings.debugSettings.prettyJSON,
+							alternativeSearchPage: appSetttingsVM.state.settings.debugSettings.alternativeSearchPage,
+							timeSlider: true
+						),
+						legViewMode: appSetttingsVM.state.settings.legViewMode,
+						tips: appSetttingsVM.state.settings.tipsToShow
+					)))
+					Model.shared.sheetVM.send(event: .didRequestHide)
+				}, label: {
+					Text("Time slider")
 				})
 				NavigationLink(destination: {
 					LogViewer()
