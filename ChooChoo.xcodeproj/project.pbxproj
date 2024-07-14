@@ -487,6 +487,7 @@
 		7D462D5E2AACEC5600BC0D65 /* constructJourneys+TimeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D462D5D2AACEC5600BC0D65 /* constructJourneys+TimeLabel.swift */; };
 		7D462D602AACED6D00BC0D65 /* constructJourneys+Journey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D462D5F2AACED6D00BC0D65 /* constructJourneys+Journey.swift */; };
 		7D462D622AACEE2500BC0D65 /* constructJourneys+Leg.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D462D612AACEE2500BC0D65 /* constructJourneys+Leg.swift */; };
+		7D4A0F082C43D3F200D4A7E7 /* ReferenceTimeSliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4A0F072C43D3F200D4A7E7 /* ReferenceTimeSliderView.swift */; };
 		7D4B1B8A2AA8CB460096F372 /* JLVM+reduce.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4B1B892AA8CB460096F372 /* JLVM+reduce.swift */; };
 		7D4B1B8C2AA8CB970096F372 /* JLVM+sideEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4B1B8B2AA8CB970096F372 /* JLVM+sideEffects.swift */; };
 		7D4B1B8E2AA8CBB00096F372 /* JLVM+state.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4B1B8D2AA8CBB00096F372 /* JLVM+state.swift */; };
@@ -747,6 +748,7 @@
 		7D462D5F2AACED6D00BC0D65 /* constructJourneys+Journey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "constructJourneys+Journey.swift"; sourceTree = "<group>"; };
 		7D462D612AACEE2500BC0D65 /* constructJourneys+Leg.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "constructJourneys+Leg.swift"; sourceTree = "<group>"; };
 		7D46ABE72B220B1600A4145E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7D4A0F072C43D3F200D4A7E7 /* ReferenceTimeSliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReferenceTimeSliderView.swift; sourceTree = "<group>"; };
 		7D4B1B892AA8CB460096F372 /* JLVM+reduce.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JLVM+reduce.swift"; sourceTree = "<group>"; };
 		7D4B1B8B2AA8CB970096F372 /* JLVM+sideEffects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JLVM+sideEffects.swift"; sourceTree = "<group>"; };
 		7D4B1B8D2AA8CBB00096F372 /* JLVM+state.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JLVM+state.swift"; sourceTree = "<group>"; };
@@ -1858,6 +1860,7 @@
 			isa = PBXGroup;
 			children = (
 				7DEA645B2B95F794005BEE8A /* JourneyDebugView.swift */,
+				7D4A0F072C43D3F200D4A7E7 /* ReferenceTimeSliderView.swift */,
 			);
 			path = Debug;
 			sourceTree = "<group>";
@@ -2263,6 +2266,7 @@
 				7D4B1B8E2AA8CBB00096F372 /* JLVM+state.swift in Sources */,
 				7D02CE252A97E6620048ADE6 /* Errors.swift in Sources */,
 				7D740CC72AEA796B00E9FFD4 /* SettingsView+Connections.swift in Sources */,
+				7D4A0F082C43D3F200D4A7E7 /* ReferenceTimeSliderView.swift in Sources */,
 				7D69552A2B58283E00271F56 /* TopBarAlertVM.swift in Sources */,
 				7D23E44A2A98F9800037C3E1 /* LegsView.swift in Sources */,
 				7DCA4AE42BDA7F3F005BA68E /* ArrivalTrainTimeLabelView.swift in Sources */,
