@@ -64,8 +64,6 @@ struct JourneyAlternativesView: View {
 										.frame(minWidth: 50)
 										.padding(5)
 										.badgeBackgroundStyle(.secondary)
-//									TimeLabelView(size: .medium, arragement: .bottom, delayStatus: alternativeJourneyDepartureStop.time.arrivalStatus, time: alternativeJourneyDepartureStop.time.date.arrival)
-//									TimeLabelView(size: .medium, arragement: .bottom, delayStatus: alternativeJourneyDepartureStop.time.departureStatus, time: alternativeJourneyDepartureStop.time.date.departure)
 								}
 								.chewTextSize(.medium)
 							}
@@ -77,9 +75,9 @@ struct JourneyAlternativesView: View {
 			}
 			Spacer()
 		}
-		.onReceive(chewVM.$referenceDate, perform: { date in
+		.onReceive(chewVM.$referenceDate, perform: { res in
 			withAnimation(.easeInOut, {
-				let res = getAlternativeJourneyDepartureStop(journey: jdvm.state.data.viewData, referenceDate: date)
+				let res = getAlternativeJourneyDepartureStop(journey: jdvm.state.data.viewData, referenceDate: chewVM.referenceDate)
 				alternativeJourneyDepartureStop = res?.1
 				currentLeg = res?.0
 			})
@@ -108,6 +106,7 @@ struct JourneyAlternativesView: View {
 extension JourneyAlternativesView {
 	func getAlternativeJourneyDepartureStop(journey : JourneyViewData,referenceDate: ChewDate) -> (LegViewData,StopViewData)? {
 		let now = referenceDate.date
+		
 		let currentLegs = journey.legs.filter { leg in
 			if let arrival = leg.time.date.arrival.actualOrPlannedIfActualIsNil(),
 			   let departure = leg.time.date.departure.actualOrPlannedIfActualIsNil() {
