@@ -42,8 +42,13 @@ extension LegStopView {
 				lineType:legViewData.lineViewData.type ,
 				num: legViewData.lineViewData.name
 			))
+			BadgeView(.prognosedlegDirection(
+				dir: legViewData.direction,
+				strikethrough: false,
+				multiline: false
+			))
 			BadgeView(.legDirection(
-				dir: legViewData.direction.name,
+				dir: legViewData.direction.actualOrPlannedIfActualIsNil()?.name ?? "direction",
 				strikethrough: false,
 				multiline: false
 			))

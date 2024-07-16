@@ -96,6 +96,8 @@ enum Badges : Identifiable,Hashable {
 			return 20
 		case .updateError:
 			return 21
+		case .prognosedlegDirection:
+			return 22
 		}
 	}
 	
@@ -116,6 +118,7 @@ enum Badges : Identifiable,Hashable {
 	case lineNumber(lineType:LineType,num : String)
 	case stopsCount(_ count : Int,_ mode : StopsCountBadgeMode)
 	case legDirection(dir : String, strikethrough : Bool,multiline : Bool)
+	case prognosedlegDirection(dir : Prognosed<Stop>, strikethrough : Bool,multiline : Bool)
 	case legDuration(_ timeContainer : TimeContainer)
 	case walking(_ timeContainer : TimeContainer)
 	case transfer(_ timeContainer : TimeContainer)
@@ -215,6 +218,8 @@ enum Badges : Identifiable,Hashable {
 			return BadgeData(
 				Text(verbatim: dir)
 			)
+		case .prognosedlegDirection:
+			return BadgeData()
 		case .stopsCount(let num, _):
 			return BadgeData(
 				Text(
