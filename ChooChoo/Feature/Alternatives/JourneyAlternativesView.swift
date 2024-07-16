@@ -15,8 +15,7 @@ struct JourneyAlternativesView: View {
 	let minuteTimer = Timer.publish(every: 60, on: .main, in: .common).autoconnect()
 	@EnvironmentObject var chewVM : ChewViewModel
 	@ObservedObject var jdvm : JourneyDetailsViewModel
-	@State var alternativeJourneyDepartureStop : StopViewData?
-	@State var currentLeg : LegViewData?
+	@State var journeyAlternativeViewData : JourneyAlternativeViewData?
 	
 	init(jdvm: JourneyDetailsViewModel) {
 		self.jdvm = jdvm
@@ -32,43 +31,31 @@ struct JourneyAlternativesView: View {
 			GroupBox {
 				Section(content: {
 					HStack {
-						if let currentLeg = currentLeg {
+						Text(journeyAlternativeViewData?.alternativeCase.description ?? "")
+						Text(journeyAlternativeViewData?.alternativeStop.description ?? "")
+						Text(journeyAlternativeViewData?.alternativeStopPosition.description ?? "")
+					}
+					.chewTextSize(.medium)
+					HStack {
+						if let line = journeyAlternativeViewData?.alternativeStop.line {
 							BadgeView(.lineNumber(
-								lineType: currentLeg.lineViewData.type,
-								num: currentLeg.lineViewData.name)
+								lineType: line.type,
+								num: line.name)
 							)
-						} else {
-							
 						}
-						if let alternativeJourneyDepartureStop = alternativeJourneyDepartureStop {
+						if let alternativeJourneyDepartureStop = journeyAlternativeViewData?.alternativeStop.stopViewData {
 							Text("\(alternativeJourneyDepartureStop.name) ")
 								.matchedGeometryEffect(id: "name", in: self.journeyAlternativesViewNamespace)
 								.chewTextSize(.big)
 								.transition(.move(edge: .top))
 							Spacer()
-							if let time = alternativeJourneyDepartureStop.time.date.arrival.actualOrPlannedIfActualIsNil(),
-							   let min = DateParcer.getTwoDateIntervalInMinutes(date1: chewVM.referenceDate.date, date2: time),
-								let text : Text? = {
-									switch min {
-									case 0..<1:
-										return Text("now", comment: "JourneyAlternativesView")
-									default:
-										if let dur = DateParcer.timeDuration(min) {
-											return Text("in \(dur)", comment: "JourneyAlternativesView")
-										}
-										return nil
-									}
-							}() {
-								VStack {
-									text
-										.frame(minWidth: 50)
-										.padding(5)
-										.badgeBackgroundStyle(.secondary)
-								}
+							if let text = journeyAlternativeViewData?.alternativeStopPosition.timeBadge(referenceDate: chewVM.referenceDate) {
+								text
+								.frame(minWidth: 50)
+								.padding(5)
+								.badgeBackgroundStyle(.secondary)
 								.chewTextSize(.medium)
 							}
-						} else {
-							
 						}
 					}
 				})
@@ -77,16 +64,12 @@ struct JourneyAlternativesView: View {
 		}
 		.onReceive(chewVM.$referenceDate, perform: { res in
 			withAnimation(.easeInOut, {
-				let res = getAlternativeJourneyDepartureStop(journey: jdvm.state.data.viewData, referenceDate: chewVM.referenceDate)
-				alternativeJourneyDepartureStop = res?.1
-				currentLeg = res?.0
+				journeyAlternativeViewData = getAlternativeJourneyDepartureStop(journey: jdvm.state.data.viewData, referenceDate: chewVM.referenceDate)
 			})
 		})
 		.onReceive(secondTimer, perform: { _ in
 			withAnimation(.easeInOut, {
-				let res = getAlternativeJourneyDepartureStop(journey: jdvm.state.data.viewData, referenceDate: chewVM.referenceDate)
-				alternativeJourneyDepartureStop = res?.1
-				currentLeg = res?.0
+				journeyAlternativeViewData = getAlternativeJourneyDepartureStop(journey: jdvm.state.data.viewData, referenceDate: chewVM.referenceDate)
 			})
 		})
 		.onReceive(minuteTimer, perform: { _ in
@@ -94,9 +77,7 @@ struct JourneyAlternativesView: View {
 		})
 		.onAppear {
 			withAnimation(.easeInOut, {
-				let res = getAlternativeJourneyDepartureStop(journey: jdvm.state.data.viewData,referenceDate: chewVM.referenceDate)
-				alternativeJourneyDepartureStop = res?.1
-				currentLeg = res?.0
+				journeyAlternativeViewData = getAlternativeJourneyDepartureStop(journey: jdvm.state.data.viewData,referenceDate: chewVM.referenceDate)
 			})
 		}
 		.padding(10)
@@ -104,12 +85,25 @@ struct JourneyAlternativesView: View {
 }
 
 extension JourneyAlternativesView {
-	func getAlternativeJourneyDepartureStop(journey : JourneyViewData,referenceDate: ChewDate) -> (LegViewData,StopViewData)? {
+	func getAlternativeJourneyDepartureStop(journey : JourneyViewData,referenceDate: ChewDate) -> JourneyAlternativeViewData? {
 		let now = referenceDate.date
+		
+		if let departureTime = journey.time.date.departure.actualOrPlannedIfActualIsNil(),
+		   departureTime > now,
+		   let stop  = journey.legs.first?.legStopsViewData.first
+		{
+			return JourneyAlternativeViewData(
+				alternativeCase: .nowBeforeDeparture,
+				alternativeStop: .stop(stop: stop),
+				alternativeStopPosition: .onStop
+			)
+		}
+		
 		
 		let currentLegs = journey.legs.filter { leg in
 			if let arrival = leg.time.date.arrival.actualOrPlannedIfActualIsNil(),
-			   let departure = leg.time.date.departure.actualOrPlannedIfActualIsNil() {
+			   let departure = leg.time.date.departure.actualOrPlannedIfActualIsNil(),
+			   leg.isReachable {
 				return now > departure && arrival > now
 			}
 			return false
@@ -120,15 +114,6 @@ extension JourneyAlternativesView {
 			let leg = currentLegs.first else {
 			return nil
 		}
-		if
-			let stopViewData = leg.legStopsViewData.first(where: {
-				if let arrival = $0.time.date.arrival.actualOrPlannedIfActualIsNil() {
-					return arrival > now
-				}
-				return false
-			}) {
-			return (leg,stopViewData)
-		}
 		
 		let nearestStops = leg.legStopsViewData.filter { stop in
 			if let arrival = stop.time.date.arrival.actualOrPlannedIfActualIsNil(),
@@ -138,38 +123,32 @@ extension JourneyAlternativesView {
 			}
 			return false
 		}
-		guard
+		if
 			!nearestStops.isEmpty,
 			nearestStops.count == 1,
-			let stopViewData = nearestStops.first
-			else {
-			return nil
+			let stopViewData = nearestStops.first {
+			return JourneyAlternativeViewData(
+				alternativeCase: .currentLeg,
+				alternativeStop: .stopWithLine(stop: stopViewData, line: leg.lineViewData),
+				alternativeStopPosition: .onStop
+			)
 		}
-		return (leg,stopViewData)
-	}
-}
-
-extension JourneyAlternativesView {
-	static func update(_ refTime : Double,referenceDate: ChewDate) -> Text? {
-		let minutes = DateParcer.getTwoDateIntervalInMinutes(
-			date1: referenceDate.date,
-			date2: Date(timeIntervalSince1970: .init(floatLiteral: refTime))
-		)
 		
-		switch minutes {
-		case .none:
-			return nil
-		case .some(let wrapped):
-			switch wrapped {
-			case 0..<1:
-				return Text("updated now", comment: "badge: updated at")
-			default:
-				if let dur = DateParcer.timeDuration(wrapped) {
-					return Text("updated \(dur) ago", comment: "badge")
+		if
+			let stopViewData = leg.legStopsViewData.first(where: {
+				if let arrival = $0.time.date.arrival.actualOrPlannedIfActualIsNil() {
+					return arrival > now
 				}
-				return nil
-			}
+				return false
+			}),
+			let time = stopViewData.time.date.arrival.actualOrPlannedIfActualIsNil() {
+			return JourneyAlternativeViewData(
+				alternativeCase: .currentLeg,
+				alternativeStop: .stopWithLine(stop: stopViewData, line: leg.lineViewData),
+				alternativeStopPosition: .headingToStop(time: time)
+			)
 		}
+		return nil
 	}
 }
 
