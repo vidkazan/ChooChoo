@@ -25,14 +25,14 @@ extension JourneyFollowView {
 				}
 			)
 		}
-		.disabled(
-			evaluatePastTrip(
-				arrivalTime: jdvm
-					.state.data.viewData
-					.time.date.arrival
-					.actualOrPlannedIfActualIsNil() ?? .now
-			)
-		)
+//		.disabled(
+//			evaluatePastTrip(
+//				arrivalTime: jdvm
+//					.state.data.viewData
+//					.time.date.arrival
+//					.actualOrPlannedIfActualIsNil() ?? .now
+//			)
+//		)
 		.tint(.chewFillMagenta.opacity(0.7))
 	}
 }
