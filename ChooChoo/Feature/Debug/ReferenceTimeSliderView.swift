@@ -12,7 +12,7 @@ enum TimeSliderRangeCases : Double, Hashable, CaseIterable {
 	case tenMinutes = 600
 	case thirtyMinutes = 1800
 	case oneHour = 3600
-	case threeHours = 10800
+	case fiveHours = 18000
 	
 	var description : String {
 		switch self {
@@ -22,8 +22,8 @@ enum TimeSliderRangeCases : Double, Hashable, CaseIterable {
 			return "30min"
 		case .oneHour:
 			return "1h"
-		case .threeHours:
-			return "3h"
+		case .fiveHours:
+			return "5h"
 		}
 	}
 }
@@ -68,6 +68,7 @@ struct ReferenceTimeSliderView : View {
 				})
 				.frame(width: 40,height: 40)
 				Button(action: {
+					chewVM.referenceDate = .now
 					Model.shared.appSettingsVM.send(event: .didRequestToUpdateAppSettings(
 						settings: AppSettings(
 							debugSettings: .init(
@@ -76,7 +77,8 @@ struct ReferenceTimeSliderView : View {
 								timeSlider: false
 							),
 							legViewMode: Model.shared.appSettingsVM.state.settings.legViewMode,
-							tips: Model.shared.appSettingsVM.state.settings.tipsToShow)
+							tips: Model.shared.appSettingsVM.state.settings.tipsToShow
+						)
 					))
 				}, label: {
 					Image(.xmarkCircle)

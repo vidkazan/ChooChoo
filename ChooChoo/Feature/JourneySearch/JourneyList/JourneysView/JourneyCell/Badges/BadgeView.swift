@@ -92,6 +92,25 @@ struct BadgeView : View {
 	var body : some View {
 		Group {
 			switch badge {
+			case let .prognosedlegDirection(dir,strikethrough, multiline):
+				Group {
+					if let actual = dir.actual, let planned = dir.planned {
+						Group {
+							if actual != planned {
+								HStack(spacing: 0) {
+									BadgeView(.legDirection(dir: actual.name, strikethrough: strikethrough, multiline: multiline))
+										.padding(.trailing,-3)
+									BadgeView(.legDirection(dir: planned.name, strikethrough: true, multiline: multiline))
+										.foregroundStyle(.secondary)
+								}
+							} else {
+								BadgeView(.legDirection(dir: actual.name, strikethrough: strikethrough, multiline: multiline))
+							}
+						}
+					} else if let planned = dir.planned {
+						BadgeView(.legDirection(dir: planned.name, strikethrough: strikethrough, multiline: multiline))
+					}
+				}
 			case let .legDirection(dir,strikethrough, multiline):
 				Text("\(dir)", comment: "BadgeView: legDirection")
 					.strikethrough(strikethrough)

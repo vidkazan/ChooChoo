@@ -110,7 +110,7 @@ extension AppSettingsViewModel {
 						tips: tips
 					),status: .updating)
 				case .didRequestToUpdateAppSettings(let settings):
-					return State(settings: settings, status: .idle)
+					return State(settings: settings, status: .updating)
 				case .didShowTip(let tip):
 					var tips = state.settings.tipsToShow
 					tips.remove(tip)
@@ -131,7 +131,7 @@ extension AppSettingsViewModel {
 				case .didRequestToShowTip:
 					return state
 				case .didRequestToUpdateAppSettings(let settings):
-					return State(settings: settings, status: .idle)
+					return State(settings: settings, status: .updating)
 				case .didShowTip(let tip):
 					var tips = state.settings.tipsToShow
 					tips.remove(tip)
