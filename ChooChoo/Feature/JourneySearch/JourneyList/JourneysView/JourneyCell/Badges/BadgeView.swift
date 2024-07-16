@@ -107,6 +107,8 @@ struct BadgeView : View {
 								BadgeView(.legDirection(dir: actual.name, strikethrough: strikethrough, multiline: multiline))
 							}
 						}
+					} else if let planned = dir.planned {
+						BadgeView(.legDirection(dir: planned.name, strikethrough: strikethrough, multiline: multiline))
 					}
 				}
 			case let .legDirection(dir,strikethrough, multiline):
