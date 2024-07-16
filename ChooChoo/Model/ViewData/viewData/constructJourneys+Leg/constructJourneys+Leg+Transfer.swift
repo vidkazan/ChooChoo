@@ -34,7 +34,7 @@ func constructTransferViewData(fromLeg : LegDTO, toLeg : LegDTO) -> LegViewData?
 	)
 	
 	let res = LegViewData(
-		isReachable: true,
+		isReachable: fromLeg.reachable ?? true,
 		legType: .transfer,
 		tripId: UUID().uuidString,
 		direction: toLeg.origin?.stop() ?? .init(coordinates: .init(), type: .location, stopDTO: nil),

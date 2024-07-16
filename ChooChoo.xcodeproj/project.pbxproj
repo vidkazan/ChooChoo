@@ -64,6 +64,7 @@
 		7D2C0E712BDC0679000839C1 /* StopDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2C0E702BDC0679000839C1 /* StopDetailsView.swift */; };
 		7D2CAF642B0BEA0200577FD4 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7D2CAF622B0BEA0200577FD4 /* Model.xcdatamodeld */; };
 		7D2CAF662B0BEAC000577FD4 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2CAF652B0BEAC000577FD4 /* Persistence.swift */; };
+		7D2F36D42C458E5B00E9D76A /* JourneyAlternativeViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2F36D32C458E5B00E9D76A /* JourneyAlternativeViewData.swift */; };
 		7D3361DB2C049CF400A263B7 /* DepartureArrivalPair.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3361DA2C049CF400A263B7 /* DepartureArrivalPair.swift */; };
 		7D33A9492B5192940005D723 /* JFVM + reduce.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D33A9482B5192940005D723 /* JFVM + reduce.swift */; };
 		7D33A94B2B5192960005D723 /* JFVM + sideEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D33A94A2B5192960005D723 /* JFVM + sideEffects.swift */; };
@@ -468,9 +469,9 @@
 		7D3B994E2C08D86B00A3AAEB /* JFVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAC0C922B2780C0001FC6EA /* JFVM.swift */; };
 		7D3B994F2C08D86B00A3AAEB /* JFVM + reduce.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D33A9482B5192940005D723 /* JFVM + reduce.swift */; };
 		7D3B99502C08D86B00A3AAEB /* JFVM + sideEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D33A94A2B5192960005D723 /* JFVM + sideEffects.swift */; };
-		7D3B99512C08D86D00A3AAEB /* JFCV+Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAC5CB62BACDA84000F7D33 /* JFCV+Map.swift */; };
+		7D3B99512C08D86D00A3AAEB /* JFCV+map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAC5CB62BACDA84000F7D33 /* JFCV+map.swift */; };
 		7D3B99532C08D86D00A3AAEB /* JFCV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DABB02C2B2E18F1002BBA97 /* JFCV.swift */; };
-		7D3B99542C08D86E00A3AAEB /* JFCV+Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAC5CB62BACDA84000F7D33 /* JFCV+Map.swift */; };
+		7D3B99542C08D86E00A3AAEB /* JFCV+map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAC5CB62BACDA84000F7D33 /* JFCV+map.swift */; };
 		7D3B99562C08D86E00A3AAEB /* JFCV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DABB02C2B2E18F1002BBA97 /* JFCV.swift */; };
 		7D3E5F012AB321580064213A /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3E5F002AB321580064213A /* LocationManager.swift */; };
 		7D3EA1AB2C0E2AC0005C507C /* GitBranch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3EA1AA2C0E2AC0005C507C /* GitBranch.swift */; };
@@ -487,6 +488,7 @@
 		7D462D5E2AACEC5600BC0D65 /* constructJourneys+TimeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D462D5D2AACEC5600BC0D65 /* constructJourneys+TimeLabel.swift */; };
 		7D462D602AACED6D00BC0D65 /* constructJourneys+Journey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D462D5F2AACED6D00BC0D65 /* constructJourneys+Journey.swift */; };
 		7D462D622AACEE2500BC0D65 /* constructJourneys+Leg.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D462D612AACEE2500BC0D65 /* constructJourneys+Leg.swift */; };
+		7D4A0F082C43D3F200D4A7E7 /* ReferenceTimeSliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4A0F072C43D3F200D4A7E7 /* ReferenceTimeSliderView.swift */; };
 		7D4B1B8A2AA8CB460096F372 /* JLVM+reduce.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4B1B892AA8CB460096F372 /* JLVM+reduce.swift */; };
 		7D4B1B8C2AA8CB970096F372 /* JLVM+sideEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4B1B8B2AA8CB970096F372 /* JLVM+sideEffects.swift */; };
 		7D4B1B8E2AA8CBB00096F372 /* JLVM+state.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4B1B8D2AA8CBB00096F372 /* JLVM+state.swift */; };
@@ -501,6 +503,10 @@
 		7D5B68D92BD2A60700747D97 /* LogVIewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5B68D82BD2A60700747D97 /* LogVIewModel.swift */; };
 		7D5D78522B29C00600E17CC7 /* CDLeg+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5D78502B29C00600E17CC7 /* CDLeg+CoreDataClass.swift */; };
 		7D5D78532B29C00600E17CC7 /* CDLeg+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5D78512B29C00600E17CC7 /* CDLeg+CoreDataProperties.swift */; };
+		7D61AA872C42C4C8000F72D6 /* JFV+swipeActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D61AA862C42C4C8000F72D6 /* JFV+swipeActions.swift */; };
+		7D61AA892C42DD2B000F72D6 /* SheetViewModel+SheetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D61AA882C42DD2B000F72D6 /* SheetViewModel+SheetType.swift */; };
+		7D61AA8B2C42DE3F000F72D6 /* JourneyAlternativesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D61AA8A2C42DE3F000F72D6 /* JourneyAlternativesView.swift */; };
+		7D61AA8E2C42DF08000F72D6 /* JourneyAlternativesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D61AA8D2C42DF08000F72D6 /* JourneyAlternativesViewModel.swift */; };
 		7D63DB0F2B739048008297DD /* SheetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D63DB0E2B739048008297DD /* SheetViewModel.swift */; };
 		7D63DB112B739213008297DD /* SheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D63DB102B739213008297DD /* SheetView.swift */; };
 		7D65DF1C2B2A2BFE00692601 /* CDStop+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D65DF182B2A2BFE00692601 /* CDStop+CoreDataClass.swift */; };
@@ -574,12 +580,10 @@
 		7DAC40842B7A16C4006B3E55 /* MapPickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAC40832B7A16C4006B3E55 /* MapPickerViewModel.swift */; };
 		7DAC408E2B7A5920006B3E55 /* MapDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAC408D2B7A5920006B3E55 /* MapDetailsView.swift */; };
 		7DAC40962B7A5C02006B3E55 /* MapPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAC40952B7A5C02006B3E55 /* MapPickerView.swift */; };
-		7DAC5CB72BACDA84000F7D33 /* JFCV+Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAC5CB62BACDA84000F7D33 /* JFCV+Map.swift */; };
+		7DAC5CB72BACDA84000F7D33 /* JFCV+map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAC5CB62BACDA84000F7D33 /* JFCV+map.swift */; };
 		7DAF62B82A9E5A0B006F1A17 /* DatePickerTimePresetButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAF62B72A9E5A0B006F1A17 /* DatePickerTimePresetButtons.swift */; };
 		7DAF62C22A9E8C2B006F1A17 /* Solar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAF62C12A9E8C2B006F1A17 /* Solar.swift */; };
 		7DAF62C42A9F78D0006F1A17 /* SunEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAF62C32A9F78CF006F1A17 /* SunEvent.swift */; };
-		7DB62DEB2C0913D000CA1BCA /* JFV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE727C52AD93869002FF033 /* JFV.swift */; };
-		7DB62DEC2C0913D100CA1BCA /* JFV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE727C52AD93869002FF033 /* JFV.swift */; };
 		7DB62DEF2C0914A400CA1BCA /* ChooTip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCA4ADC2BD93714005BA68E /* ChooTip.swift */; };
 		7DB62DF02C0914C500CA1BCA /* ChooTipLabels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCA4AE12BD93A53005BA68E /* ChooTipLabels.swift */; };
 		7DB62DF12C0914CE00CA1BCA /* SwipeActionsTip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2C0E612BDBB9E4000839C1 /* SwipeActionsTip.swift */; };
@@ -717,6 +721,7 @@
 		7D2C0E702BDC0679000839C1 /* StopDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopDetailsView.swift; sourceTree = "<group>"; };
 		7D2CAF632B0BEA0200577FD4 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		7D2CAF652B0BEAC000577FD4 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		7D2F36D32C458E5B00E9D76A /* JourneyAlternativeViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JourneyAlternativeViewData.swift; sourceTree = "<group>"; };
 		7D3361DA2C049CF400A263B7 /* DepartureArrivalPair.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartureArrivalPair.swift; sourceTree = "<group>"; };
 		7D33A9482B5192940005D723 /* JFVM + reduce.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JFVM + reduce.swift"; sourceTree = "<group>"; };
 		7D33A94A2B5192960005D723 /* JFVM + sideEffects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JFVM + sideEffects.swift"; sourceTree = "<group>"; };
@@ -745,6 +750,7 @@
 		7D462D5F2AACED6D00BC0D65 /* constructJourneys+Journey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "constructJourneys+Journey.swift"; sourceTree = "<group>"; };
 		7D462D612AACEE2500BC0D65 /* constructJourneys+Leg.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "constructJourneys+Leg.swift"; sourceTree = "<group>"; };
 		7D46ABE72B220B1600A4145E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7D4A0F072C43D3F200D4A7E7 /* ReferenceTimeSliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReferenceTimeSliderView.swift; sourceTree = "<group>"; };
 		7D4B1B892AA8CB460096F372 /* JLVM+reduce.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JLVM+reduce.swift"; sourceTree = "<group>"; };
 		7D4B1B8B2AA8CB970096F372 /* JLVM+sideEffects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JLVM+sideEffects.swift"; sourceTree = "<group>"; };
 		7D4B1B8D2AA8CBB00096F372 /* JLVM+state.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JLVM+state.swift"; sourceTree = "<group>"; };
@@ -759,6 +765,10 @@
 		7D5B68D82BD2A60700747D97 /* LogVIewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogVIewModel.swift; sourceTree = "<group>"; };
 		7D5D78502B29C00600E17CC7 /* CDLeg+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDLeg+CoreDataClass.swift"; sourceTree = "<group>"; };
 		7D5D78512B29C00600E17CC7 /* CDLeg+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDLeg+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		7D61AA862C42C4C8000F72D6 /* JFV+swipeActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JFV+swipeActions.swift"; sourceTree = "<group>"; };
+		7D61AA882C42DD2B000F72D6 /* SheetViewModel+SheetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SheetViewModel+SheetType.swift"; sourceTree = "<group>"; };
+		7D61AA8A2C42DE3F000F72D6 /* JourneyAlternativesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JourneyAlternativesView.swift; sourceTree = "<group>"; };
+		7D61AA8D2C42DF08000F72D6 /* JourneyAlternativesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JourneyAlternativesViewModel.swift; sourceTree = "<group>"; };
 		7D63DB0E2B739048008297DD /* SheetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetViewModel.swift; sourceTree = "<group>"; };
 		7D63DB102B739213008297DD /* SheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetView.swift; sourceTree = "<group>"; };
 		7D65DF182B2A2BFE00692601 /* CDStop+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDStop+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -836,7 +846,7 @@
 		7DAC40832B7A16C4006B3E55 /* MapPickerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPickerViewModel.swift; sourceTree = "<group>"; };
 		7DAC408D2B7A5920006B3E55 /* MapDetailsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapDetailsView.swift; sourceTree = "<group>"; };
 		7DAC40952B7A5C02006B3E55 /* MapPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPickerView.swift; sourceTree = "<group>"; };
-		7DAC5CB62BACDA84000F7D33 /* JFCV+Map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JFCV+Map.swift"; sourceTree = "<group>"; };
+		7DAC5CB62BACDA84000F7D33 /* JFCV+map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JFCV+map.swift"; sourceTree = "<group>"; };
 		7DAF62B72A9E5A0B006F1A17 /* DatePickerTimePresetButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerTimePresetButtons.swift; sourceTree = "<group>"; };
 		7DAF62C12A9E8C2B006F1A17 /* Solar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Solar.swift; sourceTree = "<group>"; };
 		7DAF62C32A9F78CF006F1A17 /* SunEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SunEvent.swift; sourceTree = "<group>"; };
@@ -959,7 +969,6 @@
 			isa = PBXGroup;
 			children = (
 				7DEE69CA2B9BCD2100A063B4 /* Constants */,
-				7DBD26BC2B99F0D900612A3B /* Settings */,
 				7DF5871B2B5EBFFA00A4F99A /* Errors */,
 				7D65DF172B2A27E500692601 /* DTO */,
 				7D9BB1052B0CBF3B008A3616 /* CoreData */,
@@ -1189,6 +1198,8 @@
 		7D462D552AACD1E000BC0D65 /* Feature */ = {
 			isa = PBXGroup;
 			children = (
+				7DBD26BC2B99F0D900612A3B /* Settings */,
+				7D61AA8C2C42DED4000F72D6 /* Alternatives */,
 				7DEA645A2B95F789005BEE8A /* Debug */,
 				7DAC40822B7A1698006B3E55 /* Map */,
 				7DF845632B767DE300D76B14 /* Alert */,
@@ -1257,6 +1268,16 @@
 			path = Logging;
 			sourceTree = "<group>";
 		};
+		7D61AA8C2C42DED4000F72D6 /* Alternatives */ = {
+			isa = PBXGroup;
+			children = (
+				7D61AA8A2C42DE3F000F72D6 /* JourneyAlternativesView.swift */,
+				7D61AA8D2C42DF08000F72D6 /* JourneyAlternativesViewModel.swift */,
+				7D2F36D32C458E5B00E9D76A /* JourneyAlternativeViewData.swift */,
+			);
+			path = Alternatives;
+			sourceTree = "<group>";
+		};
 		7D63DB0B2B738F05008297DD /* Sheet */ = {
 			isa = PBXGroup;
 			children = (
@@ -1271,6 +1292,7 @@
 			isa = PBXGroup;
 			children = (
 				7D63DB0E2B739048008297DD /* SheetViewModel.swift */,
+				7D61AA882C42DD2B000F72D6 /* SheetViewModel+SheetType.swift */,
 			);
 			path = SheetViewModel;
 			sourceTree = "<group>";
@@ -1479,7 +1501,6 @@
 				7D787DD52B5DA113007D2A3A /* BottomView.swift */,
 				7D7547B72B616FD3002BE434 /* FeatureView.swift */,
 				7D6734B42A96334B00CBE9C1 /* ContentView.swift */,
-				7D10BD3C2BB1A2C100702D83 /* AppSettingsView.swift */,
 			);
 			path = ContentView;
 			sourceTree = "<group>";
@@ -1592,8 +1613,9 @@
 			isa = PBXGroup;
 			children = (
 				7DABB02C2B2E18F1002BBA97 /* JFCV.swift */,
-				7DAC5CB62BACDA84000F7D33 /* JFCV+Map.swift */,
+				7DAC5CB62BACDA84000F7D33 /* JFCV+map.swift */,
 				7DE727C52AD93869002FF033 /* JFV.swift */,
+				7D61AA862C42C4C8000F72D6 /* JFV+swipeActions.swift */,
 			);
 			path = JourneyFollowView;
 			sourceTree = "<group>";
@@ -1674,6 +1696,7 @@
 		7DBD26BC2B99F0D900612A3B /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				7D10BD3C2BB1A2C100702D83 /* AppSettingsView.swift */,
 				7DBD26BD2B99F10600612A3B /* Settings+init.swift */,
 				7DBD26BF2B99F13700612A3B /* Settings+Types.swift */,
 				7D7497912BADBD6A0041FBFB /* AppSettings.swift */,
@@ -1840,6 +1863,7 @@
 			isa = PBXGroup;
 			children = (
 				7DEA645B2B95F794005BEE8A /* JourneyDebugView.swift */,
+				7D4A0F072C43D3F200D4A7E7 /* ReferenceTimeSliderView.swift */,
 			);
 			path = Debug;
 			sourceTree = "<group>";
@@ -2080,6 +2104,7 @@
 				7D2CAF662B0BEAC000577FD4 /* Persistence.swift in Sources */,
 				7DCA4AE22BD93A53005BA68E /* ChooTipLabels.swift in Sources */,
 				7D6CCAF32B6004A200BCF62E /* VMTemplate.swift in Sources */,
+				7D61AA872C42C4C8000F72D6 /* JFV+swipeActions.swift in Sources */,
 				7D6734B52A96334B00CBE9C1 /* ContentView.swift in Sources */,
 				7D462D622AACEE2500BC0D65 /* constructJourneys+Leg.swift in Sources */,
 				7D02CE132A97E4700048ADE6 /* DateParcer.swift in Sources */,
@@ -2106,6 +2131,7 @@
 				7DEA645C2B95F794005BEE8A /* JourneyDebugView.swift in Sources */,
 				7D1638502B69841D006E9660 /* LDSV+background.swift in Sources */,
 				7D2C0E682BDBC487000839C1 /* ReloadableButtonLabel.swift in Sources */,
+				7D61AA892C42DD2B000F72D6 /* SheetViewModel+SheetType.swift in Sources */,
 				7D4B1B952AA8FDA20096F372 /* SSVM+state.swift in Sources */,
 				7D81AB262A978CDC0055AEAF /* DatePickerView.swift in Sources */,
 				7DF5871D2B5EC01100A4F99A /* ApiServiceErrors.swift in Sources */,
@@ -2172,6 +2198,7 @@
 				7DD5BAFD2B72BBDB00CFE768 /* PlatformView.swift in Sources */,
 				7D86D17E2B88093E0090D0F2 /* TopBarAlertView.swift in Sources */,
 				7D33A9A42B5433AA0005D723 /* BadgeStyle.swift in Sources */,
+				7D61AA8E2C42DF08000F72D6 /* JourneyAlternativesViewModel.swift in Sources */,
 				7D6734B32A96334B00CBE9C1 /* ChooChooApp.swift in Sources */,
 				7D6C5C182AAF486700DEFC57 /* chewVM+state.swift in Sources */,
 				7D7A553A2AA4B3E5000256EF /* Feedback.swift in Sources */,
@@ -2185,7 +2212,7 @@
 				7D7A55322AA4A27C000256EF /* JLVM.swift in Sources */,
 				7D4208CB2AE122FF003D9BFB /* RouteView.swift in Sources */,
 				7D1638522B698457006E9660 /* LDSV+badges.swift in Sources */,
-				7DAC5CB72BACDA84000F7D33 /* JFCV+Map.swift in Sources */,
+				7DAC5CB72BACDA84000F7D33 /* JFCV+map.swift in Sources */,
 				7D704F442B8558C200F8334F /* UIView+Constraints.swift in Sources */,
 				7D2CAF642B0BEA0200577FD4 /* Model.xcdatamodeld in Sources */,
 				7DBD26C52B9A202F00612A3B /* SheetViewDataSource.swift in Sources */,
@@ -2235,12 +2262,14 @@
 				7D3E5F012AB321580064213A /* LocationManager.swift in Sources */,
 				7D787DD62B5DA113007D2A3A /* BottomView.swift in Sources */,
 				7D02CE232A97E64E0048ADE6 /* Query.swift in Sources */,
+				7D61AA8B2C42DE3F000F72D6 /* JourneyAlternativesView.swift in Sources */,
 				7D7887722B632B0500CDEFF9 /* CombineWeakAssign.swift in Sources */,
 				7D3EA1AB2C0E2AC0005C507C /* GitBranch.swift in Sources */,
 				7D6C5C312AAF792F00DEFC57 /* JDVM+reduce.swift in Sources */,
 				7D4B1B8E2AA8CBB00096F372 /* JLVM+state.swift in Sources */,
 				7D02CE252A97E6620048ADE6 /* Errors.swift in Sources */,
 				7D740CC72AEA796B00E9FFD4 /* SettingsView+Connections.swift in Sources */,
+				7D4A0F082C43D3F200D4A7E7 /* ReferenceTimeSliderView.swift in Sources */,
 				7D69552A2B58283E00271F56 /* TopBarAlertVM.swift in Sources */,
 				7D23E44A2A98F9800037C3E1 /* LegsView.swift in Sources */,
 				7DCA4AE42BDA7F3F005BA68E /* ArrivalTrainTimeLabelView.swift in Sources */,
@@ -2253,6 +2282,7 @@
 				7D4B1B8C2AA8CB970096F372 /* JLVM+sideEffects.swift in Sources */,
 				7D6CCAF12B5FFB9200BCF62E /* SettingsView+saveSettings.swift in Sources */,
 				7DA085332BA492AB005E72B2 /* JLV+footer.swift in Sources */,
+				7D2F36D42C458E5B00E9D76A /* JourneyAlternativeViewData.swift in Sources */,
 				7DA085352BA492E5005E72B2 /* ErrorView.swift in Sources */,
 				7D991E882B7AE42E000E26AD /* MapPickerUIView.swift in Sources */,
 				7D10BD3F2BB1B37B00702D83 /* CoreDataStore+delete.swift in Sources */,
@@ -2457,7 +2487,7 @@
 				7D3B98EA2C08D80200A3AAEB /* TimeChoosingView.swift in Sources */,
 				7D3B983D2C08D72200A3AAEB /* System.swift in Sources */,
 				7D3B98172C08D6F800A3AAEB /* FloatingPoint.swift in Sources */,
-				7D3B99542C08D86E00A3AAEB /* JFCV+Map.swift in Sources */,
+				7D3B99542C08D86E00A3AAEB /* JFCV+map.swift in Sources */,
 				7D3B994E2C08D86B00A3AAEB /* JFVM.swift in Sources */,
 				7D3B980B2C08D6F000A3AAEB /* EnumTraversal.swift in Sources */,
 				7D3B97C62C08D63A00A3AAEB /* ChooTipLabels.swift in Sources */,
@@ -2501,7 +2531,6 @@
 				7D3B97F12C08D6DD00A3AAEB /* TimeLabelView.swift in Sources */,
 				7D3B97AD2C08D55100A3AAEB /* StopVIewData.swift in Sources */,
 				7D3B985B2C08D74800A3AAEB /* CDRecentSearch+CoreDataProperties.swift in Sources */,
-				7DB62DEB2C0913D000CA1BCA /* JFV.swift in Sources */,
 				7D3B97CF2C08D69300A3AAEB /* ChooTip.swift in Sources */,
 				7D3B98542C08D74200A3AAEB /* CoreDataStore+delete.swift in Sources */,
 				7D3B98AC2C08D7A700A3AAEB /* SheetViewDataSource.swift in Sources */,
@@ -2662,7 +2691,7 @@
 				7D3B98E62C08D80200A3AAEB /* TimeChoosingView.swift in Sources */,
 				7D3B983F2C08D72200A3AAEB /* System.swift in Sources */,
 				7D3B98152C08D6F800A3AAEB /* FloatingPoint.swift in Sources */,
-				7D3B99512C08D86D00A3AAEB /* JFCV+Map.swift in Sources */,
+				7D3B99512C08D86D00A3AAEB /* JFCV+map.swift in Sources */,
 				7D3B994B2C08D86A00A3AAEB /* JFVM.swift in Sources */,
 				7D3B98052C08D6EF00A3AAEB /* EnumTraversal.swift in Sources */,
 				7D3B97D02C08D69800A3AAEB /* DateParcer.swift in Sources */,
@@ -2703,7 +2732,6 @@
 				7D3B97EE2C08D6DC00A3AAEB /* TimeLabelView.swift in Sources */,
 				7D3B97AC2C08D55000A3AAEB /* StopVIewData.swift in Sources */,
 				7D3B985D2C08D74900A3AAEB /* CDRecentSearch+CoreDataProperties.swift in Sources */,
-				7DB62DEC2C0913D100CA1BCA /* JFV.swift in Sources */,
 				7D3B98582C08D74300A3AAEB /* CoreDataStore+delete.swift in Sources */,
 				7D3B98AA2C08D7A600A3AAEB /* SheetViewDataSource.swift in Sources */,
 				7D3B986F2C08D75D00A3AAEB /* CDUser+CoreDataClass.swift in Sources */,

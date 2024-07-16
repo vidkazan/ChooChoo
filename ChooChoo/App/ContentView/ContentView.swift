@@ -14,6 +14,7 @@ struct ContentView: View {
 	@ObservedObject var alertVM = Model.shared.alertVM
 	@ObservedObject var sheetVM = Model.shared.sheetVM
 	@ObservedObject var topAlertVM = Model.shared.topBarAlertVM
+	@ObservedObject var appSettingsVM = Model.shared.appSettingsVM
 	
 	@State var state = ChewViewModel.State()
 	@State var sheetState = SheetViewModel.State(status: .showing(.none, result: EmptyDataSource()))
@@ -30,6 +31,13 @@ struct ContentView: View {
 				ZStack(alignment: .top) {
 					FeatureView()
 					TopBarAlertsView()
+					if appSettingsVM.state.settings.debugSettings.timeSlider == true {
+						VStack {
+							Spacer()
+							ReferenceTimeSliderView(initialReferenceDate: chewViewModel.referenceDate)
+								.padding(.bottom,30)
+						}
+					}
 				}
 			}
 		}
@@ -63,19 +71,28 @@ struct ContentView: View {
 				sheetIsPresented = false
 			},
 			content: {
-				SheetView(closeSheet: {
-					sheetIsPresented = false
-				})
-				.alert(isPresented: $alertIsPresented, content: alert)
-				.confirmationDialog(
-					"",
-					isPresented: Binding(
-						get: { presentConfirmatioDialog(isSheet: true,thisDialogType: .sheet) },
-						set: { _ in Model.shared.alertVM.send(event: .didRequestDismiss) }
-					),
-					actions: confirmationDialogActions,
-					message: confirmationDialogMessage
-				)
+				ZStack(alignment: .top) {
+					SheetView(closeSheet: {
+						sheetIsPresented = false
+					})
+					.alert(isPresented: $alertIsPresented, content: alert)
+					.confirmationDialog(
+						"",
+						isPresented: Binding(
+							get: { presentConfirmatioDialog(isSheet: true,thisDialogType: .sheet) },
+							set: { _ in Model.shared.alertVM.send(event: .didRequestDismiss) }
+						),
+						actions: confirmationDialogActions,
+						message: confirmationDialogMessage
+					)
+					if appSettingsVM.state.settings.debugSettings.timeSlider == true {
+						VStack {
+							Spacer()
+							ReferenceTimeSliderView(initialReferenceDate: chewViewModel.referenceDate)
+								.padding(.bottom,30)
+						}
+					}
+				}
 			}
 		)
 		.onAppear {
