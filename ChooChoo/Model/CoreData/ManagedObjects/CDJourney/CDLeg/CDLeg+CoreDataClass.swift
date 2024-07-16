@@ -69,7 +69,7 @@ extension CDLeg {
 		   let legType = try? JSONDecoder().decode(LegViewData.LegType.self,from: legTypeData) else {
 				return nil
 		}
-		guard let direction = self.stops.last?.name else {
+		guard let direction = self.stops.last?.stopViewData().stop() else {
 			return nil
 		}
 		return LegViewData(

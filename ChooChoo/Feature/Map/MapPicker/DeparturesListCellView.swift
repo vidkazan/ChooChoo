@@ -19,7 +19,7 @@ struct DeparturesListCellView : View {
 			.frame(width: 80,alignment: .leading)
 //			Spacer()
 			BadgeView(Badges.legDirection(
-				dir: trip.direction,
+				dir: trip.direction.name,
 				strikethrough: trip.time.departureStatus == .cancelled,
 				multiline: true
 			))

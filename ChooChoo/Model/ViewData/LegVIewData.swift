@@ -15,7 +15,7 @@ struct LegViewData : Hashable,Identifiable {
 	let legType : LegType
 	let tripId : String
 //	Prognosed<Stop>
-	let direction : String
+	let direction : Stop
 	let legTopPosition : Double
 	let legBottomPosition : Double
 	var delayedAndNextIsNotReachable : Bool?
@@ -34,7 +34,7 @@ extension LegViewData {
 		self.isReachable = true
 		self.legType = .line
 		self.tripId = ""
-		self.direction = ""
+		self.direction = .init(coordinates: .init(), type: .location, stopDTO: nil)
 		self.legTopPosition = 0
 		self.legBottomPosition = 0
 		self.delayedAndNextIsNotReachable = false
@@ -54,7 +54,7 @@ extension LegViewData {
 		self.isReachable = true
 		self.legType = .footMiddle
 		self.tripId = ""
-		self.direction = ""
+		self.direction = footPathStops.arrival
 		self.legTopPosition = 0
 		self.legBottomPosition = 0
 		self.delayedAndNextIsNotReachable = false

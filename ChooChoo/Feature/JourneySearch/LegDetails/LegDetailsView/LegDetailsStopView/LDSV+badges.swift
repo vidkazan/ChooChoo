@@ -43,7 +43,7 @@ extension LegStopView {
 				num: legViewData.lineViewData.name
 			))
 			BadgeView(.legDirection(
-				dir: legViewData.direction,
+				dir: legViewData.direction.name,
 				strikethrough: false,
 				multiline: false
 			))
