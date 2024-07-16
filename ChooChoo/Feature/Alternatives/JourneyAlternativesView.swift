@@ -28,11 +28,14 @@ struct JourneyAlternativesView: View {
 //				arrivalStop
 //				Spacer()
 				Button(action: {
-					if let depStop = journeyAlternativeViewData?.alternativeStop.stopViewData.stop() {
+					if let depStopViewData = journeyAlternativeViewData?.alternativeStop.stopViewData,
+					   let depStop = depStopViewData.stop(),
+					   let depStopArrival = depStopViewData.time.timestamp.arrival.actual
+					{
 						chewVM.send(event: .didUpdateSearchData(
 							dep: .location(depStop),
 							arr: .location(jdvm.state.data.arrStop),
-							date: .init(date: .now, mode: .departure),
+							date: .init(date: .specificDate(depStopArrival), mode: .departure),
 							journeySettings: jdvm.state.data.viewData.settings)
 						)
 					}
