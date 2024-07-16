@@ -47,11 +47,12 @@ extension LegStopView {
 				strikethrough: false,
 				multiline: false
 			))
-			BadgeView(.legDirection(
-				dir: legViewData.direction.actualOrPlannedIfActualIsNil()?.name ?? "direction",
-				strikethrough: false,
-				multiline: false
-			))
+			.badgeBackgroundStyle(.secondary)
+//			BadgeView(.legDirection(
+//				dir: legViewData.direction.actualOrPlannedIfActualIsNil()?.name ?? "direction",
+//				strikethrough: false,
+//				multiline: false
+//			))
 				.badgeBackgroundStyle(.secondary)
 			BadgeView(
 				.legDuration(legViewData.time)

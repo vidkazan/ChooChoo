@@ -99,6 +99,7 @@ struct BadgeView : View {
 							if actual != planned {
 								HStack(spacing: 0) {
 									BadgeView(.legDirection(dir: actual.name, strikethrough: strikethrough, multiline: multiline))
+										.padding(.trailing,-3)
 									BadgeView(.legDirection(dir: planned.name, strikethrough: true, multiline: multiline))
 										.foregroundStyle(.secondary)
 								}

@@ -137,7 +137,7 @@ struct LineViewData : Hashable, Codable {
 extension LegViewData {
 	static func lastAvailableStop(stops : [StopViewData]) -> StopViewData? {
 		stops.last(where: {
-			$0.cancellationType() == .exitOnly
+			$0.cancellationType() == .exitOnly || $0.cancellationType() == .notCancelled
 		})
 	}
 }
