@@ -33,11 +33,21 @@ func constructTransferViewData(fromLeg : LegDTO, toLeg : LegDTO) -> LegViewData?
 		cancelled: toLeg.reachable
 	)
 	
+	 let direction = StopViewData(
+		stopId: toLeg.origin?.id,
+			  name: toLeg.origin?.name ?? "to",
+			  time: last,
+			  type: .transfer,
+			  coordinates: Coordinate(
+				  latitude: toLeg.origin?.latitude ?? toLeg.origin?.location?.latitude ?? 0,
+				  longitude: toLeg.origin?.longitude ?? toLeg.origin?.location?.longitude ?? 0
+			  )
+		  )
 	let res = LegViewData(
 		isReachable: fromLeg.reachable ?? true,
 		legType: .transfer,
 		tripId: UUID().uuidString,
-		direction: Prognosed(actual: toLeg.origin?.stop(),planned: toLeg.origin?.stop()),
+		direction: Prognosed(actual: direction,planned: direction),
 		legTopPosition: 0,
 		legBottomPosition: 0,
 		delayedAndNextIsNotReachable: toLeg.reachable ?? false,
@@ -53,16 +63,7 @@ func constructTransferViewData(fromLeg : LegDTO, toLeg : LegDTO) -> LegViewData?
 					longitude: fromLeg.destination?.longitude ?? fromLeg.destination?.location?.longitude ?? 0
 				)
 			),
-			StopViewData(
-				stopId: toLeg.origin?.id,
-				name: toLeg.origin?.name ?? "to",
-				time: last,
-				type: .transfer,
-				coordinates: Coordinate(
-					latitude: toLeg.origin?.latitude ?? toLeg.origin?.location?.latitude ?? 0,
-					longitude: toLeg.origin?.longitude ?? toLeg.origin?.location?.longitude ?? 0
-				)
-			)
+			direction
 		],
 		footDistance: 0,
 		lineViewData: LineViewData(type: .transfer, name: "transfer", shortName: "transfer"),

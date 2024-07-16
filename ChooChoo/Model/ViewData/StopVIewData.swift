@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 import CoreLocation
 
-struct StopViewData : Identifiable, Hashable {
+struct StopViewData : Identifiable, Hashable, Codable {
 	typealias Platforms = DepartureArrivalPair<Prognosed<String>>
 	
 	let id : String?

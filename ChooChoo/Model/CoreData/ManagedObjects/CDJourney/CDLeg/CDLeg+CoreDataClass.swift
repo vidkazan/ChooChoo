@@ -69,14 +69,14 @@ extension CDLeg {
 		   let legType = try? JSONDecoder().decode(LegViewData.LegType.self,from: legTypeData) else {
 				return nil
 		}
-		guard let direction = self.stops.last?.stopViewData().stop() else {
+		guard let direction = self.stops.last?.stopViewData() else {
 			return nil
 		}
 		return LegViewData(
 			isReachable: self.isReachable,
 			legType: legType,
 			tripId: self.tripId,
-			direction: Prognosed(actual: LegViewData.lastAvailableStop(stops: stopsViewData)?.stop(),planned: direction),
+			direction: Prognosed(actual: LegViewData.lastAvailableStop(stops: stopsViewData),planned: direction),
 			legTopPosition: self.legTopPosition,
 			legBottomPosition: self.legBottomPosition,
 			remarks: [],

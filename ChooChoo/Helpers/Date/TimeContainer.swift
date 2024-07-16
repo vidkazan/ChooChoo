@@ -8,8 +8,8 @@
 import Foundation
 
 // MARK: TimeContainer
-struct TimeContainer : Hashable {
-	enum DelayStatus : Hashable  {
+struct TimeContainer : Hashable, Codable {
+	enum DelayStatus : Hashable, Codable  {
 		case onTime
 		case delay(Int)
 		case cancelled
@@ -121,7 +121,7 @@ extension TimeContainer {
 		}
 	}
 	// MARK: Date Container
-	struct DateTimeContainer : Equatable,Hashable  {
+	struct DateTimeContainer : Hashable, Codable  {
 		let departure : Prognosed<Date>
 		let arrival : Prognosed<Date>
 		
@@ -140,7 +140,7 @@ extension TimeContainer {
 	}
 	
 	// MARK: TS Container
-	struct TimestampTimeContainer : Equatable,Hashable  {
+	struct TimestampTimeContainer : Hashable, Codable  {
 		let departure : Prognosed<Double>
 		let arrival : Prognosed<Double>
 		
