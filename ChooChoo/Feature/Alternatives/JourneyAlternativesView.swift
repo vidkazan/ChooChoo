@@ -32,12 +32,21 @@ struct JourneyAlternativesView: View {
 					   let depStop = depStopViewData.stop(),
 					   let depStopArrival = depStopViewData.time.timestamp.arrival.actual
 					{
-						chewVM.send(event: .didUpdateSearchData(
-							dep: .location(depStop),
-							arr: .location(jdvm.state.data.arrStop),
-							date: .init(date: .specificDate(depStopArrival), mode: .departure),
-							journeySettings: jdvm.state.data.viewData.settings)
-						)
+						if let leg = journeyAlternativeViewData?.alternativeDeparture.leg {
+							chewVM.send(event: .didUpdateSearchData(
+								dep: .transport(leg),
+								arr: .location(jdvm.state.data.arrStop),
+								date: .init(date: .specificDate(depStopArrival), mode: .departure),
+								journeySettings: jdvm.state.data.viewData.settings)
+							)
+						} else {
+							chewVM.send(event: .didUpdateSearchData(
+								dep: .location(depStop),
+								arr: .location(jdvm.state.data.arrStop),
+								date: .init(date: .specificDate(depStopArrival), mode: .departure),
+								journeySettings: jdvm.state.data.viewData.settings)
+							)
+						}
 					}
 					Model.shared.sheetVM.send(event: .didRequestHide)
 				}, label: {
@@ -60,16 +69,16 @@ struct JourneyAlternativesView: View {
 			.background(.secondary)
 		}
 		.onReceive(chewVM.$referenceDate, perform: { res in
-				journeyAlternativeViewData = getAlternativeJourneyDepartureStop(journey: jdvm.state.data.viewData, referenceDate: chewVM.referenceDate)
+			journeyAlternativeViewData = Self.getAlternativeJourneyDepartureStop(journey: jdvm.state.data.viewData, referenceDate: chewVM.referenceDate)
 		})
 		.onReceive(secondTimer, perform: { _ in
-				journeyAlternativeViewData = getAlternativeJourneyDepartureStop(journey: jdvm.state.data.viewData, referenceDate: chewVM.referenceDate)
+			journeyAlternativeViewData = Self.getAlternativeJourneyDepartureStop(journey: jdvm.state.data.viewData, referenceDate: chewVM.referenceDate)
 		})
 		.onReceive(minuteTimer, perform: { _ in
 			jdvm.send(event: .didRequestReloadIfNeeded(id: jdvm.state.data.id, ref: jdvm.state.data.viewData.refreshToken, timeStatus: .active))
 		})
 		.onAppear {
-				journeyAlternativeViewData = getAlternativeJourneyDepartureStop(journey: jdvm.state.data.viewData,referenceDate: chewVM.referenceDate)
+			journeyAlternativeViewData = Self.getAlternativeJourneyDepartureStop(journey: jdvm.state.data.viewData,referenceDate: chewVM.referenceDate)
 		}
 	}
 }
