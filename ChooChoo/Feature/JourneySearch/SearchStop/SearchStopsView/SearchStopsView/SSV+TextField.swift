@@ -11,8 +11,20 @@ extension SearchStopsView {
 		return HStack(spacing: 0){
 			if let leg = chewViewModel.state.data.getStop(type: type).leg {
 				HStack(spacing: 0) {
-					BadgeView(.lineNumber(lineType: leg.lineViewData.type, num: "\(leg.lineViewData.name)"))
-					BadgeView(.legDirection(dir: leg.direction.actualOrPlannedIfActualIsNil()?.name ?? "", strikethrough: false, multiline: false))
+					BadgeView(.lineNumberWithDirection(leg: leg))
+					Spacer()
+					Button(action: {
+						chewViewModel.send(event: .didUpdateSearchData(
+							dep: .textOnly(""),
+							arr: chewViewModel.state.data.arrStop,
+							date: chewViewModel.state.data.date,
+							journeySettings: chewViewModel.state.data.journeySettings
+						))
+					}, label: {
+						ChooSFSymbols.xmarkCircle.view
+							.chewTextSize(.big)
+							.tint(.gray)
+					})
 				}
 				.padding(5)
 				.badgeBackgroundStyle(.secondary)
