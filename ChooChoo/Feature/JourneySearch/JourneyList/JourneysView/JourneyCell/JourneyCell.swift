@@ -44,16 +44,24 @@ struct JourneyCell: View {
 				}
 			})
 			HStack(alignment: .center) {
-				if let pl = journey.legs.first?.legStopsViewData.first?.platforms.departure {
-					PlatformView(
-						isShowingPlatormWord: false,
-						platform: pl
-					)
-				}
-				if let name = journey.legs.first?.legStopsViewData.first?.name {
-					Text(verbatim: name)
-						.chewTextSize(.medium)
-						.tint(.primary)
+				if let firstLeg = journey.legs.first,
+					let fahrtId = firstLeg.lineViewData.id,
+				   let searchFahrtId = chewVM.state.data.depStop.leg?.lineViewData.id,
+				   fahrtId == searchFahrtId {
+					BadgeView(.lineNumberWithDirection(leg: firstLeg))
+						.badgeBackgroundStyle(.secondary)
+				} else {
+					if let pl = journey.legs.first?.legStopsViewData.first?.platforms.departure {
+						PlatformView(
+							isShowingPlatormWord: false,
+							platform: pl
+						)
+					}
+					if let name = journey.legs.first?.legStopsViewData.first?.name {
+						Text(verbatim: name)
+							.chewTextSize(.medium)
+							.tint(.primary)
+					}
 				}
 				Spacer()
 				BadgesView(badges: journey.badges)
