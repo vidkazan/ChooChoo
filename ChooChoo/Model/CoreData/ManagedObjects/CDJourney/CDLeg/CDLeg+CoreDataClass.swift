@@ -72,6 +72,7 @@ extension CDLeg {
 		guard let direction = self.stops.last?.stopViewData() else {
 			return nil
 		}
+		#warning("lazy!!! line id is nil")
 		return LegViewData(
 			isReachable: self.isReachable,
 			legType: legType,
@@ -85,7 +86,8 @@ extension CDLeg {
 			lineViewData: LineViewData(
 				type: LineType(rawValue: self.lineType) ?? .taxi,
 				name: self.lineName,
-				shortName: self.lineShortName
+				shortName: self.lineShortName,
+				id: nil
 			),
 			progressSegments: segments,
 			time: time,

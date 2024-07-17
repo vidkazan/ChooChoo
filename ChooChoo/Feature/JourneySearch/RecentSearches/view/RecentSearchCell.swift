@@ -29,7 +29,7 @@ struct RecentSearchCell: View {
 						.frame(maxWidth: 250,alignment: .leading)
 				}
 //				.frame(height: 100)
-				Button(action: {
+				CloseButton(action: {
 					send(.didTapEdit(
 						action: .deleting,
 						search: RecentSearchesViewModel.RecentSearch(
@@ -37,10 +37,6 @@ struct RecentSearchCell: View {
 							searchTS: Date.now.timeIntervalSince1970
 						)
 					))
-				}, label: {
-					Image(.xmarkCircle)
-						.chewTextSize(.big)
-						.tint(.gray)
 				})
 				.frame(width: 25,height: 25)
 				.background(Color.chewFillAccent.opacity(0.3))

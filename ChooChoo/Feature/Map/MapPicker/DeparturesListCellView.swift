@@ -17,17 +17,11 @@ struct DeparturesListCellView : View {
 				num: trip.lineViewData.name)
 			)
 			.frame(width: 80,alignment: .leading)
-//			Spacer()
 			BadgeView(Badges.prognosedlegDirection(
 				dir: trip.direction,
 				strikethrough: trip.time.departureStatus == .cancelled,
 				multiline: true
 			))
-//			BadgeView(Badges.legDirection(
-//				dir: trip.direction.actualOrPlannedIfActualIsNil()?.name ?? "direction",
-//				strikethrough: trip.time.departureStatus == .cancelled,
-//				multiline: true
-//			))
 			.frame(alignment: .leading)
 			.tint(.primary)
 			Spacer()

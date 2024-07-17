@@ -141,7 +141,8 @@ extension StopTripDTO {
 				product: line?.product ?? "",
 				name: line?.name ?? "",
 				productName: line?.productName ?? "",
-				legType: .line
+				legType: .line,
+				id: line?.fahrtNr
 			),
 			progressSegments: .init(
 				segments: [],
@@ -238,7 +239,8 @@ extension LegDTO {
 				product: line?.product ?? "",
 				name: line?.name ?? "",
 				productName: line?.productName ?? "",
-				legType: legType
+				legType: legType,
+				id: line?.fahrtNr
 			),
 			progressSegments: segments,
 			time: container,

@@ -26,6 +26,7 @@ struct SearchStopsView: View {
 		VStack(spacing: 5) {
 			field(type: .departure, text: $topText)
 			field(type: .arrival, text: $bottomText)
+				.disabled(chewViewModel.state.data.depStop.leg != nil)
 		}
 		.onReceive(chewViewModel.$state, perform: onStateChange)
 	}

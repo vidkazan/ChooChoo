@@ -66,7 +66,7 @@ func constructTransferViewData(fromLeg : LegDTO, toLeg : LegDTO) -> LegViewData?
 			direction
 		],
 		footDistance: 0,
-		lineViewData: LineViewData(type: .transfer, name: "transfer", shortName: "transfer"),
+		lineViewData: LineViewData(type: .transfer, name: "transfer", shortName: "transfer", id: nil),
 		progressSegments: Segments(
 			segments: [
 				Segments.SegmentPoint(

@@ -38,26 +38,11 @@ extension LegStopView {
 	}
 	var badges : some View {
 		return Group {
-			BadgeView(.lineNumber(
-				lineType:legViewData.lineViewData.type ,
-				num: legViewData.lineViewData.name
-			))
-			BadgeView(.prognosedlegDirection(
-				dir: legViewData.direction,
-				strikethrough: false,
-				multiline: false
-			))
-			.badgeBackgroundStyle(.secondary)
-//			BadgeView(.legDirection(
-//				dir: legViewData.direction.actualOrPlannedIfActualIsNil()?.name ?? "direction",
-//				strikethrough: false,
-//				multiline: false
-//			))
-				.badgeBackgroundStyle(.secondary)
+			BadgeView(.lineNumberWithDirection(leg: legViewData))
 			BadgeView(
 				.legDuration(legViewData.time)
 			)
-				.badgeBackgroundStyle(.secondary)
 		}
+		.badgeBackgroundStyle(.secondary)
 	}
 }

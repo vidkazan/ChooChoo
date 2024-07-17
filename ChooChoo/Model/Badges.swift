@@ -98,6 +98,8 @@ enum Badges : Identifiable,Hashable {
 			return 21
 		case .prognosedlegDirection:
 			return 22
+		case .lineNumberWithDirection:
+			return 23
 		}
 	}
 	
@@ -124,6 +126,7 @@ enum Badges : Identifiable,Hashable {
 	case transfer(_ timeContainer : TimeContainer)
 	case distance(dist : Double)
 	case updatedAtTime(referenceTime : Double, isLoading : Bool = false)
+	case lineNumberWithDirection(leg : LegViewData)
 	
 	var badgeAction : ()->Void {
 		switch self{
@@ -256,6 +259,8 @@ enum Badges : Identifiable,Hashable {
 			return BadgeData(style: Color.chewFillSecondary)
 		case .updatedAtTime:
 			return BadgeData(style: Color.chewFillSecondary)
+		case .lineNumberWithDirection:
+			return .init()
 		}
 	}
 }

@@ -25,12 +25,8 @@ extension ChooTip.Labels {
 				)
 				.tint(.primary)
 				Spacer()
-				Button(action: {
+				CloseButton(action: {
 					onClose()
-				}, label: {
-					ChooSFSymbols.xmarkCircle.view
-						.chewTextSize(.big)
-						.tint(.gray)
 				})
 				.frame(width: 40, height: 40)
 			}
