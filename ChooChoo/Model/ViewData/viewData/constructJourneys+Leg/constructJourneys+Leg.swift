@@ -130,7 +130,7 @@ extension StopTripDTO {
 			isReachable: true,
 			legType: .line,
 			tripId: tripId,
-			direction: Prognosed(actual: LegViewData.lastAvailableStop(stops: stops),planned: stops.last),
+			direction: Prognosed(actual: stops.last,planned: stops.last),
 			legTopPosition: 0,
 			legBottomPosition: 0,
 			delayedAndNextIsNotReachable: nil,
