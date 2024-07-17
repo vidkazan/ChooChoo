@@ -67,7 +67,8 @@ struct ReferenceTimeSliderView : View {
 					
 				})
 				.frame(width: 40,height: 40)
-				Button(action: {
+				
+				CloseButton(action: {
 					chewVM.referenceDate = .now
 					Model.shared.appSettingsVM.send(event: .didRequestToUpdateAppSettings(
 						settings: AppSettings(
@@ -80,11 +81,6 @@ struct ReferenceTimeSliderView : View {
 							tips: Model.shared.appSettingsVM.state.settings.tipsToShow
 						)
 					))
-				}, label: {
-					Image(.xmarkCircle)
-						.chewTextSize(.big)
-						.tint(.gray)
-					
 				})
 				.frame(width: 40,height: 40)
 			}

@@ -13,17 +13,13 @@ extension SearchStopsView {
 				HStack(spacing: 0) {
 					BadgeView(.lineNumberWithDirection(leg: leg))
 					Spacer()
-					Button(action: {
+					CloseButton(action: {
 						chewViewModel.send(event: .didUpdateSearchData(
 							dep: .textOnly(""),
 							arr: chewViewModel.state.data.arrStop,
 							date: chewViewModel.state.data.date,
 							journeySettings: chewViewModel.state.data.journeySettings
 						))
-					}, label: {
-						ChooSFSymbols.xmarkCircle.view
-							.chewTextSize(.big)
-							.tint(.gray)
 					})
 				}
 				.padding(5)
@@ -57,13 +53,8 @@ extension SearchStopsView {
 			}
 			HStack(spacing: 0) {
 				if focusedField == type && text.wrappedValue.count > 0 {
-					Button(action: {
+					CloseButton(action: {
 						text.wrappedValue = ""
-					}, label: {
-						Image(.xmarkCircle)
-							.chewTextSize(.big)
-							.tint(.gray)
-						
 					})
 					.frame(width: 40,height: 40)
 				}

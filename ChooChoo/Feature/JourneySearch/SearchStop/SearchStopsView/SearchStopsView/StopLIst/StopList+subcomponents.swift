@@ -31,12 +31,8 @@ extension SearchStopsView {
 						})
 						.foregroundColor(.primary)
 						Spacer()
-						Button(action: {
+						CloseButton(action: {
 							deleteStop(stop: stop, type: type)
-						}, label: {
-							Image(.xmarkCircle)
-								.foregroundColor(.primary)
-								.chewTextSize(.big)
 						})
 						.frame(height: 40)
 						Image(.clockArrowCirclepath)
