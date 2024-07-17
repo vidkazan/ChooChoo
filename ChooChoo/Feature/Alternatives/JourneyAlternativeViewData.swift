@@ -43,23 +43,23 @@ enum AlternativeStopPosition : Hashable {
 
 enum AlternativeStop : Hashable {
 	case stop(stop : StopViewData)
-	case stopWithLine(stop : StopViewData, line : LineViewData)
+	case onTransport(nearestStop : StopViewData,leg : LegViewData)
 	
 	var stopViewData : StopViewData {
 		switch self {
 		case .stop(let stop):
 			return stop
-		case let .stopWithLine(stop, _):
+		case let .onTransport(stop, _):
 			return stop
 		}
 	}
 	
-	var line : LineViewData? {
+	var leg : LegViewData? {
 		switch self {
 		case .stop:
 			return nil
-		case let .stopWithLine(_, line):
-			return line
+		case let .onTransport(_, leg):
+			return leg
 		}
 	}
 	
@@ -67,8 +67,8 @@ enum AlternativeStop : Hashable {
 		switch self {
 		case .stop:
 			"stop"
-		case .stopWithLine:
-			"stopWithLine"
+		case .onTransport:
+			"onTransport"
 		}
 	}
 }
@@ -99,6 +99,6 @@ enum JourneyAlternativeCase : Hashable {
 
 struct JourneyAlternativeViewData : Hashable {
 	let alternativeCase : JourneyAlternativeCase
-	let alternativeStop : AlternativeStop
+	let alternativeDeparture : AlternativeStop
 	let alternativeStopPosition : AlternativeStopPosition
 }

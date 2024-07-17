@@ -30,13 +30,13 @@ extension JourneyAlternativesView {
 			if let time = stopViewData.time.date.departure.actualOrPlannedIfActualIsNil(), time > lastDepartureStopArrivalTime {
 				return JourneyAlternativeViewData(
 					alternativeCase: .currentLegArrivalStopCancelled,
-					alternativeStop: .stop(stop: lastReachableStop),
+					alternativeDeparture: .stop(stop: lastReachableStop),
 					alternativeStopPosition: .onStop
 				)
 			} else {
 				return JourneyAlternativeViewData(
 					alternativeCase: .currentLeg,
-					alternativeStop: .stopWithLine(stop: stopViewData, line: leg.lineViewData),
+					alternativeDeparture: .onTransport(nearestStop: stopViewData, leg: leg),
 					alternativeStopPosition: .onStop
 				)
 			}
@@ -54,13 +54,13 @@ extension JourneyAlternativesView {
 			if time > lastDepartureStopArrivalTime {
 				return JourneyAlternativeViewData(
 					alternativeCase: .currentLegArrivalStopCancelled,
-					alternativeStop: .stop(stop: lastReachableStop),
+					alternativeDeparture: .stop(stop: lastReachableStop),
 					alternativeStopPosition: .onStop
 				)
 			} else {
 				return JourneyAlternativeViewData(
 					alternativeCase: .currentLeg,
-					alternativeStop: .stopWithLine(stop: stopViewData, line: leg.lineViewData),
+					alternativeDeparture: .onTransport(nearestStop: stopViewData, leg: leg),
 					alternativeStopPosition: .headingToStop(time: time)
 				)
 			}
@@ -76,7 +76,7 @@ extension JourneyAlternativesView {
 		   let stop  = journey.legs.first?.legStopsViewData.first {
 			return JourneyAlternativeViewData(
 				alternativeCase: .nowBeforeDeparture,
-				alternativeStop: .stop(stop: stop),
+				alternativeDeparture: .stop(stop: stop),
 				alternativeStopPosition: .onStop
 			)
 		}
@@ -115,7 +115,7 @@ extension JourneyAlternativesView {
 		if let stop  = lastReachableLeg?.direction.actualOrPlannedIfActualIsNil() {
 			return .init(
 				alternativeCase: .lastReachableLeg,
-				alternativeStop: .stop(stop: stop),
+				alternativeDeparture: .stop(stop: stop),
 				alternativeStopPosition: .onStop
 			)
 		}

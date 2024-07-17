@@ -28,7 +28,7 @@ struct JourneyAlternativesView: View {
 //				arrivalStop
 //				Spacer()
 				Button(action: {
-					if let depStopViewData = journeyAlternativeViewData?.alternativeStop.stopViewData,
+					if let depStopViewData = journeyAlternativeViewData?.alternativeDeparture.stopViewData,
 					   let depStop = depStopViewData.stop(),
 					   let depStopArrival = depStopViewData.time.timestamp.arrival.actual
 					{
@@ -43,7 +43,7 @@ struct JourneyAlternativesView: View {
 				}, label: {
 					HStack {
 						Spacer()
-						if nil != journeyAlternativeViewData?.alternativeStop.stopViewData.stop() {
+						if nil != journeyAlternativeViewData?.alternativeDeparture.stopViewData.stop() {
 							Text(NSLocalizedString("Search", comment: "JourneyAlternativesView: button"))
 						} else {
 							Text(NSLocalizedString("error", comment: "JourneyAlternativesView: button"))
@@ -55,7 +55,7 @@ struct JourneyAlternativesView: View {
 //				.frame(height: 40)
 				.padding(10)
 //				.badgeBackgroundStyle(.secondary)
-				.disabled(journeyAlternativeViewData?.alternativeStop.stopViewData.stop() == nil)
+				.disabled(journeyAlternativeViewData?.alternativeDeparture.stopViewData.stop() == nil)
 			}
 			.background(.secondary)
 		}
@@ -114,13 +114,13 @@ extension JourneyAlternativesView {
 		Section(content: {
 			VStack{
 				HStack {
-					if let line = journeyAlternativeViewData?.alternativeStop.line {
+					if let leg = journeyAlternativeViewData?.alternativeDeparture.leg {
 						BadgeView(.lineNumber(
-							lineType: line.type,
-							num: line.name)
+							lineType: leg.lineViewData.type,
+							num: leg.lineViewData.name)
 						)
 					}
-					if let alternativeJourneyDepartureStop = journeyAlternativeViewData?.alternativeStop.stopViewData {
+					if let alternativeJourneyDepartureStop = journeyAlternativeViewData?.alternativeDeparture.stopViewData {
 						Text("\(alternativeJourneyDepartureStop.name) ")
 							.matchedGeometryEffect(id: "name", in: self.journeyAlternativesViewNamespace)
 							.chewTextSize(.big)
@@ -139,7 +139,7 @@ extension JourneyAlternativesView {
 					Spacer()
 					Group {
 						Text(journeyAlternativeViewData?.alternativeCase.description ?? "")
-						Text(journeyAlternativeViewData?.alternativeStop.description ?? "")
+						Text(journeyAlternativeViewData?.alternativeDeparture.description ?? "")
 						Text(journeyAlternativeViewData?.alternativeStopPosition.description ?? "")
 					}
 					.padding(5)
