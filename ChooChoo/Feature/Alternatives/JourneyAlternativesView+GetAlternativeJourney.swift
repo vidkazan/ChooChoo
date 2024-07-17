@@ -34,11 +34,19 @@ extension JourneyAlternativesView {
 					alternativeStopPosition: .onStop
 				)
 			} else {
-				return JourneyAlternativeViewData(
-					alternativeCase: .currentLeg,
-					alternativeDeparture: .onTransport(nearestStop: stopViewData, leg: leg),
-					alternativeStopPosition: .onStop
-				)
+				if leg.legType != .line {
+					return JourneyAlternativeViewData(
+						alternativeCase: .currentLeg,
+						alternativeDeparture: .stop(stop: stopViewData),
+						alternativeStopPosition: .onStop
+					)
+				} else {
+					return JourneyAlternativeViewData(
+						alternativeCase: .currentLeg,
+						alternativeDeparture: .onTransport(nearestStop: stopViewData, leg: leg),
+						alternativeStopPosition: .onStop
+					)
+				}
 			}
 		}
 		
@@ -51,18 +59,26 @@ extension JourneyAlternativesView {
 			}),
 			let time = stopViewData.time.date.arrival.actualOrPlannedIfActualIsNil() {
 			
-			if time > lastDepartureStopArrivalTime {
+			if time > lastDepartureStopArrivalTime, leg.legType != .line {
 				return JourneyAlternativeViewData(
 					alternativeCase: .currentLegArrivalStopCancelled,
 					alternativeDeparture: .stop(stop: lastReachableStop),
 					alternativeStopPosition: .onStop
 				)
 			} else {
-				return JourneyAlternativeViewData(
-					alternativeCase: .currentLeg,
-					alternativeDeparture: .onTransport(nearestStop: stopViewData, leg: leg),
-					alternativeStopPosition: .headingToStop(time: time)
-				)
+				if leg.legType != .line {
+					return JourneyAlternativeViewData(
+						alternativeCase: .currentLeg,
+						alternativeDeparture: .stop(stop: stopViewData),
+						alternativeStopPosition: .onStop
+					)
+				} else {
+					return JourneyAlternativeViewData(
+						alternativeCase: .currentLeg,
+						alternativeDeparture: .onTransport(nearestStop: stopViewData, leg: leg),
+						alternativeStopPosition: .onStop
+					)
+				}
 			}
 		}
 		return nil
