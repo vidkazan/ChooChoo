@@ -112,7 +112,7 @@ extension JourneyAlternativesView {
 			return getCurrentLegAlternativeJourneyDepartureStop(leg: leg, referenceDate: referenceDate)
 		}
 		
-		if let stop  = lastReachableLeg?.direction.actualOrPlannedIfActualIsNil() {
+		if let stop = LegViewData.lastAvailableStop(stops: lastReachableLeg?.legStopsViewData ?? []) {
 			return .init(
 				alternativeCase: .lastReachableLeg,
 				alternativeDeparture: .stop(stop: stop),

@@ -95,7 +95,7 @@ struct BadgeView : View {
 			case let .lineNumberWithDirection(leg):
 				HStack(spacing: 0) {
 					BadgeView(.lineNumber(lineType: leg.lineViewData.type, num: "\(leg.lineViewData.name)"))
-					BadgeView(.legDirection(dir: leg.direction.actualOrPlannedIfActualIsNil()?.name ?? "", strikethrough: false, multiline: false))
+					BadgeView(.prognosedlegDirection(dir: leg.direction, strikethrough: false, multiline: false))
 				}
 			case let .prognosedlegDirection(dir,strikethrough, multiline):
 				Group {
@@ -103,17 +103,17 @@ struct BadgeView : View {
 						Group {
 							if actual != planned {
 								HStack(spacing: 0) {
-									BadgeView(.legDirection(dir: actual.name, strikethrough: strikethrough, multiline: multiline))
+									BadgeView(.legDirection(dir: actual, strikethrough: strikethrough, multiline: multiline))
 										.padding(.trailing,-3)
-									BadgeView(.legDirection(dir: planned.name, strikethrough: true, multiline: multiline))
+									BadgeView(.legDirection(dir: planned, strikethrough: true, multiline: multiline))
 										.foregroundStyle(.secondary)
 								}
 							} else {
-								BadgeView(.legDirection(dir: actual.name, strikethrough: strikethrough, multiline: multiline))
+								BadgeView(.legDirection(dir: actual, strikethrough: strikethrough, multiline: multiline))
 							}
 						}
 					} else if let planned = dir.planned {
-						BadgeView(.legDirection(dir: planned.name, strikethrough: strikethrough, multiline: multiline))
+						BadgeView(.legDirection(dir: planned, strikethrough: strikethrough, multiline: multiline))
 					}
 				}
 			case let .legDirection(dir,strikethrough, multiline):

@@ -120,7 +120,7 @@ enum Badges : Identifiable,Hashable {
 	case lineNumber(lineType:LineType,num : String)
 	case stopsCount(_ count : Int,_ mode : StopsCountBadgeMode)
 	case legDirection(dir : String, strikethrough : Bool,multiline : Bool)
-	case prognosedlegDirection(dir : Prognosed<StopViewData>, strikethrough : Bool,multiline : Bool)
+	case prognosedlegDirection(dir : Prognosed<String>, strikethrough : Bool,multiline : Bool)
 	case legDuration(_ timeContainer : TimeContainer)
 	case walking(_ timeContainer : TimeContainer)
 	case transfer(_ timeContainer : TimeContainer)

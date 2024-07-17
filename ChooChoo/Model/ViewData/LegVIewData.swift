@@ -14,7 +14,7 @@ struct LegViewData : Hashable,Identifiable {
 	var isReachable : Bool
 	let legType : LegType
 	let tripId : String
-	let direction : Prognosed<StopViewData>
+	let direction : Prognosed<String>
 	let legTopPosition : Double
 	let legBottomPosition : Double
 	var delayedAndNextIsNotReachable : Bool?
@@ -63,7 +63,7 @@ extension LegViewData {
 		self.isReachable = true
 		self.legType = .footMiddle
 		self.tripId = ""
-		self.direction = Prognosed(actual: arrival,planned: arrival)
+		self.direction = Prognosed(actual: arrival.name,planned: arrival.name)
 		self.legTopPosition = 0
 		self.legBottomPosition = 0
 		self.delayedAndNextIsNotReachable = false
@@ -136,10 +136,29 @@ struct LineViewData : Hashable, Codable {
 }
 
 extension LegViewData {
-	static func lastAvailableStop(stops : [StopViewData]) -> StopViewData? {
-		stops.last(where: {
+	static func direction(stops : [StopViewData], plannedDirectionName : String?) -> Prognosed<String> {
+		let lastAvailable = stops.reversed().first(where: {
 			$0.cancellationType() == .exitOnly || $0.cancellationType() == .notCancelled
 		})
+		let stopNameIfLastStopsAreCancelled = {
+			lastAvailable == stops.last ? nil : lastAvailable?.name
+		}()
+		
+		if let stopNameIfLastStopsAreCancelled = stopNameIfLastStopsAreCancelled {
+			return Prognosed<String>(actual: stopNameIfLastStopsAreCancelled,planned: plannedDirectionName)
+		} else {
+			return Prognosed<String>(actual: plannedDirectionName,planned: plannedDirectionName)
+		}
+	}
+}
+
+extension LegViewData {
+	static func lastAvailableStop(stops : [StopViewData]) -> StopViewData? {
+		let lastAvailable = stops.reversed().first(where: {
+			$0.cancellationType() == .exitOnly || $0.cancellationType() == .notCancelled
+		})
+		
+		return lastAvailable == stops.last ? stops.last : lastAvailable
 	}
 }
 

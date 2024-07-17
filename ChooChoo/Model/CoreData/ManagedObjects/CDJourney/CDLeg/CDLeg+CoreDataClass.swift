@@ -77,7 +77,7 @@ extension CDLeg {
 			isReachable: self.isReachable,
 			legType: legType,
 			tripId: self.tripId,
-			direction: Prognosed(actual: LegViewData.lastAvailableStop(stops: stopsViewData),planned: direction),
+			direction:  LegViewData.direction(stops: stopsViewData, plannedDirectionName: legDTOobj?.direction),
 			legTopPosition: self.legTopPosition,
 			legBottomPosition: self.legBottomPosition,
 			remarks: [],

@@ -24,7 +24,7 @@ extension ChewViewModel {
 			case .location(let stop):
 				return stop.name
 			case .transport(let leg):
-				return "\(leg.lineViewData.name) \(leg.lineViewData.id ?? "") \(JourneyAlternativesView.getCurrentLegAlternativeJourneyDepartureStop(leg: leg, referenceDate: .now)?.alternativeDeparture.leg?.direction.actual?.name ?? "" )"
+				return "\(leg.lineViewData.name) \(leg.lineViewData.id ?? "") \(JourneyAlternativesView.getCurrentLegAlternativeJourneyDepartureStop(leg: leg, referenceDate: .now)?.alternativeDeparture.leg?.direction.actual ?? "" )"
 			}
 		}
 		

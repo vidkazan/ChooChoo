@@ -77,7 +77,7 @@ extension JourneyFollowCellView {
 			if case .error = vm.state.status {
 				BadgeView(.updateError)
 					.badgeBackgroundStyle(.red)
-					.matchedGeometryEffect(id: "updatedAt \(data.id)", in: journeyFollowCellViewNamespace)
+					
 			} else {
 				BadgeView(
 					.updatedAtTime(
@@ -86,9 +86,9 @@ extension JourneyFollowCellView {
 					),
 					color: Color.clear
 				)
-				.matchedGeometryEffect(id: "updatedAt \(data.id)", in: journeyFollowCellViewNamespace)
 			}
 		}
+		.matchedGeometryEffect(id: "updatedAt \(data.id)", in: journeyFollowCellViewNamespace)
 	}
 }
 
