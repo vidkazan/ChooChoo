@@ -92,6 +92,11 @@ struct BadgeView : View {
 	var body : some View {
 		Group {
 			switch badge {
+			case let .lineNumberWithDirection(leg):
+				HStack(spacing: 0) {
+					BadgeView(.lineNumber(lineType: leg.lineViewData.type, num: "\(leg.lineViewData.name)"))
+					BadgeView(.legDirection(dir: leg.direction.actualOrPlannedIfActualIsNil()?.name ?? "", strikethrough: false, multiline: false))
+				}
 			case let .prognosedlegDirection(dir,strikethrough, multiline):
 				Group {
 					if let actual = dir.actual, let planned = dir.planned {
