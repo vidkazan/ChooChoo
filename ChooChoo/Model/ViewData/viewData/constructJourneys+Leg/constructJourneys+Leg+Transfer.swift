@@ -30,7 +30,7 @@ func constructTransferViewData(fromLeg : LegDTO, toLeg : LegDTO) -> LegViewData?
 		plannedArrival: toLeg.plannedDeparture,
 		actualDeparture: fromLeg.arrival,
 		actualArrival: toLeg.departure,
-		cancelled: toLeg.reachable
+		cancelled: nil
 	)
 	
 	let res = LegViewData(
@@ -40,7 +40,7 @@ func constructTransferViewData(fromLeg : LegDTO, toLeg : LegDTO) -> LegViewData?
 		direction: toLeg.origin?.name ?? "transfer direction",
 		legTopPosition: 0,
 		legBottomPosition: 0,
-		delayedAndNextIsNotReachable: toLeg.reachable ?? false,
+		delayedAndNextIsNotReachable: false,
 		remarks: [],
 		legStopsViewData: [
 			StopViewData(
@@ -61,6 +61,82 @@ func constructTransferViewData(fromLeg : LegDTO, toLeg : LegDTO) -> LegViewData?
 				coordinates: Coordinate(
 					latitude: toLeg.origin?.latitude ?? toLeg.origin?.location?.latitude ?? 0,
 					longitude: toLeg.origin?.longitude ?? toLeg.origin?.location?.longitude ?? 0
+				)
+			)
+		],
+		footDistance: 0,
+		lineViewData: LineViewData(type: .transfer, name: "transfer", shortName: "transfer"),
+		progressSegments: Segments(
+			segments: [
+				Segments.SegmentPoint(
+					time: container.timestamp.departure.actual ?? 0,
+					height: 0
+				),
+				Segments.SegmentPoint(
+					time: container.timestamp.arrival.actual ?? 0,
+					height: StopOverType.transfer.viewHeight
+				)
+			],
+			heightTotalCollapsed: StopOverType.transfer.viewHeight,
+			heightTotalExtended: StopOverType.transfer.viewHeight
+		),
+		time: container,
+		polyline: nil,
+		legDTO : nil
+	)
+	return res
+}
+
+func constructTransferViewData(fromLeg : LegViewData, toLeg : LegViewData) -> LegViewData? {
+	let first = TimeContainer(
+		plannedDeparture: fromLeg.legDTO?.plannedArrival,
+		plannedArrival: fromLeg.legDTO?.plannedArrival,
+		actualDeparture: fromLeg.legDTO?.arrival,
+		actualArrival: fromLeg.legDTO?.arrival,
+		cancelled: fromLeg.delayedAndNextIsNotReachable == true
+	)
+	let last = TimeContainer(
+		plannedDeparture: toLeg.legDTO?.plannedDeparture,
+		plannedArrival: toLeg.legDTO?.plannedDeparture,
+		actualDeparture: toLeg.legDTO?.departure,
+		actualArrival: toLeg.legDTO?.departure,
+		cancelled: toLeg.isReachable
+	)
+	let container = TimeContainer(
+		plannedDeparture: fromLeg.legDTO?.plannedArrival,
+		plannedArrival: toLeg.legDTO?.plannedDeparture,
+		actualDeparture: fromLeg.legDTO?.arrival,
+		actualArrival: toLeg.legDTO?.departure,
+		cancelled: toLeg.isReachable
+	)
+	let res = LegViewData(
+		isReachable: toLeg.isReachable,
+		legType: .transfer,
+		tripId: UUID().uuidString,
+		direction: toLeg.direction,
+		legTopPosition: 0,
+		legBottomPosition: 0,
+		delayedAndNextIsNotReachable: false,
+		remarks: [],
+		legStopsViewData: [
+			StopViewData(
+				stopId: fromLeg.legDTO?.destination?.id,
+				name: fromLeg.legDTO?.destination?.name ?? "from",
+				time: first,
+				type: .transfer,
+				coordinates: Coordinate(
+					latitude: fromLeg.legDTO?.destination?.latitude ?? fromLeg.legDTO?.destination?.location?.latitude ?? 0,
+					longitude: fromLeg.legDTO?.destination?.longitude ?? fromLeg.legDTO?.destination?.location?.longitude ?? 0
+				)
+			),
+			StopViewData(
+				stopId: toLeg.legDTO?.origin?.id,
+				name: toLeg.legDTO?.origin?.name ?? "to",
+				time: last,
+				type: .transfer,
+				coordinates: Coordinate(
+					latitude: toLeg.legDTO?.origin?.latitude ?? toLeg.legDTO?.origin?.location?.latitude ?? 0,
+					longitude: toLeg.legDTO?.origin?.longitude ?? toLeg.legDTO?.origin?.location?.longitude ?? 0
 				)
 			)
 		],
