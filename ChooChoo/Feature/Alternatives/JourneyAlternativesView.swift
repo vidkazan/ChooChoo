@@ -71,9 +71,10 @@ struct JourneyAlternativesView: View {
 		.onReceive(chewVM.$referenceDate, perform: { res in
 			journeyAlternativeViewData = Self.getAlternativeJourneyDepartureStop(journey: jdvm.state.data.viewData, referenceDate: chewVM.referenceDate)
 		})
-		.onReceive(secondTimer, perform: { _ in
-			journeyAlternativeViewData = Self.getAlternativeJourneyDepartureStop(journey: jdvm.state.data.viewData, referenceDate: chewVM.referenceDate)
-		})
+//		.onReceive(secondTimer, perform: { _ in
+//			journeyAlternativeViewData = Self.getAlternativeJourneyDepartureStop(journey: jdvm.state.data.viewData, referenceDate: chewVM.referenceDate)
+//		})
+		
 		.onReceive(minuteTimer, perform: { _ in
 			jdvm.send(event: .didRequestReloadIfNeeded(id: jdvm.state.data.id, ref: jdvm.state.data.viewData.refreshToken, timeStatus: .active))
 		})
@@ -118,6 +119,7 @@ extension JourneyAlternativesView {
 		})
 	}
 }
+
 
 
 extension JourneyAlternativesView {
@@ -171,20 +173,20 @@ extension JourneyAlternativesView {
 #Preview {
 	Group {
 		 var journeys =  [
-			Mock.journeys.alternativasMoks
-				.alternativesJourneyNeussWolfsburg
-				.decodedData?.journey.journeyViewData(
-			depStop: .init(),
-			arrStop: .init(),
-			realtimeDataUpdatedAt: 0,
-			settings: .init()),
-			Mock.journeys.alternativasMoks
-				.alternativesJourneyNeussWolfsburgRE6LateAndNextIsNotAvailable
-				.decodedData?.journey.journeyViewData(
-			depStop: .init(),
-			arrStop: .init(),
-			realtimeDataUpdatedAt: 0,
-			settings: .init()),
+//			Mock.journeys.alternativasMoks
+//				.alternativesJourneyNeussWolfsburg
+//				.decodedData?.journey.journeyViewData(
+//			depStop: .init(),
+//			arrStop: .init(),
+//			realtimeDataUpdatedAt: 0,
+//			settings: .init()),
+//			Mock.journeys.alternativasMoks
+//				.alternativesJourneyNeussWolfsburgRE6LateAndNextIsNotAvailable
+//				.decodedData?.journey.journeyViewData(
+//			depStop: .init(),
+//			arrStop: .init(),
+//			realtimeDataUpdatedAt: 0,
+//			settings: .init()),
 //			Mock.journeys.alternativasMoks
 //				.alternativesJourneyNeussWolfsburgS1FirstStopCancelled
 //				.decodedData?.journey.journeyViewData(
@@ -192,14 +194,16 @@ extension JourneyAlternativesView {
 //			arrStop: .init(),
 //			realtimeDataUpdatedAt: 0,
 //			settings: .init()),
-//			Mock.journeys.alternativasMoks
-//				.alternativesJourneyNeussWolfsburgS1LastStopCancelled
-//				.decodedData?.journey.journeyViewData(
-//			depStop: .init(),
-//			arrStop: .init(),
-//			realtimeDataUpdatedAt: 0,
-//			settings: .init()),
-		 ].filter {$0 != nil
+			Mock.journeys.alternativasMoks
+				.alternativesJourneyNeussWolfsburgS1LastStopCancelled
+				.decodedData?.journey.journeyViewData(
+			depStop: .init(),
+			arrStop: .init(),
+			realtimeDataUpdatedAt: 0,
+			settings: .init()),
+			
+		 ].filter {
+			 $0 != nil
 		 }
 		if !journeys.isEmpty {
 			let chewVM = ChewViewModel(referenceDate: .specificDate(journeys.first!!.time.timestamp.departure.planned!+16000),coreDataStore: .preview)
