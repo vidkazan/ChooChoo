@@ -11,7 +11,7 @@ import CoreLocation
 
 struct LegViewData : Hashable,Identifiable {
 	let id = UUID()
-	var isReachable : Bool
+	var isReachableFromPreviousLeg : Bool
 	let legType : LegType
 	let tripId : String
 	let direction : Prognosed<String>
@@ -31,17 +31,21 @@ struct LegViewData : Hashable,Identifiable {
 extension LegViewData {
 	func departureAndArrivalNotCancelled() -> Bool {
 		if legStopsViewData.count > 1 {
-			return self.legStopsViewData.first?.cancellationType() == .fullyCancelled &&
-			self.legStopsViewData.last?.cancellationType() == .fullyCancelled
+			return self.legStopsViewData.first?.cancellationType() != .fullyCancelled &&
+			self.legStopsViewData.last?.cancellationType() != .fullyCancelled
 		} else {
-			return time.arrivalStatus == .cancelled && time.departureStatus == .cancelled
+			return time.arrivalStatus != .cancelled && time.departureStatus != .cancelled
 		}
+	}
+	
+	func departureAndArrivalNotCancelledAndNotReachableFromPreviousLeg() -> Bool {
+		return departureAndArrivalNotCancelled() && isReachableFromPreviousLeg
 	}
 }
 
 extension LegViewData {
 	init(){
-		self.isReachable = true
+		self.isReachableFromPreviousLeg = true
 		self.legType = .line
 		self.tripId = ""
 		self.direction = .init()
@@ -71,7 +75,7 @@ extension LegViewData {
 			   stopOverType: .destination
 		   )
 		
-		self.isReachable = true
+		self.isReachableFromPreviousLeg = true
 		self.legType = .footMiddle
 		self.tripId = ""
 		self.direction = Prognosed(actual: arrival.name,planned: arrival.name)

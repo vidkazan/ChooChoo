@@ -22,7 +22,7 @@ extension CDLeg {
 	){
 		self.init(entity: CDLeg.entity(), insertInto: context)
 		self.tripId = leg.tripId
-		self.isReachable = leg.isReachable
+		self.isReachable = leg.isReachableFromPreviousLeg
 		self.legBottomPosition = leg.legBottomPosition
 		self.legTopPosition = leg.legTopPosition
 		self.lineName = leg.lineViewData.name
@@ -74,7 +74,7 @@ extension CDLeg {
 		}
 		#warning("lazy!!! line id is nil")
 		return LegViewData(
-			isReachable: self.isReachable,
+			isReachableFromPreviousLeg: self.isReachable,
 			legType: legType,
 			tripId: self.tripId,
 			direction:  LegViewData.direction(stops: stopsViewData, plannedDirectionName: legDTOobj?.direction),

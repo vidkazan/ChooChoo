@@ -105,7 +105,7 @@ extension JourneyAlternativesView {
 		
 		
 		let firstNotReachableLeg = legs.first(where: {
-			return $0.isReachable == false || ($0.legStopsViewData.first?.cancellationType() == .fullyCancelled && $0.legStopsViewData.last?.cancellationType() == .fullyCancelled)
+			return $0.isReachableFromPreviousLeg == false || $0.legStopsViewData.first?.cancellationType() == .fullyCancelled
 		})
 		
 		legs = legs.filter({
@@ -133,7 +133,7 @@ extension JourneyAlternativesView {
 		
 		if currentLegs.count > 1 {
 			currentLegs = currentLegs.filter {
-				$0.isReachable == false
+				$0.isReachableFromPreviousLeg == false
 			}
 		} else {
 			if let leg = currentLegs.first {
@@ -142,7 +142,7 @@ extension JourneyAlternativesView {
 				}
 			}
 		}
-//		
+		
 		if !currentLegs.isEmpty,
 			currentLegs.count == 1,
 			let leg = currentLegs.first {

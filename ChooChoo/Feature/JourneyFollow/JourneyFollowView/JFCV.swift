@@ -57,7 +57,7 @@ struct JourneyFollowCellView : View {
 			LegsView(journey : data,mode : appSettingsVM.state.settings.legViewMode)
 			HStack(spacing: 2) {
 				Spacer()
-				if !data.isReachable || !data.legs.allSatisfy({$0.isReachable == true}) {
+				if !data.isReachable || !data.legs.allSatisfy({$0.departureAndArrivalNotCancelledAndNotReachableFromPreviousLeg() == true}) {
 					BadgeView(.connectionNotReachable)
 						.badgeBackgroundStyle(.red)
 				}

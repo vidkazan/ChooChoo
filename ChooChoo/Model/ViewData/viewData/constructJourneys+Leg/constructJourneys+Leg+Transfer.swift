@@ -111,7 +111,7 @@ func constructTransferViewData(fromLeg : LegViewData, toLeg : LegViewData) -> Le
 		cancelled: fromLeg.time.arrivalStatus == .cancelled && toLeg.time.departureStatus == .cancelled
 	)
 	let res = LegViewData(
-		isReachable: fromLeg.isReachable,
+		isReachableFromPreviousLeg: fromLeg.departureAndArrivalNotCancelledAndNotReachableFromPreviousLeg(),
 		legType: .transfer,
 		tripId: UUID().uuidString,
 		direction: fromLeg.direction,

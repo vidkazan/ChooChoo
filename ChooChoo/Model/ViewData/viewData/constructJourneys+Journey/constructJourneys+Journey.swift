@@ -74,7 +74,7 @@ extension JourneyDTO {
 					) == true {
 						legsData[legsData.count-1].delayedAndNextIsNotReachable = true
 						isReachable = false
-						currentLeg.isReachable = false
+						currentLeg.isReachableFromPreviousLeg = false
 					}
 					if case .line = currentLeg.legType, case .line = last.legType {
 //						if let transfer = constructTransferViewData(fromLeg: legs[index-1], toLeg: leg) {
