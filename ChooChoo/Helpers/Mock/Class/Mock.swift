@@ -53,8 +53,27 @@ struct TripMockFiles {
 	)
 }
 
+struct AlternativesJourneyMockFiles{
+	static let type = MockService<JourneyWrapper>.self
+	
+	static let alternativesJourneyNeussWolfsburg = type.init(
+		"alternatives-journey-Neuss-Wolfsburg"
+	)
+	static let alternativesJourneyNeussWolfsburgS1FirstStopCancelled = type.init(
+		"alternatives-journey-Neuss-Wolfsburg-S1FirstStopCancelled"
+	)
+	static let alternativesJourneyNeussWolfsburgS1LastStopCancelled = type.init(
+		"alternatives-journey-Neuss-Wolfsburg-S1LastStopCancelled"
+	)
+	static let alternativesJourneyNeussWolfsburgRE6LateAndNextIsNotAvailable = type.init(
+		"alternatives-journey-Neuss-Wolfsburg-RE6LateAndNextIsNotAvailable"
+	)
+}
+
 struct JourneyMockFiles{
 	static let type = MockService<JourneyWrapper>.self
+	
+	static let alternativasMoks = AlternativesJourneyMockFiles.self
 	
 	static let journeyNeussWolfsburg = type.init(
 		"journey-Neuss-Wolfsburg"
@@ -83,7 +102,6 @@ struct JourneyListMockFiles {
 		"placeholder"
 	)
 }
- 
 
 class MockService<T : Decodable> {
 	let rawData : Data?
