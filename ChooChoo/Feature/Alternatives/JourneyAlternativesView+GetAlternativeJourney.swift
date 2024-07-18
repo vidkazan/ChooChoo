@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Collections
 
 extension JourneyAlternativesView {
 	static func getCurrentLegAlternativeJourneyDepartureStop(leg : LegViewData,referenceDate: ChewDate) -> JourneyAlternativeViewData? {
@@ -89,6 +90,7 @@ extension JourneyAlternativesView {
 	static func getAlternativeJourneyDepartureStop(journey : JourneyViewData,referenceDate: ChewDate) -> JourneyAlternativeViewData? {
 		let now = referenceDate.date
 		
+		
 		var legs = journey.legs
 		
 		if let departureTime = legs.first?.time.date.departure.actualOrPlannedIfActualIsNil(),
@@ -101,18 +103,24 @@ extension JourneyAlternativesView {
 			)
 		}
 		
-		let lastReachableLeg = legs.last(where: {
-			$0.delayedAndNextIsNotReachable == nil && $0.time.departureStatus != .cancelled
+		
+		let firstNotReachableLeg = legs.first(where: {
+			return $0.isReachable == false || ($0.legStopsViewData.first?.cancellationType() == .fullyCancelled && $0.legStopsViewData.last?.cancellationType() == .fullyCancelled)
 		})
 		
-		print(
-			lastReachableLeg!.lineViewData.name,
-			lastReachableLeg!.legStopsViewData.first!.name,
-			lastReachableLeg!.legStopsViewData.last!.name
-		)
-		
 		legs = legs.filter({
-			$0.time.timestamp.arrival.planned ?? 1 <= lastReachableLeg?.time.timestamp.arrival.planned ?? 0
+			guard let time = $0.time.timestamp.arrival.actualOrPlannedIfActualIsNil() else {
+				return false
+			}
+			if
+			   let firstNotReachableLegTime = firstNotReachableLeg?
+				.time
+				.timestamp
+				.arrival
+				.actualOrPlannedIfActualIsNil() {
+				return time < firstNotReachableLegTime
+			}
+			return true
 		})
 		
 		var currentLegs = legs.filter { leg in
@@ -134,14 +142,14 @@ extension JourneyAlternativesView {
 				}
 			}
 		}
-		
+//		
 		if !currentLegs.isEmpty,
 			currentLegs.count == 1,
 			let leg = currentLegs.first {
 			return getCurrentLegAlternativeJourneyDepartureStop(leg: leg, referenceDate: referenceDate)
 		}
 		
-		if let stop = LegViewData.lastReachableStop(stops: lastReachableLeg?.legStopsViewData ?? []) {
+		if let stop = LegViewData.lastReachableStop(stops: legs.last?.legStopsViewData ?? []) {
 			return .init(
 				alternativeCase: .lastReachableLeg,
 				alternativeDeparture: .stop(stop: stop),

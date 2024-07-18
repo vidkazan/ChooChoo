@@ -250,8 +250,12 @@ extension LegDTO {
 		return res
 	}
 }
+
 func currentLegIsNotReachable(currentLeg: LegViewData?, previousLeg: LegViewData?) -> Bool? {
-	guard let currentLeg = currentLeg?.time.timestamp.departure.actual,
-			let previousLeg = previousLeg?.time.timestamp.arrival.actual else { return nil }
-	return previousLeg > currentLeg
+	guard let currentLeg = currentLeg,
+		  let previousLeg = previousLeg,
+		let currentLegDepTime = currentLeg.time.timestamp.departure.actual,
+		  let previousLegArrTime = previousLeg.time.timestamp.arrival.actual else { return nil
+	}
+	return previousLegArrTime > currentLegDepTime || !previousLeg.isReachable
 }
