@@ -29,6 +29,17 @@ struct LegViewData : Hashable,Identifiable {
 }
 
 extension LegViewData {
+	func departureAndArrivalNotCancelled() -> Bool {
+		if legStopsViewData.count > 1 {
+			return self.legStopsViewData.first?.cancellationType() == .fullyCancelled &&
+			self.legStopsViewData.last?.cancellationType() == .fullyCancelled
+		} else {
+			return time.arrivalStatus == .cancelled && time.departureStatus == .cancelled
+		}
+	}
+}
+
+extension LegViewData {
 	init(){
 		self.isReachable = true
 		self.legType = .line
