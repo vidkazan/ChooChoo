@@ -100,10 +100,12 @@ extension JourneyAlternativesView {
 }
 
 
+
 extension JourneyAlternativesView {
 	var arrivalStop : some View {
 		Section(content: {
 			HStack {
+				
 				Text("\(jdvm.state.data.arrStop.name)")
 						.chewTextSize(.big)
 						.transition(.move(edge: .top))
@@ -165,18 +167,63 @@ extension JourneyAlternativesView {
 	}
 }
 
-
+@available(iOS 16.0,*)
 #Preview {
 	Group {
-		if let journey = Mock.journeys.journeyNeussWolfsburgFirstCancelled.decodedData?.journey.journeyViewData(
-			depStop: nil,
-			arrStop: nil,
-			realtimeDataUpdatedAt: Date.now.timeIntervalSince1970,
-			settings: .init()
-		) {
-			let chewVM = ChewViewModel(referenceDate: .specificDate(journey.time.timestamp.departure.planned! + 	+10000),coreDataStore: .preview)
-			let vm = JourneyDetailsViewModel(followId: 0, data: journey, depStop: journey.legs.first!.legStopsViewData.first!.stop()!, arrStop: journey.legs.last!.legStopsViewData.last!.stop()!, chewVM: chewVM)
-			JourneyAlternativesView(jdvm: vm)
+		 var journeys =  [
+			Mock.journeys.alternativasMoks
+				.alternativesJourneyNeussWolfsburg
+				.decodedData?.journey.journeyViewData(
+			depStop: .init(),
+			arrStop: .init(),
+			realtimeDataUpdatedAt: 0,
+			settings: .init()),
+			Mock.journeys.alternativasMoks
+				.alternativesJourneyNeussWolfsburgRE6LateAndNextIsNotAvailable
+				.decodedData?.journey.journeyViewData(
+			depStop: .init(),
+			arrStop: .init(),
+			realtimeDataUpdatedAt: 0,
+			settings: .init()),
+//			Mock.journeys.alternativasMoks
+//				.alternativesJourneyNeussWolfsburgS1FirstStopCancelled
+//				.decodedData?.journey.journeyViewData(
+//			depStop: .init(),
+//			arrStop: .init(),
+//			realtimeDataUpdatedAt: 0,
+//			settings: .init()),
+//			Mock.journeys.alternativasMoks
+//				.alternativesJourneyNeussWolfsburgS1LastStopCancelled
+//				.decodedData?.journey.journeyViewData(
+//			depStop: .init(),
+//			arrStop: .init(),
+//			realtimeDataUpdatedAt: 0,
+//			settings: .init()),
+		 ].filter {$0 != nil
+		 }
+		if !journeys.isEmpty {
+			let chewVM = ChewViewModel(referenceDate: .specificDate(journeys.first!!.time.timestamp.departure.planned!+16000),coreDataStore: .preview)
+			VStack {
+//				HStack {
+					ScrollView(.horizontal) {
+						FlowLayout {
+							ForEach(journeys, id: \.hashValue) { journey in
+								let vm = JourneyDetailsViewModel(
+									followId: 0,
+									data: journey!,
+									depStop: .init(),
+									arrStop: .init(),
+									chewVM: chewVM
+								)
+								JourneyAlternativesView(jdvm: vm)
+									.frame(width: 400,height: 450)
+							}
+						}
+						.frame(width:900,height: 1000)
+//					}
+				}
+				ReferenceTimeSliderView()
+			}
 			.environmentObject(chewVM)
 		}
 	}

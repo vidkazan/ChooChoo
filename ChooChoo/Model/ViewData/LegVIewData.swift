@@ -153,7 +153,7 @@ extension LegViewData {
 }
 
 extension LegViewData {
-	static func lastAvailableStop(stops : [StopViewData]) -> StopViewData? {
+	static func lastReachableStop(stops : [StopViewData]) -> StopViewData? {
 		let lastAvailable = stops.reversed().first(where: {
 			$0.cancellationType() == .exitOnly || $0.cancellationType() == .notCancelled
 		})
