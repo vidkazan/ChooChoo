@@ -26,7 +26,7 @@ extension ChewViewModel {
 			Task {
 				if let appSettings = coreDataStore.fetchAppSettings() {
 					Model.shared.appSettingsVM.send(
-						event: .didRequestToLoadInitialData(settings: appSettings)
+						event: .didRequestToUpdateAppSettings(settings: appSettings)
 					)
 				} else {
 					Logger.loadingsInitialData.info("\(#function): appSettings is nil")

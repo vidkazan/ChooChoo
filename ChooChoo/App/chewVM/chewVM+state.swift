@@ -8,11 +8,14 @@
 import Foundation
 import CoreLocation
 import CoreData
+import SwiftUI
+
 
 extension ChewViewModel {
 	enum TextFieldContent : Equatable,Hashable {
 		case textOnly(String)
 		case location(Stop)
+		case transport(LegViewData)
 		
 		var text : String {
 			switch self {
@@ -20,6 +23,8 @@ extension ChewViewModel {
 				return text
 			case .location(let stop):
 				return stop.name
+			case .transport(let leg):
+				return "\(leg.lineViewData.name) \(leg.lineViewData.id ?? "") \(JourneyAlternativesView.getCurrentLegAlternativeJourneyDepartureStop(leg: leg, referenceDate: .now)?.alternativeDeparture.leg?.direction.actual ?? "" )"
 			}
 		}
 		
@@ -29,6 +34,19 @@ extension ChewViewModel {
 				return nil
 			case .location(let stop):
 				return stop
+			case .transport(let leg):
+				return JourneyAlternativesView.getCurrentLegAlternativeJourneyDepartureStop(leg: leg, referenceDate: .now)?.alternativeDeparture.stopViewData.stop()
+			}
+		}
+		
+		var leg : LegViewData? {
+			switch self {
+			case .textOnly:
+				return nil
+			case .location:
+				return nil
+			case .transport(let leg):
+				return leg
 			}
 		}
 	}
@@ -39,6 +57,14 @@ extension ChewViewModel {
 		let journeySettings : JourneySettings
 		let date : SearchStopsDate
 		
+		func getStop(type : LocationDirectionType) -> TextFieldContent {
+			switch type {
+			case .departure:
+				return depStop
+			case .arrival:
+				return arrStop
+			}
+		}
 	}
 	
 	struct State : Equatable {

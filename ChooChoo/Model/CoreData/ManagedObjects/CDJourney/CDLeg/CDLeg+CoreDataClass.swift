@@ -69,14 +69,15 @@ extension CDLeg {
 		   let legType = try? JSONDecoder().decode(LegViewData.LegType.self,from: legTypeData) else {
 				return nil
 		}
-		guard let direction = self.stops.last?.name else {
+		guard let direction = self.stops.last?.stopViewData() else {
 			return nil
 		}
+		#warning("lazy!!! line id is nil")
 		return LegViewData(
 			isReachable: self.isReachable,
 			legType: legType,
 			tripId: self.tripId,
-			direction: direction,
+			direction:  LegViewData.direction(stops: stopsViewData, plannedDirectionName: legDTOobj?.direction),
 			legTopPosition: self.legTopPosition,
 			legBottomPosition: self.legBottomPosition,
 			remarks: [],
@@ -85,7 +86,8 @@ extension CDLeg {
 			lineViewData: LineViewData(
 				type: LineType(rawValue: self.lineType) ?? .taxi,
 				name: self.lineName,
-				shortName: self.lineShortName
+				shortName: self.lineShortName,
+				id: nil
 			),
 			progressSegments: segments,
 			time: time,

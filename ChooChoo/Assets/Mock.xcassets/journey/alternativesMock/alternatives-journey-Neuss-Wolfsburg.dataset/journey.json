@@ -1,0 +1,568 @@
+{
+	"journey": {
+		"type": "journey",
+		"legs": [
+			{
+				"origin": {
+					"type": "stop",
+					"id": "8000274",
+					"name": "Neuss Hbf",
+					"location": {
+						"type": "location",
+						"id": "8000274",
+						"latitude": 51.204373,
+						"longitude": 6.684415
+					},
+					"products": {
+						"nationalExpress": true,
+						"national": false,
+						"regionalExpress": true,
+						"regional": true,
+						"suburban": true,
+						"bus": true,
+						"ferry": false,
+						"subway": true,
+						"tram": true,
+						"taxi": true
+					}
+				},
+				"destination": {
+					"type": "stop",
+					"id": "8000252",
+					"name": "Minden(Westf)",
+					"location": {
+						"type": "location",
+						"id": "8000252",
+						"latitude": 52.290566,
+						"longitude": 8.934442
+					},
+					"products": {
+						"nationalExpress": true,
+						"national": true,
+						"regionalExpress": false,
+						"regional": true,
+						"suburban": true,
+						"bus": true,
+						"ferry": false,
+						"subway": false,
+						"tram": false,
+						"taxi": true
+					}
+				},
+				"departure": "2023-11-27T13:36:00+01:00",
+				"plannedDeparture": "2023-11-27T13:36:00+01:00",
+				"departureDelay": 0,
+				"arrival": "2023-11-27T16:30:00+01:00",
+				"plannedArrival": "2023-11-27T16:30:00+01:00",
+				"arrivalDelay": 0,
+				"reachable": true,
+				"tripId": "1|307884|0|80|27112023",
+				"line": {
+					"type": "line",
+					"id": "re-6",
+					"fahrtNr": "89723",
+					"name": "RE 6",
+					"public": true,
+					"adminCode": "NXRE__",
+					"productName": "RE",
+					"mode": "train",
+					"product": "regional",
+					"operator": {
+						"type": "operator",
+						"id": "national-express",
+						"name": "National Express"
+					},
+					"additionalName": "RE 6"
+				},
+				"direction": "Minden(Westf)",
+				"currentLocation": {
+					"type": "location",
+					"latitude": 51.211564,
+					"longitude": 6.744454
+				},
+				"arrivalPlatform": "13",
+				"plannedArrivalPlatform": "13",
+				"arrivalPrognosisType": "prognosed",
+				"departurePlatform": "1",
+				"plannedDeparturePlatform": "1",
+				"departurePrognosisType": null,
+				"stopovers": [
+					{
+						"stop": {
+							"type": "stop",
+							"id": "8000274",
+							"name": "Neuss Hbf",
+							"location": {
+								"type": "location",
+								"id": "8000274",
+								"latitude": 51.204373,
+								"longitude": 6.684415
+							},
+							"products": {
+								"nationalExpress": true,
+								"national": false,
+								"regionalExpress": true,
+								"regional": true,
+								"suburban": true,
+								"bus": true,
+								"ferry": false,
+								"subway": true,
+								"tram": true,
+								"taxi": true
+							}
+						},
+						"arrival": null,
+						"plannedArrival": null,
+						"arrivalDelay": null,
+						"arrivalPlatform": null,
+						"arrivalPrognosisType": null,
+						"plannedArrivalPlatform": null,
+						"departure": "2023-11-27T13:36:00+01:00",
+						"plannedDeparture": "2023-11-27T13:36:00+01:00",
+						"departureDelay": 0,
+						"departurePlatform": "1",
+						"departurePrognosisType": null,
+						"plannedDeparturePlatform": "1"
+					},
+					{
+						"stop": {
+							"type": "stop",
+							"id": "8001585",
+							"name": "Düsseldorf-Bilk",
+							"location": {
+								"type": "location",
+								"id": "8001585",
+								"latitude": 51.207816,
+								"longitude": 6.775475
+							},
+							"products": {
+								"nationalExpress": false,
+								"national": false,
+								"regionalExpress": false,
+								"regional": true,
+								"suburban": true,
+								"bus": true,
+								"ferry": false,
+								"subway": true,
+								"tram": false,
+								"taxi": false
+							}
+						},
+						"arrival": "2023-11-27T13:44:00+01:00",
+						"plannedArrival": "2023-11-27T13:44:00+01:00",
+						"arrivalDelay": 0,
+						"arrivalPlatform": "3",
+						"arrivalPrognosisType": "prognosed",
+						"plannedArrivalPlatform": "3",
+						"departure": "2023-11-27T13:45:00+01:00",
+						"plannedDeparture": "2023-11-27T13:45:00+01:00",
+						"departureDelay": 0,
+						"departurePlatform": "3",
+						"departurePrognosisType": "prognosed",
+						"plannedDeparturePlatform": "3"
+					},
+					{
+						"stop": {
+							"type": "stop",
+							"id": "8000252",
+							"name": "Minden(Westf)",
+							"location": {
+								"type": "location",
+								"id": "8000252",
+								"latitude": 52.290566,
+								"longitude": 8.934442
+							},
+							"products": {
+								"nationalExpress": true,
+								"national": true,
+								"regionalExpress": false,
+								"regional": true,
+								"suburban": true,
+								"bus": true,
+								"ferry": false,
+								"subway": false,
+								"tram": false,
+								"taxi": true
+							}
+						},
+						"arrival": "2023-11-27T16:30:00+01:00",
+						"plannedArrival": "2023-11-27T16:30:00+01:00",
+						"arrivalDelay": 0,
+						"arrivalPlatform": "13",
+						"arrivalPrognosisType": "prognosed",
+						"plannedArrivalPlatform": "13",
+						"departure": null,
+						"plannedDeparture": null,
+						"departureDelay": null,
+						"departurePlatform": null,
+						"departurePrognosisType": null,
+						"plannedDeparturePlatform": null
+					}
+				],
+				"remarks": []
+			},
+			{
+				"origin": {
+					"type": "stop",
+					"id": "8000252",
+					"name": "Minden(Westf)",
+					"location": {
+						"type": "location",
+						"id": "8000252",
+						"latitude": 52.290566,
+						"longitude": 8.934442
+					},
+					"products": {
+						"nationalExpress": true,
+						"national": true,
+						"regionalExpress": false,
+						"regional": true,
+						"suburban": true,
+						"bus": true,
+						"ferry": false,
+						"subway": false,
+						"tram": false,
+						"taxi": true
+					}
+				},
+				"destination": {
+					"type": "stop",
+					"id": "8000152",
+					"name": "Hannover Hbf",
+					"location": {
+						"type": "location",
+						"id": "8000152",
+						"latitude": 52.377079,
+						"longitude": 9.741763
+					},
+					"products": {
+						"nationalExpress": true,
+						"national": true,
+						"regionalExpress": true,
+						"regional": true,
+						"suburban": true,
+						"bus": true,
+						"ferry": false,
+						"subway": false,
+						"tram": true,
+						"taxi": false
+					}
+				},
+				"departure": "2023-11-27T16:35:00+01:00",
+				"plannedDeparture": "2023-11-27T16:35:00+01:00",
+				"departureDelay": 0,
+				"arrival": "2023-11-27T17:30:00+01:00",
+				"plannedArrival": "2023-11-27T17:30:00+01:00",
+				"arrivalDelay": 0,
+				"reachable": true,
+				"tripId": "1|1143863|10|80|27112023",
+				"line": {
+					"type": "line",
+					"id": "4-tdhs-1",
+					"fahrtNr": "34133",
+					"name": "S 1",
+					"public": true,
+					"adminCode": "TDHS__",
+					"productName": "S",
+					"mode": "train",
+					"product": "suburban",
+					"operator": {
+						"type": "operator",
+						"id": "s-bahn-hannover-transdev",
+						"name": "S-Bahn Hannover (Transdev)"
+					}
+				},
+				"direction": "Hannover Hbf",
+				"arrivalPlatform": "1",
+				"plannedArrivalPlatform": "1",
+				"arrivalPrognosisType": "prognosed",
+				"departurePlatform": "12",
+				"plannedDeparturePlatform": "12",
+				"departurePrognosisType": "prognosed",
+				"stopovers": [
+					{
+						"stop": {
+							"type": "stop",
+							"id": "8000252",
+							"name": "Minden(Westf)",
+							"location": {
+								"type": "location",
+								"id": "8000252",
+								"latitude": 52.290566,
+								"longitude": 8.934442
+							},
+							"products": {
+								"nationalExpress": true,
+								"national": true,
+								"regionalExpress": false,
+								"regional": true,
+								"suburban": true,
+								"bus": true,
+								"ferry": false,
+								"subway": false,
+								"tram": false,
+								"taxi": true
+							}
+						},
+						"arrival": null,
+						"plannedArrival": null,
+						"arrivalDelay": null,
+						"arrivalPlatform": null,
+						"arrivalPrognosisType": null,
+						"plannedArrivalPlatform": null,
+						"departure": "2023-11-27T16:35:00+01:00",
+						"plannedDeparture": "2023-11-27T16:35:00+01:00",
+						"departureDelay": 0,
+						"departurePlatform": "12",
+						"departurePrognosisType": "prognosed",
+						"plannedDeparturePlatform": "12"
+					},
+					{
+						"stop": {
+							"type": "stop",
+							"id": "8079095",
+							"name": "Hannover-Nordstadt",
+							"location": {
+								"type": "location",
+								"id": "8079095",
+								"latitude": 52.393969,
+								"longitude": 9.717267
+							},
+							"products": {
+								"nationalExpress": false,
+								"national": false,
+								"regionalExpress": false,
+								"regional": true,
+								"suburban": true,
+								"bus": true,
+								"ferry": false,
+								"subway": false,
+								"tram": true,
+								"taxi": false
+							}
+						},
+						"arrival": "2023-11-27T17:27:00+01:00",
+						"plannedArrival": "2023-11-27T17:27:00+01:00",
+						"arrivalDelay": 0,
+						"arrivalPlatform": "2",
+						"arrivalPrognosisType": "prognosed",
+						"plannedArrivalPlatform": "2",
+						"departure": "2023-11-27T17:27:00+01:00",
+						"plannedDeparture": "2023-11-27T17:27:00+01:00",
+						"departureDelay": 0,
+						"departurePlatform": "2",
+						"departurePrognosisType": "prognosed",
+						"plannedDeparturePlatform": "2"
+					},
+					{
+						"stop": {
+							"type": "stop",
+							"id": "8000152",
+							"name": "Hannover Hbf",
+							"location": {
+								"type": "location",
+								"id": "8000152",
+								"latitude": 52.377079,
+								"longitude": 9.741763
+							},
+							"products": {
+								"nationalExpress": true,
+								"national": true,
+								"regionalExpress": true,
+								"regional": true,
+								"suburban": true,
+								"bus": true,
+								"ferry": false,
+								"subway": false,
+								"tram": true,
+								"taxi": false
+							}
+						},
+						"arrival": "2023-11-27T17:30:00+01:00",
+						"plannedArrival": "2023-11-27T17:30:00+01:00",
+						"arrivalDelay": 0,
+						"arrivalPlatform": "1",
+						"arrivalPrognosisType": "prognosed",
+						"plannedArrivalPlatform": "1",
+						"departure": null,
+						"plannedDeparture": null,
+						"departureDelay": null,
+						"departurePlatform": null,
+						"departurePrognosisType": null,
+						"plannedDeparturePlatform": null
+					}
+				],
+				"remarks": [],
+				"cycle": {
+					"min": 3480,
+					"max": 3720,
+					"nr": 3
+				}
+			},
+			{
+				"origin": {
+					"type": "stop",
+					"id": "8000152",
+					"name": "Hannover Hbf",
+					"location": {
+						"type": "location",
+						"id": "8000152",
+						"latitude": 52.377079,
+						"longitude": 9.741763
+					},
+					"products": {
+						"nationalExpress": true,
+						"national": true,
+						"regionalExpress": true,
+						"regional": true,
+						"suburban": true,
+						"bus": true,
+						"ferry": false,
+						"subway": false,
+						"tram": true,
+						"taxi": false
+					}
+				},
+				"destination": {
+					"type": "stop",
+					"id": "8006552",
+					"name": "Wolfsburg Hbf",
+					"location": {
+						"type": "location",
+						"id": "8006552",
+						"latitude": 52.429495,
+						"longitude": 10.787757
+					},
+					"products": {
+						"nationalExpress": true,
+						"national": true,
+						"regionalExpress": true,
+						"regional": true,
+						"suburban": false,
+						"bus": true,
+						"ferry": false,
+						"subway": false,
+						"tram": false,
+						"taxi": true
+					}
+				},
+				"departure": "2023-11-27T17:48:00+01:00",
+				"plannedDeparture": "2023-11-27T17:48:00+01:00",
+				"departureDelay": null,
+				"arrival": "2023-11-27T18:53:00+01:00",
+				"plannedArrival": "2023-11-27T18:43:00+01:00",
+				"arrivalDelay": null,
+				"reachable": true,
+				"tripId": "1|306071|0|80|27112023",
+				"line": {
+					"type": "line",
+					"id": "eno-re30",
+					"fahrtNr": "83527",
+					"name": "ENO RE30",
+					"public": true,
+					"adminCode": "R0____",
+					"productName": "ENO",
+					"mode": "train",
+					"product": "regional",
+					"operator": {
+						"type": "operator",
+						"id": "enno",
+						"name": "enno"
+					},
+					"additionalName": "ENO RE30"
+				},
+				"direction": "Wolfsburg Hbf",
+				"arrivalPlatform": "4",
+				"plannedArrivalPlatform": "4",
+				"arrivalPrognosisType": "prognosed",
+				"departurePlatform": "14 D-F",
+				"plannedDeparturePlatform": "14 D-F",
+				"departurePrognosisType": "prognosed",
+				"stopovers": [
+					{
+						"stop": {
+							"type": "stop",
+							"id": "8000152",
+							"name": "Hannover Hbf",
+							"location": {
+								"type": "location",
+								"id": "8000152",
+								"latitude": 52.377079,
+								"longitude": 9.741763
+							},
+							"products": {
+								"nationalExpress": true,
+								"national": true,
+								"regionalExpress": true,
+								"regional": true,
+								"suburban": true,
+								"bus": true,
+								"ferry": false,
+								"subway": false,
+								"tram": true,
+								"taxi": false
+							}
+						},
+						"arrival": null,
+						"plannedArrival": null,
+						"arrivalDelay": null,
+						"arrivalPlatform": null,
+						"arrivalPrognosisType": null,
+						"plannedArrivalPlatform": null,
+						"departure": "2023-11-27T17:48:00+01:00",
+						"plannedDeparture": "2023-11-27T17:48:00+01:00",
+						"departureDelay": null,
+						"departurePlatform": "14 D-F",
+						"departurePrognosisType": "prognosed",
+						"plannedDeparturePlatform": "14 D-F"
+					},
+					{
+						"stop": {
+							"type": "stop",
+							"id": "8006552",
+							"name": "Wolfsburg Hbf",
+							"location": {
+								"type": "location",
+								"id": "8006552",
+								"latitude": 52.429495,
+								"longitude": 10.787757
+							},
+							"products": {
+								"nationalExpress": true,
+								"national": true,
+								"regionalExpress": true,
+								"regional": true,
+								"suburban": false,
+								"bus": true,
+								"ferry": false,
+								"subway": false,
+								"tram": false,
+								"taxi": true
+							}
+						},
+						"arrival": "2023-11-27T18:53:00+01:00",
+						"plannedArrival": "2023-11-27T18:43:00+01:00",
+						"arrivalDelay": 10,
+						"arrivalPlatform": "4",
+						"arrivalPrognosisType": "prognosed",
+						"plannedArrivalPlatform": "4",
+						"departure": null,
+						"plannedDeparture": null,
+						"departureDelay": null,
+						"departurePlatform": null,
+						"departurePrognosisType": null,
+						"plannedDeparturePlatform": null
+					}
+				],
+				"remarks": []
+			}
+		],
+		"refreshToken": "T$A=1@O=Neuss Hbf@L=8000274@a=128@$A=1@O=Minden(Westf)@L=8000252@a=128@$202311271336$202311271630$RE 89723$$1$$$$$$§T$A=1@O=Minden(Westf)@L=8000252@a=128@$A=1@O=Hannover Hbf@L=8000152@a=128@$202311271635$202311271730$S      1$$1$$$$$$§T$A=1@O=Hannover Hbf@L=8000152@a=128@$A=1@O=Wolfsburg Hbf@L=8006552@a=128@$202311271748$202311271843$ENO83527$$1$$$$$$",
+		"cycle": {
+			"min": 3480
+		},
+		"remarks": [],
+		"price": null
+	},
+	"realtimeDataUpdatedAt": 1701088796
+}

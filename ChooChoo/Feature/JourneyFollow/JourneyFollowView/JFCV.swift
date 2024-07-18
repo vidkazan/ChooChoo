@@ -57,28 +57,38 @@ struct JourneyFollowCellView : View {
 			LegsView(journey : data,mode : appSettingsVM.state.settings.legViewMode)
 			HStack(spacing: 2) {
 				Spacer()
-				if case .error = vm.state.status {
-					BadgeView(.updateError)
-						.badgeBackgroundStyle(.red)
-						.matchedGeometryEffect(id: "updatedAt", in: journeyFollowCellViewNamespace)
-				} else {
-					BadgeView(
-						.updatedAtTime(
-							referenceTime: data.updatedAt,
-							isLoading: isLoading(status: vm.state.status)
-						),
-						color: Color.clear
-					)
-					.matchedGeometryEffect(id: "updatedAt", in: journeyFollowCellViewNamespace)
-				}
 				if !data.isReachable || !data.legs.allSatisfy({$0.isReachable == true}) {
 					BadgeView(.connectionNotReachable)
 						.badgeBackgroundStyle(.red)
+				}
+				if Date.now < data.time.date.arrival.actualOrPlannedIfActualIsNil() ?? .now {
+					updatedAtBadge(data: data)
 				}
 			}
 		}
 		.contextMenu { menu }
 		.animation(.easeInOut, value: vm.state.status)
+	}
+}
+
+extension JourneyFollowCellView {
+	func updatedAtBadge(data : JourneyViewData) -> some View {
+		Group {
+			if case .error = vm.state.status {
+				BadgeView(.updateError)
+					.badgeBackgroundStyle(.red)
+					
+			} else {
+				BadgeView(
+					.updatedAtTime(
+						referenceTime: data.updatedAt,
+						isLoading: isLoading(status: vm.state.status)
+					),
+					color: Color.clear
+				)
+			}
+		}
+		.matchedGeometryEffect(id: "updatedAt \(data.id)", in: journeyFollowCellViewNamespace)
 	}
 }
 

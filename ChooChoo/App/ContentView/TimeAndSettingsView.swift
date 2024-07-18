@@ -21,7 +21,41 @@ struct TimeAndSettingsView: View {
 					TimeChoosingView()
 					settingsBtn()
 				}
+				.overlay {
+					if chewViewModel.state.data.depStop.leg != nil {
+						Color.chewFillAccent.opacity(0.6)
+					}
+				}
+				.disabled(chewViewModel.state.data.depStop.leg != nil)
+				if chewViewModel.state.data.depStop.leg != nil {
+					HStack {
+						Image(ChooSFSymbols.arrowTriangleBranch)
+						Text(NSLocalizedString("alternatives from current transport", comment: "TimeAndSettingsView"))
+							.chewTextSize(.medium)
+						Button(action: {
+							chewViewModel.send(event: .didUpdateSearchData(
+								dep: .textOnly(""),
+								arr: chewViewModel.state.data.arrStop,
+								date: chewViewModel.state.data.date,
+								journeySettings: chewViewModel.state.data.journeySettings
+							))
+						}, label: {
+							Text(NSLocalizedString("turn off", comment: "TimeAndSettingsView:alternatives from current transport"))
+								.chewTextSize(.medium)
+//								.tint(.secondary)
+						})
+						.padding(5)
+						.badgeBackgroundStyle(.secondary)
+						.frame(height: 40)
+					}
+				}
 			}
+			.background {
+				if chewViewModel.state.data.depStop.leg != nil {
+					Color.chewFillAccent.opacity(0.6)
+				}
+			}
+			.cornerRadius(10)
 		}
 		.onReceive(chewViewModel.$state, perform: { newState in
 			state = newState

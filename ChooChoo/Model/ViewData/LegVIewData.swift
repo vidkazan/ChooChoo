@@ -14,8 +14,7 @@ struct LegViewData : Hashable,Identifiable {
 	var isReachable : Bool
 	let legType : LegType
 	let tripId : String
-//	Prognosed<Stop>
-	let direction : String
+	let direction : Prognosed<String>
 	let legTopPosition : Double
 	let legBottomPosition : Double
 	var delayedAndNextIsNotReachable : Bool?
@@ -34,13 +33,13 @@ extension LegViewData {
 		self.isReachable = true
 		self.legType = .line
 		self.tripId = ""
-		self.direction = ""
+		self.direction = .init()
 		self.legTopPosition = 0
 		self.legBottomPosition = 0
 		self.delayedAndNextIsNotReachable = false
 		self.legStopsViewData = []
 		self.footDistance = 0
-		self.lineViewData = LineViewData(type: .taxi, name: "", shortName: "")
+		self.lineViewData = LineViewData(type: .taxi, name: "", shortName: "",id: nil)
 		self.progressSegments = Segments(segments: [], heightTotalCollapsed: 0, heightTotalExtended: 0)
 		self.time = TimeContainer(plannedDeparture: "", plannedArrival: "", actualDeparture: "", actualArrival: "", cancelled: false)
 		self.remarks = []
@@ -51,10 +50,20 @@ extension LegViewData {
 
 extension LegViewData {
 	init(footPathStops : DepartureArrivalPairStop){
+		
+		let arrival = StopViewData(
+			id: nil,
+			   locationCoordinates: footPathStops.arrival.coordinates,
+			   name: "",
+			   platforms: .init(departure: .init(), arrival: .init()),
+			   time: .init(),
+			   stopOverType: .destination
+		   )
+		
 		self.isReachable = true
 		self.legType = .footMiddle
 		self.tripId = ""
-		self.direction = ""
+		self.direction = Prognosed(actual: arrival.name,planned: arrival.name)
 		self.legTopPosition = 0
 		self.legBottomPosition = 0
 		self.delayedAndNextIsNotReachable = false
@@ -67,17 +76,10 @@ extension LegViewData {
 				time: .init(),
 				stopOverType: .origin
 			),
-			.init(
-				id: nil,
-				locationCoordinates: footPathStops.arrival.coordinates,
-				name: "",
-				platforms: .init(departure: .init(), arrival: .init()),
-				time: .init(),
-				stopOverType: .destination
-			)
+			arrival
 		]
 		self.footDistance = 0
-		self.lineViewData = LineViewData(type: .foot, name: "", shortName: "")
+		self.lineViewData = LineViewData(type: .foot, name: "", shortName: "", id: nil)
 		self.progressSegments = Segments(segments: [], heightTotalCollapsed: 0, heightTotalExtended: 0)
 		self.time = TimeContainer(plannedDeparture: "", plannedArrival: "", actualDeparture: "", actualArrival: "", cancelled: false)
 		self.remarks = []
@@ -85,7 +87,6 @@ extension LegViewData {
 		self.legDTO = nil
 	}
 }
-
 enum LocationDirectionType : Int, Hashable, CaseIterable {
 	case departure
 	case arrival
@@ -131,6 +132,34 @@ struct LineViewData : Hashable, Codable {
 	let type : LineType
 	let name : String
 	let shortName : String
+	let id: String?
+}
+
+extension LegViewData {
+	static func direction(stops : [StopViewData], plannedDirectionName : String?) -> Prognosed<String> {
+		let lastAvailable = stops.reversed().first(where: {
+			$0.cancellationType() == .exitOnly || $0.cancellationType() == .notCancelled
+		})
+		let stopNameIfLastStopsAreCancelled = {
+			lastAvailable == stops.last ? nil : lastAvailable?.name
+		}()
+		
+		if let stopNameIfLastStopsAreCancelled = stopNameIfLastStopsAreCancelled {
+			return Prognosed<String>(actual: stopNameIfLastStopsAreCancelled,planned: plannedDirectionName)
+		} else {
+			return Prognosed<String>(actual: plannedDirectionName,planned: plannedDirectionName)
+		}
+	}
+}
+
+extension LegViewData {
+	static func lastReachableStop(stops : [StopViewData]) -> StopViewData? {
+		let lastAvailable = stops.reversed().first(where: {
+			$0.cancellationType() == .exitOnly || $0.cancellationType() == .notCancelled
+		})
+		
+		return lastAvailable == stops.last ? stops.last : lastAvailable
+	}
 }
 
 extension LegViewData {

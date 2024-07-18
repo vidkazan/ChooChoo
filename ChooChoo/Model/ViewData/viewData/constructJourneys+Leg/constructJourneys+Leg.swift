@@ -130,7 +130,7 @@ extension StopTripDTO {
 			isReachable: true,
 			legType: .line,
 			tripId: tripId,
-			direction: direction ?? "direction",
+			direction: Prognosed(actual: stops.last?.name,planned: stops.last?.name),
 			legTopPosition: 0,
 			legBottomPosition: 0,
 			delayedAndNextIsNotReachable: nil,
@@ -141,7 +141,8 @@ extension StopTripDTO {
 				product: line?.product ?? "",
 				name: line?.name ?? "",
 				productName: line?.productName ?? "",
-				legType: .line
+				legType: .line,
+				id: line?.fahrtNr
 			),
 			progressSegments: .init(
 				segments: [],
@@ -227,7 +228,7 @@ extension LegDTO {
 			isReachable: stops.first?.cancellationType() != .fullyCancelled && stops.last?.cancellationType() != .fullyCancelled,
 			legType: legType,
 			tripId: tripId,
-			direction: direction ?? "direction",
+			direction: LegViewData.direction(stops: stops, plannedDirectionName: direction),
 			legTopPosition: max(plannedDeparturePosition,actualDeparturePosition),
 			legBottomPosition: max(plannedArrivalPosition,actualArrivalPosition),
 			delayedAndNextIsNotReachable: nil,
@@ -238,7 +239,8 @@ extension LegDTO {
 				product: line?.product ?? "",
 				name: line?.name ?? "",
 				productName: line?.productName ?? "",
-				legType: legType
+				legType: legType,
+				id: line?.fahrtNr
 			),
 			progressSegments: segments,
 			time: container,

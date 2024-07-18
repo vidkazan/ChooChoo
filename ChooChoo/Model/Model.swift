@@ -83,7 +83,7 @@ extension Model {
 		if let vm = _journeyDetailsViewModels[journeyRef] {
 			return vm
 		}
-		Logger.journeyDetailsViewModel.info("\(#function): vm not found: creating new")
+//		Logger.journeyDetailsViewModel.info("\(#function): vm not found: creating new")
 		let vm = JourneyDetailsViewModel(
 			followId: followId,
 			data: viewdata,
