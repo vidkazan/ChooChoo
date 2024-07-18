@@ -43,7 +43,7 @@ struct JourneyAlternativesView: View {
 							chewVM.send(event: .didUpdateSearchData(
 								dep: .location(depStop),
 								arr: .location(jdvm.state.data.arrStop),
-								date: .init(date: .specificDate(depStopArrival), mode: .departure),
+								date: .init(date: .now, mode: .departure),
 								journeySettings: jdvm.state.data.viewData.settings)
 							)
 						}
@@ -71,9 +71,9 @@ struct JourneyAlternativesView: View {
 		.onReceive(chewVM.$referenceDate, perform: { res in
 			journeyAlternativeViewData = Self.getAlternativeJourneyDepartureStop(journey: jdvm.state.data.viewData, referenceDate: chewVM.referenceDate)
 		})
-//		.onReceive(secondTimer, perform: { _ in
-//			journeyAlternativeViewData = Self.getAlternativeJourneyDepartureStop(journey: jdvm.state.data.viewData, referenceDate: chewVM.referenceDate)
-//		})
+		.onReceive(secondTimer, perform: { _ in
+			journeyAlternativeViewData = Self.getAlternativeJourneyDepartureStop(journey: jdvm.state.data.viewData, referenceDate: chewVM.referenceDate)
+		})
 		
 		.onReceive(minuteTimer, perform: { _ in
 			jdvm.send(event: .didRequestReloadIfNeeded(id: jdvm.state.data.id, ref: jdvm.state.data.viewData.refreshToken, timeStatus: .active))
