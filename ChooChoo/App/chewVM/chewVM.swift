@@ -12,7 +12,7 @@ import CoreLocation
 import CoreData
 
 final class ChewViewModel : ChewViewModelProtocol {
-	let referenceDate : ChewDate
+	@Published var referenceDate : ChewDate
 	
 	@Published private(set) var state : State {
 		didSet {

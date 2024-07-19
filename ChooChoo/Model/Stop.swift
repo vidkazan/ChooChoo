@@ -15,6 +15,16 @@ struct Stop : Identifiable,Hashable,Codable {
 	var stopDTO : StopDTO?
 	var name : String
 	
+	
+	
+	init() {
+		self.coordinates = .init()
+		self.type = .location
+		self.stopDTO = nil
+		self.name = "defaultStopName"
+		self.id = self.name
+	}
+	
 	init(coordinates: Coordinate, type: LocationType, stopDTO: StopDTO?) {
 		self.coordinates = coordinates
 		self.type = type

@@ -60,6 +60,12 @@ extension SearchStopsView {
 					text: text
 				)
 				rightButton(type: type)
+					.overlay {
+						if chewViewModel.state.isAlternativeMode() == true {
+							Color.chewFillAccent.opacity(0.6)
+								.cornerRadius(10)
+						}
+					}
 			}
 			.background(Color.chewFillAccent)
 			.cornerRadius(10)

@@ -65,7 +65,7 @@ extension JourneyDTO {
 		
 		for (index,leg) in legs.enumerated() {
 			legRemarks += leg.remarks?.compactMap({$0.viewData()}) ?? []
-			isReachable = leg.reachable ?? true
+			isReachable = true
 			if var currentLeg = leg.legViewData(firstTS: startTS, lastTS: endTS, legs: legs) {
 				if let last = legsData.last {
 					if currentLegIsNotReachable(
@@ -74,10 +74,11 @@ extension JourneyDTO {
 					) == true {
 						legsData[legsData.count-1].delayedAndNextIsNotReachable = true
 						isReachable = false
-						currentLeg.isReachable = false
+						currentLeg.isReachableFromPreviousLeg = false
 					}
 					if case .line = currentLeg.legType, case .line = last.legType {
-						if let transfer = constructTransferViewData(fromLeg: legs[index-1], toLeg: leg) {
+//						if let transfer = constructTransferViewData(fromLeg: legs[index-1], toLeg: leg) {
+							if let transfer = constructTransferViewData(fromLeg: last, toLeg: currentLeg) {
 							legsData.append(transfer)
 						}
 					}
@@ -115,7 +116,8 @@ extension JourneyDTO {
 			time: time,
 			updatedAt: realtimeDataUpdatedAt,
 			remarks: journeyRemarks,
-			settings: settings
+			settings: settings,
+			journeyDTO: self
 		)
 	}
 }

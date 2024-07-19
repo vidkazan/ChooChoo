@@ -29,31 +29,29 @@ struct JourneyFollowViewMapCell : View {
 			)
 			.frame(minHeight: 300)
 			.contextMenu {
+//				Button(action: {
+//					Model.shared.sheetVM.send(
+//						event: .didRequestShow(.mapDetails(.journey(data.legs)))
+//					)
+//				}, label: {
+//					Label(
+//						title: {
+//							Text("Show on map", comment: "JourneyFollowCellView: menu item")
+//						},
+//						icon: {
+//							Image(systemName: "map")
+//						}
+//					)
+//				})
 				Button(action: {
-					Model.shared.sheetVM.send(
-						event: .didRequestShow(.mapDetails(.journey(data.legs)))
-					)
+					JourneyViewData.journeyDebug.action(data)
 				}, label: {
 					Label(
 						title: {
-							Text("Show on map", comment: "JourneyFollowCellView: menu item")
+							Text(verbatim: JourneyViewData.journeyDebug.text)
 						},
 						icon: {
-							Image(systemName: "map")
-						}
-					)
-				})
-				Button(action: {
-					Model.shared.sheetVM.send(
-						event: .didRequestShow(.journeyDebug(legs: data.legs.compactMap {$0.legDTO}))
-					)
-				}, label: {
-					Label(
-						title: {
-							Text("Journey debug", comment: "JourneyFollowCellView: menu item")
-						},
-						icon: {
-							Image(systemName: "ant")
+							Image(systemName: JourneyViewData.journeyDebug.icon)
 						}
 					)
 				})

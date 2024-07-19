@@ -59,7 +59,8 @@ extension CDJourney {
 					time: time,
 					updatedAt: self.updatedAt,
 					remarks: [],
-					settings: settings
+					settings: settings,
+					journeyDTO: nil
 				),
 				stops: stops
 			)

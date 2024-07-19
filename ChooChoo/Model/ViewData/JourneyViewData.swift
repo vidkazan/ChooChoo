@@ -41,6 +41,7 @@ struct JourneyViewData : Identifiable, Hashable {
 	let time : TimeContainer
 	let updatedAt : Double
 	let settings : JourneySettings
+	let journeyDTO : JourneyDTO?
 }
 
 extension JourneyViewData {
@@ -58,6 +59,7 @@ extension JourneyViewData {
 		self.sunEventsGradientStops = data.sunEventsGradientStops
 		self.remarks = data.remarks
 		self.settings = data.settings
+		self.journeyDTO = data.journeyDTO
 	}
 	init(
 		journeyRef : String,
@@ -69,7 +71,8 @@ extension JourneyViewData {
 		time : TimeContainer,
 		updatedAt : Double,
 		remarks : [RemarkViewData],
-		settings : JourneySettings
+		settings : JourneySettings,
+		journeyDTO : JourneyDTO?
 	){
 		self.origin = depStopName ?? "origin"
 		self.destination = arrStopName ?? "destination"
@@ -88,6 +91,7 @@ extension JourneyViewData {
 		)
 		self.remarks = remarks
 		self.settings = settings
+		self.journeyDTO = journeyDTO
 	}
 	
 	private static func fixRefreshToken(token : String) -> String {
@@ -120,7 +124,7 @@ extension JourneyViewData {
 		action: { data in
 			Model.shared.sheetVM.send(
 				event: .didRequestShow(
-					.journeyDebug(legs: data.legs.compactMap {$0.legDTO})))},
+					.journeyDebug(journey: data.journeyDTO)))},
 		icon: "ant",
 		text : NSLocalizedString(
 			"Journey debug", comment: "JourneyCell: menu item"
