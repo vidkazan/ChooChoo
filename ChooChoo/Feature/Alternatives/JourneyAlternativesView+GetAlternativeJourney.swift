@@ -102,21 +102,19 @@ extension JourneyAlternativesView {
 			)
 		}
 		
-		
 		let firstNotReachableLeg = legs.first(where: {
 			return $0.isReachableFromPreviousLeg == false || $0.legStopsViewData.first?.cancellationType() == .fullyCancelled
 		})
 		
 		legs = legs.filter({
-			guard let time = $0.time.timestamp.arrival.actualOrPlannedIfActualIsNil() else {
+			guard let time = $0.time.timestamp.arrival.planned else {
 				return false
 			}
-			if
-			   let firstNotReachableLegTime = firstNotReachableLeg?
+			if let firstNotReachableLegTime = firstNotReachableLeg?
 				.time
 				.timestamp
 				.arrival
-				.actualOrPlannedIfActualIsNil() {
+				.planned {
 				return time < firstNotReachableLegTime
 			}
 			return true
