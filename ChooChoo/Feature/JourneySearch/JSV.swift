@@ -29,8 +29,29 @@ struct JourneySearchView : View {
 				if #available(iOS 17.0, *) {
 					TipView(ChooTips.searchTip)
 				}
-				SearchStopsView()
-				TimeAndSettingsView()
+				
+				VStack {
+					Group {
+						SearchStopsView()
+						TimeAndSettingsView()
+							.overlay {
+								if chewViewModel.state.isAlternativeMode() == true {
+									Color.chewFillAccent.opacity(0.6)
+										.cornerRadius(10)
+								}
+							}
+					}
+					.disabled(chewViewModel.state.isAlternativeMode() == true)
+					if chewViewModel.state.data.depStop.leg != nil {
+						alternativeDisclaimer()
+					}
+				}
+				.background {
+					if chewViewModel.state.isAlternativeMode() == true{
+						Color.chewFillAccent.opacity(0.6)
+							.cornerRadius(10)
+					}
+				}
 				BottomView()
 			}
 			.contentShape(Rectangle())
@@ -79,6 +100,31 @@ struct JourneySearchView : View {
 					))
 				}
 			})
+	}
+}
+
+extension JourneySearchView {
+	func alternativeDisclaimer() -> some View {
+		HStack {
+			Image(ChooSFSymbols.arrowTriangleBranch)
+			Text(NSLocalizedString("alternatives from current transport", comment: "TimeAndSettingsView"))
+				.chewTextSize(.medium)
+			Button(action: {
+				chewViewModel.send(event: .didUpdateSearchData(
+					dep: .textOnly(""),
+					arr: chewViewModel.state.data.arrStop,
+					date: chewViewModel.state.data.date,
+					journeySettings: chewViewModel.state.data.journeySettings
+				))
+			}, label: {
+				Text(NSLocalizedString("turn off", comment: "TimeAndSettingsView:alternatives from current transport"))
+					.chewTextSize(.medium)
+				//								.tint(.secondary)
+			})
+			.padding(5)
+			.badgeBackgroundStyle(.secondary)
+			.frame(height: 40)
+		}
 	}
 }
 

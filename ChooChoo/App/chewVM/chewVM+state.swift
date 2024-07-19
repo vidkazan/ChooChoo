@@ -70,8 +70,11 @@ extension ChewViewModel {
 	struct State : Equatable {
 		let data : StateData
 		let status : Status
+		
+		func isAlternativeMode() -> Bool {
+			return self.data.depStop.leg == nil
+		}
 	}
-	
 	
 	enum Status : ChewStatus {
 		case start

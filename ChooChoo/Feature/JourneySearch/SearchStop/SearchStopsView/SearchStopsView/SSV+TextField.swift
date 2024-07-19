@@ -12,15 +12,15 @@ extension SearchStopsView {
 			if let leg = chewViewModel.state.data.getStop(type: type).leg {
 				HStack(spacing: 0) {
 					BadgeView(.lineNumberWithDirection(leg: leg))
-					Spacer()
-					CloseButton(action: {
-						chewViewModel.send(event: .didUpdateSearchData(
-							dep: .textOnly(""),
-							arr: chewViewModel.state.data.arrStop,
-							date: chewViewModel.state.data.date,
-							journeySettings: chewViewModel.state.data.journeySettings
-						))
-					})
+//					Spacer()
+//					CloseButton(action: {
+//						chewViewModel.send(event: .didUpdateSearchData(
+//							dep: .textOnly(""),
+//							arr: chewViewModel.state.data.arrStop,
+//							date: chewViewModel.state.data.date,
+//							journeySettings: chewViewModel.state.data.journeySettings
+//						))
+//					})
 				}
 				.padding(5)
 				.badgeBackgroundStyle(.secondary)
