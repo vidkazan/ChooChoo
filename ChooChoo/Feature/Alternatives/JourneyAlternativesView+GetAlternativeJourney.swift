@@ -90,7 +90,6 @@ extension JourneyAlternativesView {
 	static func getAlternativeJourneyDepartureStop(journey : JourneyViewData,referenceDate: ChewDate) -> JourneyAlternativeViewData? {
 		let now = referenceDate.date
 		
-		
 		var legs = journey.legs
 		
 		if let departureTime = legs.first?.time.date.departure.actualOrPlannedIfActualIsNil(),
@@ -123,6 +122,15 @@ extension JourneyAlternativesView {
 			return true
 		})
 		
+		if legs.isEmpty,
+		   let stop  = journey.legs.first?.legStopsViewData.first {
+			return JourneyAlternativeViewData(
+				alternativeCase: .lastReachableLeg,
+				alternativeDeparture: .stop(stop: stop),
+				alternativeStopPosition: .onStop
+			)
+		}
+		
 		var currentLegs = legs.filter { leg in
 			if let arrival = leg.time.date.arrival.actualOrPlannedIfActualIsNil(),
 			   let departure = leg.time.date.departure.actualOrPlannedIfActualIsNil() {
@@ -134,12 +142,6 @@ extension JourneyAlternativesView {
 		if currentLegs.count > 1 {
 			currentLegs = currentLegs.filter {
 				$0.isReachableFromPreviousLeg == false
-			}
-		} else {
-			if let leg = currentLegs.first {
-				if leg.direction.actualOrPlannedIfActualIsNil() == nil {
-					currentLegs = []
-				}
 			}
 		}
 		
