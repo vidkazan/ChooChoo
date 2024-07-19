@@ -51,10 +51,10 @@ extension JourneyAlternativesView {
 	var searchButton : some View {
 		Button(action: {
 			if let depStopViewData = journeyAlternativeViewData?.alternativeDeparture.stopViewData,
-			   let depStop = depStopViewData.stop(),
-			   let depStopArrival = depStopViewData.time.timestamp.arrival.actual
+			   let depStop = depStopViewData.stop()
 			{
-				if let leg = journeyAlternativeViewData?.alternativeDeparture.leg {
+				if let leg = journeyAlternativeViewData?.alternativeDeparture.leg,
+				   let depStopArrival = depStopViewData.time.timestamp.arrival.actual  {
 					chewVM.send(event: .didUpdateSearchData(
 						dep: .transport(leg),
 						arr: .location(jdvm.state.data.arrStop),
