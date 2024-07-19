@@ -31,7 +31,7 @@ struct MapDetailsViewDataSource : SheetViewDataSource {
 }
 
 struct JourneyDebugViewDataSource : SheetViewDataSource {
-	let legDTOs : [LegDTO]
+	let journey : JourneyDTO?
 }
 struct RouteViewDataSource : SheetViewDataSource {
 	let leg : LegViewData

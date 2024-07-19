@@ -116,7 +116,8 @@ extension JourneyDTO {
 			time: time,
 			updatedAt: realtimeDataUpdatedAt,
 			remarks: journeyRemarks,
-			settings: settings
+			settings: settings,
+			journeyDTO: self
 		)
 	}
 }

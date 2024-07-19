@@ -132,7 +132,7 @@ struct SheetViewInner : View {
 			}
 		case .journeyDebug:
 			if let data = data as? JourneyDebugViewDataSource {
-				JourneyDebugView(legsDTO: data.legDTOs)
+				JourneyDebugView(journey: data.journey)
 			}
 		}
 	}

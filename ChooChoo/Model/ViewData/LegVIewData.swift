@@ -250,7 +250,7 @@ extension LegViewData {
 	static let debug = Option(
 		action: { leg in
 			if let dto = leg.legDTO {
-				Model.shared.sheetVM.send(event: .didRequestShow(.journeyDebug(legs: [dto])))
+				Model.shared.sheetVM.send(event: .didRequestShow(.journeyDebug(journey: .init(type: nil, legs: [dto], refreshToken: nil, remarks: nil, price: nil))))
 			} else {
 				Model.shared.topBarAlertVM.send(event: .didRequestShow(.generic(msg: "Debug error : legDTO is nil")))
 			}

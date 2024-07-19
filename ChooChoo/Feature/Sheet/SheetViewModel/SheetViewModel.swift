@@ -162,8 +162,8 @@ extension SheetViewModel {
 				return Just(Event.didLoadDataForShowing(type,OnboardingViewDataSource())).eraseToAnyPublisher()
 			case .remark(let remarks):
 				return Just(Event.didLoadDataForShowing(type,RemarksViewDataSource(remarks: remarks))).eraseToAnyPublisher()
-			case .journeyDebug(let legs):
-				return Just(Event.didLoadDataForShowing(type,JourneyDebugViewDataSource(legDTOs: legs))).eraseToAnyPublisher()
+			case .journeyDebug(let journey):
+				return Just(Event.didLoadDataForShowing(type,JourneyDebugViewDataSource(journey: journey))).eraseToAnyPublisher()
 			}
 		}
 	}

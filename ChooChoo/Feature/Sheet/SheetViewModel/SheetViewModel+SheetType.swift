@@ -23,7 +23,7 @@ extension SheetViewModel {
 		case mapPicker(type : LocationDirectionType)
 		case onboarding
 		case remark(remarks : [RemarkViewData])
-		case journeyDebug(legs : [LegDTO])
+		case journeyDebug(journey : JourneyDTO?)
 		case alternatives(for: JourneyDetailsViewModel)
 		
 		var detents : [ChewPresentationDetent] {

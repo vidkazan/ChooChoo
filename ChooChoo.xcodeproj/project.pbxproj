@@ -119,7 +119,6 @@
 		7D3B97BB2C08D58200A3AAEB /* chewVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D6C5C132AAF482D00DEFC57 /* chewVM.swift */; };
 		7D3B97C02C08D59A00A3AAEB /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D02CE242A97E6620048ADE6 /* Errors.swift */; };
 		7D3B97C12C08D59A00A3AAEB /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D02CE242A97E6620048ADE6 /* Errors.swift */; };
-		7D3B97C32C08D62D00A3AAEB /* JourneyDebugView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DEA645B2B95F794005BEE8A /* JourneyDebugView.swift */; };
 		7D3B97C42C08D63400A3AAEB /* ChooTipViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCA4ADF2BD9391B005BA68E /* ChooTipViews.swift */; };
 		7D3B97C52C08D63500A3AAEB /* ChooTipViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCA4ADF2BD9391B005BA68E /* ChooTipViews.swift */; };
 		7D3B97C62C08D63A00A3AAEB /* ChooTipLabels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCA4AE12BD93A53005BA68E /* ChooTipLabels.swift */; };
@@ -323,7 +322,6 @@
 		7D3B98A42C08D79400A3AAEB /* MapPickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAC40832B7A16C4006B3E55 /* MapPickerViewModel.swift */; };
 		7D3B98A52C08D79800A3AAEB /* AlertVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF845682B767E6C00D76B14 /* AlertVM.swift */; };
 		7D3B98A62C08D79A00A3AAEB /* AlertVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF845682B767E6C00D76B14 /* AlertVM.swift */; };
-		7D3B98A72C08D7A300A3AAEB /* SheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D63DB102B739213008297DD /* SheetView.swift */; };
 		7D3B98A92C08D7A600A3AAEB /* SheetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D63DB0E2B739048008297DD /* SheetViewModel.swift */; };
 		7D3B98AA2C08D7A600A3AAEB /* SheetViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DBD26C42B9A202F00612A3B /* SheetViewDataSource.swift */; };
 		7D3B98AB2C08D7A700A3AAEB /* SheetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D63DB0E2B739048008297DD /* SheetViewModel.swift */; };
@@ -461,9 +459,7 @@
 		7D3B994E2C08D86B00A3AAEB /* JFVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAC0C922B2780C0001FC6EA /* JFVM.swift */; };
 		7D3B994F2C08D86B00A3AAEB /* JFVM + reduce.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D33A9482B5192940005D723 /* JFVM + reduce.swift */; };
 		7D3B99502C08D86B00A3AAEB /* JFVM + sideEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D33A94A2B5192960005D723 /* JFVM + sideEffects.swift */; };
-		7D3B99512C08D86D00A3AAEB /* JFCV+map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAC5CB62BACDA84000F7D33 /* JFCV+map.swift */; };
 		7D3B99532C08D86D00A3AAEB /* JFCV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DABB02C2B2E18F1002BBA97 /* JFCV.swift */; };
-		7D3B99542C08D86E00A3AAEB /* JFCV+map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAC5CB62BACDA84000F7D33 /* JFCV+map.swift */; };
 		7D3B99562C08D86E00A3AAEB /* JFCV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DABB02C2B2E18F1002BBA97 /* JFCV.swift */; };
 		7D3E5F012AB321580064213A /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3E5F002AB321580064213A /* LocationManager.swift */; };
 		7D3EA1AB2C0E2AC0005C507C /* GitBranch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3EA1AA2C0E2AC0005C507C /* GitBranch.swift */; };
@@ -2324,7 +2320,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7D3B98A72C08D7A300A3AAEB /* SheetView.swift in Sources */,
 				7D3B99502C08D86B00A3AAEB /* JFVM + sideEffects.swift in Sources */,
 				7D3B97D42C08D69F00A3AAEB /* TimeContainer.swift in Sources */,
 				7D3B991B2C08D84000A3AAEB /* JourneyHeaderView.swift in Sources */,
@@ -2435,7 +2430,6 @@
 				7D3B98B82C08D7D100A3AAEB /* NSV+header.swift in Sources */,
 				7D33A99B2B5343320005D723 /* ChooJourneyTest.swift in Sources */,
 				7D3B980D2C08D6F000A3AAEB /* Tips.swift in Sources */,
-				7D3B97C32C08D62D00A3AAEB /* JourneyDebugView.swift in Sources */,
 				7D3B99142C08D83700A3AAEB /* JLVM+reduce.swift in Sources */,
 				7D3B98D02C08D7EB00A3AAEB /* JDV+Header.swift in Sources */,
 				7D3B98FB2C08D81100A3AAEB /* SettingsView+TransportTypes.swift in Sources */,
@@ -2486,7 +2480,6 @@
 				7D3B98EA2C08D80200A3AAEB /* TimeChoosingView.swift in Sources */,
 				7D3B983D2C08D72200A3AAEB /* System.swift in Sources */,
 				7D3B98172C08D6F800A3AAEB /* FloatingPoint.swift in Sources */,
-				7D3B99542C08D86E00A3AAEB /* JFCV+map.swift in Sources */,
 				7D3B994E2C08D86B00A3AAEB /* JFVM.swift in Sources */,
 				7D3B980B2C08D6F000A3AAEB /* EnumTraversal.swift in Sources */,
 				7D3B97C62C08D63A00A3AAEB /* ChooTipLabels.swift in Sources */,
@@ -2685,7 +2678,6 @@
 				7D3B98E62C08D80200A3AAEB /* TimeChoosingView.swift in Sources */,
 				7D3B983F2C08D72200A3AAEB /* System.swift in Sources */,
 				7D3B98152C08D6F800A3AAEB /* FloatingPoint.swift in Sources */,
-				7D3B99512C08D86D00A3AAEB /* JFCV+map.swift in Sources */,
 				7D3B994B2C08D86A00A3AAEB /* JFVM.swift in Sources */,
 				7D3B98052C08D6EF00A3AAEB /* EnumTraversal.swift in Sources */,
 				7D3B97D02C08D69800A3AAEB /* DateParcer.swift in Sources */,
