@@ -24,47 +24,10 @@ struct JourneyAlternativesView: View {
 		VStack {
 			Form {
 				alternativeFor
-				recommendedDepartureStop
-//				arrivalStop
-//				Spacer()
-				Button(action: {
-					if let depStopViewData = journeyAlternativeViewData?.alternativeDeparture.stopViewData,
-					   let depStop = depStopViewData.stop(),
-					   let depStopArrival = depStopViewData.time.timestamp.arrival.actual
-					{
-						if let leg = journeyAlternativeViewData?.alternativeDeparture.leg {
-							chewVM.send(event: .didUpdateSearchData(
-								dep: .transport(leg),
-								arr: .location(jdvm.state.data.arrStop),
-								date: .init(date: .specificDate(depStopArrival), mode: .departure),
-								journeySettings: jdvm.state.data.viewData.settings)
-							)
-						} else {
-							chewVM.send(event: .didUpdateSearchData(
-								dep: .location(depStop),
-								arr: .location(jdvm.state.data.arrStop),
-								date: .init(date: .now, mode: .departure),
-								journeySettings: jdvm.state.data.viewData.settings)
-							)
-						}
-					}
-					Model.shared.sheetVM.send(event: .didRequestHide)
-				}, label: {
-					HStack {
-						Spacer()
-						if nil != journeyAlternativeViewData?.alternativeDeparture.stopViewData.stop() {
-							Text(NSLocalizedString("Search", comment: "JourneyAlternativesView: button"))
-						} else {
-							Text(NSLocalizedString("error", comment: "JourneyAlternativesView: button"))
-						}
-						Spacer()
-					}
-					.chewTextSize(.big)
-				})
-//				.frame(height: 40)
-				.padding(10)
-//				.badgeBackgroundStyle(.secondary)
-				.disabled(journeyAlternativeViewData?.alternativeDeparture.stopViewData.stop() == nil)
+				if let journeyAlternativeViewData = journeyAlternativeViewData {
+					departureStop(alternativeViewData: journeyAlternativeViewData)
+				}
+				searchButton
 			}
 			.background(.secondary)
 		}
@@ -84,6 +47,48 @@ struct JourneyAlternativesView: View {
 	}
 }
 
+extension JourneyAlternativesView {
+	var searchButton : some View {
+		Button(action: {
+			if let depStopViewData = journeyAlternativeViewData?.alternativeDeparture.stopViewData,
+			   let depStop = depStopViewData.stop(),
+			   let depStopArrival = depStopViewData.time.timestamp.arrival.actual
+			{
+				if let leg = journeyAlternativeViewData?.alternativeDeparture.leg {
+					chewVM.send(event: .didUpdateSearchData(
+						dep: .transport(leg),
+						arr: .location(jdvm.state.data.arrStop),
+						date: .init(date: .specificDate(depStopArrival), mode: .departure),
+						journeySettings: jdvm.state.data.viewData.settings)
+					)
+				} else {
+					chewVM.send(event: .didUpdateSearchData(
+						dep: .location(depStop),
+						arr: .location(jdvm.state.data.arrStop),
+						date: .init(date: .now, mode: .departure),
+						journeySettings: jdvm.state.data.viewData.settings)
+					)
+				}
+			}
+			Model.shared.sheetVM.send(event: .didRequestHide)
+		}, label: {
+			HStack {
+				Spacer()
+				if nil != journeyAlternativeViewData?.alternativeDeparture.stopViewData.stop() {
+					Text(NSLocalizedString("Search", comment: "JourneyAlternativesView: button"))
+				} else {
+					Text(NSLocalizedString("error", comment: "JourneyAlternativesView: button"))
+				}
+				Spacer()
+			}
+			.chewTextSize(.big)
+		})
+//				.frame(height: 40)
+		.padding(10)
+//				.badgeBackgroundStyle(.secondary)
+		.disabled(journeyAlternativeViewData?.alternativeDeparture.stopViewData.stop() == nil)
+	}
+}
 
 extension JourneyAlternativesView {
 	var alternativeFor : some View {
@@ -123,42 +128,46 @@ extension JourneyAlternativesView {
 
 
 extension JourneyAlternativesView {
-	var recommendedDepartureStop : some View {
+	func departureStop(alternativeViewData : JourneyAlternativeViewData) -> some View {
 		Section(content: {
-			VStack{
+			VStack(spacing: 2) {
 				HStack {
-					if let leg = journeyAlternativeViewData?.alternativeDeparture.leg {
-						BadgeView(.lineNumber(
-							lineType: leg.lineViewData.type,
-							num: leg.lineViewData.name)
-						)
-					}
-					if let alternativeJourneyDepartureStop = journeyAlternativeViewData?.alternativeDeparture.stopViewData {
-						Text("\(alternativeJourneyDepartureStop.name) ")
-							.matchedGeometryEffect(id: "name", in: self.journeyAlternativesViewNamespace)
-							.chewTextSize(.big)
-							.transition(.move(edge: .top))
-						Spacer()
-						if let text = journeyAlternativeViewData?.alternativeStopPosition.timeBadge(referenceDate: chewVM.referenceDate) {
-							text
-							.frame(minWidth: 50)
-							.padding(5)
+					if let leg = alternativeViewData.alternativeDeparture.leg {
+						BadgeView(.lineNumberWithDirection(leg: leg))
 							.badgeBackgroundStyle(.secondary)
-							.chewTextSize(.medium)
-						}
 					}
+					Spacer()
 				}
 				HStack {
-					Spacer()
-					Group {
-						Text(journeyAlternativeViewData?.alternativeCase.description ?? "")
-						Text(journeyAlternativeViewData?.alternativeDeparture.description ?? "")
-						Text(journeyAlternativeViewData?.alternativeStopPosition.description ?? "")
+					if case .headingToStop = alternativeViewData.alternativeStopPosition {
+						Group {
+							Image(systemName: "arrow.turn.down.right")
+							Text(localisedString("heading to",comment:""))
+						}
+						.foregroundStyle(.secondary)
 					}
-					.padding(5)
-					.badgeBackgroundStyle(.secondary)
+					Text(verbatim: "\(alternativeViewData.alternativeDeparture.stopViewData.name)")
+					if let text = alternativeViewData.alternativeStopPosition.timeBadge(referenceDate: chewVM.referenceDate) {
+						text
+						.padding(5)
+						.badgeBackgroundStyle(.secondary)
+					}
+					Spacer()
 				}
 				.chewTextSize(.medium)
+//				#if DEBUG
+//				HStack {
+//					Spacer()
+//					Group {
+//						Text(alternativeViewData.alternativeCase.description)
+//						Text(alternativeViewData.alternativeDeparture.description)
+//						Text(alternativeViewData.alternativeStopPosition.description)
+//					}
+//					.padding(5)
+//					.badgeBackgroundStyle(.secondary)
+//				}
+//				.chewTextSize(.medium)
+//				#endif
 			}
 		}, header: {
 			Text(
@@ -208,27 +217,32 @@ extension JourneyAlternativesView {
 		if !journeys.isEmpty {
 			let chewVM = ChewViewModel(referenceDate: .specificDate(journeys.first!!.time.timestamp.departure.planned!+12000),coreDataStore: .preview)
 			VStack {
-//				HStack {
-					ScrollView(.horizontal) {
-						FlowLayout {
-							ForEach(journeys, id: \.hashValue) { journey in
-								let vm = JourneyDetailsViewModel(
-									followId: 0,
-									data: journey!,
-									depStop: .init(),
-									arrStop: .init(),
-									chewVM: chewVM
-								)
-								JourneyAlternativesView(jdvm: vm)
-									.frame(width: 400,height: 450)
-							}
+				ScrollView(.horizontal) {
+					FlowLayout {
+						ForEach(journeys, id: \.hashValue) { journey in
+							let vm = JourneyDetailsViewModel(
+								followId: 0,
+								data: journey!,
+								depStop: .init(),
+								arrStop: .init(),
+								chewVM: chewVM
+							)
+							JourneyAlternativesView(jdvm: vm)
+								.frame(width: 400,height: 450)
 						}
-						.frame(width:900,height: 1000)
-//					}
+					}
+					.frame(width:900,height: 1000)
 				}
 				ReferenceTimeSliderView()
 			}
 			.environmentObject(chewVM)
 		}
+	}
+}
+
+extension View {
+	func localisedString( _ key: String,
+		comment: String) -> String {
+		NSLocalizedString(key, comment: "\(Self.self) \(comment)")
 	}
 }
