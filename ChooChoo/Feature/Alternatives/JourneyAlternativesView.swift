@@ -183,34 +183,40 @@ extension JourneyAlternativesView {
 	Group {
 		 var journeys =  [
 			Mock.journeys.alternativasMoks
-				.alternativesJourneyNeussWolfsburg
+				.oneLegFirstStopIsCancelled
 				.decodedData?.journey.journeyViewData(
 			depStop: .init(),
 			arrStop: .init(),
 			realtimeDataUpdatedAt: 0,
 			settings: .init()),
-			Mock.journeys.alternativasMoks
-				.alternativesJourneyNeussWolfsburgRE6LateAndNextIsNotAvailable
-				.decodedData?.journey.journeyViewData(
-			depStop: .init(),
-			arrStop: .init(),
-			realtimeDataUpdatedAt: 0,
-			settings: .init()),
-			Mock.journeys.alternativasMoks
-				.alternativesJourneyNeussWolfsburgS1FirstStopCancelled
-				.decodedData?.journey.journeyViewData(
-			depStop: .init(),
-			arrStop: .init(),
-			realtimeDataUpdatedAt: 0,
-			settings: .init()),
-			Mock.journeys.alternativasMoks
-				.alternativesJourneyNeussWolfsburgS1LastStopCancelled
-				.decodedData?.journey.journeyViewData(
-			depStop: .init(),
-			arrStop: .init(),
-			realtimeDataUpdatedAt: 0,
-			settings: .init()),
-			
+//			Mock.journeys.alternativasMoks
+//				.alternativesJourneyNeussWolfsburg
+//				.decodedData?.journey.journeyViewData(
+//			depStop: .init(),
+//			arrStop: .init(),
+//			realtimeDataUpdatedAt: 0,
+//			settings: .init()),
+//			Mock.journeys.alternativasMoks
+//				.alternativesJourneyNeussWolfsburgRE6LateAndNextIsNotAvailable
+//				.decodedData?.journey.journeyViewData(
+//			depStop: .init(),
+//			arrStop: .init(),
+//			realtimeDataUpdatedAt: 0,
+//			settings: .init()),
+//			Mock.journeys.alternativasMoks
+//				.alternativesJourneyNeussWolfsburgS1FirstStopCancelled
+//				.decodedData?.journey.journeyViewData(
+//			depStop: .init(),
+//			arrStop: .init(),
+//			realtimeDataUpdatedAt: 0,
+//			settings: .init()),
+//			Mock.journeys.alternativasMoks
+//				.alternativesJourneyNeussWolfsburgS1LastStopCancelled
+//				.decodedData?.journey.journeyViewData(
+//			depStop: .init(),
+//			arrStop: .init(),
+//			realtimeDataUpdatedAt: 0,
+//			settings: .init()),
 		 ].filter {
 			 $0 != nil
 		 }

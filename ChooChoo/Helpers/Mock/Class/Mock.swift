@@ -68,6 +68,9 @@ struct AlternativesJourneyMockFiles{
 	static let alternativesJourneyNeussWolfsburgRE6LateAndNextIsNotAvailable = type.init(
 		"alternatives-journey-Neuss-Wolfsburg-RE6LateAndNextIsNotAvailable"
 	)
+	static let oneLegFirstStopIsCancelled = type.init(
+		"oneLeg-firstStopIsCancelled"
+	)
 }
 
 struct JourneyMockFiles{

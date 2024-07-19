@@ -225,7 +225,9 @@ struct JourneyDebugView : View {
 					.padding(.horizontal,10)
 				})
 				Button(action: {
-					if let data = try? JSONEncoder().encode(journey),
+					if let data = try? JSONEncoder().encode(
+						JourneyWrapper(journey: journey, realtimeDataUpdatedAt: Int64(Date.now.timeIntervalSince1970))
+					),
 					   let string = String(data: data, encoding: String.Encoding.utf8) {
 						UIPasteboard.general.setValue(
 							string, forPasteboardType: UTType.plainText.identifier
