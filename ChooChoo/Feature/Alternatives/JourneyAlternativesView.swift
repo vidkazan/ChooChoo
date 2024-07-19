@@ -51,10 +51,10 @@ extension JourneyAlternativesView {
 	var searchButton : some View {
 		Button(action: {
 			if let depStopViewData = journeyAlternativeViewData?.alternativeDeparture.stopViewData,
-			   let depStop = depStopViewData.stop(),
-			   let depStopArrival = depStopViewData.time.timestamp.arrival.actual
+			   let depStop = depStopViewData.stop()
 			{
-				if let leg = journeyAlternativeViewData?.alternativeDeparture.leg {
+				if let leg = journeyAlternativeViewData?.alternativeDeparture.leg,
+				   let depStopArrival = depStopViewData.time.timestamp.arrival.actual  {
 					chewVM.send(event: .didUpdateSearchData(
 						dep: .transport(leg),
 						arr: .location(jdvm.state.data.arrStop),
@@ -155,19 +155,19 @@ extension JourneyAlternativesView {
 					Spacer()
 				}
 				.chewTextSize(.medium)
-//				#if DEBUG
-//				HStack {
-//					Spacer()
-//					Group {
-//						Text(alternativeViewData.alternativeCase.description)
-//						Text(alternativeViewData.alternativeDeparture.description)
-//						Text(alternativeViewData.alternativeStopPosition.description)
-//					}
-//					.padding(5)
-//					.badgeBackgroundStyle(.secondary)
-//				}
-//				.chewTextSize(.medium)
-//				#endif
+				#if DEBUG
+				HStack {
+					Spacer()
+					Group {
+						Text(alternativeViewData.alternativeCase.description)
+						Text(alternativeViewData.alternativeDeparture.description)
+						Text(alternativeViewData.alternativeStopPosition.description)
+					}
+					.padding(5)
+					.badgeBackgroundStyle(.secondary)
+				}
+				.chewTextSize(.medium)
+				#endif
 			}
 		}, header: {
 			Text(
@@ -182,13 +182,13 @@ extension JourneyAlternativesView {
 #Preview {
 	Group {
 		 var journeys =  [
-			Mock.journeys.alternativasMoks
-				.oneLegFirstStopIsCancelled
-				.decodedData?.journey.journeyViewData(
-			depStop: .init(),
-			arrStop: .init(),
-			realtimeDataUpdatedAt: 0,
-			settings: .init()),
+//			Mock.journeys.alternativasMoks
+//				.alternativesPrelastLegArrivalIsLaterThanLastLegArrival
+//				.decodedData?.journey.journeyViewData(
+//			depStop: .init(),
+//			arrStop: .init(),
+//			realtimeDataUpdatedAt: 0,
+//			settings: .init()),
 //			Mock.journeys.alternativasMoks
 //				.alternativesJourneyNeussWolfsburg
 //				.decodedData?.journey.journeyViewData(
@@ -210,13 +210,13 @@ extension JourneyAlternativesView {
 //			arrStop: .init(),
 //			realtimeDataUpdatedAt: 0,
 //			settings: .init()),
-//			Mock.journeys.alternativasMoks
-//				.alternativesJourneyNeussWolfsburgS1LastStopCancelled
-//				.decodedData?.journey.journeyViewData(
-//			depStop: .init(),
-//			arrStop: .init(),
-//			realtimeDataUpdatedAt: 0,
-//			settings: .init()),
+			Mock.journeys.alternativasMoks
+				.alternativesJourneyNeussWolfsburgS1LastStopCancelled
+				.decodedData?.journey.journeyViewData(
+			depStop: .init(),
+			arrStop: .init(),
+			realtimeDataUpdatedAt: 0,
+			settings: .init()),
 		 ].filter {
 			 $0 != nil
 		 }
@@ -237,7 +237,7 @@ extension JourneyAlternativesView {
 								.frame(width: 400,height: 450)
 						}
 					}
-					.frame(width:900,height: 1000)
+//					.frame(width:900,height: 1000)
 				}
 				ReferenceTimeSliderView()
 			}

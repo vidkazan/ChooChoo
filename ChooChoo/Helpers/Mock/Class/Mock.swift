@@ -71,6 +71,9 @@ struct AlternativesJourneyMockFiles{
 	static let oneLegFirstStopIsCancelled = type.init(
 		"oneLeg-firstStopIsCancelled"
 	)
+	static let alternativesPrelastLegArrivalIsLaterThanLastLegArrival = type.init(
+		"alternatives-prelastLegArrival-is-later-than-lastLegArrival"
+	)
 }
 
 struct JourneyMockFiles{

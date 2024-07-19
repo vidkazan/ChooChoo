@@ -90,7 +90,6 @@ extension JourneyAlternativesView {
 	static func getAlternativeJourneyDepartureStop(journey : JourneyViewData,referenceDate: ChewDate) -> JourneyAlternativeViewData? {
 		let now = referenceDate.date
 		
-		
 		var legs = journey.legs
 		
 		if let departureTime = legs.first?.time.date.departure.actualOrPlannedIfActualIsNil(),
@@ -103,25 +102,32 @@ extension JourneyAlternativesView {
 			)
 		}
 		
-		
 		let firstNotReachableLeg = legs.first(where: {
 			return $0.isReachableFromPreviousLeg == false || $0.legStopsViewData.first?.cancellationType() == .fullyCancelled
 		})
 		
 		legs = legs.filter({
-			guard let time = $0.time.timestamp.arrival.actualOrPlannedIfActualIsNil() else {
+			guard let time = $0.time.timestamp.arrival.planned else {
 				return false
 			}
-			if
-			   let firstNotReachableLegTime = firstNotReachableLeg?
+			if let firstNotReachableLegTime = firstNotReachableLeg?
 				.time
 				.timestamp
 				.arrival
-				.actualOrPlannedIfActualIsNil() {
+				.planned {
 				return time < firstNotReachableLegTime
 			}
 			return true
 		})
+		
+		if legs.isEmpty,
+		   let stop  = journey.legs.first?.legStopsViewData.first {
+			return JourneyAlternativeViewData(
+				alternativeCase: .lastReachableLeg,
+				alternativeDeparture: .stop(stop: stop),
+				alternativeStopPosition: .onStop
+			)
+		}
 		
 		var currentLegs = legs.filter { leg in
 			if let arrival = leg.time.date.arrival.actualOrPlannedIfActualIsNil(),
@@ -134,12 +140,6 @@ extension JourneyAlternativesView {
 		if currentLegs.count > 1 {
 			currentLegs = currentLegs.filter {
 				$0.isReachableFromPreviousLeg == false
-			}
-		} else {
-			if let leg = currentLegs.first {
-				if leg.direction.actualOrPlannedIfActualIsNil() == nil {
-					currentLegs = []
-				}
 			}
 		}
 		
