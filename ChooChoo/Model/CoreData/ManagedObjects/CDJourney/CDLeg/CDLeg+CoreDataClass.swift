@@ -86,8 +86,7 @@ extension CDLeg {
 			lineViewData: LineViewData(
 				type: LineType(rawValue: self.lineType) ?? .taxi,
 				name: self.lineName,
-				shortName: self.lineShortName,
-				id: nil
+				shortName: self.lineShortName
 			),
 			progressSegments: segments,
 			time: time,

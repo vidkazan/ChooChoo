@@ -42,12 +42,12 @@ struct JourneySearchView : View {
 							}
 					}
 					.disabled(chewViewModel.state.isAlternativeMode() == true)
-					if chewViewModel.state.data.depStop.leg != nil {
+					if chewViewModel.state.isAlternativeMode() == true {
 						alternativeDisclaimer()
 					}
 				}
 				.background {
-					if chewViewModel.state.isAlternativeMode() == true{
+					if chewViewModel.state.isAlternativeMode() == true {
 						Color.chewFillAccent.opacity(0.6)
 							.cornerRadius(10)
 					}

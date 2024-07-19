@@ -14,8 +14,7 @@ func constructLineViewData(
 	product : String,
 	name : String,
 	productName : String,
-	legType : LegViewData.LegType,
-	id: String?
+	legType : LegViewData.LegType
 ) -> LineViewData {
 	let mode : LineType = {
 		switch legType {
@@ -54,7 +53,6 @@ func constructLineViewData(
 	return LineViewData(
 		type: mode,
 		name: name,
-		shortName: productName,
-		id: id
+		shortName: productName
 	)
 }

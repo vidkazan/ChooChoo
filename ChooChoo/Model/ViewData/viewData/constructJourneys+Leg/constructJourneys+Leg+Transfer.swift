@@ -142,7 +142,7 @@ func constructTransferViewData(fromLeg : LegViewData, toLeg : LegViewData) -> Le
 			)
 		],
 		footDistance: 0,
-		lineViewData: LineViewData(type: .transfer, name: "transfer", shortName: "transfer", id: nil),
+		lineViewData: LineViewData(type: .transfer, name: "transfer", shortName: "transfer"),
 		progressSegments: Segments(
 			segments: [
 				Segments.SegmentPoint(

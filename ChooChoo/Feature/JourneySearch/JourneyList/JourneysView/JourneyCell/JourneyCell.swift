@@ -45,11 +45,10 @@ struct JourneyCell: View {
 			})
 			HStack(alignment: .center) {
 				if let firstLeg = journey.legs.first,
-					let fahrtId = firstLeg.lineViewData.id,
-				   let searchFahrtId = chewVM.state.data.depStop.leg?.lineViewData.id,
-				   fahrtId == searchFahrtId {
-					BadgeView(.lineNumberWithDirection(leg: firstLeg))
-						.badgeBackgroundStyle(.secondary)
+				   let searchFahrtId = chewVM.state.data.depStop.leg?.tripId,
+					firstLeg.tripId == searchFahrtId {
+						BadgeView(.lineNumberWithDirection(leg: firstLeg))
+							.badgeBackgroundStyle(.secondary)
 				} else {
 					if let pl = journey.legs.first?.legStopsViewData.first?.platforms.departure {
 						PlatformView(

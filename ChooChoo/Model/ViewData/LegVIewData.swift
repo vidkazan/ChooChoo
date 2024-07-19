@@ -54,7 +54,7 @@ extension LegViewData {
 		self.delayedAndNextIsNotReachable = false
 		self.legStopsViewData = []
 		self.footDistance = 0
-		self.lineViewData = LineViewData(type: .taxi, name: "", shortName: "",id: nil)
+		self.lineViewData = LineViewData(type: .taxi, name: "", shortName: "")
 		self.progressSegments = Segments(segments: [], heightTotalCollapsed: 0, heightTotalExtended: 0)
 		self.time = TimeContainer(plannedDeparture: "", plannedArrival: "", actualDeparture: "", actualArrival: "", cancelled: false)
 		self.remarks = []
@@ -94,7 +94,7 @@ extension LegViewData {
 			arrival
 		]
 		self.footDistance = 0
-		self.lineViewData = LineViewData(type: .foot, name: "", shortName: "", id: nil)
+		self.lineViewData = LineViewData(type: .foot, name: "", shortName: "")
 		self.progressSegments = Segments(segments: [], heightTotalCollapsed: 0, heightTotalExtended: 0)
 		self.time = TimeContainer(plannedDeparture: "", plannedArrival: "", actualDeparture: "", actualArrival: "", cancelled: false)
 		self.remarks = []
@@ -147,7 +147,6 @@ struct LineViewData : Hashable, Codable {
 	let type : LineType
 	let name : String
 	let shortName : String
-	let id: String?
 }
 
 extension LegViewData {

@@ -24,7 +24,7 @@ extension ChewViewModel {
 			case .location(let stop):
 				return stop.name
 			case .transport(let leg):
-				return "\(leg.lineViewData.name) \(leg.lineViewData.id ?? "") \(JourneyAlternativesView.getCurrentLegAlternativeJourneyDepartureStop(leg: leg, referenceDate: .now)?.alternativeDeparture.leg?.direction.actual ?? "" )"
+				return "\(leg.lineViewData.name) \(JourneyAlternativesView.getCurrentLegAlternativeJourneyDepartureStop(leg: leg, referenceDate: .now)?.alternativeDeparture.leg?.direction.actual ?? "" )"
 			}
 		}
 		
@@ -72,7 +72,7 @@ extension ChewViewModel {
 		let status : Status
 		
 		func isAlternativeMode() -> Bool {
-			return self.data.depStop.leg == nil
+			return self.data.depStop.leg != nil
 		}
 	}
 	
