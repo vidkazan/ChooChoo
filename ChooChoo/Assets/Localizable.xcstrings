@@ -2,7 +2,14 @@
   "sourceLanguage" : "en",
   "strings" : {
     "" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ""
+          }
+        }
+      }
     },
     " to " : {
       "comment" : "badge: departureArrivalStops",
@@ -49,7 +56,15 @@
       }
     },
     "%@" : {
-      "comment" : "BadgeView: legDirection"
+      "comment" : "BadgeView: legDirection",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ""
+          }
+        }
+      }
     },
     "%lld stop" : {
       "comment" : "badge: stopsCount",
@@ -114,9 +129,6 @@
         }
       }
     },
-    "Add" : {
-
-    },
     "all" : {
       "comment" : "JourneySettings: TransportMode",
       "localizations" : {
@@ -138,6 +150,12 @@
           }
         }
       }
+    },
+    "Alternative For" : {
+      "comment" : "JourneyAlternativesView: recommendedDepartureStop"
+    },
+    "Alternatives" : {
+      "comment" : "JourneyFollowView: listCell: swipe action item\nSheetViewModel: SheetType"
     },
     "App does not have search button. **Search starts** after you set both **departure** and **arrival** stops." : {
       "comment" : "search tip text",
@@ -184,7 +202,7 @@
       }
     },
     "Arrival" : {
-      "comment" : "LocationDirationType: description",
+      "comment" : "JourneyAlternativesView: arrivalStop\nLocationDirationType: description",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -206,7 +224,15 @@
       }
     },
     "Bad server response (code)" : {
-      "comment" : "ApiError"
+      "comment" : "ApiError",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ""
+          }
+        }
+      }
     },
     "Bad url" : {
       "comment" : "ApiError",
@@ -215,6 +241,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Falsche URL"
+          }
+        }
+      }
+    },
+    "cancel" : {
+      "comment" : "TimeAndSettingsView:alternatives from current transport",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "abbrechen"
           }
         }
       }
@@ -363,10 +400,25 @@
       }
     },
     "Debug" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ""
+          }
+        }
+      }
     },
     "Debug leg" : {
-      "comment" : "Debug"
+      "comment" : "Debug",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ""
+          }
+        }
+      }
     },
     "Departure" : {
       "comment" : "LocationDirationType: description",
@@ -412,17 +464,8 @@
         }
       }
     },
-    "earlier route arrival time is later than later route departure" : {
-      "comment" : "DataError: validationError",
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Die frühere Ankunftszeit der Route ist später als die spätere Abfahrtszeit der Route"
-          }
-        }
-      }
+    "error" : {
+      "comment" : "JourneyAlternativesView: button"
     },
     "error: (msg)" : {
       "comment" : "DataError"
@@ -537,6 +580,9 @@
         }
       }
     },
+    "in %@" : {
+      "comment" : "JourneyAlternativesView"
+    },
     "in 1 hour" : {
       "comment" : "DatePickerTimePresetButtons",
       "localizations" : {
@@ -560,10 +606,26 @@
       }
     },
     "Journey debug" : {
-      "comment" : "JourneyFollowCellView: menu item\nJourneyCell: menu item"
+      "comment" : "JourneyCell: menu item",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ""
+          }
+        }
+      }
     },
     "Journey Debug" : {
-      "comment" : "SheetViewModel: SheetType"
+      "comment" : "SheetViewModel: SheetType",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ""
+          }
+        }
+      }
     },
     "Journey details" : {
       "comment" : "navigationBarTitle",
@@ -610,7 +672,14 @@
       }
     },
     "Logs" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ""
+          }
+        }
+      }
     },
     "Low accuracy:" : {
       "comment" : "NSV: location accuracy not precise",
@@ -624,34 +693,90 @@
       }
     },
     "Map" : {
-      "comment" : "JourneyFollowView: listCell: swipe action item"
+      "comment" : "JourneyFollowView: listCell: swipe action item",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ""
+          }
+        }
+      }
     },
     "Map Details" : {
       "comment" : "SheetViewModel: SheetType"
     },
-    "Map picker" : {
+    "Map Picker" : {
       "comment" : "SheetViewModel: SheetType"
     },
     "max 1" : {
-      "comment" : "JourneySettings: TransferCountCases"
+      "comment" : "JourneySettings: TransferCountCases",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ""
+          }
+        }
+      }
     },
     "max 2" : {
-      "comment" : "JourneySettings: TransferCountCases"
+      "comment" : "JourneySettings: TransferCountCases",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ""
+          }
+        }
+      }
     },
     "max 3" : {
-      "comment" : "JourneySettings: TransferCountCases"
+      "comment" : "JourneySettings: TransferCountCases",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ""
+          }
+        }
+      }
     },
     "max 4" : {
-      "comment" : "JourneySettings: TransferCountCases"
+      "comment" : "JourneySettings: TransferCountCases",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ""
+          }
+        }
+      }
     },
     "max 5" : {
-      "comment" : "JourneySettings: TransferCountCases"
+      "comment" : "JourneySettings: TransferCountCases",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ""
+          }
+        }
+      }
     },
     "min (self.rawValue) minutes" : {
       "comment" : "JourneySettings: TransferDurationCases"
     },
     "nil error: (type)" : {
-      "comment" : "DataError"
+      "comment" : "DataError",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ""
+          }
+        }
+      }
     },
     "No stops found" : {
       "comment" : "NSV: nearest stops: emptyState",
@@ -676,7 +801,7 @@
       }
     },
     "now" : {
-      "comment" : "DatePickerTimePresetButtons\ntimeChoosingView: button on segmented picker",
+      "comment" : "timeChoosingView: button on segmented picker\nAlternativeStopPosition: timeBadge\nDatePickerTimePresetButtons",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -687,10 +812,26 @@
       }
     },
     "Offline" : {
-      "comment" : "badge"
+      "comment" : "badge",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ""
+          }
+        }
+      }
     },
     "Onboarding" : {
-      "comment" : "SheetViewModel: SheetType"
+      "comment" : "SheetViewModel: SheetType",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ""
+          }
+        }
+      }
     },
     "Ongoing" : {
       "comment" : "JourneyFollowView: section name",
@@ -737,7 +878,14 @@
       }
     },
     "popopopo" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ""
+          }
+        }
+      }
     },
     "Precise location accuracy is needed to find nearby stops" : {
       "comment" : "NSV: location precise accuracy not allowed",
@@ -762,10 +910,26 @@
       }
     },
     "regional" : {
-      "comment" : "JourneySettings: TransportMode"
+      "comment" : "JourneySettings: TransportMode",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ""
+          }
+        }
+      }
     },
     "Regional" : {
-      "comment" : "SettingsView: transportTypes: picker option"
+      "comment" : "SettingsView: transportTypes: picker option",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ""
+          }
+        }
+      }
     },
     "Reload" : {
       "comment" : "JourneyFollowView: listCell: swipe action item",
@@ -790,7 +954,15 @@
       }
     },
     "Request rate exceeded" : {
-      "comment" : "ApiError"
+      "comment" : "ApiError",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ""
+          }
+        }
+      }
     },
     "Reset" : {
       "comment" : "alert: actionDescription",
@@ -836,10 +1008,18 @@
       }
     },
     "Route" : {
-      "comment" : "SheetViewModel: SheetType"
+      "comment" : "SheetViewModel: SheetType",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ""
+          }
+        }
+      }
     },
     "Save" : {
-      "comment" : "settingsView: save button\ndatePickerView: save button",
+      "comment" : "datePickerView: save button\nsettingsView: save button",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -850,7 +1030,7 @@
       }
     },
     "Search" : {
-      "comment" : "search tip title\nTabItem",
+      "comment" : "search tip title\nTabItem\nJourneyAlternativesView: button",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -871,11 +1051,30 @@
         }
       }
     },
+    "searching alternatives from current transport" : {
+      "comment" : "TimeAndSettingsView"
+    },
     "Server response data decoding" : {
-      "comment" : "ApiError"
+      "comment" : "ApiError",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ""
+          }
+        }
+      }
     },
     "Server response data nil" : {
-      "comment" : "ApiError"
+      "comment" : "ApiError",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ""
+          }
+        }
+      }
     },
     "Set as arrival" : {
       "comment" : "NearestStopView: stop cell: context menu",
@@ -900,7 +1099,7 @@
       }
     },
     "Show on map" : {
-      "comment" : "JourneyFollowCellView: menu item\nLegDetailsView: menu item\nJourneyCell: menu item",
+      "comment" : "LegDetailsView: menu item\nJourneyCell: menu item",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -920,6 +1119,9 @@
           }
         }
       }
+    },
+    "Start from" : {
+      "comment" : "JourneyAlternativesView: recommendedDepartureStop"
     },
     "Stop not found" : {
       "comment" : "ApiError",
@@ -987,8 +1189,26 @@
         }
       }
     },
+    "Time slider" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ""
+          }
+        }
+      }
+    },
     "Tip" : {
-      "comment" : "SheetViewModel: SheetType"
+      "comment" : "SheetViewModel: SheetType",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ""
+          }
+        }
+      }
     },
     "to" : {
       "comment" : "LocationDirationType: textFieldPlaceholder",
@@ -997,18 +1217,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "nach"
-          }
-        }
-      }
-    },
-    "to %@" : {
-      "comment" : "BadgeView: legDirection",
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "nach %@"
           }
         }
       }
@@ -1157,7 +1365,15 @@
       }
     },
     "validation error: (msg)" : {
-      "comment" : "DataError"
+      "comment" : "DataError",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ""
+          }
+        }
+      }
     },
     "walk %lld min" : {
       "comment" : "badge: walking",

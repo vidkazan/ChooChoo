@@ -62,7 +62,7 @@ extension SheetViewModel {
 			case .tip:
 				return NSLocalizedString("Tip", comment: "SheetViewModel: SheetType")
 			case .mapPicker:
-				return NSLocalizedString("Map picker", comment: "SheetViewModel: SheetType")
+				return NSLocalizedString("Map Picker", comment: "SheetViewModel: SheetType")
 			case .none:
 				return ""
 			case .date:
