@@ -15,13 +15,9 @@ struct TimeAndSettingsView: View {
 
 	
 	var body: some View {
-		Group {
-			VStack(spacing: 0) {
-				HStack {
-					TimeChoosingView()
-					settingsBtn()
-				}
-			}
+		HStack {
+			TimeChoosingView()
+			settingsBtn()
 		}
 		.onReceive(chewViewModel.$state, perform: { newState in
 			state = newState

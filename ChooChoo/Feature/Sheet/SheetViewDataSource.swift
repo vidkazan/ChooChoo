@@ -31,7 +31,7 @@ struct MapDetailsViewDataSource : SheetViewDataSource {
 }
 
 struct JourneyDebugViewDataSource : SheetViewDataSource {
-	let legDTOs : [LegDTO]
+	let journey : JourneyDTO?
 }
 struct RouteViewDataSource : SheetViewDataSource {
 	let leg : LegViewData
@@ -39,6 +39,11 @@ struct RouteViewDataSource : SheetViewDataSource {
 struct RemarksViewDataSource : SheetViewDataSource {
 	let remarks : [RemarkViewData]
 }
+
+struct JourneyAlternativesViewDataSource	: SheetViewDataSource {
+	let journey : JourneyDetailsViewModel
+}
+
 struct DatePickerViewDataSource	: SheetViewDataSource {}
 struct EmptyDataSource				: SheetViewDataSource {}
 struct JourneySettingsViewDataSource		: SheetViewDataSource {}

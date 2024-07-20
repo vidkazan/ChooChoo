@@ -127,10 +127,10 @@ extension StopTripDTO {
 		}
 		
 		let res = LegViewData(
-			isReachable: true,
+			isReachableFromPreviousLeg: true,
 			legType: .line,
 			tripId: tripId,
-			direction: direction ?? "direction",
+			direction: Prognosed(actual: stops.last?.name,planned: stops.last?.name),
 			legTopPosition: 0,
 			legBottomPosition: 0,
 			delayedAndNextIsNotReachable: nil,
@@ -224,10 +224,10 @@ extension LegDTO {
 		let legType = constructLegType(leg: self, legs: legs)
 		
 		let res = LegViewData(
-			isReachable: stops.first?.cancellationType() != .fullyCancelled && stops.last?.cancellationType() != .fullyCancelled,
+			isReachableFromPreviousLeg: true,
 			legType: legType,
 			tripId: tripId,
-			direction: direction ?? "direction",
+			direction: LegViewData.direction(stops: stops, plannedDirectionName: direction),
 			legTopPosition: max(plannedDeparturePosition,actualDeparturePosition),
 			legBottomPosition: max(plannedArrivalPosition,actualArrivalPosition),
 			delayedAndNextIsNotReachable: nil,
@@ -248,8 +248,12 @@ extension LegDTO {
 		return res
 	}
 }
+
 func currentLegIsNotReachable(currentLeg: LegViewData?, previousLeg: LegViewData?) -> Bool? {
-	guard let currentLeg = currentLeg?.time.timestamp.departure.actual,
-			let previousLeg = previousLeg?.time.timestamp.arrival.actual else { return nil }
-	return previousLeg > currentLeg
+	guard let currentLeg = currentLeg,
+		  let previousLeg = previousLeg,
+		let currentLegDepTime = currentLeg.time.timestamp.departure.actual,
+		  let previousLegArrTime = previousLeg.time.timestamp.arrival.actual else { return nil
+	}
+	return previousLegArrTime > currentLegDepTime || !previousLeg.departureAndArrivalNotCancelledAndNotReachableFromPreviousLeg()
 }

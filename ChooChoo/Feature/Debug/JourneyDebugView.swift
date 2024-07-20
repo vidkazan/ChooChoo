@@ -193,30 +193,31 @@ struct LegDebugView : View {
 }
 
 struct JourneyDebugView : View {
-	let legsDTO : [LegDTO]
+	let journey : JourneyDTO?
 	var body: some View {
+		if let journey = journey {
 		ScrollView {
 			LazyVStack(alignment: .leading) {
-				ForEach(legsDTO, content: { leg in
+				ForEach(journey.legs, content: { leg in
 					DisclosureGroup(
 						content: {
 							VStack {
 								LegDebugView(legDTO: leg)
 							}
-								.padding(10)
+							.padding(10)
 						},
 						label: {
-								if let distance = leg.distance {
-									BadgeView(.lineNumber(
-										lineType: .foot,
-										num: String(distance)
-									))
-								} else {
-									BadgeView(.lineNumber(
-										lineType: LineType(rawValue: leg.line?.product ?? "") ?? .taxi,
-										num: leg.line?.name ?? ""
-									))
-								}
+							if let distance = leg.distance {
+								BadgeView(.lineNumber(
+									lineType: .foot,
+									num: String(distance)
+								))
+							} else {
+								BadgeView(.lineNumber(
+									lineType: LineType(rawValue: leg.line?.product ?? "") ?? .taxi,
+									num: leg.line?.name ?? ""
+								))
+							}
 						}
 					)
 					.padding(10)
@@ -224,18 +225,22 @@ struct JourneyDebugView : View {
 					.padding(.horizontal,10)
 				})
 				Button(action: {
-					if let data = try? JSONEncoder().encode(legsDTO),
+					if let data = try? JSONEncoder().encode(
+						JourneyWrapper(journey: journey, realtimeDataUpdatedAt: Int64(Date.now.timeIntervalSince1970))
+					),
 					   let string = String(data: data, encoding: String.Encoding.utf8) {
 						UIPasteboard.general.setValue(
 							string, forPasteboardType: UTType.plainText.identifier
 						)
 					}
-	}, label: {
-		Text(verbatim: "Copy DTO")
-	})
-	.buttonStyle(.borderedProminent)
-
+				}, label: {
+					Text(verbatim: "Copy DTO")
+				})
+				.buttonStyle(.borderedProminent)
 			}
+			}
+		} else {
+			ErrorView(viewType: .error, msg: Text(verbatim: "journeyDTO is nil"), action: nil)
 		}
 	}
 }
@@ -246,8 +251,8 @@ struct MapDetails_Previews: PreviewProvider {
 		if let mock = Mock
 			.journeys
 			.journeyNeussWolfsburg
-			.decodedData?.journey.legs {
-			JourneyDebugView(legsDTO: mock)
+			.decodedData?.journey {
+			JourneyDebugView(journey: mock)
 		}
 	}
 }

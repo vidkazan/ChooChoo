@@ -9,32 +9,52 @@ import SwiftUI
 extension SearchStopsView {
 	func textField(type : LocationDirectionType, text : Binding<String>) -> some View {
 		return HStack(spacing: 0){
-			TextField(type.placeholder, text: text.projectedValue)
-				.submitLabel(.return)
-				.keyboardType(.alphabet)
-				.autocorrectionDisabled(true)
-				.padding(10)
-				.chewTextSize(.big)
-				.frame(maxWidth: .infinity,alignment: .leading)
-				.focused($focusedField, equals: type)
-				.onChange(of: text.wrappedValue, perform: onTextChange )
+			if let leg = chewViewModel.state.data.getStop(type: type).leg {
+				HStack(spacing: 0) {
+					BadgeView(.lineNumberWithDirection(leg: leg))
+//					Spacer()
+//					CloseButton(action: {
+//						chewViewModel.send(event: .didUpdateSearchData(
+//							dep: .textOnly(""),
+//							arr: chewViewModel.state.data.arrStop,
+//							date: chewViewModel.state.data.date,
+//							journeySettings: chewViewModel.state.data.journeySettings
+//						))
+//					})
+				}
+				.padding(5)
+				.badgeBackgroundStyle(.secondary)
+				.padding(5)
 				.onTapGesture {
-					chewViewModel.send(event: .onStopEdit(type))
+					chewViewModel.send(event: .didUpdateSearchData(
+						dep: .textOnly(""),
+						arr: chewViewModel.state.data.arrStop,
+						date: chewViewModel.state.data.date,
+						journeySettings: chewViewModel.state.data.journeySettings
+					))
 				}
-				.onSubmit {
-					searchStopViewModel.send(event: .onReset(type))
-					chewViewModel.send(event: .didCancelEditStop)
-//					chewViewModel.send(event: .onNewStop(.textOnly(text.wrappedValue), type))
-				}
+			} else {
+				TextField(type.placeholder, text: text.projectedValue)
+					.submitLabel(.return)
+					.keyboardType(.alphabet)
+					.autocorrectionDisabled(true)
+					.padding(10)
+					.chewTextSize(.big)
+					.frame(maxWidth: .infinity,alignment: .leading)
+					.focused($focusedField, equals: type)
+					.onChange(of: text.wrappedValue, perform: onTextChange )
+					.onTapGesture {
+						chewViewModel.send(event: .onStopEdit(type))
+					}
+					.onSubmit {
+						searchStopViewModel.send(event: .onReset(type))
+						chewViewModel.send(event: .didCancelEditStop)
+					}
+			}
 			HStack(spacing: 0) {
 				if focusedField == type && text.wrappedValue.count > 0 {
-					Button(action: {
+					CloseButton(action: {
 						text.wrappedValue = ""
-					}, label: {
-						Image(.xmarkCircle)
-							.chewTextSize(.big)
-							.tint(.gray)
-						
 					})
 					.frame(width: 40,height: 40)
 				}

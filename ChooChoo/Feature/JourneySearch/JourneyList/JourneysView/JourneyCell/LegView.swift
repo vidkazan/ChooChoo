@@ -12,7 +12,7 @@ struct LegViewLabels: View {
 	let bgColor : Color
 	init(leg: LegViewData) {
 		self.leg = leg
-		switch leg.isReachable {
+		switch leg.departureAndArrivalNotCancelledAndNotReachableFromPreviousLeg() {
 		case true:
 			switch leg.legType {
 			case .footMiddle,.footStart,.footEnd:
@@ -94,7 +94,7 @@ struct LegViewBG: View {
 	let bgColor : Color
 	init(leg: LegViewData, mode : AppSettings.LegViewMode) {
 		self.leg = leg
-		switch leg.isReachable {
+		switch leg.departureAndArrivalNotCancelledAndNotReachableFromPreviousLeg() {
 		case true:
 			switch leg.legType {
 			case .footMiddle,.footStart,.footEnd:

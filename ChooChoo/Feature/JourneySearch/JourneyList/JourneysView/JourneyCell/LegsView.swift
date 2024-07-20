@@ -42,7 +42,7 @@ struct LegsView: View {
 			GeometryReader { geo in
 				ZStack {
 					SunEventsGradient(
-						gradientStops:  journey?.legs.allSatisfy({$0.isReachable == true}) == true ? gradientStops : nil,
+						gradientStops:  journey?.legs.allSatisfy({$0.departureAndArrivalNotCancelledAndNotReachableFromPreviousLeg() == true}) == true ? gradientStops : nil,
 						size: geo.size,
 						mode : mode,
 						progressLineProportion: nil

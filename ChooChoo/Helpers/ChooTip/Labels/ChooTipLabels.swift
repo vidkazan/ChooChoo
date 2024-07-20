@@ -31,12 +31,8 @@ extension ChooTip.Labels {
 					}
 				)
 				Spacer()
-				Button(action: {
+				CloseButton(action: {
 					Model.shared.appSettingsVM.send(event: .didShowTip(tip: .journeySettingsFilterDisclaimer))
-				}, label: {
-					Image(.xmarkCircle)
-						.chewTextSize(.big)
-						.tint(.secondary)
 				})
 			}
 		}
@@ -76,3 +72,5 @@ extension ChooTip.Labels {
 		}
 	}
 }
+
+

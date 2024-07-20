@@ -92,7 +92,7 @@ struct LegDetailsView: View {
 		.padding(.top,leg.legType == LegViewData.LegType.line || leg.legType.caseDescription == "footStart" ?  10 : 0)
 
 		.background {
-			if !leg.isReachable {
+			if !leg.departureAndArrivalNotCancelledAndNotReachableFromPreviousLeg() {
 				Color.chewFillSecondary.opacity(0.5)
 			}
 		}

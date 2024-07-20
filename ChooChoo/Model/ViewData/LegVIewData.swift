@@ -11,11 +11,10 @@ import CoreLocation
 
 struct LegViewData : Hashable,Identifiable {
 	let id = UUID()
-	var isReachable : Bool
+	var isReachableFromPreviousLeg : Bool
 	let legType : LegType
 	let tripId : String
-//	Prognosed<Stop>
-	let direction : String
+	let direction : Prognosed<String>
 	let legTopPosition : Double
 	let legBottomPosition : Double
 	var delayedAndNextIsNotReachable : Bool?
@@ -30,11 +29,26 @@ struct LegViewData : Hashable,Identifiable {
 }
 
 extension LegViewData {
+	func departureAndArrivalNotCancelled() -> Bool {
+		if legStopsViewData.count > 1 {
+			return self.legStopsViewData.first?.cancellationType() != .fullyCancelled &&
+			self.legStopsViewData.last?.cancellationType() != .fullyCancelled
+		} else {
+			return time.arrivalStatus != .cancelled && time.departureStatus != .cancelled
+		}
+	}
+	
+	func departureAndArrivalNotCancelledAndNotReachableFromPreviousLeg() -> Bool {
+		return departureAndArrivalNotCancelled() && isReachableFromPreviousLeg
+	}
+}
+
+extension LegViewData {
 	init(){
-		self.isReachable = true
+		self.isReachableFromPreviousLeg = true
 		self.legType = .line
 		self.tripId = ""
-		self.direction = ""
+		self.direction = .init()
 		self.legTopPosition = 0
 		self.legBottomPosition = 0
 		self.delayedAndNextIsNotReachable = false
@@ -51,10 +65,20 @@ extension LegViewData {
 
 extension LegViewData {
 	init(footPathStops : DepartureArrivalPairStop){
-		self.isReachable = true
+		
+		let arrival = StopViewData(
+			id: nil,
+			   locationCoordinates: footPathStops.arrival.coordinates,
+			   name: "",
+			   platforms: .init(departure: .init(), arrival: .init()),
+			   time: .init(),
+			   stopOverType: .destination
+		   )
+		
+		self.isReachableFromPreviousLeg = true
 		self.legType = .footMiddle
 		self.tripId = ""
-		self.direction = ""
+		self.direction = Prognosed(actual: arrival.name,planned: arrival.name)
 		self.legTopPosition = 0
 		self.legBottomPosition = 0
 		self.delayedAndNextIsNotReachable = false
@@ -67,14 +91,7 @@ extension LegViewData {
 				time: .init(),
 				stopOverType: .origin
 			),
-			.init(
-				id: nil,
-				locationCoordinates: footPathStops.arrival.coordinates,
-				name: "",
-				platforms: .init(departure: .init(), arrival: .init()),
-				time: .init(),
-				stopOverType: .destination
-			)
+			arrival
 		]
 		self.footDistance = 0
 		self.lineViewData = LineViewData(type: .foot, name: "", shortName: "")
@@ -85,7 +102,6 @@ extension LegViewData {
 		self.legDTO = nil
 	}
 }
-
 enum LocationDirectionType : Int, Hashable, CaseIterable {
 	case departure
 	case arrival
@@ -131,6 +147,33 @@ struct LineViewData : Hashable, Codable {
 	let type : LineType
 	let name : String
 	let shortName : String
+}
+
+extension LegViewData {
+	static func direction(stops : [StopViewData], plannedDirectionName : String?) -> Prognosed<String> {
+		let lastAvailable = stops.reversed().first(where: {
+			$0.cancellationType() == .exitOnly || $0.cancellationType() == .notCancelled
+		})
+		let stopNameIfLastStopsAreCancelled = {
+			lastAvailable == stops.last ? nil : lastAvailable?.name
+		}()
+		
+		if let stopNameIfLastStopsAreCancelled = stopNameIfLastStopsAreCancelled {
+			return Prognosed<String>(actual: stopNameIfLastStopsAreCancelled,planned: plannedDirectionName)
+		} else {
+			return Prognosed<String>(actual: plannedDirectionName,planned: plannedDirectionName)
+		}
+	}
+}
+
+extension LegViewData {
+	static func lastReachableStop(stops : [StopViewData]) -> StopViewData? {
+		let lastAvailable = stops.reversed().first(where: {
+			$0.cancellationType() == .exitOnly || $0.cancellationType() == .notCancelled
+		})
+		
+		return lastAvailable == stops.last ? stops.last : lastAvailable
+	}
 }
 
 extension LegViewData {
@@ -206,7 +249,7 @@ extension LegViewData {
 	static let debug = Option(
 		action: { leg in
 			if let dto = leg.legDTO {
-				Model.shared.sheetVM.send(event: .didRequestShow(.journeyDebug(legs: [dto])))
+				Model.shared.sheetVM.send(event: .didRequestShow(.journeyDebug(journey: .init(type: nil, legs: [dto], refreshToken: nil, remarks: nil, price: nil))))
 			} else {
 				Model.shared.topBarAlertVM.send(event: .didRequestShow(.generic(msg: "Debug error : legDTO is nil")))
 			}

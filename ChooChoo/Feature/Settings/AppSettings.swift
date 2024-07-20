@@ -34,7 +34,7 @@ struct AppSettings : Hashable, Codable {
 	init() {
 		self.legViewMode = .colorfulLegs
 		self.tipsToShow = Set(ChooTip.TipType.allCases)
-		self.debugSettings = ChewDebugSettings(prettyJSON: false, alternativeSearchPage: false)
+		self.debugSettings = ChewDebugSettings(prettyJSON: false, alternativeSearchPage: false,timeSlider: false)
 	}
 }
 
@@ -42,6 +42,7 @@ extension AppSettings {
 	struct ChewDebugSettings: Hashable, Codable {
 		let prettyJSON : Bool
 		let alternativeSearchPage : Bool
+		let timeSlider : Bool
 	}
 	
 	enum LegViewMode : Int16, Hashable,CaseIterable, Codable {
