@@ -12,10 +12,12 @@ import OSLog
 struct JourneyAlternativesView: View {
 	@Namespace private var journeyAlternativesViewNamespace
 	let secondTimer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+	let timer50ms = Timer.publish(every: 0.05, on: .main, in: .common).autoconnect()
 	let minuteTimer = Timer.publish(every: 60, on: .main, in: .common).autoconnect()
 	@EnvironmentObject var chewVM : ChewViewModel
 	@ObservedObject var jdvm : JourneyDetailsViewModel
 	@State var journeyAlternativeViewData : JourneyAlternativeViewData?
+	@State var changingRefDate : Bool = false
 	
 	init(jdvm: JourneyDetailsViewModel) {
 		self.jdvm = jdvm
@@ -27,6 +29,11 @@ struct JourneyAlternativesView: View {
 				if let journeyAlternativeViewData = journeyAlternativeViewData {
 					departureStop(alternativeViewData: journeyAlternativeViewData)
 				}
+				Button(action: {
+					changeReferenceDate()
+				},label: {
+					Text("test")
+				})
 				searchButton
 			}
 			.background(.secondary)
@@ -44,6 +51,18 @@ struct JourneyAlternativesView: View {
 		.onAppear {
 			journeyAlternativeViewData = Self.getAlternativeJourneyDepartureStop(journey: jdvm.state.data.viewData,referenceDate: chewVM.referenceDate)
 		}
+		.onReceive(timer50ms, perform: { _ in
+			if changingRefDate == true {
+				chewVM.referenceDate = .specificDate(chewVM.referenceDate.ts + 10)
+			}
+		})
+	}
+}
+
+extension JourneyAlternativesView {
+	func changeReferenceDate() {
+		chewVM.referenceDate = .specificDate(jdvm.state.data.viewData.time.timestamp.departure.actual ?? 0)
+		changingRefDate.toggle()
 	}
 }
 
