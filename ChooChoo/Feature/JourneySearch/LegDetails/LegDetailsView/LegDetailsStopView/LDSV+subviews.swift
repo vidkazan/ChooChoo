@@ -93,11 +93,11 @@ extension LegStopView {
 			switch stopOverType {
 			case .origin, .destination,.footTop:
 				Text(verbatim: stopOver.name)
-					.strikethrough(stopOver.cancellationType() == .fullyCancelled ? true : false)
+					.strikethrough(stopOver.cancellationType() == .fullyCancelled)
 					.chewTextSize(.big)
 			case .stopover:
 				Text(verbatim: stopOver.name)
-					.strikethrough(stopOver.cancellationType() == .fullyCancelled ? true : false)
+					.strikethrough(stopOver.cancellationType() == .fullyCancelled)
 					.chewTextSize(.medium)
 			case .transfer,.footBottom,.footMiddle:
 				EmptyView()

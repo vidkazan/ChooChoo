@@ -32,17 +32,23 @@ struct JourneyAlternativesView: View {
 			.background(.secondary)
 		}
 		.onReceive(chewVM.$referenceDate, perform: { res in
-			journeyAlternativeViewData = Self.getAlternativeJourneyDepartureStop(journey: jdvm.state.data.viewData, referenceDate: chewVM.referenceDate)
+			Task {
+				journeyAlternativeViewData = Self.getAlternativeJourneyDepartureStop(journey: jdvm.state.data.viewData, referenceDate: chewVM.referenceDate)
+			}
 		})
 		.onReceive(secondTimer, perform: { _ in
-			journeyAlternativeViewData = Self.getAlternativeJourneyDepartureStop(journey: jdvm.state.data.viewData, referenceDate: chewVM.referenceDate)
+			Task {
+				journeyAlternativeViewData = Self.getAlternativeJourneyDepartureStop(journey: jdvm.state.data.viewData, referenceDate: chewVM.referenceDate)
+			}
 		})
 		
 		.onReceive(minuteTimer, perform: { _ in
 			jdvm.send(event: .didRequestReloadIfNeeded(id: jdvm.state.data.id, ref: jdvm.state.data.viewData.refreshToken, timeStatus: .active))
 		})
 		.onAppear {
-			journeyAlternativeViewData = Self.getAlternativeJourneyDepartureStop(journey: jdvm.state.data.viewData,referenceDate: chewVM.referenceDate)
+			Task {
+				journeyAlternativeViewData = Self.getAlternativeJourneyDepartureStop(journey: jdvm.state.data.viewData,referenceDate: chewVM.referenceDate)
+			}
 		}
 	}
 }

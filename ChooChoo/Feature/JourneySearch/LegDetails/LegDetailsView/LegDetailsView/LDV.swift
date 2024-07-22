@@ -111,6 +111,11 @@ struct LegDetailsView: View {
 				updateProgressHeight()
 			})
 		})
+		.onReceive(chewVM.$referenceDate, perform: { _ in
+			withAnimation(.smooth(duration: 1), {
+				updateProgressHeight()
+			})
+		})
 		.onChange(of: isExpandedState, perform: { _ in
 			withAnimation(.smooth(duration: 1), {
 				updateProgressHeight()
