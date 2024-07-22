@@ -107,7 +107,8 @@ extension JourneySearchView {
 	func alternativeDisclaimer() -> some View {
 		HStack {
 			Image(ChooSFSymbols.arrowTriangleBranch)
-			Text(NSLocalizedString("alternatives from current transport", comment: "TimeAndSettingsView"))
+				.chewTextSize(.medium)
+			Text(NSLocalizedString("searching alternatives from current transport", comment: "TimeAndSettingsView"))
 				.chewTextSize(.medium)
 			Button(action: {
 				chewViewModel.send(event: .didUpdateSearchData(
@@ -117,9 +118,8 @@ extension JourneySearchView {
 					journeySettings: chewViewModel.state.data.journeySettings
 				))
 			}, label: {
-				Text(NSLocalizedString("turn off", comment: "TimeAndSettingsView:alternatives from current transport"))
+				Text(NSLocalizedString("cancel", comment: "TimeAndSettingsView:alternatives from current transport"))
 					.chewTextSize(.medium)
-				//								.tint(.secondary)
 			})
 			.padding(5)
 			.badgeBackgroundStyle(.secondary)

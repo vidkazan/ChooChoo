@@ -64,7 +64,9 @@ struct JourneyCell: View {
 				}
 				Spacer()
 				BadgesView(badges: journey.badges)
-				Button(action:{ JourneyViewData.showOnMapOption.action(journey)}, label: {
+				Button(action:{
+					JourneyViewData.showOnMapOption.action(journey)
+				}, label: {
 					Image(systemName: JourneyViewData.showOnMapOption.icon)
 						.chewTextSize(.medium)
 						.padding(5)
