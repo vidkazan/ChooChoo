@@ -30,7 +30,6 @@ struct LegDetailsView: View {
 	init(
 		followedJourney: Bool = false,
 		send : @escaping (JourneyDetailsViewModel.Event) -> Void,
-		referenceDate : ChewDate,
 		isExpanded : Segments.ShowType,
 		leg : LegViewData,
 		scrollToIndex : Int? = nil
@@ -198,7 +197,6 @@ struct LegDetailsPreview : PreviewProvider {
 						) {
 							LegDetailsView(
 								send: {_ in },
-								referenceDate: .specificDate((viewData.time.timestamp.departure.planned ?? 0) + 900),
 								isExpanded: .collapsed,
 								leg: viewData
 							)
@@ -217,7 +215,6 @@ struct LegDetailsPreview : PreviewProvider {
 						) {
 							LegDetailsView(
 								send: {_ in },
-								referenceDate: .specificDate((viewData.time.timestamp.departure.planned ?? 0) + 900),
 								isExpanded: .collapsed,
 								leg: viewData
 							)

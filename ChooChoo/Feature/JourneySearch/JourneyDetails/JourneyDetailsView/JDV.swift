@@ -31,7 +31,6 @@ struct JourneyDetailsView: View {
 								ForEach(viewModel.state.data.viewData.legs) { leg in
 									LegDetailsView(
 										send: viewModel.send,
-										referenceDate: chewVM.referenceDate,
 										isExpanded: .collapsed,
 										leg: leg
 									)
