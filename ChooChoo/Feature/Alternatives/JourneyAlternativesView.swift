@@ -9,15 +9,26 @@ import Foundation
 import SwiftUI
 import OSLog
 
+
+//#warning("remove this")
+//let timer50ms = Timer.publish(every: 0.05, on: .main, in: .common).autoconnect()
+//		.onReceive(timer50ms, perform: { _ in
+//			#warning("remove this")
+//			chewVM.referenceDate = .specificDate(chewVM.referenceDate.ts + 10)
+//		})
+//		.onAppear {
+//			#warning("remove next")
+//			chewVM.referenceDate = .specificDate(jdvm.state.data.viewData.time.timestamp.departure.actual ?? 0)
+//		}
+
 struct JourneyAlternativesView: View {
 	@Namespace private var journeyAlternativesViewNamespace
+	
 	let secondTimer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
-	let timer50ms = Timer.publish(every: 0.05, on: .main, in: .common).autoconnect()
 	let minuteTimer = Timer.publish(every: 60, on: .main, in: .common).autoconnect()
 	@EnvironmentObject var chewVM : ChewViewModel
 	@ObservedObject var jdvm : JourneyDetailsViewModel
 	@State var journeyAlternativeViewData : JourneyAlternativeViewData?
-	@State var changingRefDate : Bool = false
 	
 	init(jdvm: JourneyDetailsViewModel) {
 		self.jdvm = jdvm
@@ -29,11 +40,6 @@ struct JourneyAlternativesView: View {
 				if let journeyAlternativeViewData = journeyAlternativeViewData {
 					departureStop(alternativeViewData: journeyAlternativeViewData)
 				}
-				Button(action: {
-					changeReferenceDate()
-				},label: {
-					Text("test")
-				})
 				searchButton
 			}
 			.background(.secondary)
@@ -57,18 +63,6 @@ struct JourneyAlternativesView: View {
 				journeyAlternativeViewData = Self.getAlternativeJourneyDepartureStop(journey: jdvm.state.data.viewData,referenceDate: chewVM.referenceDate)
 			}
 		}
-		.onReceive(timer50ms, perform: { _ in
-			if changingRefDate == true {
-				chewVM.referenceDate = .specificDate(chewVM.referenceDate.ts + 10)
-			}
-		})
-	}
-}
-
-extension JourneyAlternativesView {
-	func changeReferenceDate() {
-		chewVM.referenceDate = .specificDate(jdvm.state.data.viewData.time.timestamp.departure.actual ?? 0)
-		changingRefDate.toggle()
 	}
 }
 
@@ -180,19 +174,19 @@ extension JourneyAlternativesView {
 					Spacer()
 				}
 				.chewTextSize(.medium)
-				#if DEBUG
-				HStack {
-					Spacer()
-					Group {
-						Text(alternativeViewData.alternativeCase.description)
-						Text(alternativeViewData.alternativeDeparture.description)
-						Text(alternativeViewData.alternativeStopPosition.description)
-					}
-					.padding(5)
-					.badgeBackgroundStyle(.secondary)
-				}
-				.chewTextSize(.medium)
-				#endif
+//				#if DEBUG
+//				HStack {
+//					Spacer()
+//					Group {
+//						Text(alternativeViewData.alternativeCase.description)
+//						Text(alternativeViewData.alternativeDeparture.description)
+//						Text(alternativeViewData.alternativeStopPosition.description)
+//					}
+//					.padding(5)
+//					.badgeBackgroundStyle(.secondary)
+//				}
+//				.chewTextSize(.medium)
+//				#endif
 			}
 		}, header: {
 			Text(
@@ -207,13 +201,13 @@ extension JourneyAlternativesView {
 #Preview {
 	Group {
 		 var journeys =  [
-//			Mock.journeys.alternativasMoks
-//				.alternativesPrelastLegArrivalIsLaterThanLastLegArrival
-//				.decodedData?.journey.journeyViewData(
-//			depStop: .init(),
-//			arrStop: .init(),
-//			realtimeDataUpdatedAt: 0,
-//			settings: .init()),
+			Mock.journeys.alternativasMoks
+				.alternativesPrelastLegArrivalIsLaterThanLastLegArrival
+				.decodedData?.journey.journeyViewData(
+			depStop: .init(),
+			arrStop: .init(),
+			realtimeDataUpdatedAt: 0,
+			settings: .init()),
 //			Mock.journeys.alternativasMoks
 //				.alternativesJourneyNeussWolfsburg
 //				.decodedData?.journey.journeyViewData(
@@ -235,13 +229,13 @@ extension JourneyAlternativesView {
 //			arrStop: .init(),
 //			realtimeDataUpdatedAt: 0,
 //			settings: .init()),
-			Mock.journeys.alternativasMoks
-				.alternativesJourneyNeussWolfsburgS1LastStopCancelled
-				.decodedData?.journey.journeyViewData(
-			depStop: .init(),
-			arrStop: .init(),
-			realtimeDataUpdatedAt: 0,
-			settings: .init()),
+//			Mock.journeys.alternativasMoks
+//				.alternativesJourneyNeussWolfsburgS1LastStopCancelled
+//				.decodedData?.journey.journeyViewData(
+//			depStop: .init(),
+//			arrStop: .init(),
+//			realtimeDataUpdatedAt: 0,
+//			settings: .init()),
 		 ].filter {
 			 $0 != nil
 		 }
@@ -262,7 +256,7 @@ extension JourneyAlternativesView {
 								.frame(width: 400,height: 450)
 						}
 					}
-//					.frame(width:900,height: 1000)
+					.frame(width:900,height: 1000)
 				}
 				ReferenceTimeSliderView()
 			}
