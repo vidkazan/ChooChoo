@@ -200,7 +200,7 @@ extension JourneyAlternativesView {
 @available(iOS 16.0,*)
 #Preview {
 	Group {
-		 var journeys =  [
+		 let journeys =  [
 			Mock.journeys.alternativasMoks
 				.alternativesPrelastLegArrivalIsLaterThanLastLegArrival
 				.decodedData?.journey.journeyViewData(
