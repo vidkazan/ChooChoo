@@ -380,7 +380,6 @@
 		7D3B98EA2C08D80200A3AAEB /* TimeChoosingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D6734DE2A96394E00CBE9C1 /* TimeChoosingView.swift */; };
 		7D3B98EE2C08D80700A3AAEB /* SSV+TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4B1B902AA8DB5B0096F372 /* SSV+TextField.swift */; };
 		7D3B98EF2C08D80700A3AAEB /* SSV+RightButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D462D512AAC96C000BC0D65 /* SSV+RightButton.swift */; };
-		7D3B98F02C08D80700A3AAEB /* SSV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9E10862AA6752B00820B92 /* SSV.swift */; };
 		7D3B98F12C08D80D00A3AAEB /* DatePickerTimePresetButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAF62B72A9E5A0B006F1A17 /* DatePickerTimePresetButtons.swift */; };
 		7D3B98F22C08D80D00A3AAEB /* DatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D81AB252A978CDC0055AEAF /* DatePickerView.swift */; };
 		7D3B98F32C08D80D00A3AAEB /* DatePickerTimePresetButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAF62B72A9E5A0B006F1A17 /* DatePickerTimePresetButtons.swift */; };
@@ -2375,7 +2374,6 @@
 				7D3B985F2C08D75000A3AAEB /* CDJourney+CoreDataClass.swift in Sources */,
 				7D3B97FD2C08D6EC00A3AAEB /* TextModifier.swift in Sources */,
 				7D3B980F2C08D6F000A3AAEB /* Solar.swift in Sources */,
-				7D3B98F02C08D80700A3AAEB /* SSV.swift in Sources */,
 				7D3B98BB2C08D7DB00A3AAEB /* ArrivalTrainTimeLabelView.swift in Sources */,
 				7D3B98952C08D78800A3AAEB /* ChildAnnotationViews.swift in Sources */,
 				7D3B97FE2C08D6EC00A3AAEB /* Styles.swift in Sources */,
