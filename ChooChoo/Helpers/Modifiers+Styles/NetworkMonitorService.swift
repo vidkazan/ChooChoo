@@ -194,8 +194,7 @@ extension NetworkMonitorService {
 		Feedback { (state: State) -> AnyPublisher<Event, Never> in
 			switch state.status {
 			case .ok:
-//				sendAlert(.didRequestDismiss(.offline))
-				sendAlert(.didRequestDismiss(.apiUnavailable))
+				sendAlert(.didRequestDismiss([.offline,.apiUnavailable]))
 			case .offline:
 				sendAlert(.didRequestShow(.offline))
 			case .apiUnavailable:

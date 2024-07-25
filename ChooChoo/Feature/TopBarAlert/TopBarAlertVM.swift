@@ -77,7 +77,7 @@ extension TopBarAlertViewModel {
 		func alertViewModelEvent(alertType : AlertType) -> TopBarAlertViewModel.Event? {
 			switch self {
 			case .dismiss:
-				return .didRequestDismiss(alertType)
+				return .didRequestDismiss([alertType])
 			case .none:
 				return nil
 			case .reload:
@@ -188,7 +188,7 @@ extension TopBarAlertViewModel {
 		case start
 		case adding(_ type: AlertType)
 		case showing
-		case deleting(_ type: AlertType)
+		case deleting(_ type: [AlertType])
 		
 		var description : String {
 			switch self {
@@ -208,7 +208,7 @@ extension TopBarAlertViewModel {
 		case didLoadInitialData
 		case didDismiss(_ types: Set<AlertType>)
 		case didAdd(_ types: Set<AlertType>)
-		case didRequestDismiss(_ type: AlertType)
+		case didRequestDismiss(_ types: [AlertType])
 		case didRequestShow(_ type: AlertType)
 		var description : String {
 			switch self {
@@ -302,10 +302,12 @@ extension TopBarAlertViewModel {
 					return tmp
 				}()
 				return Just(Event.didAdd(result)).eraseToAnyPublisher()
-			case .deleting(let alert):
+			case .deleting(let alerts):
 				let result = {
 					var tmp = state.alerts
-					tmp.remove(alert)
+					alerts.forEach({
+						tmp.remove($0)
+					})
 					return tmp
 				}()
 				return Just(Event.didDismiss(result)).eraseToAnyPublisher()
