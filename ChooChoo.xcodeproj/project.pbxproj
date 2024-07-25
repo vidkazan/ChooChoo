@@ -23,6 +23,7 @@
 		7D02CE302A97E96E0048ADE6 /* BadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D02CE2F2A97E96E0048ADE6 /* BadgeView.swift */; };
 		7D02CE342A98E8130048ADE6 /* JLV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D02CE332A98E8130048ADE6 /* JLV.swift */; };
 		7D03EEAE2C47F48400AD20B8 /* CloseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D03EEAD2C47F48400AD20B8 /* CloseButton.swift */; };
+		7D064B3B2C52752400AAEF79 /* APIAvailabilityMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D064B3A2C52752400AAEF79 /* APIAvailabilityMonitor.swift */; };
 		7D0685ED2B50304500CCBE6B /* CoreDataStore+fetch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D0685EC2B50304500CCBE6B /* CoreDataStore+fetch.swift */; };
 		7D0D8ABE2AC75DD6008F0F4B /* TimeContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D0D8ABD2AC75DD6008F0F4B /* TimeContainer.swift */; };
 		7D10BD3D2BB1A2C100702D83 /* AppSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D10BD3C2BB1A2C100702D83 /* AppSettingsView.swift */; };
@@ -679,6 +680,7 @@
 		7D02CE2F2A97E96E0048ADE6 /* BadgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeView.swift; sourceTree = "<group>"; };
 		7D02CE332A98E8130048ADE6 /* JLV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JLV.swift; sourceTree = "<group>"; };
 		7D03EEAD2C47F48400AD20B8 /* CloseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseButton.swift; sourceTree = "<group>"; };
+		7D064B3A2C52752400AAEF79 /* APIAvailabilityMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIAvailabilityMonitor.swift; sourceTree = "<group>"; };
 		7D0685EC2B50304500CCBE6B /* CoreDataStore+fetch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreDataStore+fetch.swift"; sourceTree = "<group>"; };
 		7D08885D2B4A3F1B00283A34 /* CoreDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStore.swift; sourceTree = "<group>"; };
 		7D0D8ABD2AC75DD6008F0F4B /* TimeContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeContainer.swift; sourceTree = "<group>"; };
@@ -1153,6 +1155,7 @@
 				7D33A9A32B5433A90005D723 /* BadgeStyle.swift */,
 				7D181D662AD6D6BB003AB021 /* TextModifier.swift */,
 				7DE6FDA22B5BE58100AC8DE3 /* NetworkMonitor.swift */,
+				7D064B3A2C52752400AAEF79 /* APIAvailabilityMonitor.swift */,
 			);
 			path = "Modifiers+Styles";
 			sourceTree = "<group>";
@@ -2124,6 +2127,7 @@
 				7D462D4F2AAC956B00BC0D65 /* JLVM+reduce+FailedToLoadJourneys.swift in Sources */,
 				7D65DF1D2B2A2BFE00692601 /* CDStop+CoreDataProperties.swift in Sources */,
 				7D7497922BADBD6B0041FBFB /* AppSettings.swift in Sources */,
+				7D064B3B2C52752400AAEF79 /* APIAvailabilityMonitor.swift in Sources */,
 				7DEA645C2B95F794005BEE8A /* JourneyDebugView.swift in Sources */,
 				7D1638502B69841D006E9660 /* LDSV+background.swift in Sources */,
 				7D2C0E682BDBC487000839C1 /* ReloadableButtonLabel.swift in Sources */,
