@@ -117,7 +117,7 @@ struct BadgeView : View {
 					}
 				}
 			case let .legDirection(dir,strikethrough, multiline):
-				Text("\(dir)", comment: "BadgeView: legDirection")
+				Text(verbatim: dir)
 					.strikethrough(strikethrough)
 					.lineLimit(multiline ? 3 : 1)
 					.chewTextSize(size)

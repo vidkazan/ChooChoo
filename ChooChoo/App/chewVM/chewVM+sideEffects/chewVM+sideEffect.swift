@@ -24,15 +24,18 @@ extension ChewViewModel {
 					.eraseToAnyPublisher()
 			}
 			
-			Model.shared.recentSearchesVM.send(event: .didTapEdit(
-					action: .adding,
-					search: RecentSearchesViewModel.RecentSearch(
-						depStop: dep,
-						arrStop: arr,
-						searchTS: Date.now.timeIntervalSince1970
+			if case .location = state.data.depStop {
+				Model.shared.recentSearchesVM.send(event: .didTapEdit(
+						action: .adding,
+						search: RecentSearchesViewModel.RecentSearch(
+							depStop: dep,
+							arrStop: arr,
+							searchTS: Date.now.timeIntervalSince1970
+						)
 					)
 				)
-			)
+			}
+			
 			return Just(Event.onJourneyDataUpdated(
 				DepartureArrivalPairStop(
 					departure: dep,
