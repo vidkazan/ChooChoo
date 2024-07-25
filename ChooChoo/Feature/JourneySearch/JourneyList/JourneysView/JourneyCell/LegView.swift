@@ -55,6 +55,8 @@ struct LegViewLabels: View {
 											Image(icon)
 												.foregroundColor(.primary)
 												.chewTextSize(.medium)
+												.padding(1)
+												.badgeBackgroundStyle(leg.lineViewData.type.iconBackgroundStyle)
 										}
 										Text(verbatim: leg.lineViewData.name.replacingOccurrences(of: " ", with: ""))
 											.foregroundColor(.primary)
@@ -66,6 +68,8 @@ struct LegViewLabels: View {
 										Image(icon)
 											.foregroundColor(.primary)
 											.chewTextSize(.medium)
+											.padding(1)
+											.badgeBackgroundStyle(leg.lineViewData.type.iconBackgroundStyle)
 										Text(verbatim: leg.lineViewData.shortName)
 											.foregroundColor(.primary)
 											.chewTextSize(.medium)
@@ -75,6 +79,8 @@ struct LegViewLabels: View {
 									Image(icon)
 										.foregroundColor(.primary)
 										.chewTextSize(.medium)
+										.padding(1)
+										.badgeBackgroundStyle(leg.lineViewData.type.iconBackgroundStyle)
 								}
 							}
 						case .transfer:

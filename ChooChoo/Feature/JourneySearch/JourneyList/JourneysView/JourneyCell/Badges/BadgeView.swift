@@ -195,8 +195,11 @@ struct BadgeView : View {
 				if let image = type.icon {
 					HStack(spacing:0) {
 						Image(image)
-							.foregroundColor(Color.primary)
-							.chewTextSize(size)
+							.padding(1)
+							.cornerRadius(10)
+							.badgeBackgroundStyle(type.iconBackgroundStyle)
+						.foregroundColor(Color.primary)
+						.chewTextSize(size)
 						OneLineText(badge.badgeData.text)
 							.foregroundColor(Color.primary)
 							.chewTextSize(size)
