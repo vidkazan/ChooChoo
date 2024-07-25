@@ -801,7 +801,7 @@
       }
     },
     "now" : {
-      "comment" : "timeChoosingView: button on segmented picker\nAlternativeStopPosition: timeBadge\nDatePickerTimePresetButtons",
+      "comment" : "AlternativeStopPosition: timeBadge\ntimeChoosingView: button on segmented picker\nDatePickerTimePresetButtons",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -1019,7 +1019,7 @@
       }
     },
     "Save" : {
-      "comment" : "datePickerView: save button\nsettingsView: save button",
+      "comment" : "settingsView: save button\ndatePickerView: save button",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -1030,7 +1030,7 @@
       }
     },
     "Search" : {
-      "comment" : "search tip title\nTabItem\nJourneyAlternativesView: button",
+      "comment" : "TabItem\nsearch tip title\nJourneyAlternativesView: button",
       "localizations" : {
         "de" : {
           "stringUnit" : {
