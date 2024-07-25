@@ -7,18 +7,18 @@
 
 import Foundation
 
-class APIAvailabilityMonitor {
+class APIAvailabilityMonitor  {
 	private var timer: Timer?
-	private let workerQueue = DispatchQueue(label: "APIMonitor")
-	let monitorURL : URL? = URL(string: Constants.apiData.forPing)
-	@Published var state : State = .available
+	let monitorURL : URL? = URL(string: "https://"+Constants.apiData.urlBase + Constants.apiData.forPing)
+	var delegate : APIAvailabilityMonitorDelegate? = nil
 	
 	init() {
 		startPinging()
 	}
 	
 	func startPinging() {
-		timer = Timer.scheduledTimer(timeInterval: 30.0, target: self, selector: #selector(pingURL), userInfo: nil, repeats: true)
+		pingURL()
+		timer = Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: #selector(pingURL), userInfo: nil, repeats: true)
 	}
 	
 	func stopPinging() {
@@ -28,16 +28,19 @@ class APIAvailabilityMonitor {
 	
 	@objc private func pingURL() {
 		if let url = monitorURL {
-			let task = URLSession.shared.dataTask(with: url) { [weak self] data, response, error in
-				if let error = error {
-					self?.state = .unavailable
-				} else if let response = response as? HTTPURLResponse {
-					self?.state = .available
+			let session = URLSession(configuration: .default)
+			session.configuration.timeoutIntervalForRequest = 1
+			session.configuration.timeoutIntervalForResource = 1
+			let task = session.dataTask(with: url) { [weak self] data, response, error in
+				if let _ = error {
+					self?.delegate?.didUpdate(status: .unavailable)
+				} else if let _ = response {
+					self?.delegate?.didUpdate(status: .available)
 				}
 			}
 			task.resume()
 		} else {
-			state = .error(DataError.nilValue(type: "URL is nil"))
+			self.delegate?.didUpdate(status: .error(DataError.nilValue(type: "URL is nil")))
 		}
 	}
 }
@@ -48,4 +51,8 @@ extension APIAvailabilityMonitor {
 		case available
 		case unavailable
 	}
+}
+
+protocol APIAvailabilityMonitorDelegate {
+	func didUpdate(status : APIAvailabilityMonitor.State)
 }

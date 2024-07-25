@@ -145,6 +145,7 @@ struct BadgeView : View {
 				 .routeError,
 				 .followError,
 				 .locationError,
+				.apiUnavaiable,
 				 .offlineMode,
 				 .updateError:
 				OneLineText(badge.badgeData.text)

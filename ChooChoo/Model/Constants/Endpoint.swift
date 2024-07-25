@@ -26,6 +26,6 @@ struct Constants {
 		static let urlPathLocationsNearby = "/locations/nearby"
 		static let urlPathJourneyList = "/journeys"
 		static let urlPathTrip = "/trips"
-		static let forPing = "stops/8010159"
+		static let forPing = "/stops/8010159"
 	}
 }
