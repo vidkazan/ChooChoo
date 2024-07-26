@@ -195,7 +195,7 @@ enum Badges : Identifiable,Hashable {
 		case .apiUnavaiable:
 			return BadgeData(
 				Text(
-					"😬 Server is unavailable",
+					"Server is unavailable",
 					comment: "badge"
 				)
 			)

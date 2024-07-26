@@ -73,7 +73,7 @@ struct JourneySearchView : View {
 								.badgeBackgroundStyle(.blue)
 						} else if topAlertVM.state.alerts.contains(.apiUnavailable) {
 							BadgeView(.apiUnavaiable)
-								.badgeBackgroundStyle(.red)
+								.badgeBackgroundStyle(.primary)
 						}
 					}
 				)

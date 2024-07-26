@@ -200,7 +200,7 @@ extension NetworkMonitorService {
 			case .apiUnavailable:
 				sendAlert(.didRequestShow(.apiUnavailable))
 			case .apiCheckError(_):
-				sendAlert(.didRequestShow(.generic(msg: "Network Monitor Error")))
+				Self.warning(state.status, "Network Monitor Error")
 			}
 			return Empty().eraseToAnyPublisher()
 		}

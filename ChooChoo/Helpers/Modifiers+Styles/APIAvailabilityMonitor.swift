@@ -30,12 +30,16 @@ class APIAvailabilityMonitor  {
 	@objc private func pingURL() {
 		if let url = monitorURL {
 			let session = URLSession(configuration: .default)
-			let request = URLRequest(url: url,timeoutInterval: 2)
+			let request = URLRequest(url: url,timeoutInterval: 3)
 			if currentTask == nil {
 				currentTask = session.dataTask(with: request) { [weak self] data, response, error in
-					if let _ = error {
+					guard let response = response as? HTTPURLResponse else {
+						return
+					}
+					switch response.statusCode {
+					case 503,500:
 						self?.delegate?.didUpdate(status: .unavailable)
-					} else if let _ = response {
+					default:
 						self?.delegate?.didUpdate(status: .available)
 					}
 					self?.currentTask = nil
