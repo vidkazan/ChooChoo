@@ -29,6 +29,8 @@ struct JourneyAlternativesView: View {
 	@EnvironmentObject var chewVM : ChewViewModel
 	@ObservedObject var jdvm : JourneyDetailsViewModel
 	@State var journeyAlternativeViewData : JourneyAlternativeViewData?
+	@State var journeyAlternativeDepartureStop : StopViewData?
+	@State var time : SearchStopsDate?
 	init(jdvm: JourneyDetailsViewModel) {
 		self.jdvm = jdvm
 	}
@@ -39,19 +41,28 @@ struct JourneyAlternativesView: View {
 				if let journeyAlternativeViewData = journeyAlternativeViewData {
 					departureStop(alternativeViewData: journeyAlternativeViewData)
 				}
-				searchButton
-//				if let data = journeyAlternativeViewData,
-//				let time = Self.getTime(journeyAlternativeViewData: data),
-//				   let stop = data.alternativeDeparture.stopViewData.stop(){
-//					JourneyListView(
-//						stops: .init(departure: stop, arrival: jdvm.state.data.arrStop),
-//						date: time,
-//						settings: jdvm.state.data.viewData.settings
-//					)
-//				}
+//				searchButton
+				if let time = time,
+					let stop = journeyAlternativeDepartureStop?.stop() {
+					JourneyListView(jlvm: JourneyListViewModel(
+						date: time,
+						settings: jdvm.state.data.viewData.settings,
+						stops: .init(departure: stop, arrival: jdvm.state.data.arrStop)))
+					.frame(maxHeight: 400)
+				}
 			}
 			.background(.secondary)
 		}
+		.onChange(of: time, perform: { _ in
+			print(">>>> timee!!!")
+		})
+		.onChange(of: journeyAlternativeDepartureStop, perform: { _ in
+			print(">>>> stop changed!!!")
+		})
+		.onChange(of: journeyAlternativeViewData, perform: {
+			journeyAlternativeDepartureStop = $0?.alternativeDeparture.stopViewData
+			time = Self.getTime(journeyAlternativeSVD: journeyAlternativeDepartureStop)
+		})
 		.onReceive(chewVM.$referenceDate, perform: { res in
 			Task {
 				journeyAlternativeViewData = Self.getAlternativeJourneyDepartureStop(journey: jdvm.state.data.viewData, referenceDate: chewVM.referenceDate)
@@ -116,15 +127,13 @@ extension JourneyAlternativesView {
 }
 
 extension JourneyAlternativesView {
-	private static func getTime(journeyAlternativeViewData : JourneyAlternativeViewData?) -> SearchStopsDate? {
-		if let depStopViewData = journeyAlternativeViewData?.alternativeDeparture.stopViewData,
-		   let depStop = depStopViewData.stop()
+	private static func getTime(journeyAlternativeSVD : StopViewData?) -> SearchStopsDate? {
+		if let depStopViewData = journeyAlternativeSVD
 		{
-			if let leg = journeyAlternativeViewData?.alternativeDeparture.leg,
-			   let depStopArrival = depStopViewData.time.timestamp.arrival.actual  {
-					return .init(date: .specificDate(depStopArrival), mode: .departure)
+			if let depStopArrival = depStopViewData.time.timestamp.arrival.actual {
+				return .init(date: .specificDate(depStopArrival), mode: .departure)
 			} else {
-					return .init(date: .now, mode: .departure)
+				return .init(date: .now, mode: .departure)
 			}
 		}
 		return nil
