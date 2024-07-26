@@ -25,6 +25,24 @@ func constructLineViewData(
 		default:
 			return .foot
 		}
+		
+		switch product {
+		case "nationalExpress",
+		 "national",
+		 "regionalExpress",
+		 "regional",
+		 "suburban",
+		 "ferry",
+		 "subway",
+			"tram":
+			if name.contains("Bus") || name.contains("bus") {
+				return .replacementBus
+			}
+			break
+		default:
+			break
+		}
+		
 		switch product {
 		case "nationalExpress":
 			return .nationalExpress

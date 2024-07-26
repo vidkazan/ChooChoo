@@ -23,6 +23,8 @@
 		7D02CE302A97E96E0048ADE6 /* BadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D02CE2F2A97E96E0048ADE6 /* BadgeView.swift */; };
 		7D02CE342A98E8130048ADE6 /* JLV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D02CE332A98E8130048ADE6 /* JLV.swift */; };
 		7D03EEAE2C47F48400AD20B8 /* CloseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D03EEAD2C47F48400AD20B8 /* CloseButton.swift */; };
+		7D064B3B2C52752400AAEF79 /* APIAvailabilityMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D064B3A2C52752400AAEF79 /* APIAvailabilityMonitor.swift */; };
+		7D064B3D2C527BAB00AAEF79 /* NetworkMonitorService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D064B3C2C527BAB00AAEF79 /* NetworkMonitorService.swift */; };
 		7D0685ED2B50304500CCBE6B /* CoreDataStore+fetch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D0685EC2B50304500CCBE6B /* CoreDataStore+fetch.swift */; };
 		7D0D8ABE2AC75DD6008F0F4B /* TimeContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D0D8ABD2AC75DD6008F0F4B /* TimeContainer.swift */; };
 		7D10BD3D2BB1A2C100702D83 /* AppSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D10BD3C2BB1A2C100702D83 /* AppSettingsView.swift */; };
@@ -170,11 +172,9 @@
 		7D3B97FC2C08D6E000A3AAEB /* ChooButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2C0E6B2BDBD9DE000839C1 /* ChooButton.swift */; };
 		7D3B97FD2C08D6EC00A3AAEB /* TextModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D181D662AD6D6BB003AB021 /* TextModifier.swift */; };
 		7D3B97FE2C08D6EC00A3AAEB /* Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D33A94C2B51A7E60005D723 /* Styles.swift */; };
-		7D3B97FF2C08D6EC00A3AAEB /* NetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE6FDA22B5BE58100AC8DE3 /* NetworkMonitor.swift */; };
 		7D3B98002C08D6EC00A3AAEB /* BadgeStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D33A9A32B5433A90005D723 /* BadgeStyle.swift */; };
 		7D3B98012C08D6EC00A3AAEB /* TextModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D181D662AD6D6BB003AB021 /* TextModifier.swift */; };
 		7D3B98022C08D6EC00A3AAEB /* Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D33A94C2B51A7E60005D723 /* Styles.swift */; };
-		7D3B98032C08D6EC00A3AAEB /* NetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE6FDA22B5BE58100AC8DE3 /* NetworkMonitor.swift */; };
 		7D3B98042C08D6EC00A3AAEB /* BadgeStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D33A9A32B5433A90005D723 /* BadgeStyle.swift */; };
 		7D3B98052C08D6EF00A3AAEB /* EnumTraversal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DBD26C12B99FB1800612A3B /* EnumTraversal.swift */; };
 		7D3B98062C08D6EF00A3AAEB /* SunEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAF62C32A9F78CF006F1A17 /* SunEvent.swift */; };
@@ -622,7 +622,6 @@
 		7DE640FB2AB08EF80087FC64 /* CLLOcationCoordinate2D+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE640FA2AB08EF80087FC64 /* CLLOcationCoordinate2D+.swift */; };
 		7DE6FD9D2B5AD00F00AC8DE3 /* CDRecentSearch+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE6FD9B2B5AD00F00AC8DE3 /* CDRecentSearch+CoreDataClass.swift */; };
 		7DE6FD9E2B5AD00F00AC8DE3 /* CDRecentSearch+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE6FD9C2B5AD00F00AC8DE3 /* CDRecentSearch+CoreDataProperties.swift */; };
-		7DE6FDA32B5BE58100AC8DE3 /* NetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE6FDA22B5BE58100AC8DE3 /* NetworkMonitor.swift */; };
 		7DE6FDA52B5BE5B300AC8DE3 /* RecentSearchesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE6FDA42B5BE5B300AC8DE3 /* RecentSearchesViewModel.swift */; };
 		7DE727C62AD93869002FF033 /* JFV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE727C52AD93869002FF033 /* JFV.swift */; };
 		7DE727C92AD93955002FF033 /* ApiServiceCombine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE727C82AD93955002FF033 /* ApiServiceCombine.swift */; };
@@ -678,6 +677,8 @@
 		7D02CE2F2A97E96E0048ADE6 /* BadgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeView.swift; sourceTree = "<group>"; };
 		7D02CE332A98E8130048ADE6 /* JLV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JLV.swift; sourceTree = "<group>"; };
 		7D03EEAD2C47F48400AD20B8 /* CloseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseButton.swift; sourceTree = "<group>"; };
+		7D064B3A2C52752400AAEF79 /* APIAvailabilityMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIAvailabilityMonitor.swift; sourceTree = "<group>"; };
+		7D064B3C2C527BAB00AAEF79 /* NetworkMonitorService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMonitorService.swift; sourceTree = "<group>"; };
 		7D0685EC2B50304500CCBE6B /* CoreDataStore+fetch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreDataStore+fetch.swift"; sourceTree = "<group>"; };
 		7D08885D2B4A3F1B00283A34 /* CoreDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStore.swift; sourceTree = "<group>"; };
 		7D0D8ABD2AC75DD6008F0F4B /* TimeContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeContainer.swift; sourceTree = "<group>"; };
@@ -887,7 +888,6 @@
 		7DE640FA2AB08EF80087FC64 /* CLLOcationCoordinate2D+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLLOcationCoordinate2D+.swift"; sourceTree = "<group>"; };
 		7DE6FD9B2B5AD00F00AC8DE3 /* CDRecentSearch+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDRecentSearch+CoreDataClass.swift"; sourceTree = "<group>"; };
 		7DE6FD9C2B5AD00F00AC8DE3 /* CDRecentSearch+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDRecentSearch+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		7DE6FDA22B5BE58100AC8DE3 /* NetworkMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMonitor.swift; sourceTree = "<group>"; };
 		7DE6FDA42B5BE5B300AC8DE3 /* RecentSearchesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentSearchesViewModel.swift; sourceTree = "<group>"; };
 		7DE727C52AD93869002FF033 /* JFV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JFV.swift; sourceTree = "<group>"; wrapsLines = 0; };
 		7DE727C82AD93955002FF033 /* ApiServiceCombine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiServiceCombine.swift; sourceTree = "<group>"; };
@@ -1151,7 +1151,8 @@
 				7D33A94C2B51A7E60005D723 /* Styles.swift */,
 				7D33A9A32B5433A90005D723 /* BadgeStyle.swift */,
 				7D181D662AD6D6BB003AB021 /* TextModifier.swift */,
-				7DE6FDA22B5BE58100AC8DE3 /* NetworkMonitor.swift */,
+				7D064B3C2C527BAB00AAEF79 /* NetworkMonitorService.swift */,
+				7D064B3A2C52752400AAEF79 /* APIAvailabilityMonitor.swift */,
 			);
 			path = "Modifiers+Styles";
 			sourceTree = "<group>";
@@ -2113,7 +2114,6 @@
 				7D53705C2ACED7300009BA20 /* PlannedActual.swift in Sources */,
 				7DCA4AD32BD807D8005BA68E /* FloatingPoint.swift in Sources */,
 				7DAC0C932B2780C0001FC6EA /* JFVM.swift in Sources */,
-				7DE6FDA32B5BE58100AC8DE3 /* NetworkMonitor.swift in Sources */,
 				7D6C5C252AAF4B1300DEFC57 /* chewVM+reduce+Idle.swift in Sources */,
 				7D462D542AAC972200BC0D65 /* StopList.swift in Sources */,
 				7D1AD8EC2AE94A7500868056 /* GeoDTO.swift in Sources */,
@@ -2123,6 +2123,7 @@
 				7D462D4F2AAC956B00BC0D65 /* JLVM+reduce+FailedToLoadJourneys.swift in Sources */,
 				7D65DF1D2B2A2BFE00692601 /* CDStop+CoreDataProperties.swift in Sources */,
 				7D7497922BADBD6B0041FBFB /* AppSettings.swift in Sources */,
+				7D064B3B2C52752400AAEF79 /* APIAvailabilityMonitor.swift in Sources */,
 				7DEA645C2B95F794005BEE8A /* JourneyDebugView.swift in Sources */,
 				7D1638502B69841D006E9660 /* LDSV+background.swift in Sources */,
 				7D2C0E682BDBC487000839C1 /* ReloadableButtonLabel.swift in Sources */,
@@ -2278,6 +2279,7 @@
 				7D000CF72AB86BA500566120 /* JLVM+sideEffects+loadingJourneysRef.swift in Sources */,
 				7DE727C62AD93869002FF033 /* JFV.swift in Sources */,
 				7D4B1B8C2AA8CB970096F372 /* JLVM+sideEffects.swift in Sources */,
+				7D064B3D2C527BAB00AAEF79 /* NetworkMonitorService.swift in Sources */,
 				7D6CCAF12B5FFB9200BCF62E /* SettingsView+saveSettings.swift in Sources */,
 				7DA085332BA492AB005E72B2 /* JLV+footer.swift in Sources */,
 				7D2F36D42C458E5B00E9D76A /* JourneyAlternativeViewData.swift in Sources */,
@@ -2354,7 +2356,6 @@
 				7D3B98A22C08D79400A3AAEB /* MapPickerView.swift in Sources */,
 				7D3B994A2C08D86600A3AAEB /* TopBarAlertsView.swift in Sources */,
 				7D3B97C92C08D63E00A3AAEB /* SwipeActionsTip.swift in Sources */,
-				7D3B97FF2C08D6EC00A3AAEB /* NetworkMonitor.swift in Sources */,
 				7D3B988E2C08D77E00A3AAEB /* constructJourneys+Leg+Type.swift in Sources */,
 				7D3B98912C08D77E00A3AAEB /* JourneyViewData.swift in Sources */,
 				7D3B98522C08D73800A3AAEB /* ApiServiceErrors.swift in Sources */,
@@ -2568,7 +2569,6 @@
 				7D3B98692C08D75000A3AAEB /* CDStop+CoreDataProperties.swift in Sources */,
 				7D3B99052C08D83300A3AAEB /* JLVM+sideEffects+loadingJourneysRef.swift in Sources */,
 				7D3B99472C08D86500A3AAEB /* TopBarAlertsView.swift in Sources */,
-				7D3B98032C08D6EC00A3AAEB /* NetworkMonitor.swift in Sources */,
 				7D3B98872C08D77D00A3AAEB /* constructJourneys+Leg+Type.swift in Sources */,
 				7D3B988A2C08D77D00A3AAEB /* JourneyViewData.swift in Sources */,
 				7D3B98512C08D73800A3AAEB /* ApiServiceErrors.swift in Sources */,

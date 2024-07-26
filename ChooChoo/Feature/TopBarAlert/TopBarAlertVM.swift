@@ -19,14 +19,14 @@ final class TopBarAlertViewModel : ChewViewModelProtocol {
 	}
 	private var bag = Set<AnyCancellable>()
 	private let input = PassthroughSubject<Event,Never>()
-	var networkMonitor : NetworkMonitor?
+	var networkMonitor : NetworkMonitorService?
 	
 	init(_ initaialStatus : Status = .start, alerts : Set<AlertType> = Set<AlertType>() ) {
 		self.state = State(
 			alerts: alerts,
 			status: initaialStatus
 		)
-		self.networkMonitor = NetworkMonitor(send: { [weak self] in
+		self.networkMonitor = NetworkMonitorService(send: { [weak self] in
 			self?.send(event: $0)
 		})
 		Publishers.system(
@@ -77,7 +77,7 @@ extension TopBarAlertViewModel {
 		func alertViewModelEvent(alertType : AlertType) -> TopBarAlertViewModel.Event? {
 			switch self {
 			case .dismiss:
-				return .didRequestDismiss(alertType)
+				return .didRequestDismiss([alertType])
 			case .none:
 				return nil
 			case .reload:
@@ -95,6 +95,7 @@ extension TopBarAlertViewModel {
 		}
 		
 		case offline
+		case apiUnavailable
 		case routeError
 		case userLocationError
 		case journeyFollowError(type : JourneyFollowViewModel.Action)
@@ -102,6 +103,8 @@ extension TopBarAlertViewModel {
 		
 		var id : Int {
 			switch self {
+			case .apiUnavailable:
+				return 5
 			case .generic:
 				return 4
 			case .routeError:
@@ -122,6 +125,8 @@ extension TopBarAlertViewModel {
 				return Color.chewFillRedPrimary.opacity(0.8)
 			case .offline:
 				return Color.chewSunEventBlue.opacity(0.3)
+			case .apiUnavailable:
+				return Color.chewFillRedPrimary.opacity(0.2)
 			case .userLocationError:
 				return Color.chewFillRedPrimary.opacity(0.8)
 			case .generic:
@@ -139,6 +144,8 @@ extension TopBarAlertViewModel {
 				return .dismiss
 			case .offline:
 				return .none
+			case .apiUnavailable:
+				return .none
 			case .userLocationError:
 				return .dismiss
 			}
@@ -146,7 +153,7 @@ extension TopBarAlertViewModel {
 		
 		var infoAction : (() -> Void)? {
 			switch self {
-			case .routeError,.journeyFollowError,.offline,.generic:
+			case .routeError,.journeyFollowError,.offline,.generic,.apiUnavailable:
 				return nil
 			case .userLocationError:
 				return {
@@ -165,6 +172,8 @@ extension TopBarAlertViewModel {
 				return .followError(action)
 			case .offline:
 				return .offlineMode
+			case .apiUnavailable:
+				return .apiUnavaiable
 			case .userLocationError:
 				return .locationError
 			}
@@ -179,7 +188,7 @@ extension TopBarAlertViewModel {
 		case start
 		case adding(_ type: AlertType)
 		case showing
-		case deleting(_ type: AlertType)
+		case deleting(_ type: [AlertType])
 		
 		var description : String {
 			switch self {
@@ -199,7 +208,7 @@ extension TopBarAlertViewModel {
 		case didLoadInitialData
 		case didDismiss(_ types: Set<AlertType>)
 		case didAdd(_ types: Set<AlertType>)
-		case didRequestDismiss(_ type: AlertType)
+		case didRequestDismiss(_ types: [AlertType])
 		case didRequestShow(_ type: AlertType)
 		var description : String {
 			switch self {
@@ -293,10 +302,12 @@ extension TopBarAlertViewModel {
 					return tmp
 				}()
 				return Just(Event.didAdd(result)).eraseToAnyPublisher()
-			case .deleting(let alert):
+			case .deleting(let alerts):
 				let result = {
 					var tmp = state.alerts
-					tmp.remove(alert)
+					alerts.forEach({
+						tmp.remove($0)
+					})
 					return tmp
 				}()
 				return Just(Event.didDismiss(result)).eraseToAnyPublisher()
