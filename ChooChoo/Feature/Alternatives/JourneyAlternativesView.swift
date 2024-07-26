@@ -29,7 +29,6 @@ struct JourneyAlternativesView: View {
 	@EnvironmentObject var chewVM : ChewViewModel
 	@ObservedObject var jdvm : JourneyDetailsViewModel
 	@State var journeyAlternativeViewData : JourneyAlternativeViewData?
-	
 	init(jdvm: JourneyDetailsViewModel) {
 		self.jdvm = jdvm
 	}
@@ -41,6 +40,15 @@ struct JourneyAlternativesView: View {
 					departureStop(alternativeViewData: journeyAlternativeViewData)
 				}
 				searchButton
+//				if let data = journeyAlternativeViewData,
+//				let time = Self.getTime(journeyAlternativeViewData: data),
+//				   let stop = data.alternativeDeparture.stopViewData.stop(){
+//					JourneyListView(
+//						stops: .init(departure: stop, arrival: jdvm.state.data.arrStop),
+//						date: time,
+//						settings: jdvm.state.data.viewData.settings
+//					)
+//				}
 			}
 			.background(.secondary)
 		}
@@ -102,10 +110,24 @@ extension JourneyAlternativesView {
 			}
 			.chewTextSize(.big)
 		})
-//				.frame(height: 40)
 		.padding(10)
-//				.badgeBackgroundStyle(.secondary)
 		.disabled(journeyAlternativeViewData?.alternativeDeparture.stopViewData.stop() == nil)
+	}
+}
+
+extension JourneyAlternativesView {
+	private static func getTime(journeyAlternativeViewData : JourneyAlternativeViewData?) -> SearchStopsDate? {
+		if let depStopViewData = journeyAlternativeViewData?.alternativeDeparture.stopViewData,
+		   let depStop = depStopViewData.stop()
+		{
+			if let leg = journeyAlternativeViewData?.alternativeDeparture.leg,
+			   let depStopArrival = depStopViewData.time.timestamp.arrival.actual  {
+					return .init(date: .specificDate(depStopArrival), mode: .departure)
+			} else {
+					return .init(date: .now, mode: .departure)
+			}
+		}
+		return nil
 	}
 }
 
