@@ -33,6 +33,10 @@ class APIAvailabilityMonitor  {
 			let request = URLRequest(url: url,timeoutInterval: 3)
 			if currentTask == nil {
 				currentTask = session.dataTask(with: request) { [weak self] data, response, error in
+					if let error = error {
+						self?.delegate?.didUpdate(status: .unavailable)
+						return
+					}
 					guard let response = response as? HTTPURLResponse else {
 						return
 					}
