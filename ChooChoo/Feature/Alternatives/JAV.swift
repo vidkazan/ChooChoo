@@ -9,18 +9,6 @@ import Foundation
 import SwiftUI
 import OSLog
 
-
-//#warning("remove this")
-//let timer50ms = Timer.publish(every: 0.05, on: .main, in: .common).autoconnect()
-//		.onReceive(timer50ms, perform: { _ in
-//			#warning("remove this")
-//			chewVM.referenceDate = .specificDate(chewVM.referenceDate.ts + 10)
-//		})
-//		.onAppear {
-//			#warning("remove next")
-//			chewVM.referenceDate = .specificDate(jdvm.state.data.viewData.time.timestamp.departure.actual ?? 0)
-//		}
-
 struct JourneyAlternativesView: View {
 	@Namespace private var journeyAlternativesViewNamespace
 	
@@ -29,8 +17,6 @@ struct JourneyAlternativesView: View {
 	@EnvironmentObject var chewVM : ChewViewModel
 	@ObservedObject var jdvm : JourneyDetailsViewModel
 	@State var journeyAlternativeViewData : JourneyAlternativeViewData?
-	@State var journeyAlternativeDepartureStop : StopViewData?
-	@State var time : SearchStopsDate?
 	init(jdvm: JourneyDetailsViewModel) {
 		self.jdvm = jdvm
 	}
@@ -41,9 +27,9 @@ struct JourneyAlternativesView: View {
 				if let journeyAlternativeViewData = journeyAlternativeViewData {
 					departureStop(alternativeViewData: journeyAlternativeViewData)
 				}
-//				searchButton
-				if let time = time,
-					let stop = journeyAlternativeDepartureStop?.stop() {
+				if let stopViewData = journeyAlternativeViewData?.alternativeDeparture.stopViewData,
+				   let stop = stopViewData.stop(),
+				   let time = Self.getTime(journeyAlternativeSVD: stopViewData) {
 					JourneyListView(jlvm: JourneyListViewModel(
 						date: time,
 						settings: jdvm.state.data.viewData.settings,
@@ -53,16 +39,6 @@ struct JourneyAlternativesView: View {
 			}
 			.background(.secondary)
 		}
-		.onChange(of: time, perform: { _ in
-			print(">>>> timee!!!")
-		})
-		.onChange(of: journeyAlternativeDepartureStop, perform: { _ in
-			print(">>>> stop changed!!!")
-		})
-		.onChange(of: journeyAlternativeViewData, perform: {
-			journeyAlternativeDepartureStop = $0?.alternativeDeparture.stopViewData
-			time = Self.getTime(journeyAlternativeSVD: journeyAlternativeDepartureStop)
-		})
 		.onReceive(chewVM.$referenceDate, perform: { res in
 			Task {
 				journeyAlternativeViewData = Self.getAlternativeJourneyDepartureStop(journey: jdvm.state.data.viewData, referenceDate: chewVM.referenceDate)
@@ -161,7 +137,6 @@ extension JourneyAlternativesView {
 	var arrivalStop : some View {
 		Section(content: {
 			HStack {
-				
 				Text("\(jdvm.state.data.arrStop.name)")
 						.chewTextSize(.big)
 						.transition(.move(edge: .top))
