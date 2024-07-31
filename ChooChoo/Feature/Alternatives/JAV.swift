@@ -15,10 +15,18 @@ struct JourneyAlternativesView: View {
 	let minuteTimer = Timer.publish(every: 60, on: .main, in: .common).autoconnect()
 	@EnvironmentObject var chewVM : ChewViewModel
 	@ObservedObject var jdvm : JourneyDetailsViewModel
-	@ObservedObject var javm : JourneyAlternativeViewModel
-	init(jdvm: JourneyDetailsViewModel, javm : JourneyAlternativeViewModel) {
+	@ObservedObject var javm : JourneyAlternativeDepartureStopViewModel
+	@ObservedObject var jajlvm : JourneyAlternativeJourneysListViewModel
+	
+	init(jdvm: JourneyDetailsViewModel, javm : JourneyAlternativeDepartureStopViewModel) {
 		self.jdvm = jdvm
 		self.javm = javm
+		self.jajlvm = .init(
+			arrStop: jdvm.state.data.arrStop,
+			depStop: .init(),
+			time: .now,
+			settings: jdvm.state.data.viewData.settings
+		)
 	}
 	var body : some View {
 		VStack {
@@ -27,47 +35,40 @@ struct JourneyAlternativesView: View {
 				if let journeyAlternativeViewData = javm.state.data {
 					departureStop(alternativeViewData: journeyAlternativeViewData)
 				}
-//				if let stopViewData = javm.state.data?.alternativeDeparture.stopViewData,
-//				   let stop = stopViewData.stop(),
-//				   let time = Self.getTime(journeyAlternativeSVD: stopViewData) {
-//					JourneyListView(jlvm: JourneyListViewModel(
-//						date: time,
-//						settings: jdvm.state.data.viewData.settings,
-//						stops: .init(departure: stop, arrival: jdvm.state.data.arrStop)))
-//					.frame(maxHeight: 400)
-//				}
+				ForEach(jajlvm.state.journeys) {
+					JourneyCell(journey: $0, stops: .init(departure: .init(), arrival: .init()))
+				}
 			}
 			.background(.secondary)
 		}
-		.onReceive(chewVM.$referenceDate, perform: { res in
-			javm.send(event: .didUpdateJourneyData(data: jdvm.state.data.viewData, referenceDate: chewVM.referenceDate, send: javm.send))
-		})
-		.onReceive(secondTimer, perform: { _ in
-			javm.send(event: .didUpdateJourneyData(data: jdvm.state.data.viewData, referenceDate: chewVM.referenceDate,send: javm.send))
+		.onReceive(javm.$state, perform: { state in
+			if state.data?.alternativeDeparture.stopViewData.id != jajlvm.state.depStop.id || 
+				chewVM.referenceDate.ts - jajlvm.state.lastRequestTS > 60 {
+				if let stopViewData = javm.state.data?.alternativeDeparture.stopViewData,
+				   let stop = stopViewData.stop(),
+				   let time = Self.getTime(journeyAlternativeSVD: stopViewData),
+				   stop.id != jdvm.state.data.arrStop.id {
+					jajlvm.send(event: .didUpdateJourneyData(depStop: stop, time: time.date, referenceDate: chewVM.referenceDate))
+				}
+			}
 		})
 		
 		.onReceive(minuteTimer, perform: { _ in
 			jdvm.send(event: .didRequestReloadIfNeeded(id: jdvm.state.data.id, ref: jdvm.state.data.viewData.refreshToken, timeStatus: .active))
 		})
+		
+		.onReceive(chewVM.$referenceDate, perform: { res in
+			javm.send(event: .didUpdateJourneyData(data: jdvm.state.data.viewData, referenceDate: chewVM.referenceDate))
+		})
+		.onReceive(secondTimer, perform: { _ in
+			javm.send(event: .didUpdateJourneyData(data: jdvm.state.data.viewData, referenceDate: chewVM.referenceDate))
+		})
 		.onAppear {
-			javm.send(event: .didUpdateJourneyData(data: jdvm.state.data.viewData, referenceDate: chewVM.referenceDate,send: javm.send))
+			javm.send(event: .didUpdateJourneyData(data: jdvm.state.data.viewData, referenceDate: chewVM.referenceDate))
 		}
 	}
 }
 
-extension JourneyAlternativesView {
-	private static func getTime(journeyAlternativeSVD : StopViewData?) -> SearchStopsDate? {
-		if let depStopViewData = journeyAlternativeSVD
-		{
-			if let depStopArrival = depStopViewData.time.timestamp.arrival.actual {
-				return .init(date: .specificDate(depStopArrival), mode: .departure)
-			} else {
-				return .init(date: .now, mode: .departure)
-			}
-		}
-		return nil
-	}
-}
 
 extension JourneyAlternativesView {
 	var alternativeFor : some View {
@@ -197,6 +198,21 @@ extension JourneyAlternativesView {
 //	}
 //}
 
+extension JourneyAlternativesView {
+	private static func getTime(journeyAlternativeSVD : StopViewData?) -> SearchStopsDate? {
+		if let depStopViewData = journeyAlternativeSVD
+		{
+			if let depStopArrival = depStopViewData.time.timestamp.arrival.actual {
+				return .init(date: .specificDate(depStopArrival), mode: .departure)
+			} else {
+				return .init(date: .now, mode: .departure)
+			}
+		}
+		return nil
+	}
+}
+
+
 
 @available(iOS 16.0,*)
 #Preview {
@@ -253,7 +269,7 @@ extension JourneyAlternativesView {
 								arrStop: .init(),
 								chewVM: chewVM
 							)
-							let javm = JourneyAlternativeViewModel()
+							let javm = JourneyAlternativeDepartureStopViewModel(arrStop: jdvm.state.data.arrStop, settings: jdvm.state.data.viewData.settings)
 							JourneyAlternativesView(jdvm: jdvm, javm: javm)
 								.frame(width: 400,height: 450)
 						}

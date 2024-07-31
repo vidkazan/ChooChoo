@@ -14,7 +14,7 @@ extension JourneyFollowView {
 		jdvm : JourneyDetailsViewModel
 	) -> some View {
 		Button {
-			let javm = JourneyAlternativeViewModel()
+			let javm = JourneyAlternativeDepartureStopViewModel(arrStop: jdvm.state.data.arrStop, settings: jdvm.state.data.viewData.settings)
 			Model.shared.sheetVM.send(event: .didRequestShow(.alternatives(jdvm: jdvm, javm: javm)))
 		} label: {
 			Label(
