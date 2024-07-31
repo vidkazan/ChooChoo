@@ -36,7 +36,7 @@ struct JourneyAlternativesView: View {
 					departureStop(alternativeViewData: journeyAlternativeViewData)
 				}
 				ForEach(jajlvm.state.journeys) {
-					JourneyCell(journey: $0, stops: .init(departure: .init(), arrival: .init()))
+					JourneyCell(journey: $0, stops: .init(departure: jajlvm.state.depStop, arrival: jajlvm.state.arrStop))
 				}
 			}
 			.background(.secondary)
