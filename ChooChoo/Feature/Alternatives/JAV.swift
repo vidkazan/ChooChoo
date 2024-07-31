@@ -18,15 +18,10 @@ struct JourneyAlternativesView: View {
 	@ObservedObject var javm : JourneyAlternativeDepartureStopViewModel
 	@ObservedObject var jajlvm : JourneyAlternativeJourneysListViewModel
 	
-	init(jdvm: JourneyDetailsViewModel, javm : JourneyAlternativeDepartureStopViewModel) {
+	init(jdvm: JourneyDetailsViewModel, javm : JourneyAlternativeDepartureStopViewModel,jajlvm : JourneyAlternativeJourneysListViewModel) {
 		self.jdvm = jdvm
 		self.javm = javm
-		self.jajlvm = .init(
-			arrStop: jdvm.state.data.arrStop,
-			depStop: .init(),
-			time: .now,
-			settings: jdvm.state.data.viewData.settings
-		)
+		self.jajlvm = jajlvm
 	}
 	var body : some View {
 		VStack {
@@ -35,22 +30,58 @@ struct JourneyAlternativesView: View {
 				if let journeyAlternativeViewData = javm.state.data {
 					departureStop(alternativeViewData: journeyAlternativeViewData)
 				}
-				ForEach(jajlvm.state.journeys) {
-					JourneyCell(journey: $0, stops: .init(departure: jajlvm.state.depStop, arrival: jajlvm.state.arrStop))
-				}
+				Section(content: {
+					switch jajlvm.state.status {
+					case .idle,.loading:
+						if jajlvm.state.journeys.isEmpty {
+							ErrorView(viewType: .alert, msg: Text(verbatim: "No journeys"), action: nil)
+						} else {
+							List(jajlvm.state.journeys) {
+								JourneyCell(
+									journey: $0,
+									stops: .init(
+										departure: .init(),
+										arrival: .init()
+									)
+								)
+								.listStyle(.plain)
+							}
+						}
+					case .error(let error):
+						ErrorView(viewType: .error, msg: Text(verbatim: error.localizedDescription), reloadAction: {
+							jajlvm.send(event: .didUpdateJourneyData(
+								depStop: jajlvm.state.depStop,
+								time: jajlvm.state.time,
+								referenceDate: chewVM.referenceDate
+							))
+						})
+					}
+				}, header: {
+					HStack {
+						Text(
+							"Alternatives",
+							comment: "JourneyAlternativesView: alternatives section"
+						)
+						Button(action: {
+							updateAlternativeJourneys(state: javm.state)
+						}, label: {
+							switch jajlvm.state.status {
+							case .error(let error):
+								ReloadableButtonLabel(state: .error)
+							case .loading:
+								ReloadableButtonLabel(state: .loading)
+							case .idle:
+								ReloadableButtonLabel(state: .idle)
+							}
+						})
+					}
+				})
 			}
 			.background(.secondary)
 		}
+		
 		.onReceive(javm.$state, perform: { state in
-			if state.data?.alternativeDeparture.stopViewData.id != jajlvm.state.depStop.id || 
-				chewVM.referenceDate.ts - jajlvm.state.lastRequestTS > 60 {
-				if let stopViewData = javm.state.data?.alternativeDeparture.stopViewData,
-				   let stop = stopViewData.stop(),
-				   let time = Self.getTime(journeyAlternativeSVD: stopViewData),
-				   stop.id != jdvm.state.data.arrStop.id {
-					jajlvm.send(event: .didUpdateJourneyData(depStop: stop, time: time.date, referenceDate: chewVM.referenceDate))
-				}
-			}
+			updateAlternativeJourneysIfNeeded(state: state)
 		})
 		
 		.onReceive(minuteTimer, perform: { _ in
@@ -68,7 +99,26 @@ struct JourneyAlternativesView: View {
 		}
 	}
 }
-
+extension JourneyAlternativesView {
+	func updateAlternativeJourneysIfNeeded(state : JourneyAlternativeDepartureStopViewModel.State) {
+		if (state.data?.alternativeDeparture.stopViewData.id != jajlvm.state.depStop.id ||
+			chewVM.referenceDate.ts - jajlvm.state.lastRequestTS > 60) {
+			self.updateAlternativeJourneys(state: state)
+		}
+	}
+	func updateAlternativeJourneys(state : JourneyAlternativeDepartureStopViewModel.State) {
+		if let stopViewData = javm.state.data?.alternativeDeparture.stopViewData,
+			let stop = stopViewData.stop(),
+			let time = Self.getTime(journeyAlternativeSVD: stopViewData),
+			stop.id != jdvm.state.data.arrStop.id {
+				jajlvm.send(event: .didUpdateJourneyData(
+					depStop: stop,
+					time: time.date,
+					referenceDate: chewVM.referenceDate
+				))
+			}
+	}
+}
 
 extension JourneyAlternativesView {
 	var alternativeFor : some View {
@@ -125,6 +175,7 @@ extension JourneyAlternativesView {
 						}
 						.foregroundStyle(.secondary)
 					}
+					PlatformView(isShowingPlatormWord: false, platform: alternativeViewData.alternativeDeparture.stopViewData.platforms.arrival)
 					Text(verbatim: "\(alternativeViewData.alternativeDeparture.stopViewData.name)")
 					if let text = alternativeViewData.alternativeStopPosition.timeBadge(referenceDate: chewVM.referenceDate) {
 						text
@@ -270,7 +321,13 @@ extension JourneyAlternativesView {
 								chewVM: chewVM
 							)
 							let javm = JourneyAlternativeDepartureStopViewModel(arrStop: jdvm.state.data.arrStop, settings: jdvm.state.data.viewData.settings)
-							JourneyAlternativesView(jdvm: jdvm, javm: javm)
+							let jajlvm = JourneyAlternativeJourneysListViewModel(
+								arrStop: jdvm.state.data.arrStop,
+								 depStop: .init(),
+								 time: .now,
+								 settings: jdvm.state.data.viewData.settings
+							 )
+							JourneyAlternativesView(jdvm: jdvm, javm: javm, jajlvm: jajlvm)
 								.frame(width: 400,height: 450)
 						}
 					}

@@ -30,7 +30,8 @@ class JourneyAlternativeJourneysListViewModel : ChewViewModelProtocol {
 			arrStop: arrStop,
 			depStop: depStop,
 			time: time,
-			settings: settings
+			settings: settings,
+			journeys: []
 		)
 		Publishers.system(
 			initial: state,
@@ -70,7 +71,7 @@ extension JourneyAlternativeJourneysListViewModel  {
 			depStop : Stop,
 			time : ChewDate,
 			settings : JourneySettings,
-			journeys : [JourneyViewData] = []
+			journeys : [JourneyViewData]
 		) {
 			self.time = time
 			self.status = status
@@ -166,7 +167,7 @@ extension JourneyAlternativeJourneysListViewModel {
 			case let .didLoad(journeys,ts):
 				return State(state : state,status: .idle,journeys: journeys,lastRequestTS: ts)
 			case let .didFailToLoad(error,ts):
-				return State(state : state,status: .error(error: error),journeys: state.journeys,lastRequestTS: ts)
+				return State(state : state,status: .error(error: error),lastRequestTS: ts)
 			}
 		}
 	}
@@ -201,7 +202,7 @@ extension JourneyAlternativeJourneysListViewModel {
 					)})
 					return Event.didLoad(journeys: res,requestTS: referenceDate.ts)
 				}
-				return .didLoad(journeys: [],requestTS: referenceDate.ts)
+				return .didLoad(journeys: state.journeys,requestTS: referenceDate.ts)
 			}
 			.catch {
 				Just(.didFailToLoad(error: $0 as! any ChewError, requestTS: referenceDate.ts)).eraseToAnyPublisher()
