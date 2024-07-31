@@ -41,7 +41,8 @@ struct RemarksViewDataSource : SheetViewDataSource {
 }
 
 struct JourneyAlternativesViewDataSource	: SheetViewDataSource {
-	let journey : JourneyDetailsViewModel
+	let jdvm : JourneyDetailsViewModel
+	let javm : JourneyAlternativeViewModel
 }
 
 struct DatePickerViewDataSource	: SheetViewDataSource {}

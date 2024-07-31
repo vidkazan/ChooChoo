@@ -8,7 +8,7 @@
 import Foundation
 import Collections
 
-extension JourneyAlternativesView {
+extension JourneyAlternativeViewModel {
 	static func getCurrentLegAlternativeJourneyDepartureStop(leg : LegViewData,referenceDate: ChewDate) -> JourneyAlternativeViewData? {
 		let now = referenceDate.date
 		guard let lastReachableStop = LegViewData.lastReachableStop(stops: leg.legStopsViewData),

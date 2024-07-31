@@ -19,14 +19,16 @@ class JourneyAlternativeViewModel : ChewViewModelProtocol {
 	
 	init(_ initaialStatus : Status = .idle) {
 		self.state = State(
-			status: initaialStatus
+			status: initaialStatus,
+			data: nil
 		)
 		Publishers.system(
 			initial: state,
 			reduce: Self.reduce,
 			scheduler: RunLoop.main,
 			feedbacks: [
-				Self.userInput(input: input.eraseToAnyPublisher())
+				Self.userInput(input: input.eraseToAnyPublisher()),
+				Self.whenLoading()
 			]
 		)
 		.weakAssign(to: \.state, on: self)
@@ -45,29 +47,24 @@ class JourneyAlternativeViewModel : ChewViewModelProtocol {
 extension JourneyAlternativeViewModel  {
 	struct State {
 		let status : Status
-
-		init(status: Status) {
+		let data : JourneyAlternativeViewData?
+		init(status: Status, data : JourneyAlternativeViewData?) {
 			self.status = status
+			self.data = data
 		}
 	}
 	
 	enum Status : ChewStatus {
-		case start
 		case idle
-		case loading
-		case loaded
-		case error
+		case loading(jvd : JourneyViewData, referenceDate : ChewDate, send : (Event) -> ())
+		case error(error : any ChewError)
 		
 		var description : String {
 			switch self {
-			case .start:
-				return "start"
 			case .idle:
 				return "idle"
 			case .loading:
 				return "loading"
-			case .loaded:
-				return "loaded"
 			case .error:
 				return "error"
 			}
@@ -75,20 +72,14 @@ extension JourneyAlternativeViewModel  {
 	}
 	
 	enum Event : ChewEvent {
-		case didLoadInitialData
-		case didTapLoading
-		case didCancelLoading
-		case didLoad
-		case didFailToLoad
+		case didUpdateJourneyData(data : JourneyViewData, referenceDate : ChewDate, send : (Event) -> ())
+		case didLoad(data : JourneyAlternativeViewData)
+		case didFailToLoad(error : any ChewError)
 		
 		var description : String {
 			switch self {
-			case .didLoadInitialData:
-				return "didLoadInitialData"
-			case .didTapLoading:
-				return "didTapLoading"
-			case .didCancelLoading:
-				return "didCancelLoading"
+			case .didUpdateJourneyData:
+				return "didUpdateJourneyData"
 			case .didFailToLoad:
 				return "didFailToLoad"
 			case .didLoad:
@@ -102,46 +93,23 @@ extension JourneyAlternativeViewModel  {
 extension JourneyAlternativeViewModel {
 	static func reduce(_ state: State, _ event: Event) -> State {
 		switch state.status {
-		case .start:
+		case .idle,.error:
 			switch event {
-			case .didLoadInitialData:
-				return State(status: .idle)
-			default:
+			case let .didUpdateJourneyData(data,referenceDate,send):
+				return State(status: .loading(jvd: data, referenceDate: referenceDate, send: send), data: state.data)
+			case .didLoad:
 				return state
-			}
-		case .idle:
-			switch event {
-			case .didTapLoading:
-				return State(status: .loading)
-			default:
+			case .didFailToLoad:
 				return state
 			}
 		case .loading:
 			switch event {
-			case .didTapLoading:
-				return State(status: .loading)
-			case .didCancelLoading:
-				return State(status: .idle)
-			case .didLoad:
-				return State(status: .loaded)
-			case .didFailToLoad:
-				return State(status: .error)
-			default:
-				return state
-			}
-		case .loaded:
-			switch event {
-			case .didTapLoading:
-				return State(status: .loading)
-			default:
-				return state
-			}
-		case .error:
-			switch event {
-			case .didTapLoading:
-				return State(status: .loading)
-			default:
-				return state
+			case let .didUpdateJourneyData(data,referenceDate,send):
+				return State(status: .loading(jvd: data, referenceDate: referenceDate, send: send), data: state.data)
+			case .didLoad(let data):
+				return State(status: .idle, data: data)
+			case .didFailToLoad(let error):
+				return State(status: .error(error: error), data: state.data)
 			}
 		}
 	}
@@ -151,6 +119,20 @@ extension JourneyAlternativeViewModel {
 	static func userInput(input: AnyPublisher<Event, Never>) -> Feedback<State, Event> {
 		Feedback { _ in
 			return input
+		}
+	}
+	static func whenLoading() -> Feedback<State, Event> {
+		Feedback { (state: State) -> AnyPublisher<Event, Never> in
+			guard case let .loading(jvd, referenceDate,send) = state.status else {
+				return Empty().eraseToAnyPublisher()
+			}
+			Task {
+				if let res = Self.getAlternativeJourneyDepartureStop(journey: jvd, referenceDate: referenceDate) {
+					return send(Event.didLoad(data: res))
+				}
+				return send(Event.didFailToLoad(error: DataError.nilValue(type: "alternative data is nil")))
+			}
+			return Empty().eraseToAnyPublisher()
 		}
 	}
 }

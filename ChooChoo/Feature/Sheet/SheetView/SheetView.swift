@@ -84,8 +84,8 @@ struct SheetViewInner : View {
 	let closeSheet : ()->Void
 	var body: some View {
 		switch type {
-		case .alternatives(let journeyVM):
-			JourneyAlternativesView(jdvm: journeyVM)
+		case let .alternatives(jdvm, javm):
+			JourneyAlternativesView(jdvm: jdvm, javm: javm)
 		case .appSettings:
 			AppSettingsView(appSetttingsVM: Model.shared.appSettingsVM)
 		case .tip(let tipType):

@@ -136,10 +136,10 @@ extension SheetViewModel {
 				return Empty().eraseToAnyPublisher()
 			}
 			switch type {
-			case .alternatives(let journey):
+			case let .alternatives(jdvm, javm):
 				return Just(Event.didLoadDataForShowing(
 					type,
-					JourneyAlternativesViewDataSource(journey: journey))
+					JourneyAlternativesViewDataSource(jdvm: jdvm, javm: javm))
 				)
 				.eraseToAnyPublisher()
 			case .appSettings:

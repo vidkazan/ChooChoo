@@ -6,3 +6,11 @@
 //
 
 import Foundation
+import SwiftUI
+
+extension View {
+	func localisedString( _ key: String,
+		comment: String) -> String {
+		NSLocalizedString(key, comment: "\(Self.self) \(comment)")
+	}
+}

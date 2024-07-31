@@ -467,6 +467,7 @@
 		7D4034B42BD1684000EB5F17 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4034B32BD1684000EB5F17 /* Protocols.swift */; };
 		7D4208CB2AE122FF003D9BFB /* RouteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4208CA2AE122FF003D9BFB /* RouteView.swift */; };
 		7D4467C52C592226008346FF /* JAVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4467C42C592226008346FF /* JAVM.swift */; };
+		7D4467C72C59280D008346FF /* View+LocalizedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4467C62C59280D008346FF /* View+LocalizedString.swift */; };
 		7D462D492AAC947F00BC0D65 /* JLVM+reduce+LoadingJourneys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D462D482AAC947F00BC0D65 /* JLVM+reduce+LoadingJourneys.swift */; };
 		7D462D4B2AAC948700BC0D65 /* JLVM+reduce+JourneysLoaded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D462D4A2AAC948700BC0D65 /* JLVM+reduce+JourneysLoaded.swift */; };
 		7D462D4F2AAC956B00BC0D65 /* JLVM+reduce+FailedToLoadJourneys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D462D4E2AAC956B00BC0D65 /* JLVM+reduce+FailedToLoadJourneys.swift */; };
@@ -616,7 +617,7 @@
 		7DD5BAFD2B72BBDB00CFE768 /* PlatformView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD5BAFC2B72BBDB00CFE768 /* PlatformView.swift */; };
 		7DDA96352B82AB3900E831B3 /* Symbols.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7DDA96342B82AB3900E831B3 /* Symbols.xcassets */; };
 		7DDAA85D2B98D71A00109F7D /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DDAA85C2B98D71A00109F7D /* Launch Screen.storyboard */; };
-		7DDE7E312C46C40E00D4F796 /* JAV+GetAlternativeJourney.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DDE7E302C46C40E00D4F796 /* JAV+GetAlternativeJourney.swift */; };
+		7DDE7E312C46C40E00D4F796 /* JAVM+GetAlternativeJourney.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DDE7E302C46C40E00D4F796 /* JAVM+GetAlternativeJourney.swift */; };
 		7DE3599F2AB9E9430028CA59 /* chewVM+reduce+LoadingLocaiton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE3599E2AB9E9430028CA59 /* chewVM+reduce+LoadingLocaiton.swift */; };
 		7DE640F02AB079710087FC64 /* JLVM+reduce+LoadingUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE640EF2AB079710087FC64 /* JLVM+reduce+LoadingUpdate.swift */; };
 		7DE640FB2AB08EF80087FC64 /* CLLOcationCoordinate2D+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE640FA2AB08EF80087FC64 /* CLLOcationCoordinate2D+.swift */; };
@@ -732,6 +733,7 @@
 		7D4034B32BD1684000EB5F17 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Protocols.swift; path = ../../../../../Swift/ChooChoo/proj/ChooChoo/Helpers/Protocols.swift; sourceTree = "<group>"; };
 		7D4208CA2AE122FF003D9BFB /* RouteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteView.swift; sourceTree = "<group>"; };
 		7D4467C42C592226008346FF /* JAVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JAVM.swift; sourceTree = "<group>"; };
+		7D4467C62C59280D008346FF /* View+LocalizedString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+LocalizedString.swift"; sourceTree = "<group>"; };
 		7D462D482AAC947F00BC0D65 /* JLVM+reduce+LoadingJourneys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JLVM+reduce+LoadingJourneys.swift"; sourceTree = "<group>"; };
 		7D462D4A2AAC948700BC0D65 /* JLVM+reduce+JourneysLoaded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JLVM+reduce+JourneysLoaded.swift"; sourceTree = "<group>"; };
 		7D462D4E2AAC956B00BC0D65 /* JLVM+reduce+FailedToLoadJourneys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JLVM+reduce+FailedToLoadJourneys.swift"; sourceTree = "<group>"; };
@@ -882,7 +884,7 @@
 		7DD5BAFC2B72BBDB00CFE768 /* PlatformView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatformView.swift; sourceTree = "<group>"; };
 		7DDA96342B82AB3900E831B3 /* Symbols.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Symbols.xcassets; sourceTree = "<group>"; };
 		7DDAA85C2B98D71A00109F7D /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
-		7DDE7E302C46C40E00D4F796 /* JAV+GetAlternativeJourney.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JAV+GetAlternativeJourney.swift"; sourceTree = "<group>"; };
+		7DDE7E302C46C40E00D4F796 /* JAVM+GetAlternativeJourney.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JAVM+GetAlternativeJourney.swift"; sourceTree = "<group>"; };
 		7DE3599E2AB9E9430028CA59 /* chewVM+reduce+LoadingLocaiton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "chewVM+reduce+LoadingLocaiton.swift"; sourceTree = "<group>"; };
 		7DE640EF2AB079710087FC64 /* JLVM+reduce+LoadingUpdate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JLVM+reduce+LoadingUpdate.swift"; sourceTree = "<group>"; };
 		7DE640FA2AB08EF80087FC64 /* CLLOcationCoordinate2D+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLLOcationCoordinate2D+.swift"; sourceTree = "<group>"; };
@@ -1173,6 +1175,7 @@
 				7D2C0E672BDBC487000839C1 /* ReloadableButtonLabel.swift */,
 				7D2C0E6B2BDBD9DE000839C1 /* ChooButton.swift */,
 				7D03EEAD2C47F48400AD20B8 /* CloseButton.swift */,
+				7D4467C62C59280D008346FF /* View+LocalizedString.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1267,7 +1270,7 @@
 			children = (
 				7D61AA8A2C42DE3F000F72D6 /* JAV.swift */,
 				7D2F36D32C458E5B00E9D76A /* JourneyAlternativeViewData.swift */,
-				7DDE7E302C46C40E00D4F796 /* JAV+GetAlternativeJourney.swift */,
+				7DDE7E302C46C40E00D4F796 /* JAVM+GetAlternativeJourney.swift */,
 				7D4467C42C592226008346FF /* JAVM.swift */,
 			);
 			path = Alternatives;
@@ -2122,6 +2125,7 @@
 				7D33A94D2B51A7E60005D723 /* Styles.swift in Sources */,
 				7D462D4F2AAC956B00BC0D65 /* JLVM+reduce+FailedToLoadJourneys.swift in Sources */,
 				7D65DF1D2B2A2BFE00692601 /* CDStop+CoreDataProperties.swift in Sources */,
+				7D4467C72C59280D008346FF /* View+LocalizedString.swift in Sources */,
 				7D7497922BADBD6B0041FBFB /* AppSettings.swift in Sources */,
 				7D064B3B2C52752400AAEF79 /* APIAvailabilityMonitor.swift in Sources */,
 				7DEA645C2B95F794005BEE8A /* JourneyDebugView.swift in Sources */,
@@ -2132,7 +2136,7 @@
 				7D81AB262A978CDC0055AEAF /* DatePickerView.swift in Sources */,
 				7DF5871D2B5EC01100A4F99A /* ApiServiceErrors.swift in Sources */,
 				7DD5BADF2B728CA700CFE768 /* JSV.swift in Sources */,
-				7DDE7E312C46C40E00D4F796 /* JAV+GetAlternativeJourney.swift in Sources */,
+				7DDE7E312C46C40E00D4F796 /* JAVM+GetAlternativeJourney.swift in Sources */,
 				7D462D522AAC96C000BC0D65 /* SSV+RightButton.swift in Sources */,
 				7D7B3DA22AB9CC7E0070E44D /* LDSV.swift in Sources */,
 				7D000CF02AB86A4700566120 /* chewVM+sideEffect+userLocaiton.swift in Sources */,
