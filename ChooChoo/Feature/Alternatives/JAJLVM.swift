@@ -21,7 +21,7 @@ class JourneyAlternativeJourneysListViewModel : ChewViewModelProtocol {
 	init(
 		_ initaialStatus : Status = .idle,
 		arrStop : Stop,
-		depStop : Stop,
+		depStop : ChooDeparture,
 		time : ChewDate,
 		settings : JourneySettings
 	) {
@@ -61,14 +61,14 @@ extension JourneyAlternativeJourneysListViewModel  {
 		let journeys : [JourneyViewData]
 		let arrStop : Stop
 		let time : ChewDate
-		let depStop : Stop
+		let depStop : ChooDeparture
 		let settings : JourneySettings
 		let lastRequestTS : Double
 		
 		init(
 			status: Status,
 			arrStop : Stop,
-			depStop : Stop,
+			depStop : ChooDeparture,
 			time : ChewDate,
 			settings : JourneySettings,
 			journeys : [JourneyViewData]
@@ -86,7 +86,7 @@ extension JourneyAlternativeJourneysListViewModel  {
 			state : Self,
 			status: Status,
 			arrStop : Stop? = nil,
-			depStop : Stop? = nil,
+			depStop : ChooDeparture? = nil,
 			time : ChewDate? = nil,
 			settings : JourneySettings? = nil,
 			journeys : [JourneyViewData]? = nil,
@@ -120,7 +120,7 @@ extension JourneyAlternativeJourneysListViewModel  {
 	}
 	
 	enum Event : ChewEvent {
-		case didUpdateJourneyData(depStop : Stop, time : ChewDate, referenceDate : ChewDate)
+		case didUpdateJourneyData(depStop : ChooDeparture, time : ChewDate, referenceDate : ChewDate)
 		case didLoad(journeys : [JourneyViewData], requestTS : Double)
 		case didFailToLoad(error : any ChewError,requestTS : Double)
 		
@@ -197,7 +197,7 @@ extension JourneyAlternativeJourneysListViewModel {
 			.asyncFlatMap {
 				if let src = $0.journeys {
 					let res = src.compactMap({$0.journeyViewData(
-						depStop: state.depStop,
+						depStop: state.depStop.stop,
 						arrStop: state.arrStop,
 						realtimeDataUpdatedAt: Date.now.timeIntervalSince1970,
 						settings: state.settings

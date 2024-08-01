@@ -199,7 +199,7 @@ extension JourneyAlternativesView {
 
 extension JourneyAlternativesView {
 	func updateAlternativeJourneysIfNeeded(state : JourneyAlternativeDepartureStopViewModel.State) {
-		if (state.data?.alternativeDeparture.stopViewData.id != jajlvm.state.depStop.id ||
+		if (state.data?.alternativeDeparture.stopViewData.id != jajlvm.state.depStop.stop?.id ||
 			chewVM.referenceDate.ts - jajlvm.state.lastRequestTS > 60) {
 			self.updateAlternativeJourneys(state: state)
 		}
@@ -207,58 +207,26 @@ extension JourneyAlternativesView {
 	func updateAlternativeJourneys(state : JourneyAlternativeDepartureStopViewModel.State) {
 		if let stopViewData = javm.state.data?.alternativeDeparture.stopViewData,
 			let stop = stopViewData.stop(),
-			let time = Self.getTime(journeyAlternativeSVD: stopViewData),
 			stop.id != jdvm.state.data.arrStop.id {
+			
+			if let leg = javm.state.data?.alternativeDeparture.leg,
+			   let depStopArrival = stopViewData.time.timestamp.arrival.actual  {
 				jajlvm.send(event: .didUpdateJourneyData(
-					depStop: stop,
-					time: time.date,
+					depStop: .transport(leg),
+					time: .specificDate(depStopArrival),
+					referenceDate: chewVM.referenceDate
+				))
+			} else {
+				jajlvm.send(event: .didUpdateJourneyData(
+					depStop: .location(stop),
+					time: .now,
 					referenceDate: chewVM.referenceDate
 				))
 			}
+		}
 	}
 }
 
-
-//extension JourneyAlternativesView {
-//	var searchButton : some View {
-//		Button(action: {
-//			if let depStopViewData = journeyAlternativeViewData?.alternativeDeparture.stopViewData,
-//			   let depStop = depStopViewData.stop()
-//			{
-//				if let leg = journeyAlternativeViewData?.alternativeDeparture.leg,
-//				   let depStopArrival = depStopViewData.time.timestamp.arrival.actual  {
-//					chewVM.send(event: .didUpdateSearchData(
-//						dep: .transport(leg),
-//						arr: .location(jdvm.state.data.arrStop),
-//						date: .init(date: .specificDate(depStopArrival), mode: .departure),
-//						journeySettings: jdvm.state.data.viewData.settings)
-//					)
-//				} else {
-//					chewVM.send(event: .didUpdateSearchData(
-//						dep: .location(depStop),
-//						arr: .location(jdvm.state.data.arrStop),
-//						date: .init(date: .now, mode: .departure),
-//						journeySettings: jdvm.state.data.viewData.settings)
-//					)
-//				}
-//			}
-//			Model.shared.sheetVM.send(event: .didRequestHide)
-//		}, label: {
-//			HStack {
-//				Spacer()
-//				if nil != journeyAlternativeViewData?.alternativeDeparture.stopViewData.stop() {
-//					Text(NSLocalizedString("Search", comment: "JourneyAlternativesView: button"))
-//				} else {
-//					Text(NSLocalizedString("error", comment: "JourneyAlternativesView: button"))
-//				}
-//				Spacer()
-//			}
-//			.chewTextSize(.big)
-//		})
-//		.padding(10)
-//		.disabled(journeyAlternativeViewData?.alternativeDeparture.stopViewData.stop() == nil)
-//	}
-//}
 
 extension JourneyAlternativesView {
 	private static func getTime(journeyAlternativeSVD : StopViewData?) -> SearchStopsDate? {
@@ -273,7 +241,6 @@ extension JourneyAlternativesView {
 		return nil
 	}
 }
-
 
 
 @available(iOS 16.0,*)
@@ -334,7 +301,7 @@ extension JourneyAlternativesView {
 							let javm = JourneyAlternativeDepartureStopViewModel(arrStop: jdvm.state.data.arrStop, settings: jdvm.state.data.viewData.settings)
 							let jajlvm = JourneyAlternativeJourneysListViewModel(
 								arrStop: jdvm.state.data.arrStop,
-								 depStop: .init(),
+								depStop: .location(.init()),
 								 time: .now,
 								 settings: jdvm.state.data.viewData.settings
 							 )

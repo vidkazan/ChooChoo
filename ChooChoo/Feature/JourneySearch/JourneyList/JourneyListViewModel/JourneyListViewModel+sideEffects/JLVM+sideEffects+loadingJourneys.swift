@@ -13,7 +13,7 @@ extension JourneyListViewModel {
 		Feedback { (state: State) -> AnyPublisher<Event, Never> in
 			guard case .loadingJourneyList = state.status else { return Empty().eraseToAnyPublisher() }
 			return Self.fetchJourneyList(
-				dep: state.data.stops.departure,
+				dep: .location(state.data.stops.departure),
 				arr: state.data.stops.arrival,
 				time: state.data.date.date.date,
 				mode: state.data.date.mode,

@@ -85,7 +85,8 @@ extension JourneyCell {
 				}
 			}
 			Spacer()
-			if mode == .base {
+			switch mode {
+			case .base:
 				BadgesView(badges: journey.badges)
 				Button(action:{
 					JourneyViewData.showOnMapOption.action(journey)
@@ -96,6 +97,9 @@ extension JourneyCell {
 						.badgeBackgroundStyle(.primary)
 						.foregroundColor(.primary)
 				})
+			case .alternatives:
+				EmptyView()
+//				BadgesView(badges: [.apiUnavaiable])
 			}
 		}
 		.padding(7)
