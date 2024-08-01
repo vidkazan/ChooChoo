@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum ChooDeparture : Equatable,Hashable {
+enum ChooDeparture : Hashable {
 	case location(Stop)
 	case transport(LegViewData)
 

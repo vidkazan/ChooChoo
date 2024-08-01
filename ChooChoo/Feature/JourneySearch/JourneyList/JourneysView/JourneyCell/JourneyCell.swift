@@ -12,38 +12,40 @@ struct JourneyCell: View {
 	@EnvironmentObject var chewVM : ChewViewModel
 	@ObservedObject var appSettingsVM : AppSettingsViewModel = Model.shared.appSettingsVM
 	let journey : JourneyViewData
-	let stops : DepartureArrivalPairStop
+	let stops : ChooDepartureArrivalPairStop
 	let mode : Self.JourneyCellMode
 	
-	init(journey: JourneyViewData,stops : DepartureArrivalPairStop, mode : Self.JourneyCellMode = .base) {
+	init(journey: JourneyViewData,stops : ChooDepartureArrivalPairStop, mode : Self.JourneyCellMode = .base) {
 		self.journey = journey
 		self.stops = stops
 		self.mode = mode
 	}
 	var body: some View {
 		VStack(spacing: 0) {
-			NavigationLink(destination: {
-				let vm = Model.shared.journeyDetailViewModel(
-					followId: Self.followID(journey: journey),
-					 for: journey.refreshToken,
-					 viewdata: journey,
-					 stops: stops,
-					 chewVM: chewVM
-				)
-				NavigationLazyView(
-					JourneyDetailsView(journeyDetailsViewModel: vm)
-				)
-			}, label: {
-				VStack(spacing: 0) {
-					JourneyHeaderView(journey: journey)
-					LegsView(
-						journey : journey,
-						mode : appSettingsVM.state.settings.legViewMode
+			if let stops = stops.departureArrivalPairStop() {
+				NavigationLink(destination: {
+					let vm = Model.shared.journeyDetailViewModel(
+						followId: Self.followID(journey: journey),
+						for: journey.refreshToken,
+						viewdata: journey,
+						stops: stops,
+						chewVM: chewVM
 					)
-					.padding(.horizontal,7)
-				}
-			})
-			footer
+					NavigationLazyView(
+						JourneyDetailsView(journeyDetailsViewModel: vm)
+					)
+				}, label: {
+					VStack(spacing: 0) {
+						JourneyHeaderView(journey: journey)
+						LegsView(
+							journey : journey,
+							mode : appSettingsVM.state.settings.legViewMode
+						)
+						.padding(.horizontal,7)
+					}
+				})
+				footer
+			}
 		}
 		.background(self.mode == .base ? Color.chewFillAccent.opacity(0.5) : .clear)
 		.overlay {
@@ -67,7 +69,7 @@ extension JourneyCell {
 	var footer : some View {
 		HStack(alignment: .center) {
 			if let firstLeg = journey.legs.first,
-			   let searchFahrtId = chewVM.state.data.depStop.leg?.tripId,
+			   let searchFahrtId = stops.departure.leg?.tripId,
 				firstLeg.tripId == searchFahrtId {
 					BadgeView(.lineNumberWithDirection(leg: firstLeg))
 						.badgeBackgroundStyle(.secondary)

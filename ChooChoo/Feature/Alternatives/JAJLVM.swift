@@ -58,7 +58,7 @@ class JourneyAlternativeJourneysListViewModel : ChewViewModelProtocol {
 extension JourneyAlternativeJourneysListViewModel  {
 	struct State {
 		let status : Status
-		let journeys : [JourneyViewData]
+		let journeys : [(JourneyViewData,ChooDeparture)]
 		let arrStop : Stop
 		let time : ChewDate
 		let depStop : ChooDeparture
@@ -71,7 +71,7 @@ extension JourneyAlternativeJourneysListViewModel  {
 			depStop : ChooDeparture,
 			time : ChewDate,
 			settings : JourneySettings,
-			journeys : [JourneyViewData]
+			journeys : [(JourneyViewData,ChooDeparture)]
 		) {
 			self.time = time
 			self.status = status
@@ -89,7 +89,7 @@ extension JourneyAlternativeJourneysListViewModel  {
 			depStop : ChooDeparture? = nil,
 			time : ChewDate? = nil,
 			settings : JourneySettings? = nil,
-			journeys : [JourneyViewData]? = nil,
+			journeys : [(JourneyViewData,ChooDeparture)]? = nil,
 			lastRequestTS : Double? = nil
 		) {
 			self.status = status
@@ -121,7 +121,7 @@ extension JourneyAlternativeJourneysListViewModel  {
 	
 	enum Event : ChewEvent {
 		case didUpdateJourneyData(depStop : ChooDeparture, time : ChewDate, referenceDate : ChewDate)
-		case didLoad(journeys : [JourneyViewData], requestTS : Double)
+		case didLoad(journeys : [(JourneyViewData,ChooDeparture)], requestTS : Double)
 		case didFailToLoad(error : any ChewError,requestTS : Double)
 		
 		var description : String {
@@ -196,12 +196,18 @@ extension JourneyAlternativeJourneysListViewModel {
 			.mapError({$0})
 			.asyncFlatMap {
 				if let src = $0.journeys {
-					let res = src.compactMap({$0.journeyViewData(
-						depStop: state.depStop.stop,
-						arrStop: state.arrStop,
-						realtimeDataUpdatedAt: Date.now.timeIntervalSince1970,
-						settings: state.settings
-					)})
+					let res = src.compactMap({
+						let viewData = $0.journeyViewData(
+							depStop: state.depStop.stop,
+							arrStop: state.arrStop,
+							realtimeDataUpdatedAt: Date.now.timeIntervalSince1970,
+							settings: state.settings
+						)
+						if let viewData = viewData {
+							return (viewData,state.depStop)
+						}
+						return nil
+					})
 					return Event.didLoad(journeys: res,requestTS: referenceDate.ts)
 				}
 				return .didLoad(journeys: state.journeys,requestTS: referenceDate.ts)

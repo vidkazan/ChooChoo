@@ -65,12 +65,12 @@ extension JourneyAlternativesView {
 				if case .idle = jajlvm.state.status, jajlvm.state.journeys.isEmpty {
 					ErrorView(viewType: .alert, msg: Text(verbatim: "No alternatives"), action: nil)
 				} else {
-					ForEach(jajlvm.state.journeys) {
+					ForEach(jajlvm.state.journeys,id:\.0) {
 						JourneyCell(
-							journey: $0,
+							journey: $0.0,
 							stops: .init(
-								departure: .init(),
-								arrival: .init()
+								departure: $0.1,
+								arrival: jdvm.state.data.arrStop
 							),
 							mode: .alternatives
 						)
