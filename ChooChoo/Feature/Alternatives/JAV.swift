@@ -61,10 +61,8 @@ extension JourneyAlternativesView {
 	var alternatives : some View {
 		Section(content: {
 			switch jajlvm.state.status {
-			case .loading:
-				EmptyView()
-			case .idle:
-				if jajlvm.state.journeys.isEmpty {
+			case .loading, .idle:
+				if case .idle = jajlvm.state.status, jajlvm.state.journeys.isEmpty {
 					ErrorView(viewType: .alert, msg: Text(verbatim: "No alternatives"), action: nil)
 				} else {
 					ForEach(jajlvm.state.journeys) {
