@@ -148,7 +148,8 @@ extension JourneyAlternativeJourneysListViewModel {
 					state : state,
 					status: .loading(referenceDate: referenceDate),
 					depStop: depStop,
-					time: time
+					time: time,
+					lastRequestTS: referenceDate.ts
 				)
 			case .didLoad:
 				return state
@@ -162,12 +163,13 @@ extension JourneyAlternativeJourneysListViewModel {
 					state : state,
 					status: .loading(referenceDate: referenceDate),
 					depStop: depStop,
-					time: time
+					time: time,
+					lastRequestTS: referenceDate.ts
 				)
 			case let .didLoad(journeys,ts):
-				return State(state : state,status: .idle,journeys: journeys,lastRequestTS: ts)
+				return State(state : state,status: .idle,journeys: journeys)
 			case let .didFailToLoad(error,ts):
-				return State(state : state,status: .error(error: error),lastRequestTS: ts)
+				return State(state : state,status: .error(error: error))
 			}
 		}
 	}
