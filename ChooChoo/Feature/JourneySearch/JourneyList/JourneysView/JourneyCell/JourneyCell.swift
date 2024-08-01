@@ -13,12 +13,12 @@ struct JourneyCell: View {
 	@ObservedObject var appSettingsVM : AppSettingsViewModel = Model.shared.appSettingsVM
 	let journey : JourneyViewData
 	let stops : DepartureArrivalPairStop
-	let isPlaceholder : Bool
+	let mode : Self.JourneyCellMode
 	
-	init(journey: JourneyViewData,stops : DepartureArrivalPairStop, isPlaceholder : Bool = false) {
+	init(journey: JourneyViewData,stops : DepartureArrivalPairStop, mode : Self.JourneyCellMode = .base) {
 		self.journey = journey
 		self.stops = stops
-		self.isPlaceholder = isPlaceholder
+		self.mode = mode
 	}
 	var body: some View {
 		VStack(spacing: 0) {
@@ -43,26 +43,49 @@ struct JourneyCell: View {
 					.padding(.horizontal,7)
 				}
 			})
-			HStack(alignment: .center) {
-				if let firstLeg = journey.legs.first,
-				   let searchFahrtId = chewVM.state.data.depStop.leg?.tripId,
-					firstLeg.tripId == searchFahrtId {
-						BadgeView(.lineNumberWithDirection(leg: firstLeg))
-							.badgeBackgroundStyle(.secondary)
-				} else {
-					if let pl = journey.legs.first?.legStopsViewData.first?.platforms.departure {
-						PlatformView(
-							isShowingPlatormWord: false,
-							platform: pl
-						)
-					}
-					if let name = journey.legs.first?.legStopsViewData.first?.name {
-						Text(verbatim: name)
-							.chewTextSize(.medium)
-							.tint(.primary)
-					}
+			footer
+		}
+		.background(self.mode == .base ? Color.chewFillAccent.opacity(0.5) : .clear)
+		.overlay {
+			if journey.isReachable == false {
+				Color.primary.opacity(0.4)
+			}
+		}
+		.cornerRadius(10)
+		.contextMenu { menu }
+	}
+}
+
+extension JourneyCell {
+	enum JourneyCellMode {
+		case alternatives
+		case base
+	}
+}
+
+extension JourneyCell {
+	var footer : some View {
+		HStack(alignment: .center) {
+			if let firstLeg = journey.legs.first,
+			   let searchFahrtId = chewVM.state.data.depStop.leg?.tripId,
+				firstLeg.tripId == searchFahrtId {
+					BadgeView(.lineNumberWithDirection(leg: firstLeg))
+						.badgeBackgroundStyle(.secondary)
+			} else {
+				if let pl = journey.legs.first?.legStopsViewData.first?.platforms.departure {
+					PlatformView(
+						isShowingPlatormWord: false,
+						platform: pl
+					)
 				}
-				Spacer()
+				if let name = journey.legs.first?.legStopsViewData.first?.name {
+					Text(verbatim: name)
+						.chewTextSize(.medium)
+						.tint(.primary)
+				}
+			}
+			Spacer()
+			if mode == .base {
 				BadgesView(badges: journey.badges)
 				Button(action:{
 					JourneyViewData.showOnMapOption.action(journey)
@@ -74,19 +97,12 @@ struct JourneyCell: View {
 						.foregroundColor(.primary)
 				})
 			}
-			.padding(7)
 		}
-		.background(Color.chewFillAccent.opacity(0.5))
-		.overlay {
-			if journey.isReachable == false {
-				Color.primary.opacity(0.4)
-			}
-		}
-		.redacted(reason: isPlaceholder ? .placeholder : [])
-		.cornerRadius(10)
-		.contextMenu { menu }
+		.padding(7)
 	}
-	
+}
+
+extension JourneyCell {
 	static func followID(journey : JourneyViewData) -> Int64 {
 		let journeys = Model.shared.journeyFollowVM.state.journeys
 		guard let followID = journeys.first(where: {

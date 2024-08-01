@@ -18,22 +18,16 @@ struct JourneyAlternativesView: View {
 	@ObservedObject var javm : JourneyAlternativeDepartureStopViewModel
 	@ObservedObject var jajlvm : JourneyAlternativeJourneysListViewModel
 	
-	init(jdvm: JourneyDetailsViewModel, javm : JourneyAlternativeDepartureStopViewModel,jajlvm : JourneyAlternativeJourneysListViewModel) {
-		self.jdvm = jdvm
-		self.javm = javm
-		self.jajlvm = jajlvm
-	}
 	var body : some View {
-		VStack {
-			Form {
-				alternativeFor
-				if let journeyAlternativeViewData = javm.state.data {
-					departureStop(alternativeViewData: journeyAlternativeViewData)
-				}
-				alternatives
+		List {
+			alternativeFor
+			if let journeyAlternativeViewData = javm.state.data {
+				departureStop(alternativeViewData: journeyAlternativeViewData)
 			}
-			.background(.secondary)
+			alternatives
 		}
+		.listStyle(.insetGrouped)
+		.background(.secondary)
 		
 		.onReceive(javm.$state, perform: { state in
 			updateAlternativeJourneysIfNeeded(state: state)
@@ -56,6 +50,14 @@ struct JourneyAlternativesView: View {
 }
 
 extension JourneyAlternativesView {
+	init(jdvm: JourneyDetailsViewModel, javm : JourneyAlternativeDepartureStopViewModel,jajlvm : JourneyAlternativeJourneysListViewModel) {
+		self.jdvm = jdvm
+		self.javm = javm
+		self.jajlvm = jajlvm
+	}
+}
+
+extension JourneyAlternativesView {
 	var alternatives : some View {
 		Section(content: {
 			switch jajlvm.state.status {
@@ -65,15 +67,15 @@ extension JourneyAlternativesView {
 				if jajlvm.state.journeys.isEmpty {
 					ErrorView(viewType: .alert, msg: Text(verbatim: "No alternatives"), action: nil)
 				} else {
-					List(jajlvm.state.journeys) {
+					ForEach(jajlvm.state.journeys) {
 						JourneyCell(
 							journey: $0,
 							stops: .init(
 								departure: .init(),
 								arrival: .init()
-							)
+							),
+							mode: .alternatives
 						)
-						.listStyle(.plain)
 					}
 				}
 			case .error(let error):
@@ -105,26 +107,6 @@ extension JourneyAlternativesView {
 				})
 			}
 		})
-	}
-}
-extension JourneyAlternativesView {
-	func updateAlternativeJourneysIfNeeded(state : JourneyAlternativeDepartureStopViewModel.State) {
-		if (state.data?.alternativeDeparture.stopViewData.id != jajlvm.state.depStop.id ||
-			chewVM.referenceDate.ts - jajlvm.state.lastRequestTS > 60) {
-			self.updateAlternativeJourneys(state: state)
-		}
-	}
-	func updateAlternativeJourneys(state : JourneyAlternativeDepartureStopViewModel.State) {
-		if let stopViewData = javm.state.data?.alternativeDeparture.stopViewData,
-			let stop = stopViewData.stop(),
-			let time = Self.getTime(journeyAlternativeSVD: stopViewData),
-			stop.id != jdvm.state.data.arrStop.id {
-				jajlvm.send(event: .didUpdateJourneyData(
-					depStop: stop,
-					time: time.date,
-					referenceDate: chewVM.referenceDate
-				))
-			}
 	}
 }
 
@@ -215,6 +197,29 @@ extension JourneyAlternativesView {
 		})
 	}
 }
+
+
+extension JourneyAlternativesView {
+	func updateAlternativeJourneysIfNeeded(state : JourneyAlternativeDepartureStopViewModel.State) {
+		if (state.data?.alternativeDeparture.stopViewData.id != jajlvm.state.depStop.id ||
+			chewVM.referenceDate.ts - jajlvm.state.lastRequestTS > 60) {
+			self.updateAlternativeJourneys(state: state)
+		}
+	}
+	func updateAlternativeJourneys(state : JourneyAlternativeDepartureStopViewModel.State) {
+		if let stopViewData = javm.state.data?.alternativeDeparture.stopViewData,
+			let stop = stopViewData.stop(),
+			let time = Self.getTime(journeyAlternativeSVD: stopViewData),
+			stop.id != jdvm.state.data.arrStop.id {
+				jajlvm.send(event: .didUpdateJourneyData(
+					depStop: stop,
+					time: time.date,
+					referenceDate: chewVM.referenceDate
+				))
+			}
+	}
+}
+
 
 //extension JourneyAlternativesView {
 //	var searchButton : some View {
