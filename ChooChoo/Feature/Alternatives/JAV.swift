@@ -30,52 +30,7 @@ struct JourneyAlternativesView: View {
 				if let journeyAlternativeViewData = javm.state.data {
 					departureStop(alternativeViewData: journeyAlternativeViewData)
 				}
-				Section(content: {
-					switch jajlvm.state.status {
-					case .idle,.loading:
-						if jajlvm.state.journeys.isEmpty {
-							ErrorView(viewType: .alert, msg: Text(verbatim: "No journeys"), action: nil)
-						} else {
-							List(jajlvm.state.journeys) {
-								JourneyCell(
-									journey: $0,
-									stops: .init(
-										departure: .init(),
-										arrival: .init()
-									)
-								)
-								.listStyle(.plain)
-							}
-						}
-					case .error(let error):
-						ErrorView(viewType: .error, msg: Text(verbatim: error.localizedDescription), reloadAction: {
-							jajlvm.send(event: .didUpdateJourneyData(
-								depStop: jajlvm.state.depStop,
-								time: jajlvm.state.time,
-								referenceDate: chewVM.referenceDate
-							))
-						})
-					}
-				}, header: {
-					HStack {
-						Text(
-							"Alternatives",
-							comment: "JourneyAlternativesView: alternatives section"
-						)
-						Button(action: {
-							updateAlternativeJourneys(state: javm.state)
-						}, label: {
-							switch jajlvm.state.status {
-							case .error(let error):
-								ReloadableButtonLabel(state: .error)
-							case .loading:
-								ReloadableButtonLabel(state: .loading)
-							case .idle:
-								ReloadableButtonLabel(state: .idle)
-							}
-						})
-					}
-				})
+				alternatives
 			}
 			.background(.secondary)
 		}
@@ -97,6 +52,59 @@ struct JourneyAlternativesView: View {
 		.onAppear {
 			javm.send(event: .didUpdateJourneyData(data: jdvm.state.data.viewData, referenceDate: chewVM.referenceDate))
 		}
+	}
+}
+
+extension JourneyAlternativesView {
+	var alternatives : some View {
+		Section(content: {
+			switch jajlvm.state.status {
+			case .loading:
+				EmptyView()
+			case .idle:
+				if jajlvm.state.journeys.isEmpty {
+					ErrorView(viewType: .alert, msg: Text(verbatim: "No alternatives"), action: nil)
+				} else {
+					List(jajlvm.state.journeys) {
+						JourneyCell(
+							journey: $0,
+							stops: .init(
+								departure: .init(),
+								arrival: .init()
+							)
+						)
+						.listStyle(.plain)
+					}
+				}
+			case .error(let error):
+				ErrorView(viewType: .error, msg: Text(verbatim: error.localizedDescription), reloadAction: {
+					jajlvm.send(event: .didUpdateJourneyData(
+						depStop: jajlvm.state.depStop,
+						time: jajlvm.state.time,
+						referenceDate: chewVM.referenceDate
+					))
+				})
+			}
+		}, header: {
+			HStack {
+				Text(
+					"Alternatives",
+					comment: "JourneyAlternativesView: alternatives section"
+				)
+				Button(action: {
+					updateAlternativeJourneys(state: javm.state)
+				}, label: {
+					switch jajlvm.state.status {
+					case .error:
+						ReloadableButtonLabel(state: .error)
+					case .loading:
+						ReloadableButtonLabel(state: .loading)
+					case .idle:
+						ReloadableButtonLabel(state: .idle)
+					}
+				})
+			}
+		})
 	}
 }
 extension JourneyAlternativesView {
