@@ -499,6 +499,7 @@
 		7D63DB112B739213008297DD /* SheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D63DB102B739213008297DD /* SheetView.swift */; };
 		7D65DF1C2B2A2BFE00692601 /* CDStop+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D65DF182B2A2BFE00692601 /* CDStop+CoreDataClass.swift */; };
 		7D65DF1D2B2A2BFE00692601 /* CDStop+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D65DF192B2A2BFE00692601 /* CDStop+CoreDataProperties.swift */; };
+		7D6623272C5BB08D0059FC7F /* ChooDeparture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D6623262C5BB08D0059FC7F /* ChooDeparture.swift */; };
 		7D6734B32A96334B00CBE9C1 /* ChooChooApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D6734B22A96334B00CBE9C1 /* ChooChooApp.swift */; };
 		7D6734B52A96334B00CBE9C1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D6734B42A96334B00CBE9C1 /* ContentView.swift */; };
 		7D6734DF2A96394E00CBE9C1 /* TimeChoosingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D6734DE2A96394E00CBE9C1 /* TimeChoosingView.swift */; };
@@ -767,6 +768,7 @@
 		7D63DB102B739213008297DD /* SheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetView.swift; sourceTree = "<group>"; };
 		7D65DF182B2A2BFE00692601 /* CDStop+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDStop+CoreDataClass.swift"; sourceTree = "<group>"; };
 		7D65DF192B2A2BFE00692601 /* CDStop+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDStop+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		7D6623262C5BB08D0059FC7F /* ChooDeparture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooDeparture.swift; sourceTree = "<group>"; };
 		7D6734AF2A96334B00CBE9C1 /* ChooChoo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChooChoo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D6734B22A96334B00CBE9C1 /* ChooChooApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooChooApp.swift; sourceTree = "<group>"; };
 		7D6734B42A96334B00CBE9C1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; wrapsLines = 0; };
@@ -1013,6 +1015,7 @@
 				7D3361DA2C049CF400A263B7 /* DepartureArrivalPair.swift */,
 				7D3EA1AA2C0E2AC0005C507C /* GitBranch.swift */,
 				7D3EA1AC2C0E2B91005C507C /* Branch.plist */,
+				7D6623262C5BB08D0059FC7F /* ChooDeparture.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -2318,6 +2321,7 @@
 				7D15AA462BB19E6800B6966D /* AppSettingsVM.swift in Sources */,
 				7D9BB10C2B0CBF54008A3616 /* CDLocation+CoreDataClass.swift in Sources */,
 				7D2C0E6E2BDBE16C000839C1 /* ButtonIDs.swift in Sources */,
+				7D6623272C5BB08D0059FC7F /* ChooDeparture.swift in Sources */,
 				7D0685ED2B50304500CCBE6B /* CoreDataStore+fetch.swift in Sources */,
 				7DAF62B82A9E5A0B006F1A17 /* DatePickerTimePresetButtons.swift in Sources */,
 				7D3361DB2C049CF400A263B7 /* DepartureArrivalPair.swift in Sources */,
