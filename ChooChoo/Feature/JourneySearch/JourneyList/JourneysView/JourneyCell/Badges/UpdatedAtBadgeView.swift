@@ -9,6 +9,7 @@ import Foundation
 import SwiftUI
 
 struct UpdatedAtBadgeView : View {
+	@EnvironmentObject var chewVM : ChewViewModel
 	let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
 	let refTime : Double
 	let bgColor : Color
@@ -35,17 +36,17 @@ struct UpdatedAtBadgeView : View {
 			}
 		}
 		.onAppear {
-			self.updatedAt = Self.update(refTime)
+			self.updatedAt = Self.update(refTime, chewDate: chewVM.referenceDate)
 		}
 		.onReceive(timer, perform: { _ in
-			self.updatedAt = Self.update(refTime)
+			self.updatedAt = Self.update(refTime, chewDate: chewVM.referenceDate)
 		})
 	}
 	
-	static func update(_ refTime : Double) -> Text? {
+	static func update(_ refTime : Double, chewDate : ChewDate = .now) -> Text? {
 		let minutes = DateParcer.getTwoDateIntervalInMinutes(
 			date1: Date(timeIntervalSince1970: .init(floatLiteral: refTime)),
-			date2: .now
+			date2: chewDate.date
 		)
 		
 		switch minutes {

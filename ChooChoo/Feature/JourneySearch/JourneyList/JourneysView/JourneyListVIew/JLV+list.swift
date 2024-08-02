@@ -24,7 +24,7 @@ extension JourneyListView {
 					ForEach(journeyViewModel.state.data.journeys,id: \.id) { journey in
 						JourneyCell(
 							journey: journey,
-							stops: journeyViewModel.state.data.stops
+							stops: journeyViewModel.state.data.stops.chooDepartureArrivalPairStop()
 						)
 					}
 					.id(1)

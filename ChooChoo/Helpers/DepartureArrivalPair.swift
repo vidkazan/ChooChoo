@@ -16,7 +16,34 @@ struct DepartureArrivalPairStop : Hashable,Codable {
 		self.arrival = arrival
 		self.id = departure.name + arrival.name
 	}
+	
+	func chooDepartureArrivalPairStop() -> ChooDepartureArrivalPairStop {
+		.init(departure: .location(departure), arrival: arrival)
+	}
 }
+
+struct ChooDepartureArrivalPairStop : Hashable {
+	let departure : ChooDeparture
+	let arrival : Stop
+	let id : String
+	init(departure: ChooDeparture, arrival: Stop) {
+		self.departure = departure
+		self.arrival = arrival
+		self.id = departure.stop?.name ?? "departure" + arrival.name
+	}
+	
+	func departureArrivalPairStop() -> DepartureArrivalPairStop? {
+		if let dep = departure.stop {
+			return .init(
+				departure: dep,
+			 arrival: arrival
+		 )
+		}
+		return nil
+	}
+}
+
+
 
 struct DepartureArrivalPair<T: Hashable & Codable> : Hashable, Codable {
 	let departure : T

@@ -100,6 +100,8 @@ enum Badges : Identifiable,Hashable {
 			return 22
 		case .lineNumberWithDirection:
 			return 23
+		case .apiUnavaiable:
+			return 24
 		}
 	}
 	
@@ -109,6 +111,7 @@ enum Badges : Identifiable,Hashable {
 	case followError(_ action : JourneyFollowViewModel.Action)
 	case locationError
 	case offlineMode
+	case apiUnavaiable
 	case departureArrivalStops(departure: String,arrival: String)
 	case changesCount(_ count : Int)
 	case timeDepartureTimeArrival(timeContainer : TimeContainer)
@@ -186,6 +189,13 @@ enum Badges : Identifiable,Hashable {
 			return BadgeData(
 				Text(
 					"Offline",
+					comment: "badge"
+				)
+			)
+		case .apiUnavaiable:
+			return BadgeData(
+				Text(
+					"Server is unavailable",
 					comment: "badge"
 				)
 			)

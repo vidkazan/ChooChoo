@@ -11,12 +11,15 @@ import OSLog
 
 extension JourneyListViewModel {
 	static func fetchJourneyList(
-		dep : Stop,
+		dep : ChooDeparture,
 		arr : Stop,
 		time: Date,
 		mode: LocationDirectionType,
 		settings : JourneySettings
 	) -> AnyPublisher<JourneyListDTO,ApiError> {
+		guard let dep = dep.stop else {
+			return Fail(error: ApiError.generic(description: "departure stop is nit")).eraseToAnyPublisher()
+		}
 		var query = addJourneyListStopsQuery(dep: dep, arr: arr)
 		query += addJourneyListTransfersQuery(settings: settings)
 		query += addJourneyListTransportModes(settings: settings)
