@@ -36,11 +36,15 @@ class DateParcer {
 		return date
 	}
 	
+	static func getTwoDateIntervalInMinutes(date1 : Date,date2 : Date) -> Int {
+		let interval = date2.timeIntervalSinceReferenceDate - date1.timeIntervalSinceReferenceDate
+		return Int((interval / 60))
+	}
+	
 	static func getTwoDateIntervalInMinutes(date1 : Date?,date2 : Date?) -> Int? {
 		guard let date1 = date1,
 			  let date2 = date2 else { return nil }
-		let interval = date2.timeIntervalSinceReferenceDate - date1.timeIntervalSinceReferenceDate
-		return Int((interval / 60))
+		return getTwoDateIntervalInMinutes(date1: date1, date2: date2)
 	}
 	
 	static func getTwoDateInterval(date1 : Date?,date2 : Date?) -> Double? {
