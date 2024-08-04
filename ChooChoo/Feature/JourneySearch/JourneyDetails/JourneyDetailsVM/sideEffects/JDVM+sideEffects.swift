@@ -45,7 +45,8 @@ extension JourneyDetailsViewModel {
 							stops: .init(
 								departure: state.data.depStop,
 								arrival: state.data.arrStop
-							)
+							),
+							journeyActions: state.data.viewData.journeyActions()
 						),
 						sendToJourneyDetailsViewModel: { event in
 							vm?.send(event: event)

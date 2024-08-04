@@ -13,8 +13,10 @@ struct JourneyFollowCellView : View {
 	@EnvironmentObject var chewVM : ChewViewModel
 	@ObservedObject var vm : JourneyDetailsViewModel
 	@ObservedObject var appSettingsVM : AppSettingsViewModel = Model.shared.appSettingsVM
-	init(journeyDetailsViewModel: JourneyDetailsViewModel) {
+	let journeyActions : [JourneyFollowData.JourneyAction]
+	init(journeyDetailsViewModel: JourneyDetailsViewModel, journeyActions : [JourneyFollowData.JourneyAction]) {
 		self.vm = journeyDetailsViewModel
+		self.journeyActions = journeyActions
 	}
 	var body: some View {
 		let data = vm.state.data.viewData
@@ -64,6 +66,22 @@ struct JourneyFollowCellView : View {
 				if Date.now < data.time.date.arrival.actualOrPlannedIfActualIsNil() ?? .now {
 					updatedAtBadge(data: data)
 				}
+			}
+			ForEach(journeyActions, id:\.hashValue) { action in
+				let date : Date? = action.type.time(
+					time: action.stopData.time
+				).actualOrPlannedIfActualIsNil()
+				
+				if let date = date {
+					HStack(spacing: 2) {
+						BadgeView(.timeOffset(time: date))
+							.badgeBackgroundStyle(.secondary)
+						PlatformView(isShowingPlatormWord: false, platform: action.type.platform(platform: action.stopData.platforms))
+						BadgeView(.generic(msg: action.stopData.name))
+					}
+				}
+				BadgeView(.lineNumberWithDirection(leg: action.leg))
+					.badgeBackgroundStyle(.secondary)
 			}
 		}
 		.contextMenu { menu }
