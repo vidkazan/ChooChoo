@@ -639,6 +639,7 @@
 		7DF0D98F2B6956DD00861C4F /* FlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF0D98E2B6956DD00861C4F /* FlowLayout.swift */; };
 		7DF167912C5D7AD700096BFC /* JourneyActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF167902C5D7AD700096BFC /* JourneyActions.swift */; };
 		7DF167932C6011C800096BFC /* JVD+journeyActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF167922C6011C800096BFC /* JVD+journeyActions.swift */; };
+		7DF167952C602B7B00096BFC /* JourneyActionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF167942C602B7B00096BFC /* JourneyActionsView.swift */; };
 		7DF5871D2B5EC01100A4F99A /* ApiServiceErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF5871C2B5EC01100A4F99A /* ApiServiceErrors.swift */; };
 		7DF845602B764AEA00D76B14 /* RemarkSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF8455F2B764AEA00D76B14 /* RemarkSheet.swift */; };
 		7DF845622B764B7D00D76B14 /* RemarkViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF845612B764B7D00D76B14 /* RemarkViewData.swift */; };
@@ -910,6 +911,7 @@
 		7DF0D98E2B6956DD00861C4F /* FlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowLayout.swift; sourceTree = "<group>"; };
 		7DF167902C5D7AD700096BFC /* JourneyActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JourneyActions.swift; sourceTree = "<group>"; };
 		7DF167922C6011C800096BFC /* JVD+journeyActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JVD+journeyActions.swift"; sourceTree = "<group>"; };
+		7DF167942C602B7B00096BFC /* JourneyActionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JourneyActionsView.swift; sourceTree = "<group>"; };
 		7DF5871C2B5EC01100A4F99A /* ApiServiceErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiServiceErrors.swift; sourceTree = "<group>"; };
 		7DF8455F2B764AEA00D76B14 /* RemarkSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemarkSheet.swift; sourceTree = "<group>"; };
 		7DF845612B764B7D00D76B14 /* RemarkViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemarkViewData.swift; sourceTree = "<group>"; };
@@ -1623,6 +1625,7 @@
 				7DAC5CB62BACDA84000F7D33 /* JFCV+map.swift */,
 				7DE727C52AD93869002FF033 /* JFV.swift */,
 				7D61AA862C42C4C8000F72D6 /* JFV+swipeActions.swift */,
+				7DF167942C602B7B00096BFC /* JourneyActionsView.swift */,
 			);
 			path = JourneyFollowView;
 			sourceTree = "<group>";
@@ -2248,6 +2251,7 @@
 				7D6CCAEF2B5FFB7300BCF62E /* SettingsView+TransportModesSection.swift in Sources */,
 				7DE8A34F2B6AB0AF00C3A378 /* TimeLabelView+Init.swift in Sources */,
 				7DBFA3B82BD2FE7900205757 /* NSV.swift in Sources */,
+				7DF167952C602B7B00096BFC /* JourneyActionsView.swift in Sources */,
 				7D2BF7A82B67D30800E1CED7 /* Color+random.swift in Sources */,
 				7DFA4A832AB10531005ECAEB /* constructJourneys+Badges.swift in Sources */,
 				7D9D64A02C187B1F002FB9DE /* DTO+Logging.swift in Sources */,

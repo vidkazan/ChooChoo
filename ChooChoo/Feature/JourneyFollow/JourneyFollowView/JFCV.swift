@@ -67,22 +67,7 @@ struct JourneyFollowCellView : View {
 					updatedAtBadge(data: data)
 				}
 			}
-			ForEach(journeyActions, id:\.hashValue) { action in
-				let date : Date? = action.type.time(
-					time: action.stopData.time
-				).actualOrPlannedIfActualIsNil()
-				
-				if let date = date {
-					HStack(spacing: 2) {
-						BadgeView(.timeOffset(time: date))
-							.badgeBackgroundStyle(.secondary)
-						PlatformView(isShowingPlatormWord: false, platform: action.type.platform(platform: action.stopData.platforms))
-						BadgeView(.generic(msg: action.stopData.name))
-					}
-				}
-				BadgeView(.lineNumberWithDirection(leg: action.leg))
-					.badgeBackgroundStyle(.secondary)
-			}
+			JourneyActionsView(journeyActions: journeyActions)
 		}
 		.contextMenu { menu }
 		.animation(.easeInOut, value: vm.state.status)
