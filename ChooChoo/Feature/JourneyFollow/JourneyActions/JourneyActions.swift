@@ -6,7 +6,7 @@
 //
 
 import Foundation
-
+import SwiftUI
 
 extension JourneyFollowData {
 	enum JourneyActionType : Hashable {
@@ -22,12 +22,21 @@ extension JourneyFollowData {
 			}
 		}
 		
-		func time(time : TimeContainer) -> Prognosed<Date> {
+		func time(time : TimeContainer) -> Date? {
 			switch self {
 			case .enter:
-				return time.date.departure
+				return time.date.departure.actualOrPlannedIfActualIsNil()
 			case .exit:
-				return time.date.arrival
+				return time.date.arrival.actualOrPlannedIfActualIsNil()
+			}
+		}
+		
+		func text() -> Text {
+			switch self {
+			case .enter:
+				return Text("", comment: "JourneyActionType")
+			case .exit:
+				return Text("exit at ", comment: "JourneyActionType")
 			}
 		}
 	}
