@@ -44,12 +44,6 @@ struct FeatureView: View {
 			if $0 == self.selectedTab {
 				switch selectedTab {
 				case .search:
-					if case .transport = chewViewModel.state.data.depStop {
-						chewViewModel.send(event: .didUpdateSearchData(
-							dep: .textOnly(""),
-							arr: .textOnly("")
-						))
-					}
 					chewViewModel.send(event: .didTapCloseJourneyList)
 				case .follow:
 					break
