@@ -59,6 +59,7 @@ extension StopAnnotation : MKAnnotation {
 }
 
 class BusStopAnnotation : StopAnnotation {}
+class ReplacementBusStopAnnotation : StopAnnotation {}
 class IceStopAnnotation : StopAnnotation {}
 class ReStopAnnotation : StopAnnotation {}
 class SStopAnnotation : StopAnnotation {}
@@ -72,6 +73,8 @@ class TransferStopAnnotation : StopAnnotation {}
 
 extension StopAnnotation {
 	static func registerStopViews(_ mapView : MKMapView){
+		mapView.register(ReplacementBusStopAnnotation.self,
+					forAnnotationViewWithReuseIdentifier: NSStringFromClass(BusStopAnnotation.self))
 		mapView.register(BusStopAnnotationView.self,
 					forAnnotationViewWithReuseIdentifier: NSStringFromClass(BusStopAnnotation.self))
 		mapView.register(IceStopAnnotationView.self,

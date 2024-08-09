@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct SearchStopsDate : Equatable {
+struct SearchStopsDate : Hashable {
 	let date : ChewDate
 	let mode : LocationDirectionType
 }

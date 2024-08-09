@@ -30,7 +30,6 @@ struct LegDetailsView: View {
 	init(
 		followedJourney: Bool = false,
 		send : @escaping (JourneyDetailsViewModel.Event) -> Void,
-		referenceDate : ChewDate,
 		isExpanded : Segments.ShowType,
 		leg : LegViewData,
 		scrollToIndex : Int? = nil
@@ -107,6 +106,11 @@ struct LegDetailsView: View {
 			updateProgressHeight()
 		}
 		.onReceive(timer, perform: { _ in
+			withAnimation(.smooth(duration: 1), {
+				updateProgressHeight()
+			})
+		})
+		.onReceive(chewVM.$referenceDate, perform: { _ in
 			withAnimation(.smooth(duration: 1), {
 				updateProgressHeight()
 			})
@@ -193,7 +197,6 @@ struct LegDetailsPreview : PreviewProvider {
 						) {
 							LegDetailsView(
 								send: {_ in },
-								referenceDate: .specificDate((viewData.time.timestamp.departure.planned ?? 0) + 900),
 								isExpanded: .collapsed,
 								leg: viewData
 							)
@@ -212,7 +215,6 @@ struct LegDetailsPreview : PreviewProvider {
 						) {
 							LegDetailsView(
 								send: {_ in },
-								referenceDate: .specificDate((viewData.time.timestamp.departure.planned ?? 0) + 900),
 								isExpanded: .collapsed,
 								leg: viewData
 							)

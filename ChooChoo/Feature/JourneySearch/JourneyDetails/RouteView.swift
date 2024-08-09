@@ -15,7 +15,6 @@ struct RouteSheet: View {
 		ScrollView {
 			LegDetailsView(
 				send: { _ in },
-				referenceDate: chewVM.referenceDate,
 				isExpanded: .expanded,
 				leg: leg
 			)

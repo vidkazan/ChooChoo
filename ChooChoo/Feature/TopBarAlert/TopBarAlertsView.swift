@@ -29,7 +29,7 @@ struct TopBarAlertsView: View {
 							alertVM.state.alerts.sorted(by: <),
 							id: \.hashValue,
 							content: { alert in
-								if alert.badgeType != .offlineMode {
+								if alert.badgeType != .offlineMode, alert.badgeType != .apiUnavaiable  {
 									TopBarAlertView(alertVM: alertVM, alert: alert)
 										.transition(.moveAndOpacity)
 								}

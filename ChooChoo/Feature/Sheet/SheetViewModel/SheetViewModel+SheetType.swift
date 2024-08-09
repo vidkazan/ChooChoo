@@ -24,7 +24,11 @@ extension SheetViewModel {
 		case onboarding
 		case remark(remarks : [RemarkViewData])
 		case journeyDebug(journey : JourneyDTO?)
-		case alternatives(for: JourneyDetailsViewModel)
+		case alternatives(
+			jdvm: JourneyDetailsViewModel,
+			javm: JourneyAlternativeDepartureStopViewModel,
+			jajlvm: JourneyAlternativeJourneysListViewModel
+		)
 		
 		var detents : [ChewPresentationDetent] {
 			switch self {

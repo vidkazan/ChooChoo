@@ -439,6 +439,13 @@ extension MapPickerViewModel {
 				coords: coords, stopOverType: stopOverType
 			)
 			mapView.addAnnotation(anno)
+		case .replacementBus:
+			let anno : ReplacementBusStopAnnotation = lineType.stopAnnotation(
+				id: id,
+				name: stopName,
+				coords: coords, stopOverType: stopOverType
+			)
+			mapView.addAnnotation(anno)
 		case .ferry:
 			let anno : ShipStopAnnotation = lineType.stopAnnotation(
 				id: id,

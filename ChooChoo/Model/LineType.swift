@@ -19,6 +19,7 @@ enum LineType : String,Equatable,Hashable, CaseIterable, Codable {
 	case regional
 	case suburban
 	case bus
+	case replacementBus
 	case ferry
 	case subway
 	case tram
@@ -41,6 +42,8 @@ extension LineType {
 		case .suburban:
 			return "S-bahn"
 		case .bus:
+			return "Bus"
+		case .replacementBus:
 			return "Bus"
 		case .ferry:
 			return "Ferry"
@@ -71,6 +74,8 @@ extension LineType {
 			return "s"
 		case .bus:
 			return "bus"
+		case .replacementBus:
+			return "bus"
 		case .ferry:
 			return "ship"
 		case .subway:
@@ -83,6 +88,15 @@ extension LineType {
 			return "transfer.big"
 		case .foot:
 			return "foot.big"
+		}
+	}
+	
+	var iconBackgroundStyle : BadgeBackgroundBaseStyle {
+		switch self {
+		case .replacementBus:
+			return .yellow
+		default:
+			return .clear
 		}
 	}
 	
@@ -99,6 +113,8 @@ extension LineType {
 		case .suburban:
 			return "s.big"
 		case .bus:
+			return "bus.big"
+		case .replacementBus:
 			return "bus.big"
 		case .ferry:
 			return "ship.big"
@@ -128,6 +144,8 @@ extension LineType {
 		case .suburban:
 			return Color.transport.sGreen
 		case .bus:
+			return Color.transport.busMagenta
+		case .replacementBus:
 			return Color.transport.busMagenta
 		case .ferry:
 			return Color.transport.shipCyan
@@ -159,6 +177,8 @@ extension LineType {
 		case .suburban:
 			return .init(suburban: true)
 		case .bus:
+			return .init(bus : true)
+		case .replacementBus:
 			return .init(bus : true)
 		case .ferry:
 			return .init(ferry: true)

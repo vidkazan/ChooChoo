@@ -13,6 +13,10 @@ struct JourneyListView: View {
 	@ObservedObject var journeyViewModel : JourneyListViewModel
 	@ObservedObject var appSettingsViewModel = Model.shared.appSettingsVM
 	
+	
+	init(jlvm: JourneyListViewModel) {
+		self.journeyViewModel = jlvm
+	}
 	init(stops : DepartureArrivalPairStop, date: SearchStopsDate,settings : JourneySettings) {
 		self.journeyViewModel = JourneyListViewModel(
 			date: date,
