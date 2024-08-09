@@ -1121,7 +1121,15 @@
       }
     },
     "Start from" : {
-      "comment" : "JourneyAlternativesView: recommendedDepartureStop"
+      "comment" : "JourneyAlternativesView: recommendedDepartureStop",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Ab"
+          }
+        }
+      }
     },
     "Stop not found" : {
       "comment" : "ApiError",
