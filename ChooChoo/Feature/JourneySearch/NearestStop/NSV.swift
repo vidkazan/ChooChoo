@@ -96,28 +96,6 @@ struct NearestStopView : View {
 				}
 			})
 	}
-
-	private func updateNearbyStopsIfNeeded(newLocation : CLLocation) {
-		let previousLocationCoords = previousLocation.coordinate
-		let distance = newLocation.distance(previousLocationCoords)
-		let targetDistance = targetDistance(
-			accuracy: newLocation.horizontalAccuracy,
-			distance: distance
-		)
-		if newLocation.distance(previousLocationCoords) > targetDistance {
-			nearestStopViewModel.send(
-				event: .didDragMap(newLocation)
-			)
-			previousLocation = newLocation
-		}
-	}
-	private func targetDistance(accuracy : CLLocationAccuracy, distance : CLLocationDistance) -> CLLocationDistance {
-		let targetDistance = CLLocationDistance(300)
-		if accuracy > targetDistance * 2  {
-			return accuracy / 2
-		}
-		return targetDistance
-	}
 	
 	@ViewBuilder private func content() -> some View {
 		switch locationManager.authorizationStatus {
@@ -238,75 +216,31 @@ struct NearestStopView : View {
 			}
 		}
 	}
-	
-	//			#if DEBUG
-	//			Text("""
-	//					accuracy: \(Model.shared.locationDataManager.location?.horizontalAccuracy.description ?? "-")
-	//					ts: \(Model.shared.locationDataManager.location?.timestamp.timeIntervalSinceNow ?? -1)
-	//					speed: \((Model.shared.locationDataManager.location?.speed ?? 0) * 3.6)
-	//				""")
-	//				.chewTextSize(.big)
-	//				.foregroundStyle(.secondary)
-	//				.padding(5)
-	//			#endif
 }
-
 
 extension NearestStopView {
-	@ViewBuilder func menu(stop : Stop) -> some View {
-		Group {
-			Button(action: {
-				chewVM.send(event: .didUpdateSearchData(dep: .location(stop)))
-			}, label: {
-				Label(
-					title: {
-						Text("Set as departure", comment: "NearestStopView: stop cell: context menu")
-					},
-					icon: {
-						Image(.location)
-					}
-				)
-			})
-			Button(action: {
-				chewVM.send(event: .didUpdateSearchData(arr: .location(stop)))
-			}, label: {
-				Label(
-					title: {
-						Text("Set as arrival", comment: "NearestStopView: stop cell: context menu")
-					},
-					icon: {
-						Image(systemName: "arrow.right.to.line")
-					}
-				)
-			})
-			Button(action: {
-				if let coord = Model.shared.locationDataManager.location?.coordinate {
-					Model.shared.sheetVM.send(event: .didRequestShow(
-						.mapDetails(.footDirection(
-							LegViewData(footPathStops: DepartureArrivalPairStop(
-								departure: Stop(
-								 coordinates: Coordinate(coord),
-								 type: .location,
-								 stopDTO: nil
-							 ),
-							 arrival: stop
-						 ))))
-					))
-				}
-			}, label: {
-				Label(
-					title: {
-						Text("Foot path", comment: "NearestStopView: stop cell: context menu")
-					},
-					icon: {
-						Image(ChooSFSymbols.figureWalk)
-					}
-				)
-			})
+	private func updateNearbyStopsIfNeeded(newLocation : CLLocation) {
+		let previousLocationCoords = previousLocation.coordinate
+		let distance = newLocation.distance(previousLocationCoords)
+		let targetDistance = targetDistance(
+			accuracy: newLocation.horizontalAccuracy,
+			distance: distance
+		)
+		if newLocation.distance(previousLocationCoords) > targetDistance {
+			nearestStopViewModel.send(
+				event: .didDragMap(newLocation)
+			)
+			previousLocation = newLocation
 		}
 	}
+	private func targetDistance(accuracy : CLLocationAccuracy, distance : CLLocationDistance) -> CLLocationDistance {
+		let targetDistance = CLLocationDistance(300)
+		if accuracy > targetDistance * 2  {
+			return accuracy / 2
+		}
+		return targetDistance
+	}
 }
-
 
 extension NearestStopView {
 	private static func updateDistanceToStops(
@@ -336,29 +270,5 @@ extension NearestStopView {
 				)
 			)
 		)
-	}
-}
-
-struct StopDeparturesListView : View {
-	let departures : [LegViewData]?
-	var body: some View {
-		if let trips = departures {
-			ScrollView(showsIndicators: false) {
-				VStack(alignment: .leading, spacing: 0) {
-					ForEach(
-						trips,
-						id: \.hashValue
-					) { trip in
-						Button(action: {
-							Model.shared.sheetVM.send(
-								event: .didRequestShow(.route(leg: trip))
-							)
-						}, label: {
-							DeparturesListCellView(trip: trip)
-						})
-					}
-				}
-			}
-		}
 	}
 }
