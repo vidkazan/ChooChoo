@@ -123,8 +123,8 @@ struct SSV_Previews: PreviewProvider {
 			coreDataStore: .preview
 		)
 		
-		if let stopsK = Mock.stops.stopByK.decodedData,
-		   let stopsL = Mock.stops.stopByD.decodedData {
+//		if let stopsK = Mock.stops.stopByK.decodedData,
+//		   let stopsL = Mock.stops.stopByD.decodedData {
 			VStack {
 				SearchStopsView(
 //					searchStopViewModel: SearchStopsViewModel(.init(
@@ -147,7 +147,7 @@ struct SSV_Previews: PreviewProvider {
 			.background(Color(.green))
 			.frame(maxWidth: .infinity, maxHeight: .infinity)
 //			.environment(\.locale, .init(identifier: "de"))
-		}
+//		}
 	}
 }
 #endif

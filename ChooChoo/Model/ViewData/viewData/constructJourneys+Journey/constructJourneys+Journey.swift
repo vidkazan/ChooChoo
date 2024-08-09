@@ -63,7 +63,8 @@ extension JourneyDTO {
 		let journeyRemarks = remarks?.compactMap({$0.viewData()}) ?? []
 		var legRemarks = [RemarkViewData]()
 		
-		for (index,leg) in legs.enumerated() {
+		
+		legs.forEach({ leg in
 			legRemarks += leg.remarks?.compactMap({$0.viewData()}) ?? []
 			isReachable = true
 			if var currentLeg = leg.legViewData(firstTS: startTS, lastTS: endTS, legs: legs) {
@@ -77,15 +78,14 @@ extension JourneyDTO {
 						currentLeg.isReachableFromPreviousLeg = false
 					}
 					if case .line = currentLeg.legType, case .line = last.legType {
-//						if let transfer = constructTransferViewData(fromLeg: legs[index-1], toLeg: leg) {
-							if let transfer = constructTransferViewData(fromLeg: last, toLeg: currentLeg) {
+						if let transfer = constructTransferViewData(fromLeg: last, toLeg: currentLeg) {
 							legsData.append(transfer)
 						}
 					}
 				}
 				legsData.append(currentLeg)
 			}
-		}
+		})
 		let sunEventService = SunEventService(
 			locationStart: depStop?.coordinates ?? .init(),
 			locationFinal: arrStop?.coordinates ?? .init(),

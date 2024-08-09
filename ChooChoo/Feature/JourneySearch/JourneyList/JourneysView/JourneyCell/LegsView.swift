@@ -63,23 +63,21 @@ struct LegsView: View {
 							}
 						}
 					}
-//					if showProgressBar {
-						RoundedRectangle(cornerRadius: 2)
-							.fill(Color.chewFillGreenSecondary)
-							.frame(
-								width: progressLineProportion > 0 && progressLineProportion < 1 ? 3 : 0,
-								height: 40
-							)
-							.position(
-								x : geo.size.width * progressLineProportion,
-								y : geo.size.height/2
-							)
-							.cornerRadius(5)
-							.matchedGeometryEffect(
-								id: "progressBar",
-								in: legsViewNamespace
-							)
-//					}
+					RoundedRectangle(cornerRadius: 2)
+						.fill(Color.chewFillGreenSecondary)
+						.frame(
+							width: progressLineProportion > 0 && progressLineProportion < 1 ? 3 : 0,
+							height: 40
+						)
+						.position(
+							x : geo.size.width * progressLineProportion,
+							y : geo.size.height/2
+						)
+						.cornerRadius(5)
+						.matchedGeometryEffect(
+							id: "progressBar",
+							in: legsViewNamespace
+						)
 					if let journey = journey, showLabels == true {
 						ForEach(journey.legs) { leg in
 							LegViewLabels(leg: leg)
@@ -113,6 +111,9 @@ struct LegsView: View {
 		.onAppear {
 				updateProgressLine()
 		}
+		.onReceive(chewVM.$referenceDate, perform: { _ in
+			updateProgressLine()
+		})
 	}
 }
 

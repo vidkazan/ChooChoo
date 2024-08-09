@@ -39,7 +39,7 @@ struct TopBarAlertView: View {
 					Button(action: {
 						switch alert.action {
 						case .dismiss:
-							alertVM.send(event: .didRequestDismiss(alert))
+							alertVM.send(event: .didRequestDismiss([alert]))
 						case .reload(let action):
 							action()
 						case .none:

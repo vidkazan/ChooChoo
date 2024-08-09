@@ -12,79 +12,103 @@ struct JourneyCell: View {
 	@EnvironmentObject var chewVM : ChewViewModel
 	@ObservedObject var appSettingsVM : AppSettingsViewModel = Model.shared.appSettingsVM
 	let journey : JourneyViewData
-	let stops : DepartureArrivalPairStop
-	let isPlaceholder : Bool
+	let stops : ChooDepartureArrivalPairStop
+	let mode : Self.JourneyCellMode
 	
-	init(journey: JourneyViewData,stops : DepartureArrivalPairStop, isPlaceholder : Bool = false) {
+	init(journey: JourneyViewData,stops : ChooDepartureArrivalPairStop, mode : Self.JourneyCellMode = .base) {
 		self.journey = journey
 		self.stops = stops
-		self.isPlaceholder = isPlaceholder
+		self.mode = mode
 	}
 	var body: some View {
 		VStack(spacing: 0) {
-			NavigationLink(destination: {
-				let vm = Model.shared.journeyDetailViewModel(
-					followId: Self.followID(journey: journey),
-					 for: journey.refreshToken,
-					 viewdata: journey,
-					 stops: stops,
-					 chewVM: chewVM
-				)
-				NavigationLazyView(
-					JourneyDetailsView(journeyDetailsViewModel: vm)
-				)
-			}, label: {
-				VStack(spacing: 0) {
-					JourneyHeaderView(journey: journey)
-					LegsView(
-						journey : journey,
-						mode : appSettingsVM.state.settings.legViewMode
+			if let stops = stops.departureArrivalPairStop() {
+				NavigationLink(destination: {
+					let vm = Model.shared.journeyDetailViewModel(
+						followId: Self.followID(journey: journey),
+						for: journey.refreshToken,
+						viewdata: journey,
+						stops: stops,
+						chewVM: chewVM
 					)
-					.padding(.horizontal,7)
-				}
-			})
-			HStack(alignment: .center) {
-				if let firstLeg = journey.legs.first,
-				   let searchFahrtId = chewVM.state.data.depStop.leg?.tripId,
-					firstLeg.tripId == searchFahrtId {
-						BadgeView(.lineNumberWithDirection(leg: firstLeg))
-							.badgeBackgroundStyle(.secondary)
-				} else {
-					if let pl = journey.legs.first?.legStopsViewData.first?.platforms.departure {
-						PlatformView(
-							isShowingPlatormWord: false,
-							platform: pl
+					NavigationLazyView(
+						JourneyDetailsView(journeyDetailsViewModel: vm)
+					)
+				}, label: {
+					VStack(spacing: 0) {
+						JourneyHeaderView(journey: journey)
+						LegsView(
+							journey : journey,
+							mode : appSettingsVM.state.settings.legViewMode
 						)
+						.padding(.horizontal,7)
 					}
-					if let name = journey.legs.first?.legStopsViewData.first?.name {
-						Text(verbatim: name)
-							.chewTextSize(.medium)
-							.tint(.primary)
-					}
+				})
+				footer
+			}
+		}
+		.background(self.mode == .base ? Color.chewFillAccent.opacity(0.5) : .clear)
+		.overlay {
+			if journey.isReachable == false {
+				Color.primary.opacity(0.4)
+			}
+		}
+		.cornerRadius(10)
+		.contextMenu { menu }
+	}
+}
+
+extension JourneyCell {
+	enum JourneyCellMode {
+		case alternatives
+		case base
+	}
+}
+
+extension JourneyCell {
+	var footer : some View {
+		HStack(alignment: .center) {
+			if let firstLeg = journey.legs.first,
+			   let searchFahrtId = stops.departure.leg?.tripId,
+				firstLeg.tripId == searchFahrtId {
+					BadgeView(.lineNumberWithDirection(leg: firstLeg))
+						.badgeBackgroundStyle(.secondary)
+			} else {
+				if let pl = journey.legs.first?.legStopsViewData.first?.platforms.departure {
+					PlatformView(
+						isShowingPlatormWord: false,
+						platform: pl
+					)
 				}
-				Spacer()
+				if let name = journey.legs.first?.legStopsViewData.first?.name {
+					Text(verbatim: name)
+						.chewTextSize(.medium)
+						.tint(.primary)
+				}
+			}
+			Spacer()
+			switch mode {
+			case .base:
 				BadgesView(badges: journey.badges)
-				Button(action:{ JourneyViewData.showOnMapOption.action(journey)}, label: {
+				Button(action:{
+					JourneyViewData.showOnMapOption.action(journey)
+				}, label: {
 					Image(systemName: JourneyViewData.showOnMapOption.icon)
 						.chewTextSize(.medium)
 						.padding(5)
 						.badgeBackgroundStyle(.primary)
 						.foregroundColor(.primary)
 				})
-			}
-			.padding(7)
-		}
-		.background(Color.chewFillAccent.opacity(0.5))
-		.overlay {
-			if journey.isReachable == false {
-				Color.primary.opacity(0.4)
+			case .alternatives:
+				EmptyView()
+//				BadgesView(badges: [.apiUnavaiable])
 			}
 		}
-		.redacted(reason: isPlaceholder ? .placeholder : [])
-		.cornerRadius(10)
-		.contextMenu { menu }
+		.padding(7)
 	}
-	
+}
+
+extension JourneyCell {
 	static func followID(journey : JourneyViewData) -> Int64 {
 		let journeys = Model.shared.journeyFollowVM.state.journeys
 		guard let followID = journeys.first(where: {

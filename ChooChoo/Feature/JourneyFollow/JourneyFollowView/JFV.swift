@@ -75,6 +75,9 @@ struct JourneyFollowView : View {
 						.frame(maxHeight: 40)
 						.badgeBackgroundStyle(.blue)
 						.animation(.easeInOut, value: alertVM.state.alerts)
+				} else if alertVM.state.alerts.contains(.apiUnavailable) {
+					BadgeView(.apiUnavaiable)
+						.badgeBackgroundStyle(.primary)
 				}
 			})
 		}

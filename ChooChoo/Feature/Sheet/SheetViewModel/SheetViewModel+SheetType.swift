@@ -24,7 +24,11 @@ extension SheetViewModel {
 		case onboarding
 		case remark(remarks : [RemarkViewData])
 		case journeyDebug(journey : JourneyDTO?)
-		case alternatives(for: JourneyDetailsViewModel)
+		case alternatives(
+			jdvm: JourneyDetailsViewModel,
+			javm: JourneyAlternativeDepartureStopViewModel,
+			jajlvm: JourneyAlternativeJourneysListViewModel
+		)
 		
 		var detents : [ChewPresentationDetent] {
 			switch self {
@@ -62,7 +66,7 @@ extension SheetViewModel {
 			case .tip:
 				return NSLocalizedString("Tip", comment: "SheetViewModel: SheetType")
 			case .mapPicker:
-				return NSLocalizedString("Map picker", comment: "SheetViewModel: SheetType")
+				return NSLocalizedString("Map Picker", comment: "SheetViewModel: SheetType")
 			case .none:
 				return ""
 			case .date:

@@ -118,10 +118,12 @@ struct RecentSearchView_Previews: PreviewProvider {
 		VStack {
 			RecentSearchesView(recentSearchesVM: recentSearchViewModel)
 				.environmentObject(chewVM)
-			Button("Add", action: {
+			Button(action: {
 				recentSearchViewModel.send(
 					event: .didTapEdit(action: .adding, search: geenrateRecentSearches(count: 1).first)
 				)
+			}, label: {
+				Text(verbatim: "Add")
 			})
 			.buttonStyle(.bordered)
 		}

@@ -211,6 +211,7 @@ struct NearestStopView : View {
 						}
 					}
 				}
+				.cornerRadius(10)
 				.onAppear {
 					if let coord = locationManager.location {
 						nearestStopViewModel.send(

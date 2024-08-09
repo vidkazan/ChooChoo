@@ -69,10 +69,6 @@ extension CDLeg {
 		   let legType = try? JSONDecoder().decode(LegViewData.LegType.self,from: legTypeData) else {
 				return nil
 		}
-		guard let direction = self.stops.last?.stopViewData() else {
-			return nil
-		}
-		#warning("lazy!!! line id is nil")
 		return LegViewData(
 			isReachableFromPreviousLeg: self.isReachable,
 			legType: legType,

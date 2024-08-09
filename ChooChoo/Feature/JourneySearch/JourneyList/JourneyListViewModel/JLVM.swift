@@ -48,7 +48,8 @@ class JourneyListViewModel : ChewViewModelProtocol {
 	init(
 		date: SearchStopsDate,
 		settings : JourneySettings,
-		stops : DepartureArrivalPairStop
+		stops : DepartureArrivalPairStop,
+		status : Status = .loadingJourneyList
 	) {
 		state = State(
 			journeys: [],
@@ -57,7 +58,7 @@ class JourneyListViewModel : ChewViewModelProtocol {
 			laterRef: nil,
 			settings: settings,
 			stops: stops,
-			status: .loadingJourneyList
+			status: status
 		)
 		Publishers.system(
 			initial: state,

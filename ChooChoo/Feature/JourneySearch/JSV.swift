@@ -71,6 +71,9 @@ struct JourneySearchView : View {
 						if topAlertVM.state.alerts.contains(.offline) {
 							BadgeView(.offlineMode)
 								.badgeBackgroundStyle(.blue)
+						} else if topAlertVM.state.alerts.contains(.apiUnavailable) {
+							BadgeView(.apiUnavaiable)
+								.badgeBackgroundStyle(.primary)
 						}
 					}
 				)
