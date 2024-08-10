@@ -17,6 +17,7 @@ extension NearestStopView {
 			)
 			.chewTextSize(.big)
 			.foregroundColor(.secondary)
+			.frame(minWidth: 110)
 			Button(action: {
 				switch nearestStopViewModel.state.status {
 				case .loadingStopDetails,.loadingNearbyStops:
@@ -45,7 +46,7 @@ extension NearestStopView {
 						return .error
 					}
 				}())
-				.frame(minWidth: 30,minHeight: 30)
+				.frame(minWidth: 25,minHeight: 30)
 				.chewTextSize(.big)
 				.foregroundStyle(.secondary)
 			})
@@ -78,24 +79,25 @@ extension NearestStopView {
 
 extension NearestStopView {
 	func trasportFilter() -> some View {
-		HStack(spacing: 5) {
-				ForEach(
-					Array(departuresTypes).sorted(by: <),
-					id:\.hashValue
-				) { type in
-					Button(
-						action: {
-							filteredLineType = filteredLineType == type ? nil : type
-						},
-						label: {
-							Image(type.iconBig)
-								.frame(minWidth: 28,maxWidth: 28)
-								.opacity(filteredLineType == type ? 1 : 0.3)
-						})
-				}
+			ScrollView(.horizontal) {
+				HStack(spacing: 3) {
+					ForEach(
+						Array(departuresTypes).sorted(by: <),
+						id:\.hashValue
+					) { type in
+						Button(
+							action: {
+								filteredLineType = filteredLineType == type ? nil : type
+							},
+							label: {
+								Image(type.iconBig)
+									.frame(minWidth: 30,maxWidth: 30)
+									.opacity(filteredLineType == type ? 1 : 0.3)
+							})
+					}
 			}
+		}
 		.chewTextSize(.medium)
-//		.badgeBackgroundStyle(.secondary)
 		.foregroundStyle(.secondary)
 		.transition(.opacity)
 	}
