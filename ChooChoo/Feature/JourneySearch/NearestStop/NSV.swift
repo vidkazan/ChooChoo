@@ -53,7 +53,7 @@ struct NearestStopView : View {
 						departuresTypes.insert($0.lineViewData.type)
 					}
 				}
-				Task {
+//				Task {
 					if let stop = state.data.selectedStop ,
 					   let coord = locationManager.location?.coordinate {
 						selectedStop = Self.updateDistanceToStop(
@@ -68,7 +68,7 @@ struct NearestStopView : View {
 							from: coord,
 							stops: state.data.stops
 						)
-					}
+//					}
 				}
 			})
 			.onReceive(timerForRequestStopDetails, perform: { _ in
@@ -79,7 +79,7 @@ struct NearestStopView : View {
 				}
 			})
 			.onReceive(locationManager.$location, perform: { location in
-				Task {
+//				Task {
 					if let loc = locationManager.location {
 						updateNearbyStopsIfNeeded(newLocation: loc)
 						if let stop = selectedStop {
@@ -93,7 +93,7 @@ struct NearestStopView : View {
 							stops: nearestStops.map{$0.stop}
 						)
 					}
-				}
+//				}
 			})
 	}
 	
