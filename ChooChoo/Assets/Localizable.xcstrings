@@ -152,10 +152,26 @@
       }
     },
     "Alternative For" : {
-      "comment" : "JourneyAlternativesView: recommendedDepartureStop"
+      "comment" : "JourneyAlternativesView: recommendedDepartureStop",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alternativen für"
+          }
+        }
+      }
     },
     "Alternatives" : {
-      "comment" : "JourneyFollowView: listCell: swipe action item\nSheetViewModel: SheetType"
+      "comment" : "JourneyAlternativesView: alternatives section\nJourneyFollowView: listCell: swipe action item\nSheetViewModel: SheetType",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alternativen"
+          }
+        }
+      }
     },
     "App does not have search button. **Search starts** after you set both **departure** and **arrival** stops." : {
       "comment" : "search tip text",
@@ -241,17 +257,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Falsche URL"
-          }
-        }
-      }
-    },
-    "cancel" : {
-      "comment" : "TimeAndSettingsView:alternatives from current transport",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "abbrechen"
           }
         }
       }
@@ -464,11 +469,16 @@
         }
       }
     },
-    "error" : {
-      "comment" : "JourneyAlternativesView: button"
-    },
     "error: (msg)" : {
-      "comment" : "DataError"
+      "comment" : "DataError",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ""
+          }
+        }
+      }
     },
     "error: try reload" : {
       "comment" : "JourneyListView: error: failed to load laterRef rides",
@@ -581,7 +591,15 @@
       }
     },
     "in %@" : {
-      "comment" : "JourneyAlternativesView"
+      "comment" : "JourneyAlternativesView",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ""
+          }
+        }
+      }
     },
     "in 1 hour" : {
       "comment" : "DatePickerTimePresetButtons",
@@ -704,10 +722,26 @@
       }
     },
     "Map Details" : {
-      "comment" : "SheetViewModel: SheetType"
+      "comment" : "SheetViewModel: SheetType",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ""
+          }
+        }
+      }
     },
     "Map Picker" : {
-      "comment" : "SheetViewModel: SheetType"
+      "comment" : "SheetViewModel: SheetType",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ""
+          }
+        }
+      }
     },
     "max 1" : {
       "comment" : "JourneySettings: TransferCountCases",
@@ -801,7 +835,7 @@
       }
     },
     "now" : {
-      "comment" : "timeChoosingView: button on segmented picker\nAlternativeStopPosition: timeBadge\nDatePickerTimePresetButtons",
+      "comment" : "AlternativeStopPosition: timeBadge\ntimeChoosingView: button on segmented picker\nDatePickerTimePresetButtons",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -1019,7 +1053,7 @@
       }
     },
     "Save" : {
-      "comment" : "datePickerView: save button\nsettingsView: save button",
+      "comment" : "settingsView: save button\ndatePickerView: save button",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -1030,7 +1064,7 @@
       }
     },
     "Search" : {
-      "comment" : "search tip title\nTabItem\nJourneyAlternativesView: button",
+      "comment" : "TabItem\nsearch tip title\nJourneyAlternativesView: button",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -1051,8 +1085,16 @@
         }
       }
     },
-    "searching alternatives from current transport" : {
-      "comment" : "TimeAndSettingsView"
+    "Server is unavailable" : {
+      "comment" : "badge",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Server ist nicht verfügbar"
+          }
+        }
+      }
     },
     "Server response data decoding" : {
       "comment" : "ApiError",
@@ -1121,7 +1163,15 @@
       }
     },
     "Start from" : {
-      "comment" : "JourneyAlternativesView: recommendedDepartureStop"
+      "comment" : "JourneyAlternativesView: recommendedDepartureStop",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ab"
+          }
+        }
+      }
     },
     "Stop not found" : {
       "comment" : "ApiError",

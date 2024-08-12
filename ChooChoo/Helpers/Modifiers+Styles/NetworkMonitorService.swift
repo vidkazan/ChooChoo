@@ -190,6 +190,8 @@ extension NetworkMonitorService {
 		}
 	}
 	
+	
+	#warning("apiUnavailable is turned off!")
 	static func whenStatusChanged(sendAlert : @escaping (TopBarAlertViewModel.Event) -> ()) -> Feedback<State, Event> {
 		Feedback { (state: State) -> AnyPublisher<Event, Never> in
 			switch state.status {
@@ -198,9 +200,11 @@ extension NetworkMonitorService {
 			case .offline:
 				sendAlert(.didRequestShow(.offline))
 			case .apiUnavailable:
-				sendAlert(.didRequestShow(.apiUnavailable))
+				break
+//				sendAlert(.didRequestShow(.apiUnavailable))
 			case .apiCheckError(_):
-				Self.warning(state.status, "Network Monitor Error")
+				break
+//				Self.warning(state.status, "Network Monitor Error")
 			}
 			return Empty().eraseToAnyPublisher()
 		}

@@ -12,10 +12,10 @@ import SwiftUI
 
 
 extension ChewViewModel {
-	enum TextFieldContent : Equatable,Hashable {
+	enum TextFieldContent : Hashable {
 		case textOnly(String)
 		case location(Stop)
-		case transport(LegViewData)
+
 		
 		var text : String {
 			switch self {
@@ -23,8 +23,6 @@ extension ChewViewModel {
 				return text
 			case .location(let stop):
 				return stop.name
-			case .transport(let leg):
-				return "\(leg.lineViewData.name) \(JourneyAlternativeDepartureStopViewModel.getCurrentLegAlternativeJourneyDepartureStop(leg: leg, referenceDate: .now)?.alternativeDeparture.leg?.direction.actual ?? "" )"
 			}
 		}
 		
@@ -34,8 +32,6 @@ extension ChewViewModel {
 				return nil
 			case .location(let stop):
 				return stop
-			case .transport(let leg):
-				return JourneyAlternativeDepartureStopViewModel.getCurrentLegAlternativeJourneyDepartureStop(leg: leg, referenceDate: .now)?.alternativeDeparture.stopViewData.stop()
 			}
 		}
 		
@@ -45,8 +41,6 @@ extension ChewViewModel {
 				return nil
 			case .location:
 				return nil
-			case .transport(let leg):
-				return leg
 			}
 		}
 	}
@@ -70,10 +64,6 @@ extension ChewViewModel {
 	struct State : Equatable {
 		let data : StateData
 		let status : Status
-		
-		func isAlternativeMode() -> Bool {
-			return self.data.depStop.leg != nil
-		}
 	}
 	
 	enum Status : ChewStatus {
