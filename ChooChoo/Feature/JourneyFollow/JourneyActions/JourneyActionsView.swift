@@ -13,6 +13,7 @@ struct JourneyActionsView : View {
 	let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
 	let journeyActions : [JourneyFollowData.JourneyAction]
 	@State var current : JourneyFollowData.JourneyAction?
+	@State var next : JourneyFollowData.JourneyAction?
 	
 	init(journeyActions: [JourneyFollowData.JourneyAction]) {
 		self.journeyActions = journeyActions
@@ -28,7 +29,9 @@ struct JourneyActionsView : View {
 							action.type.text()
 								.chewTextSize(.medium)
 								.foregroundStyle(.secondary)
-							PlatformView(isShowingPlatormWord: false, platform: action.type.platform(platform: action.stopData.platforms))
+							if action.type == .enter {
+								PlatformView(isShowingPlatormWord: false, platform: action.type.platform(platform: action.stopData.platforms))
+							}
 							BadgeView(.generic(msg: action.stopData.name))
 							Spacer()
 						}

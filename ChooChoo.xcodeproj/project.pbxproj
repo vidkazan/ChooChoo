@@ -638,7 +638,7 @@
 		7DF0D98D2B69557D00861C4F /* Iphones.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF0D98C2B69557C00861C4F /* Iphones.swift */; };
 		7DF0D98F2B6956DD00861C4F /* FlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF0D98E2B6956DD00861C4F /* FlowLayout.swift */; };
 		7DF167912C5D7AD700096BFC /* JourneyActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF167902C5D7AD700096BFC /* JourneyActions.swift */; };
-		7DF167932C6011C800096BFC /* JVD+journeyActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF167922C6011C800096BFC /* JVD+journeyActions.swift */; };
+		7DF167932C6011C800096BFC /* JourneyViewData+journeyActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF167922C6011C800096BFC /* JourneyViewData+journeyActions.swift */; };
 		7DF167952C602B7B00096BFC /* JourneyActionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF167942C602B7B00096BFC /* JourneyActionsView.swift */; };
 		7DF5871D2B5EC01100A4F99A /* ApiServiceErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF5871C2B5EC01100A4F99A /* ApiServiceErrors.swift */; };
 		7DF845602B764AEA00D76B14 /* RemarkSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF8455F2B764AEA00D76B14 /* RemarkSheet.swift */; };
@@ -910,7 +910,7 @@
 		7DF0D98C2B69557C00861C4F /* Iphones.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Iphones.swift; sourceTree = "<group>"; };
 		7DF0D98E2B6956DD00861C4F /* FlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowLayout.swift; sourceTree = "<group>"; };
 		7DF167902C5D7AD700096BFC /* JourneyActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JourneyActions.swift; sourceTree = "<group>"; };
-		7DF167922C6011C800096BFC /* JVD+journeyActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JVD+journeyActions.swift"; sourceTree = "<group>"; };
+		7DF167922C6011C800096BFC /* JourneyViewData+journeyActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JourneyViewData+journeyActions.swift"; sourceTree = "<group>"; };
 		7DF167942C602B7B00096BFC /* JourneyActionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JourneyActionsView.swift; sourceTree = "<group>"; };
 		7DF5871C2B5EC01100A4F99A /* ApiServiceErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiServiceErrors.swift; sourceTree = "<group>"; };
 		7DF8455F2B764AEA00D76B14 /* RemarkSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemarkSheet.swift; sourceTree = "<group>"; };
@@ -1625,7 +1625,6 @@
 				7DAC5CB62BACDA84000F7D33 /* JFCV+map.swift */,
 				7DE727C52AD93869002FF033 /* JFV.swift */,
 				7D61AA862C42C4C8000F72D6 /* JFV+swipeActions.swift */,
-				7DF167942C602B7B00096BFC /* JourneyActionsView.swift */,
 			);
 			path = JourneyFollowView;
 			sourceTree = "<group>";
@@ -1799,7 +1798,7 @@
 			children = (
 				7D462D5A2AACE0E800BC0D65 /* viewData */,
 				7DD5BAF52B72B39D00CFE768 /* JourneyViewData.swift */,
-				7DF167922C6011C800096BFC /* JVD+journeyActions.swift */,
+				7DF167922C6011C800096BFC /* JourneyViewData+journeyActions.swift */,
 				7DD5BAF72B72B3C500CFE768 /* StopVIewData.swift */,
 				7D02CE0F2A97E4100048ADE6 /* LegVIewData.swift */,
 			);
@@ -1924,6 +1923,7 @@
 		7DF1678F2C5D7ACD00096BFC /* JourneyActions */ = {
 			isa = PBXGroup;
 			children = (
+				7DF167942C602B7B00096BFC /* JourneyActionsView.swift */,
 				7DF167902C5D7AD700096BFC /* JourneyActions.swift */,
 			);
 			path = JourneyActions;
@@ -2118,7 +2118,7 @@
 				7D02CE092A97E32D0048ADE6 /* DTO.swift in Sources */,
 				7DBFE79A2BA23B4C008E1221 /* StopListCell.swift in Sources */,
 				7D0D8ABE2AC75DD6008F0F4B /* TimeContainer.swift in Sources */,
-				7DF167932C6011C800096BFC /* JVD+journeyActions.swift in Sources */,
+				7DF167932C6011C800096BFC /* JourneyViewData+journeyActions.swift in Sources */,
 				7D02CE152A97E4940048ADE6 /* Endpoint.swift in Sources */,
 				7DE640FB2AB08EF80087FC64 /* CLLOcationCoordinate2D+.swift in Sources */,
 				7DD5BAF82B72B3C500CFE768 /* StopVIewData.swift in Sources */,
