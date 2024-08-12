@@ -243,6 +243,7 @@ struct FollowPreviews: PreviewProvider {
 	}
 }
 
+
 extension JourneyFollowView {
 	func performCalculation(elem : JourneyFollowData) -> Double {
 		let now = Date.now.timeIntervalSince1970
