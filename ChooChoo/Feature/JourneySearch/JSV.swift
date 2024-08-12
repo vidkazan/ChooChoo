@@ -51,8 +51,13 @@ struct JourneySearchView : View {
 					placement: .topBarLeading,
 					content: {
 						if topAlertVM.state.alerts.contains(.offline) {
-							BadgeView(.offlineMode)
-								.badgeBackgroundStyle(.blue)
+							Button(action: {
+								UIApplication.shared.open(URL(string: "http://captive.apple.com")!,options: [:], completionHandler: nil)
+							}, label: {
+								BadgeView(.offlineMode)
+									.foregroundColor(.primary)
+									.badgeBackgroundStyle(.blue)
+							})
 						} else if topAlertVM.state.alerts.contains(.apiUnavailable) {
 							BadgeView(.apiUnavaiable)
 								.badgeBackgroundStyle(.primary)

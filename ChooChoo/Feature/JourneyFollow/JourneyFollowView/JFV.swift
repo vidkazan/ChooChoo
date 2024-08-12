@@ -71,10 +71,13 @@ struct JourneyFollowView : View {
 		.toolbar {
 			ToolbarItem(placement: .topBarLeading, content: {
 				if alertVM.state.alerts.contains(.offline) {
-					BadgeView(.offlineMode)
-						.frame(maxHeight: 40)
-						.badgeBackgroundStyle(.blue)
-						.animation(.easeInOut, value: alertVM.state.alerts)
+					Button(action: {
+						UIApplication.shared.open(URL(string: "http://captive.apple.com")!,options: [:], completionHandler: nil)
+					}, label: {
+						BadgeView(.offlineMode)
+							.foregroundColor(.primary)
+							.badgeBackgroundStyle(.blue)
+					})
 				} else if alertVM.state.alerts.contains(.apiUnavailable) {
 					BadgeView(.apiUnavaiable)
 						.badgeBackgroundStyle(.primary)
