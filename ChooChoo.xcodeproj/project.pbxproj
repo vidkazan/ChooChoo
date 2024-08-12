@@ -488,6 +488,8 @@
 		7D4B1B992AA950780096F372 /* constructJourneyList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4B1B982AA950780096F372 /* constructJourneyList.swift */; };
 		7D53705C2ACED7300009BA20 /* PlannedActual.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D53705B2ACED7300009BA20 /* PlannedActual.swift */; };
 		7D55BD9E2B5EA39900A0CE08 /* ChewDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D55BD9D2B5EA39900A0CE08 /* ChewDatePicker.swift */; };
+		7D56F7F42C66506F00C5AF62 /* StopDeparturesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D56F7F32C66506F00C5AF62 /* StopDeparturesListView.swift */; };
+		7D56F7F62C6650FD00C5AF62 /* NSV+menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D56F7F52C6650FD00C5AF62 /* NSV+menu.swift */; };
 		7D5B68D72BD29CE700747D97 /* LogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5B68D62BD29CE700747D97 /* LogView.swift */; };
 		7D5B68D92BD2A60700747D97 /* LogVIewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5B68D82BD2A60700747D97 /* LogVIewModel.swift */; };
 		7D5D78522B29C00600E17CC7 /* CDLeg+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5D78502B29C00600E17CC7 /* CDLeg+CoreDataClass.swift */; };
@@ -757,6 +759,8 @@
 		7D4B1B982AA950780096F372 /* constructJourneyList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = constructJourneyList.swift; sourceTree = "<group>"; };
 		7D53705B2ACED7300009BA20 /* PlannedActual.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlannedActual.swift; sourceTree = "<group>"; };
 		7D55BD9D2B5EA39900A0CE08 /* ChewDatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChewDatePicker.swift; sourceTree = "<group>"; };
+		7D56F7F32C66506F00C5AF62 /* StopDeparturesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopDeparturesListView.swift; sourceTree = "<group>"; };
+		7D56F7F52C6650FD00C5AF62 /* NSV+menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSV+menu.swift"; sourceTree = "<group>"; };
 		7D5B68D62BD29CE700747D97 /* LogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogView.swift; sourceTree = "<group>"; };
 		7D5B68D82BD2A60700747D97 /* LogVIewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogVIewModel.swift; sourceTree = "<group>"; };
 		7D5D78502B29C00600E17CC7 /* CDLeg+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDLeg+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -1728,6 +1732,7 @@
 			children = (
 				7DBFA3BC2BD303FA00205757 /* vm */,
 				7DBFA3B72BD2FE7900205757 /* NSV.swift */,
+				7D56F7F52C6650FD00C5AF62 /* NSV+menu.swift */,
 				7DCA4ADA2BD83D35005BA68E /* NSV+header.swift */,
 				7DCA4AD82BD83CAA005BA68E /* NSV+subviews.swift */,
 			);
@@ -1785,6 +1790,7 @@
 				7D9E108F2AA77CA200820B92 /* JourneyList */,
 				7D181D652AD6D5C1003AB021 /* RecentSearches */,
 				7D7B3DA02AB9AD160070E44D /* LegDetails */,
+				7D56F7F32C66506F00C5AF62 /* StopDeparturesListView.swift */,
 			);
 			path = JourneySearch;
 			sourceTree = "<group>";
@@ -2122,6 +2128,7 @@
 				7DD5BAE32B72ADDA00CFE768 /* JDV.swift in Sources */,
 				7D53705C2ACED7300009BA20 /* PlannedActual.swift in Sources */,
 				7DCA4AD32BD807D8005BA68E /* FloatingPoint.swift in Sources */,
+				7D56F7F62C6650FD00C5AF62 /* NSV+menu.swift in Sources */,
 				7DAC0C932B2780C0001FC6EA /* JFVM.swift in Sources */,
 				7D6C5C252AAF4B1300DEFC57 /* chewVM+reduce+Idle.swift in Sources */,
 				7D462D542AAC972200BC0D65 /* StopList.swift in Sources */,
@@ -2183,6 +2190,7 @@
 				7D6955212B58208300271F56 /* TopBarAlertsView.swift in Sources */,
 				7D2C0E622BDBB9E4000839C1 /* SwipeActionsTip.swift in Sources */,
 				7D72C9142BA88A2000D924A7 /* ArrivingTrainTimeVM.swift in Sources */,
+				7D56F7F42C66506F00C5AF62 /* StopDeparturesListView.swift in Sources */,
 				7DD5BAFB2B72BAE900CFE768 /* JLV+list.swift in Sources */,
 				7D68D9F52ABDB36D00579711 /* constructJourneys+Leg+Stop.swift in Sources */,
 				7D345E4C2AE97FC8003CA948 /* SettingsView.swift in Sources */,
