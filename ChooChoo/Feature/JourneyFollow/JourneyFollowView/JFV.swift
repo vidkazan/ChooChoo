@@ -69,17 +69,7 @@ struct JourneyFollowView : View {
 			Text("Journey follow", comment: "navigationBarTitle")
 		)
 		.toolbar {
-			ToolbarItem(placement: .topBarLeading, content: {
-				if alertVM.state.alerts.contains(.offline) {
-					BadgeView(.offlineMode)
-						.frame(maxHeight: 40)
-						.badgeBackgroundStyle(.blue)
-						.animation(.easeInOut, value: alertVM.state.alerts)
-				} else if alertVM.state.alerts.contains(.apiUnavailable) {
-					BadgeView(.apiUnavaiable)
-						.badgeBackgroundStyle(.primary)
-				}
-			})
+			JourneySearchView.topBarLeadingToolbar(topBarAlertVM: alertVM)
 		}
 	}
 }
