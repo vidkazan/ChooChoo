@@ -458,8 +458,6 @@
 		7D3B994E2C08D86B00A3AAEB /* JFVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAC0C922B2780C0001FC6EA /* JFVM.swift */; };
 		7D3B994F2C08D86B00A3AAEB /* JFVM + reduce.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D33A9482B5192940005D723 /* JFVM + reduce.swift */; };
 		7D3B99502C08D86B00A3AAEB /* JFVM + sideEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D33A94A2B5192960005D723 /* JFVM + sideEffects.swift */; };
-		7D3B99532C08D86D00A3AAEB /* JFCV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DABB02C2B2E18F1002BBA97 /* JFCV.swift */; };
-		7D3B99562C08D86E00A3AAEB /* JFCV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DABB02C2B2E18F1002BBA97 /* JFCV.swift */; };
 		7D3E5F012AB321580064213A /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3E5F002AB321580064213A /* LocationManager.swift */; };
 		7D3EA1AB2C0E2AC0005C507C /* GitBranch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3EA1AA2C0E2AC0005C507C /* GitBranch.swift */; };
 		7D3EA1AD2C0E2B91005C507C /* Branch.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7D3EA1AC2C0E2B91005C507C /* Branch.plist */; };
@@ -641,6 +639,9 @@
 		7DEE69D12B9BCE8B00A063B4 /* PresentationDetent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DEE69D02B9BCE8B00A063B4 /* PresentationDetent.swift */; };
 		7DF0D98D2B69557D00861C4F /* Iphones.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF0D98C2B69557C00861C4F /* Iphones.swift */; };
 		7DF0D98F2B6956DD00861C4F /* FlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF0D98E2B6956DD00861C4F /* FlowLayout.swift */; };
+		7DF167912C5D7AD700096BFC /* JourneyActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF167902C5D7AD700096BFC /* JourneyActions.swift */; };
+		7DF167932C6011C800096BFC /* JourneyViewData+journeyActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF167922C6011C800096BFC /* JourneyViewData+journeyActions.swift */; };
+		7DF167952C602B7B00096BFC /* JourneyActionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF167942C602B7B00096BFC /* JourneyActionsView.swift */; };
 		7DF5871D2B5EC01100A4F99A /* ApiServiceErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF5871C2B5EC01100A4F99A /* ApiServiceErrors.swift */; };
 		7DF845602B764AEA00D76B14 /* RemarkSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF8455F2B764AEA00D76B14 /* RemarkSheet.swift */; };
 		7DF845622B764B7D00D76B14 /* RemarkViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF845612B764B7D00D76B14 /* RemarkViewData.swift */; };
@@ -912,6 +913,9 @@
 		7DEE69D02B9BCE8B00A063B4 /* PresentationDetent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentationDetent.swift; sourceTree = "<group>"; };
 		7DF0D98C2B69557C00861C4F /* Iphones.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Iphones.swift; sourceTree = "<group>"; };
 		7DF0D98E2B6956DD00861C4F /* FlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowLayout.swift; sourceTree = "<group>"; };
+		7DF167902C5D7AD700096BFC /* JourneyActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JourneyActions.swift; sourceTree = "<group>"; };
+		7DF167922C6011C800096BFC /* JourneyViewData+journeyActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JourneyViewData+journeyActions.swift"; sourceTree = "<group>"; };
+		7DF167942C602B7B00096BFC /* JourneyActionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JourneyActionsView.swift; sourceTree = "<group>"; };
 		7DF5871C2B5EC01100A4F99A /* ApiServiceErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiServiceErrors.swift; sourceTree = "<group>"; };
 		7DF8455F2B764AEA00D76B14 /* RemarkSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemarkSheet.swift; sourceTree = "<group>"; };
 		7DF845612B764B7D00D76B14 /* RemarkViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemarkViewData.swift; sourceTree = "<group>"; };
@@ -1800,6 +1804,7 @@
 			children = (
 				7D462D5A2AACE0E800BC0D65 /* viewData */,
 				7DD5BAF52B72B39D00CFE768 /* JourneyViewData.swift */,
+				7DF167922C6011C800096BFC /* JourneyViewData+journeyActions.swift */,
 				7DD5BAF72B72B3C500CFE768 /* StopVIewData.swift */,
 				7D02CE0F2A97E4100048ADE6 /* LegVIewData.swift */,
 			);
@@ -1845,6 +1850,7 @@
 		7DE727C72AD93874002FF033 /* JourneyFollow */ = {
 			isa = PBXGroup;
 			children = (
+				7DF1678F2C5D7ACD00096BFC /* JourneyActions */,
 				7DAC0C912B2780A6001FC6EA /* JourneyFollowViewModel */,
 				7DAC0C8F2B278099001FC6EA /* JourneyFollowView */,
 			);
@@ -1918,6 +1924,15 @@
 				7DE8A35C2B6AF4FC00C3A378 /* ChewDate.swift */,
 			);
 			path = Date;
+			sourceTree = "<group>";
+		};
+		7DF1678F2C5D7ACD00096BFC /* JourneyActions */ = {
+			isa = PBXGroup;
+			children = (
+				7DF167942C602B7B00096BFC /* JourneyActionsView.swift */,
+				7DF167902C5D7AD700096BFC /* JourneyActions.swift */,
+			);
+			path = JourneyActions;
 			sourceTree = "<group>";
 		};
 		7DF5871B2B5EBFFA00A4F99A /* Errors */ = {
@@ -2109,6 +2124,7 @@
 				7D02CE092A97E32D0048ADE6 /* DTO.swift in Sources */,
 				7DBFE79A2BA23B4C008E1221 /* StopListCell.swift in Sources */,
 				7D0D8ABE2AC75DD6008F0F4B /* TimeContainer.swift in Sources */,
+				7DF167932C6011C800096BFC /* JourneyViewData+journeyActions.swift in Sources */,
 				7D02CE152A97E4940048ADE6 /* Endpoint.swift in Sources */,
 				7DE640FB2AB08EF80087FC64 /* CLLOcationCoordinate2D+.swift in Sources */,
 				7DD5BAF82B72B3C500CFE768 /* StopVIewData.swift in Sources */,
@@ -2243,6 +2259,7 @@
 				7D6CCAEF2B5FFB7300BCF62E /* SettingsView+TransportModesSection.swift in Sources */,
 				7DE8A34F2B6AB0AF00C3A378 /* TimeLabelView+Init.swift in Sources */,
 				7DBFA3B82BD2FE7900205757 /* NSV.swift in Sources */,
+				7DF167952C602B7B00096BFC /* JourneyActionsView.swift in Sources */,
 				7D2BF7A82B67D30800E1CED7 /* Color+random.swift in Sources */,
 				7DFA4A832AB10531005ECAEB /* constructJourneys+Badges.swift in Sources */,
 				7D9D64A02C187B1F002FB9DE /* DTO+Logging.swift in Sources */,
@@ -2295,6 +2312,7 @@
 				7D9BB1112B0CBF54008A3616 /* CDUser+CoreDataProperties.swift in Sources */,
 				7D5B68D72BD29CE700747D97 /* LogView.swift in Sources */,
 				7D5D78532B29C00600E17CC7 /* CDLeg+CoreDataProperties.swift in Sources */,
+				7DF167912C5D7AD700096BFC /* JourneyActions.swift in Sources */,
 				7D000CF72AB86BA500566120 /* JLVM+sideEffects+loadingJourneysRef.swift in Sources */,
 				7DE727C62AD93869002FF033 /* JFV.swift in Sources */,
 				7D4B1B8C2AA8CB970096F372 /* JLVM+sideEffects.swift in Sources */,
@@ -2406,7 +2424,6 @@
 				7D3B97B32C08D56000A3AAEB /* LineType.swift in Sources */,
 				7D3B97AB2C08D54C00A3AAEB /* Colors.swift in Sources */,
 				7D3B98C62C08D7E700A3AAEB /* JDVM+sideEffects.swift in Sources */,
-				7D3B99562C08D86E00A3AAEB /* JFCV.swift in Sources */,
 				7D3B98BE2C08D7DF00A3AAEB /* RemarkSheet.swift in Sources */,
 				7D3B990A2C08D83300A3AAEB /* JLVM+sideEffects+loadingJourneys.swift in Sources */,
 				7D3B98782C08D76600A3AAEB /* ApiServiceCombine.swift in Sources */,
@@ -2617,7 +2634,6 @@
 				7D3B97B22C08D56000A3AAEB /* LineType.swift in Sources */,
 				7D3B97AA2C08D54C00A3AAEB /* Colors.swift in Sources */,
 				7D3B98BF2C08D7E700A3AAEB /* JDVM+sideEffects.swift in Sources */,
-				7D3B99532C08D86D00A3AAEB /* JFCV.swift in Sources */,
 				7D1641012C09046F003B0A1E /* CDJourney+CoreDataClass.swift in Sources */,
 				7D3B99062C08D83300A3AAEB /* JLVM+sideEffects+loadingJourneys.swift in Sources */,
 				7D3B98752C08D76600A3AAEB /* ApiServiceCombine.swift in Sources */,

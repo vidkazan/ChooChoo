@@ -111,7 +111,7 @@ extension JourneyAlternativesView {
 extension JourneyAlternativesView {
 	var alternativeFor : some View {
 		Section(content: {
-			JourneyFollowCellView(journeyDetailsViewModel: jdvm)
+			JourneyFollowCellView(journeyDetailsViewModel: jdvm,journeyActions: [])
 				.foregroundStyle(.primary)
 				.cornerRadius(10)
 		}, header: {

@@ -46,23 +46,27 @@ extension CDJourney {
 			guard let time = TimeContainer(isoEncoded: self.time) else {
 				return
 			}
+			
+			let jvd = JourneyViewData(
+				journeyRef: journeyRef,
+				   badges: [],
+				   sunEvents: sunEvents,
+				   legs: legsViewData,
+				   depStopName: stops.departure.name,
+				   arrStopName: stops.arrival.name,
+				   time: time,
+				   updatedAt: self.updatedAt,
+				   remarks: [],
+				   settings: settings,
+				   journeyDTO: nil
+			   )
+			let actions = jvd.journeyActions()
 //			#warning("add remarks")
 			data = JourneyFollowData(
 				id : self.id,
-				journeyViewData: JourneyViewData(
-					journeyRef: journeyRef,
-					badges: [],
-					sunEvents: sunEvents,
-					legs: legsViewData,
-					depStopName: stops.departure.name,
-					arrStopName: stops.arrival.name,
-					time: time,
-					updatedAt: self.updatedAt,
-					remarks: [],
-					settings: settings,
-					journeyDTO: nil
-				),
-				stops: stops
+				journeyViewData: jvd,
+				stops: stops,
+				journeyActions: actions
 			)
 		}
 		return data

@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-extension BadgeView {
+extension View {
 	func expandingBadge<V>(@ViewBuilder _ expandedView: @escaping () -> V) -> some View where V : View {
 		ExpandingBadge(
 			isExpanded: false,
@@ -18,11 +18,11 @@ extension BadgeView {
 	}
 }
 
-struct ExpandingBadge<Content: View>: View {
+struct ExpandingBadge<T: View, V : View>: View {
 	@Namespace var ExpandingBadge
 	@State var isExpanded = false
-	let baseBadge : BadgeView
-	let expandedView : () -> Content
+	let baseBadge : V
+	let expandedView : () -> T
 	var body: some View {
 		Button(action: {
 			withAnimation {

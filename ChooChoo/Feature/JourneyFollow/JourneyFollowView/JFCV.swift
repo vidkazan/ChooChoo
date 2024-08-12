@@ -13,8 +13,10 @@ struct JourneyFollowCellView : View {
 	@EnvironmentObject var chewVM : ChewViewModel
 	@ObservedObject var vm : JourneyDetailsViewModel
 	@ObservedObject var appSettingsVM : AppSettingsViewModel = Model.shared.appSettingsVM
-	init(journeyDetailsViewModel: JourneyDetailsViewModel) {
+	let journeyActions : [JourneyFollowData.JourneyAction]
+	init(journeyDetailsViewModel: JourneyDetailsViewModel, journeyActions : [JourneyFollowData.JourneyAction]) {
 		self.vm = journeyDetailsViewModel
+		self.journeyActions = journeyActions
 	}
 	var body: some View {
 		let data = vm.state.data.viewData
@@ -29,31 +31,7 @@ struct JourneyFollowCellView : View {
 					)
 				})
 			}
-				HStack(spacing: 2) {
-					if let date = data.time.date.departure.actualOrPlannedIfActualIsNil() {
-						BadgeView(.date(date: date),.medium)
-						.badgeBackgroundStyle(.secondary)
-					}
-					HStack(spacing: 2) {
-						TimeLabelView(
-							size: .medium,
-							arragement: .right,
-							time: data.time.date.departure,
-							delayStatus: data.time.departureStatus
-						)
-						Text(verbatim: "-")
-						TimeLabelView(
-							size: .medium,
-							arragement: .right,
-							time: data.time.date.arrival,
-							delayStatus: data.time.arrivalStatus
-						)
-					}
-					.padding(2)
-					.badgeBackgroundStyle(.secondary)
-					BadgeView(.legDuration(data.time))
-						.badgeBackgroundStyle(.secondary)
-				}
+			header(data: data)
 			LegsView(journey : data,mode : appSettingsVM.state.settings.legViewMode)
 			HStack(spacing: 2) {
 				Spacer()
@@ -65,9 +43,40 @@ struct JourneyFollowCellView : View {
 					updatedAtBadge(data: data)
 				}
 			}
+			JourneyActionsView(journeyActions: journeyActions)
 		}
 		.contextMenu { menu }
 		.animation(.easeInOut, value: vm.state.status)
+	}
+}
+
+extension JourneyFollowCellView {
+	func header(data : JourneyViewData) -> some View {
+		HStack(spacing: 2) {
+			if let date = data.time.date.departure.actualOrPlannedIfActualIsNil() {
+				BadgeView(.date(date: date),.medium)
+				.badgeBackgroundStyle(.secondary)
+			}
+			HStack(spacing: 2) {
+				TimeLabelView(
+					size: .medium,
+					arragement: .right,
+					time: data.time.date.departure,
+					delayStatus: data.time.departureStatus
+				)
+				Text(verbatim: "-")
+				TimeLabelView(
+					size: .medium,
+					arragement: .right,
+					time: data.time.date.arrival,
+					delayStatus: data.time.arrivalStatus
+				)
+			}
+			.padding(2)
+			.badgeBackgroundStyle(.secondary)
+			BadgeView(.legDuration(data.time))
+				.badgeBackgroundStyle(.secondary)
+		}
 	}
 }
 

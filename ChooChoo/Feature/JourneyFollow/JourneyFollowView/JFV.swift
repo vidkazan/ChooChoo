@@ -179,7 +179,7 @@ extension JourneyFollowView {
 			stops: journey.stops,
 			chewVM: chewVM
 		)
-		JourneyFollowCellView(journeyDetailsViewModel: vm)
+		JourneyFollowCellView(journeyDetailsViewModel: vm,journeyActions: journey.journeyActions)
 		.swipeActions(edge: .leading) {
 			reloadActionButton(journey: journey, vm: vm)
 		}
@@ -224,7 +224,8 @@ struct FollowPreviews: PreviewProvider {
 							journeyViewData: data.first!,
 							stops: .init(
 								departure: .init(coordinates: .init(), type: .stop, stopDTO: nil),
-								arrival: .init(coordinates: .init(), type: .stop, stopDTO: nil))
+								arrival: .init(coordinates: .init(), type: .stop, stopDTO: nil)),
+							journeyActions: data.first!.journeyActions()
 						),
 						sendToJourneyDetailsViewModel: { _ in }))
 				}
