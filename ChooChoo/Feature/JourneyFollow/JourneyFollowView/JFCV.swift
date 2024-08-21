@@ -9,10 +9,12 @@ import Foundation
 import SwiftUI
 
 struct JourneyFollowCellView : View {
+    let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
 	@Namespace var journeyFollowCellViewNamespace
 	@EnvironmentObject var chewVM : ChewViewModel
 	@ObservedObject var vm : JourneyDetailsViewModel
 	@ObservedObject var appSettingsVM : AppSettingsViewModel = Model.shared.appSettingsVM
+  @State var showUpdatedAtBadge : Bool = false
 	let journeyActions : [JourneyFollowData.JourneyAction]
 	init(journeyDetailsViewModel: JourneyDetailsViewModel, journeyActions : [JourneyFollowData.JourneyAction]) {
 		self.vm = journeyDetailsViewModel
@@ -45,6 +47,9 @@ struct JourneyFollowCellView : View {
 			}
 			JourneyActionsView(journeyActions: journeyActions)
 		}
+        .onReceive(timer, perform: { _ in
+            self.showUpdatedAtBadge = chewVM.referenceDate.ts > (data.updatedAt + 121) ? true : false
+        })
 		.contextMenu { menu }
 		.animation(.easeInOut, value: vm.state.status)
 	}
@@ -88,13 +93,15 @@ extension JourneyFollowCellView {
 					.badgeBackgroundStyle(.red)
 					
 			} else {
-				BadgeView(
-					.updatedAtTime(
-						referenceTime: data.updatedAt,
-						isLoading: isLoading(status: vm.state.status)
-					),
-					color: Color.clear
-				)
+                if self.showUpdatedAtBadge == true {
+                    BadgeView(
+                        .updatedAtTime(
+                            referenceTime: data.updatedAt,
+                            isLoading: isLoading(status: vm.state.status)
+                        ),
+                        color: Color.clear
+                    )
+                }
 			}
 		}
 		.matchedGeometryEffect(id: "updatedAt \(data.id)", in: journeyFollowCellViewNamespace)
