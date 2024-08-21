@@ -39,8 +39,8 @@ struct ArrivalTrainTimeLabelView: View {
 						TimeLabelView(
 							size: .medium,
 							arragement: .bottom,
-							delayStatus: .onTime,
-							time: time
+                            time: time,
+							delayStatus: .onTime
 						)
 						.badgeBackgroundStyle(.primary)
 						.padding(.top,2)
