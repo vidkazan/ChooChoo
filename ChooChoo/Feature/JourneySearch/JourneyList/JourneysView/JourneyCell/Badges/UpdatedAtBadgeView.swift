@@ -88,15 +88,20 @@ struct TimeOffsetView : View {
 		_ refTime : Date,
 		chewDate : ChewDate = .now
 	) -> Text? {
-		let min = DateParcer.getTwoDateIntervalInMinutes(date1: chewDate.date, date2: refTime)
-		switch min {
-		case 0..<1:
-			return Text("now", comment: "Badge: timeOffset")
-		default:
-			if let dur = DateParcer.timeDuration(min) {
-				return Text("in \(dur)", comment: "Badge: timeOffset")
-			}
-			return nil
-		}
+        if let string = DateParcer.timeOffsetString(refTime,chewDate: chewDate) {
+            return Text(verbatim: string)
+        } else {
+            return nil
+        }
+//		let min = DateParcer.getTwoDateIntervalInMinutes(date1: chewDate.date, date2: refTime)
+//		switch min {
+//		case 0..<1:
+//			return Text("now", comment: "Badge: timeOffset")
+//		default:
+//			if let dur = DateParcer.timeDuration(min) {
+//				return Text("in \(dur)", comment: "Badge: timeOffset")
+//			}
+//			return nil
+//		}
 	}
 }
