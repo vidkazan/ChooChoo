@@ -79,7 +79,7 @@ extension NearestStopView {
 
 extension NearestStopView {
 	func trasportFilter() -> some View {
-			ScrollView(.horizontal) {
+        ScrollView(.horizontal,showsIndicators: false) {
 				HStack(spacing: 3) {
 					ForEach(
 						Array(departuresTypes).sorted(by: <),
