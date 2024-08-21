@@ -77,23 +77,22 @@ struct TimeLabelView: View {
 
 extension TimeLabelView {
     func evaluateTimeOrOffsetType() {
+        var newTimerInterval = Self.timeOrOffsetTime
         if type == .timeOrOffset {
             if  let time = time.actualOrPlannedIfActualIsNil() {
                 let diff = time.timeIntervalSince1970 - chewVM.referenceDate.ts
                 if diff < 0 {
-                    timer = Timer.publish(every: Self.timeOrOffsetTime, on: .main, in: .common)
                     type = .onlyOffset
                 } else if diff < Self.timeOrOffsetTime {
-                    timer = Timer.publish(every: diff, on: .main, in: .common)
+                    newTimerInterval = diff
                     type = .onlyOffset
                 } else {
                     type = .onlyTime
-                    timer = Timer.publish(every: Self.timeOrOffsetTime, on: .main, in: .common)
                 }
             } else {
                 type = .onlyTime
-                timer = Timer.publish(every: Self.timeOrOffsetTime, on: .main, in: .common)
             }
+            timer = Timer.publish(every: newTimerInterval, on: .main, in: .common)
         }
     }
 }
