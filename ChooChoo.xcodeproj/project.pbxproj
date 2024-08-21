@@ -19,7 +19,6 @@
 		7D02CE232A97E64E0048ADE6 /* Query.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D02CE222A97E64E0048ADE6 /* Query.swift */; };
 		7D02CE252A97E6620048ADE6 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D02CE242A97E6620048ADE6 /* Errors.swift */; };
 		7D02CE272A97E6790048ADE6 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D02CE262A97E6790048ADE6 /* ApiService.swift */; };
-		7D02CE2A2A97E80D0048ADE6 /* Collections in Frameworks */ = {isa = PBXBuildFile; productRef = 7D02CE292A97E80D0048ADE6 /* Collections */; };
 		7D02CE302A97E96E0048ADE6 /* BadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D02CE2F2A97E96E0048ADE6 /* BadgeView.swift */; };
 		7D02CE342A98E8130048ADE6 /* JLV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D02CE332A98E8130048ADE6 /* JLV.swift */; };
 		7D03EEAE2C47F48400AD20B8 /* CloseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D03EEAD2C47F48400AD20B8 /* CloseButton.swift */; };
@@ -524,6 +523,8 @@
 		7D6CCAF32B6004A200BCF62E /* VMTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D6CCAF22B6004A200BCF62E /* VMTemplate.swift */; };
 		7D704F442B8558C200F8334F /* UIView+Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D704F432B8558C200F8334F /* UIView+Constraints.swift */; };
 		7D72C9142BA88A2000D924A7 /* ArrivingTrainTimeVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D72C9132BA88A2000D924A7 /* ArrivingTrainTimeVM.swift */; };
+		7D7349642C761B1A009E6E65 /* Collections in Frameworks */ = {isa = PBXBuildFile; productRef = 7D7349632C761B1A009E6E65 /* Collections */; };
+		7D7349662C761B1A009E6E65 /* HashTreeCollections in Frameworks */ = {isa = PBXBuildFile; productRef = 7D7349652C761B1A009E6E65 /* HashTreeCollections */; };
 		7D740CC72AEA796B00E9FFD4 /* SettingsView+Connections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D740CC62AEA796B00E9FFD4 /* SettingsView+Connections.swift */; };
 		7D740CC92AEA79C800E9FFD4 /* Set+Toogle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D740CC82AEA79C800E9FFD4 /* Set+Toogle.swift */; };
 		7D740CCB2AEAB8F900E9FFD4 /* SettingsView+TransportTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D740CCA2AEAB8F900E9FFD4 /* SettingsView+TransportTypes.swift */; };
@@ -925,7 +926,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7D02CE2A2A97E80D0048ADE6 /* Collections in Frameworks */,
+				7D7349662C761B1A009E6E65 /* HashTreeCollections in Frameworks */,
+				7D7349642C761B1A009E6E65 /* Collections in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1981,7 +1983,8 @@
 			);
 			name = ChooChoo;
 			packageProductDependencies = (
-				7D02CE292A97E80D0048ADE6 /* Collections */,
+				7D7349632C761B1A009E6E65 /* Collections */,
+				7D7349652C761B1A009E6E65 /* HashTreeCollections */,
 			);
 			productName = "Chew-chew-SwiftUI";
 			productReference = 7D6734AF2A96334B00CBE9C1 /* ChooChoo.app */;
@@ -2057,7 +2060,7 @@
 			);
 			mainGroup = 7D6734A62A96334B00CBE9C1;
 			packageReferences = (
-				7D02CE282A97E80D0048ADE6 /* XCRemoteSwiftPackageReference "swift-collections" */,
+				7D7349622C761B1A009E6E65 /* XCRemoteSwiftPackageReference "swift-collections" */,
 			);
 			productRefGroup = 7D6734B02A96334B00CBE9C1 /* Products */;
 			projectDirPath = "";
@@ -3120,21 +3123,26 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		7D02CE282A97E80D0048ADE6 /* XCRemoteSwiftPackageReference "swift-collections" */ = {
+		7D7349622C761B1A009E6E65 /* XCRemoteSwiftPackageReference "swift-collections" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/apple/swift-collections.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.0;
+				minimumVersion = 1.1.2;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		7D02CE292A97E80D0048ADE6 /* Collections */ = {
+		7D7349632C761B1A009E6E65 /* Collections */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 7D02CE282A97E80D0048ADE6 /* XCRemoteSwiftPackageReference "swift-collections" */;
+			package = 7D7349622C761B1A009E6E65 /* XCRemoteSwiftPackageReference "swift-collections" */;
 			productName = Collections;
+		};
+		7D7349652C761B1A009E6E65 /* HashTreeCollections */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7D7349622C761B1A009E6E65 /* XCRemoteSwiftPackageReference "swift-collections" */;
+			productName = HashTreeCollections;
 		};
 /* End XCSwiftPackageProductDependency section */
 
