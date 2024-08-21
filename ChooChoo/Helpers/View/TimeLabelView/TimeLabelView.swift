@@ -17,10 +17,10 @@ struct TimeLabelView: View {
 	}
 	let size : ChewTextSize
 	let arragement : Arragement
+    let showOffset : Bool
 	var delayStatus : TimeContainer.DelayStatus
 	var time : Prognosed<Date>
-	
-	
+    
 	var body: some View {
 		Group {
 			switch delayStatus {

@@ -28,8 +28,8 @@ struct DeparturesListCellView : View {
 			TimeLabelView(
 				size: .big,
 				arragement: .bottom,
-				delayStatus: trip.time.departureStatus,
-				time: trip.time.date.departure
+                time: trip.time.date.departure,
+				delayStatus: trip.time.departureStatus
 			)
 			.frame(minWidth: 50)
 			let platform = trip.legStopsViewData.first?.platforms.departure ?? trip.legStopsViewData.last?.platforms.arrival
