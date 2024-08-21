@@ -15,37 +15,37 @@ extension TimeLabelView {
 		arragement : Arragement,
 		time : Prognosed<Date>,
 		delayStatus : TimeContainer.DelayStatus,
-        showOffset : Bool = false
+        type : Self.TimeLabelType = .onlyTime
 	) {
 		self.size = size
 		self.arragement = arragement
 		self.time = time
 		self.delayStatus = delayStatus
-        self.showOffset = showOffset
+        self.type = type
 	}
 	
 	init(
 		stopOver : StopViewData,
 		stopOverType : StopOverType,
-        showOffset : Bool = false
+        type : Self.TimeLabelType = .onlyTime
 	) {
 		self.delayStatus = stopOver.stopOverType.timeLabelViewDelayStatus(time: stopOver.time)
 		self.size = stopOverType.timeLabelSize
 		self.arragement = stopOverType.timeLabelArragament
 		let time = stopOver.stopOverType.timeLabelViewTime(tsContainer: stopOver.time.date)
 		self.time = Prognosed(actual: time.actual,planned: time.planned)
-        self.showOffset = showOffset
+        self.type = type
 	}
 	
 	init(
 		stopOver : StopViewData,
-        showOffset : Bool = false
+        type : Self.TimeLabelType = .onlyTime
 	) {
 		self.delayStatus = stopOver.stopOverType.timeLabelViewDelayStatus(time: stopOver.time)
 		self.size = stopOver.stopOverType.timeLabelSize
 		self.arragement = stopOver.stopOverType.timeLabelArragament
 		let time = stopOver.stopOverType.timeLabelViewTime(tsContainer: stopOver.time.date)
 		self.time = Prognosed(actual: time.actual,planned: time.planned)
-        self.showOffset = showOffset
+        self.type = type
 	}
 }

@@ -10,43 +10,58 @@ import SwiftUI
 
 // TODO: tests
 struct TimeLabelView: View {
+    enum TimeLabelType {
+        case onlyOffset
+        case onlyTime
+        case timeAndOffset
+        case timeOrOffset
+    }
 	enum Arragement {
 		case left
 		case right
 		case bottom
 	}
+    
 	let size : ChewTextSize
 	let arragement : Arragement
-    let showOffset : Bool
+    let type : TimeLabelType
 	var delayStatus : TimeContainer.DelayStatus
 	var time : Prognosed<Date>
     
 	var body: some View {
-		Group {
-			switch delayStatus {
-			case .onTime,.cancelled:
-				mainTime(delay: 0)
-			case .delay(let delay):
-				switch arragement {
-				case .left,.right:
-					HStack(spacing: 2){
-						switch arragement == .left {
-						case true:
-							optionalTime(delay: delay)
-							mainTime(delay: delay)
-						case false:
-							mainTime(delay: delay)
-							optionalTime(delay: delay)
-						}
-					}
-				case .bottom:
-					VStack(spacing: 2) {
-						mainTime(delay: delay)
-						optionalTime(delay: delay)
-					}
-				}
-			}
-		}
+        HStack(spacing: 2) {
+            if type != .onlyOffset {
+                switch delayStatus {
+                    case .onTime,.cancelled:
+                        mainTime(delay: 0)
+                    case .delay(let delay):
+                        switch arragement {
+                            case .left,.right:
+                                HStack(spacing: 2){
+                                    switch arragement == .left {
+                                        case true:
+                                            optionalTime(delay: delay)
+                                            mainTime(delay: delay)
+                                        case false:
+                                            mainTime(delay: delay)
+                                            optionalTime(delay: delay)
+                                    }
+                                }
+                            case .bottom:
+                                VStack(spacing: 2) {
+                                    mainTime(delay: delay)
+                                    optionalTime(delay: delay)
+                                }
+                        }
+                }
+            }
+            if type != .onlyTime, let time = time.actualOrPlannedIfActualIsNil() {
+                BadgeView(.timeOffset(time: time))
+                    .disabled(delayStatus == .cancelled)
+                    .foregroundColor(.primary)
+                    .badgeBackgroundStyle(.secondary)
+            }
+        }
 		.padding(2)
 	}
 }

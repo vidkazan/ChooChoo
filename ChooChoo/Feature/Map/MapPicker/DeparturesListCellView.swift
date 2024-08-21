@@ -29,7 +29,8 @@ struct DeparturesListCellView : View {
 				size: .big,
 				arragement: .bottom,
                 time: trip.time.date.departure,
-				delayStatus: trip.time.departureStatus
+				delayStatus: trip.time.departureStatus,
+                type: .onlyOffset
 			)
 			.frame(minWidth: 50)
 			let platform = trip.legStopsViewData.first?.platforms.departure ?? trip.legStopsViewData.last?.platforms.arrival
