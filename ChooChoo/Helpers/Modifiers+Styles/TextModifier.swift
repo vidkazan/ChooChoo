@@ -62,6 +62,10 @@ struct ChewPrimaryStyle: ChewTextStyle {
 		content
 			.font(.system(size: size,weight: .semibold))
 	}
+	
+	var padding : Int {
+		Int(size/3)
+	}
 }
 
 

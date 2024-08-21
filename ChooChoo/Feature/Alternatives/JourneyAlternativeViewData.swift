@@ -17,18 +17,16 @@ enum AlternativeStopPosition : Hashable {
 		case .onStop:
 			return Text("now", comment: "AlternativeStopPosition: timeBadge")
 		case .headingToStop(let time):
-			if let min = DateParcer.getTwoDateIntervalInMinutes(date1: referenceDate.date, date2: time) {
-			   switch min {
-			   case 0..<1:
-				   return Text("now", comment: "JourneyAlternativesView")
-			   default:
-				   if let dur = DateParcer.timeDuration(min) {
-					   return Text("in \(dur)", comment: "JourneyAlternativesView")
-				   }
-				   return nil
+			let min = DateParcer.getTwoDateIntervalInMinutes(date1: referenceDate.date, date2: time)
+		   switch min {
+		   case 0..<1:
+			   return Text("now", comment: "JourneyAlternativesView")
+		   default:
+			   if let dur = DateParcer.timeDuration(min) {
+				   return Text("in \(dur)", comment: "JourneyAlternativesView")
 			   }
-			}
-			return nil
+			   return nil
+		   }
 		}
 	}
 	var description : String {
