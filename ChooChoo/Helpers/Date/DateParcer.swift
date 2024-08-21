@@ -202,15 +202,19 @@ class DateParcer {
             date1: chewDate.date,
             date2: refTime
         )
-        switch min {
+        return Self.timeOffsetString(min)
+    }
+    
+    static func timeOffsetString(_ minutes : Int) -> String? {
+        switch minutes {
         case 0..<1:
             return NSLocalizedString("now", comment: "DateParcer.timeOffsetString")
         case 1...Int.max:
-            if let dur = DateParcer.timeDuration(min) {
+            if let dur = DateParcer.timeDuration(minutes) {
                 return NSLocalizedString("in \(dur)", comment: "DateParcer.timeOffsetString")
             }
         case Int.min..<0:
-            if let dur = DateParcer.timeDuration(min) {
+            if let dur = DateParcer.timeDuration(abs(minutes)) {
                 return NSLocalizedString("\(dur) ago", comment: "DateParcer.timeOffsetString")
             }
         default:
@@ -218,6 +222,5 @@ class DateParcer {
         }
         return nil
     }
-
 }
 
