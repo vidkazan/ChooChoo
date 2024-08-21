@@ -155,10 +155,8 @@
 		7D3B97EC2C08D6DA00A3AAEB /* HeadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCA4AD62BD83C33005BA68E /* HeadingView.swift */; };
 		7D3B97ED2C08D6DC00A3AAEB /* TimeLabelView+subviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE8A3502B6AB13800C3A378 /* TimeLabelView+subviews.swift */; };
 		7D3B97EE2C08D6DC00A3AAEB /* TimeLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DBF1E562ABB8084009B85EF /* TimeLabelView.swift */; };
-		7D3B97EF2C08D6DC00A3AAEB /* TimeLabelView+Init.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE8A34E2B6AB0AE00C3A378 /* TimeLabelView+Init.swift */; };
 		7D3B97F02C08D6DD00A3AAEB /* TimeLabelView+subviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE8A3502B6AB13800C3A378 /* TimeLabelView+subviews.swift */; };
 		7D3B97F12C08D6DD00A3AAEB /* TimeLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DBF1E562ABB8084009B85EF /* TimeLabelView.swift */; };
-		7D3B97F22C08D6DD00A3AAEB /* TimeLabelView+Init.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE8A34E2B6AB0AE00C3A378 /* TimeLabelView+Init.swift */; };
 		7D3B97F32C08D6E000A3AAEB /* SegmentedPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA001FC2B0F88B6009BB79D /* SegmentedPicker.swift */; };
 		7D3B97F42C08D6E000A3AAEB /* ChewDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D55BD9D2B5EA39900A0CE08 /* ChewDatePicker.swift */; };
 		7D3B97F52C08D6E000A3AAEB /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA085342BA492E5005E72B2 /* ErrorView.swift */; };
@@ -627,7 +625,6 @@
 		7DE6FDA52B5BE5B300AC8DE3 /* RecentSearchesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE6FDA42B5BE5B300AC8DE3 /* RecentSearchesViewModel.swift */; };
 		7DE727C62AD93869002FF033 /* JFV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE727C52AD93869002FF033 /* JFV.swift */; };
 		7DE727C92AD93955002FF033 /* ApiServiceCombine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE727C82AD93955002FF033 /* ApiServiceCombine.swift */; };
-		7DE8A34F2B6AB0AF00C3A378 /* TimeLabelView+Init.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE8A34E2B6AB0AE00C3A378 /* TimeLabelView+Init.swift */; };
 		7DE8A3512B6AB13800C3A378 /* TimeLabelView+subviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE8A3502B6AB13800C3A378 /* TimeLabelView+subviews.swift */; };
 		7DE8A3552B6ABB3400C3A378 /* LDSV+subviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE8A3542B6ABB3400C3A378 /* LDSV+subviews.swift */; };
 		7DE8A3582B6ABCFA00C3A378 /* LDV+background.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE8A3572B6ABCFA00C3A378 /* LDV+background.swift */; };
@@ -899,7 +896,6 @@
 		7DE6FDA42B5BE5B300AC8DE3 /* RecentSearchesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentSearchesViewModel.swift; sourceTree = "<group>"; };
 		7DE727C52AD93869002FF033 /* JFV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JFV.swift; sourceTree = "<group>"; wrapsLines = 0; };
 		7DE727C82AD93955002FF033 /* ApiServiceCombine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiServiceCombine.swift; sourceTree = "<group>"; };
-		7DE8A34E2B6AB0AE00C3A378 /* TimeLabelView+Init.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimeLabelView+Init.swift"; sourceTree = "<group>"; };
 		7DE8A3502B6AB13800C3A378 /* TimeLabelView+subviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimeLabelView+subviews.swift"; sourceTree = "<group>"; };
 		7DE8A3542B6ABB3400C3A378 /* LDSV+subviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LDSV+subviews.swift"; sourceTree = "<group>"; };
 		7DE8A3572B6ABCFA00C3A378 /* LDV+background.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LDV+background.swift"; sourceTree = "<group>"; };
@@ -1856,7 +1852,6 @@
 		7DE8A34D2B6AB09D00C3A378 /* TimeLabelView */ = {
 			isa = PBXGroup;
 			children = (
-				7DE8A34E2B6AB0AE00C3A378 /* TimeLabelView+Init.swift */,
 				7DE8A3502B6AB13800C3A378 /* TimeLabelView+subviews.swift */,
 				7DBF1E562ABB8084009B85EF /* TimeLabelView.swift */,
 			);
@@ -2252,7 +2247,6 @@
 				7D345E4A2AE95E7C003CA948 /* JourneySettings.swift in Sources */,
 				7D4B1B8A2AA8CB460096F372 /* JLVM+reduce.swift in Sources */,
 				7D6CCAEF2B5FFB7300BCF62E /* SettingsView+TransportModesSection.swift in Sources */,
-				7DE8A34F2B6AB0AF00C3A378 /* TimeLabelView+Init.swift in Sources */,
 				7DBFA3B82BD2FE7900205757 /* NSV.swift in Sources */,
 				7DF167952C602B7B00096BFC /* JourneyActionsView.swift in Sources */,
 				7D2BF7A82B67D30800E1CED7 /* Color+random.swift in Sources */,
@@ -2392,7 +2386,6 @@
 				7D3B988E2C08D77E00A3AAEB /* constructJourneys+Leg+Type.swift in Sources */,
 				7D3B98912C08D77E00A3AAEB /* JourneyViewData.swift in Sources */,
 				7D3B98522C08D73800A3AAEB /* ApiServiceErrors.swift in Sources */,
-				7D3B97F22C08D6DD00A3AAEB /* TimeLabelView+Init.swift in Sources */,
 				7D3B991D2C08D84000A3AAEB /* PlatformView.swift in Sources */,
 				7D3B979F2C08D52100A3AAEB /* LegVIewData.swift in Sources */,
 				7D3B97B72C08D56C00A3AAEB /* Annotations.swift in Sources */,
@@ -2604,7 +2597,6 @@
 				7D3B98872C08D77D00A3AAEB /* constructJourneys+Leg+Type.swift in Sources */,
 				7D3B988A2C08D77D00A3AAEB /* JourneyViewData.swift in Sources */,
 				7D3B98512C08D73800A3AAEB /* ApiServiceErrors.swift in Sources */,
-				7D3B97EF2C08D6DC00A3AAEB /* TimeLabelView+Init.swift in Sources */,
 				7D3B99202C08D84000A3AAEB /* PlatformView.swift in Sources */,
 				7D3B979E2C08D51E00A3AAEB /* LegVIewData.swift in Sources */,
 				7D3B97B62C08D56B00A3AAEB /* Annotations.swift in Sources */,

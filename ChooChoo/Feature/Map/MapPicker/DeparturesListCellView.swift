@@ -26,7 +26,7 @@ struct DeparturesListCellView : View {
 			.tint(.primary)
 			Spacer()
 			TimeLabelView(
-				size: .big,
+                size: .medium,
 				arragement: .bottom,
                 time: trip.time.date.departure,
 				delayStatus: trip.time.departureStatus,
