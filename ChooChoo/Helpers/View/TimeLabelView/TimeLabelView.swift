@@ -10,7 +10,7 @@ import SwiftUI
 
 // TODO: tests
 struct TimeLabelView: View {
-    static let timeOrOffsetTime : Double = 3600 * 1
+    static let timeOrOffsetTime : Double = 3600 / 1.5
     @EnvironmentObject var chewVM : ChewViewModel
     enum TimeLabelType : String, Hashable {
         case onlyOffset
@@ -36,33 +36,34 @@ struct TimeLabelView: View {
         HStack(spacing: 2) {
             if type != .onlyOffset || type == .timeOrOffset {
                 switch delayStatus {
-                    case .onTime,.cancelled:
-                        mainTime(delay: 0)
-                    case .delay(let delay):
-                        switch arragement {
-                            case .left,.right:
-                                HStack(spacing: 2){
-                                    switch arragement == .left {
-                                        case true:
-                                            optionalTime(delay: delay)
-                                            mainTime(delay: delay)
-                                        case false:
-                                            mainTime(delay: delay)
-                                            optionalTime(delay: delay)
-                                    }
-                                }
-                            case .bottom:
-                                VStack(spacing: 2) {
-                                    mainTime(delay: delay)
-                                    optionalTime(delay: delay)
-                                }
+                case .onTime,.cancelled:
+                    mainTime(delay: 0)
+                case .delay(let delay):
+                    switch arragement {
+                    case .left,.right:
+                        HStack(spacing: 2){
+                            switch arragement == .left {
+                            case true:
+                                optionalTime(delay: delay)
+                                mainTime(delay: delay)
+                            case false:
+                                mainTime(delay: delay)
+                                optionalTime(delay: delay)
+                            }
                         }
+                    case .bottom:
+                        VStack(spacing: 2) {
+                            mainTime(delay: delay)
+                            optionalTime(delay: delay)
+                        }
+                    }
                 }
             }
             if type != .onlyTime || type == .timeOrOffset, let time = time.actualOrPlannedIfActualIsNil() {
                 BadgeView(.timeOffset(time: time),size == .medium ? .medium : .big)
                     .foregroundColor(.primary)
-                    .badgeBackgroundStyle(size == .medium ? .secondary : .clear)
+//                    .badgeBackgroundStyle(size == .medium ? .secondary : .clear)
+                    .badgeBackgroundStyle(.secondary)
             }
         }
         .onAppear {
@@ -77,23 +78,28 @@ struct TimeLabelView: View {
 
 extension TimeLabelView {
     func evaluateTimeOrOffsetType() {
+        var newTimerInterval = Self.timeOrOffsetTime
         if type == .timeOrOffset {
             if  let time = time.actualOrPlannedIfActualIsNil() {
                 let diff = time.timeIntervalSince1970 - chewVM.referenceDate.ts
-                if diff < 0 {
-                    timer = Timer.publish(every: Self.timeOrOffsetTime, on: .main, in: .common)
-                    type = .onlyOffset
-                } else if diff < Self.timeOrOffsetTime {
-                    timer = Timer.publish(every: diff, on: .main, in: .common)
-                    type = .onlyOffset
-                } else {
-                    type = .onlyTime
-                    timer = Timer.publish(every: Self.timeOrOffsetTime, on: .main, in: .common)
+                switch diff {
+                    case (-.infinity)..<(-Self.timeOrOffsetTime):
+                        timer = Timer.publish(every: Self.timeOrOffsetTime, on: .main, in: .common)
+                        type = .onlyTime
+                    case (-Self.timeOrOffsetTime)..<0:
+                        timer = Timer.publish(every: Self.timeOrOffsetTime, on: .main, in: .common)
+                        type = .onlyOffset
+                    case 0..<Self.timeOrOffsetTime:
+                        timer = Timer.publish(every: diff, on: .main, in: .common)
+                        type = .onlyOffset
+                    default:
+                        type = .onlyTime
+                        timer = Timer.publish(every: Self.timeOrOffsetTime, on: .main, in: .common)
                 }
             } else {
                 type = .onlyTime
-                timer = Timer.publish(every: Self.timeOrOffsetTime, on: .main, in: .common)
             }
+            timer = Timer.publish(every: newTimerInterval, on: .main, in: .common)
         }
     }
 }
