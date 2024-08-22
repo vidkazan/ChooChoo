@@ -36,14 +36,21 @@ extension JourneyFollowData {
 			case .enter:
 				return Text("", comment: "JourneyActionType")
 			case .exit:
-				return Text("exit at ", comment: "JourneyActionType")
+				return Text("exit at", comment: "JourneyActionType")
 			}
 		}
 	}
 	
-	struct JourneyAction : Hashable {
+    struct JourneyAction : Hashable, Identifiable {
 		let type : JourneyActionType
 		let leg : LegViewData
 		let stopData : StopViewData
+        let id = UUID()
+        
+        init(type: JourneyActionType, leg: LegViewData, stopData: StopViewData) {
+            self.type = type
+            self.leg = leg
+            self.stopData = stopData
+        }
 	}
 }

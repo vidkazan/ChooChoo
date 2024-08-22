@@ -10,12 +10,14 @@ import SwiftUI
 
 struct JourneyFollowCellView : View {
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+    
 	@Namespace var journeyFollowCellViewNamespace
 	@EnvironmentObject var chewVM : ChewViewModel
 	@ObservedObject var vm : JourneyDetailsViewModel
 	@ObservedObject var appSettingsVM : AppSettingsViewModel = Model.shared.appSettingsVM
-  @State var showUpdatedAtBadge : Bool = false
+    @State var showUpdatedAtBadge : Bool = false
 	let journeyActions : [JourneyFollowData.JourneyAction]
+    
 	init(journeyDetailsViewModel: JourneyDetailsViewModel, journeyActions : [JourneyFollowData.JourneyAction]) {
 		self.vm = journeyDetailsViewModel
 		self.journeyActions = journeyActions
@@ -23,29 +25,33 @@ struct JourneyFollowCellView : View {
 	var body: some View {
 		let data = vm.state.data.viewData
 		VStack(alignment: .leading) {
-			HStack {
-				NavigationLink(destination: {
-					JourneyDetailsView(journeyDetailsViewModel: vm)
-				}, label: {
-					BadgeView(
-						.departureArrivalStops(departure: data.origin, arrival: data.destination),
-						.big
-					)
-				})
-			}
+            NavigationLink(destination: {
+                JourneyDetailsView(journeyDetailsViewModel: vm)
+            }, label: {
+                BadgeView(
+                    .departureArrivalStops(
+                        departure: data.origin,
+                        arrival: data.destination
+                    ),
+                    .big
+                )
+            })
 			header(data: data)
-			LegsView(journey : data,mode : appSettingsVM.state.settings.legViewMode)
-			HStack(spacing: 2) {
-				Spacer()
-				if !data.isReachable || !data.legs.allSatisfy({$0.departureAndArrivalNotCancelledAndNotReachableFromPreviousLeg() == true}) {
-					BadgeView(.connectionNotReachable)
-						.badgeBackgroundStyle(.red)
-				}
-				if Date.now < data.time.date.arrival.actualOrPlannedIfActualIsNil() ?? .now {
-					updatedAtBadge(data: data)
-				}
-			}
-			JourneyActionsView(journeyActions: journeyActions)
+			LegsView(
+                journey : data,
+                mode : appSettingsVM.state.settings.legViewMode
+            )
+            if vm.state.data.viewData.isReachable {
+                JourneyActionsView(
+                    journeyActions: journeyActions.filter {
+                        guard let time = $0.type.time(time: $0.stopData.time) else {
+                            return false
+                        }
+                        return time >= chewVM.referenceDate.date
+                    }
+                )
+            }
+            badges(data: data)
 		}
         .onReceive(timer, perform: { _ in
             self.showUpdatedAtBadge = chewVM.referenceDate.ts > (data.updatedAt + 121) ? true : false
@@ -53,6 +59,21 @@ struct JourneyFollowCellView : View {
 		.contextMenu { menu }
 		.animation(.easeInOut, value: vm.state.status)
 	}
+}
+
+extension JourneyFollowCellView {
+    func badges(data : JourneyViewData) -> some View {
+        HStack(spacing: 2) {
+            Spacer()
+            if !data.isReachable || !data.legs.allSatisfy({$0.departureAndArrivalNotCancelledAndNotReachableFromPreviousLeg() == true}) {
+                BadgeView(.connectionNotReachable)
+                    .badgeBackgroundStyle(.red)
+            }
+            if Date.now < data.time.date.arrival.actualOrPlannedIfActualIsNil() ?? .now {
+                updatedAtBadge(data: data)
+            }
+        }
+    }
 }
 
 extension JourneyFollowCellView {
