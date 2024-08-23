@@ -10,7 +10,6 @@ import SwiftUI
 
 struct JourneyActionsView : View {
 	@EnvironmentObject var chewVM : ChewViewModel
-//	let timer = Timer.publish(every: 60, on: .main, in: .common).autoconnect()
 	@State var journeyActions : [JourneyFollowData.JourneyAction]
     @State var current : UUID = .init()
 	
@@ -61,9 +60,6 @@ struct JourneyActionsView : View {
                 .onAppear{
                     update(referenceTime: chewVM.referenceDate)
                 }
-//                .onReceive(timer, perform: { _ in
-//                    update(referenceTime: chewVM.referenceDate)
-//                })
             }
         }
 	}
