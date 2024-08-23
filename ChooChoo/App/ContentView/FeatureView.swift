@@ -78,6 +78,9 @@ struct FeatureView: View {
 					.tag(Tabs.follow)
 			}
 		}
+        .onOpenURL(perform: {
+            self.handleIncomingURL($0)
+        })
 		.onReceive(chewViewModel.$state, perform: { state in
 			switch state.status {
 			case .checkingSearchData, .journeys:
@@ -89,3 +92,29 @@ struct FeatureView: View {
 	}
 }
 
+extension FeatureView {
+    private func handleIncomingURL(_ url: URL) {
+            guard url.scheme == "choochoo" else {
+                return
+            }
+            guard let components = URLComponents(url: url, resolvingAgainstBaseURL: true) else {
+                Model.shared.topBarAlertVM.send(event: .didRequestShow(.generic(msg: "Unknown URL")))
+                return
+            }
+            guard let action = components.host, action == "journey" else {
+                Model.shared.topBarAlertVM.send(event: .didRequestShow(.generic(msg: "Unknown URL, we can't handle this one!")))
+                return
+            }
+            guard var ref = components.queryItems?.first(where: { $0.name == "ref" })?.value else {
+                Model.shared.topBarAlertVM.send(event: .didRequestShow(.generic(msg: "Journey not found")))
+                return
+            }
+            ref.removeLast()
+            ref.removeFirst()
+            guard let data = Data(base64Encoded: ref),let string = String(data: data, encoding: .utf8) else {
+                Model.shared.topBarAlertVM.send(event: .didRequestShow(.generic(msg: "Journey ref error")))
+                return
+            }
+            Model.shared.sheetVM.send(event: .didRequestShow(.shareJourneyDetails(journeyRef: string)))
+        }
+}
