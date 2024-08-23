@@ -60,20 +60,20 @@ private extension SheetView {
 			type: type,
 			closeSheet: closeSheet
 		)
-			.navigationBarTitleDisplayMode(.inline)
-			.navigationTitle(type.description)
-			.toolbar {
-				ToolbarItem(placement: .navigationBarLeading, content: {
-					Button(action: {
-						closeSheet()
-					}, label: {
-						Text(
-							"Close",
-							 comment: "SheetView: toolbar: button name"
-						)
-					})
-				})
-			}
+        .navigationBarTitleDisplayMode(.inline)
+        .navigationTitle(type.description)
+        .toolbar {
+            ToolbarItem(placement: .navigationBarLeading, content: {
+                Button(action: {
+                    closeSheet()
+                }, label: {
+                    Text(
+                        "Close",
+                         comment: "SheetView: toolbar: button name"
+                    )
+                })
+            })
+        }
 	}
 }
 
@@ -84,6 +84,26 @@ struct SheetViewInner : View {
 	let closeSheet : ()->Void
 	var body: some View {
 		switch type {
+        case .shareJourneyDetails:
+            if let data = data as? ShareJourneyDetailsDataSource {
+                JourneyDetailsView(
+                    journeyDetailsViewModel: Model
+                        .shared
+                        .journeyDetailViewModel(
+                            followId: -1,
+                            journeyRef : data.viewData.refreshToken,
+                            viewdata: data.viewData,
+                            stops: .init(
+                                departure: .init(),
+                                arrival: .init()
+                            ),
+                            chewVM: chewViewModel
+                        )
+                )
+                .navigationBarBackButtonHidden(true)
+            } else {
+                ErrorView(viewType: .error, msg: Text("Failed to load journey",comment: "SheetViewInner"), action: nil)
+            }
 		case let .alternatives(jdvm, javm,jajlvm):
 			JourneyAlternativesView(jdvm: jdvm, javm: javm, jajlvm: jajlvm)
 		case .appSettings:

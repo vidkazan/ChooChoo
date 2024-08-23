@@ -24,6 +24,7 @@ extension SheetViewModel {
 		case onboarding
 		case remark(remarks : [RemarkViewData])
 		case journeyDebug(journey : JourneyDTO?)
+        case shareJourneyDetails(journeyRef: String)
 		case alternatives(
 			jdvm: JourneyDetailsViewModel,
 			javm: JourneyAlternativeDepartureStopViewModel,
@@ -32,6 +33,8 @@ extension SheetViewModel {
 		
 		var detents : [ChewPresentationDetent] {
 			switch self {
+            case .shareJourneyDetails:
+                return [.large]
 			case .tip:
 				return [.height(200)]
 			case .mapPicker:
@@ -61,6 +64,8 @@ extension SheetViewModel {
 		
 		var description : String {
 			switch self {
+            case .shareJourneyDetails:
+                return NSLocalizedString("Journey Details", comment: "SheetViewModel: SheetType")
 			case .alternatives:
 				return NSLocalizedString("Alternatives", comment: "SheetViewModel: SheetType")
 			case .tip:
@@ -90,6 +95,8 @@ extension SheetViewModel {
 		
 		var dataSourceType : any SheetViewDataSource.Type {
 			switch self {
+            case .shareJourneyDetails:
+                return ShareJourneyDetailsDataSource.self
 			case .alternatives:
 				return JourneyAlternativesViewDataSource.self
 			case .tip:
