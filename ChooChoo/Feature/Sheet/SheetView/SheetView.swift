@@ -84,6 +84,8 @@ struct SheetViewInner : View {
 	let closeSheet : ()->Void
 	var body: some View {
 		switch type {
+        case let .shareLink(link):
+                ShareJourneyView(journey: link)
         case .shareJourneyDetails:
             if let data = data as? ShareJourneyDetailsDataSource {
                 JourneyDetailsView(

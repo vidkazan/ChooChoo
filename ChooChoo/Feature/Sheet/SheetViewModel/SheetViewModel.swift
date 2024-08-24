@@ -150,6 +150,8 @@ extension SheetViewModel {
                     )
                 )
 				.eraseToAnyPublisher()
+            case .shareLink(let link):
+                    return Just(Event.didLoadDataForShowing(.shareLink(journey: link), ShareJourneyDataSource())).eraseToAnyPublisher()
 			case .appSettings:
 				return Just(Event.didLoadDataForShowing(.appSettings, AppSettingsViewDataSource())).eraseToAnyPublisher()
 			case .tip:

@@ -489,6 +489,9 @@
 		7D5B68D92BD2A60700747D97 /* LogVIewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5B68D82BD2A60700747D97 /* LogVIewModel.swift */; };
 		7D5D78522B29C00600E17CC7 /* CDLeg+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5D78502B29C00600E17CC7 /* CDLeg+CoreDataClass.swift */; };
 		7D5D78532B29C00600E17CC7 /* CDLeg+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5D78512B29C00600E17CC7 /* CDLeg+CoreDataProperties.swift */; };
+		7D5E95ED2C78B67000E7918D /* ShareJourneyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5E95EC2C78B67000E7918D /* ShareJourneyView.swift */; };
+		7D5E95EF2C78C48700E7918D /* ShareURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5E95EE2C78C48700E7918D /* ShareURL.swift */; };
+		7D5E95F12C78C54D00E7918D /* String+Encoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5E95F02C78C54D00E7918D /* String+Encoding.swift */; };
 		7D61AA872C42C4C8000F72D6 /* JFV+swipeActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D61AA862C42C4C8000F72D6 /* JFV+swipeActions.swift */; };
 		7D61AA892C42DD2B000F72D6 /* SheetViewModel+SheetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D61AA882C42DD2B000F72D6 /* SheetViewModel+SheetType.swift */; };
 		7D61AA8B2C42DE3F000F72D6 /* JAV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D61AA8A2C42DE3F000F72D6 /* JAV.swift */; };
@@ -746,6 +749,7 @@
 		7D462D5F2AACED6D00BC0D65 /* constructJourneys+Journey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "constructJourneys+Journey.swift"; sourceTree = "<group>"; };
 		7D462D612AACEE2500BC0D65 /* constructJourneys+Leg.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "constructJourneys+Leg.swift"; sourceTree = "<group>"; };
 		7D46ABE72B220B1600A4145E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7D491F5A2C7A019700EAFEA2 /* ChooChoo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ChooChoo.entitlements; sourceTree = "<group>"; };
 		7D4A0F072C43D3F200D4A7E7 /* ReferenceTimeSliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReferenceTimeSliderView.swift; sourceTree = "<group>"; };
 		7D4B1B892AA8CB460096F372 /* JLVM+reduce.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JLVM+reduce.swift"; sourceTree = "<group>"; };
 		7D4B1B8B2AA8CB970096F372 /* JLVM+sideEffects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JLVM+sideEffects.swift"; sourceTree = "<group>"; };
@@ -763,6 +767,9 @@
 		7D5B68D82BD2A60700747D97 /* LogVIewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogVIewModel.swift; sourceTree = "<group>"; };
 		7D5D78502B29C00600E17CC7 /* CDLeg+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDLeg+CoreDataClass.swift"; sourceTree = "<group>"; };
 		7D5D78512B29C00600E17CC7 /* CDLeg+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDLeg+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		7D5E95EC2C78B67000E7918D /* ShareJourneyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareJourneyView.swift; sourceTree = "<group>"; };
+		7D5E95EE2C78C48700E7918D /* ShareURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareURL.swift; sourceTree = "<group>"; };
+		7D5E95F02C78C54D00E7918D /* String+Encoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Encoding.swift"; sourceTree = "<group>"; };
 		7D61AA862C42C4C8000F72D6 /* JFV+swipeActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JFV+swipeActions.swift"; sourceTree = "<group>"; };
 		7D61AA882C42DD2B000F72D6 /* SheetViewModel+SheetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SheetViewModel+SheetType.swift"; sourceTree = "<group>"; };
 		7D61AA8A2C42DE3F000F72D6 /* JAV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JAV.swift; sourceTree = "<group>"; };
@@ -1006,6 +1013,7 @@
 				7D33A9A22B54335E0005D723 /* View */,
 				7D33A9A12B54332C0005D723 /* Modifiers+Styles */,
 				7DAF62C32A9F78CF006F1A17 /* SunEvent.swift */,
+				7D5E95EC2C78B67000E7918D /* ShareJourneyView.swift */,
 				7DAF62C12A9E8C2B006F1A17 /* Solar.swift */,
 				7D53705B2ACED7300009BA20 /* PlannedActual.swift */,
 				7D740CC82AEA79C800E9FFD4 /* Set+Toogle.swift */,
@@ -1018,8 +1026,10 @@
 				7DCA4AD22BD807D8005BA68E /* FloatingPoint.swift */,
 				7D3361DA2C049CF400A263B7 /* DepartureArrivalPair.swift */,
 				7D3EA1AA2C0E2AC0005C507C /* GitBranch.swift */,
+				7D5E95EE2C78C48700E7918D /* ShareURL.swift */,
 				7D3EA1AC2C0E2B91005C507C /* Branch.plist */,
 				7D6623262C5BB08D0059FC7F /* ChooDeparture.swift */,
+				7D5E95F02C78C54D00E7918D /* String+Encoding.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -1384,6 +1394,7 @@
 		7D6734B12A96334B00CBE9C1 /* ChooChoo */ = {
 			isa = PBXGroup;
 			children = (
+				7D491F5A2C7A019700EAFEA2 /* ChooChoo.entitlements */,
 				7DD246D62BCAC10600410827 /* Config */,
 				7D33A9522B5343320005D723 /* Test */,
 				7D02CE112A97E4650048ADE6 /* Helpers */,
@@ -2145,6 +2156,7 @@
 				7D462D542AAC972200BC0D65 /* StopList.swift in Sources */,
 				7D1AD8EC2AE94A7500868056 /* GeoDTO.swift in Sources */,
 				7D10BD412BB1B3B000702D83 /* CoreDataStore+add.swift in Sources */,
+				7D5E95EF2C78C48700E7918D /* ShareURL.swift in Sources */,
 				7DA8D34A2A9A118E005DF550 /* BadgesView.swift in Sources */,
 				7D33A94D2B51A7E60005D723 /* Styles.swift in Sources */,
 				7D462D4F2AAC956B00BC0D65 /* JLVM+reduce+FailedToLoadJourneys.swift in Sources */,
@@ -2200,6 +2212,7 @@
 				7D462D602AACED6D00BC0D65 /* constructJourneys+Journey.swift in Sources */,
 				7D6955212B58208300271F56 /* TopBarAlertsView.swift in Sources */,
 				7D2C0E622BDBB9E4000839C1 /* SwipeActionsTip.swift in Sources */,
+				7D5E95F12C78C54D00E7918D /* String+Encoding.swift in Sources */,
 				7D72C9142BA88A2000D924A7 /* ArrivingTrainTimeVM.swift in Sources */,
 				7D56F7F42C66506F00C5AF62 /* StopDeparturesListView.swift in Sources */,
 				7DD5BAFB2B72BAE900CFE768 /* JLV+list.swift in Sources */,
@@ -2304,6 +2317,7 @@
 				7DCA4AE42BDA7F3F005BA68E /* ArrivalTrainTimeLabelView.swift in Sources */,
 				7D2C0E6C2BDBD9DE000839C1 /* ChooButton.swift in Sources */,
 				7D9BB1112B0CBF54008A3616 /* CDUser+CoreDataProperties.swift in Sources */,
+				7D5E95ED2C78B67000E7918D /* ShareJourneyView.swift in Sources */,
 				7D5B68D72BD29CE700747D97 /* LogView.swift in Sources */,
 				7D5D78532B29C00600E17CC7 /* CDLeg+CoreDataProperties.swift in Sources */,
 				7DF167912C5D7AD700096BFC /* JourneyActions.swift in Sources */,
@@ -2910,6 +2924,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = DebugAppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
+				CODE_SIGN_ENTITLEMENTS = ChooChoo/ChooChoo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 18;
 				DEVELOPMENT_ASSET_PATHS = "";
@@ -2952,6 +2967,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
+				CODE_SIGN_ENTITLEMENTS = ChooChoo/ChooChoo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 18;
 				DEVELOPMENT_ASSET_PATHS = "";

@@ -105,12 +105,12 @@ extension FeatureView {
                 Model.shared.topBarAlertVM.send(event: .didRequestShow(.generic(msg: "Unknown URL, we can't handle this one!")))
                 return
             }
-            guard var ref = components.queryItems?.first(where: { $0.name == "ref" })?.value else {
+            guard var ref = components.queryItems?.first(where: { $0.name == "ref" })?.value, ref.count > 2 else {
                 Model.shared.topBarAlertVM.send(event: .didRequestShow(.generic(msg: "Journey not found")))
                 return
             }
-            ref.removeLast()
-            ref.removeFirst()
+//            ref.removeLast()
+//            ref.removeFirst()
             guard let data = Data(base64Encoded: ref),let string = String(data: data, encoding: .utf8) else {
                 Model.shared.topBarAlertVM.send(event: .didRequestShow(.generic(msg: "Journey ref error")))
                 return

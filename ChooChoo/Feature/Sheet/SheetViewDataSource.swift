@@ -29,6 +29,8 @@ struct ShareJourneyDetailsDataSource : SheetViewDataSource {
     let viewData : JourneyViewData
 }
 
+struct ShareJourneyDataSource : SheetViewDataSource {}
+
 struct MapDetailsViewDataSource : SheetViewDataSource {
 	let coordRegion : MKCoordinateRegion
 	let mapLegDataList : OrderedSet<MapLegData>
