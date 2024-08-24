@@ -9,7 +9,7 @@ import Foundation
 
 class APIAvailabilityMonitor  {
 	private var timer: Timer?
-	let monitorURL : URL? = URL(string: "https://"+Constants.apiData.urlBase + Constants.apiData.forPing)
+	let monitorURL : URL? = URL(string: "https://"+Constants.ApiData.urlBase + Constants.ApiData.forPing)
 	var delegate : APIAvailabilityMonitorDelegate? = nil
 	var currentTask : URLSessionTask? = nil
 	

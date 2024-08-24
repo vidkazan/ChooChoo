@@ -47,18 +47,7 @@ struct JourneySearchView : View {
 			)
 			.navigationBarTitleDisplayMode(.inline)
 			.toolbar {
-				ToolbarItem(
-					placement: .topBarLeading,
-					content: {
-						if topAlertVM.state.alerts.contains(.offline) {
-							BadgeView(.offlineMode)
-								.badgeBackgroundStyle(.blue)
-						} else if topAlertVM.state.alerts.contains(.apiUnavailable) {
-							BadgeView(.apiUnavaiable)
-								.badgeBackgroundStyle(.primary)
-						}
-					}
-				)
+				Self.topBarLeadingToolbar(topBarAlertVM: topAlertVM)
 				ToolbarItem(placement: .topBarTrailing, content: {
 					Button(action: {
 						Model.shared.sheetVM.send(event: .didRequestShow(.appSettings))
@@ -134,6 +123,29 @@ extension JourneySearchView {
 	}
 }
 
+extension JourneySearchView {
+	static func topBarLeadingToolbar(topBarAlertVM : TopBarAlertViewModel) -> some ToolbarContent {
+		ToolbarItem(
+			placement: .topBarLeading,
+			content: {
+				if topBarAlertVM.state.alerts.contains(.offline) {
+					Button(action: {
+						UIApplication.shared.open(URL(string: "http://captive.apple.com")!,options: [:], completionHandler: nil)
+					}, label: {
+						BadgeView(.offlineMode)
+							.foregroundColor(.primary)
+							.badgeBackgroundStyle(.blue)
+					})
+				} else if topBarAlertVM.state.alerts.contains(.apiUnavailable) {
+					BadgeView(.apiUnavaiable)
+						.badgeBackgroundStyle(.primary)
+				}
+			}
+		)
+	}
+}
+
+
 #if DEBUG
 struct JSV_Previews: PreviewProvider {
 	static var previews: some View {
@@ -148,3 +160,4 @@ struct JSV_Previews: PreviewProvider {
 	}
 }
 #endif
+

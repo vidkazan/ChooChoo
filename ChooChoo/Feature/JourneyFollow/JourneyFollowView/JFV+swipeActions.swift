@@ -14,8 +14,16 @@ extension JourneyFollowView {
 		jdvm : JourneyDetailsViewModel
 	) -> some View {
 		Button {
-			let javm = JourneyAlternativeDepartureStopViewModel(arrStop: jdvm.state.data.arrStop, settings: jdvm.state.data.viewData.settings)
-			let jajlvm = JourneyAlternativeJourneysListViewModel(arrStop: jdvm.state.data.arrStop, depStop: .location(.init()), time: .now, settings: jdvm.state.data.viewData.settings)
+			let javm = JourneyAlternativeDepartureStopViewModel(
+                arrStop: jdvm.state.data.arrStop,
+                settings: jdvm.state.data.viewData.settings
+            )
+			let jajlvm = JourneyAlternativeJourneysListViewModel(
+                arrStop: jdvm.state.data.arrStop,
+                depStop: .location(.init()), 
+                time: .now,
+                settings: jdvm.state.data.viewData.settings
+            )
 			Model.shared.sheetVM.send(event: .didRequestShow(.alternatives(jdvm: jdvm, javm: javm,jajlvm: jajlvm)))
 		} label: {
 			Label(
@@ -27,7 +35,7 @@ extension JourneyFollowView {
 				}
 			)
 		}
-		.tint(.chewFillMagenta.opacity(0.7))
+        .tint(Color.transport.busMagenta)
 	}
 }
 

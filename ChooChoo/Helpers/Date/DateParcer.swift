@@ -9,6 +9,42 @@ import Foundation
 
 // TODO: tests
 class DateParcer {
+    enum ChooDuration {
+        case mins
+        case hoursAndMins
+        case hours
+        case daysAndHours
+        case days
+        case months
+        case years
+        
+        var durationFormatter : DateComponentsFormatter {
+            let formatter = DateComponentsFormatter()
+            formatter.unitsStyle = .short
+            switch self {
+                case .mins:
+                    formatter.allowedUnits = [.minute]
+                case .hoursAndMins:
+                    formatter.allowedUnits = [.hour, .minute]
+                case .hours:
+                    formatter.allowedUnits = [.hour]
+                case .daysAndHours:
+                    formatter.allowedUnits = [.day,.hour]
+                case .days:
+                    formatter.allowedUnits = [.day]
+                case .months:
+                    formatter.allowedUnits = [.month]
+                case .years:
+                    formatter.allowedUnits = [.year]
+            }
+            return formatter
+        }
+        
+        func timeOffsetString(minutes : Int) -> String? {
+            self.durationFormatter.string(from: Double(minutes * 60))
+        }
+    }
+    
 	private static let durationFormatter : DateComponentsFormatter = {
 		let formatter = DateComponentsFormatter()
 		formatter.unitsStyle = .short
@@ -36,11 +72,15 @@ class DateParcer {
 		return date
 	}
 	
+	static func getTwoDateIntervalInMinutes(date1 : Date,date2 : Date) -> Int {
+		let interval = date2.timeIntervalSinceReferenceDate - date1.timeIntervalSinceReferenceDate
+		return Int((interval / 60))
+	}
+	
 	static func getTwoDateIntervalInMinutes(date1 : Date?,date2 : Date?) -> Int? {
 		guard let date1 = date1,
 			  let date2 = date2 else { return nil }
-		let interval = date2.timeIntervalSinceReferenceDate - date1.timeIntervalSinceReferenceDate
-		return Int((interval / 60))
+		return getTwoDateIntervalInMinutes(date1: date1, date2: date2)
 	}
 	
 	static func getTwoDateInterval(date1 : Date?,date2 : Date?) -> Double? {
@@ -96,9 +136,28 @@ class DateParcer {
 	}
 	
 	static func timeDuration(_ minutes : Int) -> String? {
-		return DateParcer.durationFormatter.string(from: Double(minutes * 60))?
-			.replacingOccurrences(of: " ", with: "")
-			.replacingOccurrences(of: ",", with: " ")
+        let string = { 
+            switch abs(minutes) {
+            case 0..<59:
+                return DateParcer.ChooDuration.mins.timeOffsetString(minutes: minutes)
+            case 60..<60*24:
+                return DateParcer.ChooDuration.hoursAndMins.timeOffsetString(minutes: minutes)
+            case 60*24..<60*24*3:
+                return DateParcer.ChooDuration.daysAndHours.timeOffsetString(minutes: minutes)
+            case 60*24*3..<60*24*45:
+                return DateParcer.ChooDuration.days.timeOffsetString(minutes: minutes)
+            case 60*24*45..<60*24*365:
+                return DateParcer.ChooDuration.months.timeOffsetString(minutes: minutes)
+            case 60*24*365..<Int.max:
+                return DateParcer.ChooDuration.years.timeOffsetString(minutes: minutes)
+            default:
+                return nil
+            }
+        }()
+        return string?
+            .replacingOccurrences(of: " ", with: "")
+            .replacingOccurrences(of: ",", with: " ")
+			
 	}
 	
 	static func getCombinedDate(date: Date, time: Date) -> Date? {
@@ -137,5 +196,31 @@ class DateParcer {
 		}
 		return allDays
 	}
+    
+    static func timeOffsetString(_ refTime : Date,chewDate : ChewDate = .now) -> String? {
+        let min = DateParcer.getTwoDateIntervalInMinutes(
+            date1: chewDate.date,
+            date2: refTime
+        )
+        return Self.timeOffsetString(min)
+    }
+    
+    static func timeOffsetString(_ minutes : Int) -> String? {
+        switch minutes {
+        case 0..<1:
+            return NSLocalizedString("now", comment: "DateParcer.timeOffsetString")
+        case 1...Int.max:
+            if let dur = DateParcer.timeDuration(minutes) {
+                return NSLocalizedString("in \(dur)", comment: "DateParcer.timeOffsetString")
+            }
+        case Int.min..<0:
+            if let dur = DateParcer.timeDuration(abs(minutes)) {
+                return NSLocalizedString("\(dur) ago", comment: "DateParcer.timeOffsetString")
+            }
+        default:
+            break
+        }
+        return nil
+    }
 }
 

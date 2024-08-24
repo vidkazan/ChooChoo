@@ -92,6 +92,10 @@ struct BadgeView : View {
 	var body : some View {
 		Group {
 			switch badge {
+			case let .timeOffset(time):
+				TimeOffsetView(refTime: time)
+				.chewTextSize(size)
+				.padding(4)
 			case let .lineNumberWithDirection(leg):
 				HStack(spacing: 0) {
 					BadgeView(.lineNumber(lineType: leg.lineViewData.type, num: "\(leg.lineViewData.name)"),size)

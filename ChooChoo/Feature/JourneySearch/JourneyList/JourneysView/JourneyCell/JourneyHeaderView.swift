@@ -17,7 +17,8 @@ struct JourneyHeaderView: View {
 				size: .big,
 				arragement: .right,
 				time : journey.time.date.departure,
-				delayStatus: journey.time.departureStatus
+				delayStatus: journey.time.departureStatus,
+                type: .timeOrOffset
 			)
 			.padding(7)
 			Spacer()

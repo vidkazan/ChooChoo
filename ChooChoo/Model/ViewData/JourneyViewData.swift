@@ -121,25 +121,58 @@ extension JourneyViewData {
 	)
 	
 	static let journeyDebug = Option(
-		action: { data in
-			Model.shared.sheetVM.send(
-				event: .didRequestShow(
-					.journeyDebug(journey: data.journeyDTO)))},
+        action: { data in
+            Model.shared.sheetVM.send(
+                event: .didRequestShow(
+                    .journeyDebug(journey: data.journeyDTO)
+                )
+            )
+        },
 		icon: "ant",
 		text : NSLocalizedString(
 			"Journey debug", comment: "JourneyCell: menu item"
 		)
 	)
+    
+    static let share = Option(
+        action: { data in
+            Model.shared.sheetVM.send(
+                event: .didRequestShow(
+                    .shareLink(journey: data)
+                )
+            )
+//            if let urlString = ChooShare.journey(journey: data).url() {
+//                Model.shared.sheetVM.send(
+//                    event: .didRequestShow(
+//                        .shareLink(journey: urlString)
+//                    )
+//                )
+//            } else {
+//                Model.shared.topBarAlertVM.send(
+//                    event: .didRequestShow(
+//                        .generic(msg: "Failed to share journey")
+//                    )
+//                )
+//            }
+        },
+        icon: "square.and.arrow.up",
+        text : NSLocalizedString(
+            "Share journey", comment: "JourneyCell: menu item"
+        )
+    )
 }
 
 extension JourneyViewData {
 	var options : [Option] {
 		#if DEBUG
 		return [
-			Self.journeyDebug
+			Self.journeyDebug,
+            Self.share
 		]
 		#else
-		return []
+		return [
+            Self.share
+        ]
 		#endif
 	}
 }

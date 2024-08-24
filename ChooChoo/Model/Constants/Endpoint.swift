@@ -18,7 +18,13 @@ struct Constants {
 	
 	static let navigationTitle = "Choo Choo"
 	
-	struct apiData {
+	struct ApiData {
+        struct Share {
+            static let ghPageBase = "vidkazan.github.io"
+            static let shareJourneyPath = "/choochooapp/#/journey"
+        }
+        
+        
 		static let urlBase = "v6.db.transport.rest"
 		static let urlPathStops = "/stops/"
 		static let urlPathDepartures = "/departures"

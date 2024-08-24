@@ -69,17 +69,7 @@ struct JourneyFollowView : View {
 			Text("Journey follow", comment: "navigationBarTitle")
 		)
 		.toolbar {
-			ToolbarItem(placement: .topBarLeading, content: {
-				if alertVM.state.alerts.contains(.offline) {
-					BadgeView(.offlineMode)
-						.frame(maxHeight: 40)
-						.badgeBackgroundStyle(.blue)
-						.animation(.easeInOut, value: alertVM.state.alerts)
-				} else if alertVM.state.alerts.contains(.apiUnavailable) {
-					BadgeView(.apiUnavaiable)
-						.badgeBackgroundStyle(.primary)
-				}
-			})
+			JourneySearchView.topBarLeadingToolbar(topBarAlertVM: alertVM)
 		}
 	}
 }
@@ -184,12 +174,12 @@ extension JourneyFollowView {
 	@ViewBuilder func listCell(journey : JourneyFollowData, map : Bool) -> some View {
 		let vm = Model.shared.journeyDetailViewModel(
 			followId: journey.id,
-			for: journey.journeyViewData.refreshToken,
+			journeyRef: journey.journeyViewData.refreshToken,
 			viewdata: journey.journeyViewData,
 			stops: journey.stops,
 			chewVM: chewVM
 		)
-		JourneyFollowCellView(journeyDetailsViewModel: vm)
+		JourneyFollowCellView(journeyDetailsViewModel: vm,journeyActions: journey.journeyActions)
 		.swipeActions(edge: .leading) {
 			reloadActionButton(journey: journey, vm: vm)
 		}
@@ -234,7 +224,8 @@ struct FollowPreviews: PreviewProvider {
 							journeyViewData: data.first!,
 							stops: .init(
 								departure: .init(coordinates: .init(), type: .stop, stopDTO: nil),
-								arrival: .init(coordinates: .init(), type: .stop, stopDTO: nil))
+								arrival: .init(coordinates: .init(), type: .stop, stopDTO: nil)),
+							journeyActions: data.first!.journeyActions()
 						),
 						sendToJourneyDetailsViewModel: { _ in }))
 				}
@@ -242,6 +233,7 @@ struct FollowPreviews: PreviewProvider {
 		}
 	}
 }
+
 
 extension JourneyFollowView {
 	func performCalculation(elem : JourneyFollowData) -> Double {

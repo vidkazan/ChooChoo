@@ -9,15 +9,17 @@ import Foundation
 import Combine
 import SwiftUI
 
-struct JourneyFollowData : Equatable {
+struct JourneyFollowData : Hashable {
 	let id : Int64
 	let journeyViewData : JourneyViewData
 	let stops : DepartureArrivalPairStop
+	let journeyActions : [JourneyAction]
 	
-	init(id: Int64, journeyViewData: JourneyViewData, stops : DepartureArrivalPairStop) {
+	init(id: Int64, journeyViewData: JourneyViewData, stops : DepartureArrivalPairStop,journeyActions : [JourneyAction]) {
 		self.id = id
 		self.journeyViewData = journeyViewData
 		self.stops = stops
+		self.journeyActions = journeyActions
 	}
 }
 
