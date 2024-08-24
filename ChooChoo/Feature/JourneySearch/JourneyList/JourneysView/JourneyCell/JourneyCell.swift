@@ -26,7 +26,7 @@ struct JourneyCell: View {
 				NavigationLink(destination: {
 					let vm = Model.shared.journeyDetailViewModel(
 						followId: Self.followID(journey: journey),
-						for: journey.refreshToken,
+						journeyRef: journey.refreshToken,
 						viewdata: journey,
 						stops: stops,
 						chewVM: chewVM

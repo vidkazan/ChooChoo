@@ -174,7 +174,7 @@ extension JourneyFollowView {
 	@ViewBuilder func listCell(journey : JourneyFollowData, map : Bool) -> some View {
 		let vm = Model.shared.journeyDetailViewModel(
 			followId: journey.id,
-			for: journey.journeyViewData.refreshToken,
+			journeyRef: journey.journeyViewData.refreshToken,
 			viewdata: journey.journeyViewData,
 			stops: journey.stops,
 			chewVM: chewVM
