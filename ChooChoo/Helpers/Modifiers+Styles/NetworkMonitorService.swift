@@ -137,7 +137,7 @@ extension NetworkMonitorService {
 				return .init(status: .ok)
 			case .isAPIAvailable:
 				return .init(status: .ok)
-			case .APICheckError(let err):
+			case .APICheckError:
 				return state
 			}
 		case .apiUnavailable:

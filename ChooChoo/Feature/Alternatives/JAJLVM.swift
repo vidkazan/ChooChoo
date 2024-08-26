@@ -166,9 +166,9 @@ extension JourneyAlternativeJourneysListViewModel {
 					time: time,
 					lastRequestTS: referenceDate.ts
 				)
-			case let .didLoad(journeys,ts):
+			case let .didLoad(journeys,_):
 				return State(state : state,status: .idle,journeys: journeys)
-			case let .didFailToLoad(error,ts):
+			case let .didFailToLoad(error,_):
 				return State(state : state,status: .error(error: error))
 			}
 		}
