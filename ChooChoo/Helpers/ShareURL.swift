@@ -12,13 +12,13 @@ struct ShareJourneyData {
 }
 
 enum ChooShare : Hashable {
-    case journey(journey : JourneyViewData)
+    case journey(journey : String?)
     
     func urlString() -> String? {
         switch self {
             case .journey(let journey):
-                if let encoded = journey.refreshToken.base64Encoded(){
-                    return "https://\(Constants.ApiData.Share.ghPageBase)\(Constants.ApiData.Share.shareJourneyPath)?ref=\(encoded)"
+                if let journey = journey {
+                    return "https://\(Constants.ApiData.Share.ghPageBase)\(Constants.ApiData.Share.shareJourneyPath)?ref=\(journey)"
                 }
         }
         return nil
