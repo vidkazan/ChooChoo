@@ -10,6 +10,7 @@ import SwiftUI
 
 struct ShareJourneyView: UIViewControllerRepresentable {
     let journey : JourneyViewData
+    let isDark : Bool
     
     func makeUIViewController(
         context: UIViewControllerRepresentableContext<ShareJourneyView>
@@ -19,7 +20,8 @@ struct ShareJourneyView: UIViewControllerRepresentable {
             origin: journey.origin,
             destination: journey.destination,
             departureTimeTS: journey.time.timestamp.departure.actualOrPlannedIfActualIsNil(),
-            arrivalTimeTS:journey.time.timestamp.arrival.actualOrPlannedIfActualIsNil()
+            arrivalTimeTS:journey.time.timestamp.arrival.actualOrPlannedIfActualIsNil(),
+            isDarkTheme: isDark
         )
         let encodedDTO = try? JSONEncoder().encode(shareDTO)
         
@@ -46,4 +48,5 @@ struct ShareJourneyDTO : Codable, Hashable {
     let destination : String
     let departureTimeTS : Double?
     let arrivalTimeTS : Double?
+    let isDarkTheme: Bool
 }
