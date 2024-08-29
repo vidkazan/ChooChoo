@@ -12,12 +12,10 @@ struct UpdatedAtBadgeView : View {
 	@EnvironmentObject var chewVM : ChewViewModel
 	let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
 	let refTime : Double
-	let bgColor : Color
 	let isLoading : Bool
 	@State var updatedAt : Text?
 	
 	init(bgColor : Color, refTime : Double, isLoading : Bool) {
-		self.bgColor = bgColor
 		self.refTime = refTime
 		self.isLoading = isLoading
 		self.updatedAt = Self.update(refTime)
@@ -45,23 +43,51 @@ struct UpdatedAtBadgeView : View {
 	
 	static func update(_ refTime : Double, chewDate : ChewDate = .now) -> Text? {
 		let minutes = DateParcer.getTwoDateIntervalInMinutes(
-			date1: Date(timeIntervalSince1970: .init(floatLiteral: refTime)),
-			date2: chewDate.date
+			date1: chewDate.date,
+			date2: Date(timeIntervalSince1970: .init(floatLiteral: refTime))
 		)
 		
-		switch minutes {
-		case .none:
-			return nil
-		case .some(let wrapped):
-			switch wrapped {
-			case 0..<1:
-				return Text("updated now", comment: "badge: updated at")
-			default:
-				if let dur = DateParcer.timeDuration(wrapped) {
-					return Text("updated \(dur) ago", comment: "badge")
-				}
-				return nil
+        if let string = DateParcer.timeOffsetString(minutes) {
+            let result = NSLocalizedString("updated", comment: "updatedAtBadgeView.update") + " " + string
+            return Text(verbatim: result)
+        }
+        return nil
+	}
+}
+
+struct TimeOffsetView : View {
+	@EnvironmentObject var chewVM : ChewViewModel
+	let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+	let refTime : Date
+	@State var timeOffset : Text?
+	
+	init(refTime : Date) {
+		self.refTime = refTime
+		self.timeOffset = Self.update(refTime)
+	}
+	
+	var body : some View {
+		HStack(spacing: 2) {
+			if let timeOffset = timeOffset {
+				OneLineText(timeOffset)
 			}
 		}
+		.onAppear {
+			self.timeOffset = Self.update(refTime, chewDate: chewVM.referenceDate)
+		}
+		.onReceive(timer, perform: { _ in
+			self.timeOffset = Self.update(refTime, chewDate: chewVM.referenceDate)
+		})
+	}
+	
+	static func update(
+		_ refTime : Date,
+		chewDate : ChewDate = .now
+	) -> Text? {
+        if let string = DateParcer.timeOffsetString(refTime,chewDate: chewDate) {
+            return Text(verbatim: string)
+        } else {
+            return nil
+        }
 	}
 }

@@ -136,12 +136,22 @@ extension SheetViewModel {
 				return Empty().eraseToAnyPublisher()
 			}
 			switch type {
+            case let .shareJourneyDetails(journeyRef):
+                return loadJourney(journeyRef: journeyRef)
 			case let .alternatives(jdvm, javm,jajlvm):
-				return Just(Event.didLoadDataForShowing(
-					type,
-					JourneyAlternativesViewDataSource(jdvm: jdvm, javm: javm,jajlvm: jajlvm))
-				)
+				return Just(
+                    Event.didLoadDataForShowing(
+                        type,
+                        JourneyAlternativesViewDataSource(
+                            jdvm: jdvm, 
+                            javm: javm,
+                            jajlvm: jajlvm
+                        )
+                    )
+                )
 				.eraseToAnyPublisher()
+            case .shareLink(let link):
+                    return Just(Event.didLoadDataForShowing(.shareLink(journey: link), ShareJourneyDataSource())).eraseToAnyPublisher()
 			case .appSettings:
 				return Just(Event.didLoadDataForShowing(.appSettings, AppSettingsViewDataSource())).eraseToAnyPublisher()
 			case .tip:
@@ -171,6 +181,31 @@ extension SheetViewModel {
 
 
 extension SheetViewModel {
+    static func loadJourney(journeyRef : String) -> AnyPublisher<Event, Never> {
+        return JourneyDetailsViewModel.fetchJourneyByRefreshToken(ref: journeyRef)
+            .mapError {$0}
+            .asyncFlatMap {
+                if let data = $0.journey.journeyViewData(
+                        depStop: nil,
+                        arrStop: nil,
+                        realtimeDataUpdatedAt: Date.now.timeIntervalSince1970,
+                        settings: .init()
+                ) {
+                    return Event.didLoadDataForShowing(
+                        .shareJourneyDetails(journeyRef: journeyRef),
+                        ShareJourneyDetailsDataSource(
+                            viewData: data
+                        ))
+                } else {
+                            return Event.didFailToLoadData(ApiError.cannotDecodeContentData)
+                        }
+            }
+            .catch {
+                return Just(Event.didFailToLoadData(ApiError.generic(description: $0.localizedDescription))).eraseToAnyPublisher()
+            }
+            .eraseToAnyPublisher()
+    }
+    
 	static 	func route(state : State, tripId : String) -> AnyPublisher<Event, Never> {
 		return Self.fetchTrip(tripId: tripId)
 			.mapError{ $0 }

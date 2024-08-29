@@ -15,7 +15,7 @@ struct JourneyCell: View {
 	let stops : ChooDepartureArrivalPairStop
 	let mode : Self.JourneyCellMode
 	
-	init(journey: JourneyViewData,stops : ChooDepartureArrivalPairStop, mode : Self.JourneyCellMode = .base) {
+    init(journey: JourneyViewData,stops : ChooDepartureArrivalPairStop, mode : Self.JourneyCellMode = .base) {
 		self.journey = journey
 		self.stops = stops
 		self.mode = mode
@@ -26,7 +26,7 @@ struct JourneyCell: View {
 				NavigationLink(destination: {
 					let vm = Model.shared.journeyDetailViewModel(
 						followId: Self.followID(journey: journey),
-						for: journey.refreshToken,
+						journeyRef: journey.refreshToken,
 						viewdata: journey,
 						stops: stops,
 						chewVM: chewVM

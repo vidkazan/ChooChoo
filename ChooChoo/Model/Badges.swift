@@ -102,9 +102,12 @@ enum Badges : Identifiable,Hashable {
 			return 23
 		case .apiUnavaiable:
 			return 24
+		case .timeOffset:
+			return 25
 		}
 	}
 	
+	case timeOffset(time : Date)
 	case generic(msg : String)
 	case updateError
 	case routeError
@@ -155,6 +158,14 @@ enum Badges : Identifiable,Hashable {
 	
 	var badgeData : BadgeData {
 		switch self {
+		case	.price,
+				.prognosedlegDirection,
+				.distance,
+				.lineNumberWithDirection,
+				.departureArrivalStops,
+				.changesCount,
+				.timeOffset:
+			return .init()
 		case .generic(let msg):
 			return BadgeData(Text(verbatim: msg))
 		case .updateError:
@@ -199,8 +210,6 @@ enum Badges : Identifiable,Hashable {
 					comment: "badge"
 				)
 			)
-		case .price:
-			return BadgeData()
 		case .cancelled:
 			return BadgeData(
 				style: Color.chewFillRedPrimary,
@@ -231,8 +240,6 @@ enum Badges : Identifiable,Hashable {
 			return BadgeData(
 				Text(verbatim: dir)
 			)
-		case .prognosedlegDirection:
-			return BadgeData()
 		case .stopsCount(let num, _):
 			return BadgeData(
 				Text(
@@ -240,8 +247,6 @@ enum Badges : Identifiable,Hashable {
 					comment: "badge: stopsCount"
 				)
 			)
-		case .distance:
-			return BadgeData()
 		case .walking(let time):
 			return BadgeData(
 				Text(
@@ -259,18 +264,13 @@ enum Badges : Identifiable,Hashable {
 						comment: "badge"
 					)
 				)
-		case .departureArrivalStops:
-			return BadgeData()
-		case .changesCount:
-			return BadgeData()
 		case .timeDepartureTimeArrival:
 			return BadgeData(style: Color.chewFillSecondary)
 		case .date:
 			return BadgeData(style: Color.chewFillSecondary)
 		case .updatedAtTime:
 			return BadgeData(style: Color.chewFillSecondary)
-		case .lineNumberWithDirection:
-			return .init()
 		}
 	}
 }
+

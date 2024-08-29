@@ -45,7 +45,8 @@ extension JourneyFollowViewModel {
 			followData[index] = JourneyFollowData(
 				id: oldViewData.id,
 				journeyViewData: viewData,
-				stops: oldViewData.stops
+				stops: oldViewData.stops,
+				journeyActions: viewData.journeyActions()
 			)
 			
 			return Just(Event.didUpdateData(followData)).eraseToAnyPublisher()

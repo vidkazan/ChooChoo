@@ -64,21 +64,21 @@ class ApiService  {
 		var urlString : String {
 			switch self {
 			case .locationsNearby:
-				return Constants.apiData.urlPathLocationsNearby
+				return Constants.ApiData.urlPathLocationsNearby
 			case .journeys:
-				return Constants.apiData.urlPathJourneyList
+				return Constants.ApiData.urlPathJourneyList
 			case .locations:
-				return Constants.apiData.urlPathLocations
+				return Constants.ApiData.urlPathLocations
 			case .generic(let path):
 				return path
 			case .journeyByRefreshToken(let ref):
-				return Constants.apiData.urlPathJourneyList + "/" + ref
+				return Constants.ApiData.urlPathJourneyList + "/" + ref
 			case .trips(tripId: let tripId):
-				return Constants.apiData.urlPathTrip + "/" + tripId
+				return Constants.ApiData.urlPathTrip + "/" + tripId
 			case .stopDepartures(let stopId):
-				return Constants.apiData.urlPathStops + stopId + "/departures"
+				return Constants.ApiData.urlPathStops + stopId + "/departures"
 			case .stopArrivals(let stopId):
-				return Constants.apiData.urlPathStops + stopId + "/arrivals"
+				return Constants.ApiData.urlPathStops + stopId + "/arrivals"
 			}
 		}
 		
@@ -103,7 +103,7 @@ class ApiService  {
 			default:
 				var components = URLComponents()
 				components.path = type.urlString
-				components.host = Constants.apiData.urlBase
+				components.host = Constants.ApiData.urlBase
 				components.scheme = "https"
 				components.queryItems = query
 				return components.url

@@ -16,7 +16,7 @@ extension JourneyDetailsViewModel {
 		case withoutPolylines
 	}
 	
-	static func fetchJourneyByRefreshToken(ref : String, mode : FetchJourneyByRefreshTokenMode = .full) -> (AnyPublisher<JourneyWrapper,ApiError>) {
+    static func fetchJourneyByRefreshToken(ref : String, mode : FetchJourneyByRefreshTokenMode = .withoutPolylines) -> (AnyPublisher<JourneyWrapper,ApiError>) {
 		let queryMethods = {
 			switch mode {
 			case .full:
