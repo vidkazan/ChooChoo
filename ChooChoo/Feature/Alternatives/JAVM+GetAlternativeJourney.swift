@@ -9,7 +9,10 @@ import Foundation
 import Collections
 
 extension JourneyAlternativeDepartureStopViewModel {
-	static func getCurrentLegAlternativeJourneyDepartureStop(leg : LegViewData,referenceDate: ChewDate) -> JourneyAlternativeViewData? {
+	static func getCurrentLegAlternativeJourneyDepartureStop(
+        leg : LegViewData,
+        referenceDate: ChewDate
+    ) -> JourneyAlternativeViewData? {
 		let now = referenceDate.date
 		guard let lastReachableStop = LegViewData.lastReachableStop(stops: leg.legStopsViewData),
 			  let lastReachableStopArrivalTime = lastReachableStop.time.date.arrival.actualOrPlannedIfActualIsNil() else {
@@ -87,7 +90,10 @@ extension JourneyAlternativeDepartureStopViewModel {
 		return nil
 	}
 	
-	static func getAlternativeJourneyDepartureStop(journey : JourneyViewData,referenceDate: ChewDate) -> JourneyAlternativeViewData? {
+	static func getAlternativeJourneyDepartureStop(
+        journey : JourneyViewData,
+        referenceDate: ChewDate
+    ) -> JourneyAlternativeViewData? {
 		let now = referenceDate.date
 		
 		var legs = journey.legs
