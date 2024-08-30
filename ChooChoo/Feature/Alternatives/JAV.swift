@@ -13,6 +13,7 @@ struct JourneyAlternativesView: View {
 	@Namespace private var journeyAlternativesViewNamespace
 	let secondTimer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
 	let minuteTimer = Timer.publish(every: 60, on: .main, in: .common).autoconnect()
+    @State var alternativeDuplicationSwitch : Bool = true
 	@EnvironmentObject var chewVM : ChewViewModel
 	@ObservedObject var jdvm : JourneyDetailsViewModel
 	@ObservedObject var javm : JourneyAlternativeDepartureStopViewModel
@@ -65,9 +66,16 @@ extension JourneyAlternativesView {
 				if case .idle = jajlvm.state.status, jajlvm.state.journeys.isEmpty {
 					ErrorView(viewType: .alert, msg: Text(verbatim: "No alternatives"), action: nil)
 				} else {
-                    ForEach(jajlvm.state.journeys.filter({
-                        $0.0.refreshToken != jdvm.state.data.viewData.refreshToken 
-                    }),id:\.0.id) {
+                    Button(alternativeDuplicationSwitch == true ? "Restore duplication" : "Remove duplication", action: {
+                        self.alternativeDuplicationSwitch.toggle()
+                    })
+                    .buttonStyle(BorderedProminentButtonStyle())
+                    ForEach(
+                        jajlvm.state.journeys.filter({
+                            !Self.isTheSameJourney(journey: $0.0, alternative: jdvm.state.data.viewData) && alternativeDuplicationSwitch == true || alternativeDuplicationSwitch == false
+                        }),
+                        id:\.0.id
+                    ) {
 						JourneyCell(
 							journey: $0.0,
 							stops: .init(
@@ -202,6 +210,27 @@ extension JourneyAlternativesView {
 	}
 }
 
+extension JourneyAlternativesView {
+    static func isTheSameJourney(journey : JourneyViewData, alternative : JourneyViewData) -> Bool {
+        guard journey.legs.count == alternative.legs.count,
+              journey.legs.first == alternative.legs.first else {
+            return false
+        }
+        if journey.legs.count < 2 {
+            return journey.legs.first == alternative.legs.first
+        } else {
+            let lhs = journey.legs
+                .dropFirst()
+                .filter({$0.legType == .line})
+                .reduce("", {$0 + $1.tripId})
+            let rhs = alternative.legs
+                .dropFirst()
+                .filter({$0.legType == .line})
+                .reduce("", {$0 + $1.tripId})
+            return lhs == rhs
+        }
+    }
+}
 
 extension JourneyAlternativesView {
 	func updateAlternativeJourneysIfNeeded(
