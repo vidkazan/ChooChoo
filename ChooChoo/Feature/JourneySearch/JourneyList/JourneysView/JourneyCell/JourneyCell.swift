@@ -71,8 +71,13 @@ extension JourneyCell {
 			if let firstLeg = journey.legs.first,
 			   let searchFahrtId = stops.departure.leg?.tripId,
 				firstLeg.tripId == searchFahrtId {
-					BadgeView(.lineNumberWithDirection(leg: firstLeg))
-						.badgeBackgroundStyle(.secondary)
+                HStack(spacing: 0) {
+                    Text("continue with ", comment: "Alternatives: JourneyCell: footer: transport as a departure")
+                        .padding(.horizontal,5)
+                        .chewTextSize(.medium)
+                    BadgeView(.lineNumberWithDirection(leg: firstLeg))
+                }
+                .badgeBackgroundStyle(.secondary)
 			} else {
 				if let pl = journey.legs.first?.legStopsViewData.first?.platforms.departure {
 					PlatformView(
@@ -101,7 +106,6 @@ extension JourneyCell {
 				})
 			case .alternatives:
 				EmptyView()
-//				BadgesView(badges: [.apiUnavaiable])
 			}
 		}
 		.padding(7)
