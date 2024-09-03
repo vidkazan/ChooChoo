@@ -25,6 +25,11 @@ struct AppSettingsView: View {
 			}
 			#if DEBUG
 			Section("Debug", content: {
+                Button(action: {
+                    UIApplication.shared.open(URL(string: "http://captive.apple.com")!,options: [:], completionHandler: nil)
+                }, label: {
+                    Text("Wifi login")
+                })
 				Button(action: {
 					appSetttingsVM.send(event: .didRequestToUpdateAppSettings(
 						settings: AppSettings(
