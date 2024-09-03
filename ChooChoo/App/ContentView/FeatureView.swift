@@ -117,7 +117,6 @@ extension FeatureView {
                 Model.shared.topBarAlertVM.send(event: .didRequestShow(.generic(msg: "Journey Decoding Error")))
                 return
             }
-            print(decoded.journeyRef)
             Model.shared.sheetVM.send(event: .didRequestShow(.shareJourneyDetails(journeyRef: decoded.journeyRef)))
         }
 }

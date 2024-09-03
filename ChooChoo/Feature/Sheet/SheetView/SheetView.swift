@@ -93,12 +93,12 @@ struct SheetViewInner : View {
                     journeyDetailsViewModel: Model
                         .shared
                         .journeyDetailViewModel(
-                            followId: -1,
+                            followId: JourneyCell.followID(journey: data.viewData),
                             journeyRef : data.viewData.refreshToken,
                             viewdata: data.viewData,
                             stops: .init(
-                                departure: .init(),
-                                arrival: .init()
+                                departure: data.viewData.legs.first?.legStopsViewData.first?.stop() ??  .init(),
+                                arrival: data.viewData.legs.last?.legStopsViewData.last?.stop() ??  .init()
                             ),
                             chewVM: chewViewModel
                         )
