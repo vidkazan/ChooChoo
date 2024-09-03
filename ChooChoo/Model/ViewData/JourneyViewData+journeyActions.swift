@@ -9,7 +9,6 @@ import Foundation
 
 extension JourneyViewData {
 	func journeyActions() -> [JourneyFollowData.JourneyAction] {
-		var legs = legs
 		
 		var res : [JourneyFollowData.JourneyAction] = []
 		

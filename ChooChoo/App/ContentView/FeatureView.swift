@@ -105,16 +105,19 @@ extension FeatureView {
                 Model.shared.topBarAlertVM.send(event: .didRequestShow(.generic(msg: "Unknown URL, we can't handle this one!")))
                 return
             }
-            guard var ref = components.queryItems?.first(where: { $0.name == "ref" })?.value, ref.count > 2 else {
+            guard let ref = components.queryItems?.first(where: { $0.name == "ref" })?.value else {
                 Model.shared.topBarAlertVM.send(event: .didRequestShow(.generic(msg: "Journey not found")))
                 return
             }
-//            ref.removeLast()
-//            ref.removeFirst()
-            guard let data = Data(base64Encoded: ref),let string = String(data: data, encoding: .utf8) else {
-                Model.shared.topBarAlertVM.send(event: .didRequestShow(.generic(msg: "Journey ref error")))
+            guard let data = Data(base64Encoded: ref) else {
+                Model.shared.topBarAlertVM.send(event: .didRequestShow(.generic(msg: "Base64 decoding error")))
                 return
             }
-            Model.shared.sheetVM.send(event: .didRequestShow(.shareJourneyDetails(journeyRef: string)))
+            guard let decoded = try? JSONDecoder().decode(ShareJourneyDTO.self, from: data) else {
+                Model.shared.topBarAlertVM.send(event: .didRequestShow(.generic(msg: "Journey Decoding Error")))
+                return
+            }
+            print(decoded.journeyRef)
+            Model.shared.sheetVM.send(event: .didRequestShow(.shareJourneyDetails(journeyRef: decoded.journeyRef)))
         }
 }
