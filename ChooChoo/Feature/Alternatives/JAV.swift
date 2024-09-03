@@ -72,7 +72,13 @@ extension JourneyAlternativesView {
                     .buttonStyle(BorderedProminentButtonStyle())
                     ForEach(
                         jajlvm.state.journeys.filter({
-                            !Self.isTheSameJourney(journey: $0.0, alternative: jdvm.state.data.viewData) && alternativeDuplicationSwitch == true || alternativeDuplicationSwitch == false
+                            (
+                                !Self.isTheSameJourney(
+                                journey: $0.0,
+                                alternative: jdvm.state.data.viewData) && alternativeDuplicationSwitch == true
+                            ) 
+                            ||
+                            alternativeDuplicationSwitch == false
                         }),
                         id:\.0.id
                     ) {
@@ -212,8 +218,7 @@ extension JourneyAlternativesView {
 
 extension JourneyAlternativesView {
     static func isTheSameJourney(journey : JourneyViewData, alternative : JourneyViewData) -> Bool {
-        guard journey.legs.count == alternative.legs.count,
-              journey.legs.first == alternative.legs.first else {
+        guard journey.legs.count == alternative.legs.count  else {
             return false
         }
         if journey.legs.count < 2 {
@@ -227,7 +232,7 @@ extension JourneyAlternativesView {
                 .dropFirst()
                 .filter({$0.legType == .line})
                 .reduce("", {$0 + $1.tripId})
-            return lhs == rhs
+            return lhs == rhs || journey.legs.first == alternative.legs.first
         }
     }
 }
