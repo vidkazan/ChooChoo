@@ -79,13 +79,14 @@ private extension SheetView {
 
 struct SheetViewInner : View {
 	@EnvironmentObject var chewViewModel : ChewViewModel
+    @Environment(\.colorScheme) var colorScheme
 	let data : any SheetViewDataSource
 	let type : SheetViewModel.SheetType
 	let closeSheet : ()->Void
 	var body: some View {
 		switch type {
         case let .shareLink(link):
-                ShareJourneyView(journey: link)
+                ShareJourneyView(journey: link, isDark: colorScheme == ColorScheme.dark)
         case .shareJourneyDetails:
             if let data = data as? ShareJourneyDetailsDataSource {
                 JourneyDetailsView(
