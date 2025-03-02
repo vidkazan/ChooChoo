@@ -51,6 +51,8 @@ class ApiService  {
 			switch self {
             case .locationsNearby:
                 return "GET"
+            case .journeys:
+                return "POST"
 			default:
 				return "GET"
 			}

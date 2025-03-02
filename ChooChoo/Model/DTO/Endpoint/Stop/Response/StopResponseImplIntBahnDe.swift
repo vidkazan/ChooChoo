@@ -7,56 +7,6 @@
 
 import Foundation
 
-protocol StopEndpointDTO : ChewDTO, Identifiable {
-    func stopDTO() -> StopDTO
-}
-
-struct StopEndpointDtoDBrest {
-    let type    : String?
-    let id        : String?
-    let name    : String?
-    let address        : String?
-    let location    : LocationCoordinatesDTO?
-    let latitude    : Double?
-    let longitude    : Double?
-    let poi            : Bool?
-    let products    : Products?
-    let distance      : Int?
-    let station        : StationDTO?
-    
-    private enum CodingKeys : String, CodingKey {
-        case type
-        case id
-        case name
-        case address
-        case location
-        case products
-        case latitude
-        case longitude
-        case poi
-        case distance
-        case station
-    }
-}
-
-extension StopEndpointDtoDBrest {
-    func stopDTO() -> StopDTO {
-        StopDTO(
-            type: self.type,
-            id: self.id,
-            name: self.name,
-            address: self.address,
-            location: self.location,
-            latitude: self.latitude,
-            longitude: self.longitude,
-            poi: self.poi,
-            products: self.products,
-            distance: self.distance,
-            station: self.station
-        )
-    }
-}
-
 struct IntlBahnDeStopEndpointDTO {
     let extId: String
     let id: String
@@ -77,7 +27,7 @@ struct IntlBahnDeStopEndpointDTO {
     }
 }
 
-extension IntlBahnDeStopEndpointDTO : StopEndpointDTO {
+extension IntlBahnDeStopEndpointDTO : StopResponse {
     func stopDTO() -> StopDTO {
         // TODO: locaiton is hardcoded nil!
         let stopType : StopType? = StopType(rawValue: self.type)
