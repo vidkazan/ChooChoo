@@ -48,11 +48,10 @@ enum Query {
 	
 	case latitude(latitude : String)
 	case longitude(longitude : String)
-    case lat(latitude : String)
-    case long(longitude : String)
+    case reiseloesungOrteNearbylat(latitude : String)
+    case reiseloesungOrteNearbylong(longitude : String)
     
-    case radius(radius : Int)
-    case maxNo(numberOfResults : Int)
+    
     
 	case address(addr: String)
 	case poiId(poiId: String)
@@ -74,6 +73,13 @@ enum Query {
 	case startWithWalking(Bool)
 	case walkingSpeed(JourneySettings.WalkingSpeed)
 	case linesOfStops(show : Bool)
+    
+    case reiseloesungOrteNearbyRadius(radius : Int)
+    case reiseloesungOrteNearbyMaxNo(numberOfResults : Int)
+    case reiseloesungOrteTyp(type : String)
+    case reiseloesungOrteLimit(limit : Int)
+    case reiseloesungOrteSuchbegriff(str : String)
+    
 	func queryItem() -> URLQueryItem {
 		switch self {
 		case .walkingSpeed(let speed):
@@ -214,22 +220,34 @@ enum Query {
 			return URLQueryItem(
 				name: "longitude",
 				value: String(longitude))
-        case .radius(let radius):
+        case .reiseloesungOrteNearbyRadius(let radius):
             return URLQueryItem(
                 name: "radius",
                 value: String(radius))
-        case .maxNo(let numberOfResults):
+        case .reiseloesungOrteNearbyMaxNo(let numberOfResults):
             return URLQueryItem(
                 name: "maxNo",
                 value: String(numberOfResults))
-        case .lat(latitude: let latitude):
+        case .reiseloesungOrteNearbylat(latitude: let latitude):
             return URLQueryItem(
                 name: "lat",
                 value: String(latitude))
-        case .long(longitude: let longitude):
+        case .reiseloesungOrteNearbylong(longitude: let longitude):
             return URLQueryItem(
                 name: "long",
                 value: String(longitude))
+        case .reiseloesungOrteTyp(let type):
+                return URLQueryItem(
+                    name: "typ",
+                    value: type)
+        case .reiseloesungOrteLimit(let limit):
+                return URLQueryItem(
+                    name: "limit",
+                    value: String(limit))
+        case .reiseloesungOrteSuchbegriff(let str):
+                return URLQueryItem(
+                    name: "suchbegriff",
+                    value: str)
 		case .address(addr: let addr):
 			return URLQueryItem(
 				name: "address",

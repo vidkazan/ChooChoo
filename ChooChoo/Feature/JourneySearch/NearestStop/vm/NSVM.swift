@@ -350,10 +350,10 @@ extension NearestStopViewModel {
 		return ApiService().fetch(
 			[IntlBahnDeStopEndpointDTO].self,
 			query: [
-				Query.long(longitude: String(predictedCoords.longitude)).queryItem(),
-				Query.lat(latitude: String(predictedCoords.latitude)).queryItem(),
-                Query.maxNo(numberOfResults: 10).queryItem(),
-                Query.radius(radius: 1000).queryItem()
+				Query.reiseloesungOrteNearbylong(longitude: String(predictedCoords.longitude)).queryItem(),
+				Query.reiseloesungOrteNearbylat(latitude: String(predictedCoords.latitude)).queryItem(),
+                Query.reiseloesungOrteNearbyMaxNo(numberOfResults: 10).queryItem(),
+                Query.reiseloesungOrteNearbyRadius(radius: 1000).queryItem()
 			],
 			type: ApiService.Requests.locationsNearby
         )
