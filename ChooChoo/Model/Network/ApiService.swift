@@ -49,6 +49,8 @@ class ApiService  {
 		
 		var method : String {
 			switch self {
+            case .locationsNearby:
+                return "GET"
 			default:
 				return "GET"
 			}

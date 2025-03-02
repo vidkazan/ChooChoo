@@ -48,6 +48,12 @@ enum Query {
 	
 	case latitude(latitude : String)
 	case longitude(longitude : String)
+    case lat(latitude : String)
+    case long(longitude : String)
+    
+    case radius(radius : Int)
+    case maxNo(numberOfResults : Int)
+    
 	case address(addr: String)
 	case poiId(poiId: String)
 	case poiName(poiName: String)
@@ -200,7 +206,6 @@ enum Query {
 			return URLQueryItem(
 				name: "poi",
 				value: String(showPointsOfInterests))
-			
 		case .latitude(latitude: let latitude):
 			return URLQueryItem(
 				name: "latitude",
@@ -209,6 +214,22 @@ enum Query {
 			return URLQueryItem(
 				name: "longitude",
 				value: String(longitude))
+        case .radius(let radius):
+            return URLQueryItem(
+                name: "radius",
+                value: String(radius))
+        case .maxNo(let numberOfResults):
+            return URLQueryItem(
+                name: "maxNo",
+                value: String(numberOfResults))
+        case .lat(latitude: let latitude):
+            return URLQueryItem(
+                name: "lat",
+                value: String(latitude))
+        case .long(longitude: let longitude):
+            return URLQueryItem(
+                name: "long",
+                value: String(longitude))
 		case .address(addr: let addr):
 			return URLQueryItem(
 				name: "address",
