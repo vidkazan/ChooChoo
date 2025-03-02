@@ -18,7 +18,7 @@ enum ChooShare : Hashable {
         switch self {
             case .journey(let journey):
                 if let journey = journey {
-                    return "https://\(Constants.ApiData.Share.ghPageBase)\(Constants.ApiData.Share.shareJourneyPath)?ref=\(journey)"
+                    return "https://\(Constants.ApiDataIntBahnDe.Share.ghPageBase)\(Constants.ApiDataIntBahnDe.Share.shareJourneyPath)?ref=\(journey)"
                 }
         }
         return nil

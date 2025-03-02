@@ -64,21 +64,21 @@ class ApiService  {
 		var urlString : String {
 			switch self {
 			case .locationsNearby:
-				return Constants.ApiData.urlPathLocationsNearby
+				return Constants.ApiDataIntBahnDe.urlPathLocationsNearby
 			case .journeys:
-				return Constants.ApiData.urlPathJourneyList
+				return Constants.ApiDataIntBahnDe.urlPathJourneyList
 			case .locations:
-				return Constants.ApiData.urlPathLocations
+				return Constants.ApiDataIntBahnDe.urlPathLocations
 			case .generic(let path):
 				return path
 			case .journeyByRefreshToken(let ref):
-				return Constants.ApiData.urlPathJourneyList + "/" + ref
+				return Constants.ApiDataIntBahnDe.urlPathJourneyList + "/" + ref
 			case .trips(tripId: let tripId):
-				return Constants.ApiData.urlPathTrip + "/" + tripId
+				return Constants.ApiDataIntBahnDe.urlPathTrip + "/" + tripId
 			case .stopDepartures(let stopId):
-				return Constants.ApiData.urlPathStops + stopId + "/departures"
+				return Constants.ApiDataIntBahnDe.urlPathStops + stopId + "/departures"
 			case .stopArrivals(let stopId):
-				return Constants.ApiData.urlPathStops + stopId + "/arrivals"
+				return Constants.ApiDataIntBahnDe.urlPathStops + stopId + "/arrivals"
 			}
 		}
 		
@@ -103,10 +103,10 @@ class ApiService  {
 			default:
 				var components = URLComponents()
 				components.path = type.urlString
-				components.host = Constants.ApiData.urlBase
+				components.host = Constants.ApiDataIntBahnDe.urlBase
 				components.scheme = "https"
 				components.queryItems = query
-				return components.url
+                    return components.url
 			}
 		}()
 		return url
