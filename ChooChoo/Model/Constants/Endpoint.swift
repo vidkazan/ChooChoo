@@ -42,13 +42,13 @@ struct Constants {
         }
         
         
-        static let urlBase = "int.bahn.de/web/api"
-        static let urlPathStops = "/reiseloesung/orte"
-        static let urlPathDepartures = "/reiseloesung/abfahrten"
-        static let urlPathLocations = "/reiseloesung/orte"
-        static let urlPathLocationsNearby = "/reiseloesung/orte/nearby"
-        static let urlPathJourneyList = "/angebote/fahrplan"
-        static let urlPathTrip = "/reiseloesung/fahrt"
-        static let forPing = "/reiseloesung/orte?suchbegriff=Neuss+Hbf&typ=ALL&limit=10"
+        static let urlBase = "int.bahn.de"
+        static let urlPathStops = "/web/api/reiseloesung/orte"
+        static let urlPathDepartures = "/web/api/reiseloesung/abfahrten"
+        static let urlPathLocations = "/web/api/reiseloesung/orte"
+        static let urlPathLocationsNearby = "/web/api/reiseloesung/orte/nearby"
+        static let urlPathJourneyList = "/web/api/angebote/fahrplan"
+        static let urlPathTrip = "/web/api/reiseloesung/fahrt"
+        static let forPing = "/web/api/reiseloesung/orte?suchbegriff=Neuss+Hbf&typ=ALL&limit=10"
     }
 }
