@@ -345,14 +345,17 @@ extension NearestStopViewModel {
 	}
 	
 	static func fetchLocatonsNearby(coords : CLLocation) -> AnyPublisher<[StopDTO],ApiError> {
+        // TODO: Query.radius(radius: 100).queryItem() - hardcoded radius value
 		let predictedCoords = Self.calculateNextCoordinates(loc: coords, time: 7.5)
 		return ApiService().fetch(
 			[StopDTO].self,
 			query: [
-				Query.longitude(longitude: String(predictedCoords.longitude)).queryItem(),
-				Query.latitude(latitude: String(predictedCoords.latitude)).queryItem()
+				Query.long(longitude: String(predictedCoords.longitude)).queryItem(),
+				Query.lat(latitude: String(predictedCoords.latitude)).queryItem(),
+                Query.maxNo(numberOfResults: 10).queryItem(),
+                Query.radius(radius: 100).queryItem()
 			],
-			type: ApiService.Requests.locationsNearby(coords: coords.coordinate)
+			type: ApiService.Requests.locationsNearby
 		)
 		.eraseToAnyPublisher()
 	}

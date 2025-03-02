@@ -372,7 +372,7 @@ extension MapPickerViewModel {
 				Query.longitude(longitude: String(coords.longitude)).queryItem(),
 				Query.latitude(latitude: String(coords.latitude)).queryItem()
 			],
-			type: ApiService.Requests.locationsNearby(coords: coords)
+			type: ApiService.Requests.locationsNearby
 		)
 		.eraseToAnyPublisher()
 	}

@@ -20,7 +20,7 @@ class ApiService  {
 		case journeys
 		case journeyByRefreshToken(ref : String)
 		case locations
-		case locationsNearby(coords : CLLocationCoordinate2D)
+		case locationsNearby
 		case stopDepartures(stopId : String)
 		case stopArrivals(stopId : String)
 		case trips(tripId : String)
