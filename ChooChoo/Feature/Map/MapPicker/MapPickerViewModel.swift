@@ -367,13 +367,14 @@ extension MapPickerViewModel {
 	
 	static func fetchLocatonsNearby(coords : CLLocationCoordinate2D) -> AnyPublisher<[StopDTO],ApiError> {
 		return ApiService().fetch(
-			[StopDTO].self,
+			[IntlBahnDeStopEndpointDTO].self,
 			query: [
-				Query.longitude(longitude: String(coords.longitude)).queryItem(),
-				Query.latitude(latitude: String(coords.latitude)).queryItem()
+				Query.reiseloesungOrteNearbylong(longitude: String(coords.longitude)).queryItem(),
+				Query.reiseloesungOrteNearbylat(latitude: String(coords.latitude)).queryItem()
 			],
 			type: ApiService.Requests.locationsNearby
 		)
+        .map{$0.map{$0.stopDTO()}}
 		.eraseToAnyPublisher()
 	}
 	
