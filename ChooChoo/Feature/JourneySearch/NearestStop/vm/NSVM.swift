@@ -348,16 +348,17 @@ extension NearestStopViewModel {
         // TODO: Query.radius(radius: 100).queryItem() - hardcoded radius value
 		let predictedCoords = Self.calculateNextCoordinates(loc: coords, time: 7.5)
 		return ApiService().fetch(
-			[StopDTO].self,
+			[IntlBahnDeStopEndpointDTO].self,
 			query: [
 				Query.long(longitude: String(predictedCoords.longitude)).queryItem(),
 				Query.lat(latitude: String(predictedCoords.latitude)).queryItem(),
                 Query.maxNo(numberOfResults: 10).queryItem(),
-                Query.radius(radius: 100).queryItem()
+                Query.radius(radius: 1000).queryItem()
 			],
 			type: ApiService.Requests.locationsNearby
-		)
-		.eraseToAnyPublisher()
+        )
+        .map {$0.map{$0.stopDTO()}}
+        .eraseToAnyPublisher()
 	}
 	
 	static func fetchStopDepartures(stop : Stop) -> AnyPublisher<StopTripsDTO,ApiError> {

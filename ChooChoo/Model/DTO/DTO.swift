@@ -347,11 +347,11 @@ extension StopDTO {
 		
 		let type : LocationType = {
 			switch typeDTO {
-			case "stop":
+			case "stop", "ST":
 				return .stop
 			case "station":
 				return .station
-			case "location":
+			case "location","ADR","POI":
 				switch poi {
 				case true :
 					return .pointOfInterest
