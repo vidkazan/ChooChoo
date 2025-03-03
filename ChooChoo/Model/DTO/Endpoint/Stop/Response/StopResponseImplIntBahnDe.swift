@@ -7,14 +7,14 @@
 
 import Foundation
 
-struct IntlBahnDeStopEndpointDTO {
-    let extId: String
-    let id: String
-    let lat: Double
-    let lon: Double
-    let name: String
+struct IntlBahnDeStopEndpointDTO : StopResponse {
+    let extId: String?
+    let id: String?
+    let lat: Double?
+    let lon: Double?
+    let name: String?
     let products: [String]
-    let type: String
+    let type: String?
     
     private enum CodingKeys : String, CodingKey {
         case extId
@@ -27,14 +27,14 @@ struct IntlBahnDeStopEndpointDTO {
     }
 }
 
-extension IntlBahnDeStopEndpointDTO : StopResponse {
+extension IntlBahnDeStopEndpointDTO {
     func stopDTO() -> StopDTO {
         // TODO: locaiton is hardcoded nil!
-        let stopType : StopType? = StopType(rawValue: self.type)
+        let stopType : StopType? = StopType(rawValue: self.type ?? "")
         
         return StopDTO(
             type: self.type,
-            id: self.extId,
+            id: self.id,
             name: self.name,
             address: stopType != .station ? self.name : nil,
             location: nil,
