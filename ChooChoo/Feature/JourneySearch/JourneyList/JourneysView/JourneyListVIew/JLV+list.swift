@@ -48,10 +48,10 @@ extension JourneyListView {
 								.chewTextSize(.medium)
 						}
 					case .loadingRef(let type):
-						if type == .laterRef {
-							ProgressView()
-								.frame(maxHeight: 100)
-						}
+                        if case .laterRef(let string) = type {
+                            ProgressView()
+                                .frame(maxHeight: 100)
+                        }
 					case .failedToLoadLaterRef:
 						Label(
 							title: {

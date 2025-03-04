@@ -50,8 +50,8 @@ extension JourneyListViewModel {
 	
 	enum JourneyUpdateType {
 		case initial
-		case earlierRef
-		case laterRef
+		case earlierRef(String?)
+		case laterRef(String?)
 	}
 	
 	enum Status : ChewStatus {

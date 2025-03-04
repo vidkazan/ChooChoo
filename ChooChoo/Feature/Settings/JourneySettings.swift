@@ -17,6 +17,7 @@ class JourneySettingsClass : ObservableObject {
 	@Published var walkingSpeed : JourneySettings.WalkingSpeed
 	@Published var startWithWalking : Bool
 	@Published var withBicycle : Bool
+    @Published var fastestConnections : Bool
 	
 	init(
 		customTransferModes: Set<LineType>,
@@ -26,7 +27,8 @@ class JourneySettingsClass : ObservableObject {
 		accessiblity: JourneySettings.Accessiblity,
 		walkingSpeed: JourneySettings.WalkingSpeed,
 		startWithWalking: Bool,
-		withBicycle: Bool
+		withBicycle: Bool,
+        fastestConnections : Bool
 	) {
 		self.customTransferModes = customTransferModes
 		self.transportMode = transportMode
@@ -36,6 +38,7 @@ class JourneySettingsClass : ObservableObject {
 		self.walkingSpeed = walkingSpeed
 		self.startWithWalking = startWithWalking
 		self.withBicycle = withBicycle
+        self.fastestConnections = fastestConnections
 	}
 	
 	convenience init(settings : JourneySettings) {
@@ -47,7 +50,8 @@ class JourneySettingsClass : ObservableObject {
 			accessiblity: settings.accessiblity,
 			walkingSpeed: settings.walkingSpeed,
 			startWithWalking: settings.startWithWalking,
-			withBicycle: settings.withBicycle
+			withBicycle: settings.withBicycle,
+            fastestConnections: settings.fastestConnections
 		)
 	}
 }
@@ -61,8 +65,9 @@ struct JourneySettings : Hashable,Codable {
 	let walkingSpeed : WalkingSpeed
 	let startWithWalking : Bool
 	let withBicycle : Bool
+    let fastestConnections : Bool
 	
-	init(customTransferModes: Set<LineType>, transportMode: TransportMode, transferTime: TransferTime, transferCount: TransferCountCases, accessiblity: Accessiblity, walkingSpeed: WalkingSpeed, startWithWalking: Bool, withBicycle: Bool) {
+	init(customTransferModes: Set<LineType>, transportMode: TransportMode, transferTime: TransferTime, transferCount: TransferCountCases, accessiblity: Accessiblity, walkingSpeed: WalkingSpeed, startWithWalking: Bool, withBicycle: Bool,fastestConnections : Bool) {
 		self.customTransferModes = customTransferModes
 		self.transportMode = transportMode
 		self.transferTime = transferTime
@@ -71,6 +76,7 @@ struct JourneySettings : Hashable,Codable {
 		self.walkingSpeed = walkingSpeed
 		self.startWithWalking = startWithWalking
 		self.withBicycle = withBicycle
+        self.fastestConnections = fastestConnections
 	}
 	
 	init(settings : JourneySettingsClass) {
@@ -82,7 +88,8 @@ struct JourneySettings : Hashable,Codable {
 			accessiblity: settings.accessiblity,
 			walkingSpeed: settings.walkingSpeed,
 			startWithWalking: settings.startWithWalking,
-			withBicycle: settings.withBicycle
+			withBicycle: settings.withBicycle,
+            fastestConnections: settings.fastestConnections
 		)
 	}
 }

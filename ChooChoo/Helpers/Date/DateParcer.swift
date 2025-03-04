@@ -66,8 +66,13 @@ class DateParcer {
 	}()
 	
 	static private func parseDate(from dateString : String?) -> Date? {
-		guard let dateString = dateString else { return nil }
-		if let date = dateFormatter.date(from: dateString) { return date }
+		guard var dateString = dateString else { return nil }
+        if dateString.last != "Z" {
+            dateString += "Z"
+        }
+        if let date = dateFormatter.date(from: dateString) {
+            return date
+        }
 		guard let date = ISOdateFormatter.date(from: dateString) else { return nil }
 		return date
 	}

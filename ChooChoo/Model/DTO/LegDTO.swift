@@ -67,34 +67,36 @@ struct LegDTO : Identifiable, ChewDTO {
 		case distance
 		case polyline
 	}
-	
-	init(from decoder: Decoder) throws {
-		let container = try decoder.container(keyedBy: CodingKeys.self)
-		self.origin = try container.decodeIfPresent(StopDTO.self, forKey: .origin)
-		self.destination = try container.decodeIfPresent(StopDTO.self, forKey: .destination)
-		self.line = try container.decodeIfPresent(LineDTO.self, forKey: .line)
-		self.remarks = try container.decodeIfPresent([Remark].self, forKey: .remarks)
-		self.departure = try container.decodeIfPresent(String.self, forKey: .departure)
-		self.plannedDeparture = try container.decodeIfPresent(String.self, forKey: .plannedDeparture)
-		self.arrival = try container.decodeIfPresent(String.self, forKey: .arrival)
-		self.plannedArrival = try container.decodeIfPresent(String.self, forKey: .plannedArrival)
-		self.departureDelay = try container.decodeIfPresent(Int.self, forKey: .departureDelay)
-		self.arrivalDelay = try container.decodeIfPresent(Int.self, forKey: .arrivalDelay)
-		self.tripIdAlternative = try container.decodeIfPresent(String.self, forKey: .tripIdAlternative)
-		if self.tripIdAlternative == nil {
-			self.tripId = try container.decodeIfPresent(String.self, forKey: .tripId)
-		} else {
-			self.tripId = self.tripIdAlternative
-		}
-		self.direction = try container.decodeIfPresent(String.self, forKey: .direction)
-		self.currentLocation = try container.decodeIfPresent(Coordinate.self, forKey: .currentLocation)
-		self.arrivalPlatform = try container.decodeIfPresent(String.self, forKey: .arrivalPlatform)
-		self.plannedArrivalPlatform = try container.decodeIfPresent(String.self, forKey: .plannedArrivalPlatform)
-		self.departurePlatform = try container.decodeIfPresent(String.self, forKey: .departurePlatform)
-		self.plannedDeparturePlatform = try container.decodeIfPresent(String.self, forKey: .plannedDeparturePlatform)
-		self.walking = try container.decodeIfPresent(Bool.self, forKey: .walking)
-		self.stopovers = try container.decodeIfPresent([StopWithTimeDTO].self, forKey: .stopovers)
-		self.distance = try container.decodeIfPresent(Int.self, forKey: .distance)
-		self.polyline = try container.decodeIfPresent(PolylineDTO.self, forKey: .polyline)
-	}
+}
+
+extension LegDTO {
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        self.origin = try container.decodeIfPresent(StopDTO.self, forKey: .origin)
+        self.destination = try container.decodeIfPresent(StopDTO.self, forKey: .destination)
+        self.line = try container.decodeIfPresent(LineDTO.self, forKey: .line)
+        self.remarks = try container.decodeIfPresent([Remark].self, forKey: .remarks)
+        self.departure = try container.decodeIfPresent(String.self, forKey: .departure)
+        self.plannedDeparture = try container.decodeIfPresent(String.self, forKey: .plannedDeparture)
+        self.arrival = try container.decodeIfPresent(String.self, forKey: .arrival)
+        self.plannedArrival = try container.decodeIfPresent(String.self, forKey: .plannedArrival)
+        self.departureDelay = try container.decodeIfPresent(Int.self, forKey: .departureDelay)
+        self.arrivalDelay = try container.decodeIfPresent(Int.self, forKey: .arrivalDelay)
+        self.tripIdAlternative = try container.decodeIfPresent(String.self, forKey: .tripIdAlternative)
+        if self.tripIdAlternative == nil {
+            self.tripId = try container.decodeIfPresent(String.self, forKey: .tripId)
+        } else {
+            self.tripId = self.tripIdAlternative
+        }
+        self.direction = try container.decodeIfPresent(String.self, forKey: .direction)
+        self.currentLocation = try container.decodeIfPresent(Coordinate.self, forKey: .currentLocation)
+        self.arrivalPlatform = try container.decodeIfPresent(String.self, forKey: .arrivalPlatform)
+        self.plannedArrivalPlatform = try container.decodeIfPresent(String.self, forKey: .plannedArrivalPlatform)
+        self.departurePlatform = try container.decodeIfPresent(String.self, forKey: .departurePlatform)
+        self.plannedDeparturePlatform = try container.decodeIfPresent(String.self, forKey: .plannedDeparturePlatform)
+        self.walking = try container.decodeIfPresent(Bool.self, forKey: .walking)
+        self.stopovers = try container.decodeIfPresent([StopWithTimeDTO].self, forKey: .stopovers)
+        self.distance = try container.decodeIfPresent(Int.self, forKey: .distance)
+        self.polyline = try container.decodeIfPresent(PolylineDTO.self, forKey: .polyline)
+    }
 }

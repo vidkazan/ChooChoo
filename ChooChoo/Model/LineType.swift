@@ -195,6 +195,7 @@ extension LineType {
 		}
 	}
 }
+
 extension LineType {
 	func stopAnnotation<T : ChewStopAnnotaion>(id: String?,name : String, coords: CLLocationCoordinate2D, stopOverType : StopOverType?) -> T {
 		T (
@@ -205,5 +206,38 @@ extension LineType {
 			stopOverType: stopOverType
 		)
 	}
+}
+
+extension LineType {
+    func intbahndeEndpointProducts() -> IntlBahnDeStopEndpointDTO.EndpointProducts? {
+        switch self {
+            case .nationalExpress:
+                return .nationalExpress
+            case .national:
+                return .national
+            case .regionalExpress:
+                return .regional
+            case .regional:
+                return .regional
+            case .suburban:
+                return .suburban
+            case .bus:
+                return .bus
+            case .replacementBus:
+                return .bus
+            case .ferry:
+                return .ferry
+            case .subway:
+                return .subway
+            case .tram:
+                return .tram
+            case .taxi:
+                return .taxi
+            case .transfer:
+                return nil
+            case .foot:
+                return nil
+        }
+    }
 }
 

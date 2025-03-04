@@ -17,6 +17,7 @@ extension JourneySettings {
 		self.walkingSpeed = .fast
 		self.withBicycle = false
 		self.transferCount = .unlimited
+        self.fastestConnections = false
 	}
 	init(settings : JourneySettings) {
 		self.customTransferModes = settings.customTransferModes
@@ -27,5 +28,6 @@ extension JourneySettings {
 		self.walkingSpeed = settings.walkingSpeed
 		self.withBicycle = settings.withBicycle
 		self.transferCount = settings.transferCount
+        self.fastestConnections = settings.fastestConnections
 	}
 }

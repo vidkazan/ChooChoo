@@ -16,8 +16,8 @@ class ApiService  {
 		self.client = client
 	}
 	
-	enum Requests : Equatable {
-		case journeys
+    enum Requests : Equatable {
+		case journeys(JourneyRequestIntBahnDe)
 		case journeyByRefreshToken(ref : String)
 		case locations
 		case locationsNearby
@@ -60,6 +60,10 @@ class ApiService  {
 		
 		var headers : [(value : String, key : String)] {
 			switch self {
+            case .journeys:
+                return [
+                    ("application/json","Content-Type")
+                ]
 			default:
 				return []
 			}
@@ -86,10 +90,21 @@ class ApiService  {
 			}
 		}
 		
+        var body : Data? {
+            switch self {
+                case .journeys(let journeyRequestIntBahnDe):
+                    let data = try? JSONEncoder().encode(journeyRequestIntBahnDe)
+                    print(">>>",String.init(data: data ?? Data(), encoding: .utf8))
+                    return data
+                default:
+                    return Data()
+            }
+        }
 		func getRequest(urlEndPoint : URL) -> URLRequest {
 			switch self {
 			default:
 				var req = URLRequest(url : urlEndPoint)
+                req.httpBody = self.body
 				req.httpMethod = self.method
 				for header in self.headers {
 					req.addValue(header.value, forHTTPHeaderField: header.key)
@@ -110,10 +125,9 @@ class ApiService  {
 				components.host = Constants.ApiDataIntBahnDe.urlBase
 				components.scheme = "https"
 				components.queryItems = query
-                    return components.url
+                return components.url
 			}
 		}()
 		return url
 	}
 }
-

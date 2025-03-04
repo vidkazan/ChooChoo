@@ -7,4 +7,26 @@
 
 import Foundation
 
-protocol JourneyRequest : ChewDTO {}
+protocol JourneyRequest : ChewDTO, Equatable {
+    mutating func addJourneyListStops(
+        dep : Stop,
+        arr : Stop
+    )
+    
+    mutating func addJourneyListTransfers(
+        settings : JourneySettings
+    )
+    
+    mutating func addJourneyListTransportModes(
+        settings : JourneySettings
+    )
+    
+    mutating func addJourneyListTime(
+        time : Date,
+        mode : LocationDirectionType
+    )
+    
+    mutating func addJourneyOtherSettings(
+        settings : JourneySettings
+    )
+}

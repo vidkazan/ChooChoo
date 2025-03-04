@@ -7,4 +7,6 @@
 
 import Foundation
 
-protocol JourneyResponse :  ChewDTO, Identifiable  {}
+protocol JourneyResponse : ChewDTO, Identifiable  {
+    func journeyDTO() -> JourneyListDTO
+}

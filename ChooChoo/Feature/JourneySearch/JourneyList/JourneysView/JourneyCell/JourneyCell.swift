@@ -90,6 +90,9 @@ extension JourneyCell {
 						.chewTextSize(.medium)
 						.tint(.primary)
 				}
+                if let zi = getTripIDMagicNumber(tripID: journey.legs.first?.tripId ?? "") {
+                    BadgeView(.generic(msg: zi  ))
+                }
 			}
 			Spacer()
 			switch mode {
@@ -143,6 +146,17 @@ extension JourneyCell {
 			}
 		}
 	}
+}
+
+extension JourneyCell {
+    func getTripIDMagicNumber(tripID : String) -> String? {
+        let components = tripID.components(separatedBy: "#")
+        if let ziIndex = components.firstIndex(of: "ZI") {
+            let ziValue = components[ziIndex + 1]
+            return ziValue
+        }
+        return nil
+    }
 }
 
 //

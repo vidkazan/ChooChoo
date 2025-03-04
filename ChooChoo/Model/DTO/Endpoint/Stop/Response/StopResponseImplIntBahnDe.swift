@@ -42,20 +42,35 @@ extension IntlBahnDeStopEndpointDTO {
             longitude: self.lon,
             poi: stopType == .pointOfInterest,
             products: Products(
-                nationalExpress: self.products.firstIndex(of: "ICE") != nil,
-                national: self.products.firstIndex(of: "EC_IC") != nil,
-                regionalExpress: self.products.firstIndex(of: "IR") != nil,
-                regional: self.products.firstIndex(of: "REGIONAL") != nil,
-                suburban: self.products.firstIndex(of: "SBAHN") != nil,
-                bus: self.products.firstIndex(of: "BUS") != nil,
-                ferry: self.products.firstIndex(of: "SCHIFF") != nil,
-                subway: self.products.firstIndex(of: "UBAHN") != nil,
-                tram: self.products.firstIndex(of: "TRAM") != nil,
-                taxi: self.products.firstIndex(of: "ANRUFPFLICHTIG") != nil
+                nationalExpress: self.products.firstIndex(of: Self.EndpointProducts.nationalExpress.rawValue) != nil,
+                national: self.products.firstIndex(of: Self.EndpointProducts.national.rawValue) != nil,
+                regionalExpress: self.products.firstIndex(of: Self.EndpointProducts.regionalExpress.rawValue) != nil,
+                regional: self.products.firstIndex(of: Self.EndpointProducts.regional.rawValue) != nil,
+                suburban: self.products.firstIndex(of: Self.EndpointProducts.suburban.rawValue) != nil,
+                bus: self.products.firstIndex(of: Self.EndpointProducts.bus.rawValue) != nil,
+                ferry: self.products.firstIndex(of: Self.EndpointProducts.ferry.rawValue) != nil,
+                subway: self.products.firstIndex(of: Self.EndpointProducts.subway.rawValue) != nil,
+                tram: self.products.firstIndex(of: Self.EndpointProducts.tram.rawValue) != nil,
+                taxi: self.products.firstIndex(of: Self.EndpointProducts.taxi.rawValue) != nil
             ),
             distance: nil,
             station: nil
         )
+    }
+}
+
+extension IntlBahnDeStopEndpointDTO {
+    enum EndpointProducts : String, Hashable, CaseIterable {
+        case nationalExpress="ICE"
+        case national="EC_IC"
+        case regionalExpress="IR"
+        case regional="REGIONAL"
+        case suburban="SBAHN"
+        case bus="BUS"
+        case ferry="SCHIFF"
+        case subway="UBAHN"
+        case tram = "TRAM"
+        case taxi = "ANRUFPFLICHTIG"
     }
 }
 

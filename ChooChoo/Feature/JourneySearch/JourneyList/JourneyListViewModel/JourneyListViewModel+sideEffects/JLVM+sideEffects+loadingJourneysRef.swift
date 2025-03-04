@@ -22,13 +22,17 @@ extension JourneyListViewModel {
 					Logger.fetchJourneyRef.error("earlierRef is nil")
 					return Just(Event.didFailToLoadEarlierRef(DataError.nilValue(type: "earlierRef"))).eraseToAnyPublisher()
 				}
-				return Self.fetchEarlierOrLaterRef(
-					dep: state.data.stops.departure,
-					arr: state.data.stops.arrival,
-					ref: ref,
-					type: type,
-					settings: state.data.settings
-				)
+                    return Self.fetchEarlierOrLaterRef(
+                        requset: JourneyRequestIntBahnDe(
+                            settings: state.data.settings,
+                            dep: state.data.stops.departure,
+                            arr: state.data.stops.arrival,
+                            time: state.data.date.date.date,
+                            mode: state.data.date.mode,
+                            pagingReference: nil
+                        ),
+                        type: .earlierRef(ref)
+                    )
 					.mapError{ $0 }
 					.asyncFlatMap { data in
 						let res = await constructJourneyListViewDataAsync(
@@ -43,7 +47,7 @@ extension JourneyListViewModel {
 								data: data,
 								depStop: state.data.stops.departure,
 								arrStop: state.data.stops.arrival),
-							.earlierRef
+                            .earlierRef(data.earlierRef)
 						)
 					}
 					.catch { error in
@@ -57,13 +61,17 @@ extension JourneyListViewModel {
 					Logger.fetchJourneyRef.error("laterRef is nil")
 					return Just(Event.didFailToLoadEarlierRef(DataError.nilValue(type: "laterRef"))).eraseToAnyPublisher()
 				}
-				return Self.fetchEarlierOrLaterRef(
-					dep: state.data.stops.departure,
-					arr: state.data.stops.arrival,
-					ref: ref,
-					type: type,
-					settings: state.data.settings
-				)
+                    return Self.fetchEarlierOrLaterRef(
+                        requset: JourneyRequestIntBahnDe(
+                            settings: state.data.settings,
+                            dep: state.data.stops.departure,
+                            arr: state.data.stops.arrival,
+                            time: state.data.date.date.date,
+                            mode: state.data.date.mode,
+                            pagingReference: nil
+                        ),
+                        type: .laterRef(ref)
+                    )
 					.mapError{ $0 }
 					.asyncFlatMap { data in
 						let res = await constructJourneyListViewDataAsync(
@@ -72,11 +80,13 @@ extension JourneyListViewModel {
 							arrStop: state.data.stops.arrival,
 							settings: state.data.settings
 						)
-						return Event.onNewJourneyListData(JourneyListViewData(
-							journeysViewData: res,
-							data: data,
-							depStop: state.data.stops.departure,
-							arrStop: state.data.stops.arrival),.laterRef
+						return Event.onNewJourneyListData(
+                            JourneyListViewData(
+                                journeysViewData: res,
+                                data: data,
+                                depStop: state.data.stops.departure,
+                                arrStop: state.data.stops.arrival),
+                            .laterRef(data.laterRef)
 						)
 					}
 					.catch { error in
@@ -87,16 +97,28 @@ extension JourneyListViewModel {
 		}
 	}
 	
-	static func fetchEarlierOrLaterRef(dep : Stop,arr : Stop,ref : String, type : JourneyUpdateType,settings : JourneySettings) -> AnyPublisher<JourneyListDTO,ApiError> {
-		var query = addJourneyListStopsQuery(dep: dep, arr: arr)
-		query += Query.queryItems(methods: [
-			type == .earlierRef ? Query.earlierThan(earlierRef: ref) : Query.laterThan(laterRef: ref),
-			Query.remarks(showRemarks: true),
-			Query.results(max: 3),
-			Query.stopovers(isShowing: true)
-		])
-		query += self.addJourneyListTransportModes(settings: settings)
-		return ApiService().fetch(JourneyListDTO.self,query: query, type: ApiService.Requests.journeys)
-	}
+    static func fetchEarlierOrLaterRef(requset : JourneyRequestIntBahnDe, type : JourneyUpdateType) -> AnyPublisher<JourneyListDTO,ApiError> {
+        //		var query = addJourneyListStopsQuery(dep: dep, arr: arr)
+        //		query += Query.queryItems(methods: [
+        //			type == .earlierRef ? Query.earlierThan(earlierRef: ref) : Query.laterThan(laterRef: ref),
+        //			Query.remarks(showRemarks: true),
+        //			Query.results(max: 3),
+        //			Query.stopovers(isShowing: true)
+        //		])
+        let requset = JourneyRequestIntBahnDe(
+            request: requset,
+            pagingReference: type
+        )
+        //		query += self.addJourneyListTransportModes(settings: settings)
+        return ApiService()
+            .fetch(
+                JourneyResponseIntBahnDe.self,
+                query: [],
+                type: ApiService.Requests.journeys(requset)
+            )
+            .map { $0.journeyDTO() }
+            .mapError { $0 }
+            .eraseToAnyPublisher()
+    }
 }
 

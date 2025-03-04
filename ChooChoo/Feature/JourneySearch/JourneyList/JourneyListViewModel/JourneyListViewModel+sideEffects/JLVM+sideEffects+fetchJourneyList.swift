@@ -20,19 +20,38 @@ extension JourneyListViewModel {
 		guard let dep = dep.stop else {
 			return Fail(error: ApiError.generic(description: "departure stop is nit")).eraseToAnyPublisher()
 		}
-		var query = addJourneyListStopsQuery(dep: dep, arr: arr)
-		query += addJourneyListTransfersQuery(settings: settings)
-		query += addJourneyListTransportModes(settings: settings)
-		query += addJourneyListTimeQuery(time: time, mode: mode)
-		query += addJourneyOtherSettings(settings: settings)
-		query += Query.queryItems(
-			methods: [
-				Query.remarks(showRemarks: true),
-				Query.results(max: 5),
-				Query.stopovers(isShowing: true)
-			]
-		)
-		return ApiService().fetch(JourneyListDTO.self,query: query, type: ApiService.Requests.journeys)
+//		var query = addJourneyListStopsQuery(dep: dep, arr: arr)
+//		query += addJourneyListTransfersQuery(settings: settings)
+//		query += addJourneyListTransportModes(settings: settings)
+//		query += addJourneyListTimeQuery(time: time, mode: mode)
+//		query += addJourneyOtherSettings(settings: settings)
+//		query += Query.queryItems(
+//			methods: [
+//				Query.remarks(showRemarks: true),
+//				Query.results(max: 5),
+//				Query.stopovers(isShowing: true)
+//			]
+//		)
+        let requset = JourneyRequestIntBahnDe(
+            settings: settings,
+            dep: dep,
+            arr: arr,
+            time: time,
+            mode: mode,
+            pagingReference: nil
+        )
+        return ApiService()
+            .fetch(
+                JourneyResponseIntBahnDe.self,
+                query: [],
+                type: ApiService.Requests.journeys(requset)
+            )
+            .mapError{$0}
+            .map {
+                $0.journeyDTO()
+            }
+            .eraseToAnyPublisher()
+            
 	}
 	
 	static func addJourneyListStopsQuery(dep : Stop,arr : Stop) -> [URLQueryItem] {

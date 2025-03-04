@@ -27,14 +27,22 @@ func constructLineViewData(
 		}
 		
 		switch product {
-		case "nationalExpress",
-		 "national",
-		 "regionalExpress",
-		 "regional",
-		 "suburban",
-		 "ferry",
-		 "subway",
-			"tram":
+            case "nationalExpress", 
+                IntlBahnDeStopEndpointDTO.EndpointProducts.nationalExpress.rawValue,
+                "national",
+                IntlBahnDeStopEndpointDTO.EndpointProducts.national.rawValue,
+                "regionalExpress",
+                IntlBahnDeStopEndpointDTO.EndpointProducts.regionalExpress.rawValue,
+                "regional",
+                IntlBahnDeStopEndpointDTO.EndpointProducts.regional.rawValue,
+                "suburban",
+                IntlBahnDeStopEndpointDTO.EndpointProducts.suburban.rawValue,
+                "ferry",
+                IntlBahnDeStopEndpointDTO.EndpointProducts.ferry.rawValue,
+                "subway",
+                IntlBahnDeStopEndpointDTO.EndpointProducts.subway.rawValue,
+                "tram",
+                IntlBahnDeStopEndpointDTO.EndpointProducts.tram.rawValue:
 			if name.contains("Bus") || name.contains("bus") {
 				return .replacementBus
 			}
@@ -43,26 +51,28 @@ func constructLineViewData(
 			break
 		}
 		
+        
+        
 		switch product {
-		case "nationalExpress":
+        case "nationalExpress", IntlBahnDeStopEndpointDTO.EndpointProducts.nationalExpress.rawValue:
 			return .nationalExpress
-		case "national":
+		case "national",IntlBahnDeStopEndpointDTO.EndpointProducts.national.rawValue:
 			return .national
-		case "regionalExpress":
+		case "regionalExpress", IntlBahnDeStopEndpointDTO.EndpointProducts.regionalExpress.rawValue:
 			return .regionalExpress
-		case "regional":
+		case "regional",IntlBahnDeStopEndpointDTO.EndpointProducts.regional.rawValue:
 			return .regional
-		case "suburban":
+		case "suburban",IntlBahnDeStopEndpointDTO.EndpointProducts.suburban.rawValue:
 			return .suburban
-		case "bus":
+		case "bus",IntlBahnDeStopEndpointDTO.EndpointProducts.bus.rawValue:
 			return .bus
-		case "ferry":
+		case "ferry",IntlBahnDeStopEndpointDTO.EndpointProducts.ferry.rawValue:
 			return .ferry
-		case "subway":
+		case "subway",IntlBahnDeStopEndpointDTO.EndpointProducts.subway.rawValue:
 			return .subway
-		case "tram":
+		case "tram",IntlBahnDeStopEndpointDTO.EndpointProducts.tram.rawValue:
 			return .tram
-		case "taxi":
+		case "taxi",IntlBahnDeStopEndpointDTO.EndpointProducts.taxi.rawValue:
 			return .taxi
 		default:
 			return .ferry
