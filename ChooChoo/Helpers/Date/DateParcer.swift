@@ -52,7 +52,8 @@ class DateParcer {
 	 return formatter
 	}()
 	
-	static private let formatDateAndTime = "yyyyMMdd'T'HHmmssZ"
+//	static private let formatDateAndTime = "yyyyMMdd'T'HHmmssZ"
+    static private let formatDateAndTime = "yyyy-MM-dd'T'HH:mm:ss"
 	
 	static private let dateFormatter : DateFormatter = {
 		let f = DateFormatter()
@@ -67,9 +68,9 @@ class DateParcer {
 	
 	static private func parseDate(from dateString : String?) -> Date? {
 		guard var dateString = dateString else { return nil }
-        if dateString.last != "Z" {
-            dateString += "Z"
-        }
+//        if dateString.last != "Z" {
+//            dateString += "Z"
+//        }
         if let date = dateFormatter.date(from: dateString) {
             return date
         }
