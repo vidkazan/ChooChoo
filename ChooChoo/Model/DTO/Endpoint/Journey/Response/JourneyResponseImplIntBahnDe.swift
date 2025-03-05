@@ -43,8 +43,8 @@ struct VerbindungsAbschnitt: ChewDTO {
     let risNotizen: [RizNotiezen] // Assuming this is an array of strings; adjust if necessary
     let himMeldungen: [Meldung] // Assuming this is an array of strings; adjust if necessary
     let priorisierteMeldungen: [Meldung] // Assuming this is an array of strings; adjust if necessary
-    let externeBahnhofsinfoIdOrigin: String
-    let externeBahnhofsinfoIdDestination: String
+//    let externeBahnhofsinfoIdOrigin: String
+//    let externeBahnhofsinfoIdDestination: String
     let abfahrtsZeitpunkt: String
     let abfahrtsOrt: String
     let abfahrtsOrtExtId: String
@@ -59,9 +59,9 @@ struct VerbindungsAbschnitt: ChewDTO {
     let ezAbschnittsDauerInSeconds: Int?
     let ezAnkunftsZeitpunkt: String?
     let halte: [Halt]
-    let idx: Int
-    let journeyId: String
-    let verkehrsmittel: Verkehrsmittel
+    let idx: Int?
+    let journeyId: String?
+    let verkehrsmittel: Verkehrsmittel?
 }
 
 // MARK: - Halt (Stop) Model
@@ -78,8 +78,8 @@ struct Halt: ChewDTO {
     let haltTyp: String?
     let name: String
     let risNotizen: [RizNotiezen]?
-    let bahnhofsInfoId: String
-    let extId: String?
+//    let bahnhofsInfoId: String
+//    let extId: String?
     let himMeldungen: [Meldung]? // Assuming this is an array of strings; adjust if necessary
     let routeIdx: Int?
     let priorisierteMeldungen: [Meldung]? // Assuming this is an array of strings; adjust if necessary

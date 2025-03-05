@@ -61,6 +61,12 @@ extension Meldung {
 extension VerbindungsAbschnitt {
     #warning("harddcode nils")
     func legDTO() -> LegDTO {
+        let line : LineDTO? = {
+            if let v = self.verkehrsmittel {
+                return v.lineDTO()
+            }
+            return nil
+        }()
         let platforms = self.platforms()
         return LegDTO(
             origin: StopDTO(
@@ -71,7 +77,7 @@ extension VerbindungsAbschnitt {
                 name: self.ankunftsOrt,
                 products: nil
             ),
-            line: self.verkehrsmittel.lineDTO(),
+            line: line,
             remarks: self.himMeldungen.map { $0.remark() } + self.priorisierteMeldungen.map { $0.remark() },
             departure: self.ezAbfahrtsZeitpunkt ?? self.abfahrtsZeitpunkt,
             plannedDeparture: self.abfahrtsZeitpunkt,
