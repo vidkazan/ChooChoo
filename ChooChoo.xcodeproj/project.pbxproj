@@ -31,6 +31,8 @@
 		7D10BD412BB1B3B000702D83 /* CoreDataStore+add.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D10BD402BB1B3B000702D83 /* CoreDataStore+add.swift */; };
 		7D10BD432BB1B40300702D83 /* CoreDataStore+update.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D10BD422BB1B40200702D83 /* CoreDataStore+update.swift */; };
 		7D14D98F2B7AD85400FB67AC /* AnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D14D98E2B7AD85400FB67AC /* AnnotationView.swift */; };
+		7D159CA12D799F8C0099CDA2 /* JourneyUpdateRequestImplIntBahnDe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D159CA02D799F8C0099CDA2 /* JourneyUpdateRequestImplIntBahnDe.swift */; };
+		7D159CA32D799FAD0099CDA2 /* JourneyUpdateRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D159CA22D799FAD0099CDA2 /* JourneyUpdateRequest.swift */; };
 		7D15AA462BB19E6800B6966D /* AppSettingsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D15AA452BB19E6800B6966D /* AppSettingsVM.swift */; };
 		7D1638502B69841D006E9660 /* LDSV+background.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D16384F2B69841D006E9660 /* LDSV+background.swift */; };
 		7D1638522B698457006E9660 /* LDSV+badges.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1638512B698457006E9660 /* LDSV+badges.swift */; };
@@ -702,6 +704,8 @@
 		7D10BD402BB1B3B000702D83 /* CoreDataStore+add.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreDataStore+add.swift"; sourceTree = "<group>"; };
 		7D10BD422BB1B40200702D83 /* CoreDataStore+update.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreDataStore+update.swift"; sourceTree = "<group>"; };
 		7D14D98E2B7AD85400FB67AC /* AnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotationView.swift; sourceTree = "<group>"; };
+		7D159CA02D799F8C0099CDA2 /* JourneyUpdateRequestImplIntBahnDe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JourneyUpdateRequestImplIntBahnDe.swift; sourceTree = "<group>"; };
+		7D159CA22D799FAD0099CDA2 /* JourneyUpdateRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JourneyUpdateRequest.swift; sourceTree = "<group>"; };
 		7D15AA452BB19E6800B6966D /* AppSettingsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettingsVM.swift; sourceTree = "<group>"; };
 		7D16384F2B69841D006E9660 /* LDSV+background.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LDSV+background.swift"; sourceTree = "<group>"; };
 		7D1638512B698457006E9660 /* LDSV+badges.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LDSV+badges.swift"; sourceTree = "<group>"; };
@@ -1093,6 +1097,23 @@
 			path = Annotation;
 			sourceTree = "<group>";
 		};
+		7D159C972D799CEC0099CDA2 /* Verbindung */ = {
+			isa = PBXGroup;
+			children = (
+				7D159C9D2D799CFA0099CDA2 /* Request */,
+			);
+			path = Verbindung;
+			sourceTree = "<group>";
+		};
+		7D159C9D2D799CFA0099CDA2 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				7D159CA02D799F8C0099CDA2 /* JourneyUpdateRequestImplIntBahnDe.swift */,
+				7D159CA22D799FAD0099CDA2 /* JourneyUpdateRequest.swift */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
 		7D16384E2B6983F7006E9660 /* LegDetailsStopView */ = {
 			isa = PBXGroup;
 			children = (
@@ -1116,6 +1137,7 @@
 		7D22B1A62D74B99800CC0736 /* Endpoint */ = {
 			isa = PBXGroup;
 			children = (
+				7D159C972D799CEC0099CDA2 /* Verbindung */,
 				7D22B1A82D74B9B800CC0736 /* Stop */,
 				7D22B1A72D74B9B000CC0736 /* Journey */,
 			);
@@ -2340,6 +2362,7 @@
 				7D787DD42B5D9E7D007D2A3A /* TimeAndSettingsView.swift in Sources */,
 				7D7A55322AA4A27C000256EF /* JLVM.swift in Sources */,
 				7D4208CB2AE122FF003D9BFB /* RouteView.swift in Sources */,
+				7D159CA12D799F8C0099CDA2 /* JourneyUpdateRequestImplIntBahnDe.swift in Sources */,
 				7D1638522B698457006E9660 /* LDSV+badges.swift in Sources */,
 				7DAC5CB72BACDA84000F7D33 /* JFCV+map.swift in Sources */,
 				7D704F442B8558C200F8334F /* UIView+Constraints.swift in Sources */,
@@ -2448,6 +2471,7 @@
 				7D9BB10C2B0CBF54008A3616 /* CDLocation+CoreDataClass.swift in Sources */,
 				7D2C0E6E2BDBE16C000839C1 /* ButtonIDs.swift in Sources */,
 				7D6623272C5BB08D0059FC7F /* ChooDeparture.swift in Sources */,
+				7D159CA32D799FAD0099CDA2 /* JourneyUpdateRequest.swift in Sources */,
 				7D0685ED2B50304500CCBE6B /* CoreDataStore+fetch.swift in Sources */,
 				7DAF62B82A9E5A0B006F1A17 /* DatePickerTimePresetButtons.swift in Sources */,
 				7D3361DB2C049CF400A263B7 /* DepartureArrivalPair.swift in Sources */,
