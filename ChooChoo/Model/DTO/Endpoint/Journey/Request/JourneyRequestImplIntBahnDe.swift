@@ -7,7 +7,9 @@
 
 import Foundation
 
-struct JourneyRequestIntBahnDe : Codable {
+struct JourneyRequestIntBahnDe : ChewDTO {
+    var date: Date = .now
+    
     var maxUmstiege : Int
     var abfahrtsHalt: String
     var anfrageZeitpunkt: String
@@ -23,29 +25,31 @@ struct JourneyRequestIntBahnDe : Codable {
     var deutschlandTicketVorhanden: Bool
     var pagingReference : String
     var reisende : [Reisende]
-
-//    enum CodingKeys: String, CodingKey {
-//        case abfahrtsHaltId = "abfahrtsHalt"
-//        case anfrageZeitpunkt
-//        case ankunftsHaltId = "ankunftsHalt"
-//        case ankunftSuche
-//        case klasse
-//        case produktgattungen
-//        case schnelleVerbindungen
-//        case sitzplatzOnly
-//        case bikeCarriage
-//        case reservierungsKontingenteVorhanden
-//        case nurDeutschlandTicketVerbindungen
-//        case deutschlandTicketVorhanden
-//        case pagingReference
-//    }
+    
+    enum CodingKeys: String, CodingKey {
+        case maxUmstiege
+        case abfahrtsHalt
+        case anfrageZeitpunkt
+        case ankunftsHalt
+        case ankunftSuche
+        case klasse
+        case produktgattungen
+        case schnelleVerbindungen
+        case sitzplatzOnly
+        case bikeCarriage
+        case reservierungsKontingenteVorhanden
+        case nurDeutschlandTicketVerbindungen
+        case deutschlandTicketVorhanden
+        case pagingReference
+        case reisende
+    }
 }
 
 extension JourneyRequestIntBahnDe {
     init() {
         self.maxUmstiege = 0
         self.abfahrtsHalt = ""
-        self.anfrageZeitpunkt  = ""
+        self.anfrageZeitpunkt = ""
         self.ankunftsHalt = ""
         self.ankunftSuche = ""
         self.klasse = ""
@@ -58,6 +62,7 @@ extension JourneyRequestIntBahnDe {
         self.deutschlandTicketVorhanden = false
         self.pagingReference = ""
         self.reisende = [Reisende.defaultValue]
+        self.date = .now
     }
 }
 
@@ -206,7 +211,11 @@ extension JourneyRequestIntBahnDe {
                 return "ANKUNFT"
             }
         }()
-        self.anfrageZeitpunkt = time.formatted(.iso8601).replacingOccurrences(of: "Z", with: "")
+        let formatter = DateFormatter()
+        formatter.dateFormat = JourneyResponseIntBahnDe.formatDateAndTime
+        
+        let string = formatter.string(from: time)
+        self.anfrageZeitpunkt = string
     }
     
     mutating func addJourneyOtherSettings(

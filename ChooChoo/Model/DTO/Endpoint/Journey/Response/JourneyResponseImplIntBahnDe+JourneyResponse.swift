@@ -198,7 +198,7 @@ extension Halt {
 }
 
 extension JourneyResponseIntBahnDe {
-    static let formatDateAndTime = "yyyy-MM-dd'T'HH-mm-ss"
+    static let formatDateAndTime = "yyyy-MM-dd'T'HH:mm:ss"
 }
 
 extension JourneyResponseIntBahnDe {
