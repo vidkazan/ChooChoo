@@ -61,6 +61,13 @@ extension Meldung {
 extension VerbindungsAbschnitt {
     #warning("harddcode nils")
     func legDTO() -> LegDTO {
+        let timeContainer = JourneyResponseIntBahnDe.timeContainer(
+            depPlanned: self.abfahrtsZeitpunkt,
+            dep: self.ezAbfahrtsZeitpunkt,
+            arrPlanned: self.ankunftsZeitpunkt,
+            arr: self.ezAnkunftsZeitpunkt,
+            isCancelled: nil
+        )
         let line : LineDTO? = {
             if let v = self.verkehrsmittel {
                 return v.lineDTO()
@@ -79,12 +86,12 @@ extension VerbindungsAbschnitt {
             ),
             line: line,
             remarks: self.himMeldungen.map { $0.remark() } + self.priorisierteMeldungen.map { $0.remark() },
-            departure: self.ezAbfahrtsZeitpunkt ?? self.abfahrtsZeitpunkt,
-            plannedDeparture: self.abfahrtsZeitpunkt,
-            arrival: self.ezAnkunftsZeitpunkt ?? self.ankunftsZeitpunkt,
-            plannedArrival: self.ankunftsZeitpunkt,
-            departureDelay: nil,
-            arrivalDelay: nil,
+            departure: timeContainer?.iso.departure.actual,
+            plannedDeparture: timeContainer?.iso.departure.planned,
+            arrival: timeContainer?.iso.arrival.actual,
+            plannedArrival: timeContainer?.iso.arrival.planned,
+            departureDelay: timeContainer?.departureStatus.value,
+            arrivalDelay: timeContainer?.arrivalStatus.value,
             tripId: self.journeyId,
             tripIdAlternative: nil,
             direction: self.ankunftsOrt,
@@ -117,9 +124,16 @@ extension VerbindungsAbschnitt {
 }
 
 extension Halt {
-    #warning("harddcode nils")
     func stopWithTimeDTO() -> StopWithTimeDTO {
-        StopWithTimeDTO(
+        #warning("harddcode nils")
+        let timeContainer = JourneyResponseIntBahnDe.timeContainer(
+            depPlanned: self.abfahrtsZeitpunkt,
+            dep: self.ezAbfahrtsZeitpunkt,
+            arrPlanned: self.ankunftsZeitpunkt,
+            arr: self.ezAnkunftsZeitpunkt,
+            isCancelled: nil
+        )
+        return StopWithTimeDTO(
             stop: StopDTO(
                 type: nil,
                 id: self.id,
@@ -133,12 +147,12 @@ extension Halt {
                 distance: nil,
                 station: nil
             ),
-            departure: self.ezAbfahrtsZeitpunkt,
-            plannedDeparture: self.abfahrtsZeitpunkt,
-            arrival: self.ezAnkunftsZeitpunkt,
-            plannedArrival: self.ankunftsZeitpunkt,
-            departureDelay: nil,
-            arrivalDelay: nil,
+            departure: timeContainer?.iso.departure.actual,
+            plannedDeparture: timeContainer?.iso.departure.planned,
+            arrival: timeContainer?.iso.arrival.actual,
+            plannedArrival: timeContainer?.iso.arrival.planned,
+            departureDelay: timeContainer?.departureStatus.value,
+            arrivalDelay: timeContainer?.arrivalStatus.value,
             reachable: nil,
             arrivalPlatform: self.actualPlatform(),
             plannedArrivalPlatform: self.plannedPlatform(),
@@ -183,6 +197,28 @@ extension Halt {
     }
 }
 
+extension JourneyResponseIntBahnDe {
+    static let formatDateAndTime = "yyyy-MM-dd'T'HH-mm-ss"
+}
+
+extension JourneyResponseIntBahnDe {
+    static func timeContainer(
+        depPlanned : String?,
+        dep : String?,
+        arrPlanned : String?,
+        arr : String?,
+        isCancelled : Bool?
+    ) -> TimeContainer? {
+        TimeContainer(
+            plannedDeparture: JourneyResponseIntBahnDe.convertDateFormat(depPlanned),
+            plannedArrival: JourneyResponseIntBahnDe.convertDateFormat(arrPlanned),
+            actualDeparture: JourneyResponseIntBahnDe.convertDateFormat(dep ?? depPlanned),
+            actualArrival: JourneyResponseIntBahnDe.convertDateFormat(arr ?? arrPlanned),
+            cancelled: isCancelled
+        )
+    }
+}
+
 extension Verkehrsmittel {
     func lineDTO() -> LineDTO {
         LineDTO(
@@ -196,6 +232,28 @@ extension Verkehrsmittel {
             mode: nil,
             product: self.produktGattung
         )
+    }
+}
+
+extension JourneyResponseIntBahnDe {
+    static func convertDateFormat(_ input: String?) -> String? {
+        guard let date = Self.date(input) else {
+            return nil
+        }
+        
+        let outputFormatter = DateFormatter()
+        outputFormatter.dateFormat = "yyyyMMdd'T'HHmmssZ"
+
+        return outputFormatter.string(from: date)
+    }
+    static func date(_ isoDateWithoutTimezone: String?) -> Date? {
+        guard let isoDateWithoutTimezone = isoDateWithoutTimezone else {
+            return nil
+        }
+        let inputFormatter = DateFormatter()
+        inputFormatter.dateFormat = Self.formatDateAndTime
+
+        return inputFormatter.date(from: isoDateWithoutTimezone)
     }
 }
 

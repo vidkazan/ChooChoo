@@ -34,8 +34,6 @@ struct Verbindung: ChewDTO {
     let risNotizen: [RizNotiezen] // Assuming this is an array of strings; adjust if necessary
     let priorisierteMeldungen: [Meldung] // Assuming this is an array of strings; adjust if necessary
     let reservierungsMeldungen: [String] // Assuming this is an array of strings; adjust if necessary
-//    let reiseAngebote: [String]? // Assuming this is an array of strings; adjust if necessary
-//    let gesamtAngebotsbeziehungList: [String]? // Assuming this is an array of strings; adjust if necessary
 }
 
 // MARK: - VerbindungsAbschnitt (Connection Section) Model
@@ -43,8 +41,6 @@ struct VerbindungsAbschnitt: ChewDTO {
     let risNotizen: [RizNotiezen] // Assuming this is an array of strings; adjust if necessary
     let himMeldungen: [Meldung] // Assuming this is an array of strings; adjust if necessary
     let priorisierteMeldungen: [Meldung] // Assuming this is an array of strings; adjust if necessary
-//    let externeBahnhofsinfoIdOrigin: String
-//    let externeBahnhofsinfoIdDestination: String
     let abfahrtsZeitpunkt: String
     let abfahrtsOrt: String
     let abfahrtsOrtExtId: String
