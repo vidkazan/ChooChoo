@@ -80,6 +80,14 @@ enum Query {
     case reiseloesungOrteLimit(limit : Int)
     case reiseloesungOrteSuchbegriff(str : String)
     
+    case reiseloesungAbfahrtenDatum(String)
+    case reiseloesungAbfahrtenZeit(String)
+    case reiseloesungAbfahrtenOrtExtId(Int)
+    case reiseloesungAbfahrtenOrtId(String)
+    case reiseloesungAbfahrtenMitVias(Bool)
+    case reiseloesungAbfahrtenMaxVias(max : Int)
+    case reiseloesungAbfahrtenVerkehrsmittel(transport : IntlBahnDeStopEndpointDTO.EndpointProducts)
+    
 	func queryItem() -> URLQueryItem {
 		switch self {
 		case .walkingSpeed(let speed):
@@ -274,7 +282,42 @@ enum Query {
 			return URLQueryItem(
 				name: "name",
 				value: poiName)
-		}
+            case .reiseloesungAbfahrtenDatum(let datum):
+                return URLQueryItem(
+                    name: "datum",
+                    value: datum
+                )
+            case .reiseloesungAbfahrtenZeit(let zeit):
+                return URLQueryItem(
+                    name: "zeit",
+                    value: zeit
+                )
+            case .reiseloesungAbfahrtenOrtExtId(let id):
+                return URLQueryItem(
+                    name: "ortExtId",
+                    value: String(id)
+                )
+            case .reiseloesungAbfahrtenOrtId(let id):
+                return URLQueryItem(
+                    name: "ortId",
+                    value: id
+                )
+            case .reiseloesungAbfahrtenMitVias(let bool):
+                return URLQueryItem(
+                    name: "mitVias",
+                    value: String(bool)
+                )
+            case .reiseloesungAbfahrtenMaxVias(max: let max):
+                return URLQueryItem(
+                    name: "maxVias",
+                    value: String(max)
+                )
+            case .reiseloesungAbfahrtenVerkehrsmittel(transport: let transport):
+                return URLQueryItem(
+                    name: "verkehrsmittel",
+                    value: transport.rawValue
+                )
+        }
 	}
 	static func queryItems(methods : [Query]) -> [URLQueryItem] {
 		return methods.map {

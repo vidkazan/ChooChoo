@@ -33,6 +33,7 @@
 		7D14D98F2B7AD85400FB67AC /* AnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D14D98E2B7AD85400FB67AC /* AnnotationView.swift */; };
 		7D159CA12D799F8C0099CDA2 /* JourneyUpdateRequestImplIntBahnDe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D159CA02D799F8C0099CDA2 /* JourneyUpdateRequestImplIntBahnDe.swift */; };
 		7D159CA32D799FAD0099CDA2 /* JourneyUpdateRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D159CA22D799FAD0099CDA2 /* JourneyUpdateRequest.swift */; };
+		7D159CA72D79A99F0099CDA2 /* StopDeparturesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D159CA62D79A99F0099CDA2 /* StopDeparturesResponse.swift */; };
 		7D15AA462BB19E6800B6966D /* AppSettingsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D15AA452BB19E6800B6966D /* AppSettingsVM.swift */; };
 		7D1638502B69841D006E9660 /* LDSV+background.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D16384F2B69841D006E9660 /* LDSV+background.swift */; };
 		7D1638522B698457006E9660 /* LDSV+badges.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1638512B698457006E9660 /* LDSV+badges.swift */; };
@@ -706,6 +707,7 @@
 		7D14D98E2B7AD85400FB67AC /* AnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotationView.swift; sourceTree = "<group>"; };
 		7D159CA02D799F8C0099CDA2 /* JourneyUpdateRequestImplIntBahnDe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JourneyUpdateRequestImplIntBahnDe.swift; sourceTree = "<group>"; };
 		7D159CA22D799FAD0099CDA2 /* JourneyUpdateRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JourneyUpdateRequest.swift; sourceTree = "<group>"; };
+		7D159CA62D79A99F0099CDA2 /* StopDeparturesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopDeparturesResponse.swift; sourceTree = "<group>"; };
 		7D15AA452BB19E6800B6966D /* AppSettingsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettingsVM.swift; sourceTree = "<group>"; };
 		7D16384F2B69841D006E9660 /* LDSV+background.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LDSV+background.swift"; sourceTree = "<group>"; };
 		7D1638512B698457006E9660 /* LDSV+badges.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LDSV+badges.swift"; sourceTree = "<group>"; };
@@ -1114,6 +1116,22 @@
 			path = Request;
 			sourceTree = "<group>";
 		};
+		7D159CA42D79A9710099CDA2 /* DeparturesAndArrivals */ = {
+			isa = PBXGroup;
+			children = (
+				7D159CA52D79A9880099CDA2 /* Response */,
+			);
+			path = DeparturesAndArrivals;
+			sourceTree = "<group>";
+		};
+		7D159CA52D79A9880099CDA2 /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				7D159CA62D79A99F0099CDA2 /* StopDeparturesResponse.swift */,
+			);
+			path = Response;
+			sourceTree = "<group>";
+		};
 		7D16384E2B6983F7006E9660 /* LegDetailsStopView */ = {
 			isa = PBXGroup;
 			children = (
@@ -1137,6 +1155,7 @@
 		7D22B1A62D74B99800CC0736 /* Endpoint */ = {
 			isa = PBXGroup;
 			children = (
+				7D159CA42D79A9710099CDA2 /* DeparturesAndArrivals */,
 				7D159C972D799CEC0099CDA2 /* Verbindung */,
 				7D22B1A82D74B9B800CC0736 /* Stop */,
 				7D22B1A72D74B9B000CC0736 /* Journey */,
@@ -2450,6 +2469,7 @@
 				7D4B1B932AA8FD9D0096F372 /* SSVM+reduce.swift in Sources */,
 				7DD4A8D82AAC90C3001AA30C /* SSVM+reduce+Loaded.swift in Sources */,
 				7D4034B22BD15E2700EB5F17 /* Logging.swift in Sources */,
+				7D159CA72D79A99F0099CDA2 /* StopDeparturesResponse.swift in Sources */,
 				7DBFA3BF2BD3095E00205757 /* NSVM.swift in Sources */,
 				7D6C5C2A2AAF77CF00DEFC57 /* JDVM.swift in Sources */,
 				7D5D78522B29C00600E17CC7 /* CDLeg+CoreDataClass.swift in Sources */,
