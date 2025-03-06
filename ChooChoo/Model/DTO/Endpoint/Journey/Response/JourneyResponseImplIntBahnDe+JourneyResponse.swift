@@ -210,10 +210,26 @@ extension JourneyResponseIntBahnDe {
         isCancelled : Bool?
     ) -> TimeContainer? {
         TimeContainer(
-            plannedDeparture: JourneyResponseIntBahnDe.convertDateFormat(depPlanned),
-            plannedArrival: JourneyResponseIntBahnDe.convertDateFormat(arrPlanned),
-            actualDeparture: JourneyResponseIntBahnDe.convertDateFormat(dep ?? depPlanned),
-            actualArrival: JourneyResponseIntBahnDe.convertDateFormat(arr ?? arrPlanned),
+            plannedDeparture: DateParcer.convertDateFormatTo(
+                date: depPlanned,
+                inputFormat: JourneyResponseIntBahnDe.formatDateAndTime, 
+                outputFormat: DateParcer.defaultFormat
+            ),
+            plannedArrival: DateParcer.convertDateFormatTo(
+                date: arrPlanned,
+                inputFormat: JourneyResponseIntBahnDe.formatDateAndTime,
+                outputFormat: DateParcer.defaultFormat
+            ),
+            actualDeparture: DateParcer.convertDateFormatTo(
+                date: dep ?? depPlanned,
+                inputFormat: JourneyResponseIntBahnDe.formatDateAndTime,
+                outputFormat: DateParcer.defaultFormat
+            ),
+            actualArrival: DateParcer.convertDateFormatTo(
+                date: arr ?? arrPlanned,
+                inputFormat: JourneyResponseIntBahnDe.formatDateAndTime,
+                outputFormat: DateParcer.defaultFormat
+            ),
             cancelled: isCancelled
         )
     }
@@ -232,28 +248,6 @@ extension Verkehrsmittel {
             mode: nil,
             product: self.produktGattung
         )
-    }
-}
-
-extension JourneyResponseIntBahnDe {
-    static func convertDateFormat(_ input: String?) -> String? {
-        guard let date = Self.date(input) else {
-            return nil
-        }
-        
-        let outputFormatter = DateFormatter()
-        outputFormatter.dateFormat = "yyyyMMdd'T'HHmmssZ"
-
-        return outputFormatter.string(from: date)
-    }
-    static func date(_ isoDateWithoutTimezone: String?) -> Date? {
-        guard let isoDateWithoutTimezone = isoDateWithoutTimezone else {
-            return nil
-        }
-        let inputFormatter = DateFormatter()
-        inputFormatter.dateFormat = Self.formatDateAndTime
-
-        return inputFormatter.date(from: isoDateWithoutTimezone)
     }
 }
 
