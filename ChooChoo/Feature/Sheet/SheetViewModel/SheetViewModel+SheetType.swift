@@ -24,7 +24,7 @@ extension SheetViewModel {
 		case onboarding
 		case remark(remarks : [RemarkViewData])
 		case journeyDebug(journey : JourneyDTO?)
-        case shareJourneyDetails(journeyRef: String)
+        case shareJourneyDetails(journeyRef: String, setting : JourneySettings)
         case shareLink(journey : JourneyViewData)
 		case alternatives(
 			jdvm: JourneyDetailsViewModel,

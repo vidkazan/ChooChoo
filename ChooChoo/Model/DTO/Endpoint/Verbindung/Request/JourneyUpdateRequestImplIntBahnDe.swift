@@ -34,6 +34,7 @@ extension JourneyUpdateRequestIntBahnDe : JourneyUpdateRequest {
         journeyRef : String
     ) {
         self.init()
+        self.klasse = "KLASSE_2"
         self.ctxRecon = journeyRef
         self.nurDeutschlandTicketVerbindungen = settings.transportMode == .regional
     }

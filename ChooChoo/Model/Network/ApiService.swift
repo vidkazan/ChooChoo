@@ -18,7 +18,7 @@ class ApiService  {
 	
     enum Requests : Equatable {
 		case journeys(JourneyRequestIntBahnDe)
-		case journeyByRefreshToken(ref : String)
+		case journeyByRefreshToken(JourneyUpdateRequestIntBahnDe)
 		case locations
 		case locationsNearby
 		case stopDepartures(stopId : String)
@@ -49,9 +49,7 @@ class ApiService  {
 		
 		var method : String {
 			switch self {
-            case .locationsNearby:
-                return "GET"
-            case .journeys:
+                case .journeys,.journeyByRefreshToken:
                 return "POST"
 			default:
 				return "GET"
@@ -60,7 +58,7 @@ class ApiService  {
 		
 		var headers : [(value : String, key : String)] {
 			switch self {
-            case .journeys:
+                case .journeys,.journeyByRefreshToken:
                 return [
                     ("application/json","Content-Type")
                 ]
@@ -79,8 +77,8 @@ class ApiService  {
 				return Constants.ApiDataIntBahnDe.urlPathLocations
 			case .generic(let path):
 				return path
-			case .journeyByRefreshToken(let ref):
-				return Constants.ApiDataIntBahnDe.urlPathJourneyList + "/" + ref
+			case .journeyByRefreshToken:
+                return Constants.ApiDataIntBahnDe.urlPathJourneyUpdate
 			case .trips(tripId: let tripId):
 				return Constants.ApiDataIntBahnDe.urlPathTrip + "/" + tripId
 			case .stopDepartures(let stopId):
@@ -94,6 +92,10 @@ class ApiService  {
             switch self {
                 case .journeys(let journeyRequestIntBahnDe):
                     let data = try? JSONEncoder().encode(journeyRequestIntBahnDe)
+                    print(">>>",String.init(data: data ?? Data(), encoding: .utf8))
+                    return data
+                case .journeyByRefreshToken(let request):
+                    let data = try? JSONEncoder().encode(request)
                     print(">>>",String.init(data: data ?? Data(), encoding: .utf8))
                     return data
                 default:

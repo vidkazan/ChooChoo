@@ -48,6 +48,7 @@ struct Constants {
         static let urlPathLocations = "/web/api/reiseloesung/orte"
         static let urlPathLocationsNearby = "/web/api/reiseloesung/orte/nearby"
         static let urlPathJourneyList = "/web/api/angebote/fahrplan"
+        static let urlPathJourneyUpdate = "/web/api/angebote/recon"
         static let urlPathTrip = "/web/api/reiseloesung/fahrt"
         static let forPing = "/web/api/reiseloesung/orte?suchbegriff=Neuss+Hbf&typ=ALL&limit=10"
     }

@@ -47,7 +47,8 @@ extension JourneyDetailsViewModel {
 
 			return Self.fetchJourneyByRefreshToken(
 				ref: token,
-				mode: .withoutPolylines
+				mode: .withoutPolylines,
+                settings: state.data.viewData.settings
 			)
 				.mapError{ $0 }
 				.asyncFlatMap{ data in

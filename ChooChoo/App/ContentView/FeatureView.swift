@@ -118,6 +118,7 @@ extension FeatureView {
                 return
             }
             print(decoded.journeyRef)
-            Model.shared.sheetVM.send(event: .didRequestShow(.shareJourneyDetails(journeyRef: decoded.journeyRef)))
+        #warning("hardcoded JourneySettings()")
+            Model.shared.sheetVM.send(event: .didRequestShow(.shareJourneyDetails(journeyRef: decoded.journeyRef, setting: JourneySettings())))
         }
 }
