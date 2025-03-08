@@ -66,7 +66,7 @@ extension SearchStopsViewModel {
 			Query.reiseloesungOrteLimit(limit: 10)
 		])
         return ApiService().fetch(
-            [IntlBahnDeStopEndpointDTO].self,
+            [StopResponseIntlBahnDe].self,
             query: query,
             type: ApiService.Requests.locations
         )

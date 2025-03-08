@@ -21,8 +21,8 @@ class ApiService  {
 		case journeyByRefreshToken(JourneyUpdateRequestIntBahnDe)
 		case locations
 		case locationsNearby
-		case stopDepartures(stopId : String)
-		case stopArrivals(stopId : String)
+		case stopDepartures
+		case stopArrivals
 		case trips(tripId : String)
 		case generic(path : String)
 		
@@ -81,10 +81,10 @@ class ApiService  {
                 return Constants.ApiDataIntBahnDe.urlPathJourneyUpdate
 			case .trips(tripId: let tripId):
 				return Constants.ApiDataIntBahnDe.urlPathTrip + "/" + tripId
-			case .stopDepartures(let stopId):
-				return Constants.ApiDataIntBahnDe.urlPathStops + stopId + "/departures"
-			case .stopArrivals(let stopId):
-				return Constants.ApiDataIntBahnDe.urlPathStops + stopId + "/arrivals"
+			case .stopDepartures:
+                    return Constants.ApiDataIntBahnDe.urlPathDepartures
+			case .stopArrivals:
+                    return Constants.ApiDataIntBahnDe.urlPathArrivals
 			}
 		}
 		
@@ -92,11 +92,11 @@ class ApiService  {
             switch self {
                 case .journeys(let journeyRequestIntBahnDe):
                     let data = try? JSONEncoder().encode(journeyRequestIntBahnDe)
-                    print(">>>",String.init(data: data ?? Data(), encoding: .utf8))
+//                    print(">>>",String.init(data: data ?? Data(), encoding: .utf8))
                     return data
                 case .journeyByRefreshToken(let request):
                     let data = try? JSONEncoder().encode(request)
-                    print(">>>",String.init(data: data ?? Data(), encoding: .utf8))
+//                    print(">>>",String.init(data: data ?? Data(), encoding: .utf8))
                     return data
                 default:
                     return Data()

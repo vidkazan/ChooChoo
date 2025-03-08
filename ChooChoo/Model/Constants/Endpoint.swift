@@ -45,6 +45,7 @@ struct Constants {
         static let urlBase = "int.bahn.de"
         static let urlPathStops = "/web/api/reiseloesung/orte"
         static let urlPathDepartures = "/web/api/reiseloesung/abfahrten"
+        static let urlPathArrivals = "/web/api/reiseloesung/ankunften"
         static let urlPathLocations = "/web/api/reiseloesung/orte"
         static let urlPathLocationsNearby = "/web/api/reiseloesung/orte/nearby"
         static let urlPathJourneyList = "/web/api/angebote/fahrplan"

@@ -7,23 +7,28 @@
 
 import Foundation
 
-struct Departures: ChewDTO {
-    let bahnhofsId: String?
-    let zeit: String?
-    let ezZeit: String?
-    let gleis: String?
-    let ezGleis: String?
-    let ueber: [String]?
-    let journeyId: String?
-    let meldungen: [String]?
-    let verkehrmittel: Verkehrsmittel?
-    let terminus: String?
-}
-
-struct StopDeparturesResponse: Codable {
+struct StopDeparturesResponse: ChewDTO {
     let departure: [Departure]
+    
+    private enum CodingKeys : String, CodingKey {
+        case departure = "entries"
+    }
 }
 
+extension StopDeparturesResponse {
+    struct Departure: ChewDTO {
+        let bahnhofsId: String?
+        let zeit: String?
+        let ezZeit: String?
+        let gleis: String?
+        let ezGleis: String?
+        let ueber: [String]?
+        let journeyId: String?
+        let meldungen: [Meldung]?
+        let verkehrmittel: Verkehrsmittel?
+        let terminus: String?
+    }
+}
 //
 //{
 //    "entries": [

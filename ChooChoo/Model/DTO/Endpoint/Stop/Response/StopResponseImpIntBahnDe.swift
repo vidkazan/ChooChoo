@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct IntlBahnDeStopEndpointDTO : StopResponse {
+struct StopResponseIntlBahnDe : StopResponse {
     let extId: String?
     let id: String?
     let lat: Double?
@@ -27,7 +27,7 @@ struct IntlBahnDeStopEndpointDTO : StopResponse {
     }
 }
 
-extension IntlBahnDeStopEndpointDTO {
+extension StopResponseIntlBahnDe {
     func stopDTO() -> StopDTO {
         // TODO: locaiton is hardcoded nil!
         let stopType : StopType? = StopType(rawValue: self.type ?? "")
@@ -59,7 +59,7 @@ extension IntlBahnDeStopEndpointDTO {
     }
 }
 
-extension IntlBahnDeStopEndpointDTO {
+extension StopResponseIntlBahnDe {
     enum EndpointProducts : String, Hashable, CaseIterable {
         case nationalExpress="ICE"
         case national="EC_IC"
@@ -74,7 +74,7 @@ extension IntlBahnDeStopEndpointDTO {
     }
 }
 
-extension IntlBahnDeStopEndpointDTO {
+extension StopResponseIntlBahnDe {
     enum StopType : String {
         case station = "ST"
         case address = "ADR"

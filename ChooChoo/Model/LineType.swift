@@ -209,7 +209,7 @@ extension LineType {
 }
 
 extension LineType {
-    func intbahndeEndpointProducts() -> IntlBahnDeStopEndpointDTO.EndpointProducts? {
+    func intbahndeEndpointProducts() -> StopResponseIntlBahnDe.EndpointProducts? {
         switch self {
             case .nationalExpress:
                 return .nationalExpress

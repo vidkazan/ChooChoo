@@ -53,7 +53,7 @@
 		7D183A102C08F4090009FDAA /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7D2CAF622B0BEA0200577FD4 /* Model.xcdatamodeld */; };
 		7D183A112C08F40A0009FDAA /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7D2CAF622B0BEA0200577FD4 /* Model.xcdatamodeld */; };
 		7D1AD8EC2AE94A7500868056 /* GeoDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1AD8EB2AE94A7500868056 /* GeoDTO.swift */; };
-		7D22B1A32D74A87600CC0736 /* StopResponseImplIntBahnDe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D22B1A22D74A87600CC0736 /* StopResponseImplIntBahnDe.swift */; };
+		7D22B1A32D74A87600CC0736 /* StopResponseImpIntBahnDe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D22B1A22D74A87600CC0736 /* StopResponseImpIntBahnDe.swift */; };
 		7D22B1AA2D74B9DC00CC0736 /* JourneyResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D22B1A92D74B9DC00CC0736 /* JourneyResponse.swift */; };
 		7D22B1AC2D74BA1100CC0736 /* JourneyRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D22B1AB2D74BA1100CC0736 /* JourneyRequest.swift */; };
 		7D22B1AE2D74BBC500CC0736 /* StopResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D22B1AD2D74BBC500CC0736 /* StopResponse.swift */; };
@@ -718,7 +718,7 @@
 		7D183A052C08E7060009FDAA /* CLLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLLocation.swift; sourceTree = "<group>"; };
 		7D183A092C08EAC30009FDAA /* ChooCoreDataStoreTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooCoreDataStoreTest.swift; sourceTree = "<group>"; };
 		7D1AD8EB2AE94A7500868056 /* GeoDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoDTO.swift; sourceTree = "<group>"; };
-		7D22B1A22D74A87600CC0736 /* StopResponseImplIntBahnDe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopResponseImplIntBahnDe.swift; sourceTree = "<group>"; };
+		7D22B1A22D74A87600CC0736 /* StopResponseImpIntBahnDe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopResponseImpIntBahnDe.swift; sourceTree = "<group>"; };
 		7D22B1A92D74B9DC00CC0736 /* JourneyResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JourneyResponse.swift; sourceTree = "<group>"; };
 		7D22B1AB2D74BA1100CC0736 /* JourneyRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JourneyRequest.swift; sourceTree = "<group>"; };
 		7D22B1AD2D74BBC500CC0736 /* StopResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopResponse.swift; sourceTree = "<group>"; };
@@ -1176,7 +1176,6 @@
 			isa = PBXGroup;
 			children = (
 				7D22B1B72D74BEB500CC0736 /* Response */,
-				7D22B1B82D74BEBA00CC0736 /* Request */,
 			);
 			path = Stop;
 			sourceTree = "<group>";
@@ -1185,17 +1184,10 @@
 			isa = PBXGroup;
 			children = (
 				7D22B1AD2D74BBC500CC0736 /* StopResponse.swift */,
-				7D22B1A22D74A87600CC0736 /* StopResponseImplIntBahnDe.swift */,
+				7D22B1A22D74A87600CC0736 /* StopResponseImpIntBahnDe.swift */,
 				7D22B1AF2D74BC0A00CC0736 /* StopResponseImplDbRest.swift */,
 			);
 			path = Response;
-			sourceTree = "<group>";
-		};
-		7D22B1B82D74BEBA00CC0736 /* Request */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Request;
 			sourceTree = "<group>";
 		};
 		7D22B1B92D74BEC100CC0736 /* Request */ = {
@@ -2309,7 +2301,7 @@
 				7D4467C52C592226008346FF /* JAVM.swift in Sources */,
 				7DD5BAED2B72B24F00CFE768 /* Segments.swift in Sources */,
 				7DA001FD2B0F88B6009BB79D /* SegmentedPicker.swift in Sources */,
-				7D22B1A32D74A87600CC0736 /* StopResponseImplIntBahnDe.swift in Sources */,
+				7D22B1A32D74A87600CC0736 /* StopResponseImpIntBahnDe.swift in Sources */,
 				7DBF1E572ABB8084009B85EF /* TimeLabelView.swift in Sources */,
 				7DE8A3552B6ABB3400C3A378 /* LDSV+subviews.swift in Sources */,
 				7DAF62C42A9F78D0006F1A17 /* SunEvent.swift in Sources */,

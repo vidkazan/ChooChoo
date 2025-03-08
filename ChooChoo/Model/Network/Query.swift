@@ -86,7 +86,7 @@ enum Query {
     case reiseloesungAbfahrtenOrtId(String)
     case reiseloesungAbfahrtenMitVias(Bool)
     case reiseloesungAbfahrtenMaxVias(max : Int)
-    case reiseloesungAbfahrtenVerkehrsmittel(transport : IntlBahnDeStopEndpointDTO.EndpointProducts)
+    case reiseloesungAbfahrtenVerkehrsmittel(transport : StopResponseIntlBahnDe.EndpointProducts)
     
 	func queryItem() -> URLQueryItem {
 		switch self {
@@ -314,7 +314,7 @@ enum Query {
                 )
             case .reiseloesungAbfahrtenVerkehrsmittel(transport: let transport):
                 return URLQueryItem(
-                    name: "verkehrsmittel",
+                    name: "verkehrsmittel[]",
                     value: transport.rawValue
                 )
         }

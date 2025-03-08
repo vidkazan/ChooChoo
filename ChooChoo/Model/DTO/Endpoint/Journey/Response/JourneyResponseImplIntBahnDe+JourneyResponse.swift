@@ -94,7 +94,7 @@ extension VerbindungsAbschnitt {
             arrivalDelay: timeContainer?.arrivalStatus.value,
             tripId: self.journeyId,
             tripIdAlternative: nil,
-            direction: self.ankunftsOrt,
+            direction: self.verkehrsmittel?.richtung,
             currentLocation: nil,
             arrivalPlatform: platforms.arrival.actual,
             plannedArrivalPlatform: platforms.arrival.planned,
@@ -126,6 +126,16 @@ extension VerbindungsAbschnitt {
 extension Halt {
     func stopWithTimeDTO() -> StopWithTimeDTO {
         #warning("harddcode nils")
+        let meldungen : [Meldung] = {
+            var res : [Meldung] = []
+            if let p = self.priorisierteMeldungen {
+                res += p
+            }
+            if let p = self.himMeldungen {
+                res += p
+            }
+            return res
+        }()
         let timeContainer = JourneyResponseIntBahnDe.timeContainer(
             depPlanned: self.abfahrtsZeitpunkt,
             dep: self.ezAbfahrtsZeitpunkt,
@@ -133,6 +143,7 @@ extension Halt {
             arr: self.ezAnkunftsZeitpunkt,
             isCancelled: nil
         )
+        #warning("resetting remark priority")
         return StopWithTimeDTO(
             stop: StopDTO(
                 type: nil,
@@ -158,16 +169,9 @@ extension Halt {
             plannedArrivalPlatform: self.plannedPlatform(),
             departurePlatform: self.actualPlatform(),
             plannedDeparturePlatform: self.plannedPlatform(),
-            remarks: Self.remarks(meldungen: self.himMeldungen) + Self.remarks(meldungen: self.priorisierteMeldungen),
+            remarks: meldungen.map{$0.remark()},
             cancelled: self.isCancelled()
         )
-    }
-    
-    static func remarks(meldungen : [Meldung]?) -> [Remark] {
-        if let meldungen = meldungen {
-            return meldungen.map { $0.remark() }
-        }
-        return []
     }
     
     func isCancelled() -> Bool {
@@ -199,6 +203,15 @@ extension Halt {
 
 extension JourneyResponseIntBahnDe {
     static let formatDateAndTime = "yyyy-MM-dd'T'HH:mm:ss"
+}
+
+extension Meldung {
+    static func remarks(meldungen : [Meldung]?) -> [Remark] {
+        if let meldungen = meldungen {
+            return meldungen.map { $0.remark() }
+        }
+        return []
+    }
 }
 
 extension JourneyResponseIntBahnDe {

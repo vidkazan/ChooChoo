@@ -348,12 +348,12 @@ extension NearestStopViewModel {
         // TODO: Query.radius(radius: 100).queryItem() - hardcoded radius value
 		let predictedCoords = Self.calculateNextCoordinates(loc: coords, time: 7.5)
 		return ApiService().fetch(
-			[IntlBahnDeStopEndpointDTO].self,
+			[StopResponseIntlBahnDe].self,
 			query: [
 				Query.reiseloesungOrteNearbylong(longitude: String(predictedCoords.longitude)).queryItem(),
 				Query.reiseloesungOrteNearbylat(latitude: String(predictedCoords.latitude)).queryItem(),
                 Query.reiseloesungOrteNearbyMaxNo(numberOfResults: 10).queryItem(),
-                Query.reiseloesungOrteNearbyRadius(radius: 1000).queryItem()
+                Query.reiseloesungOrteNearbyRadius(radius: 5000).queryItem()
 			],
 			type: ApiService.Requests.locationsNearby
         )
@@ -362,15 +362,10 @@ extension NearestStopViewModel {
 	}
 	
 	static func fetchStopDepartures(stop : Stop) -> AnyPublisher<StopTripsDTO,ApiError> {
-		return ApiService().fetch(
-			StopTripsDTO.self,
-			query: [
-				Query.duration(minutes: 60).queryItem(),
-				Query.results(max: 20).queryItem()
-			],
-			type: ApiService.Requests.stopDepartures(stopId: stop.id)
-		)
-		.eraseToAnyPublisher()
+        return MapPickerViewModel.fetchStopDepartures(
+            stop: stop,
+            transportTypes: Set(LineType.allCases)
+        )
 	}
 	
 	static private func calculateNextCoordinates(loc : CLLocation, time : Double?) -> CLLocationCoordinate2D {

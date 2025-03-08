@@ -177,18 +177,18 @@ extension JourneyRequestIntBahnDe {
         self.produktgattungen = {
             switch settings.transportMode {
             case .all:
-                return IntlBahnDeStopEndpointDTO.EndpointProducts.allCases.map{
+                return StopResponseIntlBahnDe.EndpointProducts.allCases.map{
                     $0.rawValue
                 }
             case .regional:
                 return [
-                    IntlBahnDeStopEndpointDTO.EndpointProducts.regional.rawValue,
-                    IntlBahnDeStopEndpointDTO.EndpointProducts.suburban.rawValue,
-                    IntlBahnDeStopEndpointDTO.EndpointProducts.ferry.rawValue,
-                    IntlBahnDeStopEndpointDTO.EndpointProducts.tram.rawValue,
-                    IntlBahnDeStopEndpointDTO.EndpointProducts.taxi.rawValue,
-                    IntlBahnDeStopEndpointDTO.EndpointProducts.subway.rawValue,
-                    IntlBahnDeStopEndpointDTO.EndpointProducts.bus.rawValue
+                    StopResponseIntlBahnDe.EndpointProducts.regional.rawValue,
+                    StopResponseIntlBahnDe.EndpointProducts.suburban.rawValue,
+                    StopResponseIntlBahnDe.EndpointProducts.ferry.rawValue,
+                    StopResponseIntlBahnDe.EndpointProducts.tram.rawValue,
+                    StopResponseIntlBahnDe.EndpointProducts.taxi.rawValue,
+                    StopResponseIntlBahnDe.EndpointProducts.subway.rawValue,
+                    StopResponseIntlBahnDe.EndpointProducts.bus.rawValue
                 ]
             case .custom:
                 let products = settings.customTransferModes
