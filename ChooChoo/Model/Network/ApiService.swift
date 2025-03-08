@@ -80,7 +80,7 @@ class ApiService  {
 			case .journeyByRefreshToken:
                 return Constants.ApiDataIntBahnDe.urlPathJourneyUpdate
 			case .trips(tripId: let tripId):
-				return Constants.ApiDataIntBahnDe.urlPathTrip + "/" + tripId
+				return Constants.ApiDataIntBahnDe.urlPathTrip
 			case .stopDepartures:
                     return Constants.ApiDataIntBahnDe.urlPathDepartures
 			case .stopArrivals:
