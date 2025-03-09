@@ -98,15 +98,15 @@ extension JourneyCell {
 			switch mode {
 			case .base:
 				BadgesView(badges: journey.badges)
-				Button(action:{
-					JourneyViewData.showOnMapOption.action(journey)
-				}, label: {
-					Image(systemName: JourneyViewData.showOnMapOption.icon)
-						.chewTextSize(.medium)
-						.padding(5)
-						.badgeBackgroundStyle(.primary)
-						.foregroundColor(.primary)
-				})
+//				Button(action:{
+//					JourneyViewData.showOnMapOption.action(journey)
+//				}, label: {
+//					Image(systemName: JourneyViewData.showOnMapOption.icon)
+//						.chewTextSize(.medium)
+//						.padding(5)
+//						.badgeBackgroundStyle(.primary)
+//						.foregroundColor(.primary)
+//				})
 			case .alternatives:
 				EmptyView()
 			}

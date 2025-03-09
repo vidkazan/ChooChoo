@@ -209,23 +209,28 @@ extension LegViewData {
 	}
 }
 extension LegViewData {
+    #warning("show on map option is off")
 	var options : [Option] {
 		#if DEBUG
 		switch legType {
 			case .line: [
-				Self.showOnMapOption,
+//				Self.showOnMapOption,
 				Self.routeOption,
 				Self.debug
 			]
-			default: [Self.showOnMapOption]
+			default: [
+//                Self.showOnMapOption
+            ]
 		}
 		#else
 		switch legType {
 			case .line: [
-				Self.showOnMapOption,
+//				Self.showOnMapOption,
 				Self.routeOption
 			]
-			default: [Self.showOnMapOption]
+			default: [
+//                Self.showOnMapOption
+            ]
 		}
 		#endif
 	}
