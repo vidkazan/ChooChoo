@@ -77,9 +77,7 @@ extension MapPickerViewModel {
 		case idle
 		case error(any ChewError)
 		case submitting(Stop)
-		case loadingStopDetails(
-			Stop,_ send : (MapPickerViewModel.Event)->Void
-		)
+		case loadingStopDetails(Stop,_ send : (MapPickerViewModel.Event)->Void)
 		case loadingNearbyStops(_ region : MKCoordinateRegion)
 		var description : String {
 			switch self {
@@ -340,10 +338,21 @@ extension MapPickerViewModel {
 			}
 			switch stop.type {
 			case .location:
-				Task {
-					await Self.reverseGeocoding(coords : stop.coordinates,send: send)
-				}
-				return Empty().eraseToAnyPublisher()
+                return ChewViewModel.fetchAddressFromLocationIntBahnDE(locaiton: stop.coordinates.cllocationcoordinates2d)
+                    .map {
+                        guard let stop = $0.first?.stopDTO().stop() else {
+                            return Event.didFailToLoad(ApiError.stopNotFound)
+                        }
+                        return Event.didLoadStopDetails(stop, [])
+                    }
+                    .catch {
+                        return Just(Event.didFailToLoad(ApiError.generic(description: $0.localizedDescription))).eraseToAnyPublisher()
+                    }
+                    .eraseToAnyPublisher()
+//				Task {
+//					await Self.reverseGeocoding(coords : stop.coordinates,send: send)
+//				}
+//				return Empty().eraseToAnyPublisher()
 			case .pointOfInterest:
 				return Just(Event.didCancelLoading).eraseToAnyPublisher()
 			case .station,.stop:
@@ -415,23 +424,23 @@ extension MapPickerViewModel {
 		.eraseToAnyPublisher()
 	}
 	
-	private static func reverseGeocoding(coords : Coordinate,send : (MapPickerViewModel.Event)->Void) async {
-		if let res = await Model.shared.locationDataManager.reverseGeocoding(coords: coords) {
-			let stop = Stop(
-				coordinates: coords,
-				type: .location,
-				stopDTO: StopDTO(name: res, products: nil)
-			)
-			send(Event.didLoadStopDetails(stop,[]))
-		} else {
-			let stop = Stop(
-				coordinates: coords,
-				type: .location,
-				stopDTO: StopDTO(name: String(coords.latitude) + " " + String(coords.longitude), products: nil)
-			)
-			send(Event.didLoadStopDetails(stop,[]))
-		}
-	}
+//	private static func reverseGeocoding(coords : Coordinate,send : (MapPickerViewModel.Event)->Void) async {
+//		if let res = await Model.shared.locationDataManager.reverseGeocoding(coords: coords) {
+//			let stop = Stop(
+//				coordinates: coords,
+//				type: .location,
+//				stopDTO: StopDTO(name: res, products: nil)
+//			)
+//			send(Event.didLoadStopDetails(stop,[]))
+//		} else {
+//			let stop = Stop(
+//				coordinates: coords,
+//				type: .location,
+//				stopDTO: StopDTO(name: String(coords.latitude) + " " + String(coords.longitude), products: nil)
+//			)
+//			send(Event.didLoadStopDetails(stop,[]))
+//		}
+//	}
 }
 
 extension MapPickerViewModel {

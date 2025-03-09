@@ -51,6 +51,7 @@ struct Constants {
         static let urlPathJourneyList = "/web/api/angebote/fahrplan"
         static let urlPathJourneyUpdate = "/web/api/angebote/recon"
         static let urlPathTrip = "/web/api/reiseloesung/fahrt"
+        static let urlPathTripAddresslookup = "/web/api/reiseloesung/orte/addresslookup"
         static let forPing = "/web/api/reiseloesung/orte?suchbegriff=Neuss+Hbf&typ=ALL&limit=10"
     }
 }

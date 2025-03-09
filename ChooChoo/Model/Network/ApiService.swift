@@ -25,6 +25,7 @@ class ApiService  {
 		case stopArrivals
 		case trips(tripId : String)
 		case generic(path : String)
+        case addresslookup
 		
 		var description : String {
 			switch self {
@@ -44,6 +45,8 @@ class ApiService  {
 				return "stopDepartures"
 			case .stopArrivals:
 				return "stopArrivals"
+            case .addresslookup:
+                return "addresslookup"
 			}
 		}
 		
@@ -85,6 +88,8 @@ class ApiService  {
                     return Constants.ApiDataIntBahnDe.urlPathDepartures
 			case .stopArrivals:
                     return Constants.ApiDataIntBahnDe.urlPathArrivals
+                case .addresslookup:
+                    return Constants.ApiDataIntBahnDe.urlPathTripAddresslookup
 			}
 		}
 		

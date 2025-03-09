@@ -9,6 +9,7 @@ import Foundation
 import CoreLocation
 import OSLog
 import SwiftUI
+import Combine
 
 class ChewLocationDataManager : NSObject, ObservableObject {
 	private let locationManager = {
@@ -36,7 +37,6 @@ class ChewLocationDataManager : NSObject, ObservableObject {
 		location = locationManager.location
 		accuracyAuthorization = locationManager.accuracyAuthorization
 	}
-	
 	
 	func reverseGeocoding(coords : Coordinate) async -> String? {
 		if self.locationManager.location != nil,

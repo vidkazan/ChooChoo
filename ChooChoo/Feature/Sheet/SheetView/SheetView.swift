@@ -137,11 +137,13 @@ struct SheetViewInner : View {
 			}
 		case .mapPicker(type: let type):
 			let initialCoords = Model.shared.locationDataManager.location?.coordinate ?? .init(latitude: 52, longitude: 7)
+            let _ = Model.shared.mapPickerViewModel.send(
+                event: .didDragMap((MKCoordinateRegion(
+                center: initialCoords,
+                latitudinalMeters: 0.01,
+                longitudinalMeters: 0.01))))
 			MapPickerView(
-				vm : MapPickerViewModel(.loadingNearbyStops(MKCoordinateRegion(
-					center: initialCoords,
-					latitudinalMeters: 0.01,
-					longitudinalMeters: 0.01))),
+                vm: Model.shared.mapPickerViewModel,
 				initialCoords: initialCoords,
 				type: type
 			)
