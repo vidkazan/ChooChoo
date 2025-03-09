@@ -90,9 +90,9 @@ extension JourneyCell {
 						.chewTextSize(.medium)
 						.tint(.primary)
 				}
-                if let zi = getTripIDMagicNumber(tripID: journey.legs.first?.tripId ?? "") {
-                    BadgeView(.generic(msg: zi  ))
-                }
+//                if let zi = getTripIDMagicNumber(tripID: journey.legs.first?.tripId ?? "") {
+//                    BadgeView(.generic(msg: zi  ))
+//                }
 			}
 			Spacer()
 			switch mode {

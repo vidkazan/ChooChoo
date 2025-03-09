@@ -66,10 +66,10 @@ extension JourneyAlternativesView {
 				if case .idle = jajlvm.state.status, jajlvm.state.journeys.isEmpty {
 					ErrorView(viewType: .alert, msg: Text(verbatim: "No alternatives"), action: nil)
 				} else {
-                    Button(alternativeDuplicationSwitch == true ? "Restore duplication" : "Remove duplication", action: {
-                        self.alternativeDuplicationSwitch.toggle()
-                    })
-                    .buttonStyle(BorderedProminentButtonStyle())
+//                    Button(alternativeDuplicationSwitch == true ? "Restore duplication" : "Remove duplication", action: {
+//                        self.alternativeDuplicationSwitch.toggle()
+//                    })
+//                    .buttonStyle(BorderedProminentButtonStyle())
                     ForEach(
                         jajlvm.state.journeys.filter({
                             (
