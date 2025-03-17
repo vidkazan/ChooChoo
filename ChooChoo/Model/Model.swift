@@ -43,6 +43,7 @@ final class Model {
 	let recentSearchesVM : RecentSearchesViewModel
 	let alertVM : AlertViewModel
 	let appSettingsVM : AppSettingsViewModel
+    let mapPickerViewModel : MapPickerViewModel
 	
 	init(
 		sheetVM : SheetViewModel = .init(),
@@ -53,7 +54,8 @@ final class Model {
 		recentSearchesViewModel : RecentSearchesViewModel,
 		locationDataManager : ChewLocationDataManager = .init(),
 		appSettingsVM : AppSettingsViewModel,
-		logVM : LogViewModel = .init()
+		logVM : LogViewModel = .init(),
+        mapPickerViewModel : MapPickerViewModel = .init(.idle)
 	) {
 		self.searchStopsVM = searchStopsVM
 		self.topBarAlertVM = alertVM
@@ -65,6 +67,7 @@ final class Model {
 		self.locationDataManager = locationDataManager
 		self.appSettingsVM = appSettingsVM
 		self.logVM = logVM
+        self.mapPickerViewModel = mapPickerViewModel
 	}
 }
 

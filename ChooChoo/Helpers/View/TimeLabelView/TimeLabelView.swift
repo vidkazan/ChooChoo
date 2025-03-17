@@ -78,7 +78,7 @@ struct TimeLabelView: View {
 
 extension TimeLabelView {
     func evaluateTimeOrOffsetType() {
-        var newTimerInterval = Self.timeOrOffsetTime
+        let  newTimerInterval = Self.timeOrOffsetTime
         if type == .timeOrOffset {
             if  let time = time.actualOrPlannedIfActualIsNil() {
                 let diff = time.timeIntervalSince1970 - chewVM.referenceDate.ts

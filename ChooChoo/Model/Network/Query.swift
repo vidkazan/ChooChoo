@@ -48,6 +48,11 @@ enum Query {
 	
 	case latitude(latitude : String)
 	case longitude(longitude : String)
+    case reiseloesungOrteNearbylat(latitude : String)
+    case reiseloesungOrteNearbylong(longitude : String)
+    
+    
+    
 	case address(addr: String)
 	case poiId(poiId: String)
 	case poiName(poiName: String)
@@ -68,6 +73,23 @@ enum Query {
 	case startWithWalking(Bool)
 	case walkingSpeed(JourneySettings.WalkingSpeed)
 	case linesOfStops(show : Bool)
+    
+    case reiseloesungOrteNearbyRadius(radius : Int)
+    case reiseloesungOrteNearbyMaxNo(numberOfResults : Int)
+    case reiseloesungOrteTyp(type : String)
+    case reiseloesungOrteLimit(limit : Int)
+    case reiseloesungOrteSuchbegriff(str : String)
+    
+    case reiseloesungAbfahrtenDatum(String)
+    case reiseloesungAbfahrtenZeit(String)
+    case reiseloesungAbfahrtenOrtExtId(Int)
+    case reiseloesungAbfahrtenOrtId(String)
+    case reiseloesungAbfahrtenMitVias(Bool)
+    case reiseloesungAbfahrtenMaxVias(max : Int)
+    case reiseloesungAbfahrtenVerkehrsmittel(transport : StopResponseIntlBahnDe.EndpointProducts)
+    
+    case reiseloesungFahrtJourneyId(id: String)
+    
 	func queryItem() -> URLQueryItem {
 		switch self {
 		case .walkingSpeed(let speed):
@@ -200,7 +222,6 @@ enum Query {
 			return URLQueryItem(
 				name: "poi",
 				value: String(showPointsOfInterests))
-			
 		case .latitude(latitude: let latitude):
 			return URLQueryItem(
 				name: "latitude",
@@ -209,6 +230,34 @@ enum Query {
 			return URLQueryItem(
 				name: "longitude",
 				value: String(longitude))
+        case .reiseloesungOrteNearbyRadius(let radius):
+            return URLQueryItem(
+                name: "radius",
+                value: String(radius))
+        case .reiseloesungOrteNearbyMaxNo(let numberOfResults):
+            return URLQueryItem(
+                name: "maxNo",
+                value: String(numberOfResults))
+        case .reiseloesungOrteNearbylat(latitude: let latitude):
+            return URLQueryItem(
+                name: "lat",
+                value: String(latitude))
+        case .reiseloesungOrteNearbylong(longitude: let longitude):
+            return URLQueryItem(
+                name: "long",
+                value: String(longitude))
+        case .reiseloesungOrteTyp(let type):
+                return URLQueryItem(
+                    name: "typ",
+                    value: type)
+        case .reiseloesungOrteLimit(let limit):
+                return URLQueryItem(
+                    name: "limit",
+                    value: String(limit))
+        case .reiseloesungOrteSuchbegriff(let str):
+                return URLQueryItem(
+                    name: "suchbegriff",
+                    value: str)
 		case .address(addr: let addr):
 			return URLQueryItem(
 				name: "address",
@@ -235,7 +284,47 @@ enum Query {
 			return URLQueryItem(
 				name: "name",
 				value: poiName)
-		}
+            case .reiseloesungAbfahrtenDatum(let datum):
+                return URLQueryItem(
+                    name: "datum",
+                    value: datum
+                )
+            case .reiseloesungAbfahrtenZeit(let zeit):
+                return URLQueryItem(
+                    name: "zeit",
+                    value: zeit
+                )
+            case .reiseloesungAbfahrtenOrtExtId(let id):
+                return URLQueryItem(
+                    name: "ortExtId",
+                    value: String(id)
+                )
+            case .reiseloesungAbfahrtenOrtId(let id):
+                return URLQueryItem(
+                    name: "ortId",
+                    value: id
+                )
+            case .reiseloesungAbfahrtenMitVias(let bool):
+                return URLQueryItem(
+                    name: "mitVias",
+                    value: String(bool)
+                )
+            case .reiseloesungAbfahrtenMaxVias(max: let max):
+                return URLQueryItem(
+                    name: "maxVias",
+                    value: String(max)
+                )
+            case .reiseloesungAbfahrtenVerkehrsmittel(transport: let transport):
+                return URLQueryItem(
+                    name: "verkehrsmittel[]",
+                    value: transport.rawValue
+                )
+            case .reiseloesungFahrtJourneyId(let id):
+                return URLQueryItem(
+                    name: "journeyId",
+                    value: id
+                )
+        }
 	}
 	static func queryItems(methods : [Query]) -> [URLQueryItem] {
 		return methods.map {

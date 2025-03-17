@@ -16,15 +16,16 @@ class ApiService  {
 		self.client = client
 	}
 	
-	enum Requests : Equatable {
-		case journeys
-		case journeyByRefreshToken(ref : String)
+    enum Requests : Equatable {
+		case journeys(JourneyRequestIntBahnDe)
+		case journeyByRefreshToken(JourneyUpdateRequestIntBahnDe)
 		case locations
-		case locationsNearby(coords : CLLocationCoordinate2D)
-		case stopDepartures(stopId : String)
-		case stopArrivals(stopId : String)
+		case locationsNearby
+		case stopDepartures
+		case stopArrivals
 		case trips(tripId : String)
 		case generic(path : String)
+        case addresslookup
 		
 		var description : String {
 			switch self {
@@ -44,11 +45,15 @@ class ApiService  {
 				return "stopDepartures"
 			case .stopArrivals:
 				return "stopArrivals"
+            case .addresslookup:
+                return "addresslookup"
 			}
 		}
 		
 		var method : String {
 			switch self {
+                case .journeys,.journeyByRefreshToken:
+                return "POST"
 			default:
 				return "GET"
 			}
@@ -56,6 +61,10 @@ class ApiService  {
 		
 		var headers : [(value : String, key : String)] {
 			switch self {
+                case .journeys,.journeyByRefreshToken:
+                return [
+                    ("application/json","Content-Type")
+                ]
 			default:
 				return []
 			}
@@ -64,28 +73,45 @@ class ApiService  {
 		var urlString : String {
 			switch self {
 			case .locationsNearby:
-				return Constants.ApiData.urlPathLocationsNearby
+				return Constants.ApiDataIntBahnDe.urlPathLocationsNearby
 			case .journeys:
-				return Constants.ApiData.urlPathJourneyList
+				return Constants.ApiDataIntBahnDe.urlPathJourneyList
 			case .locations:
-				return Constants.ApiData.urlPathLocations
+				return Constants.ApiDataIntBahnDe.urlPathLocations
 			case .generic(let path):
 				return path
-			case .journeyByRefreshToken(let ref):
-				return Constants.ApiData.urlPathJourneyList + "/" + ref
+			case .journeyByRefreshToken:
+                return Constants.ApiDataIntBahnDe.urlPathJourneyUpdate
 			case .trips(tripId: let tripId):
-				return Constants.ApiData.urlPathTrip + "/" + tripId
-			case .stopDepartures(let stopId):
-				return Constants.ApiData.urlPathStops + stopId + "/departures"
-			case .stopArrivals(let stopId):
-				return Constants.ApiData.urlPathStops + stopId + "/arrivals"
+				return Constants.ApiDataIntBahnDe.urlPathTrip
+			case .stopDepartures:
+                    return Constants.ApiDataIntBahnDe.urlPathDepartures
+			case .stopArrivals:
+                    return Constants.ApiDataIntBahnDe.urlPathArrivals
+                case .addresslookup:
+                    return Constants.ApiDataIntBahnDe.urlPathTripAddresslookup
 			}
 		}
 		
+        var body : Data? {
+            switch self {
+                case .journeys(let journeyRequestIntBahnDe):
+                    let data = try? JSONEncoder().encode(journeyRequestIntBahnDe)
+//                    print(">>>",String.init(data: data ?? Data(), encoding: .utf8))
+                    return data
+                case .journeyByRefreshToken(let request):
+                    let data = try? JSONEncoder().encode(request)
+//                    print(">>>",String.init(data: data ?? Data(), encoding: .utf8))
+                    return data
+                default:
+                    return Data()
+            }
+        }
 		func getRequest(urlEndPoint : URL) -> URLRequest {
 			switch self {
 			default:
 				var req = URLRequest(url : urlEndPoint)
+                req.httpBody = self.body
 				req.httpMethod = self.method
 				for header in self.headers {
 					req.addValue(header.value, forHTTPHeaderField: header.key)
@@ -103,13 +129,12 @@ class ApiService  {
 			default:
 				var components = URLComponents()
 				components.path = type.urlString
-				components.host = Constants.ApiData.urlBase
+				components.host = Constants.ApiDataIntBahnDe.urlBase
 				components.scheme = "https"
 				components.queryItems = query
-				return components.url
+                return components.url
 			}
 		}()
 		return url
 	}
 }
-

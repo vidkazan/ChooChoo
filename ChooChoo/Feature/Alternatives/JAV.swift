@@ -13,6 +13,7 @@ struct JourneyAlternativesView: View {
 	@Namespace private var journeyAlternativesViewNamespace
 	let secondTimer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
 	let minuteTimer = Timer.publish(every: 60, on: .main, in: .common).autoconnect()
+    @State var alternativeDuplicationSwitch : Bool = true
 	@EnvironmentObject var chewVM : ChewViewModel
 	@ObservedObject var jdvm : JourneyDetailsViewModel
 	@ObservedObject var javm : JourneyAlternativeDepartureStopViewModel
@@ -65,7 +66,22 @@ extension JourneyAlternativesView {
 				if case .idle = jajlvm.state.status, jajlvm.state.journeys.isEmpty {
 					ErrorView(viewType: .alert, msg: Text(verbatim: "No alternatives"), action: nil)
 				} else {
-					ForEach(jajlvm.state.journeys,id:\.0.id) {
+//                    Button(alternativeDuplicationSwitch == true ? "Restore duplication" : "Remove duplication", action: {
+//                        self.alternativeDuplicationSwitch.toggle()
+//                    })
+//                    .buttonStyle(BorderedProminentButtonStyle())
+                    ForEach(
+                        jajlvm.state.journeys.filter({
+                            (
+                                !Self.isTheSameJourney(
+                                journey: $0.0,
+                                alternative: jdvm.state.data.viewData) && alternativeDuplicationSwitch == true
+                            ) 
+                            ||
+                            alternativeDuplicationSwitch == false
+                        }),
+                        id:\.0.id
+                    ) {
 						JourneyCell(
 							journey: $0.0,
 							stops: .init(
@@ -77,13 +93,17 @@ extension JourneyAlternativesView {
 					}
 				}
 			case .error(let error):
-				ErrorView(viewType: .error, msg: Text(verbatim: error.localizedDescription), reloadAction: {
-					jajlvm.send(event: .didUpdateJourneyData(
-						depStop: jajlvm.state.depStop,
-						time: jajlvm.state.time,
-						referenceDate: chewVM.referenceDate
-					))
-				})
+				ErrorView(
+                    viewType: .error,
+                    msg: Text(verbatim: error.localizedDescription), 
+                    reloadAction: {
+                        jajlvm.send(event: .didUpdateJourneyData(
+                            depStop: jajlvm.state.depStop,
+                            time: jajlvm.state.time,
+                            referenceDate: chewVM.referenceDate
+                        ))
+                    }
+                )
 			}
 		}, header: {
 			HStack {
@@ -196,15 +216,39 @@ extension JourneyAlternativesView {
 	}
 }
 
+extension JourneyAlternativesView {
+    static func isTheSameJourney(journey : JourneyViewData, alternative : JourneyViewData) -> Bool {
+        guard journey.legs.count == alternative.legs.count  else {
+            return false
+        }
+        if journey.legs.count < 2 {
+            return journey.legs.first == alternative.legs.first
+        } else {
+            let lhs = journey.legs
+                .dropFirst()
+                .filter({$0.legType == .line})
+                .reduce("", {$0 + $1.tripId})
+            let rhs = alternative.legs
+                .dropFirst()
+                .filter({$0.legType == .line})
+                .reduce("", {$0 + $1.tripId})
+            return lhs == rhs || journey.legs.first == alternative.legs.first
+        }
+    }
+}
 
 extension JourneyAlternativesView {
-	func updateAlternativeJourneysIfNeeded(state : JourneyAlternativeDepartureStopViewModel.State) {
+	func updateAlternativeJourneysIfNeeded(
+        state : JourneyAlternativeDepartureStopViewModel.State
+    ) {
 		if (state.data?.alternativeDeparture.stopViewData.id != jajlvm.state.depStop.stop?.id ||
 			chewVM.referenceDate.ts - jajlvm.state.lastRequestTS > 60) {
 			self.updateAlternativeJourneys(state: state)
 		}
 	}
-	func updateAlternativeJourneys(state : JourneyAlternativeDepartureStopViewModel.State) {
+	func updateAlternativeJourneys(
+        state : JourneyAlternativeDepartureStopViewModel.State
+    ) {
 		if let stopViewData = javm.state.data?.alternativeDeparture.stopViewData,
 			let stop = stopViewData.stop(),
 			stop.id != jdvm.state.data.arrStop.id {

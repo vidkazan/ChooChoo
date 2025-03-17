@@ -77,7 +77,7 @@ extension MapPickerView {
 						chooseBtn(stop: stop)
 					}
 					switch vm.state.status {
-					case .idle, .loadingNearbyStops:
+					case .idle, .loadingNearbyStops,.loadingStopDetails:
 						if let trips = vm.state.data.selectedStopTrips, !trips.isEmpty {
 							VStack {
 								ScrollView {
@@ -92,7 +92,7 @@ extension MapPickerView {
 						}
 					case .error(let chewError):
 						Text(chewError.localizedDescription)
-					case .submitting,.loadingStopDetails:
+					case .submitting:
 						EmptyView()
 					}
 				}

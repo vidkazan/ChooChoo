@@ -2,6 +2,7 @@
   "sourceLanguage" : "en",
   "strings" : {
     "" : {
+      "comment" : "JourneyActionType",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -21,6 +22,9 @@
           }
         }
       }
+    },
+    "(dur) ago" : {
+      "comment" : "DateParcer.timeOffsetString"
     },
     "**Blue** color - **moonlight**" : {
       "comment" : "SunEventsTipView",
@@ -338,6 +342,9 @@
         }
       }
     },
+    "continue with " : {
+      "comment" : "Alternatives: JourneyCell: footer: transport as a departure"
+    },
     "Count" : {
       "comment" : "SettingsView: transferSegment: picker name",
       "localizations" : {
@@ -405,6 +412,7 @@
       }
     },
     "Debug" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -491,6 +499,9 @@
         }
       }
     },
+    "exit at" : {
+      "comment" : "JourneyActionType"
+    },
     "Failed to %@ this journey" : {
       "comment" : "badge: followError",
       "localizations" : {
@@ -523,6 +534,9 @@
           }
         }
       }
+    },
+    "Failed to load journey" : {
+      "comment" : "SheetViewInner"
     },
     "follow" : {
       "comment" : "JourneyFollowViewModel.Action",
@@ -589,6 +603,9 @@
           }
         }
       }
+    },
+    "in (dur)" : {
+      "comment" : "DateParcer.timeOffsetString"
     },
     "in %@" : {
       "comment" : "JourneyAlternativesView",
@@ -657,7 +674,7 @@
       }
     },
     "Journey Details" : {
-      "comment" : "info sheet: follow journey button: view name",
+      "comment" : "SheetViewModel: SheetType\ninfo sheet: follow journey button: view name",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -835,7 +852,7 @@
       }
     },
     "now" : {
-      "comment" : "AlternativeStopPosition: timeBadge\ntimeChoosingView: button on segmented picker\nDatePickerTimePresetButtons",
+      "comment" : "AlternativeStopPosition: timeBadge\nDateParcer.timeOffsetString\nDatePickerTimePresetButtons\ntimeChoosingView: button on segmented picker",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -912,6 +929,7 @@
       }
     },
     "popopopo" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -1032,6 +1050,7 @@
       }
     },
     "Reset tips" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -1053,7 +1072,7 @@
       }
     },
     "Save" : {
-      "comment" : "settingsView: save button\ndatePickerView: save button",
+      "comment" : "datePickerView: save button\nsettingsView: save button",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -1064,7 +1083,7 @@
       }
     },
     "Search" : {
-      "comment" : "TabItem\nsearch tip title\nJourneyAlternativesView: button",
+      "comment" : "TabItem\nsearch tip title",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -1140,8 +1159,14 @@
         }
       }
     },
+    "Share" : {
+      "comment" : "SheetViewModel: SheetType"
+    },
+    "Share journey" : {
+      "comment" : "JourneyCell: menu item"
+    },
     "Show on map" : {
-      "comment" : "LegDetailsView: menu item\nJourneyCell: menu item",
+      "comment" : "JourneyCell: menu item\nLegDetailsView: menu item",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -1240,6 +1265,7 @@
       }
     },
     "Time slider" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -1392,8 +1418,12 @@
         }
       }
     },
+    "updated" : {
+      "comment" : "updatedAtBadgeView.update"
+    },
     "updated %@ ago" : {
       "comment" : "badge",
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -1405,6 +1435,7 @@
     },
     "updated now" : {
       "comment" : "badge: updated at",
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {

@@ -26,11 +26,15 @@
 		7D064B3D2C527BAB00AAEF79 /* NetworkMonitorService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D064B3C2C527BAB00AAEF79 /* NetworkMonitorService.swift */; };
 		7D0685ED2B50304500CCBE6B /* CoreDataStore+fetch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D0685EC2B50304500CCBE6B /* CoreDataStore+fetch.swift */; };
 		7D0D8ABE2AC75DD6008F0F4B /* TimeContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D0D8ABD2AC75DD6008F0F4B /* TimeContainer.swift */; };
+		7D1020A02D7CD0D900C80762 /* TripResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D10209F2D7CD0D900C80762 /* TripResponse.swift */; };
 		7D10BD3D2BB1A2C100702D83 /* AppSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D10BD3C2BB1A2C100702D83 /* AppSettingsView.swift */; };
 		7D10BD3F2BB1B37B00702D83 /* CoreDataStore+delete.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D10BD3E2BB1B37B00702D83 /* CoreDataStore+delete.swift */; };
 		7D10BD412BB1B3B000702D83 /* CoreDataStore+add.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D10BD402BB1B3B000702D83 /* CoreDataStore+add.swift */; };
 		7D10BD432BB1B40300702D83 /* CoreDataStore+update.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D10BD422BB1B40200702D83 /* CoreDataStore+update.swift */; };
 		7D14D98F2B7AD85400FB67AC /* AnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D14D98E2B7AD85400FB67AC /* AnnotationView.swift */; };
+		7D159CA12D799F8C0099CDA2 /* JourneyUpdateRequestImplIntBahnDe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D159CA02D799F8C0099CDA2 /* JourneyUpdateRequestImplIntBahnDe.swift */; };
+		7D159CA32D799FAD0099CDA2 /* JourneyUpdateRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D159CA22D799FAD0099CDA2 /* JourneyUpdateRequest.swift */; };
+		7D159CA72D79A99F0099CDA2 /* StopDeparturesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D159CA62D79A99F0099CDA2 /* StopDeparturesResponse.swift */; };
 		7D15AA462BB19E6800B6966D /* AppSettingsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D15AA452BB19E6800B6966D /* AppSettingsVM.swift */; };
 		7D1638502B69841D006E9660 /* LDSV+background.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D16384F2B69841D006E9660 /* LDSV+background.swift */; };
 		7D1638522B698457006E9660 /* LDSV+badges.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1638512B698457006E9660 /* LDSV+badges.swift */; };
@@ -50,6 +54,14 @@
 		7D183A102C08F4090009FDAA /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7D2CAF622B0BEA0200577FD4 /* Model.xcdatamodeld */; };
 		7D183A112C08F40A0009FDAA /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7D2CAF622B0BEA0200577FD4 /* Model.xcdatamodeld */; };
 		7D1AD8EC2AE94A7500868056 /* GeoDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1AD8EB2AE94A7500868056 /* GeoDTO.swift */; };
+		7D22B1A32D74A87600CC0736 /* StopResponseImpIntBahnDe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D22B1A22D74A87600CC0736 /* StopResponseImpIntBahnDe.swift */; };
+		7D22B1AA2D74B9DC00CC0736 /* JourneyResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D22B1A92D74B9DC00CC0736 /* JourneyResponse.swift */; };
+		7D22B1AC2D74BA1100CC0736 /* JourneyRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D22B1AB2D74BA1100CC0736 /* JourneyRequest.swift */; };
+		7D22B1AE2D74BBC500CC0736 /* StopResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D22B1AD2D74BBC500CC0736 /* StopResponse.swift */; };
+		7D22B1B02D74BC0A00CC0736 /* StopResponseImplDbRest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D22B1AF2D74BC0A00CC0736 /* StopResponseImplDbRest.swift */; };
+		7D22B1B22D74BE2800CC0736 /* JourneyResponseImplIntBahnDe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D22B1B12D74BE2800CC0736 /* JourneyResponseImplIntBahnDe.swift */; };
+		7D22B1B42D74BE3C00CC0736 /* JourneyResponseImplDbRest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D22B1B32D74BE3C00CC0736 /* JourneyResponseImplDbRest.swift */; };
+		7D22B1B62D74BE6F00CC0736 /* JourneyRequestImplIntBahnDe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D22B1B52D74BE6F00CC0736 /* JourneyRequestImplIntBahnDe.swift */; };
 		7D23E44A2A98F9800037C3E1 /* LegsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D23E4492A98F9800037C3E1 /* LegsView.swift */; };
 		7D23E44C2A98FD700037C3E1 /* LegView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D23E44B2A98FD700037C3E1 /* LegView.swift */; };
 		7D28BAD22B82C533008B9979 /* Mock.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D28BAD12B82C533008B9979 /* Mock.xcassets */; };
@@ -545,6 +557,7 @@
 		7D8A10932BC9AD4400123036 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 7D8A10922BC9AD4400123036 /* PrivacyInfo.xcprivacy */; };
 		7D8A3E3A2B83A68F005B61CC /* StopList+subcomponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D8A3E392B83A68F005B61CC /* StopList+subcomponents.swift */; };
 		7D8A3E3C2B83A8AC005B61CC /* JLVM+sideEffects+fetchJourneyList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D8A3E3B2B83A8AC005B61CC /* JLVM+sideEffects+fetchJourneyList.swift */; };
+		7D8E13352D76222C007A72CF /* JourneyResponseImplIntBahnDe+JourneyResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D8E13342D76222C007A72CF /* JourneyResponseImplIntBahnDe+JourneyResponse.swift */; };
 		7D935F692C778D9F00F61EF3 /* Collections in Frameworks */ = {isa = PBXBuildFile; productRef = 7D935F682C778D9F00F61EF3 /* Collections */; };
 		7D942A092AD9578800301666 /* Stop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D942A082AD9578800301666 /* Stop.swift */; };
 		7D991E882B7AE42E000E26AD /* MapPickerUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D991E872B7AE42E000E26AD /* MapPickerUIView.swift */; };
@@ -688,11 +701,15 @@
 		7D0685EC2B50304500CCBE6B /* CoreDataStore+fetch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreDataStore+fetch.swift"; sourceTree = "<group>"; };
 		7D08885D2B4A3F1B00283A34 /* CoreDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStore.swift; sourceTree = "<group>"; };
 		7D0D8ABD2AC75DD6008F0F4B /* TimeContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeContainer.swift; sourceTree = "<group>"; };
+		7D10209F2D7CD0D900C80762 /* TripResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripResponse.swift; sourceTree = "<group>"; };
 		7D10BD3C2BB1A2C100702D83 /* AppSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettingsView.swift; sourceTree = "<group>"; };
 		7D10BD3E2BB1B37B00702D83 /* CoreDataStore+delete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreDataStore+delete.swift"; sourceTree = "<group>"; };
 		7D10BD402BB1B3B000702D83 /* CoreDataStore+add.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreDataStore+add.swift"; sourceTree = "<group>"; };
 		7D10BD422BB1B40200702D83 /* CoreDataStore+update.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreDataStore+update.swift"; sourceTree = "<group>"; };
 		7D14D98E2B7AD85400FB67AC /* AnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotationView.swift; sourceTree = "<group>"; };
+		7D159CA02D799F8C0099CDA2 /* JourneyUpdateRequestImplIntBahnDe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JourneyUpdateRequestImplIntBahnDe.swift; sourceTree = "<group>"; };
+		7D159CA22D799FAD0099CDA2 /* JourneyUpdateRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JourneyUpdateRequest.swift; sourceTree = "<group>"; };
+		7D159CA62D79A99F0099CDA2 /* StopDeparturesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopDeparturesResponse.swift; sourceTree = "<group>"; };
 		7D15AA452BB19E6800B6966D /* AppSettingsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettingsVM.swift; sourceTree = "<group>"; };
 		7D16384F2B69841D006E9660 /* LDSV+background.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LDSV+background.swift"; sourceTree = "<group>"; };
 		7D1638512B698457006E9660 /* LDSV+badges.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LDSV+badges.swift"; sourceTree = "<group>"; };
@@ -703,6 +720,14 @@
 		7D183A052C08E7060009FDAA /* CLLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLLocation.swift; sourceTree = "<group>"; };
 		7D183A092C08EAC30009FDAA /* ChooCoreDataStoreTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooCoreDataStoreTest.swift; sourceTree = "<group>"; };
 		7D1AD8EB2AE94A7500868056 /* GeoDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoDTO.swift; sourceTree = "<group>"; };
+		7D22B1A22D74A87600CC0736 /* StopResponseImpIntBahnDe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopResponseImpIntBahnDe.swift; sourceTree = "<group>"; };
+		7D22B1A92D74B9DC00CC0736 /* JourneyResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JourneyResponse.swift; sourceTree = "<group>"; };
+		7D22B1AB2D74BA1100CC0736 /* JourneyRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JourneyRequest.swift; sourceTree = "<group>"; };
+		7D22B1AD2D74BBC500CC0736 /* StopResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopResponse.swift; sourceTree = "<group>"; };
+		7D22B1AF2D74BC0A00CC0736 /* StopResponseImplDbRest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopResponseImplDbRest.swift; sourceTree = "<group>"; };
+		7D22B1B12D74BE2800CC0736 /* JourneyResponseImplIntBahnDe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JourneyResponseImplIntBahnDe.swift; sourceTree = "<group>"; };
+		7D22B1B32D74BE3C00CC0736 /* JourneyResponseImplDbRest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JourneyResponseImplDbRest.swift; sourceTree = "<group>"; };
+		7D22B1B52D74BE6F00CC0736 /* JourneyRequestImplIntBahnDe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JourneyRequestImplIntBahnDe.swift; sourceTree = "<group>"; };
 		7D23E4492A98F9800037C3E1 /* LegsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegsView.swift; sourceTree = "<group>"; };
 		7D23E44B2A98FD700037C3E1 /* LegView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegView.swift; sourceTree = "<group>"; };
 		7D28BAD12B82C533008B9979 /* Mock.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Mock.xcassets; sourceTree = "<group>"; };
@@ -825,6 +850,7 @@
 		7D8A10922BC9AD4400123036 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		7D8A3E392B83A68F005B61CC /* StopList+subcomponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StopList+subcomponents.swift"; sourceTree = "<group>"; };
 		7D8A3E3B2B83A8AC005B61CC /* JLVM+sideEffects+fetchJourneyList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JLVM+sideEffects+fetchJourneyList.swift"; sourceTree = "<group>"; };
+		7D8E13342D76222C007A72CF /* JourneyResponseImplIntBahnDe+JourneyResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JourneyResponseImplIntBahnDe+JourneyResponse.swift"; sourceTree = "<group>"; };
 		7D932B9D2B14E46A00A1A390 /* UnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D942A082AD9578800301666 /* Stop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stop.swift; sourceTree = "<group>"; };
 		7D991E872B7AE42E000E26AD /* MapPickerUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPickerUIView.swift; sourceTree = "<group>"; };
@@ -1067,12 +1093,61 @@
 			path = sideEffects;
 			sourceTree = "<group>";
 		};
+		7D10209D2D7CD0C200C80762 /* Trip */ = {
+			isa = PBXGroup;
+			children = (
+				7D10209E2D7CD0C900C80762 /* Response */,
+			);
+			path = Trip;
+			sourceTree = "<group>";
+		};
+		7D10209E2D7CD0C900C80762 /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				7D10209F2D7CD0D900C80762 /* TripResponse.swift */,
+			);
+			path = Response;
+			sourceTree = "<group>";
+		};
 		7D14D98D2B7AD83A00FB67AC /* Annotation */ = {
 			isa = PBXGroup;
 			children = (
 				7D991E892B7B8C93000E26AD /* Annotations.swift */,
 			);
 			path = Annotation;
+			sourceTree = "<group>";
+		};
+		7D159C972D799CEC0099CDA2 /* Verbindung */ = {
+			isa = PBXGroup;
+			children = (
+				7D159C9D2D799CFA0099CDA2 /* Request */,
+			);
+			path = Verbindung;
+			sourceTree = "<group>";
+		};
+		7D159C9D2D799CFA0099CDA2 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				7D159CA02D799F8C0099CDA2 /* JourneyUpdateRequestImplIntBahnDe.swift */,
+				7D159CA22D799FAD0099CDA2 /* JourneyUpdateRequest.swift */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		7D159CA42D79A9710099CDA2 /* DeparturesAndArrivals */ = {
+			isa = PBXGroup;
+			children = (
+				7D159CA52D79A9880099CDA2 /* Response */,
+			);
+			path = DeparturesAndArrivals;
+			sourceTree = "<group>";
+		};
+		7D159CA52D79A9880099CDA2 /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				7D159CA62D79A99F0099CDA2 /* StopDeparturesResponse.swift */,
+			);
+			path = Response;
 			sourceTree = "<group>";
 		};
 		7D16384E2B6983F7006E9660 /* LegDetailsStopView */ = {
@@ -1093,6 +1168,65 @@
 				7DE6FDA02B5BE41300AC8DE3 /* view */,
 			);
 			path = RecentSearches;
+			sourceTree = "<group>";
+		};
+		7D22B1A62D74B99800CC0736 /* Endpoint */ = {
+			isa = PBXGroup;
+			children = (
+				7D10209D2D7CD0C200C80762 /* Trip */,
+				7D159CA42D79A9710099CDA2 /* DeparturesAndArrivals */,
+				7D159C972D799CEC0099CDA2 /* Verbindung */,
+				7D22B1A82D74B9B800CC0736 /* Stop */,
+				7D22B1A72D74B9B000CC0736 /* Journey */,
+			);
+			path = Endpoint;
+			sourceTree = "<group>";
+		};
+		7D22B1A72D74B9B000CC0736 /* Journey */ = {
+			isa = PBXGroup;
+			children = (
+				7D22B1BA2D74BEC400CC0736 /* Response */,
+				7D22B1B92D74BEC100CC0736 /* Request */,
+			);
+			path = Journey;
+			sourceTree = "<group>";
+		};
+		7D22B1A82D74B9B800CC0736 /* Stop */ = {
+			isa = PBXGroup;
+			children = (
+				7D22B1B72D74BEB500CC0736 /* Response */,
+			);
+			path = Stop;
+			sourceTree = "<group>";
+		};
+		7D22B1B72D74BEB500CC0736 /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				7D22B1AD2D74BBC500CC0736 /* StopResponse.swift */,
+				7D22B1A22D74A87600CC0736 /* StopResponseImpIntBahnDe.swift */,
+				7D22B1AF2D74BC0A00CC0736 /* StopResponseImplDbRest.swift */,
+			);
+			path = Response;
+			sourceTree = "<group>";
+		};
+		7D22B1B92D74BEC100CC0736 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				7D22B1AB2D74BA1100CC0736 /* JourneyRequest.swift */,
+				7D22B1B52D74BE6F00CC0736 /* JourneyRequestImplIntBahnDe.swift */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		7D22B1BA2D74BEC400CC0736 /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				7D22B1A92D74B9DC00CC0736 /* JourneyResponse.swift */,
+				7D22B1B12D74BE2800CC0736 /* JourneyResponseImplIntBahnDe.swift */,
+				7D8E13342D76222C007A72CF /* JourneyResponseImplIntBahnDe+JourneyResponse.swift */,
+				7D22B1B32D74BE3C00CC0736 /* JourneyResponseImplDbRest.swift */,
+			);
+			path = Response;
 			sourceTree = "<group>";
 		};
 		7D2C0E602BDBB9CB000839C1 /* Labels */ = {
@@ -1365,6 +1499,7 @@
 		7D65DF172B2A27E500692601 /* DTO */ = {
 			isa = PBXGroup;
 			children = (
+				7D22B1A62D74B99800CC0736 /* Endpoint */,
 				7D02CE082A97E32D0048ADE6 /* DTO.swift */,
 				7D9D649F2C187B1F002FB9DE /* DTO+Logging.swift */,
 				7D1AD8EB2AE94A7500868056 /* GeoDTO.swift */,
@@ -2138,8 +2273,10 @@
 				7DCA4AE22BD93A53005BA68E /* ChooTipLabels.swift in Sources */,
 				7D6CCAF32B6004A200BCF62E /* VMTemplate.swift in Sources */,
 				7D61AA872C42C4C8000F72D6 /* JFV+swipeActions.swift in Sources */,
+				7D22B1AC2D74BA1100CC0736 /* JourneyRequest.swift in Sources */,
 				7D6734B52A96334B00CBE9C1 /* ContentView.swift in Sources */,
 				7D462D622AACEE2500BC0D65 /* constructJourneys+Leg.swift in Sources */,
+				7D22B1AE2D74BBC500CC0736 /* StopResponse.swift in Sources */,
 				7D02CE132A97E4700048ADE6 /* DateParcer.swift in Sources */,
 				7DF845622B764B7D00D76B14 /* RemarkViewData.swift in Sources */,
 				7D2BF7A62B67CA7F00E1CED7 /* Model.swift in Sources */,
@@ -2183,10 +2320,13 @@
 				7D4467C52C592226008346FF /* JAVM.swift in Sources */,
 				7DD5BAED2B72B24F00CFE768 /* Segments.swift in Sources */,
 				7DA001FD2B0F88B6009BB79D /* SegmentedPicker.swift in Sources */,
+				7D22B1A32D74A87600CC0736 /* StopResponseImpIntBahnDe.swift in Sources */,
 				7DBF1E572ABB8084009B85EF /* TimeLabelView.swift in Sources */,
 				7DE8A3552B6ABB3400C3A378 /* LDSV+subviews.swift in Sources */,
+				7D1020A02D7CD0D900C80762 /* TripResponse.swift in Sources */,
 				7DAF62C42A9F78D0006F1A17 /* SunEvent.swift in Sources */,
 				7D6C5C142AAF482D00DEFC57 /* chewVM.swift in Sources */,
+				7D8E13352D76222C007A72CF /* JourneyResponseImplIntBahnDe+JourneyResponse.swift in Sources */,
 				7DBABFFC2B87A99B00C990FD /* MapDetailsUIView.swift in Sources */,
 				7D5B68D92BD2A60700747D97 /* LogVIewModel.swift in Sources */,
 				7D6734DF2A96394E00CBE9C1 /* TimeChoosingView.swift in Sources */,
@@ -2207,6 +2347,7 @@
 				7DD5BAEF2B72B28C00CFE768 /* constructJourneys+Leg+Transfer.swift in Sources */,
 				7DAF62C22A9E8C2B006F1A17 /* Solar.swift in Sources */,
 				7DF845692B767E6C00D76B14 /* AlertVM.swift in Sources */,
+				7D22B1AA2D74B9DC00CC0736 /* JourneyResponse.swift in Sources */,
 				7D69BE7F2AD7ECF1007855B3 /* Publisher+AsyncMap.swift in Sources */,
 				7D2C0E5F2BDBB6FF000839C1 /* DeparturesListCellView.swift in Sources */,
 				7D462D602AACED6D00BC0D65 /* constructJourneys+Journey.swift in Sources */,
@@ -2236,6 +2377,7 @@
 				7DCA4AE02BD9391C005BA68E /* ChooTipViews.swift in Sources */,
 				7D3957202B54911F00024736 /* JDV+Toolbar.swift in Sources */,
 				7D1638542B698A04006E9660 /* SFSymbols.swift in Sources */,
+				7D22B1B42D74BE3C00CC0736 /* JourneyResponseImplDbRest.swift in Sources */,
 				7DD5BAFD2B72BBDB00CFE768 /* PlatformView.swift in Sources */,
 				7D86D17E2B88093E0090D0F2 /* TopBarAlertView.swift in Sources */,
 				7D33A9A42B5433AA0005D723 /* BadgeStyle.swift in Sources */,
@@ -2251,6 +2393,7 @@
 				7D787DD42B5D9E7D007D2A3A /* TimeAndSettingsView.swift in Sources */,
 				7D7A55322AA4A27C000256EF /* JLVM.swift in Sources */,
 				7D4208CB2AE122FF003D9BFB /* RouteView.swift in Sources */,
+				7D159CA12D799F8C0099CDA2 /* JourneyUpdateRequestImplIntBahnDe.swift in Sources */,
 				7D1638522B698457006E9660 /* LDSV+badges.swift in Sources */,
 				7DAC5CB72BACDA84000F7D33 /* JFCV+map.swift in Sources */,
 				7D704F442B8558C200F8334F /* UIView+Constraints.swift in Sources */,
@@ -2265,6 +2408,7 @@
 				7D345E4A2AE95E7C003CA948 /* JourneySettings.swift in Sources */,
 				7D4B1B8A2AA8CB460096F372 /* JLVM+reduce.swift in Sources */,
 				7D6CCAEF2B5FFB7300BCF62E /* SettingsView+TransportModesSection.swift in Sources */,
+				7D22B1B02D74BC0A00CC0736 /* StopResponseImplDbRest.swift in Sources */,
 				7DBFA3B82BD2FE7900205757 /* NSV.swift in Sources */,
 				7DF167952C602B7B00096BFC /* JourneyActionsView.swift in Sources */,
 				7D2BF7A82B67D30800E1CED7 /* Color+random.swift in Sources */,
@@ -2328,6 +2472,7 @@
 				7D6CCAF12B5FFB9200BCF62E /* SettingsView+saveSettings.swift in Sources */,
 				7DA085332BA492AB005E72B2 /* JLV+footer.swift in Sources */,
 				7D2F36D42C458E5B00E9D76A /* JourneyAlternativeViewData.swift in Sources */,
+				7D22B1B62D74BE6F00CC0736 /* JourneyRequestImplIntBahnDe.swift in Sources */,
 				7DA085352BA492E5005E72B2 /* ErrorView.swift in Sources */,
 				7D991E882B7AE42E000E26AD /* MapPickerUIView.swift in Sources */,
 				7D10BD3F2BB1B37B00702D83 /* CoreDataStore+delete.swift in Sources */,
@@ -2336,10 +2481,12 @@
 				7D4B1B932AA8FD9D0096F372 /* SSVM+reduce.swift in Sources */,
 				7DD4A8D82AAC90C3001AA30C /* SSVM+reduce+Loaded.swift in Sources */,
 				7D4034B22BD15E2700EB5F17 /* Logging.swift in Sources */,
+				7D159CA72D79A99F0099CDA2 /* StopDeparturesResponse.swift in Sources */,
 				7DBFA3BF2BD3095E00205757 /* NSVM.swift in Sources */,
 				7D6C5C2A2AAF77CF00DEFC57 /* JDVM.swift in Sources */,
 				7D5D78522B29C00600E17CC7 /* CDLeg+CoreDataClass.swift in Sources */,
 				7D462D5E2AACEC5600BC0D65 /* constructJourneys+TimeLabel.swift in Sources */,
+				7D22B1B22D74BE2800CC0736 /* JourneyResponseImplIntBahnDe.swift in Sources */,
 				7DF0D98F2B6956DD00861C4F /* FlowLayout.swift in Sources */,
 				7D7A553D2AA4B407000256EF /* System.swift in Sources */,
 				7DE8A35A2B6AC50D00C3A378 /* SunEventsGradient.swift in Sources */,
@@ -2356,6 +2503,7 @@
 				7D9BB10C2B0CBF54008A3616 /* CDLocation+CoreDataClass.swift in Sources */,
 				7D2C0E6E2BDBE16C000839C1 /* ButtonIDs.swift in Sources */,
 				7D6623272C5BB08D0059FC7F /* ChooDeparture.swift in Sources */,
+				7D159CA32D799FAD0099CDA2 /* JourneyUpdateRequest.swift in Sources */,
 				7D0685ED2B50304500CCBE6B /* CoreDataStore+fetch.swift in Sources */,
 				7DAF62B82A9E5A0B006F1A17 /* DatePickerTimePresetButtons.swift in Sources */,
 				7D3361DB2C049CF400A263B7 /* DepartureArrivalPair.swift in Sources */,
@@ -2928,7 +3076,7 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_ENTITLEMENTS = ChooChoo/ChooChoo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 19;
+				CURRENT_PROJECT_VERSION = 20;
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = M82325R967;
 				ENABLE_PREVIEWS = YES;
@@ -2950,7 +3098,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3;
+				MARKETING_VERSION = 1.3.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.fcody.choochoo.debug;
 				PRODUCT_NAME = ChooChoo;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -2971,7 +3119,7 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_ENTITLEMENTS = ChooChoo/ChooChoo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 19;
+				CURRENT_PROJECT_VERSION = 20;
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = M82325R967;
 				ENABLE_PREVIEWS = YES;
@@ -2993,7 +3141,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3;
+				MARKETING_VERSION = 1.3.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.fcody.choochoo;
 				PRODUCT_NAME = ChooChoo;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";

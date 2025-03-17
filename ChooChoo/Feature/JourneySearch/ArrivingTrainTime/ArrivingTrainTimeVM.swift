@@ -145,29 +145,50 @@ extension ArrivingTrainTimeViewModel {
 				return Just(Event.didFail(DataError.validationError(msg: "request validation filed"))).eraseToAnyPublisher()
 			}
 			
+            let request = JourneyRequestIntBahnDe(
+                settings: .init(
+                    customTransferModes: .init([
+                        .regional,.suburban
+                    ]),
+                    transportMode: .regional,
+                    transferTime: .direct,
+                    transferCount: .one,
+                    accessiblity: .partial,
+                    walkingSpeed: .fast,
+                    startWithWalking: false,
+                    withBicycle: false,
+                    fastestConnections: true
+                ),
+                dep: searchDepStop,
+                arr: searchArrStop,
+                time: searchArrivalTime,
+                mode: .arrival,
+                pagingReference: nil
+            )
 			return ApiService().fetch(
-				JourneyListDTO.self,
-				query: Query.queryItems(methods: [
-					.departureStopId(departureStopId: searchDepStop.id),
-					.arrivalStopId(arrivalStopId: searchArrStop.id),
-					.transfersCount(0),
-					.national(icTrains: false),
-					.nationalExpress(iceTrains: false),
-					.regionalExpress(reTrains: false),
-					.taxi(taxi: false),
-					.bus(bus: false),
-					.tram(tram: false),
-					.subway(uBahn: false),
-					.regional(rbTrains: leg.lineViewData.type == .regional),
-					.suburban(sBahn: leg.lineViewData.type == .suburban),
-					.ferry(ferry: false),
-					.arrivalTime(arrivalTime: searchArrivalTime),
-				]),
-				type: ApiService.Requests.journeys
+				JourneyResponseIntBahnDe.self,
+//				query: Query.queryItems(methods: [
+//					.departureStopId(departureStopId: searchDepStop.id),
+//					.arrivalStopId(arrivalStopId: searchArrStop.id),
+//					.transfersCount(0),
+//					.national(icTrains: false),
+//					.nationalExpress(iceTrains: false),
+//					.regionalExpress(reTrains: false),
+//					.taxi(taxi: false),
+//					.bus(bus: false),
+//					.tram(tram: false),
+//					.subway(uBahn: false),
+//					.regional(rbTrains: leg.lineViewData.type == .regional),
+//					.suburban(sBahn: leg.lineViewData.type == .suburban),
+//					.ferry(ferry: false),
+//					.arrivalTime(arrivalTime: searchArrivalTime),
+//				]),
+                query: [],
+				type: ApiService.Requests.journeys(request)
 			)
 			.mapError { $0 }
-			.asyncFlatMap { journeyListDTO in
-				guard let journeys = journeyListDTO.journeys else {
+			.asyncFlatMap { dto in
+				guard let journeys = dto.journeyDTO().journeys else {
 					throw DataError.nilValue(type: "journeyDTO")
 				}
 

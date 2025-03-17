@@ -136,8 +136,8 @@ extension SheetViewModel {
 				return Empty().eraseToAnyPublisher()
 			}
 			switch type {
-            case let .shareJourneyDetails(journeyRef):
-                return loadJourney(journeyRef: journeyRef)
+            case let .shareJourneyDetails(journeyRef,settings):
+                return loadJourney(journeyRef: journeyRef, settings: settings)
 			case let .alternatives(jdvm, javm,jajlvm):
 				return Just(
                     Event.didLoadDataForShowing(
@@ -181,8 +181,8 @@ extension SheetViewModel {
 
 
 extension SheetViewModel {
-    static func loadJourney(journeyRef : String) -> AnyPublisher<Event, Never> {
-        return JourneyDetailsViewModel.fetchJourneyByRefreshToken(ref: journeyRef)
+    static func loadJourney(journeyRef : String,settings : JourneySettings) -> AnyPublisher<Event, Never> {
+        return JourneyDetailsViewModel.fetchJourneyByRefreshToken(ref: journeyRef,settings: settings)
             .mapError {$0}
             .asyncFlatMap {
                 if let data = $0.journey.journeyViewData(
@@ -192,7 +192,7 @@ extension SheetViewModel {
                         settings: .init()
                 ) {
                     return Event.didLoadDataForShowing(
-                        .shareJourneyDetails(journeyRef: journeyRef),
+                        .shareJourneyDetails(journeyRef: journeyRef, setting: settings),
                         ShareJourneyDetailsDataSource(
                             viewData: data
                         ))
@@ -226,11 +226,13 @@ extension SheetViewModel {
 
 	static func fetchTrip(tripId : String) -> AnyPublisher<LegDTO,ApiError> {
 		return ApiService().fetch(
-			TripDTO.self,
-			query: [],
+			TripResponseIntlBahnDe.self,
+			query: [
+                Query.reiseloesungFahrtJourneyId(id: tripId).queryItem()
+            ],
 			type: ApiService.Requests.trips(tripId: tripId)
 		)
-		.map { $0.trip }
+        .map { $0.tripDTO().trip }
 		.eraseToAnyPublisher()
 	}
 }

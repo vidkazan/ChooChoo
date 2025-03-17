@@ -9,41 +9,8 @@ import Foundation
 
 // TODO: tests
 class DateParcer {
-    enum ChooDuration {
-        case mins
-        case hoursAndMins
-        case hours
-        case daysAndHours
-        case days
-        case months
-        case years
-        
-        var durationFormatter : DateComponentsFormatter {
-            let formatter = DateComponentsFormatter()
-            formatter.unitsStyle = .short
-            switch self {
-                case .mins:
-                    formatter.allowedUnits = [.minute]
-                case .hoursAndMins:
-                    formatter.allowedUnits = [.hour, .minute]
-                case .hours:
-                    formatter.allowedUnits = [.hour]
-                case .daysAndHours:
-                    formatter.allowedUnits = [.day,.hour]
-                case .days:
-                    formatter.allowedUnits = [.day]
-                case .months:
-                    formatter.allowedUnits = [.month]
-                case .years:
-                    formatter.allowedUnits = [.year]
-            }
-            return formatter
-        }
-        
-        func timeOffsetString(minutes : Int) -> String? {
-            self.durationFormatter.string(from: Double(minutes * 60))
-        }
-    }
+    static let formatEndpointIntBahnDe = "yyyy-MM-dd'T'HH-mm-ss"
+    static let defaultFormat = "yyyyMMdd'T'HHmmssZ"
     
 	private static let durationFormatter : DateComponentsFormatter = {
 		let formatter = DateComponentsFormatter()
@@ -52,22 +19,18 @@ class DateParcer {
 	 return formatter
 	}()
 	
-	static private let formatDateAndTime = "yyyyMMdd'T'HHmmssZ"
-	
-	static private let dateFormatter : DateFormatter = {
-		let f = DateFormatter()
-		f.dateFormat = formatDateAndTime
-		return f
-	}()
-	
 	static private let ISOdateFormatter : ISO8601DateFormatter = {
 		let f = ISO8601DateFormatter()
 		return f
 	}()
 	
-	static private func parseDate(from dateString : String?) -> Date? {
+    static private func parseDate(from dateString : String?, format : String = DateParcer.defaultFormat) -> Date? {
+        let formatter = DateFormatter()
+        formatter.dateFormat = format
 		guard let dateString = dateString else { return nil }
-		if let date = dateFormatter.date(from: dateString) { return date }
+        if let date = formatter.date(from: dateString) {
+            return date
+        }
 		guard let date = ISOdateFormatter.date(from: dateString) else { return nil }
 		return date
 	}
@@ -93,8 +56,10 @@ class DateParcer {
 	static func getDateFromDateString(dateString : String?) -> Date? {
 		return parseDate(from: dateString)
 	}
-	static func getStringFromDate(date : Date) -> String? {
-		return dateFormatter.string(from: date)
+    static func getStringFromDate(date : Date,format : String = DateParcer.defaultFormat) -> String? {
+        let formatter = DateFormatter()
+        formatter.dateFormat = format
+		return formatter.string(from: date)
 	}
 	
 	static func getDateMinusMonthsAgo(monthsAgo : Int) -> Date? {
@@ -106,6 +71,18 @@ class DateParcer {
 		return newDate
 	}
 	
+    static func convertDateFormatTo(date : String?, inputFormat : String, outputFormat: String) -> String? {
+        guard let date = Self.parseDate(from: date, format: inputFormat) else {
+            return nil
+        }
+        
+        let outputFormatter = DateFormatter()
+        outputFormatter.dateFormat = outputFormat
+        
+        return outputFormatter.string(from: date)
+    }
+
+    
 	static func getTimeStringFromDate(date : Date?) -> String? {
 		guard let date = date else { return nil }
 		let dateFormatter = DateFormatter()
@@ -224,3 +201,40 @@ class DateParcer {
     }
 }
 
+extension DateParcer {
+    enum ChooDuration {
+        case mins
+        case hoursAndMins
+        case hours
+        case daysAndHours
+        case days
+        case months
+        case years
+        
+        var durationFormatter : DateComponentsFormatter {
+            let formatter = DateComponentsFormatter()
+            formatter.unitsStyle = .short
+            switch self {
+                case .mins:
+                    formatter.allowedUnits = [.minute]
+                case .hoursAndMins:
+                    formatter.allowedUnits = [.hour, .minute]
+                case .hours:
+                    formatter.allowedUnits = [.hour]
+                case .daysAndHours:
+                    formatter.allowedUnits = [.day,.hour]
+                case .days:
+                    formatter.allowedUnits = [.day]
+                case .months:
+                    formatter.allowedUnits = [.month]
+                case .years:
+                    formatter.allowedUnits = [.year]
+            }
+            return formatter
+        }
+        
+        func timeOffsetString(minutes : Int) -> String? {
+            self.durationFormatter.string(from: Double(minutes * 60))
+        }
+    }
+}

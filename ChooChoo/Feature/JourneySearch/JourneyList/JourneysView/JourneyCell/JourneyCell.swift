@@ -71,8 +71,13 @@ extension JourneyCell {
 			if let firstLeg = journey.legs.first,
 			   let searchFahrtId = stops.departure.leg?.tripId,
 				firstLeg.tripId == searchFahrtId {
-					BadgeView(.lineNumberWithDirection(leg: firstLeg))
-						.badgeBackgroundStyle(.secondary)
+                HStack(spacing: 0) {
+                    Text("continue with ", comment: "Alternatives: JourneyCell: footer: transport as a departure")
+                        .padding(.horizontal,5)
+                        .chewTextSize(.medium)
+                    BadgeView(.lineNumberWithDirection(leg: firstLeg))
+                }
+                .badgeBackgroundStyle(.secondary)
 			} else {
 				if let pl = journey.legs.first?.legStopsViewData.first?.platforms.departure {
 					PlatformView(
@@ -85,23 +90,25 @@ extension JourneyCell {
 						.chewTextSize(.medium)
 						.tint(.primary)
 				}
+//                if let zi = getTripIDMagicNumber(tripID: journey.legs.first?.tripId ?? "") {
+//                    BadgeView(.generic(msg: zi  ))
+//                }
 			}
 			Spacer()
 			switch mode {
 			case .base:
 				BadgesView(badges: journey.badges)
-				Button(action:{
-					JourneyViewData.showOnMapOption.action(journey)
-				}, label: {
-					Image(systemName: JourneyViewData.showOnMapOption.icon)
-						.chewTextSize(.medium)
-						.padding(5)
-						.badgeBackgroundStyle(.primary)
-						.foregroundColor(.primary)
-				})
+//				Button(action:{
+//					JourneyViewData.showOnMapOption.action(journey)
+//				}, label: {
+//					Image(systemName: JourneyViewData.showOnMapOption.icon)
+//						.chewTextSize(.medium)
+//						.padding(5)
+//						.badgeBackgroundStyle(.primary)
+//						.foregroundColor(.primary)
+//				})
 			case .alternatives:
 				EmptyView()
-//				BadgesView(badges: [.apiUnavaiable])
 			}
 		}
 		.padding(7)
@@ -139,6 +146,17 @@ extension JourneyCell {
 			}
 		}
 	}
+}
+
+extension JourneyCell {
+    func getTripIDMagicNumber(tripID : String) -> String? {
+        let components = tripID.components(separatedBy: "#")
+        if let ziIndex = components.firstIndex(of: "ZI") {
+            let ziValue = components[ziIndex + 1]
+            return ziValue
+        }
+        return nil
+    }
 }
 
 //

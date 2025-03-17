@@ -77,9 +77,7 @@ extension MapPickerViewModel {
 		case idle
 		case error(any ChewError)
 		case submitting(Stop)
-		case loadingStopDetails(
-			Stop,_ send : (MapPickerViewModel.Event)->Void
-		)
+		case loadingStopDetails(Stop,_ send : (MapPickerViewModel.Event)->Void)
 		case loadingNearbyStops(_ region : MKCoordinateRegion)
 		var description : String {
 			switch self {
@@ -340,14 +338,34 @@ extension MapPickerViewModel {
 			}
 			switch stop.type {
 			case .location:
-				Task {
-					await Self.reverseGeocoding(coords : stop.coordinates,send: send)
-				}
-				return Empty().eraseToAnyPublisher()
+                return ChewViewModel.fetchAddressFromLocationIntBahnDE(locaiton: stop.coordinates.cllocationcoordinates2d)
+                    .map {
+                        guard let stop = $0.first?.stopDTO().stop() else {
+                            return Event.didFailToLoad(ApiError.stopNotFound)
+                        }
+                        return Event.didLoadStopDetails(stop, [])
+                    }
+                    .catch {
+                        return Just(Event.didFailToLoad(ApiError.generic(description: $0.localizedDescription))).eraseToAnyPublisher()
+                    }
+                    .eraseToAnyPublisher()
+//				Task {
+//					await Self.reverseGeocoding(coords : stop.coordinates,send: send)
+//				}
+//				return Empty().eraseToAnyPublisher()
 			case .pointOfInterest:
 				return Just(Event.didCancelLoading).eraseToAnyPublisher()
 			case .station,.stop:
-				return Self.fetchStopDepartures(stop:stop)
+                    let products  = {
+                        var res = Set<LineType>()
+                        state.data.selectedStop?.stopDTO?.products.map {
+                            if let lineType = $0.lineType {
+                                res.insert(lineType)
+                            }
+                        }
+                        return res
+                    }()
+                    return Self.fetchStopDepartures(stop:stop,transportTypes: products)
 					.map { tripDTOs in
 						if let departures = tripDTOs.departures {
 							return Event.didLoadStopDetails(stop, departures.compactMap({$0.legViewData(type: .departure)}))
@@ -367,45 +385,62 @@ extension MapPickerViewModel {
 	
 	static func fetchLocatonsNearby(coords : CLLocationCoordinate2D) -> AnyPublisher<[StopDTO],ApiError> {
 		return ApiService().fetch(
-			[StopDTO].self,
+			[StopResponseIntlBahnDe].self,
 			query: [
-				Query.longitude(longitude: String(coords.longitude)).queryItem(),
-				Query.latitude(latitude: String(coords.latitude)).queryItem()
+				Query.reiseloesungOrteNearbylong(longitude: String(coords.longitude)).queryItem(),
+				Query.reiseloesungOrteNearbylat(latitude: String(coords.latitude)).queryItem()
 			],
-			type: ApiService.Requests.locationsNearby(coords: coords)
+			type: ApiService.Requests.locationsNearby
 		)
+        .map{$0.map{$0.stopDTO()}}
 		.eraseToAnyPublisher()
 	}
 	
-	static func fetchStopDepartures(stop : Stop) -> AnyPublisher<StopTripsDTO,ApiError> {
+    static func fetchStopDepartures(stop : Stop, transportTypes : Set<LineType>) -> AnyPublisher<StopTripsDTO,ApiError> {
+        let queryTransport : [URLQueryItem] = transportTypes.compactMap {
+            if let tranport = StopResponseIntlBahnDe.EndpointProducts(
+                rawValue: $0
+                    .intbahndeEndpointProducts()?
+                    .rawValue ?? ""
+            ) {
+                return Query.reiseloesungAbfahrtenVerkehrsmittel(transport: tranport).queryItem()
+            }
+            return nil
+        }
 		return ApiService().fetch(
-			StopTripsDTO.self,
+            StopDeparturesResponse.self,
 			query: [
-				Query.duration(minutes: 60).queryItem(),
-				Query.results(max: 40).queryItem()
-			],
-			type: ApiService.Requests.stopDepartures(stopId: stop.id)
+                Query.reiseloesungAbfahrtenMitVias(false).queryItem(),
+                Query.reiseloesungAbfahrtenOrtId(stop.id).queryItem(),
+                Query.reiseloesungAbfahrtenZeit(Self.formatTime(from: Date.now)).queryItem(),
+                Query.reiseloesungAbfahrtenDatum(Self.formatDate(from: Date.now)).queryItem(),
+			] + queryTransport,
+			type: ApiService.Requests.stopDepartures
 		)
+        .map {
+            print($0)
+            return $0.stopTripDTO()
+        }
 		.eraseToAnyPublisher()
 	}
 	
-	private static func reverseGeocoding(coords : Coordinate,send : (MapPickerViewModel.Event)->Void) async {
-		if let res = await Model.shared.locationDataManager.reverseGeocoding(coords: coords) {
-			let stop = Stop(
-				coordinates: coords,
-				type: .location,
-				stopDTO: StopDTO(name: res, products: nil)
-			)
-			send(Event.didLoadStopDetails(stop,[]))
-		} else {
-			let stop = Stop(
-				coordinates: coords,
-				type: .location,
-				stopDTO: StopDTO(name: String(coords.latitude) + " " + String(coords.longitude), products: nil)
-			)
-			send(Event.didLoadStopDetails(stop,[]))
-		}
-	}
+//	private static func reverseGeocoding(coords : Coordinate,send : (MapPickerViewModel.Event)->Void) async {
+//		if let res = await Model.shared.locationDataManager.reverseGeocoding(coords: coords) {
+//			let stop = Stop(
+//				coordinates: coords,
+//				type: .location,
+//				stopDTO: StopDTO(name: res, products: nil)
+//			)
+//			send(Event.didLoadStopDetails(stop,[]))
+//		} else {
+//			let stop = Stop(
+//				coordinates: coords,
+//				type: .location,
+//				stopDTO: StopDTO(name: String(coords.latitude) + " " + String(coords.longitude), products: nil)
+//			)
+//			send(Event.didLoadStopDetails(stop,[]))
+//		}
+//	}
 }
 
 extension MapPickerViewModel {
@@ -560,4 +595,64 @@ extension MapPickerViewModel {
 		]
 		view.titleLabel?.attributedText = NSAttributedString(string: annotation.name, attributes: strokeTextAttributes)
 	}
+}
+
+extension StopDeparturesResponse {
+    func stopTripDTO() -> StopTripsDTO {
+        let deps : [StopTripDTO] = self.departure.map {
+            #warning("hardcoded nils!")
+            let container = TimeContainer(
+                plannedDeparture: DateParcer
+                    .convertDateFormatTo(
+                        date: $0.ezZeit ?? $0.zeit,
+                        inputFormat: JourneyResponseIntBahnDe.formatDateAndTime,
+                        outputFormat: DateParcer.defaultFormat
+                    ),
+                plannedArrival: nil,
+                actualDeparture: DateParcer
+                    .convertDateFormatTo(
+                        date: $0.zeit,
+                        inputFormat: JourneyResponseIntBahnDe.formatDateAndTime,
+                        outputFormat: DateParcer.defaultFormat
+                    ),
+                actualArrival: nil,
+                cancelled: nil
+            )
+            return StopTripDTO(
+                stop: nil,
+                origin: nil,
+                destination: StopDTO(
+                    name: $0.terminus ?? "",
+                    products: nil
+                ),
+                line: $0.verkehrmittel?.lineDTO(),
+                remarks: $0.meldungen?.compactMap{$0.remark()},
+                when: container.iso.departure.actual,
+                plannedWhen: container.iso.departure.planned,
+                delay: container.departureStatus.value,
+                tripId: $0.journeyId,
+                direction: $0.terminus,
+                currentLocation: nil,
+                platform: $0.ezGleis ?? $0.gleis ,
+                plannedPlatform: $0.gleis
+            )
+        }
+        return StopTripsDTO(
+            departures: deps,
+            arrivals: nil
+        )
+    }
+}
+
+extension MapPickerViewModel {
+    private static func formatTime(from date: Date) -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "HH:mm:ss"
+        return formatter.string(from: date)
+    }
+    private static func formatDate(from date: Date) -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+        return formatter.string(from: date)
+    }
 }

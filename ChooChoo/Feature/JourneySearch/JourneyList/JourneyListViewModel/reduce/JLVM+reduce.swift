@@ -29,12 +29,12 @@ extension JourneyListViewModel {
 			case .onLaterRef:
 				return State(
 					data: state.data,
-					status: .loadingRef(.laterRef)
+                    status: .loadingRef(.laterRef(state.data.laterRef))
 				)
 			case .onEarlierRef:
 				return State(
 					data: state.data,
-					status: .loadingRef(.earlierRef)
+                    status: .loadingRef(.earlierRef(state.data.earlierRef))
 				)
 			case .didFailToLoadLaterRef, .didFailToLoadEarlierRef,.onNewJourneyListData,.onFailedToLoadJourneyListData:
 				logReducerWarning(event, state.status)

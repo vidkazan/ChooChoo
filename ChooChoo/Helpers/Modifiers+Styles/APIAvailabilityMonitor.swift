@@ -9,7 +9,7 @@ import Foundation
 
 class APIAvailabilityMonitor  {
 	private var timer: Timer?
-	let monitorURL : URL? = URL(string: "https://"+Constants.ApiData.urlBase + Constants.ApiData.forPing)
+	let monitorURL : URL? = URL(string: "https://"+Constants.ApiDataIntBahnDe.urlBase + Constants.ApiDataIntBahnDe.forPing)
 	var delegate : APIAvailabilityMonitorDelegate? = nil
 	var currentTask : URLSessionTask? = nil
 	
@@ -33,7 +33,7 @@ class APIAvailabilityMonitor  {
 			let request = URLRequest(url: url,timeoutInterval: 3)
 			if currentTask == nil {
 				currentTask = session.dataTask(with: request) { [weak self] data, response, error in
-					if let error = error {
+					if error != nil {
 						self?.delegate?.didUpdate(status: .unavailable)
 						return
 					}

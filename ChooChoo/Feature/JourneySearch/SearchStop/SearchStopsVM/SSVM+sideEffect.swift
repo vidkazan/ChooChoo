@@ -61,10 +61,17 @@ extension SearchStopsViewModel {
 	static func fetchLocations(text : String, type : LocationDirectionType) -> AnyPublisher<[StopDTO],ApiError> {
 		var query : [URLQueryItem] = Constants.initialQuery
 		query = Query.queryItems(methods: [
-			Query.location(location: text),
-			Query.results(max: 10)
+            Query.reiseloesungOrteSuchbegriff(str: text),
+            Query.reiseloesungOrteTyp(type: "ALL"),
+			Query.reiseloesungOrteLimit(limit: 10)
 		])
-		return ApiService().fetch([StopDTO].self,query: query, type: ApiService.Requests.locations)
+        return ApiService().fetch(
+            [StopResponseIntlBahnDe].self,
+            query: query,
+            type: ApiService.Requests.locations
+        )
+        .map {$0.map{$0.stopDTO()}}
+        .eraseToAnyPublisher()
 	}
 }
 
