@@ -79,6 +79,7 @@
 		7D2CAF642B0BEA0200577FD4 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7D2CAF622B0BEA0200577FD4 /* Model.xcdatamodeld */; };
 		7D2CAF662B0BEAC000577FD4 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2CAF652B0BEAC000577FD4 /* Persistence.swift */; };
 		7D2F36D42C458E5B00E9D76A /* JourneyAlternativeViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2F36D32C458E5B00E9D76A /* JourneyAlternativeViewData.swift */; };
+		7D31F7A92D87FB4F001248F9 /* Collections in Frameworks */ = {isa = PBXBuildFile; productRef = 7D31F7A82D87FB4F001248F9 /* Collections */; };
 		7D3361DB2C049CF400A263B7 /* DepartureArrivalPair.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3361DA2C049CF400A263B7 /* DepartureArrivalPair.swift */; };
 		7D33A9492B5192940005D723 /* JFVM + reduce.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D33A9482B5192940005D723 /* JFVM + reduce.swift */; };
 		7D33A94B2B5192960005D723 /* JFVM + sideEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D33A94A2B5192960005D723 /* JFVM + sideEffects.swift */; };
@@ -558,7 +559,6 @@
 		7D8A3E3A2B83A68F005B61CC /* StopList+subcomponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D8A3E392B83A68F005B61CC /* StopList+subcomponents.swift */; };
 		7D8A3E3C2B83A8AC005B61CC /* JLVM+sideEffects+fetchJourneyList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D8A3E3B2B83A8AC005B61CC /* JLVM+sideEffects+fetchJourneyList.swift */; };
 		7D8E13352D76222C007A72CF /* JourneyResponseImplIntBahnDe+JourneyResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D8E13342D76222C007A72CF /* JourneyResponseImplIntBahnDe+JourneyResponse.swift */; };
-		7D935F692C778D9F00F61EF3 /* Collections in Frameworks */ = {isa = PBXBuildFile; productRef = 7D935F682C778D9F00F61EF3 /* Collections */; };
 		7D942A092AD9578800301666 /* Stop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D942A082AD9578800301666 /* Stop.swift */; };
 		7D991E882B7AE42E000E26AD /* MapPickerUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D991E872B7AE42E000E26AD /* MapPickerUIView.swift */; };
 		7D991E8A2B7B8C93000E26AD /* Annotations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D991E892B7B8C93000E26AD /* Annotations.swift */; };
@@ -958,7 +958,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7D935F692C778D9F00F61EF3 /* Collections in Frameworks */,
+				7D31F7A92D87FB4F001248F9 /* Collections in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2128,7 +2128,7 @@
 			);
 			name = ChooChoo;
 			packageProductDependencies = (
-				7D935F682C778D9F00F61EF3 /* Collections */,
+				7D31F7A82D87FB4F001248F9 /* Collections */,
 			);
 			productName = "Chew-chew-SwiftUI";
 			productReference = 7D6734AF2A96334B00CBE9C1 /* ChooChoo.app */;
@@ -3076,7 +3076,7 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_ENTITLEMENTS = ChooChoo/ChooChoo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 20;
+				CURRENT_PROJECT_VERSION = 22;
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = M82325R967;
 				ENABLE_PREVIEWS = YES;
@@ -3098,7 +3098,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3.1;
+				MARKETING_VERSION = 1.4.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.fcody.choochoo.debug;
 				PRODUCT_NAME = ChooChoo;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -3119,7 +3119,7 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_ENTITLEMENTS = ChooChoo/ChooChoo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 20;
+				CURRENT_PROJECT_VERSION = 22;
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = M82325R967;
 				ENABLE_PREVIEWS = YES;
@@ -3141,7 +3141,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3.1;
+				MARKETING_VERSION = 1.4.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.fcody.choochoo;
 				PRODUCT_NAME = ChooChoo;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -3297,7 +3297,7 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		7D935F682C778D9F00F61EF3 /* Collections */ = {
+		7D31F7A82D87FB4F001248F9 /* Collections */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 7D935F672C778D9F00F61EF3 /* XCRemoteSwiftPackageReference "swift-collections" */;
 			productName = Collections;
