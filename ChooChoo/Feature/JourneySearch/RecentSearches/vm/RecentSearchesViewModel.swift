@@ -145,25 +145,56 @@ extension RecentSearchesViewModel {
 					guard let data = data else {
 						return Just(Event.didFailToEdit(action: action,msg: "data is nil")).eraseToAnyPublisher()
 					}
+                        
+                    // If a a pair depStop - arrStop already exists, we update the position of the search
 					if let index = searches.firstIndex(where: {
 						return $0.stops.id == data.stops.id
 					}) {
 						let search = searches[index]
-						let updatedSearch = RecentSearchesViewModel.RecentSearch(stops: search.stops, searchTS: Date.now.timeIntervalSince1970)
+						let updatedSearch = RecentSearchesViewModel.RecentSearch(
+                            stops: search.stops,
+                            searchTS: Date.now.timeIntervalSince1970
+                        )
 						searches.remove(at: index)
 						searches.append(updatedSearch)
-						if Model.shared.coreDataStore.updateRecentSearchTS(search: updatedSearch) != true {
-							return Just(Event.didFailToEdit(action: action,msg: "coredata: failed to update")).eraseToAnyPublisher()
+						if Model.shared.coreDataStore.updateRecentSearchTS(
+                            search: updatedSearch
+                        ) != true {
+							return Just(
+                                Event.didFailToEdit(
+                                    action: action,
+                                    msg: "coredata: failed to update"
+                                )
+                            ).eraseToAnyPublisher()
 						}
 						return Just(Event.didEdit(data: searches))
 							.eraseToAnyPublisher()
 					}
-					
+                    
 					guard coreDataStore.addRecentSearch(search: data) == true else {
-						return Just(Event.didFailToEdit(action: action,msg: "coredata: failed to add")).eraseToAnyPublisher()
+						return Just(
+                            Event.didFailToEdit(
+                                action: action,
+                                msg: "coredata: failed to add"
+                            )
+                        ).eraseToAnyPublisher()
 					}
 					
 					searches.append(data)
+                        
+                        
+                    if let recentSearches = coreDataStore.fetchRecentSearches() {
+                        let recentSearchesCount = recentSearches.count
+                        if recentSearchesCount > 5 {
+                            let itemsToDelete = recentSearches.prefix(recentSearchesCount - 5)
+                            itemsToDelete.forEach { item in
+                                if coreDataStore.deleteRecentSearchIfFound(id: item.stops.id) != true {
+                                    Self.warning(Self.Status.updating, "failed to delete recent search")
+                                }
+                            }
+                        }
+                    }
+                        
 					return Just(Event.didEdit(data: searches))
 						.eraseToAnyPublisher()
 				case .deleting:
@@ -187,8 +218,7 @@ extension RecentSearchesViewModel {
 						.eraseToAnyPublisher()
 				}
 			default:
-				return Empty()
-					.eraseToAnyPublisher()
+				return Empty().eraseToAnyPublisher()
 			}
 		}
 	}
