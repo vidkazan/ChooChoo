@@ -42,9 +42,11 @@ struct JourneyFollowView : View {
 							action: nil
 						)
 						.frame(idealWidth: .infinity,idealHeight: .infinity)
-						.onTapGesture {
-							appSettingsVM.send(event: .didRequestToShowTip(tip: .followJourney))
-						}
+                        .highPriorityGesture(
+                            TapGesture().onEnded {
+                                appSettingsVM.send(event: .didRequestToShowTip(tip: .followJourney))
+                            }
+                        )
 						if appSettingsVM.state.settings.showTip(tip: .followJourney){
 							ChooTip.followJourney.tipLabel
 								.padding(.horizontal)

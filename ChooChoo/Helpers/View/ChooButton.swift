@@ -31,9 +31,11 @@ extension View {
 		onTapId : ChooOnTapID
 	) -> some View {
 		self
-		.onTapGesture(perform: {
-			Logger.tapNonTappable.trace("\(onTapId.rawValue)")
-			action()
-		})
+        .highPriorityGesture(
+            TapGesture().onEnded {
+                Logger.tapNonTappable.trace("\(onTapId.rawValue)")
+                action()
+            }
+        )
 	}
 }
