@@ -48,9 +48,11 @@ struct LogViewer: View {
 					switch viewModel.state.status {
 					case .loading:
 						ProgressView()
-							.onTapGesture {
-								Model.shared.logVM.send(event: .didCancelLoading)
-							}
+                            .highPriorityGesture(
+                                TapGesture().onEnded {
+                                    Model.shared.logVM.send(event: .didCancelLoading)
+                                }
+                            )
 					case .loaded:
 						ChooSFSymbols.arrowClockwise.view
 					case .error:

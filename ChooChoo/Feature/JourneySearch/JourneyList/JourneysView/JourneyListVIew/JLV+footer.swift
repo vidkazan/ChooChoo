@@ -42,9 +42,11 @@ extension JourneyListView {
 					Image(systemName: "exclamationmark.circle")
 				}
 			)
-				.onTapGesture {
-					journeyViewModel.send(event: .onLaterRef)
-				}
+            .highPriorityGesture(
+                TapGesture().onEnded {
+                    journeyViewModel.send(event: .onLaterRef)
+                }
+            )
 		case .loadingJourneyList, .failedToLoadJourneyList:
 			Image(systemName: "exclamationmark.circle.fill")
 		}

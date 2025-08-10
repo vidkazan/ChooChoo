@@ -55,9 +55,11 @@ struct LegsView: View {
 						ForEach(journey.legs) { leg in
 							if let legTapAction = legTapAction {
 								legViewBG(leg:leg,geo:geo)
-								.onTapGesture {
-									legTapAction(leg.id)
-								}
+                                .highPriorityGesture(
+                                    TapGesture().onEnded {
+                                        legTapAction(leg.id)
+                                    }
+                                )
 							} else {
 								legViewBG(leg:leg,geo:geo)
 							}
