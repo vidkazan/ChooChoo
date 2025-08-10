@@ -95,11 +95,11 @@ struct LegDetailsView: View {
 				Color.chewFillSecondary.opacity(0.5)
 			}
 		}
-		.onTapGesture {
-//			withAnimation(.smooth, {
-			isExpandedState = isExpandedState.next()
-//			})
-		}
+        .highPriorityGesture(
+            TapGesture().onEnded {
+                isExpandedState = isExpandedState.next()
+            }
+        )
 		.overlay(alignment: .topTrailing) { options }
 		.onAppear {
 			isExpandedState = isExpanded
