@@ -33,7 +33,7 @@ struct Verbindung: ChewDTO {
     let himMeldungen: [Meldung] // Assuming this is an array of strings; adjust if necessary
     let risNotizen: [RizNotiezen] // Assuming this is an array of strings; adjust if necessary
     let priorisierteMeldungen: [Meldung] // Assuming this is an array of strings; adjust if necessary
-    let reservierungsMeldungen: [String] // Assuming this is an array of strings; adjust if necessary
+//    let reservierungsMeldungen: [String] // Assuming this is an array of strings; adjust if necessary
 }
 
 // MARK: - VerbindungsAbschnitt (Connection Section) Model
