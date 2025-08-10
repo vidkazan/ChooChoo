@@ -25,14 +25,16 @@ extension SearchStopsView {
 				.padding(5)
 				.badgeBackgroundStyle(.secondary)
 				.padding(5)
-				.onTapGesture {
-					chewViewModel.send(event: .didUpdateSearchData(
-						dep: .textOnly(""),
-						arr: chewViewModel.state.data.arrStop,
-						date: chewViewModel.state.data.date,
-						journeySettings: chewViewModel.state.data.journeySettings
-					))
-				}
+                .highPriorityGesture(
+                    TapGesture().onEnded {
+                        chewViewModel.send(event: .didUpdateSearchData(
+                            dep: .textOnly(""),
+                            arr: chewViewModel.state.data.arrStop,
+                            date: chewViewModel.state.data.date,
+                            journeySettings: chewViewModel.state.data.journeySettings
+                        ))
+                    }
+                )
 			} else {
 				TextField(type.placeholder, text: text.projectedValue)
 					.submitLabel(.return)
@@ -43,9 +45,11 @@ extension SearchStopsView {
 					.frame(maxWidth: .infinity,alignment: .leading)
 					.focused($focusedField, equals: type)
 					.onChange(of: text.wrappedValue, perform: onTextChange )
-					.onTapGesture {
-						chewViewModel.send(event: .onStopEdit(type))
-					}
+                    .highPriorityGesture(
+                        TapGesture().onEnded {
+                            chewViewModel.send(event: .onStopEdit(type))
+                        }
+                    )
 					.onSubmit {
 						searchStopViewModel.send(event: .onReset(type))
 						chewViewModel.send(event: .didCancelEditStop)
