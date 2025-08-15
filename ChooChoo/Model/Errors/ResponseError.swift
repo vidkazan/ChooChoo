@@ -7,8 +7,8 @@
 
 import Foundation
 
-enum ApiError : ChewError {
-    static func == (lhs: ApiError, rhs: ApiError) -> Bool {
+enum ResponseError : ChewError {
+    static func == (lhs: ResponseError, rhs: ResponseError) -> Bool {
         return lhs.localizedDescription == rhs.localizedDescription
     }
     
@@ -34,11 +34,7 @@ enum ApiError : ChewError {
             break
         case .requestRateExceeded:
             break
-        case .stopNotFound:
-            break
-        case .connectionNotFound:
-            break
-        case .failedToGetUserLocation:
+        case .notFound:
             break
         }
     }
@@ -51,9 +47,7 @@ enum ApiError : ChewError {
     case cannotDecodeContentData
     case badRequest
     case requestRateExceeded
-    case stopNotFound
-    case connectionNotFound
-    case failedToGetUserLocation
+    case notFound
     case generic(description : String)
     
     var localizedDescription : String  {
