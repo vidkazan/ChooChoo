@@ -10,7 +10,6 @@ import Foundation
 protocol LocationsRepository{
     func locations(
         lat: Float,
-        lon: Float,
-        
+        lon: Float
     ) async -> Result<[StopDTO], Error>
 }

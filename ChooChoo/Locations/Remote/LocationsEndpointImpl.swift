@@ -10,7 +10,7 @@ import Foundation
 final class LocationsEndpointImpl: LocationsEndpoint {
     private let httpClient: HTTPClient
 
-    init(httpClient: HTTPClient) {
+    init(httpClient: HTTPClient = HTTPClientImpl()) {
         self.httpClient = httpClient
     }
     
