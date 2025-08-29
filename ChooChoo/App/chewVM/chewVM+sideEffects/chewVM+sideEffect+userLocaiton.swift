@@ -51,7 +51,7 @@ extension ChewViewModel {
 	}
 	
     static func fetchAddressFromLocationIntBahnDE(locaiton : CLLocationCoordinate2D) -> AnyPublisher<[StopResponseIntlBahnDe],ApiError> {
-        return RequestFabric().fetch(
+        return ApiClient().fetch(
             [StopResponseIntlBahnDe].self,
             query: [
                 Query.reiseloesungOrteNearbylat(latitude: String(locaiton.latitude)).queryItem(),

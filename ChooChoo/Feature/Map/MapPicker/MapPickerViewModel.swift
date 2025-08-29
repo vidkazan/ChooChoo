@@ -384,7 +384,7 @@ extension MapPickerViewModel {
 	}
 	
 	static func fetchLocatonsNearby(coords : CLLocationCoordinate2D) -> AnyPublisher<[StopDTO],ApiError> {
-		return RequestFabric().fetch(
+		return ApiClient().fetch(
 			[StopResponseIntlBahnDe].self,
 			query: [
 				Query.reiseloesungOrteNearbylong(longitude: String(coords.longitude)).queryItem(),
@@ -407,7 +407,7 @@ extension MapPickerViewModel {
             }
             return nil
         }
-		return RequestFabric().fetch(
+		return ApiClient().fetch(
             StopDeparturesResponse.self,
 			query: [
                 Query.reiseloesungAbfahrtenMitVias(false).queryItem(),

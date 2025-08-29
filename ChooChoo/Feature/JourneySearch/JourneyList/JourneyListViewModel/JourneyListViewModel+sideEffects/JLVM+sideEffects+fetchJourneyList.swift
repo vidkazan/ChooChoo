@@ -40,7 +40,7 @@ extension JourneyListViewModel {
             mode: mode,
             pagingReference: nil
         )
-        return RequestFabric()
+        return ApiClient()
             .fetch(
                 JourneyResponseIntBahnDe.self,
                 query: [],

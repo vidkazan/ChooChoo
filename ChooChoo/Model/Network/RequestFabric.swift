@@ -10,8 +10,6 @@ import Combine
 import CoreLocation
 
 struct RequestFabric  {
-    
-    
     enum Requests : Equatable {
 		case journeys(JourneyRequestIntBahnDe)
 		case journeyByRefreshToken(JourneyUpdateRequestIntBahnDe)

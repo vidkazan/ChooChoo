@@ -65,7 +65,7 @@ extension SearchStopsViewModel {
             Query.reiseloesungOrteTyp(type: "ALL"),
 			Query.reiseloesungOrteLimit(limit: 10)
 		])
-        return RequestFabric().fetch(
+        return ApiClient().fetch(
             [StopResponseIntlBahnDe].self,
             query: query,
             type: RequestFabric.Requests.locations

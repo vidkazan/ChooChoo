@@ -45,7 +45,7 @@ extension JourneyDetailsViewModel {
             settings: settings,
             journeyRef: ref
         )
-        return RequestFabric().fetch(
+        return ApiClient().fetch(
             JourneyResponseIntBahnDe.self,
             query: [],
             type: RequestFabric.Requests.journeyByRefreshToken(request)
@@ -66,7 +66,7 @@ extension JourneyDetailsViewModel {
 	}
 	
 	static func fetchTrip(tripId : String) -> AnyPublisher<LegDTO,ApiError> {
-		return RequestFabric().fetch(
+		return ApiClient().fetch(
 			TripDTO.self,
 			query: [],
 			type: RequestFabric.Requests.trips(tripId: tripId)

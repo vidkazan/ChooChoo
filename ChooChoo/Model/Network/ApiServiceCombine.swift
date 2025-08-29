@@ -54,29 +54,29 @@ class ApiClient : ChewClient {
 	}
 }
 
-//extension RequestFabric {
-//	func fetch<T: Decodable>(
-//		_ t : T.Type,
-//		query : [URLQueryItem],
-//		type : Requests
-//	) -> AnyPublisher<T, ApiError> {
-//		guard let url = RequestFabric.generateUrl(
-//			query: query,
-//			type: type
-//		) else {
-//			return Future<T,ApiError> {
-//				return $0(.failure(.badUrl))
-//			}.eraseToAnyPublisher()
-//		}
-//		
-//		let request = type.getRequest(urlEndPoint: url)
-//		return self.client.execute(
-//			t.self,
-//			request: request,
-//			type: type
-//		)
-//	}
-//}
+extension ApiClient {
+	func fetch<T: Decodable>(
+		_ t : T.Type,
+		query : [URLQueryItem],
+        type : RequestFabric.Requests
+	) -> AnyPublisher<T, ApiError> {
+		guard let url = RequestFabric.generateUrl(
+			query: query,
+			type: type
+		) else {
+			return Future<T,ApiError> {
+				return $0(.failure(.badUrl))
+			}.eraseToAnyPublisher()
+		}
+		
+		let request = type.getRequest(urlEndPoint: url)
+		return self.execute(
+			t.self,
+			request: request,
+			type: type
+		)
+	}
+}
 
 class MockClient : ChewClient {
 	

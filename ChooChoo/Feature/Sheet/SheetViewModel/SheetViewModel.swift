@@ -225,7 +225,7 @@ extension SheetViewModel {
 	}
 
 	static func fetchTrip(tripId : String) -> AnyPublisher<LegDTO,ApiError> {
-		return RequestFabric().fetch(
+		return ApiClient().fetch(
 			TripResponseIntlBahnDe.self,
 			query: [
                 Query.reiseloesungFahrtJourneyId(id: tripId).queryItem()

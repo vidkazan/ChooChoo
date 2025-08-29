@@ -165,7 +165,7 @@ extension ArrivingTrainTimeViewModel {
                 mode: .arrival,
                 pagingReference: nil
             )
-			return RequestFabric().fetch(
+			return ApiClient().fetch(
 				JourneyResponseIntBahnDe.self,
 //				query: Query.queryItems(methods: [
 //					.departureStopId(departureStopId: searchDepStop.id),

@@ -110,7 +110,7 @@ extension JourneyListViewModel {
             pagingReference: type
         )
         //		query += self.addJourneyListTransportModes(settings: settings)
-        return RequestFabric()
+        return ApiClient()
             .fetch(
                 JourneyResponseIntBahnDe.self,
                 query: [],
