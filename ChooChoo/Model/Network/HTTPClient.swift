@@ -9,13 +9,8 @@ import Foundation
 
 
 protocol HTTPClient {
-    func execute<Response: Decodable>(
-        endpoint: any ApiEndpoint,
-        method: HttpMethod,
+    func execute<Response: Codable>(
+        url: URL,
         body: (any Encodable)?
     ) async -> Result<Response, ResponseError>
-}
-
-enum HttpMethod: String {
-    case GET, POST
 }

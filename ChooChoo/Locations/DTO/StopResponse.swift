@@ -7,6 +7,6 @@
 
 import Foundation
 
-protocol StopResponse : ChewDTO, Identifiable {
+protocol StopResponse : ChewDTO, Identifiable, Codable {
     func stopDTO() -> StopDTO
 }

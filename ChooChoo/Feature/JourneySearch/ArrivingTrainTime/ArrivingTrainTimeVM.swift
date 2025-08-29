@@ -165,7 +165,7 @@ extension ArrivingTrainTimeViewModel {
                 mode: .arrival,
                 pagingReference: nil
             )
-			return ApiService().fetch(
+			return RequestFabric().fetch(
 				JourneyResponseIntBahnDe.self,
 //				query: Query.queryItems(methods: [
 //					.departureStopId(departureStopId: searchDepStop.id),
@@ -184,7 +184,7 @@ extension ArrivingTrainTimeViewModel {
 //					.arrivalTime(arrivalTime: searchArrivalTime),
 //				]),
                 query: [],
-				type: ApiService.Requests.journeys(request)
+				type: RequestFabric.Requests.journeys(request)
 			)
 			.mapError { $0 }
 			.asyncFlatMap { dto in

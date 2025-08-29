@@ -225,12 +225,12 @@ extension SheetViewModel {
 	}
 
 	static func fetchTrip(tripId : String) -> AnyPublisher<LegDTO,ApiError> {
-		return ApiService().fetch(
+		return RequestFabric().fetch(
 			TripResponseIntlBahnDe.self,
 			query: [
                 Query.reiseloesungFahrtJourneyId(id: tripId).queryItem()
             ],
-			type: ApiService.Requests.trips(tripId: tripId)
+			type: RequestFabric.Requests.trips(tripId: tripId)
 		)
         .map { $0.tripDTO().trip }
 		.eraseToAnyPublisher()

@@ -65,10 +65,10 @@ extension SearchStopsViewModel {
             Query.reiseloesungOrteTyp(type: "ALL"),
 			Query.reiseloesungOrteLimit(limit: 10)
 		])
-        return ApiService().fetch(
+        return RequestFabric().fetch(
             [StopResponseIntlBahnDe].self,
             query: query,
-            type: ApiService.Requests.locations
+            type: RequestFabric.Requests.locations
         )
         .map {$0.map{$0.stopDTO()}}
         .eraseToAnyPublisher()

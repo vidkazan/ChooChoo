@@ -8,6 +8,7 @@
 import Foundation
 import SwiftUI
 import CoreLocation
+
 struct JourneyListViewData : Equatable {
 	let journeys : [JourneyViewData]
 	let laterRef : String?

@@ -40,15 +40,11 @@ struct HTTPClientImpl {
         self.session = session
     }
 
-    private func request<Response: Decodable>(
-        endpoint: any ApiEndpoint,
-        method: HttpMethod,
+    func request<Response: Decodable>(
+        url: URL,
         body: (any Encodable)?
     ) async throws -> Result<Response, ResponseError> {
-        guard let url = URL.init(string: endpoint.apiPath) else { throw RequestError.invalidURL }
-
         var request = URLRequest(url: url/*, cachePolicy: .reloadIgnoringLocalCacheData*/)
-        request.httpMethod = method.rawValue
         request.timeoutInterval = 30
 
         if let requestBody = body {
@@ -122,15 +118,10 @@ struct HTTPClientImpl {
 }
 
 extension HTTPClientImpl: HTTPClient {
-    func execute<Response: Decodable>(
-        endpoint: any ApiEndpoint,
-        method: HttpMethod,
-        body: (any Encodable)?
-    ) async -> Result<Response, ResponseError> {
+    func execute<Response: Codable>(url: URL, body: (any Encodable)?) async -> Result<Response, ResponseError> {
         do {
-            let result: Result<Response, ResponseError> = try await request(
-                endpoint: endpoint,
-                method: method,
+            let result: Result<Response, ResponseError> = try await self.request(
+                url: url,
                 body: body
             )
             return result
