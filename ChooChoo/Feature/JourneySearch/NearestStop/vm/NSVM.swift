@@ -15,11 +15,19 @@ class NearestStopViewModel : ChewViewModelProtocol {
 	@Published private(set) var state : State {
 		didSet { Self.log(state.status) }
 	}
+    private let store: AppStore<AppState, AppReducer>
+    private let locationsRepository: LocationsRepository
 	private var bag = Set<AnyCancellable>()
 	private let input = PassthroughSubject<Event,Never>()
 	
-	
-	init(_ initaialStatus : Status) {
+	init(
+        _ initaialStatus : Status = .loadingNearbyStops(
+            Model.shared.locationDataManager.location ?? .init()
+        ),
+        container: AppContainer
+    ) {
+        self.locationsRepository = container.locationsRepository
+        self.store = container.store
 		self.state = State(
 			data: StateData(
 				stops: [],
@@ -51,7 +59,7 @@ class NearestStopViewModel : ChewViewModelProtocol {
 }
 
 extension NearestStopViewModel {
-	struct State {
+    struct State : Sendable {
 		let data : StateData
 		let status : Status
 	}

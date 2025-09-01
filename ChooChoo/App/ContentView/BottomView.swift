@@ -25,7 +25,7 @@ struct BottomView: View {
 				ScrollView {
 					VStack {
 						RecentSearchesView()
-						NearestStopView()
+                        NearestStopView(viewModel: .init(container: AppContainerImpl.shared))
 					}
 				}
 			default:

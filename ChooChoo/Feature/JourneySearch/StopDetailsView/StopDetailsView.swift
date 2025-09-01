@@ -11,6 +11,6 @@ import SwiftUI
 struct StopDetailsView: View {
 	var body: some View {
 		Text(verbatim: "StopDetailsView")
-		NearestStopView()
+        NearestStopView(viewModel: .init(container: AppContainerImpl.shared))
 	}
 }

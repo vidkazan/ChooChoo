@@ -9,6 +9,7 @@ import Foundation
 
 protocol AppContainer {
     var locationsRepository: LocationsRepository { get }
+    var store: ChooStore { get }
 }
 
 final class AppContainerImpl: AppContainer {
@@ -23,6 +24,11 @@ final class AppContainerImpl: AppContainer {
     )
     var locationsRepository: LocationsRepository
 
+    
+    lazy var store = AppStore(
+        initialState: AppState(),
+        reducer: AppReducer()
+    )
     private lazy var repositories: [String: Any] = [:]
 
     init() {}

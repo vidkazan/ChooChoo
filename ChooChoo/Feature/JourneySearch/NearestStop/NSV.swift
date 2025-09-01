@@ -15,12 +15,14 @@ struct NearestStopView : View {
 	static let enoughAccuracy : CLLocationAccuracy = 30
 	@EnvironmentObject var chewVM : ChewViewModel
 	@ObservedObject var locationManager = Model.shared.locationDataManager
-	@StateObject var nearestStopViewModel : NearestStopViewModel = NearestStopViewModel(
-		.loadingNearbyStops(
-			Model.shared.locationDataManager.location ?? .init()
-		)
-	)
-	
+	@StateObject var nearestStopViewModel : NearestStopViewModel
+    
+    
+    init(
+        viewModel: @autoclosure @escaping () -> NearestStopViewModel
+    ) {
+        _nearestStopViewModel = StateObject(wrappedValue: viewModel())
+    }
 	@State var nearestStops : [StopWithDistance] = []
 	@State var selectedStop : StopWithDistance?
 	@State var departuresTypes = Set<LineType>()
