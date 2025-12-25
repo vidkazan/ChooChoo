@@ -79,6 +79,13 @@ extension JourneyCell {
                 }
                 .badgeBackgroundStyle(.secondary)
 			} else {
+                TimeLabelView(
+                    size: .medium,
+                    arragement: .right,
+                    time : journey.time.date.departure,
+                    delayStatus: journey.time.departureStatus,
+                    type: .onlyOffset
+                )
 				if let pl = journey.legs.first?.legStopsViewData.first?.platforms.departure {
 					PlatformView(
 						isShowingPlatormWord: false,
@@ -90,9 +97,6 @@ extension JourneyCell {
 						.chewTextSize(.medium)
 						.tint(.primary)
 				}
-//                if let zi = getTripIDMagicNumber(tripID: journey.legs.first?.tripId ?? "") {
-//                    BadgeView(.generic(msg: zi  ))
-//                }
 			}
 			Spacer()
 			switch mode {
