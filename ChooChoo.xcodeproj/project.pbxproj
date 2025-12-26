@@ -42,6 +42,12 @@
 		7D0F90AC2EFE754100F3ECA6 /* AppReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D0F90A22EFE754100F3ECA6 /* AppReducer.swift */; };
 		7D0F90AD2EFE754100F3ECA6 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D0F90A32EFE754100F3ECA6 /* AppState.swift */; };
 		7D0F90AE2EFE754100F3ECA6 /* AppStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D0F90A42EFE754100F3ECA6 /* AppStore.swift */; };
+		7D0F90B32EFE896000F3ECA6 /* NearestStopsViewModelNew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D0F90B22EFE896000F3ECA6 /* NearestStopsViewModelNew.swift */; };
+		7D0F90B42EFE896000F3ECA6 /* NearestStopsViewModelNew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D0F90B22EFE896000F3ECA6 /* NearestStopsViewModelNew.swift */; };
+		7D0F90B52EFE896000F3ECA6 /* NearestStopsViewModelNew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D0F90B22EFE896000F3ECA6 /* NearestStopsViewModelNew.swift */; };
+		7D0F90B72EFEA74B00F3ECA6 /* FeatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D0F90B62EFEA74B00F3ECA6 /* FeatureView.swift */; };
+		7D0F90B82EFEA74B00F3ECA6 /* FeatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D0F90B62EFEA74B00F3ECA6 /* FeatureView.swift */; };
+		7D0F90B92EFEA74B00F3ECA6 /* FeatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D0F90B62EFEA74B00F3ECA6 /* FeatureView.swift */; };
 		7D1020A02D7CD0D900C80762 /* TripResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D10209F2D7CD0D900C80762 /* TripResponse.swift */; };
 		7D10BD3D2BB1A2C100702D83 /* AppSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D10BD3C2BB1A2C100702D83 /* AppSettingsView.swift */; };
 		7D10BD3F2BB1B37B00702D83 /* CoreDataStore+delete.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D10BD3E2BB1B37B00702D83 /* CoreDataStore+delete.swift */; };
@@ -88,7 +94,6 @@
 		7D2C0E682BDBC487000839C1 /* ReloadableButtonLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2C0E672BDBC487000839C1 /* ReloadableButtonLabel.swift */; };
 		7D2C0E6C2BDBD9DE000839C1 /* ChooButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2C0E6B2BDBD9DE000839C1 /* ChooButton.swift */; };
 		7D2C0E6E2BDBE16C000839C1 /* ButtonIDs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2C0E6D2BDBE16C000839C1 /* ButtonIDs.swift */; };
-		7D2C0E712BDC0679000839C1 /* StopDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2C0E702BDC0679000839C1 /* StopDetailsView.swift */; };
 		7D2CAF642B0BEA0200577FD4 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7D2CAF622B0BEA0200577FD4 /* Model.xcdatamodeld */; };
 		7D2CAF662B0BEAC000577FD4 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2CAF652B0BEAC000577FD4 /* Persistence.swift */; };
 		7D2F36D42C458E5B00E9D76A /* JourneyAlternativeViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2F36D32C458E5B00E9D76A /* JourneyAlternativeViewData.swift */; };
@@ -222,8 +227,6 @@
 		7D3B98252C08D70B00A3AAEB /* AppSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D10BD3C2BB1A2C100702D83 /* AppSettingsView.swift */; };
 		7D3B98262C08D70B00A3AAEB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D6734B42A96334B00CBE9C1 /* ContentView.swift */; };
 		7D3B98272C08D70B00A3AAEB /* TimeAndSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D787DD32B5D9E7D007D2A3A /* TimeAndSettingsView.swift */; };
-		7D3B98282C08D70B00A3AAEB /* BottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D787DD52B5DA113007D2A3A /* BottomView.swift */; };
-		7D3B98292C08D70B00A3AAEB /* FeatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7547B72B616FD3002BE434 /* FeatureView.swift */; };
 		7D3B982A2C08D70B00A3AAEB /* ChooChooApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D6734B22A96334B00CBE9C1 /* ChooChooApp.swift */; };
 		7D3B982B2C08D71300A3AAEB /* chewVM+state.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D6C5C172AAF486700DEFC57 /* chewVM+state.swift */; };
 		7D3B982C2C08D71400A3AAEB /* chewVM+state.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D6C5C172AAF486700DEFC57 /* chewVM+state.swift */; };
@@ -345,7 +348,6 @@
 		7D3B98AA2C08D7A600A3AAEB /* SheetViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DBD26C42B9A202F00612A3B /* SheetViewDataSource.swift */; };
 		7D3B98AB2C08D7A700A3AAEB /* SheetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D63DB0E2B739048008297DD /* SheetViewModel.swift */; };
 		7D3B98AC2C08D7A700A3AAEB /* SheetViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DBD26C42B9A202F00612A3B /* SheetViewDataSource.swift */; };
-		7D3B98AE2C08D7AF00A3AAEB /* StopDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2C0E702BDC0679000839C1 /* StopDetailsView.swift */; };
 		7D3B98B02C08D7D100A3AAEB /* NSVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DBFA3BE2BD3095E00205757 /* NSVM.swift */; };
 		7D3B98B42C08D7D100A3AAEB /* JSV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD5BADE2B728CA700CFE768 /* JSV.swift */; };
 		7D3B98B52C08D7D100A3AAEB /* NSVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DBFA3BE2BD3095E00205757 /* NSVM.swift */; };
@@ -552,10 +554,8 @@
 		7D740CC92AEA79C800E9FFD4 /* Set+Toogle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D740CC82AEA79C800E9FFD4 /* Set+Toogle.swift */; };
 		7D740CCB2AEAB8F900E9FFD4 /* SettingsView+TransportTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D740CCA2AEAB8F900E9FFD4 /* SettingsView+TransportTypes.swift */; };
 		7D7497922BADBD6B0041FBFB /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7497912BADBD6A0041FBFB /* AppSettings.swift */; };
-		7D7547B82B616FD3002BE434 /* FeatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7547B72B616FD3002BE434 /* FeatureView.swift */; };
 		7D76EB3B2C49476500C1534C /* LegDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D76EB3A2C49476500C1534C /* LegDTO.swift */; };
 		7D787DD42B5D9E7D007D2A3A /* TimeAndSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D787DD32B5D9E7D007D2A3A /* TimeAndSettingsView.swift */; };
-		7D787DD62B5DA113007D2A3A /* BottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D787DD52B5DA113007D2A3A /* BottomView.swift */; };
 		7D7887722B632B0500CDEFF9 /* CombineWeakAssign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7887712B632B0500CDEFF9 /* CombineWeakAssign.swift */; };
 		7D7A55322AA4A27C000256EF /* JLVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7A55312AA4A27C000256EF /* JLVM.swift */; };
 		7D7A553A2AA4B3E5000256EF /* Feedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7A55392AA4B3E5000256EF /* Feedback.swift */; };
@@ -770,6 +770,8 @@
 		7D0F90A22EFE754100F3ECA6 /* AppReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppReducer.swift; sourceTree = "<group>"; };
 		7D0F90A32EFE754100F3ECA6 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		7D0F90A42EFE754100F3ECA6 /* AppStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStore.swift; sourceTree = "<group>"; };
+		7D0F90B22EFE896000F3ECA6 /* NearestStopsViewModelNew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearestStopsViewModelNew.swift; sourceTree = "<group>"; };
+		7D0F90B62EFEA74B00F3ECA6 /* FeatureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureView.swift; sourceTree = "<group>"; };
 		7D10209F2D7CD0D900C80762 /* TripResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripResponse.swift; sourceTree = "<group>"; };
 		7D10BD3C2BB1A2C100702D83 /* AppSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettingsView.swift; sourceTree = "<group>"; };
 		7D10BD3E2BB1B37B00702D83 /* CoreDataStore+delete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreDataStore+delete.swift"; sourceTree = "<group>"; };
@@ -806,7 +808,6 @@
 		7D2C0E672BDBC487000839C1 /* ReloadableButtonLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReloadableButtonLabel.swift; sourceTree = "<group>"; };
 		7D2C0E6B2BDBD9DE000839C1 /* ChooButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooButton.swift; sourceTree = "<group>"; };
 		7D2C0E6D2BDBE16C000839C1 /* ButtonIDs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonIDs.swift; sourceTree = "<group>"; };
-		7D2C0E702BDC0679000839C1 /* StopDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopDetailsView.swift; sourceTree = "<group>"; };
 		7D2CAF632B0BEA0200577FD4 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		7D2CAF652B0BEAC000577FD4 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		7D2F36D32C458E5B00E9D76A /* JourneyAlternativeViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JourneyAlternativeViewData.swift; sourceTree = "<group>"; };
@@ -901,10 +902,8 @@
 		7D740CC82AEA79C800E9FFD4 /* Set+Toogle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Set+Toogle.swift"; sourceTree = "<group>"; };
 		7D740CCA2AEAB8F900E9FFD4 /* SettingsView+TransportTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SettingsView+TransportTypes.swift"; sourceTree = "<group>"; };
 		7D7497912BADBD6A0041FBFB /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
-		7D7547B72B616FD3002BE434 /* FeatureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureView.swift; sourceTree = "<group>"; };
 		7D76EB3A2C49476500C1534C /* LegDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegDTO.swift; sourceTree = "<group>"; };
 		7D787DD32B5D9E7D007D2A3A /* TimeAndSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeAndSettingsView.swift; sourceTree = "<group>"; };
-		7D787DD52B5DA113007D2A3A /* BottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomView.swift; sourceTree = "<group>"; };
 		7D7887712B632B0500CDEFF9 /* CombineWeakAssign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombineWeakAssign.swift; sourceTree = "<group>"; };
 		7D7A55312AA4A27C000256EF /* JLVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JLVM.swift; sourceTree = "<group>"; };
 		7D7A55392AA4B3E5000256EF /* Feedback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feedback.swift; sourceTree = "<group>"; };
@@ -1107,7 +1106,6 @@
 			children = (
 				7DA68BE42EFE73F1000DE0B3 /* AppContainer.swift */,
 				7D7547B22B616E2A002BE434 /* ContentView */,
-				7D6734B22A96334B00CBE9C1 /* ChooChooApp.swift */,
 				7D6C5C122AAF482400DEFC57 /* chewVM */,
 				7D7A55382AA4B3DD000256EF /* feedback */,
 			);
@@ -1329,7 +1327,6 @@
 		7D2C0E6F2BDC065A000839C1 /* StopDetailsView */ = {
 			isa = PBXGroup;
 			children = (
-				7D2C0E702BDC0679000839C1 /* StopDetailsView.swift */,
 			);
 			path = StopDetailsView;
 			sourceTree = "<group>";
@@ -1615,6 +1612,7 @@
 		7D6734B12A96334B00CBE9C1 /* ChooChoo */ = {
 			isa = PBXGroup;
 			children = (
+				7D6734B22A96334B00CBE9C1 /* ChooChooApp.swift */,
 				7D0F90A52EFE754100F3ECA6 /* System */,
 				7D0F909B2EFE74E600F3ECA6 /* Router */,
 				7D0F90952EFE74D400F3ECA6 /* NavigationViewBuilder.swift */,
@@ -1742,9 +1740,8 @@
 		7D7547B22B616E2A002BE434 /* ContentView */ = {
 			isa = PBXGroup;
 			children = (
+				7D0F90B62EFEA74B00F3ECA6 /* FeatureView.swift */,
 				7D787DD32B5D9E7D007D2A3A /* TimeAndSettingsView.swift */,
-				7D787DD52B5DA113007D2A3A /* BottomView.swift */,
-				7D7547B72B616FD3002BE434 /* FeatureView.swift */,
 				7D6734B42A96334B00CBE9C1 /* ContentView.swift */,
 			);
 			path = ContentView;
@@ -2032,6 +2029,7 @@
 			isa = PBXGroup;
 			children = (
 				7DBFA3BE2BD3095E00205757 /* NSVM.swift */,
+				7D0F90B22EFE896000F3ECA6 /* NearestStopsViewModelNew.swift */,
 			);
 			path = vm;
 			sourceTree = "<group>";
@@ -2418,6 +2416,7 @@
 				7DCA4AE22BD93A53005BA68E /* ChooTipLabels.swift in Sources */,
 				7D6CCAF32B6004A200BCF62E /* VMTemplate.swift in Sources */,
 				7D61AA872C42C4C8000F72D6 /* JFV+swipeActions.swift in Sources */,
+				7D0F90B32EFE896000F3ECA6 /* NearestStopsViewModelNew.swift in Sources */,
 				7D22B1AC2D74BA1100CC0736 /* JourneyRequest.swift in Sources */,
 				7D6734B52A96334B00CBE9C1 /* ContentView.swift in Sources */,
 				7D462D622AACEE2500BC0D65 /* constructJourneys+Leg.swift in Sources */,
@@ -2442,6 +2441,7 @@
 				7D33A94D2B51A7E60005D723 /* Styles.swift in Sources */,
 				7D462D4F2AAC956B00BC0D65 /* JLVM+reduce+FailedToLoadJourneys.swift in Sources */,
 				7D65DF1D2B2A2BFE00692601 /* CDStop+CoreDataProperties.swift in Sources */,
+				7D0F90B82EFEA74B00F3ECA6 /* FeatureView.swift in Sources */,
 				7D4467C72C59280D008346FF /* View+LocalizedString.swift in Sources */,
 				7D7497922BADBD6B0041FBFB /* AppSettings.swift in Sources */,
 				7D064B3B2C52752400AAEF79 /* APIAvailabilityMonitor.swift in Sources */,
@@ -2608,7 +2608,6 @@
 				7D6C5C162AAF485F00DEFC57 /* chewVM+sideEffect.swift in Sources */,
 				7DD5BAEB2B72AF9400CFE768 /* JDVM+sideEffects+loading.swift in Sources */,
 				7D3E5F012AB321580064213A /* LocationManager.swift in Sources */,
-				7D787DD62B5DA113007D2A3A /* BottomView.swift in Sources */,
 				7D02CE232A97E64E0048ADE6 /* Query.swift in Sources */,
 				7D61AA8B2C42DE3F000F72D6 /* JAV.swift in Sources */,
 				7D7887722B632B0500CDEFF9 /* CombineWeakAssign.swift in Sources */,
@@ -2656,14 +2655,12 @@
 				7D7A553D2AA4B407000256EF /* System.swift in Sources */,
 				7DE8A35A2B6AC50D00C3A378 /* SunEventsGradient.swift in Sources */,
 				7DCB2BFF2AAC8831007C672A /* SSVM+reduce+Idle.swift in Sources */,
-				7D2C0E712BDC0679000839C1 /* StopDetailsView.swift in Sources */,
 				7DAC40842B7A16C4006B3E55 /* MapPickerViewModel.swift in Sources */,
 				7DAC408E2B7A5920006B3E55 /* MapDetailsView.swift in Sources */,
 				7DBABFF92B879FA400C990FD /* ChildAnnotationViews.swift in Sources */,
 				7D183A062C08E7350009FDAA /* CLLocation.swift in Sources */,
 				7D4B1B992AA950780096F372 /* constructJourneyList.swift in Sources */,
 				7D462D492AAC947F00BC0D65 /* JLVM+reduce+LoadingJourneys.swift in Sources */,
-				7D7547B82B616FD3002BE434 /* FeatureView.swift in Sources */,
 				7D15AA462BB19E6800B6966D /* AppSettingsVM.swift in Sources */,
 				7D9BB10C2B0CBF54008A3616 /* CDLocation+CoreDataClass.swift in Sources */,
 				7D2C0E6E2BDBE16C000839C1 /* ButtonIDs.swift in Sources */,
@@ -2756,7 +2753,6 @@
 				7D3B99002C08D82F00A3AAEB /* JLVM+state.swift in Sources */,
 				7D3B98E22C08D7F800A3AAEB /* SSVM+state.swift in Sources */,
 				7D3B99492C08D86600A3AAEB /* TopBarAlertView.swift in Sources */,
-				7D3B98292C08D70B00A3AAEB /* FeatureView.swift in Sources */,
 				7D3B99412C08D86000A3AAEB /* LDSV.swift in Sources */,
 				7D3B97A42C08D53800A3AAEB /* Protocols.swift in Sources */,
 				7D3B98452C08D73000A3AAEB /* ButtonIDs.swift in Sources */,
@@ -2771,7 +2767,6 @@
 				7D3B97CD2C08D64400A3AAEB /* MapPickerLocationPickTipView.swift in Sources */,
 				7D183A0A2C08EAC30009FDAA /* ChooCoreDataStoreTest.swift in Sources */,
 				7D3B98E92C08D80200A3AAEB /* StopListCell.swift in Sources */,
-				7D3B98AE2C08D7AF00A3AAEB /* StopDetailsView.swift in Sources */,
 				7D3B97C52C08D63500A3AAEB /* ChooTipViews.swift in Sources */,
 				7D3B97A92C08D54600A3AAEB /* SFSymbols.swift in Sources */,
 				7D3B988C2C08D77E00A3AAEB /* constructJourneys+Leg+Transfer.swift in Sources */,
@@ -2802,7 +2797,9 @@
 				7D3B98CC2C08D7E700A3AAEB /* JDVM+sideEffects+loading.swift in Sources */,
 				7D0F90A92EFE754100F3ECA6 /* AppReducer.swift in Sources */,
 				7D0F90AA2EFE754100F3ECA6 /* AppState.swift in Sources */,
+				7D0F90B42EFE896000F3ECA6 /* NearestStopsViewModelNew.swift in Sources */,
 				7D0F90AB2EFE754100F3ECA6 /* AppStore.swift in Sources */,
+				7D0F90B92EFEA74B00F3ECA6 /* FeatureView.swift in Sources */,
 				7D3B99422C08D86000A3AAEB /* LDSV+background.swift in Sources */,
 				7D3B98B82C08D7D100A3AAEB /* NSV+header.swift in Sources */,
 				7D33A99B2B5343320005D723 /* ChooJourneyTest.swift in Sources */,
@@ -2878,7 +2875,6 @@
 				7D3B984D2C08D73400A3AAEB /* AppSettings.swift in Sources */,
 				7D3B97B92C08D57200A3AAEB /* Stop.swift in Sources */,
 				7D3B979D2C08D50700A3AAEB /* constructJourneys+Leg.swift in Sources */,
-				7D3B98282C08D70B00A3AAEB /* BottomView.swift in Sources */,
 				7D3B98332C08D71A00A3AAEB /* chewVM+reduce+Idle.swift in Sources */,
 				7D3B983E2C08D72200A3AAEB /* Feedback.swift in Sources */,
 				7D3B98B52C08D7D100A3AAEB /* NSVM.swift in Sources */,
@@ -3039,6 +3035,7 @@
 				7D3B98432C08D72F00A3AAEB /* Endpoint.swift in Sources */,
 				7D3B992F2C08D84500A3AAEB /* SunEventsGradient.swift in Sources */,
 				7D3B98982C08D78C00A3AAEB /* MapDetailsUIView.swift in Sources */,
+				7D0F90B52EFE896000F3ECA6 /* NearestStopsViewModelNew.swift in Sources */,
 				7D3B98C32C08D7E700A3AAEB /* JDVM+reduce.swift in Sources */,
 				7D3B991F2C08D84000A3AAEB /* JourneyCell.swift in Sources */,
 				7D3B97F52C08D6E000A3AAEB /* ErrorView.swift in Sources */,
@@ -3063,6 +3060,7 @@
 				7D3B983F2C08D72200A3AAEB /* System.swift in Sources */,
 				7D3B98152C08D6F800A3AAEB /* FloatingPoint.swift in Sources */,
 				7D3B994B2C08D86A00A3AAEB /* JFVM.swift in Sources */,
+				7D0F90B72EFEA74B00F3ECA6 /* FeatureView.swift in Sources */,
 				7D3B98052C08D6EF00A3AAEB /* EnumTraversal.swift in Sources */,
 				7D3B97D02C08D69800A3AAEB /* DateParcer.swift in Sources */,
 				7D3B985A2C08D74300A3AAEB /* CoreDataStore+fetch.swift in Sources */,

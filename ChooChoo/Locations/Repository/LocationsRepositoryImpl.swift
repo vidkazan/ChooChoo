@@ -6,6 +6,8 @@
 //
 
 import Foundation
+import Combine
+import CoreLocation
 
 final class LocationsRepositoryImpl: LocationsRepository {
 	private let locationsEndpoint: LocationsEndpoint

@@ -16,12 +16,14 @@ struct NearestStopView : View {
 	@EnvironmentObject var chewVM : ChewViewModel
 	@ObservedObject var locationManager = Model.shared.locationDataManager
 	@StateObject var nearestStopViewModel : NearestStopViewModel
-    
+    @StateObject var nearestStopViewModelNew : NearestStopsViewModelNew
     
     init(
-        viewModel: @autoclosure @escaping () -> NearestStopViewModel
+        viewModel: @autoclosure @escaping () -> NearestStopViewModel,
+        viewModelNew: @autoclosure @escaping () -> NearestStopsViewModelNew
     ) {
         _nearestStopViewModel = StateObject(wrappedValue: viewModel())
+        _nearestStopViewModelNew = StateObject(wrappedValue: viewModelNew())
     }
 	@State var nearestStops : [StopWithDistance] = []
 	@State var selectedStop : StopWithDistance?
@@ -42,11 +44,10 @@ struct NearestStopView : View {
 			}
 			.animation(.easeInOut, value: self.selectedStop)
 			.animation(.easeInOut, value: self.departures)
-			.onChange(of: selectedStop, perform: { stop in
-				if stop == nil {
-					filteredLineType = nil
-				}
-			})
+            .onChange(of: selectedStop) { old, new in
+                if new == nil {
+                    filteredLineType = nil
+            }}
 			.onReceive(nearestStopViewModel.$state, perform: { state in
 				departures = state.data.selectedStopTrips
 				if let departures = departures {

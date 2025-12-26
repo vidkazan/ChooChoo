@@ -6,6 +6,8 @@
 //
 
 import Foundation
+import CoreLocation
+import Combine
 
 protocol LocationsRepository{
     func locations(
