@@ -621,6 +621,8 @@
 		7DA68BE12EFE7345000DE0B3 /* StopResponseIntBahnDe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA68BB72EFE7345000DE0B3 /* StopResponseIntBahnDe.swift */; };
 		7DA68BE22EFE7345000DE0B3 /* MockLocationsEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA68BBD2EFE7345000DE0B3 /* MockLocationsEndpoint.swift */; };
 		7DA68BE32EFE7345000DE0B3 /* LocationsEndpointImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA68BBC2EFE7345000DE0B3 /* LocationsEndpointImpl.swift */; };
+		7DA68BE52EFE73F1000DE0B3 /* AppContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA68BE42EFE73F1000DE0B3 /* AppContainer.swift */; };
+		7DA68BE62EFE73F1000DE0B3 /* AppContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA68BE42EFE73F1000DE0B3 /* AppContainer.swift */; };
 		7DA8D3482A9A0E07005DF550 /* JourneyHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA8D3472A9A0E07005DF550 /* JourneyHeaderView.swift */; };
 		7DA8D34A2A9A118E005DF550 /* BadgesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA8D3492A9A118E005DF550 /* BadgesView.swift */; };
 		7DAA726F2B7CF0A600290548 /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7DAA726E2B7CF0A600290548 /* Icons.xcassets */; };
@@ -927,6 +929,7 @@
 		7DA68BBD2EFE7345000DE0B3 /* MockLocationsEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLocationsEndpoint.swift; sourceTree = "<group>"; };
 		7DA68BBF2EFE7345000DE0B3 /* LocationsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsRepository.swift; sourceTree = "<group>"; };
 		7DA68BC02EFE7345000DE0B3 /* LocationsRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsRepositoryImpl.swift; sourceTree = "<group>"; };
+		7DA68BE42EFE73F1000DE0B3 /* AppContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppContainer.swift; sourceTree = "<group>"; };
 		7DA8D3472A9A0E07005DF550 /* JourneyHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JourneyHeaderView.swift; sourceTree = "<group>"; };
 		7DA8D3492A9A118E005DF550 /* BadgesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgesView.swift; sourceTree = "<group>"; };
 		7DAA726E2B7CF0A600290548 /* Icons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Icons.xcassets; sourceTree = "<group>"; };
@@ -1078,6 +1081,7 @@
 		7D02CE0E2A97E3C00048ADE6 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				7DA68BE42EFE73F1000DE0B3 /* AppContainer.swift */,
 				7D7547B22B616E2A002BE434 /* ContentView */,
 				7D6734B22A96334B00CBE9C1 /* ChooChooApp.swift */,
 				7D6C5C122AAF482400DEFC57 /* chewVM */,
@@ -2588,6 +2592,7 @@
 				7D2C0E662BDBBDFB000839C1 /* MapPickerLocationPickTipView.swift in Sources */,
 				7D4B1B932AA8FD9D0096F372 /* SSVM+reduce.swift in Sources */,
 				7DD4A8D82AAC90C3001AA30C /* SSVM+reduce+Loaded.swift in Sources */,
+				7DA68BE62EFE73F1000DE0B3 /* AppContainer.swift in Sources */,
 				7D4034B22BD15E2700EB5F17 /* Logging.swift in Sources */,
 				7D159CA72D79A99F0099CDA2 /* StopDeparturesResponse.swift in Sources */,
 				7DBFA3BF2BD3095E00205757 /* NSVM.swift in Sources */,
@@ -2832,6 +2837,7 @@
 				7D3B98A42C08D79400A3AAEB /* MapPickerViewModel.swift in Sources */,
 				7D3B980E2C08D6F000A3AAEB /* Set+Toogle.swift in Sources */,
 				7D3B97B52C08D56600A3AAEB /* DepartureArrivalPair.swift in Sources */,
+				7DA68BE52EFE73F1000DE0B3 /* AppContainer.swift in Sources */,
 				7D3B98322C08D71700A3AAEB /* chewVM+sideEffect+userLocaiton.swift in Sources */,
 				7D183A102C08F4090009FDAA /* Model.xcdatamodeld in Sources */,
 				7D3B97F12C08D6DD00A3AAEB /* TimeLabelView.swift in Sources */,
