@@ -17,7 +17,6 @@
 		7D02CE132A97E4700048ADE6 /* DateParcer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D02CE122A97E4700048ADE6 /* DateParcer.swift */; };
 		7D02CE152A97E4940048ADE6 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D02CE142A97E4940048ADE6 /* Endpoint.swift */; };
 		7D02CE232A97E64E0048ADE6 /* Query.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D02CE222A97E64E0048ADE6 /* Query.swift */; };
-		7D02CE252A97E6620048ADE6 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D02CE242A97E6620048ADE6 /* Errors.swift */; };
 		7D02CE272A97E6790048ADE6 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D02CE262A97E6790048ADE6 /* ApiService.swift */; };
 		7D02CE302A97E96E0048ADE6 /* BadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D02CE2F2A97E96E0048ADE6 /* BadgeView.swift */; };
 		7D02CE342A98E8130048ADE6 /* JLV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D02CE332A98E8130048ADE6 /* JLV.swift */; };
@@ -131,8 +130,6 @@
 		7D3B97B92C08D57200A3AAEB /* Stop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D942A082AD9578800301666 /* Stop.swift */; };
 		7D3B97BA2C08D58200A3AAEB /* chewVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D6C5C132AAF482D00DEFC57 /* chewVM.swift */; };
 		7D3B97BB2C08D58200A3AAEB /* chewVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D6C5C132AAF482D00DEFC57 /* chewVM.swift */; };
-		7D3B97C02C08D59A00A3AAEB /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D02CE242A97E6620048ADE6 /* Errors.swift */; };
-		7D3B97C12C08D59A00A3AAEB /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D02CE242A97E6620048ADE6 /* Errors.swift */; };
 		7D3B97C42C08D63400A3AAEB /* ChooTipViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCA4ADF2BD9391B005BA68E /* ChooTipViews.swift */; };
 		7D3B97C52C08D63500A3AAEB /* ChooTipViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCA4ADF2BD9391B005BA68E /* ChooTipViews.swift */; };
 		7D3B97C62C08D63A00A3AAEB /* ChooTipLabels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCA4AE12BD93A53005BA68E /* ChooTipLabels.swift */; };
@@ -576,6 +573,9 @@
 		7DA085332BA492AB005E72B2 /* JLV+footer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA085322BA492AB005E72B2 /* JLV+footer.swift */; };
 		7DA085352BA492E5005E72B2 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA085342BA492E5005E72B2 /* ErrorView.swift */; };
 		7DA13A452B28F01F0045061F /* LineType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA13A442B28F01F0045061F /* LineType.swift */; };
+		7DA68B8A2EFE6F2A000DE0B3 /* ChooError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA68B892EFE6F2A000DE0B3 /* ChooError.swift */; };
+		7DA68B8B2EFE6F2A000DE0B3 /* ChooError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA68B892EFE6F2A000DE0B3 /* ChooError.swift */; };
+		7DA68B8C2EFE6F2A000DE0B3 /* ChooError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA68B892EFE6F2A000DE0B3 /* ChooError.swift */; };
 		7DA8D3482A9A0E07005DF550 /* JourneyHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA8D3472A9A0E07005DF550 /* JourneyHeaderView.swift */; };
 		7DA8D34A2A9A118E005DF550 /* BadgesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA8D3492A9A118E005DF550 /* BadgesView.swift */; };
 		7DAA726F2B7CF0A600290548 /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7DAA726E2B7CF0A600290548 /* Icons.xcassets */; };
@@ -691,7 +691,6 @@
 		7D02CE122A97E4700048ADE6 /* DateParcer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateParcer.swift; sourceTree = "<group>"; };
 		7D02CE142A97E4940048ADE6 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		7D02CE222A97E64E0048ADE6 /* Query.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Query.swift; sourceTree = "<group>"; };
-		7D02CE242A97E6620048ADE6 /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
 		7D02CE262A97E6790048ADE6 /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
 		7D02CE2F2A97E96E0048ADE6 /* BadgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeView.swift; sourceTree = "<group>"; };
 		7D02CE332A98E8130048ADE6 /* JLV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JLV.swift; sourceTree = "<group>"; };
@@ -869,6 +868,7 @@
 		7DA085322BA492AB005E72B2 /* JLV+footer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JLV+footer.swift"; sourceTree = "<group>"; };
 		7DA085342BA492E5005E72B2 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		7DA13A442B28F01F0045061F /* LineType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineType.swift; sourceTree = "<group>"; };
+		7DA68B892EFE6F2A000DE0B3 /* ChooError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooError.swift; sourceTree = "<group>"; };
 		7DA8D3472A9A0E07005DF550 /* JourneyHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JourneyHeaderView.swift; sourceTree = "<group>"; };
 		7DA8D3492A9A118E005DF550 /* BadgesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgesView.swift; sourceTree = "<group>"; };
 		7DAA726E2B7CF0A600290548 /* Icons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Icons.xcassets; sourceTree = "<group>"; };
@@ -2079,8 +2079,8 @@
 		7DF5871B2B5EBFFA00A4F99A /* Errors */ = {
 			isa = PBXGroup;
 			children = (
-				7D02CE242A97E6620048ADE6 /* Errors.swift */,
 				7DF5871C2B5EC01100A4F99A /* ApiServiceErrors.swift */,
+				7DA68B892EFE6F2A000DE0B3 /* ChooError.swift */,
 			);
 			path = Errors;
 			sourceTree = "<group>";
@@ -2360,6 +2360,7 @@
 				7D68D9F52ABDB36D00579711 /* constructJourneys+Leg+Stop.swift in Sources */,
 				7D345E4C2AE97FC8003CA948 /* SettingsView.swift in Sources */,
 				7DD5BAF62B72B39D00CFE768 /* JourneyViewData.swift in Sources */,
+				7DA68B8A2EFE6F2A000DE0B3 /* ChooError.swift in Sources */,
 				7DD4A8D62AAC90B9001AA30C /* SSVM+reduce+Loading.swift in Sources */,
 				7DE640F02AB079710087FC64 /* JLVM+reduce+LoadingUpdate.swift in Sources */,
 				7D991E8A2B7B8C93000E26AD /* Annotations.swift in Sources */,
@@ -2452,7 +2453,6 @@
 				7D3EA1AB2C0E2AC0005C507C /* GitBranch.swift in Sources */,
 				7D6C5C312AAF792F00DEFC57 /* JDVM+reduce.swift in Sources */,
 				7D4B1B8E2AA8CBB00096F372 /* JLVM+state.swift in Sources */,
-				7D02CE252A97E6620048ADE6 /* Errors.swift in Sources */,
 				7D740CC72AEA796B00E9FFD4 /* SettingsView+Connections.swift in Sources */,
 				7D4A0F082C43D3F200D4A7E7 /* ReferenceTimeSliderView.swift in Sources */,
 				7D69552A2B58283E00271F56 /* TopBarAlertVM.swift in Sources */,
@@ -2607,6 +2607,7 @@
 				7D3B98102C08D6F000A3AAEB /* VMTemplate.swift in Sources */,
 				7D3B980C2C08D6F000A3AAEB /* SunEvent.swift in Sources */,
 				7D3B97BB2C08D58200A3AAEB /* chewVM.swift in Sources */,
+				7DA68B8B2EFE6F2A000DE0B3 /* ChooError.swift in Sources */,
 				7D3B988F2C08D77E00A3AAEB /* constructJourneys+Badges.swift in Sources */,
 				7D3B98EE2C08D80700A3AAEB /* SSV+TextField.swift in Sources */,
 				7D3B97F82C08D6E000A3AAEB /* SegmentedPicker.swift in Sources */,
@@ -2665,7 +2666,6 @@
 				7D3B97B12C08D55B00A3AAEB /* Segments.swift in Sources */,
 				7D3B98992C08D78C00A3AAEB /* MapDetailsView.swift in Sources */,
 				7D3B98722C08D75D00A3AAEB /* CDUser+CoreDataProperties.swift in Sources */,
-				7D3B97C12C08D59A00A3AAEB /* Errors.swift in Sources */,
 				7D3B98DC2C08D7F500A3AAEB /* SSVM+reduce+Error.swift in Sources */,
 				7D3B98CB2C08D7E700A3AAEB /* JDVM+sideEffects+fetch.swift in Sources */,
 				7D3B98EA2C08D80200A3AAEB /* TimeChoosingView.swift in Sources */,
@@ -2829,6 +2829,7 @@
 				7D3B98CD2C08D7EA00A3AAEB /* JDV+Header.swift in Sources */,
 				7D3B98D52C08D7F500A3AAEB /* SSVM+reduce+Loading.swift in Sources */,
 				7D3B97D82C08D6A500A3AAEB /* LocationManager.swift in Sources */,
+				7DA68B8C2EFE6F2A000DE0B3 /* ChooError.swift in Sources */,
 				7D3B98122C08D6F300A3AAEB /* LogView.swift in Sources */,
 				7D3B99452C08D86500A3AAEB /* TopBarAlertVM.swift in Sources */,
 				7D3B97A62C08D54000A3AAEB /* RemarkViewData.swift in Sources */,
@@ -2860,7 +2861,6 @@
 				7D3B97B02C08D55A00A3AAEB /* Segments.swift in Sources */,
 				7D3B98972C08D78C00A3AAEB /* MapDetailsView.swift in Sources */,
 				7D3B98702C08D75D00A3AAEB /* CDUser+CoreDataProperties.swift in Sources */,
-				7D3B97C02C08D59A00A3AAEB /* Errors.swift in Sources */,
 				7D3B98D72C08D7F500A3AAEB /* SSVM+reduce+Error.swift in Sources */,
 				7D3B98C42C08D7E700A3AAEB /* JDVM+sideEffects+fetch.swift in Sources */,
 				7D3B98E62C08D80200A3AAEB /* TimeChoosingView.swift in Sources */,
