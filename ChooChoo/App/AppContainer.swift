@@ -15,14 +15,7 @@ protocol AppContainer {
 final class AppContainerImpl: AppContainer {
     static let shared = AppContainerImpl()
     
-    @Inject(
-        repo: {
-            LocationsRepositoryImpl(
-                locationsEndpoint: LocationsEndpointImpl()
-            )
-        }
-    )
-    
+    @Inject(repo: {LocationsRepositoryImpl.create()})
     var locationsRepository: LocationsRepository
     
     lazy var store = ChooStore(
