@@ -23,9 +23,6 @@
         }
       }
     },
-    "(dur) ago" : {
-      "comment" : "DateParcer.timeOffsetString"
-    },
     "**Blue** color - **moonlight**" : {
       "comment" : "SunEventsTipView",
       "localizations" : {
@@ -245,6 +242,7 @@
     },
     "Bad server response (code)" : {
       "comment" : "ApiError",
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -412,7 +410,6 @@
       }
     },
     "Debug" : {
-      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -479,6 +476,7 @@
     },
     "error: (msg)" : {
       "comment" : "DataError",
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -604,9 +602,6 @@
         }
       }
     },
-    "in (dur)" : {
-      "comment" : "DateParcer.timeOffsetString"
-    },
     "in %@" : {
       "comment" : "JourneyAlternativesView",
       "localizations" : {
@@ -639,6 +634,9 @@
           }
         }
       }
+    },
+    "Internal server error" : {
+      "comment" : "ApiError"
     },
     "Journey debug" : {
       "comment" : "JourneyCell: menu item",
@@ -815,11 +813,9 @@
         }
       }
     },
-    "min (self.rawValue) minutes" : {
-      "comment" : "JourneySettings: TransferDurationCases"
-    },
     "nil error: (type)" : {
       "comment" : "DataError",
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -840,6 +836,9 @@
         }
       }
     },
+    "Not found" : {
+      "comment" : "ApiError"
+    },
     "not reachable" : {
       "comment" : "badge",
       "localizations" : {
@@ -852,7 +851,7 @@
       }
     },
     "now" : {
-      "comment" : "AlternativeStopPosition: timeBadge\nDateParcer.timeOffsetString\nDatePickerTimePresetButtons\ntimeChoosingView: button on segmented picker",
+      "comment" : "AlternativeStopPosition: timeBadge\nDateParcer.timeOffsetString\nDatePickerTimePresetButtons\nJourneyAlternativesView\ntimeChoosingView: button on segmented picker",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -1050,7 +1049,6 @@
       }
     },
     "Reset tips" : {
-      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -1265,7 +1263,6 @@
       }
     },
     "Time slider" : {
-      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -1447,6 +1444,7 @@
     },
     "validation error: (msg)" : {
       "comment" : "DataError",
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {

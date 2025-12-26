@@ -9,11 +9,11 @@ import Foundation
 
 
 
-public protocol AppStateProtocol {}
+protocol AppStateProtocol {}
 
-public protocol AppActionProtocol {}
+protocol AppActionProtocol {}
 
-public protocol AppStoreProtocol: ObservableObject {
+protocol AppStoreProtocol: ObservableObject {
     associatedtype S: AppStateProtocol
 
     var state: S { get }
@@ -21,7 +21,7 @@ public protocol AppStoreProtocol: ObservableObject {
     func dispatch(_ action: AppActionProtocol)
 }
 
-public protocol AppReducerProtocol {
+protocol AppReducerProtocol {
     associatedtype S: AppStateProtocol
 
     func reduce(state: S, action: AppActionProtocol) -> S

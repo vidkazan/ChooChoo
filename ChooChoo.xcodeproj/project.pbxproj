@@ -24,6 +24,24 @@
 		7D064B3D2C527BAB00AAEF79 /* NetworkMonitorService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D064B3C2C527BAB00AAEF79 /* NetworkMonitorService.swift */; };
 		7D0685ED2B50304500CCBE6B /* CoreDataStore+fetch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D0685EC2B50304500CCBE6B /* CoreDataStore+fetch.swift */; };
 		7D0D8ABE2AC75DD6008F0F4B /* TimeContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D0D8ABD2AC75DD6008F0F4B /* TimeContainer.swift */; };
+		7D0F90962EFE74D400F3ECA6 /* NavigationViewBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D0F90952EFE74D400F3ECA6 /* NavigationViewBuilder.swift */; };
+		7D0F90972EFE74D400F3ECA6 /* NavigationViewBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D0F90952EFE74D400F3ECA6 /* NavigationViewBuilder.swift */; };
+		7D0F90982EFE74D400F3ECA6 /* NavigationViewBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D0F90952EFE74D400F3ECA6 /* NavigationViewBuilder.swift */; };
+		7D0F909C2EFE74E600F3ECA6 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D0F909A2EFE74E600F3ECA6 /* Router.swift */; };
+		7D0F909D2EFE74E600F3ECA6 /* AppRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D0F90992EFE74E600F3ECA6 /* AppRoute.swift */; };
+		7D0F909E2EFE74E600F3ECA6 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D0F909A2EFE74E600F3ECA6 /* Router.swift */; };
+		7D0F909F2EFE74E600F3ECA6 /* AppRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D0F90992EFE74E600F3ECA6 /* AppRoute.swift */; };
+		7D0F90A02EFE74E600F3ECA6 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D0F909A2EFE74E600F3ECA6 /* Router.swift */; };
+		7D0F90A12EFE74E600F3ECA6 /* AppRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D0F90992EFE74E600F3ECA6 /* AppRoute.swift */; };
+		7D0F90A62EFE754100F3ECA6 /* AppReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D0F90A22EFE754100F3ECA6 /* AppReducer.swift */; };
+		7D0F90A72EFE754100F3ECA6 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D0F90A32EFE754100F3ECA6 /* AppState.swift */; };
+		7D0F90A82EFE754100F3ECA6 /* AppStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D0F90A42EFE754100F3ECA6 /* AppStore.swift */; };
+		7D0F90A92EFE754100F3ECA6 /* AppReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D0F90A22EFE754100F3ECA6 /* AppReducer.swift */; };
+		7D0F90AA2EFE754100F3ECA6 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D0F90A32EFE754100F3ECA6 /* AppState.swift */; };
+		7D0F90AB2EFE754100F3ECA6 /* AppStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D0F90A42EFE754100F3ECA6 /* AppStore.swift */; };
+		7D0F90AC2EFE754100F3ECA6 /* AppReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D0F90A22EFE754100F3ECA6 /* AppReducer.swift */; };
+		7D0F90AD2EFE754100F3ECA6 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D0F90A32EFE754100F3ECA6 /* AppState.swift */; };
+		7D0F90AE2EFE754100F3ECA6 /* AppStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D0F90A42EFE754100F3ECA6 /* AppStore.swift */; };
 		7D1020A02D7CD0D900C80762 /* TripResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D10209F2D7CD0D900C80762 /* TripResponse.swift */; };
 		7D10BD3D2BB1A2C100702D83 /* AppSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D10BD3C2BB1A2C100702D83 /* AppSettingsView.swift */; };
 		7D10BD3F2BB1B37B00702D83 /* CoreDataStore+delete.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D10BD3E2BB1B37B00702D83 /* CoreDataStore+delete.swift */; };
@@ -746,6 +764,12 @@
 		7D0685EC2B50304500CCBE6B /* CoreDataStore+fetch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreDataStore+fetch.swift"; sourceTree = "<group>"; };
 		7D08885D2B4A3F1B00283A34 /* CoreDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStore.swift; sourceTree = "<group>"; };
 		7D0D8ABD2AC75DD6008F0F4B /* TimeContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeContainer.swift; sourceTree = "<group>"; };
+		7D0F90952EFE74D400F3ECA6 /* NavigationViewBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewBuilder.swift; sourceTree = "<group>"; };
+		7D0F90992EFE74E600F3ECA6 /* AppRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRoute.swift; sourceTree = "<group>"; };
+		7D0F909A2EFE74E600F3ECA6 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		7D0F90A22EFE754100F3ECA6 /* AppReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppReducer.swift; sourceTree = "<group>"; };
+		7D0F90A32EFE754100F3ECA6 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		7D0F90A42EFE754100F3ECA6 /* AppStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStore.swift; sourceTree = "<group>"; };
 		7D10209F2D7CD0D900C80762 /* TripResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripResponse.swift; sourceTree = "<group>"; };
 		7D10BD3C2BB1A2C100702D83 /* AppSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettingsView.swift; sourceTree = "<group>"; };
 		7D10BD3E2BB1B37B00702D83 /* CoreDataStore+delete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreDataStore+delete.swift"; sourceTree = "<group>"; };
@@ -1153,6 +1177,25 @@
 				7D6C5C2C2AAF791400DEFC57 /* JDVM+sideEffects.swift */,
 			);
 			path = sideEffects;
+			sourceTree = "<group>";
+		};
+		7D0F909B2EFE74E600F3ECA6 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				7D0F90992EFE74E600F3ECA6 /* AppRoute.swift */,
+				7D0F909A2EFE74E600F3ECA6 /* Router.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		7D0F90A52EFE754100F3ECA6 /* System */ = {
+			isa = PBXGroup;
+			children = (
+				7D0F90A22EFE754100F3ECA6 /* AppReducer.swift */,
+				7D0F90A32EFE754100F3ECA6 /* AppState.swift */,
+				7D0F90A42EFE754100F3ECA6 /* AppStore.swift */,
+			);
+			path = System;
 			sourceTree = "<group>";
 		};
 		7D10209D2D7CD0C200C80762 /* Trip */ = {
@@ -1572,6 +1615,9 @@
 		7D6734B12A96334B00CBE9C1 /* ChooChoo */ = {
 			isa = PBXGroup;
 			children = (
+				7D0F90A52EFE754100F3ECA6 /* System */,
+				7D0F909B2EFE74E600F3ECA6 /* Router */,
+				7D0F90952EFE74D400F3ECA6 /* NavigationViewBuilder.swift */,
 				7DA68BC22EFE7345000DE0B3 /* Locations */,
 				7D491F5A2C7A019700EAFEA2 /* ChooChoo.entitlements */,
 				7DD246D62BCAC10600410827 /* Config */,
@@ -2406,6 +2452,7 @@
 				7DA68BAC2EFE71FE000DE0B3 /* ResponseError.swift in Sources */,
 				7D61AA892C42DD2B000F72D6 /* SheetViewModel+SheetType.swift in Sources */,
 				7D4B1B952AA8FDA20096F372 /* SSVM+state.swift in Sources */,
+				7D0F90962EFE74D400F3ECA6 /* NavigationViewBuilder.swift in Sources */,
 				7D81AB262A978CDC0055AEAF /* DatePickerView.swift in Sources */,
 				7DF5871D2B5EC01100A4F99A /* ApiServiceErrors.swift in Sources */,
 				7DD5BADF2B728CA700CFE768 /* JSV.swift in Sources */,
@@ -2498,6 +2545,9 @@
 				7DAC5CB72BACDA84000F7D33 /* JFCV+map.swift in Sources */,
 				7D704F442B8558C200F8334F /* UIView+Constraints.swift in Sources */,
 				7D2CAF642B0BEA0200577FD4 /* Model.xcdatamodeld in Sources */,
+				7D0F90A62EFE754100F3ECA6 /* AppReducer.swift in Sources */,
+				7D0F90A72EFE754100F3ECA6 /* AppState.swift in Sources */,
+				7D0F90A82EFE754100F3ECA6 /* AppStore.swift in Sources */,
 				7DBD26C52B9A202F00612A3B /* SheetViewDataSource.swift in Sources */,
 				7D65DF1C2B2A2BFE00692601 /* CDStop+CoreDataClass.swift in Sources */,
 				7D000CFB2AB87ACD00566120 /* NavigationLazyView.swift in Sources */,
@@ -2591,6 +2641,8 @@
 				7D8A3E3C2B83A8AC005B61CC /* JLVM+sideEffects+fetchJourneyList.swift in Sources */,
 				7D2C0E662BDBBDFB000839C1 /* MapPickerLocationPickTipView.swift in Sources */,
 				7D4B1B932AA8FD9D0096F372 /* SSVM+reduce.swift in Sources */,
+				7D0F909E2EFE74E600F3ECA6 /* Router.swift in Sources */,
+				7D0F909F2EFE74E600F3ECA6 /* AppRoute.swift in Sources */,
 				7DD4A8D82AAC90C3001AA30C /* SSVM+reduce+Loaded.swift in Sources */,
 				7DA68BE62EFE73F1000DE0B3 /* AppContainer.swift in Sources */,
 				7D4034B22BD15E2700EB5F17 /* Logging.swift in Sources */,
@@ -2694,6 +2746,7 @@
 				7D3B985C2C08D74800A3AAEB /* CDRecentSearch+CoreDataClass.swift in Sources */,
 				7D3B99132C08D83700A3AAEB /* JLVM+reduce+LoadingUpdate.swift in Sources */,
 				7D3B98922C08D77E00A3AAEB /* constructJourneys+Leg+Line.swift in Sources */,
+				7D0F90972EFE74D400F3ECA6 /* NavigationViewBuilder.swift in Sources */,
 				7D3B97B32C08D56000A3AAEB /* LineType.swift in Sources */,
 				7D3B97AB2C08D54C00A3AAEB /* Colors.swift in Sources */,
 				7D3B98C62C08D7E700A3AAEB /* JDVM+sideEffects.swift in Sources */,
@@ -2747,6 +2800,9 @@
 				7D3B98622C08D75000A3AAEB /* CDStop+CoreDataClass.swift in Sources */,
 				7D3B992A2C08D84500A3AAEB /* UpdatedAtBadgeView.swift in Sources */,
 				7D3B98CC2C08D7E700A3AAEB /* JDVM+sideEffects+loading.swift in Sources */,
+				7D0F90A92EFE754100F3ECA6 /* AppReducer.swift in Sources */,
+				7D0F90AA2EFE754100F3ECA6 /* AppState.swift in Sources */,
+				7D0F90AB2EFE754100F3ECA6 /* AppStore.swift in Sources */,
 				7D3B99422C08D86000A3AAEB /* LDSV+background.swift in Sources */,
 				7D3B98B82C08D7D100A3AAEB /* NSV+header.swift in Sources */,
 				7D33A99B2B5343320005D723 /* ChooJourneyTest.swift in Sources */,
@@ -2756,6 +2812,8 @@
 				7D3B98FB2C08D81100A3AAEB /* SettingsView+TransportTypes.swift in Sources */,
 				7D3B98DA2C08D7F500A3AAEB /* SSVM+reduce+Loading.swift in Sources */,
 				7D3B97D62C08D6A400A3AAEB /* LocationManager.swift in Sources */,
+				7D0F909C2EFE74E600F3ECA6 /* Router.swift in Sources */,
+				7D0F909D2EFE74E600F3ECA6 /* AppRoute.swift in Sources */,
 				7D3B98142C08D6F400A3AAEB /* LogView.swift in Sources */,
 				7D3B99482C08D86600A3AAEB /* TopBarAlertVM.swift in Sources */,
 				7D3B97A72C08D54100A3AAEB /* RemarkViewData.swift in Sources */,
@@ -2985,6 +3043,7 @@
 				7D3B991F2C08D84000A3AAEB /* JourneyCell.swift in Sources */,
 				7D3B97F52C08D6E000A3AAEB /* ErrorView.swift in Sources */,
 				7D3B98822C08D77800A3AAEB /* constructJourneys+Journey+TransferCount.swift in Sources */,
+				7D0F90982EFE74D400F3ECA6 /* NavigationViewBuilder.swift in Sources */,
 				7D3B99172C08D83A00A3AAEB /* JLV+footer.swift in Sources */,
 				7D3B990D2C08D83700A3AAEB /* JLVM+reduce+JourneysLoaded.swift in Sources */,
 				7D3B994C2C08D86A00A3AAEB /* JFVM + reduce.swift in Sources */,
@@ -2993,6 +3052,8 @@
 				7D3B992E2C08D84500A3AAEB /* BadgesView.swift in Sources */,
 				7D3B99152C08D83A00A3AAEB /* JLV+list.swift in Sources */,
 				7D3B97F72C08D6E000A3AAEB /* ChooButton.swift in Sources */,
+				7D0F90A02EFE74E600F3ECA6 /* Router.swift in Sources */,
+				7D0F90A12EFE74E600F3ECA6 /* AppRoute.swift in Sources */,
 				7D3B97B02C08D55A00A3AAEB /* Segments.swift in Sources */,
 				7D3B98972C08D78C00A3AAEB /* MapDetailsView.swift in Sources */,
 				7D3B98702C08D75D00A3AAEB /* CDUser+CoreDataProperties.swift in Sources */,
@@ -3048,6 +3109,9 @@
 				7D3B98082C08D6EF00A3AAEB /* Set+Toogle.swift in Sources */,
 				7D3B97B42C08D56500A3AAEB /* DepartureArrivalPair.swift in Sources */,
 				7D3B982F2C08D71700A3AAEB /* chewVM+sideEffect+userLocaiton.swift in Sources */,
+				7D0F90AC2EFE754100F3ECA6 /* AppReducer.swift in Sources */,
+				7D0F90AD2EFE754100F3ECA6 /* AppState.swift in Sources */,
+				7D0F90AE2EFE754100F3ECA6 /* AppStore.swift in Sources */,
 				7D183A112C08F40A0009FDAA /* Model.xcdatamodeld in Sources */,
 				7D3B97EE2C08D6DC00A3AAEB /* TimeLabelView.swift in Sources */,
 				7D3B97AC2C08D55000A3AAEB /* StopVIewData.swift in Sources */,
@@ -3140,7 +3204,7 @@
 				INFOPLIST_KEY_CFBundleDisplayName = "";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.travel";
 				INFOPLIST_KEY_NSLocationUsageDescription = "We need your location to find connections from your current position and show nearby stops";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -3206,7 +3270,7 @@
 				INFOPLIST_KEY_CFBundleDisplayName = "";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.travel";
 				INFOPLIST_KEY_NSLocationUsageDescription = "We need your location to find connections from your current position and show nearby stops";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -3224,7 +3288,7 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_ENTITLEMENTS = ChooChoo/ChooChoo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 25;
+				CURRENT_PROJECT_VERSION = 28;
 				DEVELOPMENT_ASSET_PATHS = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -3240,12 +3304,12 @@
 				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.4.2;
+				MARKETING_VERSION = 1.4.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.fcody.choochoo.debug;
 				PRODUCT_NAME = ChooChoo;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -3266,7 +3330,7 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_ENTITLEMENTS = ChooChoo/ChooChoo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 25;
+				CURRENT_PROJECT_VERSION = 28;
 				DEVELOPMENT_ASSET_PATHS = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -3282,12 +3346,12 @@
 				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.4.2;
+				MARKETING_VERSION = 1.4.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.fcody.choochoo;
 				PRODUCT_NAME = ChooChoo;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";

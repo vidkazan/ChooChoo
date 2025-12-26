@@ -9,7 +9,8 @@ import Foundation
 
 typealias ChooStore = AppStore<AppState, AppReducer>
 
-open class AppStore<AppState, AppReducer>: AppStoreProtocol where AppReducer: AppReducerProtocol, AppReducer.S == AppState {
+class AppStore<AppState, AppReducer>: AppStoreProtocol where AppReducer: AppReducerProtocol, AppReducer.S == AppState  {
+    
     @Published public private(set) var state: AppState
 
     private let reducer: AppReducer
@@ -19,7 +20,7 @@ open class AppStore<AppState, AppReducer>: AppStoreProtocol where AppReducer: Ap
         self.reducer = reducer
     }
 
-    public func dispatch(_ action: AppActionProtocol) {
+    func dispatch(_ action: AppActionProtocol) {
         Task { @MainActor in
             state = reducer.reduce(state: state, action: action)
         }
