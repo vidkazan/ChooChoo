@@ -51,13 +51,13 @@ extension ChewViewModel {
 	}
 	
     static func fetchAddressFromLocationIntBahnDE(locaiton : CLLocationCoordinate2D) -> AnyPublisher<[StopResponseIntlBahnDe],ApiError> {
-        return ApiService().fetch(
+        return ApiClient().fetch(
             [StopResponseIntlBahnDe].self,
             query: [
                 Query.reiseloesungOrteNearbylat(latitude: String(locaiton.latitude)).queryItem(),
                 Query.reiseloesungOrteNearbylong(longitude: String(locaiton.longitude)).queryItem()
             ],
-            type: ApiService.Requests.addresslookup
+            type: RequestFabric.Requests.addresslookup
         )
         .eraseToAnyPublisher()
     }

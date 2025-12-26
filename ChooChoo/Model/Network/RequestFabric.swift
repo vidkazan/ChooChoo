@@ -9,13 +9,7 @@ import Foundation
 import Combine
 import CoreLocation
 
-class ApiService  {
-	let client : ChewClient
-	
-	init(client : ChewClient = ApiClient()) {
-		self.client = client
-	}
-	
+struct RequestFabric  {
     enum Requests : Equatable {
 		case journeys(JourneyRequestIntBahnDe)
 		case journeyByRefreshToken(JourneyUpdateRequestIntBahnDe)

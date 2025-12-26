@@ -40,11 +40,11 @@ extension JourneyListViewModel {
             mode: mode,
             pagingReference: nil
         )
-        return ApiService()
+        return ApiClient()
             .fetch(
                 JourneyResponseIntBahnDe.self,
                 query: [],
-                type: ApiService.Requests.journeys(requset)
+                type: RequestFabric.Requests.journeys(requset)
             )
             .mapError{$0}
             .map {

@@ -32,7 +32,7 @@ class NetworkMonitorService : ChewViewModelProtocol {
 		Publishers.system(
 			initial: state,
 			reduce: Self.reduce,
-			scheduler: RunLoop.main,
+            scheduler: RunLoop.main,
 			feedbacks: [
 				Self.userInput(input: input.eraseToAnyPublisher()),
 				Self.whenStatusChanged(sendAlert: self.sendAlert)

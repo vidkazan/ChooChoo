@@ -45,10 +45,10 @@ extension JourneyDetailsViewModel {
             settings: settings,
             journeyRef: ref
         )
-        return ApiService().fetch(
+        return ApiClient().fetch(
             JourneyResponseIntBahnDe.self,
             query: [],
-            type: ApiService.Requests.journeyByRefreshToken(request)
+            type: RequestFabric.Requests.journeyByRefreshToken(request)
         )
         .tryMap {
             guard let update = $0.verbindungen.first else {
@@ -66,10 +66,10 @@ extension JourneyDetailsViewModel {
 	}
 	
 	static func fetchTrip(tripId : String) -> AnyPublisher<LegDTO,ApiError> {
-		return ApiService().fetch(
+		return ApiClient().fetch(
 			TripDTO.self,
 			query: [],
-			type: ApiService.Requests.trips(tripId: tripId)
+			type: RequestFabric.Requests.trips(tripId: tripId)
 		)
 		.map { $0.trip }
 		.eraseToAnyPublisher()

@@ -10,14 +10,14 @@ import Combine
 import OSLog
 
 protocol ChewClient {
-	func execute<T:Decodable>(_ t : T.Type,request: URLRequest, type : ApiService.Requests) -> AnyPublisher<T,ApiError>
+	func execute<T:Decodable>(_ t : T.Type,request: URLRequest, type : RequestFabric.Requests) -> AnyPublisher<T,ApiError>
 }
 
 class ApiClient : ChewClient {
 	func execute<T: Decodable>(
 		_ t : T.Type,
 		request : URLRequest,
-		type : ApiService.Requests
+		type : RequestFabric.Requests
 	) -> AnyPublisher<T, ApiError> {
 		return URLSession.shared
 			.dataTaskPublisher(for: request)
@@ -54,13 +54,13 @@ class ApiClient : ChewClient {
 	}
 }
 
-extension ApiService {
+extension ApiClient {
 	func fetch<T: Decodable>(
 		_ t : T.Type,
 		query : [URLQueryItem],
-		type : Requests
+        type : RequestFabric.Requests
 	) -> AnyPublisher<T, ApiError> {
-		guard let url = ApiService.generateUrl(
+		guard let url = RequestFabric.generateUrl(
 			query: query,
 			type: type
 		) else {
@@ -70,7 +70,7 @@ extension ApiService {
 		}
 		
 		let request = type.getRequest(urlEndPoint: url)
-		return self.client.execute(
+		return self.execute(
 			t.self,
 			request: request,
 			type: type
@@ -82,12 +82,12 @@ class MockClient : ChewClient {
 	
 	var inputRequest: URLRequest?
 	var executeCalled = false
-	var requestType : ApiService.Requests?
+	var requestType : RequestFabric.Requests?
 	
 	func execute<T: Decodable>(
 		_ t : T.Type,
 		request : URLRequest,
-		type : ApiService.Requests
+		type : RequestFabric.Requests
 	) -> AnyPublisher<T, ApiError> {
 		executeCalled = true
 		inputRequest = request

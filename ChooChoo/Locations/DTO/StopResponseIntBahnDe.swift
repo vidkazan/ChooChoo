@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct StopResponseIntlBahnDe : StopResponse {
+struct StopResponseIntlBahnDe {
     let extId: String?
     let id: String?
     let lat: Double?
@@ -27,7 +27,7 @@ struct StopResponseIntlBahnDe : StopResponse {
     }
 }
 
-extension StopResponseIntlBahnDe {
+extension StopResponseIntlBahnDe: StopResponse {
     func stopDTO() -> StopDTO {
         // TODO: locaiton is hardcoded nil!
         let stopType : StopType? = StopType(rawValue: self.type ?? "")

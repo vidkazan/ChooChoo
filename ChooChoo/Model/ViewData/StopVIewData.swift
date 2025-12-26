@@ -22,8 +22,7 @@ struct StopViewData : Identifiable, Hashable, Codable {
 	func cancellationType() -> StopOverCancellationType {
 		switch self.stopOverType {
 		case .stopover:
-			if time.arrivalStatus == .cancelled 
-				&&
+			if time.arrivalStatus == .cancelled &&
 				time.departureStatus == .cancelled {
 				return .fullyCancelled
 			}
@@ -35,15 +34,9 @@ struct StopViewData : Identifiable, Hashable, Codable {
 			}
 			return .notCancelled
 		case .origin:
-			if time.departureStatus == .cancelled {
-				return .fullyCancelled
-			}
-			return .notCancelled
+                return time.departureStatus == .cancelled ? .fullyCancelled : .notCancelled
 		case .destination:
-			if time.arrivalStatus == .cancelled {
-				return .fullyCancelled
-			}
-			return .notCancelled
+                return time.arrivalStatus == .cancelled ? .fullyCancelled : .notCancelled
 		default:
 			return .notCancelled
 		}

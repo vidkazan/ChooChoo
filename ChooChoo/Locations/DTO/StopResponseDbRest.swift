@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 struct StopEndpointDtoDBrest : StopResponse {
     let type    : String?
     let id        : String?

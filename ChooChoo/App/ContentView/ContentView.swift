@@ -10,44 +10,60 @@ import TipKit
 import OSLog
 
 struct ContentView: View {
-	@EnvironmentObject var chewViewModel : ChewViewModel
+    let navViewBuilder: NavigationViewBuilder
+    
 	@ObservedObject var alertVM = Model.shared.alertVM
 	@ObservedObject var sheetVM = Model.shared.sheetVM
-	@ObservedObject var topAlertVM = Model.shared.topBarAlertVM
 	@ObservedObject var appSettingsVM = Model.shared.appSettingsVM
 	
+    @StateObject var chewViewModel: ChewViewModel
+    @StateObject var router: Router<AppRoute>
 	@State var state = ChewViewModel.State()
 	@State var sheetState = SheetViewModel.State(status: .showing(.none, result: EmptyDataSource()))
 	@State var alertState = AlertViewModel.State(alert: .none)
 	@State var sheetIsPresented = false
 	@State var alertIsPresented = false
 	
+    
+    init(navViewBuilder: NavigationViewBuilder) {
+        _router = StateObject(wrappedValue: navViewBuilder.router)
+        _chewViewModel = StateObject(
+            wrappedValue: ChewViewModel(
+                referenceDate: .now,
+                coreDataStore: Model.shared.coreDataStore
+            )
+        )
+        self.navViewBuilder = navViewBuilder
+    }
+    
+    
 	var body: some View {
 		Group {
 			switch state.status {
 			case .start:
 				ProgressView()
-			default:
-				ZStack(alignment: .top) {
-					FeatureView()
-					TopBarAlertsView()
-					if appSettingsVM.state.settings.debugSettings.timeSlider == true {
-						VStack {
-							Spacer()
-							ReferenceTimeSliderView(initialReferenceDate: chewViewModel.referenceDate)
-								.padding(.bottom,30)
-						}
-					}
-				}
+            default:
+                ZStack(alignment: .top) {
+                    NavigationStack(path: $router.paths) {
+                        navViewBuilder.createFeatureView()
+                            .navigationDestination(for: AppRoute.self, destination: buildViews)
+                    }
+                    TopBarAlertsView()
+                    if appSettingsVM.state.settings.debugSettings.timeSlider == true {
+                        VStack {
+                            Spacer()
+                            ReferenceTimeSliderView(initialReferenceDate: chewViewModel.referenceDate)
+                                .padding(.bottom,30)
+                        }
+                    }
+                }
 			}
 		}
 		.task {
-			if #available(iOS 17.0, *) {
-				try? Tips.configure([
-					.displayFrequency(.immediate),
-					.datastoreLocation(.applicationDefault)
-				])
-			}
+            try? Tips.configure([
+                .displayFrequency(.immediate),
+                .datastoreLocation(.applicationDefault)
+            ])
 		}
 		.confirmationDialog(
 			"",
@@ -114,6 +130,7 @@ struct ContentView: View {
 		.onReceive(alertVM.$state, perform: { newState in
 			alertState = newState
 		})
+        .environmentObject(chewViewModel)
 	}
 }
 
@@ -204,12 +221,33 @@ extension ContentView {
 			return Alert(title: Text(verbatim: ""))
 		}
 	}
+    
+    @ViewBuilder
+    private func buildViews(view: AppRoute) -> some View {
+        switch view {
+            case .main: navViewBuilder.createFeatureView()
+            case .journeyDetails(
+                let followId,
+                let data,
+                let depStop,
+                let arrStop,
+                let chewVM
+            ): navViewBuilder.createJourneyDetailsView(
+                followId: followId,
+                data: data,
+                depStop: depStop,
+                arrStop: arrStop,
+                chewVM: chewVM
+            )
+        }
+    }
 }
+
 
 #if DEBUG
 struct ContentView_Previews: PreviewProvider {
 	static var previews: some View {
-		ContentView()
+        ContentView(navViewBuilder: .init(container: AppContainerImpl.shared, router: .init()))
 		.environmentObject(
 			ChewViewModel(
 				initialState: .init(data: .init(depStop: .textOnly(""), arrStop: .textOnly(""), journeySettings: .init(), date: .init(date: .now, mode: .departure)), status: .idle),

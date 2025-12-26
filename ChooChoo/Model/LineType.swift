@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 import CoreLocation
 
-enum LineType : String,Equatable,Hashable, CaseIterable, Codable {
+enum LineType : String,Hashable, CaseIterable, Codable {
 	static func < (lhs: LineType, rhs: LineType) -> Bool {
 		return lhs.rawValue < rhs.rawValue
 	}
@@ -197,8 +197,13 @@ extension LineType {
 }
 
 extension LineType {
-	func stopAnnotation<T : ChewStopAnnotaion>(id: String?,name : String, coords: CLLocationCoordinate2D, stopOverType : StopOverType?) -> T {
-		T (
+	func stopAnnotation<T : ChewStopAnnotaion>(
+        id: String?,
+        name : String,
+        coords: CLLocationCoordinate2D,
+        stopOverType : StopOverType?
+    ) -> T {
+        T (
 			stopId: id,
 			name: name,
 			location: coords,
