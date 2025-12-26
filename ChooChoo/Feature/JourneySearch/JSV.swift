@@ -14,7 +14,6 @@ struct JourneySearchView : View {
 	@Namespace var journeySearchViewNamespace
 	@EnvironmentObject var chewViewModel : ChewViewModel
 	@ObservedObject var searchStopsVM = Model.shared.searchStopsVM
-	@ObservedObject var topAlertVM = Model.shared.topBarAlertVM
 	@ObservedObject var locationManager : ChewLocationDataManager = Model.shared.locationDataManager
     @State var state = ChewViewModel.State()
 	var body: some View {
@@ -66,16 +65,7 @@ struct JourneySearchView : View {
 			)
 			.navigationBarTitleDisplayMode(.inline)
 			.toolbar {
-				Self.topBarLeadingToolbar(topBarAlertVM: topAlertVM)
-				ToolbarItem(placement: .topBarTrailing, content: {
-					Button(action: {
-						Model.shared.sheetVM.send(event: .didRequestShow(.appSettings))
-					}, label: {
-						ChooSFSymbols.gearshape.view
-							.tint(.secondary)
-					})
-					.frame(maxWidth: 40,maxHeight: 40)
-				})
+				JourneySearchToolbar(topBarAlertVM: Model.shared.topBarAlertVM)
 			}
 			.onReceive(locationManager.$location, perform: { loc in
 				if
@@ -97,6 +87,22 @@ struct JourneySearchView : View {
 }
 
 extension JourneySearchView {
+	struct JourneySearchToolbar: ToolbarContent {
+		@ObservedObject var topBarAlertVM: TopBarAlertViewModel
+		var body: some ToolbarContent {
+			JourneySearchView.topBarLeadingToolbar(topBarAlertVM: topBarAlertVM)
+			ToolbarItem(placement: .topBarTrailing) {
+				Button(action: {
+					Model.shared.sheetVM.send(event: .didRequestShow(.appSettings))
+				}, label: {
+					ChooSFSymbols.gearshape.view
+						.tint(.secondary)
+				})
+				.frame(maxWidth: 40, maxHeight: 40)
+			}
+		}
+	}
+
 	static let colors : [Color] = {
 		#if DEBUG
 		debugColors
@@ -179,4 +185,3 @@ struct JSV_Previews: PreviewProvider {
 	}
 }
 #endif
-

@@ -14,7 +14,6 @@ struct ContentView: View {
     
 	@ObservedObject var alertVM = Model.shared.alertVM
 	@ObservedObject var sheetVM = Model.shared.sheetVM
-	@ObservedObject var topAlertVM = Model.shared.topBarAlertVM
 	@ObservedObject var appSettingsVM = Model.shared.appSettingsVM
 	
     @StateObject var chewViewModel: ChewViewModel
