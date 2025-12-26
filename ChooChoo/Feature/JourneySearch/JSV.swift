@@ -10,12 +10,13 @@ import SwiftUI
 import TipKit
 
 struct JourneySearchView : View {
+    let viewBuilder: NavigationViewBuilder
 	@Namespace var journeySearchViewNamespace
 	@EnvironmentObject var chewViewModel : ChewViewModel
 	@ObservedObject var searchStopsVM = Model.shared.searchStopsVM
 	@ObservedObject var topAlertVM = Model.shared.topBarAlertVM
 	@ObservedObject var locationManager : ChewLocationDataManager = Model.shared.locationDataManager
-
+    @State var state = ChewViewModel.State()
 	var body: some View {
 			VStack(spacing: 5) {
 				#if DEBUG
@@ -26,15 +27,33 @@ struct JourneySearchView : View {
 						.badgeBackgroundStyle(.secondary)
 						.padding(2)
 				#endif
-				if #available(iOS 17.0, *) {
-					TipView(ChooTips.searchTip)
-				}
-				
+                TipView(ChooTips.searchTip)
 				VStack {
 					SearchStopsView()
 					TimeAndSettingsView()
 				}
-				BottomView()
+                Group {
+                    switch state.status {
+                    case let .journeys(stops):
+                        viewBuilder.createJourneyListView(
+                            date: state.data.date,
+                            settings: state.data.journeySettings,
+                            stops: stops
+                        )
+                    case .idle:
+                        ScrollView {
+                            VStack {
+                                RecentSearchesView()
+                                viewBuilder.createNearestStopView()
+                            }
+                        }
+                    default:
+                        Spacer()
+                    }
+                }
+                .onReceive(chewViewModel.$state, perform: { new in
+                    state = new
+                })
 			}
 			.contentShape(Rectangle())
 			.padding(.horizontal,10)
@@ -152,7 +171,7 @@ struct JSV_Previews: PreviewProvider {
 		let chewVM = ChewViewModel(
 			coreDataStore: .preview
 		)
-		JourneySearchView()
+        JourneySearchView(viewBuilder: .init(container: AppContainerImpl.shared, router: Router()))
 			.onAppear(perform: {
 				chewVM.send(event: .didStartViewAppear)
 			})

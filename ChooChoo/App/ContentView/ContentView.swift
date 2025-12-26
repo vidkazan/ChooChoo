@@ -26,9 +26,7 @@ struct ContentView: View {
 	@State var alertIsPresented = false
 	
     
-    init(
-        navViewBuilder: NavigationViewBuilder
-    ) {
+    init(navViewBuilder: NavigationViewBuilder) {
         _router = StateObject(wrappedValue: navViewBuilder.router)
         _chewViewModel = StateObject(
             wrappedValue: ChewViewModel(
@@ -45,30 +43,28 @@ struct ContentView: View {
 			switch state.status {
 			case .start:
 				ProgressView()
-			default:
-                NavigationStack(path: $router.paths) {
-                    ZStack(alignment: .top) {
-                        FeatureView()
+            default:
+                ZStack(alignment: .top) {
+                    NavigationStack(path: $router.paths) {
+                        navViewBuilder.createFeatureView()
                             .navigationDestination(for: AppRoute.self, destination: buildViews)
-                        TopBarAlertsView()
-                        if appSettingsVM.state.settings.debugSettings.timeSlider == true {
-                            VStack {
-                                Spacer()
-                                ReferenceTimeSliderView(initialReferenceDate: chewViewModel.referenceDate)
-                                    .padding(.bottom,30)
-                            }
+                    }
+                    TopBarAlertsView()
+                    if appSettingsVM.state.settings.debugSettings.timeSlider == true {
+                        VStack {
+                            Spacer()
+                            ReferenceTimeSliderView(initialReferenceDate: chewViewModel.referenceDate)
+                                .padding(.bottom,30)
                         }
                     }
                 }
 			}
 		}
 		.task {
-			if #available(iOS 17.0, *) {
-				try? Tips.configure([
-					.displayFrequency(.immediate),
-					.datastoreLocation(.applicationDefault)
-				])
-			}
+            try? Tips.configure([
+                .displayFrequency(.immediate),
+                .datastoreLocation(.applicationDefault)
+            ])
 		}
 		.confirmationDialog(
 			"",
@@ -230,19 +226,20 @@ extension ContentView {
     @ViewBuilder
     private func buildViews(view: AppRoute) -> some View {
         switch view {
-            case .nearestStopsView: navViewBuilder.createNearestStopView()
-    //    case .profile(let profile, let viewMode):
-    //        navViewBuilder.createProfileView(profile: profile, viewMode: viewMode)
-    //    case .editProfile(let profile): navViewBuilder.createEditProfileView(profile: profile)
-    //    case .accountManagement(let currentUser):
-    //        navViewBuilder.createAccountManagementView(currentUser: currentUser)
-    //    case .faq(let faqData): navViewBuilder.createFaqView(faqData: faqData)
-    //    case .messenger(let chatModel, let currentUser, let interlocutor):
-    //        navViewBuilder.createMessengerView(
-    //            chatModel: chatModel,
-    //            currentUser: currentUser,
-    //            interlocutor: interlocutor
-    //        )
+            case .main: navViewBuilder.createFeatureView()
+            case .journeyDetails(
+                let followId,
+                let data,
+                let depStop,
+                let arrStop,
+                let chewVM
+            ): navViewBuilder.createJourneyDetailsView(
+                followId: followId,
+                data: data,
+                depStop: depStop,
+                arrStop: arrStop,
+                chewVM: chewVM
+            )
         }
     }
 }

@@ -10,33 +10,37 @@ import SwiftUI
 enum Tabs : Int,CaseIterable {
 	case search
 	case follow
+    
+    @ViewBuilder
+    func tabView() -> some View {
+        switch self {
+            case .search:
+                Label(
+                    title: {
+                        Text("Search",comment : "TabItem")
+                    },
+                    icon: {
+                        Image(systemName: "magnifyingglass")
+                    }
+                )
+            case .follow:
+                Label(
+                    title: {
+                        Text("Follow", comment : "TabItem")
+                    },
+                    icon: {
+                        ChooSFSymbols.bookmark.view
+                    }
+                )
+        }
+    }
 }
 
 struct FeatureView: View {
+    let viewBuilder: NavigationViewBuilder
+    
 	@EnvironmentObject var chewViewModel : ChewViewModel
 	@State var selectedTab = Tabs.search
-		
-	
-	let tabSearchLabel : some View = {
-		Label(
-			title: {
-				Text("Search",comment : "TabItem")
-			},
-			icon: {
-				Image(systemName: "magnifyingglass")
-			}
-		)
-	}()
-	let tabFollowLabel : some View = {
-		Label(
-			title: {
-				Text("Follow", comment : "TabItem")
-			},
-			icon: {
-				ChooSFSymbols.bookmark.view
-			}
-		)
-	}()
 
 	var handler: Binding<Tabs> { Binding(
 		get: { self.selectedTab },
@@ -54,29 +58,11 @@ struct FeatureView: View {
 	)}
 	var body: some View {
 		TabView(selection: handler) {
-			if #available(iOS 16.0, *) {
-				NavigationStack {
-					JourneySearchView()
-				}
-					.tabItem { tabSearchLabel }
-					.tag(Tabs.search)
-				NavigationStack {
-					JourneyFollowView()
-				}
-					.tabItem { tabFollowLabel }
-					.tag(Tabs.follow)
-			} else {
-				NavigationView {
-					JourneySearchView()
-				}
-					.tabItem { tabSearchLabel }
-					.tag(Tabs.search)
-				NavigationView {
-					JourneyFollowView()
-				}
-					.tabItem { tabFollowLabel }
-					.tag(Tabs.follow)
-			}
+            ForEach(Tabs.allCases, id: \.self) { tab in
+                createTabView(tab: tab)
+                    .tabItem { tab.tabView() }
+                    .tag(tab.rawValue)
+            }
 		}
         .onOpenURL(perform: {
             self.handleIncomingURL($0)
@@ -93,6 +79,14 @@ struct FeatureView: View {
 }
 
 extension FeatureView {
+    
+    @ViewBuilder
+    func createTabView(tab: Tabs) -> some View {
+        switch tab {
+            case .search: viewBuilder.createSearchPage()
+            case .follow: viewBuilder.createFollowPage()
+        }
+    }
     private func handleIncomingURL(_ url: URL) {
             guard url.scheme == "choochoo" else {
                 return

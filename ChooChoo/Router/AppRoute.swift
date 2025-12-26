@@ -9,7 +9,15 @@ import Foundation
 import SwiftUI
 
 enum AppRoute {
-    case nearestStopsView
+    case main
+    case journeyDetails(
+        Int64,
+        JourneyViewData,
+        Stop,
+        Stop,
+        ChewViewModel?
+    )
+    
 //    case profile(profile: ProfileProtocol, viewMode: ProfileView.ProfileViewMode)
 //    case editProfile(profile: ProfileProtocol)
 //    case accountManagement(currentUser: MenuTempUserModel)
@@ -23,9 +31,9 @@ extension AppRoute: Hashable {
     // swiftlint:disable cyclomatic_complexity
     static func == (lhs: AppRoute, rhs: AppRoute) -> Bool {
         switch (lhs, rhs) {
-        case (.nearestStopsView, .nearestStopsView): return true
-//        case (.accountManagement, .accountManagement): return true
-        default: return false
+            case (.main, .main): return true
+            case (.journeyDetails, .journeyDetails): return true
+            default: return false
         }
     }
     // swiftlint:enable cyclomatic_complexity

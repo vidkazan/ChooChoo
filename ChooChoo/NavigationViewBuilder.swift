@@ -19,13 +19,53 @@ final class NavigationViewBuilder {
         self.container = container
         self.router = router
     }
-
-     func createNearestStopView() -> some View {
+    
+    func createJourneyListView(
+        date: SearchStopsDate,
+        settings : JourneySettings,
+        stops : DepartureArrivalPairStop,
+    ) -> some View {
+        let vm = JourneyListViewModel(
+            date: date,
+            settings: settings,
+            stops: stops
+        )
+        return JourneyListView(jlvm: vm)
+    }
+    
+    func createJourneyDetailsView(
+        followId: Int64,
+        data: JourneyViewData,
+        depStop : Stop,
+        arrStop : Stop,
+        chewVM: ChewViewModel?
+    ) -> some View {
+        let vm = JourneyDetailsViewModel(
+            followId: followId,
+            data: data,
+            depStop: depStop,
+            arrStop: arrStop,
+            chewVM: chewVM
+        )
+        return JourneyDetailsView(journeyDetailsViewModel: vm)
+    }
+    
+    func createFeatureView() -> some View {
+       FeatureView(viewBuilder: self)
+    }
+    
+    func createSearchPage() -> some View {
+       JourneySearchView(viewBuilder: self)
+    }
+    
+    func createFollowPage() -> some View {
+       JourneyFollowView()
+    }
+    
+    func createNearestStopView() -> some View {
         NearestStopView(
-            viewModel: .init(container: self.container)
+            viewModel: .init(container: self.container),
+            viewModelNew: .init(container: self.container,router: self.router),
         )
     }
-//    func createSMSView() -> some View {
-//        SmsView(viewModel: SMSViewModel(router: self.router, container: self.container))
-//    }
 }
