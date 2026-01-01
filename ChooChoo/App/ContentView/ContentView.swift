@@ -47,6 +47,13 @@ struct ContentView: View {
                     NavigationStack(path: $router.paths) {
                         navViewBuilder.createFeatureView()
                             .navigationDestination(for: AppRoute.self, destination: buildViews)
+                            .toolbar {
+                                JourneySearchView.JourneySearchToolbar(topBarAlertVM: Model.shared.topBarAlertVM)
+                            }
+                            .navigationTitle(
+                                Text(verbatim: Constants.navigationTitle)
+                            )
+                            .navigationBarTitleDisplayMode(.inline)
                     }
                     TopBarAlertsView()
                     if appSettingsVM.state.settings.debugSettings.timeSlider == true {

@@ -60,13 +60,6 @@ struct JourneySearchView : View {
 				gradient()
 			})
 			.background(Color.chewFillPrimary)
-			.navigationTitle(
-				Text(verbatim: Constants.navigationTitle)
-			)
-			.navigationBarTitleDisplayMode(.inline)
-			.toolbar {
-				JourneySearchToolbar(topBarAlertVM: Model.shared.topBarAlertVM)
-			}
 			.onReceive(locationManager.$location, perform: { loc in
 				if
 					case .loadingLocation = chewViewModel.state.status,
